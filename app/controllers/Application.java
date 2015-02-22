@@ -25,9 +25,7 @@ public class Application extends Controller {
 			if (FileValidator.hasExtension(fileName, "sql")) {
 				System.out.println("Processing SQL file...");
 
-				return ok(
-					"File " + fileName + " uploaded. Content-type: " +
-						contentType);
+				return controllers.TaskApplication.all();
 			}
 
 			return badRequest("The file is not an SQL file");
