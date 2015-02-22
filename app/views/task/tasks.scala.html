@@ -3,6 +3,11 @@
 @main("Welcome to GeneratedCRUD application") {
 
 	<h1>Tasks in the DB</h1>
+
+	<p>
+		<a href="@routes.TaskApplication.addTask">Create New Task</a>
+	</p>
+
 	<ul>
 	@for(task <- tasks) {
 		<li>
