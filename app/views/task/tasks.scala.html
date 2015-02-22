@@ -7,7 +7,7 @@
 	@for(task <- tasks) {
 		<li>
 			<div>
-				<div>ID: <a href="tasks/@task.id">@task.id</a></div>
+				<div>ID: <a href="@routes.TaskApplication.get(task.id)">@task.id</a></div>
 				<div>Name: @task.name</div>
 				<div>@task.street</div>
 			</div>
