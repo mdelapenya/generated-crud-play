@@ -1,12 +1,14 @@
 package controllers;
 
+import org.apache.commons.io.FilenameUtils;
+
 /**
  * @author Manuel de la Peña
  */
 public class FileValidator {
 
-	public static boolean hasExtension(String fileName, String extension) {
-		return true;
+	public static boolean hasSQLExtension(String fileName) {
+		return FilenameUtils.isExtension(fileName, "sql");
 	}
 
 }

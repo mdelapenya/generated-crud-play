@@ -22,7 +22,7 @@ public class Application extends Controller {
 			String fileName = sqlFile.getFilename();
 			String contentType = sqlFile.getContentType();
 
-			if (FileValidator.hasExtension(fileName, "sql")) {
+			if (FileValidator.hasSQLExtension(fileName)) {
 				System.out.println("Processing SQL file...");
 
 				return controllers.TaskApplication.all();
