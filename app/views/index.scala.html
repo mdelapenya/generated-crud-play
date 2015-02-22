@@ -2,6 +2,11 @@
 
 @main("Welcome to Play") {
 
-    @play20.welcome(message, style = "Java")
+	@helper.form(action = routes.Application.uploadSQL, 'enctype -> "multipart/form-data") {
+		<input type="file" name="sqlFile">
+		<p>
+			<input type="submit" value="Upload">
+		</p>
+	}
 
 }
