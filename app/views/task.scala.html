@@ -1,0 +1,23 @@
+@(task: Task)
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of @task.id</legend>
+		<p>
+			<label for="name">
+				<span>Name: </span>
+				<input type="text" id="name" name="name" required value="@task.name" />
+				<strong><abbr title="required">*</abbr></strong>
+			</label>
+		</p>
+		<p>
+			<label for="street">
+				<span>Street: </span>
+				<input type="text" id="street" name="street" required value="@task.street" />
+				<strong><abbr title="required">*</abbr></strong>
+			</label>
+		</p>
+	</fieldset>
+
+}
