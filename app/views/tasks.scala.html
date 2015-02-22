@@ -1,7 +1,17 @@
-@(message: String)
+@(tasks: List[Task])
 
 @main("Welcome to GeneratedCRUD application") {
 
-	All tasks found.
+	<h1>Tasks in the DB</h1>
+	<ul>
+	@for(task <- tasks) {
+		<li>
+			<div>
+				<div>Name: @task.name</div>
+				<div>@task.street)</div>
+			</div>
+		</li>
+	}
+	</ul>
 
 }

@@ -1,9 +1,12 @@
 package controllers;
 
+import models.Task;
 import play.mvc.Controller;
 import play.mvc.Result;
 
 import views.html.tasks;
+
+import java.util.List;
 
 /**
  * @author Manuel de la Peña
@@ -11,7 +14,9 @@ import views.html.tasks;
 public class TaskApplication extends Controller {
 
 	public static Result all() {
-		return ok(tasks.render("All tasks found."));
+		List<Task> taskList = Task.find.all();
+
+		return ok(tasks.render(taskList));
 	}
 
 }

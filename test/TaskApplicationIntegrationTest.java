@@ -27,7 +27,7 @@ public class TaskApplicationIntegrationTest {
 
 					assertThat(
 						browser.pageSource()
-					).contains("All tasks found.");
+					).contains("Tasks in the DB");
 				}
 			}
 		);
