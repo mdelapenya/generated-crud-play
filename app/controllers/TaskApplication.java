@@ -4,8 +4,8 @@ import models.Task;
 import play.mvc.Controller;
 import play.mvc.Result;
 
-import views.html.task;
-import views.html.tasks;
+import views.html.task.task;
+import views.html.task.tasks;
 
 import java.util.List;
 
