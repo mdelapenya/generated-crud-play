@@ -24,7 +24,8 @@ public class IntegrationTest {
 
 						assertThat(
 							browser.pageSource()
-						).contains("Your new application is ready.");
+						).contains(
+							"<input name=\"sqlFile\" value=\"\" type=\"file\"/>");
 					}
 				}
 		);
