@@ -24,7 +24,7 @@ public class IntegrationTest {
 
 						assertThat(
 							browser.pageSource()
-						).contains("Your new application is ready.");
+						).contains("tasks on DB.");
 					}
 				}
 		);
