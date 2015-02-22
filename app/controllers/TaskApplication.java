@@ -14,6 +14,10 @@ import java.util.List;
  */
 public class TaskApplication extends Controller {
 
+	public static Result addTask() {
+		return ok(task.render(new Task()));
+	}
+
 	public static Result get(Long id) {
 		Task dbTask = Task.find.byId(id);
 
