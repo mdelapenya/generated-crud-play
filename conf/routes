@@ -11,7 +11,7 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 GET /tasks/:id controllers.TaskApplication.get(id: Long)
 
 # Display all tasks
-GET /tasks/all controllers.TaskApplication.all
+GET /tasks controllers.TaskApplication.all
 
 # Upload SQL file
 POST /upload controllers.Application.uploadSQL
