@@ -1,8 +1,12 @@
-@(message: String)
+@(message: String)(error: String)
 
 @main(message) {
 
 	@helper.form(action = routes.Application.uploadSQL, 'enctype -> "multipart/form-data") {
+		@if(error != null) {
+			<h1>@error</h1>
+		}
+
 		<input type="file" name="sqlFile" />
 		<p>
 			<input type="submit" value="Upload" />

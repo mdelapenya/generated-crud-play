@@ -10,7 +10,9 @@ import views.html.*;
 public class Application extends Controller {
 
     public static Result index() {
-        return ok(index.render("Your new application is ready."));
+		String error = flash("error");
+
+        return ok(index.render("Welcome to GeneratedCRUD application", error));
     }
 
 	public static Result uploadSQL() {
@@ -28,12 +30,14 @@ public class Application extends Controller {
 				return controllers.TaskApplication.all();
 			}
 
-			return badRequest("The file is not an SQL file");
+			flash("error", fileName + " is not a valid SQL file.");
+
+			return index();
 		}
 
-		flash("error", "Missing file");
+		flash("error", "Please select a valid SQL file");
 
-		return badRequest("The file has not been uploaded");
+		return index();
 	}
 
 }
