@@ -1,6 +1,6 @@
 @(message: String)
 
-@main("Welcome to GeneratedCRUD application") {
+@main(message) {
 
 	@helper.form(action = routes.Application.uploadSQL, 'enctype -> "multipart/form-data") {
 		<input type="file" name="sqlFile" />
