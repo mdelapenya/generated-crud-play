@@ -6,7 +6,7 @@ import play.libs.F.*;
 import static play.test.Helpers.*;
 import static org.fest.assertions.Assertions.*;
 
-public class IntegrationTest {
+public class ApplicationIntegrationTest {
 
     /**
      * add your integration test here
