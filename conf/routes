@@ -10,6 +10,8 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 GET /tasks/:id controllers.TaskApplication.get(id: Long)
 
+GET /task/add controllers.TaskApplication.addTask
+
 # Display all tasks
 GET /tasks controllers.TaskApplication.all
 
