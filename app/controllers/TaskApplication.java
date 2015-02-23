@@ -1,6 +1,11 @@
 package controllers;
 
+import controllers.task.TaskFormData;
+
 import models.Task;
+
+import play.data.Form;
+
 import play.mvc.Controller;
 import play.mvc.Result;
 
@@ -15,13 +20,19 @@ import java.util.List;
 public class TaskApplication extends Controller {
 
 	public static Result addTask() {
-		return ok(task.render(new Task()));
+		Form<TaskFormData> form = Form.form(
+			TaskFormData.class).fill(new Task().toFormData());
+
+		return ok(task.render(form));
 	}
 
 	public static Result get(Long id) {
 		Task dbTask = Task.find.byId(id);
 
-		return ok(task.render(dbTask));
+		Form<TaskFormData> form = Form.form(
+			TaskFormData.class).fill(dbTask.toFormData());
+
+		return ok(task.render(form));
 	}
 
 	public static Result all() {
