@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import controllers.task.TaskFormData;
+
 import play.db.ebean.Model;
 
 import play.data.format.Formats;
@@ -53,6 +55,28 @@ public class Task extends Model {
 
 	public void setStreet(String street) {
 		this.street = street;
+	}
+
+	public Task(){
+	}
+
+	public Task(TaskFormData formData) {
+		id = Long.valueOf(formData.id);
+		name = formData.name;
+		street = formData.street;
+		done = Boolean.valueOf(formData.done);
+	}
+
+	public TaskFormData toFormData() {
+		if (id == null) {
+			id = 0L;
+		}
+
+		TaskFormData formData = new TaskFormData(
+			String.valueOf(id), name, street, String.valueOf(done),
+			String.valueOf(dueDate));
+
+		return formData;
 	}
 
 }
