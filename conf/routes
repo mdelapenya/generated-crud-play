@@ -15,5 +15,7 @@ GET /task/add controllers.TaskApplication.addTask
 # Display all tasks
 GET /tasks controllers.TaskApplication.all
 
+POST /task/submit controllers.TaskApplication.submit()
+
 # Upload SQL file
 POST /upload controllers.Application.uploadSQL
