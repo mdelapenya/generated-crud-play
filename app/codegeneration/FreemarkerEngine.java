@@ -29,52 +29,53 @@ public class FreemarkerEngine {
 	public void generateModels(List<Model> models)
 		throws IOException, TemplateException {
 
-		generateModels(models, new OutputStreamWriter(System.out));
-	}
-
-	public void generateModels(List<Model> models, Writer out)
-		throws IOException, TemplateException {
-
 		for (Model model : models) {
-			_generateApplicationTemplate(model, out);
+			_generateApplicationTemplate(model);
 
-			_generateFormData(model, out);
+			_generateFormData(model);
 
-			_generateModel(model, out);
+			_generateModel(model);
 
-			_generateModelView(model, out);
-			_generateModelsView(model, out);
+			_generateModelView(model);
+			_generateModelsView(model);
 		}
 	}
 
-	private void _generateApplicationTemplate(Model model, Writer out)
+	private void _generateApplicationTemplate(Model model)
 		throws IOException, TemplateException {
 
-		_generateTemplateFromModel("application.ftl", model, out);
+		_generateTemplateFromModel("application.ftl", model);
 	}
 
-	private void _generateFormData(Model model, Writer out)
+	private void _generateFormData(Model model)
 		throws IOException, TemplateException {
 
-		_generateTemplateFromModel("formData.ftl", model, out);
+		_generateTemplateFromModel("formData.ftl", model);
 	}
 
-	private void _generateModel(Model model, Writer out)
+	private void _generateModel(Model model)
 		throws IOException, TemplateException {
 
-		_generateTemplateFromModel("model.ftl", model, out);
+		_generateTemplateFromModel("model.ftl", model);
 	}
 
-	private void _generateModelsView(Model model, Writer out)
+	private void _generateModelsView(Model model)
 		throws IOException, TemplateException {
 
-		_generateTemplateFromModel("models.scala.html.ftl", model, out);
+		_generateTemplateFromModel("models.scala.html.ftl", model);
 	}
 
-	private void _generateModelView(Model model, Writer out)
+	private void _generateModelView(Model model)
 		throws IOException, TemplateException {
 
-		_generateTemplateFromModel("model.scala.html.ftl", model, out);
+		_generateTemplateFromModel("model.scala.html.ftl", model);
+	}
+
+	private void _generateTemplateFromModel(String templateName, Model model)
+		throws IOException, TemplateException {
+
+		_generateTemplateFromModel(
+			templateName, model, new OutputStreamWriter(System.out));
 	}
 
 	private void _generateTemplateFromModel(
