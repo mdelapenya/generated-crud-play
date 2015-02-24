@@ -50,76 +50,35 @@ public class FreemarkerEngine {
 	private void _generateApplicationTemplate(Model model, Writer out)
 		throws IOException, TemplateException {
 
-		// Create data-model
-
-		Map<String, Object> root = new HashMap<>();
-
-		root.put("model", model);
-
-		// get the template
-
-		Template temp = _cfg.getTemplate("application.ftl");
-
-		// merge the template with the data-model
-
-		temp.process(root, out);
+		_generateTemplateFromModel("application.ftl", model, out);
 	}
 
 	private void _generateFormData(Model model, Writer out)
 		throws IOException, TemplateException {
 
-		// Create data-model
-
-		Map<String, Object> root = new HashMap<>();
-
-		root.put("model", model);
-
-		// get the template
-
-		Template temp = _cfg.getTemplate("formData.ftl");
-
-		// merge the template with the data-model
-
-		temp.process(root, out);
+		_generateTemplateFromModel("formData.ftl", model, out);
 	}
 
 	private void _generateModel(Model model, Writer out)
 		throws IOException, TemplateException {
 
-		// Create data-model
-
-		Map<String, Object> root = new HashMap<>();
-
-		root.put("model", model);
-
-		// get the template
-
-		Template temp = _cfg.getTemplate("model.ftl");
-
-		// merge the template with the data-model
-
-		temp.process(root, out);
+		_generateTemplateFromModel("model.ftl", model, out);
 	}
 
 	private void _generateModelsView(Model model, Writer out)
 		throws IOException, TemplateException {
 
-		// Create data-model
-
-		Map<String, Object> root = new HashMap<>();
-
-		root.put("model", model);
-
-		// get the template
-
-		Template temp = _cfg.getTemplate("models.scala.html.ftl");
-
-		// merge the template with the data-model
-
-		temp.process(root, out);
+		_generateTemplateFromModel("models.scala.html.ftl", model, out);
 	}
 
 	private void _generateModelView(Model model, Writer out)
+		throws IOException, TemplateException {
+
+		_generateTemplateFromModel("model.scala.html.ftl", model, out);
+	}
+
+	private void _generateTemplateFromModel(
+			String templateName, Model model, Writer out)
 		throws IOException, TemplateException {
 
 		// Create data-model
@@ -130,7 +89,7 @@ public class FreemarkerEngine {
 
 		// get the template
 
-		Template temp = _cfg.getTemplate("model.scala.html.ftl");
+		Template temp = _cfg.getTemplate(templateName);
 
 		// merge the template with the data-model
 
