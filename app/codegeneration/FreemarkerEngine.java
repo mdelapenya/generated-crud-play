@@ -130,7 +130,7 @@ public class FreemarkerEngine {
 
 		// get the template
 
-		Template temp = _cfg.getTemplate("model.scale.html.ftl");
+		Template temp = _cfg.getTemplate("model.scala.html.ftl");
 
 		// merge the template with the data-model
 
