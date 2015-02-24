@@ -69,7 +69,7 @@ public class ${model.name?cap_first}Application extends Controller {
 				${model.name} = ${model.name?cap_first}.find.byId(${model.name}Id);
 
 				<#list model.fields as field>
-					${model.name}.set${field.name?cap_first}(${model.name}FormData.${field.name});
+				${model.name}.set${field.name?cap_first}(${model.name}FormData.${field.name});
 				</#list>
 			}
 			else {
