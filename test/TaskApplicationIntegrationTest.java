@@ -23,7 +23,7 @@ public class TaskApplicationIntegrationTest {
 			new F.Callback<TestBrowser>() {
 
 				public void invoke(TestBrowser browser) {
-					browser.goTo("http://localhost:3333/tasks/all");
+					browser.goTo("http://localhost:3333/tasks");
 
 					assertThat(
 						browser.pageSource()
