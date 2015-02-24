@@ -1,4 +1,4 @@
-@(${model.name}s: List[${model.name?cap_first}])
+@(${model.name}s: List[models.${model.name}.${model.name?cap_first}])
 
 @main("Welcome to GeneratedCRUD application") {
 
