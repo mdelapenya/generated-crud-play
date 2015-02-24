@@ -8,6 +8,7 @@ import java.util.List;
 public class Model {
 
 	public String name;
+	public String primaryKey;
 	public List<Field> fields;
 
 }
