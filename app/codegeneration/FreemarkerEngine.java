@@ -59,13 +59,20 @@ public class FreemarkerEngine {
 	private void _generateFormData(Model model)
 		throws IOException, TemplateException {
 
-		_generateTemplateFromModel("formData.ftl", model);
+		File file = _initializeGeneratedFile(
+			"app", "controllers", model.name, "FormData.java");
+
+		_generateTemplateFromModel(
+			"formData.ftl", model,  new FileWriter(file));
 	}
 
 	private void _generateModel(Model model)
 		throws IOException, TemplateException {
 
-		_generateTemplateFromModel("model.ftl", model);
+		File file = _initializeGeneratedFile(
+			"app", "models", model.name, ".java");
+
+		_generateTemplateFromModel("model.ftl", model, new FileWriter(file));
 	}
 
 	private void _generateModelsView(Model model)
