@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import controllers.${model}.${model.name?cap_first}FormData;
+import controllers.${model.name}.${model.name?cap_first}FormData;
 
 import play.db.ebean.Model;
 

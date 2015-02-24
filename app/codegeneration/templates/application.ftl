@@ -1,10 +1,10 @@
-package controllers;
+package controllers.${model.name};
 
 import com.avaje.ebean.Ebean;
 
 import controllers.${model.name}.${model.name?cap_first}FormData;
 
-import models.${model.name?cap_first};
+import models.${model.name}.${model.name?cap_first};
 
 import play.data.Form;
 
