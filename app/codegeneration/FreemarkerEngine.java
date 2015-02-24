@@ -84,13 +84,25 @@ public class FreemarkerEngine {
 	private void _generateModelsView(Model model)
 		throws IOException, TemplateException {
 
-		_generateTemplateFromModel("models.scala.html.ftl", model);
+		String targetFileName = model.name + "s.scala.html";
+
+		File file = _initializeGeneratedFile(
+			"app", "views", model.name, targetFileName);
+
+		_generateTemplateFromModel(
+			"models.scala.html.ftl", model, new FileWriter(file));
 	}
 
 	private void _generateModelView(Model model)
 		throws IOException, TemplateException {
 
-		_generateTemplateFromModel("model.scala.html.ftl", model);
+		String targetFileName = model.name + ".scala.html";
+
+		File file = _initializeGeneratedFile(
+			"app", "views", model.name, targetFileName);
+
+		_generateTemplateFromModel(
+			"model.scala.html.ftl", model, new FileWriter(file));
 	}
 
 	private void _generateTemplateFromModel(String templateName, Model model)
