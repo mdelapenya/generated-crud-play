@@ -41,6 +41,8 @@ public class FreemarkerEngine {
 			_generateFormData(model, out);
 
 			_generateModel(model, out);
+
+			_generateModelView(model, out);
 		}
 	}
 
@@ -92,6 +94,24 @@ public class FreemarkerEngine {
 		// get the template
 
 		Template temp = _cfg.getTemplate("model.ftl");
+
+		// merge the template with the data-model
+
+		temp.process(root, out);
+	}
+
+	private void _generateModelView(Model model, Writer out)
+		throws IOException, TemplateException {
+
+		// Create data-model
+
+		Map<String, Object> root = new HashMap<>();
+
+		root.put("model", model);
+
+		// get the template
+
+		Template temp = _cfg.getTemplate("model.scale.html.ftl");
 
 		// merge the template with the data-model
 
