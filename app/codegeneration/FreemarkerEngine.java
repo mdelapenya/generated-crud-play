@@ -49,8 +49,10 @@ public class FreemarkerEngine {
 	private void _generateApplicationTemplate(Model model)
 		throws IOException, TemplateException {
 
+		String targetFileName = _capitalize(model.name) + "Application.java";
+
 		File file = _initializeGeneratedFile(
-			"app", "controllers", model.name, "Application.java");
+			"app", "controllers", model.name, targetFileName);
 
 		_generateTemplateFromModel(
 			"application.ftl", model, new FileWriter(file));
@@ -59,8 +61,10 @@ public class FreemarkerEngine {
 	private void _generateFormData(Model model)
 		throws IOException, TemplateException {
 
+		String targetFileName = _capitalize(model.name) + "FormData.java";
+
 		File file = _initializeGeneratedFile(
-			"app", "controllers", model.name, "FormData.java");
+			"app", "controllers", model.name, targetFileName);
 
 		_generateTemplateFromModel(
 			"formData.ftl", model,  new FileWriter(file));
@@ -69,8 +73,10 @@ public class FreemarkerEngine {
 	private void _generateModel(Model model)
 		throws IOException, TemplateException {
 
+		String targetFileName = _capitalize(model.name) + ".java";
+
 		File file = _initializeGeneratedFile(
-			"app", "models", model.name, ".java");
+			"app", "models", model.name, targetFileName);
 
 		_generateTemplateFromModel("model.ftl", model, new FileWriter(file));
 	}
@@ -140,7 +146,7 @@ public class FreemarkerEngine {
 
 	private File _initializeGeneratedFile(
 		String moduleName, String packageName, String modelName,
-		String targetFileSuffix)
+		String targetFileName)
 		throws IOException {
 
 		URL classesUrl = FreemarkerEngine.class.getResource("/");
@@ -156,8 +162,6 @@ public class FreemarkerEngine {
 		String basePath = classes.substring(
 			filePreffixPos + filePreffix.length(),
 			generatedCRUDPos + generatedcrud.length());
-
-		String targetFileName = _capitalize(modelName) + targetFileSuffix;
 
 		File file = new File(
 			basePath + "/" + moduleName + "/" + packageName + "/" + modelName +
