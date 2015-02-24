@@ -8,6 +8,7 @@ import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -41,10 +42,18 @@ public class FreemarkerEngine {
 		}
 	}
 
+	private String _capitalize(String input) {
+		return input.substring(0, 1).toUpperCase() + input.substring(1);
+	}
+
 	private void _generateApplicationTemplate(Model model)
 		throws IOException, TemplateException {
 
-		_generateTemplateFromModel("application.ftl", model);
+		File file = _initializeGeneratedFile(
+			"app", "controllers", model.name, "Application.java");
+
+		_generateTemplateFromModel(
+			"application.ftl", model, new FileWriter(file));
 	}
 
 	private void _generateFormData(Model model)
@@ -120,6 +129,37 @@ public class FreemarkerEngine {
 		// During development TemplateExceptionHandler.HTML_DEBUG_HANDLER is better.
 
 		_cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
+	}
+
+	private File _initializeGeneratedFile(
+		String moduleName, String packageName, String modelName,
+		String targetFileSuffix)
+		throws IOException {
+
+		URL classesUrl = FreemarkerEngine.class.getResource("/");
+
+		String classes = classesUrl.toString();
+
+		String filePreffix = "file:";
+		String generatedcrud = "generatedcrud";
+
+		int filePreffixPos = classes.indexOf(filePreffix);
+		int generatedCRUDPos = classes.indexOf(generatedcrud);
+
+		String basePath = classes.substring(
+			filePreffixPos + filePreffix.length(),
+			generatedCRUDPos + generatedcrud.length());
+
+		String targetFileName = _capitalize(modelName) + targetFileSuffix;
+
+		File file = new File(
+			basePath + "/" + moduleName + "/" + packageName + "/" + modelName +
+				"/" + targetFileName);
+
+		file.getParentFile().mkdirs();
+		file.createNewFile();
+
+		return file;
 	}
 
 	private Configuration _cfg;
