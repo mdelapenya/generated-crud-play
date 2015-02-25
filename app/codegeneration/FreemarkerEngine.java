@@ -1,5 +1,6 @@
 package codegeneration;
 
+import codegeneration.db.Field;
 import codegeneration.db.Model;
 
 import freemarker.template.Configuration;
@@ -14,6 +15,7 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +24,55 @@ import java.util.Map;
  * @author Manuel de la Peña
  */
 public class FreemarkerEngine {
+
+	public static void main(String[] args) {
+		try {
+			FreemarkerEngine engine = new FreemarkerEngine();
+
+			List<Model> models = new ArrayList<>();
+
+			Model model = new Model();
+
+			model.name = "foo";
+
+			List<Field> fields = new ArrayList<>();
+
+			Field f1 = new Field();
+
+			f1.maxLength = 0;
+			f1.minLength = 0;
+			f1.isPrimaryKey = true;
+			f1.isRequired = true;
+			f1.name = "id";
+			f1.type = "long";
+			f1.typeUppercase = "Long";
+
+			fields.add(f1);
+
+			model.primaryKey = f1.name;
+
+			Field f2 = new Field();
+
+			f2.maxLength = 35;
+			f2.minLength = 0;
+			f2.isPrimaryKey = false;
+			f2.isRequired = true;
+			f2.name = "f2";
+			f2.type = "String";
+			f2.typeUppercase = "String";
+
+			fields.add(f2);
+
+			model.fields = fields;
+
+			models.add(model);
+
+			engine.generateModels(models);
+		}
+		catch (Exception e) {
+			System.exit(1);
+		}
+	}
 
 	public FreemarkerEngine() throws IOException, URISyntaxException {
 		_init();
