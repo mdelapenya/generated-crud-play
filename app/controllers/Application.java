@@ -1,13 +1,25 @@
 package controllers;
 
+import codegeneration.FreemarkerEngine;
+import codegeneration.db.Model;
+
+import freemarker.template.TemplateException;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.List;
+
+import org.apache.commons.io.FileUtils;
+
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Http.MultipartFormData;
 import play.mvc.Http.MultipartFormData.FilePart;
 
-import views.html.*;
-
+import util.SQLParser;
 import util.FileValidator;
+
+import views.html.*;
 
 public class Application extends Controller {
 
@@ -21,7 +33,9 @@ public class Application extends Controller {
 		return ok(listmodels.render());
 	}
 
-	public static Result uploadSQL() {
+	public static Result uploadSQL()
+		throws IOException, URISyntaxException, TemplateException {
+
 		MultipartFormData body = request().body().asMultipartFormData();
 
 		FilePart sqlFile = body.getFile("sqlFile");
@@ -32,6 +46,14 @@ public class Application extends Controller {
 
 			if (FileValidator.hasSQLExtension(fileName)) {
 				System.out.println("Processing SQL file...");
+
+				String sql = FileUtils.readFileToString(sqlFile.getFile());
+
+				List<Model> models = SQLParser.parse(sql);
+
+				FreemarkerEngine freemarkerEngine = new FreemarkerEngine();
+
+				freemarkerEngine.generateModels(models);
 
 				return models();
 			}
