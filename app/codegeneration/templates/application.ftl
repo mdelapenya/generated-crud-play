@@ -55,7 +55,7 @@ public class ${model.name?cap_first}Application extends Controller {
 		else {
 			${model.name?cap_first}FormData ${model.name}FormData = formData.get();
 
-			String id = ${model.name}FormData.id;
+			String id = ${model.name}FormData.${model.primaryKey};
 
 			long ${model.name}Id = 0;
 
