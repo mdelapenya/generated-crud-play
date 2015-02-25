@@ -20,26 +20,26 @@ import java.util.List;
  */
 public class FooFormData {
 
-	public String f1;
+	public String id;
 	public String f2;
 
 	public FooFormData() {
 	}
 
 	public FooFormData(
-		String f1,
+		String id,
 				String f2
 		) {
 
-		this.f1 = f1;
+		this.id = id;
 		this.f2 = f2;
 	}
 
 	public List<ValidationError> validate() {
 		List<ValidationError> errors = new ArrayList<>();
 
-		if (f1 == null || f1.length() == 0) {
-			errors.add(new ValidationError("f1", "No f1 was given."));
+		if (id == null || id.length() == 0) {
+			errors.add(new ValidationError("id", "No id was given."));
 		}
 		if (f2 == null || f2.length() == 0) {
 			errors.add(new ValidationError("f2", "No f2 was given."));

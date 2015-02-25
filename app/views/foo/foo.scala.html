@@ -5,10 +5,10 @@
 @main("Welcome to GeneratedCRUD application") {
 
 	<fieldset>
-		<legend>Edition of Foo #@fooFormData("f1").value</legend>
+		<legend>Edition of Foo #@fooFormData("id").value</legend>
 
 		@form(routes.FooApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(fooFormData("f1"), 'readonly -> "readonly")
+			@helper.inputText(fooFormData("id"), 'readonly -> "readonly")
 
 			<!-- F2 -->
 			@helper.inputText(fooFormData("f2"))

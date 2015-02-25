@@ -22,10 +22,8 @@ public class Foo extends Model {
 	// model attributes
 
 	@Id
-	@Constraints.Required
-	public long f1;
+	public long id;
 
-	@Id
 	@Constraints.Required
 	@Constraints.MaxLength(35)
 	public String f2;
@@ -39,12 +37,12 @@ public class Foo extends Model {
 
 	// getters and setters
 
-	public long getF1() {
-		return f1;
+	public long getId() {
+		return id;
 	}
 
-	public void setF1(long f1) {
-		this.f1 = f1;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public String getF2() {
 		return f2;
@@ -60,17 +58,17 @@ public class Foo extends Model {
 	// constructor using a formData
 
 	public Foo(FooFormData formData) {
-		f1 = Long.valueOf(formData.f1);
+		id = Long.valueOf(formData.id);
 		f2 = formData.f2;
 	}
 
 	public FooFormData toFormData() {
-		if (f1 < 0) {
-			f1 = 0L;
+		if (id < 0) {
+			id = 0L;
 		}
 
 		FooFormData formData = new FooFormData(
-			String.valueOf(f1)
+			String.valueOf(id)
 			,
 			f2
 			

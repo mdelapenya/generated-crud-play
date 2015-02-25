@@ -56,7 +56,7 @@ public class FooApplication extends Controller {
 		else {
 			FooFormData fooFormData = formData.get();
 
-			String id = fooFormData.f1;
+			String id = fooFormData.id;
 
 			long fooId = 0;
 
@@ -69,7 +69,7 @@ public class FooApplication extends Controller {
 			if (fooId > 0) {
 				foo = Foo.find.byId(fooId);
 
-				foo.setF1(Long.valueOf(fooFormData.f1));
+				foo.setId(Long.valueOf(fooFormData.id));
 				foo.setF2(fooFormData.f2);
 			}
 			else {
