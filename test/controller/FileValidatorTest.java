@@ -2,9 +2,9 @@ package controller;
 
 import static org.fest.assertions.Assertions.assertThat;
 
-import controllers.FileValidator;
-
 import org.junit.Test;
+
+import util.FileValidator;
 
 /**
  * @author Manuel de la Peña
