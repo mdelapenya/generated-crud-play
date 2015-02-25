@@ -15,6 +15,10 @@ public class Application extends Controller {
         return ok(index.render("Welcome to GeneratedCRUD application", error));
     }
 
+	public static Result models() {
+		return ok(listmodels.render());
+	}
+
 	public static Result uploadSQL() {
 		MultipartFormData body = request().body().asMultipartFormData();
 
@@ -27,7 +31,7 @@ public class Application extends Controller {
 			if (FileValidator.hasSQLExtension(fileName)) {
 				System.out.println("Processing SQL file...");
 
-				return controllers.TaskApplication.all();
+				return models();
 			}
 
 			flash("error", fileName + " is not a valid SQL file.");
