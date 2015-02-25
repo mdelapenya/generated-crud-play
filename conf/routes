@@ -5,6 +5,9 @@
 # Home page
 GET / controllers.Application.index()
 
+# Show all models
+GET /showModels controllers.Application.models()
+
 # Map static resources from the /public folder to the /assets URL path
 GET /assets/*file controllers.Assets.at(path="/public", file)
 
