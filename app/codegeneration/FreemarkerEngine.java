@@ -30,6 +30,8 @@ public class FreemarkerEngine {
 	public void generateModels(List<Model> models)
 		throws IOException, TemplateException {
 
+		_generateRoutes(models);
+
 		for (Model model : models) {
 			_generateApplicationTemplate(model);
 
@@ -112,6 +114,25 @@ public class FreemarkerEngine {
 			templateName, model, new OutputStreamWriter(System.out));
 	}
 
+	private void _generateTemplateFromModels(
+			String templateName, List<Model> models, Writer out)
+		throws IOException, TemplateException {
+
+		// Create data-model
+
+		Map<String, Object> root = new HashMap<>();
+
+		root.put("models", models);
+
+		// get the template
+
+		Template temp = _cfg.getTemplate(templateName);
+
+		// merge the template with the data-model
+
+		temp.process(root, out);
+	}
+
 	private void _generateTemplateFromModel(
 			String templateName, Model model, Writer out)
 		throws IOException, TemplateException {
@@ -129,6 +150,14 @@ public class FreemarkerEngine {
 		// merge the template with the data-model
 
 		temp.process(root, out);
+	}
+
+	private void _generateRoutes(List<Model> models)
+		throws IOException, TemplateException {
+
+		File file = _initializeGeneratedFile("conf", null, null, "routes");
+
+		_generateTemplateFromModels("routes.ftl", models, new FileWriter(file));
 	}
 
 	private void _init() throws IOException, URISyntaxException {
