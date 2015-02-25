@@ -52,7 +52,7 @@ public class FreemarkerEngine {
 		String targetFileName = _capitalize(model.name) + "Application.java";
 
 		File file = _initializeGeneratedFile(
-			"app", "controllers", model.name, targetFileName);
+			"app", "controllers", null, targetFileName);
 
 		_generateTemplateFromModel(
 			"application.ftl", model, new FileWriter(file));

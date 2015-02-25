@@ -1,4 +1,4 @@
-package controllers.${model.name};
+package controllers;
 
 import com.avaje.ebean.Ebean;
 
