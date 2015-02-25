@@ -1,7 +1,13 @@
 @main("Models list") {
 
+	<ul>
 	<#list models as model>
-	${model.name}
+		<li>
+			${model.name?cap_first}
+			(<a href="@routes.${model.name?cap_first}Application.all">
+				Show ${model.name}s
+			</a>)
+		</li>
 	</#list>
-
+	</ul>
 }
