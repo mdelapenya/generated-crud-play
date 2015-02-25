@@ -48,6 +48,27 @@ public class FooApplication extends Controller {
 		Form<FooFormData> formData = Form.form(
 			FooFormData.class).bindFromRequest();
 
+		String[] postSubmit = request().body().asFormUrlEncoded().get("submit");
+
+		if (postSubmit == null || postSubmit.length == 0) {
+			return badRequest("You must provide a valid action");
+		}
+		else {
+			String action = postSubmit[0];
+
+			if ("edit".equals(action)) {
+				return edit(formData);
+			}
+			else if ("delete".equals(action)) {
+				return delete(formData);
+			}
+			else {
+				return badRequest("This action is not allowed");
+			}
+		}
+	}
+
+	public static Result edit(Form<FooFormData> formData) {
 		if (formData.hasErrors()) {
 			flash("error", "Please correct errors above.");
 
@@ -82,6 +103,31 @@ public class FooApplication extends Controller {
 
 			return all();
 		}
+	}
+
+	public static Result delete(Form<FooFormData> formData) {
+		FooFormData fooFormData = formData.get();
+
+		String id = fooFormData.id;
+
+		long fooId = 0;
+
+		if (id != null) {
+			fooId = Long.valueOf(id);
+		}
+
+		Foo foo;
+
+		if (fooId > 0) {
+			foo = Foo.find.byId(fooId);
+
+			Ebean.delete(foo);
+		}
+		else {
+			flash("error", "Cannot delete Foo");
+		}
+
+		return all();
 	}
 
 }
