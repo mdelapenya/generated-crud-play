@@ -14,6 +14,7 @@ import play.data.validation.Constraints;
 
 /**
  * @author Manuel de la Peña
+ * @generated
  */
 @Entity
 public class ${model.name?cap_first} extends Model {

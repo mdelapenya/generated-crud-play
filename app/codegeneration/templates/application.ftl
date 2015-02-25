@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * @author Manuel de la Peña
+ * @generated
  */
 public class ${model.name?cap_first}Application extends Controller {
 
