@@ -1,4 +1,4 @@
-package controller;
+package app.util;
 
 import static org.fest.assertions.Assertions.assertThat;
 
