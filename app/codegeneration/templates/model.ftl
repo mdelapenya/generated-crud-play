@@ -25,7 +25,7 @@ public class ${model.name?cap_first} extends Model {
 		<#if field.isPrimaryKey>
 	@Id
 		</#if>
-		<#if field.isRequired>
+		<#if field.isRequired && !field.isPrimaryKey>
 	@Constraints.Required
 		</#if>
 		<#if field.hasMaxLength()>
