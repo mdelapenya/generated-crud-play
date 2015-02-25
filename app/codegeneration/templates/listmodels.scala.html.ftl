@@ -1,5 +1,7 @@
 @main("Models list") {
 
+	<a href="@routes.Application.index">Exit</a>
+
 	<ul>
 	<#list models as model>
 		<li>
