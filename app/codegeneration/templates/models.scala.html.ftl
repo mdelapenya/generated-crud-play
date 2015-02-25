@@ -6,6 +6,7 @@
 
 	<p>
 		<a href="@routes.${model.name?cap_first}Application.add${model.name?cap_first}">Create New ${model.name?cap_first}</a>
+		<a href="@routes.Application.models">Back to Models</a>
 	</p>
 
 	<ul>
