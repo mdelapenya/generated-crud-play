@@ -16,6 +16,7 @@ import java.util.List;
  * </ul>
  *
  * @author Manuel de la Peña
+ * @generated
  */
 public class FooFormData {
 

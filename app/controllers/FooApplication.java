@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * @author Manuel de la Peña
+ * @generated
  */
 public class FooApplication extends Controller {
 
