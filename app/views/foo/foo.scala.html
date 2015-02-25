@@ -1,0 +1,27 @@
+@(fooFormData: Form[controllers.foo.FooFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Foo #@fooFormData("f1").value</legend>
+
+		@form(routes.FooApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(fooFormData("f1"), 'readonly -> "readonly")
+
+			<!-- F1 -->
+			@helper.inputText(fooFormData("f1"))
+			<!-- F2 -->
+			@helper.inputText(fooFormData("f2"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.FooApplication.all()">Back to Foo List</a>
+					<button id="submit" type="submit" value="Submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

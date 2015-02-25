@@ -3,19 +3,28 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET / controllers.Application.index()
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
-
-GET /tasks/:id controllers.TaskApplication.get(id: Long)
-
-GET /task/add controllers.TaskApplication.addTask
-
-# Display all tasks
-GET /tasks controllers.TaskApplication.all
-
-POST /task/submit controllers.TaskApplication.submit()
+GET /assets/*file controllers.Assets.at(path="/public", file)
 
 # Upload SQL file
 POST /upload controllers.Application.uploadSQL
+
+##
+## Model routes
+##
+
+# Foo
+
+# View a foo
+GET /foos/:id controllers.FooApplication.get(id: Long)
+
+# Go to the create foo view
+GET /foo/add controllers.FooApplication.addFoo
+
+# Display all foos
+GET /foos controllers.FooApplication.all
+
+# Save a foo
+POST /foo/submit controllers.FooApplication.submit()
