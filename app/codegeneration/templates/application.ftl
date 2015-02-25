@@ -48,6 +48,27 @@ public class ${model.name?cap_first}Application extends Controller {
 		Form<${model.name?cap_first}FormData> formData = Form.form(
 			${model.name?cap_first}FormData.class).bindFromRequest();
 
+		String[] postSubmit = request().body().asFormUrlEncoded().get("submit");
+
+		if (postSubmit == null || postSubmit.length == 0) {
+			return badRequest("You must provide a valid action");
+		}
+		else {
+			String action = postSubmit[0];
+
+			if ("edit".equals(action)) {
+				return edit(formData);
+			}
+			else if ("delete".equals(action)) {
+				return delete(formData);
+			}
+			else {
+				return badRequest("This action is not allowed");
+			}
+		}
+	}
+
+	public static Result edit(Form<${model.name?cap_first}FormData> formData) {
 		if (formData.hasErrors()) {
 			flash("error", "Please correct errors above.");
 
@@ -69,13 +90,8 @@ public class ${model.name?cap_first}Application extends Controller {
 			if (${model.name}Id > 0) {
 				${model.name} = ${model.name?cap_first}.find.byId(${model.name}Id);
 
-				<#list model.fields as field>
-				<#if field.type == "long">
-				${model.name}.set${field.name?cap_first}(Long.valueOf(${model.name}FormData.${field.name}));
-				<#else>
-				${model.name}.set${field.name?cap_first}(${model.name}FormData.${field.name});
-				</#if>
-				</#list>
+				${model.name}.setId(Long.valueOf(${model.name}FormData.${model.primaryKey}));
+				${model.name}.setF2(${model.name}FormData.f2);
 			}
 			else {
 				${model.name} = new ${model.name?cap_first}(${model.name}FormData);
@@ -87,6 +103,31 @@ public class ${model.name?cap_first}Application extends Controller {
 
 			return all();
 		}
+	}
+
+	public static Result delete(Form<${model.name?cap_first}FormData> formData) {
+		${model.name?cap_first}FormData ${model.name}FormData = formData.get();
+
+		String id = ${model.name}FormData.${model.primaryKey};
+
+		long ${model.name}Id = 0;
+
+		if (id != null) {
+			${model.name}Id = Long.valueOf(id);
+		}
+
+		${model.name?cap_first} ${model.name};
+
+		if (${model.name}Id > 0) {
+			${model.name} = ${model.name?cap_first}.find.byId(${model.name}Id);
+
+			Ebean.delete(${model.name});
+		}
+		else {
+			flash("error", "Cannot delete ${model.name?cap_first}");
+		}
+
+		return all();
 	}
 
 }
