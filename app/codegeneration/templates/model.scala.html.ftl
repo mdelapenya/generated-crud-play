@@ -11,8 +11,10 @@
 			@helper.inputText(${model.name}FormData("${model.primaryKey}"), 'readonly -> "readonly")
 
 			<#list model.fields as field>
+			<#if model.primaryKey != field.name>
 			<!-- ${field.name?cap_first} -->
 			@helper.inputText(${model.name}FormData("${field.name}"))
+			</#if>
 			</#list>
 
 			<div class="form-group">
