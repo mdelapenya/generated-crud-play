@@ -20,8 +20,8 @@
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<a href="@routes.${model.name?cap_first}Application.all()">Back to ${model.name?cap_first} List</a>
-					<button id="submit" type="submit" value="Submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" type="submit" value="Submit" class="btn btn-primary" value="delete">Delete</button>
+					<button id="submit" name="submit" type="submit" value="Submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" value="Submit" class="btn btn-primary" value="delete">Delete</button>
 				</div>
 			</div>
 		}
