@@ -175,9 +175,19 @@ public class FreemarkerEngine {
 			filePreffixPos + filePreffix.length(),
 			generatedCRUDPos + generatedcrud.length());
 
-		File file = new File(
-			basePath + "/" + moduleName + "/" + packageName + "/" + modelName +
-				"/" + targetFileName);
+		String filePathPreffix = basePath + "/" + moduleName;
+
+		if (packageName != null && !packageName.equals("")) {
+			filePathPreffix += "/" + packageName;
+		}
+
+		if (modelName != null && !modelName.equals("")) {
+			filePathPreffix += "/" + modelName;
+		}
+
+		filePathPreffix += "/";
+
+		File file = new File(filePathPreffix + targetFileName);
 
 		file.getParentFile().mkdirs();
 		file.createNewFile();
