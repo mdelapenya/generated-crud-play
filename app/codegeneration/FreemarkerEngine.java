@@ -157,8 +157,8 @@ public class FreemarkerEngine {
 	}
 
 	private File _initializeGeneratedFile(
-		String moduleName, String packageName, String modelName,
-		String targetFileName)
+			String moduleName, String packageName, String modelName,
+			String targetFileName)
 		throws IOException {
 
 		URL classesUrl = FreemarkerEngine.class.getResource("/");
