@@ -76,7 +76,7 @@ public class ${model.name?cap_first} extends Model {
 	}
 
 	public ${model.name?cap_first}FormData toFormData() {
-		if (${model.primaryKey} == null) {
+		if (${model.primaryKey} < 0) {
 			${model.primaryKey} = 0L;
 		}
 
