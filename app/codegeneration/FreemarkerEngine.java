@@ -30,6 +30,7 @@ public class FreemarkerEngine {
 	public void generateModels(List<Model> models)
 		throws IOException, TemplateException {
 
+		_generateModelsList(models);
 		_generateRoutes(models);
 
 		for (Model model : models) {
@@ -81,6 +82,16 @@ public class FreemarkerEngine {
 			"app", "models", model.name, targetFileName);
 
 		_generateTemplateFromModel("model.ftl", model, new FileWriter(file));
+	}
+
+	private void _generateModelsList(List<Model> models)
+		throws IOException, TemplateException {
+
+		File file = _initializeGeneratedFile(
+			"app", "views", null, "listmodels.scala.html");
+
+		_generateTemplateFromModels(
+			"listmodels.scala.html.ftl", models, new FileWriter(file));
 	}
 
 	private void _generateModelsView(Model model)
