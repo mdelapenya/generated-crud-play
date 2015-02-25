@@ -8,11 +8,11 @@
 		<legend>Edition of ${model.name?cap_first} #@${model.name}FormData("${model.primaryKey}").value</legend>
 
 		@form(routes.${model.name?cap_first}Application.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(taskFormData("id"), 'readonly -> "readonly")
+			@helper.inputText(${model.name}FormData("${model.primaryKey}"), 'readonly -> "readonly")
 
 			<#list model.fields as field>
-				<!-- ${field.name?cap_first} -->
-				@helper.inputText(${model.name}FormData("${field.name}"))
+			<!-- ${field.name?cap_first} -->
+			@helper.inputText(${model.name}FormData("${field.name}"))
 			</#list>
 
 			<div class="form-group">
