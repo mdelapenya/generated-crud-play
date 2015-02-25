@@ -69,7 +69,11 @@ public class ${model.name?cap_first}Application extends Controller {
 				${model.name} = ${model.name?cap_first}.find.byId(${model.name}Id);
 
 				<#list model.fields as field>
+				<#if field.type == "long">
+				${model.name}.set${field.name?cap_first}(Long.valueOf(${model.name}FormData.${field.name}));
+				<#else>
 				${model.name}.set${field.name?cap_first}(${model.name}FormData.${field.name});
+				</#if>
 				</#list>
 			}
 			else {
