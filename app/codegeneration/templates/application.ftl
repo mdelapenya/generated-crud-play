@@ -90,8 +90,13 @@ public class ${model.name?cap_first}Application extends Controller {
 			if (${model.name}Id > 0) {
 				${model.name} = ${model.name?cap_first}.find.byId(${model.name}Id);
 
-				${model.name}.setId(Long.valueOf(${model.name}FormData.${model.primaryKey}));
-				${model.name}.setF2(${model.name}FormData.f2);
+			<#list model.fields as field>
+				<#if field.type == "long">
+				${model.name}.set${field.name?cap_first}(Long.valueOf(${model.name}FormData.${field.name}));
+				<#else>
+				${model.name}.set${field.name?cap_first}(${model.name}FormData.${field.name});
+				</#if>
+			</#list>
 			}
 			else {
 				${model.name} = new ${model.name?cap_first}(${model.name}FormData);
