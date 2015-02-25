@@ -14,7 +14,9 @@
 			<div>
 				<div>ID: <a href="@routes.${model.name?cap_first}Application.get(${model.name}.${model.primaryKey})">@${model.name}.${model.primaryKey}</a></div>
 				<#list model.fields as field>
-					<div>${field.name?cap_first}: @${model.name}.${field.name}</div>
+					<#if model.primaryKey != field.name>
+				<div>${field.name?cap_first}: @${model.name}.${field.name}</div>
+					</#if>
 				</#list>
 			</div>
 		</li>
