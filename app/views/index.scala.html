@@ -2,9 +2,12 @@
 
 @main(message) {
 
+	<h1>@message</h1>
+	<div>
+		<p>Please upload an SQL file to generate its models</p>
 	@helper.form(action = routes.Application.uploadSQL, 'enctype -> "multipart/form-data") {
 		@if(error != null) {
-			<h1>@error</h1>
+			<h2>@error</h2>
 		}
 
 		<input type="file" name="sqlFile" />
@@ -12,5 +15,5 @@
 			<input type="submit" value="Upload" />
 		</p>
 	}
-
+	</div>
 }
