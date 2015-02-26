@@ -63,6 +63,12 @@ public class SQLParser {
 
 					String fieldType = fieldTokens[1];
 
+					// verify if the field type is the last token
+
+					String[] fieldTypeTokens = fieldType.split("\\s,?");
+
+					fieldType = fieldTypeTokens[0];
+
 					field.type = _convertType(fieldType);
 
 					// is varchar with custom length??
