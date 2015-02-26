@@ -16,9 +16,9 @@ public class MatcherWrapper {
 	 * @param matcher
 	 */
 	public MatcherWrapper(Matcher matcher) {
-		_matches = matcher.matches();
+		_matcher = matcher;
 
-		if (_matches) {
+		if (matches()) {
 			_groups = new String[matcher.groupCount() + 1];
 
 			for (int i = 0; i < _groups.length; i++) {
@@ -42,6 +42,15 @@ public class MatcherWrapper {
 	}
 
 	/**
+	 * Returns if the matcher finds after the regexp is processed
+	 *
+	 * @return if the matcher finds after the regexp is processed
+	 */
+	public boolean finds() {
+		return _matcher.find();
+	}
+
+	/**
 	 * Returns the groups of the matcher
 	 *
 	 * @return the groups of the matcher
@@ -51,12 +60,21 @@ public class MatcherWrapper {
 	}
 
 	/**
+	 * Returns the matcher of the regexp
+	 *
+	 * @return the matcher of the regexp
+	 */
+	public Matcher getMatcher() {
+		return _matcher;
+	}
+
+	/**
 	 * Returns if the matcher matches after the regexp is processed
 	 *
 	 * @return if the matcher matches after the regexp is processed
 	 */
 	public boolean matches() {
-		return _matches;
+		return _matcher.matches();
 	}
 
 	/**
@@ -66,8 +84,8 @@ public class MatcherWrapper {
 	private String[] _groups;
 
 	/**
-	 * The result of a matching pattern of a regexp.
+	 * The matcher of a regexp.
 	 */
-	private boolean _matches;
+	private Matcher _matcher;
 
 }

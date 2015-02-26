@@ -2,9 +2,15 @@ package app.util;
 
 import static org.fest.assertions.Assertions.assertThat;
 
+import codegeneration.db.Model;
+import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
 import util.SQLParser;
+
+import java.io.File;
+import java.net.URL;
+import java.util.List;
 
 /**
  * @author Manuel de la Peña
@@ -69,6 +75,25 @@ public class SQLParserTest {
 		boolean matches = SQLParser.hasCreateTable("CREATE     TABLE FOO");
 
 		assertThat(matches).isTrue();
+	}
+
+	@Test
+	public void testParse() throws Exception {
+		URL url = getClass().getResource("/tables-hypersonic.sql");
+
+		File tables = new File(url.getPath());
+
+		List<String> tablesSql = FileUtils.readLines(tables);
+
+		List<Model> models = SQLParser.parse(tablesSql);
+
+		assertThat(models.size()).isEqualTo(146);
+
+		Model model1 = models.get(0);
+
+		assertThat(model1.name).isEqualTo("account");
+		assertThat(model1.primaryKey).isEqualTo("accountId");
+		assertThat(model1.fields).hasSize(17);
 	}
 
 }
