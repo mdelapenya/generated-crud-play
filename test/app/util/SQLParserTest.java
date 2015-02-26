@@ -2,6 +2,7 @@ package app.util;
 
 import static org.fest.assertions.Assertions.assertThat;
 
+import codegeneration.db.Field;
 import codegeneration.db.Model;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
@@ -94,6 +95,15 @@ public class SQLParserTest {
 		assertThat(model1.name).isEqualTo("account");
 		assertThat(model1.primaryKey).isEqualTo("accountId");
 		assertThat(model1.fields).hasSize(17);
+
+		Field field3 = model1.fields.get(2);
+		assertThat(field3.name).isEqualTo("companyId");
+		assertThat(field3.type).isEqualTo("long");
+
+		Field field5 = model1.fields.get(4);
+		assertThat(field5.name).isEqualTo("userName");
+		assertThat(field5.type).isEqualTo("String");
+		assertThat(field5.maxLength).isEqualTo(75);
 	}
 
 }

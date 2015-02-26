@@ -65,7 +65,7 @@ public class SQLParser {
 
 					// verify if the field type is the last token
 
-					String[] fieldTypeTokens = fieldType.split("\\s,?");
+					String[] fieldTypeTokens = fieldType.split(",");
 
 					fieldType = fieldTypeTokens[0];
 
