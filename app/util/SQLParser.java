@@ -12,8 +12,8 @@ import java.util.regex.Pattern;
  */
 public class SQLParser {
 
-	public static final String REGEXP_CREATE_DATABASE = "(.*)((create)\\s+(database)\\s+(\\w+))(.*)";
-	public static final String REGEXP_CREATE_TABLE = "(.*)((create)\\s+(table)\\s+(\\w+))(.*)";
+	public static final String REGEXP_CREATE_DATABASE = "(.*)(create)\\s+(database)\\s+(\\w+)(.*)";
+	public static final String REGEXP_CREATE_TABLE = "(.*)(create)\\s+(table)\\s+(\\w+)(.*)";
 
 	public static List<Model> parse(String sql) {
 		System.out.println(sql);
@@ -22,19 +22,21 @@ public class SQLParser {
 	}
 
 	public static boolean hasCreateDatabase(String line) {
-		return _regexp(REGEXP_CREATE_DATABASE, line);
+		return _regexp(REGEXP_CREATE_DATABASE, line).matches();
 	}
 
 	public static boolean hasCreateTable(String line) {
-		return _regexp(REGEXP_CREATE_TABLE, line);
+		return _regexp(REGEXP_CREATE_TABLE, line).matches();
 	}
 
-	private static boolean _regexp(String regexp, String line) {
+	private static MatcherWrapper _regexp(String regexp, String line) {
 		Pattern pattern = Pattern.compile(regexp, Pattern.CASE_INSENSITIVE);
 
 		Matcher matcher = pattern.matcher(line);
 
-		return matcher.matches();
+		MatcherWrapper wrapper = new MatcherWrapper(matcher);
+
+		return wrapper;
 	}
 
 }
