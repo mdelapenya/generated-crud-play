@@ -13,23 +13,41 @@ public class SQLParserTest {
 
 	@Test
 	public void testHasCreateDatabase1() throws Exception {
-		boolean matches = SQLParser.hasCreateDatabase("create database foo");
+		String sql = "create database foo";
+
+		boolean matches = SQLParser.hasCreateDatabase(sql);
 
 		assertThat(matches).isTrue();
+
+		String databaseName = SQLParser.getDatabaseName(sql);
+
+		assertThat(databaseName).isEqualToIgnoringCase("foo");
 	}
 
 	@Test
 	public void testHasCreateDatabase2() throws Exception {
-		boolean matches = SQLParser.hasCreateDatabase("   CREATE DATABASE FOO");
+		String sql = "    CREATE DATABASE FOO";
+
+		boolean matches = SQLParser.hasCreateDatabase(sql);
 
 		assertThat(matches).isTrue();
+
+		String databaseName = SQLParser.getDatabaseName(sql);
+
+		assertThat(databaseName).isEqualToIgnoringCase("foo");
 	}
 
 	@Test
 	public void testHasCreateDatabase3() throws Exception {
-		boolean matches = SQLParser.hasCreateDatabase("CREATE     DATABASE FOO");
+		String sql = "CREATE     DATABASE FOO";
+
+		boolean matches = SQLParser.hasCreateDatabase(sql);
 
 		assertThat(matches).isTrue();
+
+		String databaseName = SQLParser.getDatabaseName(sql);
+
+		assertThat(databaseName).isEqualToIgnoringCase("foo");
 	}
 
 	@Test

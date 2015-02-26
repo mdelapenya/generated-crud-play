@@ -29,6 +29,12 @@ public class SQLParser {
 		return _regexp(REGEXP_CREATE_TABLE, line).matches();
 	}
 
+	public static String getDatabaseName(String line) {
+		MatcherWrapper matcherWrapper = _regexp(REGEXP_CREATE_DATABASE, line);
+
+		return matcherWrapper.getGroup(4);
+	}
+
 	private static MatcherWrapper _regexp(String regexp, String line) {
 		Pattern pattern = Pattern.compile(regexp, Pattern.CASE_INSENSITIVE);
 
