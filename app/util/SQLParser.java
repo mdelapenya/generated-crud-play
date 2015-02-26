@@ -172,6 +172,12 @@ public class SQLParser {
 	}
 
 	private static String _sanitizelName(String name) {
-		return name.trim().replace("_", "");
+		String sanitized = name;
+
+		if (sanitized.equalsIgnoreCase("type_")) {
+			sanitized = sanitized.replace("type_", "customType");
+		}
+
+		return sanitized.trim().replace("_", "");
 	}
 }
