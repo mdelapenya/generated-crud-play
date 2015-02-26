@@ -15,8 +15,8 @@ public class SQLParser {
 	public static final String REGEXP_CREATE_DATABASE = ".*(create\\s+database)\\s+(\\w+).*";
 	public static final String REGEXP_CREATE_TABLE = ".*(create\\s+table)\\s+(\\w+).*";
 
-	public static List<Model> parse(String sql) {
-		System.out.println(sql);
+	public static List<Model> parse(List<String> sqls) {
+		System.out.println(sqls);
 
 		return Collections.emptyList();
 	}

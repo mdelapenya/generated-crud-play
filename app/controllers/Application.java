@@ -47,9 +47,9 @@ public class Application extends Controller {
 			if (FileValidator.hasSQLExtension(fileName)) {
 				System.out.println("Processing SQL file...");
 
-				String sql = FileUtils.readFileToString(sqlFile.getFile());
+				List<String> sqls = FileUtils.readLines(sqlFile.getFile());
 
-				List<Model> models = SQLParser.parse(sql);
+				List<Model> models = SQLParser.parse(sqls);
 
 				FreemarkerEngine freemarkerEngine = new FreemarkerEngine();
 
