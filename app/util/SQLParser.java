@@ -69,6 +69,10 @@ public class SQLParser {
 
 					fieldType = fieldTypeTokens[0];
 
+					if (fieldType.equalsIgnoreCase("blob")) {
+						break;
+					}
+
 					field.type = _convertType(fieldType);
 
 					// is varchar with custom length??
