@@ -269,7 +269,7 @@ public class FreemarkerEngine {
 
 		fields.add(f1);
 
-		model.primaryKey = f1.name;
+		model.primaryKey = f1;
 
 		Field f2 = new Field();
 
@@ -307,7 +307,7 @@ public class FreemarkerEngine {
 
 		fields.add(campo1);
 
-		model.primaryKey = campo1.name;
+		model.primaryKey = campo1;
 
 		Field campo2 = new Field();
 

@@ -77,7 +77,7 @@ public class ${model.name?cap_first}Application extends Controller {
 		else {
 			${model.name?cap_first}FormData ${model.name}FormData = formData.get();
 
-			String id = ${model.name}FormData.${model.primaryKey};
+			String id = ${model.name}FormData.${model.primaryKey.name};
 
 			long ${model.name}Id = 0;
 
@@ -113,7 +113,7 @@ public class ${model.name?cap_first}Application extends Controller {
 	public static Result delete(Form<${model.name?cap_first}FormData> formData) {
 		${model.name?cap_first}FormData ${model.name}FormData = formData.get();
 
-		String id = ${model.name}FormData.${model.primaryKey};
+		String id = ${model.name}FormData.${model.primaryKey.name};
 
 		long ${model.name}Id = 0;
 

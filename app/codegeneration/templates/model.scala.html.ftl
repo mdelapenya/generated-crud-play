@@ -5,13 +5,13 @@
 @main("Welcome to GeneratedCRUD application") {
 
 	<fieldset>
-		<legend>Edition of ${model.name?cap_first} #@${model.name}FormData("${model.primaryKey}").value</legend>
+		<legend>Edition of ${model.name?cap_first} #@${model.name}FormData("${model.primaryKey.name}").value</legend>
 
 		@form(routes.${model.name?cap_first}Application.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(${model.name}FormData("${model.primaryKey}"), 'readonly -> "readonly")
+			@helper.inputText(${model.name}FormData("${model.primaryKey.name}"), 'readonly -> "readonly")
 
 			<#list model.fields as field>
-			<#if model.primaryKey != field.name>
+			<#if model.primaryKey.name != field.name>
 			<!-- ${field.name?cap_first} -->
 			@helper.inputText(${model.name}FormData("${field.name}"))
 			</#if>

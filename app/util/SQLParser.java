@@ -96,7 +96,7 @@ public class SQLParser {
 					field.isPrimaryKey = _regexp(".*(primary\\skey).*", sql);
 
 					if (field.isPrimaryKey) {
-						model.primaryKey = field.name;
+						model.primaryKey = field;
 					}
 
 					fields.add(field);

@@ -13,9 +13,9 @@
 	@for(${model.name} <- ${model.name}s) {
 		<li>
 			<div>
-				<div>ID: <a href="@routes.${model.name?cap_first}Application.get(${model.name}.${model.primaryKey})">@${model.name}.${model.primaryKey}</a></div>
+				<div>ID: <a href="@routes.${model.name?cap_first}Application.get(${model.name}.${model.primaryKey.name})">@${model.name}.${model.primaryKey.name}</a></div>
 				<#list model.fields as field>
-					<#if model.primaryKey != field.name>
+					<#if model.primaryKey.name != field.name>
 				<div>${field.name?cap_first}: @${model.name}.${field.name}</div>
 					</#if>
 				</#list>
