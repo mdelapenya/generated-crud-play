@@ -1,3 +1,5 @@
+<#assign primaryKey = model.primaryKey>
+
 package controllers;
 
 import com.avaje.ebean.Ebean;
@@ -77,7 +79,7 @@ public class ${model.name?cap_first}Application extends Controller {
 		else {
 			${model.name?cap_first}FormData ${model.name}FormData = formData.get();
 
-			String id = ${model.name}FormData.${model.primaryKey.name};
+			String id = ${model.name}FormData.${primaryKey.name};
 
 			long ${model.name}Id = 0;
 
@@ -113,7 +115,7 @@ public class ${model.name?cap_first}Application extends Controller {
 	public static Result delete(Form<${model.name?cap_first}FormData> formData) {
 		${model.name?cap_first}FormData ${model.name}FormData = formData.get();
 
-		String id = ${model.name}FormData.${model.primaryKey.name};
+		String id = ${model.name}FormData.${primaryKey.name};
 
 		long ${model.name}Id = 0;
 

@@ -1,3 +1,5 @@
+<#assign primaryKey = model.primaryKey>
+
 package models.${model.name};
 
 import java.util.Date;
@@ -80,12 +82,12 @@ public class ${model.name?cap_first} extends Model {
 
 	public ${model.name?cap_first}FormData toFormData() {
 		<#if model.primaryKey.type == "String">
-		if (${model.primaryKey.name} == null || ${model.primaryKey.name}.equals("")) {
-			${model.primaryKey.name} = "0";
+		if (${primaryKey.name} == null || ${primaryKey.name}.equals("")) {
+			${primaryKey.name} = "0";
 		}
 		<#else>
-		if (${model.primaryKey.name} < 0) {
-			${model.primaryKey.name} = 0L;
+		if (${primaryKey.name} < 0) {
+			${primaryKey.name} = 0L;
 		}
 		</#if>
 
