@@ -85,6 +85,10 @@ public class SQLParser {
 					field.isRequired = _regexp(".*(not\\snull).*", sql);
 					field.isPrimaryKey = _regexp(".*(primary\\skey).*", sql);
 
+					if (field.isPrimaryKey) {
+						model.primaryKey = field.name;
+					}
+
 					fields.add(field);
 
 					i++;
