@@ -13,35 +13,3 @@ GET /assets/*file controllers.Assets.at(path="/public", file)
 
 # Upload SQL file
 POST /upload controllers.Application.uploadSQL
-
-##
-## Model routes
-##
-
-# Foo
-
-# View a foo
-GET /foos/:id controllers.FooApplication.get(id: Long)
-
-# Go to the create foo view
-GET /foo/add controllers.FooApplication.addFoo
-
-# Display all foos
-GET /foos controllers.FooApplication.all
-
-# Save a foo
-POST /foo/submit controllers.FooApplication.submit()
-
-# Bar
-
-# View a bar
-GET /bars/:id controllers.BarApplication.get(id: Long)
-
-# Go to the create bar view
-GET /bar/add controllers.BarApplication.addBar
-
-# Display all bars
-GET /bars controllers.BarApplication.all
-
-# Save a bar
-POST /bar/submit controllers.BarApplication.submit()
