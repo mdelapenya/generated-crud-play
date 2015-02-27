@@ -17,10 +17,9 @@
 		</div>
 		<div class="container">
 			@for(${model.name} <- ${model.name}s) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.${model.name?cap_first}Application.get(${model.name}.${primaryKey.name})">@${model.name}.${primaryKey.name}</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.${model.name?cap_first}Application.get(${model.name}.${primaryKey.name})">@${model.name}.${primaryKey.name}</a>
-					</li>
 					<#list model.fields as field>
 						<#if primaryKey.name != field.name>
 					<li class="btn btn-default disabled">
@@ -29,6 +28,7 @@
 						</#if>
 					</#list>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>
