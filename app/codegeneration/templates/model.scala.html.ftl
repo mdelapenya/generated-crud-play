@@ -14,7 +14,11 @@
 			<#list model.fields as field>
 			<#if primaryKey.name != field.name>
 			<!-- ${field.name?cap_first} -->
+				<#if field.type == "boolean">
+			@helper.checkbox(${model.name}FormData("${field.name}"))
+				<#else>
 			@helper.inputText(${model.name}FormData("${field.name}"))
+				</#if>
 			</#if>
 			</#list>
 
