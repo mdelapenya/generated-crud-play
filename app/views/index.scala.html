@@ -8,7 +8,11 @@
 			<p class="lead">Upload an SQL file to generate its models!</p>
 		@helper.form(action = routes.Application.uploadSQL, 'enctype -> "multipart/form-data") {
 			@if(error != null) {
-				<h2>@error</h2>
+				<div class="alert alert-danger" role="alert">
+					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					<span class="sr-only">Error:</span>
+					@error
+				</div>
 			}
 			<input type="file" name="sqlFile" />
 			<p><input class="btn btn-lg btn-success" role="button" type="submit" value="Upload" /></p>
