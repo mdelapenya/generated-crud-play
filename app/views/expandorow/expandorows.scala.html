@@ -2,25 +2,29 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Expandorows in the DB</h1>
-
-	<p>
-		<a href="@routes.ExpandorowApplication.addExpandorow">Create New Expandorow</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(expandorow <- expandorows) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ExpandorowApplication.get(expandorow.rowId)">@expandorow.rowId</a></div>
-				<div>CompanyId: @expandorow.companyId</div>
-				<div>ModifiedDate: @expandorow.modifiedDate</div>
-				<div>TableId: @expandorow.tableId</div>
-				<div>ClassPK: @expandorow.classPK</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Expandorow in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ExpandorowApplication.addExpandorow">Create New Expandorow</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(expandorow <- expandorows) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ExpandorowApplication.get(expandorow.rowId)">@expandorow.rowId</a></div>
+						<div>CompanyId: @expandorow.companyId</div>
+						<div>ModifiedDate: @expandorow.modifiedDate</div>
+						<div>TableId: @expandorow.tableId</div>
+						<div>ClassPK: @expandorow.classPK</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

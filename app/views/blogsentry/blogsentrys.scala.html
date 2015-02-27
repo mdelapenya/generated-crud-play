@@ -2,47 +2,51 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Blogsentrys in the DB</h1>
-
-	<p>
-		<a href="@routes.BlogsentryApplication.addBlogsentry">Create New Blogsentry</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(blogsentry <- blogsentrys) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.BlogsentryApplication.get(blogsentry.entryId)">@blogsentry.entryId</a></div>
-				<div>Uuid: @blogsentry.uuid</div>
-				<div>GroupId: @blogsentry.groupId</div>
-				<div>CompanyId: @blogsentry.companyId</div>
-				<div>UserId: @blogsentry.userId</div>
-				<div>UserName: @blogsentry.userName</div>
-				<div>CreateDate: @blogsentry.createDate</div>
-				<div>ModifiedDate: @blogsentry.modifiedDate</div>
-				<div>Title: @blogsentry.title</div>
-				<div>Subtitle: @blogsentry.subtitle</div>
-				<div>UrlTitle: @blogsentry.urlTitle</div>
-				<div>Description: @blogsentry.description</div>
-				<div>Content: @blogsentry.content</div>
-				<div>DisplayDate: @blogsentry.displayDate</div>
-				<div>AllowPingbacks: @blogsentry.allowPingbacks</div>
-				<div>AllowTrackbacks: @blogsentry.allowTrackbacks</div>
-				<div>Trackbacks: @blogsentry.trackbacks</div>
-				<div>CoverImageFileEntryId: @blogsentry.coverImageFileEntryId</div>
-				<div>CoverImageURL: @blogsentry.coverImageURL</div>
-				<div>SmallImage: @blogsentry.smallImage</div>
-				<div>SmallImageFileEntryId: @blogsentry.smallImageFileEntryId</div>
-				<div>SmallImageId: @blogsentry.smallImageId</div>
-				<div>SmallImageURL: @blogsentry.smallImageURL</div>
-				<div>Status: @blogsentry.status</div>
-				<div>StatusByUserId: @blogsentry.statusByUserId</div>
-				<div>StatusByUserName: @blogsentry.statusByUserName</div>
-				<div>StatusDate: @blogsentry.statusDate</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Blogsentry in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.BlogsentryApplication.addBlogsentry">Create New Blogsentry</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(blogsentry <- blogsentrys) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.BlogsentryApplication.get(blogsentry.entryId)">@blogsentry.entryId</a></div>
+						<div>Uuid: @blogsentry.uuid</div>
+						<div>GroupId: @blogsentry.groupId</div>
+						<div>CompanyId: @blogsentry.companyId</div>
+						<div>UserId: @blogsentry.userId</div>
+						<div>UserName: @blogsentry.userName</div>
+						<div>CreateDate: @blogsentry.createDate</div>
+						<div>ModifiedDate: @blogsentry.modifiedDate</div>
+						<div>Title: @blogsentry.title</div>
+						<div>Subtitle: @blogsentry.subtitle</div>
+						<div>UrlTitle: @blogsentry.urlTitle</div>
+						<div>Description: @blogsentry.description</div>
+						<div>Content: @blogsentry.content</div>
+						<div>DisplayDate: @blogsentry.displayDate</div>
+						<div>AllowPingbacks: @blogsentry.allowPingbacks</div>
+						<div>AllowTrackbacks: @blogsentry.allowTrackbacks</div>
+						<div>Trackbacks: @blogsentry.trackbacks</div>
+						<div>CoverImageFileEntryId: @blogsentry.coverImageFileEntryId</div>
+						<div>CoverImageURL: @blogsentry.coverImageURL</div>
+						<div>SmallImage: @blogsentry.smallImage</div>
+						<div>SmallImageFileEntryId: @blogsentry.smallImageFileEntryId</div>
+						<div>SmallImageId: @blogsentry.smallImageId</div>
+						<div>SmallImageURL: @blogsentry.smallImageURL</div>
+						<div>Status: @blogsentry.status</div>
+						<div>StatusByUserId: @blogsentry.statusByUserId</div>
+						<div>StatusByUserName: @blogsentry.statusByUserName</div>
+						<div>StatusDate: @blogsentry.statusDate</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

@@ -2,37 +2,41 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Ddmstructures in the DB</h1>
-
-	<p>
-		<a href="@routes.DdmstructureApplication.addDdmstructure">Create New Ddmstructure</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(ddmstructure <- ddmstructures) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.DdmstructureApplication.get(ddmstructure.structureId)">@ddmstructure.structureId</a></div>
-				<div>Uuid: @ddmstructure.uuid</div>
-				<div>GroupId: @ddmstructure.groupId</div>
-				<div>CompanyId: @ddmstructure.companyId</div>
-				<div>UserId: @ddmstructure.userId</div>
-				<div>UserName: @ddmstructure.userName</div>
-				<div>CreateDate: @ddmstructure.createDate</div>
-				<div>ModifiedDate: @ddmstructure.modifiedDate</div>
-				<div>ParentStructureId: @ddmstructure.parentStructureId</div>
-				<div>ClassNameId: @ddmstructure.classNameId</div>
-				<div>StructureKey: @ddmstructure.structureKey</div>
-				<div>Version: @ddmstructure.version</div>
-				<div>Name: @ddmstructure.name</div>
-				<div>Description: @ddmstructure.description</div>
-				<div>Definition: @ddmstructure.definition</div>
-				<div>StorageType: @ddmstructure.storageType</div>
-				<div>Customtype: @ddmstructure.customtype</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Ddmstructure in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.DdmstructureApplication.addDdmstructure">Create New Ddmstructure</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(ddmstructure <- ddmstructures) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.DdmstructureApplication.get(ddmstructure.structureId)">@ddmstructure.structureId</a></div>
+						<div>Uuid: @ddmstructure.uuid</div>
+						<div>GroupId: @ddmstructure.groupId</div>
+						<div>CompanyId: @ddmstructure.companyId</div>
+						<div>UserId: @ddmstructure.userId</div>
+						<div>UserName: @ddmstructure.userName</div>
+						<div>CreateDate: @ddmstructure.createDate</div>
+						<div>ModifiedDate: @ddmstructure.modifiedDate</div>
+						<div>ParentStructureId: @ddmstructure.parentStructureId</div>
+						<div>ClassNameId: @ddmstructure.classNameId</div>
+						<div>StructureKey: @ddmstructure.structureKey</div>
+						<div>Version: @ddmstructure.version</div>
+						<div>Name: @ddmstructure.name</div>
+						<div>Description: @ddmstructure.description</div>
+						<div>Definition: @ddmstructure.definition</div>
+						<div>StorageType: @ddmstructure.storageType</div>
+						<div>Customtype: @ddmstructure.customtype</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

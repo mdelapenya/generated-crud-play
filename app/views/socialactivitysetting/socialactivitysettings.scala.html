@@ -2,27 +2,31 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Socialactivitysettings in the DB</h1>
-
-	<p>
-		<a href="@routes.SocialactivitysettingApplication.addSocialactivitysetting">Create New Socialactivitysetting</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(socialactivitysetting <- socialactivitysettings) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.SocialactivitysettingApplication.get(socialactivitysetting.activitySettingId)">@socialactivitysetting.activitySettingId</a></div>
-				<div>GroupId: @socialactivitysetting.groupId</div>
-				<div>CompanyId: @socialactivitysetting.companyId</div>
-				<div>ClassNameId: @socialactivitysetting.classNameId</div>
-				<div>ActivityType: @socialactivitysetting.activityType</div>
-				<div>Name: @socialactivitysetting.name</div>
-				<div>Value: @socialactivitysetting.value</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Socialactivitysetting in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.SocialactivitysettingApplication.addSocialactivitysetting">Create New Socialactivitysetting</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(socialactivitysetting <- socialactivitysettings) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.SocialactivitysettingApplication.get(socialactivitysetting.activitySettingId)">@socialactivitysetting.activitySettingId</a></div>
+						<div>GroupId: @socialactivitysetting.groupId</div>
+						<div>CompanyId: @socialactivitysetting.companyId</div>
+						<div>ClassNameId: @socialactivitysetting.classNameId</div>
+						<div>ActivityType: @socialactivitysetting.activityType</div>
+						<div>Name: @socialactivitysetting.name</div>
+						<div>Value: @socialactivitysetting.value</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

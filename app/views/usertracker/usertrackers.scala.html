@@ -2,29 +2,33 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Usertrackers in the DB</h1>
-
-	<p>
-		<a href="@routes.UsertrackerApplication.addUsertracker">Create New Usertracker</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(usertracker <- usertrackers) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.UsertrackerApplication.get(usertracker.userTrackerId)">@usertracker.userTrackerId</a></div>
-				<div>MvccVersion: @usertracker.mvccVersion</div>
-				<div>CompanyId: @usertracker.companyId</div>
-				<div>UserId: @usertracker.userId</div>
-				<div>ModifiedDate: @usertracker.modifiedDate</div>
-				<div>SessionId: @usertracker.sessionId</div>
-				<div>RemoteAddr: @usertracker.remoteAddr</div>
-				<div>RemoteHost: @usertracker.remoteHost</div>
-				<div>UserAgent: @usertracker.userAgent</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Usertracker in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.UsertrackerApplication.addUsertracker">Create New Usertracker</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(usertracker <- usertrackers) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.UsertrackerApplication.get(usertracker.userTrackerId)">@usertracker.userTrackerId</a></div>
+						<div>MvccVersion: @usertracker.mvccVersion</div>
+						<div>CompanyId: @usertracker.companyId</div>
+						<div>UserId: @usertracker.userId</div>
+						<div>ModifiedDate: @usertracker.modifiedDate</div>
+						<div>SessionId: @usertracker.sessionId</div>
+						<div>RemoteAddr: @usertracker.remoteAddr</div>
+						<div>RemoteHost: @usertracker.remoteHost</div>
+						<div>UserAgent: @usertracker.userAgent</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

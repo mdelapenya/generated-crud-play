@@ -2,35 +2,39 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Repositorys in the DB</h1>
-
-	<p>
-		<a href="@routes.RepositoryApplication.addRepository">Create New Repository</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(repository <- repositorys) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.RepositoryApplication.get(repository.repositoryId)">@repository.repositoryId</a></div>
-				<div>MvccVersion: @repository.mvccVersion</div>
-				<div>Uuid: @repository.uuid</div>
-				<div>GroupId: @repository.groupId</div>
-				<div>CompanyId: @repository.companyId</div>
-				<div>UserId: @repository.userId</div>
-				<div>UserName: @repository.userName</div>
-				<div>CreateDate: @repository.createDate</div>
-				<div>ModifiedDate: @repository.modifiedDate</div>
-				<div>ClassNameId: @repository.classNameId</div>
-				<div>Name: @repository.name</div>
-				<div>Description: @repository.description</div>
-				<div>PortletId: @repository.portletId</div>
-				<div>TypeSettings: @repository.typeSettings</div>
-				<div>DlFolderId: @repository.dlFolderId</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Repository in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.RepositoryApplication.addRepository">Create New Repository</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(repository <- repositorys) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.RepositoryApplication.get(repository.repositoryId)">@repository.repositoryId</a></div>
+						<div>MvccVersion: @repository.mvccVersion</div>
+						<div>Uuid: @repository.uuid</div>
+						<div>GroupId: @repository.groupId</div>
+						<div>CompanyId: @repository.companyId</div>
+						<div>UserId: @repository.userId</div>
+						<div>UserName: @repository.userName</div>
+						<div>CreateDate: @repository.createDate</div>
+						<div>ModifiedDate: @repository.modifiedDate</div>
+						<div>ClassNameId: @repository.classNameId</div>
+						<div>Name: @repository.name</div>
+						<div>Description: @repository.description</div>
+						<div>PortletId: @repository.portletId</div>
+						<div>TypeSettings: @repository.typeSettings</div>
+						<div>DlFolderId: @repository.dlFolderId</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

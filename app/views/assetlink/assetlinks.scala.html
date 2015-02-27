@@ -2,29 +2,33 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Assetlinks in the DB</h1>
-
-	<p>
-		<a href="@routes.AssetlinkApplication.addAssetlink">Create New Assetlink</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(assetlink <- assetlinks) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.AssetlinkApplication.get(assetlink.linkId)">@assetlink.linkId</a></div>
-				<div>CompanyId: @assetlink.companyId</div>
-				<div>UserId: @assetlink.userId</div>
-				<div>UserName: @assetlink.userName</div>
-				<div>CreateDate: @assetlink.createDate</div>
-				<div>EntryId1: @assetlink.entryId1</div>
-				<div>EntryId2: @assetlink.entryId2</div>
-				<div>Customtype: @assetlink.customtype</div>
-				<div>Weight: @assetlink.weight</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Assetlink in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.AssetlinkApplication.addAssetlink">Create New Assetlink</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(assetlink <- assetlinks) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.AssetlinkApplication.get(assetlink.linkId)">@assetlink.linkId</a></div>
+						<div>CompanyId: @assetlink.companyId</div>
+						<div>UserId: @assetlink.userId</div>
+						<div>UserName: @assetlink.userName</div>
+						<div>CreateDate: @assetlink.createDate</div>
+						<div>EntryId1: @assetlink.entryId1</div>
+						<div>EntryId2: @assetlink.entryId2</div>
+						<div>Customtype: @assetlink.customtype</div>
+						<div>Weight: @assetlink.weight</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

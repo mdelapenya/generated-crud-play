@@ -2,30 +2,34 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Releases in the DB</h1>
-
-	<p>
-		<a href="@routes.ReleaseApplication.addRelease">Create New Release</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(release <- releases) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ReleaseApplication.get(release.releaseId)">@release.releaseId</a></div>
-				<div>MvccVersion: @release.mvccVersion</div>
-				<div>CreateDate: @release.createDate</div>
-				<div>ModifiedDate: @release.modifiedDate</div>
-				<div>ServletContextName: @release.servletContextName</div>
-				<div>BuildNumber: @release.buildNumber</div>
-				<div>BuildDate: @release.buildDate</div>
-				<div>Verified: @release.verified</div>
-				<div>State: @release.state</div>
-				<div>TestString: @release.testString</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Release in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ReleaseApplication.addRelease">Create New Release</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(release <- releases) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ReleaseApplication.get(release.releaseId)">@release.releaseId</a></div>
+						<div>MvccVersion: @release.mvccVersion</div>
+						<div>CreateDate: @release.createDate</div>
+						<div>ModifiedDate: @release.modifiedDate</div>
+						<div>ServletContextName: @release.servletContextName</div>
+						<div>BuildNumber: @release.buildNumber</div>
+						<div>BuildDate: @release.buildDate</div>
+						<div>Verified: @release.verified</div>
+						<div>State: @release.state</div>
+						<div>TestString: @release.testString</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

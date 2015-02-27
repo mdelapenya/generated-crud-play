@@ -2,30 +2,34 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Shoppingitemprices in the DB</h1>
-
-	<p>
-		<a href="@routes.ShoppingitempriceApplication.addShoppingitemprice">Create New Shoppingitemprice</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(shoppingitemprice <- shoppingitemprices) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ShoppingitempriceApplication.get(shoppingitemprice.itemPriceId)">@shoppingitemprice.itemPriceId</a></div>
-				<div>ItemId: @shoppingitemprice.itemId</div>
-				<div>MinQuantity: @shoppingitemprice.minQuantity</div>
-				<div>MaxQuantity: @shoppingitemprice.maxQuantity</div>
-				<div>Price: @shoppingitemprice.price</div>
-				<div>Discount: @shoppingitemprice.discount</div>
-				<div>Taxable: @shoppingitemprice.taxable</div>
-				<div>Shipping: @shoppingitemprice.shipping</div>
-				<div>UseShippingFormula: @shoppingitemprice.useShippingFormula</div>
-				<div>Status: @shoppingitemprice.status</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Shoppingitemprice in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ShoppingitempriceApplication.addShoppingitemprice">Create New Shoppingitemprice</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(shoppingitemprice <- shoppingitemprices) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ShoppingitempriceApplication.get(shoppingitemprice.itemPriceId)">@shoppingitemprice.itemPriceId</a></div>
+						<div>ItemId: @shoppingitemprice.itemId</div>
+						<div>MinQuantity: @shoppingitemprice.minQuantity</div>
+						<div>MaxQuantity: @shoppingitemprice.maxQuantity</div>
+						<div>Price: @shoppingitemprice.price</div>
+						<div>Discount: @shoppingitemprice.discount</div>
+						<div>Taxable: @shoppingitemprice.taxable</div>
+						<div>Shipping: @shoppingitemprice.shipping</div>
+						<div>UseShippingFormula: @shoppingitemprice.useShippingFormula</div>
+						<div>Status: @shoppingitemprice.status</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

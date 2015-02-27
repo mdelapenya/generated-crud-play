@@ -2,37 +2,41 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Accounts in the DB</h1>
-
-	<p>
-		<a href="@routes.AccountApplication.addAccount">Create New Account</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(account <- accounts) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.AccountApplication.get(account.accountId)">@account.accountId</a></div>
-				<div>MvccVersion: @account.mvccVersion</div>
-				<div>CompanyId: @account.companyId</div>
-				<div>UserId: @account.userId</div>
-				<div>UserName: @account.userName</div>
-				<div>CreateDate: @account.createDate</div>
-				<div>ModifiedDate: @account.modifiedDate</div>
-				<div>ParentAccountId: @account.parentAccountId</div>
-				<div>Name: @account.name</div>
-				<div>LegalName: @account.legalName</div>
-				<div>LegalId: @account.legalId</div>
-				<div>LegalType: @account.legalType</div>
-				<div>SicCode: @account.sicCode</div>
-				<div>TickerSymbol: @account.tickerSymbol</div>
-				<div>Industry: @account.industry</div>
-				<div>Customtype: @account.customtype</div>
-				<div>Size: @account.size</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Account in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.AccountApplication.addAccount">Create New Account</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(account <- accounts) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.AccountApplication.get(account.accountId)">@account.accountId</a></div>
+						<div>MvccVersion: @account.mvccVersion</div>
+						<div>CompanyId: @account.companyId</div>
+						<div>UserId: @account.userId</div>
+						<div>UserName: @account.userName</div>
+						<div>CreateDate: @account.createDate</div>
+						<div>ModifiedDate: @account.modifiedDate</div>
+						<div>ParentAccountId: @account.parentAccountId</div>
+						<div>Name: @account.name</div>
+						<div>LegalName: @account.legalName</div>
+						<div>LegalId: @account.legalId</div>
+						<div>LegalType: @account.legalType</div>
+						<div>SicCode: @account.sicCode</div>
+						<div>TickerSymbol: @account.tickerSymbol</div>
+						<div>Industry: @account.industry</div>
+						<div>Customtype: @account.customtype</div>
+						<div>Size: @account.size</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

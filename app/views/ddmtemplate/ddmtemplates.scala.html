@@ -2,43 +2,47 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Ddmtemplates in the DB</h1>
-
-	<p>
-		<a href="@routes.DdmtemplateApplication.addDdmtemplate">Create New Ddmtemplate</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(ddmtemplate <- ddmtemplates) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.DdmtemplateApplication.get(ddmtemplate.templateId)">@ddmtemplate.templateId</a></div>
-				<div>Uuid: @ddmtemplate.uuid</div>
-				<div>GroupId: @ddmtemplate.groupId</div>
-				<div>CompanyId: @ddmtemplate.companyId</div>
-				<div>UserId: @ddmtemplate.userId</div>
-				<div>UserName: @ddmtemplate.userName</div>
-				<div>CreateDate: @ddmtemplate.createDate</div>
-				<div>ModifiedDate: @ddmtemplate.modifiedDate</div>
-				<div>ClassNameId: @ddmtemplate.classNameId</div>
-				<div>ClassPK: @ddmtemplate.classPK</div>
-				<div>SourceClassNameId: @ddmtemplate.sourceClassNameId</div>
-				<div>TemplateKey: @ddmtemplate.templateKey</div>
-				<div>Version: @ddmtemplate.version</div>
-				<div>Name: @ddmtemplate.name</div>
-				<div>Description: @ddmtemplate.description</div>
-				<div>Customtype: @ddmtemplate.customtype</div>
-				<div>Mode: @ddmtemplate.mode</div>
-				<div>Language: @ddmtemplate.language</div>
-				<div>Script: @ddmtemplate.script</div>
-				<div>Cacheable: @ddmtemplate.cacheable</div>
-				<div>SmallImage: @ddmtemplate.smallImage</div>
-				<div>SmallImageId: @ddmtemplate.smallImageId</div>
-				<div>SmallImageURL: @ddmtemplate.smallImageURL</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Ddmtemplate in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.DdmtemplateApplication.addDdmtemplate">Create New Ddmtemplate</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(ddmtemplate <- ddmtemplates) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.DdmtemplateApplication.get(ddmtemplate.templateId)">@ddmtemplate.templateId</a></div>
+						<div>Uuid: @ddmtemplate.uuid</div>
+						<div>GroupId: @ddmtemplate.groupId</div>
+						<div>CompanyId: @ddmtemplate.companyId</div>
+						<div>UserId: @ddmtemplate.userId</div>
+						<div>UserName: @ddmtemplate.userName</div>
+						<div>CreateDate: @ddmtemplate.createDate</div>
+						<div>ModifiedDate: @ddmtemplate.modifiedDate</div>
+						<div>ClassNameId: @ddmtemplate.classNameId</div>
+						<div>ClassPK: @ddmtemplate.classPK</div>
+						<div>SourceClassNameId: @ddmtemplate.sourceClassNameId</div>
+						<div>TemplateKey: @ddmtemplate.templateKey</div>
+						<div>Version: @ddmtemplate.version</div>
+						<div>Name: @ddmtemplate.name</div>
+						<div>Description: @ddmtemplate.description</div>
+						<div>Customtype: @ddmtemplate.customtype</div>
+						<div>Mode: @ddmtemplate.mode</div>
+						<div>Language: @ddmtemplate.language</div>
+						<div>Script: @ddmtemplate.script</div>
+						<div>Cacheable: @ddmtemplate.cacheable</div>
+						<div>SmallImage: @ddmtemplate.smallImage</div>
+						<div>SmallImageId: @ddmtemplate.smallImageId</div>
+						<div>SmallImageURL: @ddmtemplate.smallImageURL</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

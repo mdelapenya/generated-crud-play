@@ -2,27 +2,31 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Socialrelations in the DB</h1>
-
-	<p>
-		<a href="@routes.SocialrelationApplication.addSocialrelation">Create New Socialrelation</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(socialrelation <- socialrelations) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.SocialrelationApplication.get(socialrelation.relationId)">@socialrelation.relationId</a></div>
-				<div>Uuid: @socialrelation.uuid</div>
-				<div>CompanyId: @socialrelation.companyId</div>
-				<div>CreateDate: @socialrelation.createDate</div>
-				<div>UserId1: @socialrelation.userId1</div>
-				<div>UserId2: @socialrelation.userId2</div>
-				<div>Customtype: @socialrelation.customtype</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Socialrelation in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.SocialrelationApplication.addSocialrelation">Create New Socialrelation</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(socialrelation <- socialrelations) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.SocialrelationApplication.get(socialrelation.relationId)">@socialrelation.relationId</a></div>
+						<div>Uuid: @socialrelation.uuid</div>
+						<div>CompanyId: @socialrelation.companyId</div>
+						<div>CreateDate: @socialrelation.createDate</div>
+						<div>UserId1: @socialrelation.userId1</div>
+						<div>UserId2: @socialrelation.userId2</div>
+						<div>Customtype: @socialrelation.customtype</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

@@ -2,53 +2,57 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Journalarticles in the DB</h1>
-
-	<p>
-		<a href="@routes.JournalarticleApplication.addJournalarticle">Create New Journalarticle</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(journalarticle <- journalarticles) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.JournalarticleApplication.get(journalarticle.id)">@journalarticle.id</a></div>
-				<div>Uuid: @journalarticle.uuid</div>
-				<div>ResourcePrimKey: @journalarticle.resourcePrimKey</div>
-				<div>GroupId: @journalarticle.groupId</div>
-				<div>CompanyId: @journalarticle.companyId</div>
-				<div>UserId: @journalarticle.userId</div>
-				<div>UserName: @journalarticle.userName</div>
-				<div>CreateDate: @journalarticle.createDate</div>
-				<div>ModifiedDate: @journalarticle.modifiedDate</div>
-				<div>FolderId: @journalarticle.folderId</div>
-				<div>ClassNameId: @journalarticle.classNameId</div>
-				<div>ClassPK: @journalarticle.classPK</div>
-				<div>TreePath: @journalarticle.treePath</div>
-				<div>ArticleId: @journalarticle.articleId</div>
-				<div>Version: @journalarticle.version</div>
-				<div>Title: @journalarticle.title</div>
-				<div>UrlTitle: @journalarticle.urlTitle</div>
-				<div>Description: @journalarticle.description</div>
-				<div>Content: @journalarticle.content</div>
-				<div>DDMStructureKey: @journalarticle.DDMStructureKey</div>
-				<div>DDMTemplateKey: @journalarticle.DDMTemplateKey</div>
-				<div>LayoutUuid: @journalarticle.layoutUuid</div>
-				<div>DisplayDate: @journalarticle.displayDate</div>
-				<div>ExpirationDate: @journalarticle.expirationDate</div>
-				<div>ReviewDate: @journalarticle.reviewDate</div>
-				<div>Indexable: @journalarticle.indexable</div>
-				<div>SmallImage: @journalarticle.smallImage</div>
-				<div>SmallImageId: @journalarticle.smallImageId</div>
-				<div>SmallImageURL: @journalarticle.smallImageURL</div>
-				<div>Status: @journalarticle.status</div>
-				<div>StatusByUserId: @journalarticle.statusByUserId</div>
-				<div>StatusByUserName: @journalarticle.statusByUserName</div>
-				<div>StatusDate: @journalarticle.statusDate</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Journalarticle in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.JournalarticleApplication.addJournalarticle">Create New Journalarticle</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(journalarticle <- journalarticles) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.JournalarticleApplication.get(journalarticle.id)">@journalarticle.id</a></div>
+						<div>Uuid: @journalarticle.uuid</div>
+						<div>ResourcePrimKey: @journalarticle.resourcePrimKey</div>
+						<div>GroupId: @journalarticle.groupId</div>
+						<div>CompanyId: @journalarticle.companyId</div>
+						<div>UserId: @journalarticle.userId</div>
+						<div>UserName: @journalarticle.userName</div>
+						<div>CreateDate: @journalarticle.createDate</div>
+						<div>ModifiedDate: @journalarticle.modifiedDate</div>
+						<div>FolderId: @journalarticle.folderId</div>
+						<div>ClassNameId: @journalarticle.classNameId</div>
+						<div>ClassPK: @journalarticle.classPK</div>
+						<div>TreePath: @journalarticle.treePath</div>
+						<div>ArticleId: @journalarticle.articleId</div>
+						<div>Version: @journalarticle.version</div>
+						<div>Title: @journalarticle.title</div>
+						<div>UrlTitle: @journalarticle.urlTitle</div>
+						<div>Description: @journalarticle.description</div>
+						<div>Content: @journalarticle.content</div>
+						<div>DDMStructureKey: @journalarticle.DDMStructureKey</div>
+						<div>DDMTemplateKey: @journalarticle.DDMTemplateKey</div>
+						<div>LayoutUuid: @journalarticle.layoutUuid</div>
+						<div>DisplayDate: @journalarticle.displayDate</div>
+						<div>ExpirationDate: @journalarticle.expirationDate</div>
+						<div>ReviewDate: @journalarticle.reviewDate</div>
+						<div>Indexable: @journalarticle.indexable</div>
+						<div>SmallImage: @journalarticle.smallImage</div>
+						<div>SmallImageId: @journalarticle.smallImageId</div>
+						<div>SmallImageURL: @journalarticle.smallImageURL</div>
+						<div>Status: @journalarticle.status</div>
+						<div>StatusByUserId: @journalarticle.statusByUserId</div>
+						<div>StatusByUserName: @journalarticle.statusByUserName</div>
+						<div>StatusDate: @journalarticle.statusDate</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

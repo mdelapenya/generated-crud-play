@@ -2,39 +2,43 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Mbcategorys in the DB</h1>
-
-	<p>
-		<a href="@routes.MbcategoryApplication.addMbcategory">Create New Mbcategory</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(mbcategory <- mbcategorys) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.MbcategoryApplication.get(mbcategory.categoryId)">@mbcategory.categoryId</a></div>
-				<div>Uuid: @mbcategory.uuid</div>
-				<div>GroupId: @mbcategory.groupId</div>
-				<div>CompanyId: @mbcategory.companyId</div>
-				<div>UserId: @mbcategory.userId</div>
-				<div>UserName: @mbcategory.userName</div>
-				<div>CreateDate: @mbcategory.createDate</div>
-				<div>ModifiedDate: @mbcategory.modifiedDate</div>
-				<div>ParentCategoryId: @mbcategory.parentCategoryId</div>
-				<div>Name: @mbcategory.name</div>
-				<div>Description: @mbcategory.description</div>
-				<div>DisplayStyle: @mbcategory.displayStyle</div>
-				<div>ThreadCount: @mbcategory.threadCount</div>
-				<div>MessageCount: @mbcategory.messageCount</div>
-				<div>LastPostDate: @mbcategory.lastPostDate</div>
-				<div>Status: @mbcategory.status</div>
-				<div>StatusByUserId: @mbcategory.statusByUserId</div>
-				<div>StatusByUserName: @mbcategory.statusByUserName</div>
-				<div>StatusDate: @mbcategory.statusDate</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Mbcategory in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.MbcategoryApplication.addMbcategory">Create New Mbcategory</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(mbcategory <- mbcategorys) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.MbcategoryApplication.get(mbcategory.categoryId)">@mbcategory.categoryId</a></div>
+						<div>Uuid: @mbcategory.uuid</div>
+						<div>GroupId: @mbcategory.groupId</div>
+						<div>CompanyId: @mbcategory.companyId</div>
+						<div>UserId: @mbcategory.userId</div>
+						<div>UserName: @mbcategory.userName</div>
+						<div>CreateDate: @mbcategory.createDate</div>
+						<div>ModifiedDate: @mbcategory.modifiedDate</div>
+						<div>ParentCategoryId: @mbcategory.parentCategoryId</div>
+						<div>Name: @mbcategory.name</div>
+						<div>Description: @mbcategory.description</div>
+						<div>DisplayStyle: @mbcategory.displayStyle</div>
+						<div>ThreadCount: @mbcategory.threadCount</div>
+						<div>MessageCount: @mbcategory.messageCount</div>
+						<div>LastPostDate: @mbcategory.lastPostDate</div>
+						<div>Status: @mbcategory.status</div>
+						<div>StatusByUserId: @mbcategory.statusByUserId</div>
+						<div>StatusByUserName: @mbcategory.statusByUserName</div>
+						<div>StatusDate: @mbcategory.statusDate</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

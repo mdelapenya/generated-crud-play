@@ -2,24 +2,28 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Listtypes in the DB</h1>
-
-	<p>
-		<a href="@routes.ListtypeApplication.addListtype">Create New Listtype</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(listtype <- listtypes) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ListtypeApplication.get(listtype.listTypeId)">@listtype.listTypeId</a></div>
-				<div>MvccVersion: @listtype.mvccVersion</div>
-				<div>Name: @listtype.name</div>
-				<div>Customtype: @listtype.customtype</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Listtype in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ListtypeApplication.addListtype">Create New Listtype</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(listtype <- listtypes) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ListtypeApplication.get(listtype.listTypeId)">@listtype.listTypeId</a></div>
+						<div>MvccVersion: @listtype.mvccVersion</div>
+						<div>Name: @listtype.name</div>
+						<div>Customtype: @listtype.customtype</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

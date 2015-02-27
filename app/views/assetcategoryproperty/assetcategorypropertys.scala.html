@@ -2,29 +2,33 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Assetcategorypropertys in the DB</h1>
-
-	<p>
-		<a href="@routes.AssetcategorypropertyApplication.addAssetcategoryproperty">Create New Assetcategoryproperty</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(assetcategoryproperty <- assetcategorypropertys) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.AssetcategorypropertyApplication.get(assetcategoryproperty.categoryPropertyId)">@assetcategoryproperty.categoryPropertyId</a></div>
-				<div>CompanyId: @assetcategoryproperty.companyId</div>
-				<div>UserId: @assetcategoryproperty.userId</div>
-				<div>UserName: @assetcategoryproperty.userName</div>
-				<div>CreateDate: @assetcategoryproperty.createDate</div>
-				<div>ModifiedDate: @assetcategoryproperty.modifiedDate</div>
-				<div>CategoryId: @assetcategoryproperty.categoryId</div>
-				<div>Key: @assetcategoryproperty.key</div>
-				<div>Value: @assetcategoryproperty.value</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Assetcategoryproperty in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.AssetcategorypropertyApplication.addAssetcategoryproperty">Create New Assetcategoryproperty</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(assetcategoryproperty <- assetcategorypropertys) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.AssetcategorypropertyApplication.get(assetcategoryproperty.categoryPropertyId)">@assetcategoryproperty.categoryPropertyId</a></div>
+						<div>CompanyId: @assetcategoryproperty.companyId</div>
+						<div>UserId: @assetcategoryproperty.userId</div>
+						<div>UserName: @assetcategoryproperty.userName</div>
+						<div>CreateDate: @assetcategoryproperty.createDate</div>
+						<div>ModifiedDate: @assetcategoryproperty.modifiedDate</div>
+						<div>CategoryId: @assetcategoryproperty.categoryId</div>
+						<div>Key: @assetcategoryproperty.key</div>
+						<div>Value: @assetcategoryproperty.value</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

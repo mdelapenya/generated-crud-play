@@ -2,41 +2,45 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Mbthreads in the DB</h1>
-
-	<p>
-		<a href="@routes.MbthreadApplication.addMbthread">Create New Mbthread</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(mbthread <- mbthreads) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.MbthreadApplication.get(mbthread.threadId)">@mbthread.threadId</a></div>
-				<div>Uuid: @mbthread.uuid</div>
-				<div>GroupId: @mbthread.groupId</div>
-				<div>CompanyId: @mbthread.companyId</div>
-				<div>UserId: @mbthread.userId</div>
-				<div>UserName: @mbthread.userName</div>
-				<div>CreateDate: @mbthread.createDate</div>
-				<div>ModifiedDate: @mbthread.modifiedDate</div>
-				<div>CategoryId: @mbthread.categoryId</div>
-				<div>RootMessageId: @mbthread.rootMessageId</div>
-				<div>RootMessageUserId: @mbthread.rootMessageUserId</div>
-				<div>MessageCount: @mbthread.messageCount</div>
-				<div>ViewCount: @mbthread.viewCount</div>
-				<div>LastPostByUserId: @mbthread.lastPostByUserId</div>
-				<div>LastPostDate: @mbthread.lastPostDate</div>
-				<div>Priority: @mbthread.priority</div>
-				<div>Question: @mbthread.question</div>
-				<div>Status: @mbthread.status</div>
-				<div>StatusByUserId: @mbthread.statusByUserId</div>
-				<div>StatusByUserName: @mbthread.statusByUserName</div>
-				<div>StatusDate: @mbthread.statusDate</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Mbthread in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.MbthreadApplication.addMbthread">Create New Mbthread</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(mbthread <- mbthreads) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.MbthreadApplication.get(mbthread.threadId)">@mbthread.threadId</a></div>
+						<div>Uuid: @mbthread.uuid</div>
+						<div>GroupId: @mbthread.groupId</div>
+						<div>CompanyId: @mbthread.companyId</div>
+						<div>UserId: @mbthread.userId</div>
+						<div>UserName: @mbthread.userName</div>
+						<div>CreateDate: @mbthread.createDate</div>
+						<div>ModifiedDate: @mbthread.modifiedDate</div>
+						<div>CategoryId: @mbthread.categoryId</div>
+						<div>RootMessageId: @mbthread.rootMessageId</div>
+						<div>RootMessageUserId: @mbthread.rootMessageUserId</div>
+						<div>MessageCount: @mbthread.messageCount</div>
+						<div>ViewCount: @mbthread.viewCount</div>
+						<div>LastPostByUserId: @mbthread.lastPostByUserId</div>
+						<div>LastPostDate: @mbthread.lastPostDate</div>
+						<div>Priority: @mbthread.priority</div>
+						<div>Question: @mbthread.question</div>
+						<div>Status: @mbthread.status</div>
+						<div>StatusByUserId: @mbthread.statusByUserId</div>
+						<div>StatusByUserName: @mbthread.statusByUserName</div>
+						<div>StatusDate: @mbthread.statusDate</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

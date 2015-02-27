@@ -2,34 +2,38 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Socialactivitys in the DB</h1>
-
-	<p>
-		<a href="@routes.SocialactivityApplication.addSocialactivity">Create New Socialactivity</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(socialactivity <- socialactivitys) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.SocialactivityApplication.get(socialactivity.activityId)">@socialactivity.activityId</a></div>
-				<div>GroupId: @socialactivity.groupId</div>
-				<div>CompanyId: @socialactivity.companyId</div>
-				<div>UserId: @socialactivity.userId</div>
-				<div>CreateDate: @socialactivity.createDate</div>
-				<div>ActivitySetId: @socialactivity.activitySetId</div>
-				<div>MirrorActivityId: @socialactivity.mirrorActivityId</div>
-				<div>ClassNameId: @socialactivity.classNameId</div>
-				<div>ClassPK: @socialactivity.classPK</div>
-				<div>ParentClassNameId: @socialactivity.parentClassNameId</div>
-				<div>ParentClassPK: @socialactivity.parentClassPK</div>
-				<div>Customtype: @socialactivity.customtype</div>
-				<div>ExtraData: @socialactivity.extraData</div>
-				<div>ReceiverUserId: @socialactivity.receiverUserId</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Socialactivity in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.SocialactivityApplication.addSocialactivity">Create New Socialactivity</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(socialactivity <- socialactivitys) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.SocialactivityApplication.get(socialactivity.activityId)">@socialactivity.activityId</a></div>
+						<div>GroupId: @socialactivity.groupId</div>
+						<div>CompanyId: @socialactivity.companyId</div>
+						<div>UserId: @socialactivity.userId</div>
+						<div>CreateDate: @socialactivity.createDate</div>
+						<div>ActivitySetId: @socialactivity.activitySetId</div>
+						<div>MirrorActivityId: @socialactivity.mirrorActivityId</div>
+						<div>ClassNameId: @socialactivity.classNameId</div>
+						<div>ClassPK: @socialactivity.classPK</div>
+						<div>ParentClassNameId: @socialactivity.parentClassNameId</div>
+						<div>ParentClassPK: @socialactivity.parentClassPK</div>
+						<div>Customtype: @socialactivity.customtype</div>
+						<div>ExtraData: @socialactivity.extraData</div>
+						<div>ReceiverUserId: @socialactivity.receiverUserId</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

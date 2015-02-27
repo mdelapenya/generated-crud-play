@@ -2,30 +2,34 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Ddmstructurelayouts in the DB</h1>
-
-	<p>
-		<a href="@routes.DdmstructurelayoutApplication.addDdmstructurelayout">Create New Ddmstructurelayout</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(ddmstructurelayout <- ddmstructurelayouts) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.DdmstructurelayoutApplication.get(ddmstructurelayout.structureLayoutId)">@ddmstructurelayout.structureLayoutId</a></div>
-				<div>Uuid: @ddmstructurelayout.uuid</div>
-				<div>GroupId: @ddmstructurelayout.groupId</div>
-				<div>CompanyId: @ddmstructurelayout.companyId</div>
-				<div>UserId: @ddmstructurelayout.userId</div>
-				<div>UserName: @ddmstructurelayout.userName</div>
-				<div>CreateDate: @ddmstructurelayout.createDate</div>
-				<div>ModifiedDate: @ddmstructurelayout.modifiedDate</div>
-				<div>StructureVersionId: @ddmstructurelayout.structureVersionId</div>
-				<div>Definition: @ddmstructurelayout.definition</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Ddmstructurelayout in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.DdmstructurelayoutApplication.addDdmstructurelayout">Create New Ddmstructurelayout</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(ddmstructurelayout <- ddmstructurelayouts) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.DdmstructurelayoutApplication.get(ddmstructurelayout.structureLayoutId)">@ddmstructurelayout.structureLayoutId</a></div>
+						<div>Uuid: @ddmstructurelayout.uuid</div>
+						<div>GroupId: @ddmstructurelayout.groupId</div>
+						<div>CompanyId: @ddmstructurelayout.companyId</div>
+						<div>UserId: @ddmstructurelayout.userId</div>
+						<div>UserName: @ddmstructurelayout.userName</div>
+						<div>CreateDate: @ddmstructurelayout.createDate</div>
+						<div>ModifiedDate: @ddmstructurelayout.modifiedDate</div>
+						<div>StructureVersionId: @ddmstructurelayout.structureVersionId</div>
+						<div>Definition: @ddmstructurelayout.definition</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

@@ -2,36 +2,40 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Backgroundtasks in the DB</h1>
-
-	<p>
-		<a href="@routes.BackgroundtaskApplication.addBackgroundtask">Create New Backgroundtask</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(backgroundtask <- backgroundtasks) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.BackgroundtaskApplication.get(backgroundtask.backgroundTaskId)">@backgroundtask.backgroundTaskId</a></div>
-				<div>MvccVersion: @backgroundtask.mvccVersion</div>
-				<div>GroupId: @backgroundtask.groupId</div>
-				<div>CompanyId: @backgroundtask.companyId</div>
-				<div>UserId: @backgroundtask.userId</div>
-				<div>UserName: @backgroundtask.userName</div>
-				<div>CreateDate: @backgroundtask.createDate</div>
-				<div>ModifiedDate: @backgroundtask.modifiedDate</div>
-				<div>Name: @backgroundtask.name</div>
-				<div>ServletContextNames: @backgroundtask.servletContextNames</div>
-				<div>TaskExecutorClassName: @backgroundtask.taskExecutorClassName</div>
-				<div>TaskContextMap: @backgroundtask.taskContextMap</div>
-				<div>Completed: @backgroundtask.completed</div>
-				<div>CompletionDate: @backgroundtask.completionDate</div>
-				<div>Status: @backgroundtask.status</div>
-				<div>StatusMessage: @backgroundtask.statusMessage</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Backgroundtask in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.BackgroundtaskApplication.addBackgroundtask">Create New Backgroundtask</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(backgroundtask <- backgroundtasks) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.BackgroundtaskApplication.get(backgroundtask.backgroundTaskId)">@backgroundtask.backgroundTaskId</a></div>
+						<div>MvccVersion: @backgroundtask.mvccVersion</div>
+						<div>GroupId: @backgroundtask.groupId</div>
+						<div>CompanyId: @backgroundtask.companyId</div>
+						<div>UserId: @backgroundtask.userId</div>
+						<div>UserName: @backgroundtask.userName</div>
+						<div>CreateDate: @backgroundtask.createDate</div>
+						<div>ModifiedDate: @backgroundtask.modifiedDate</div>
+						<div>Name: @backgroundtask.name</div>
+						<div>ServletContextNames: @backgroundtask.servletContextNames</div>
+						<div>TaskExecutorClassName: @backgroundtask.taskExecutorClassName</div>
+						<div>TaskContextMap: @backgroundtask.taskContextMap</div>
+						<div>Completed: @backgroundtask.completed</div>
+						<div>CompletionDate: @backgroundtask.completionDate</div>
+						<div>Status: @backgroundtask.status</div>
+						<div>StatusMessage: @backgroundtask.statusMessage</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

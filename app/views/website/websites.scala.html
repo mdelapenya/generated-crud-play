@@ -2,33 +2,37 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Websites in the DB</h1>
-
-	<p>
-		<a href="@routes.WebsiteApplication.addWebsite">Create New Website</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(website <- websites) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.WebsiteApplication.get(website.websiteId)">@website.websiteId</a></div>
-				<div>MvccVersion: @website.mvccVersion</div>
-				<div>Uuid: @website.uuid</div>
-				<div>CompanyId: @website.companyId</div>
-				<div>UserId: @website.userId</div>
-				<div>UserName: @website.userName</div>
-				<div>CreateDate: @website.createDate</div>
-				<div>ModifiedDate: @website.modifiedDate</div>
-				<div>ClassNameId: @website.classNameId</div>
-				<div>ClassPK: @website.classPK</div>
-				<div>Url: @website.url</div>
-				<div>TypeId: @website.typeId</div>
-				<div>Customprimary: @website.customprimary</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Website in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.WebsiteApplication.addWebsite">Create New Website</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(website <- websites) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.WebsiteApplication.get(website.websiteId)">@website.websiteId</a></div>
+						<div>MvccVersion: @website.mvccVersion</div>
+						<div>Uuid: @website.uuid</div>
+						<div>CompanyId: @website.companyId</div>
+						<div>UserId: @website.userId</div>
+						<div>UserName: @website.userName</div>
+						<div>CreateDate: @website.createDate</div>
+						<div>ModifiedDate: @website.modifiedDate</div>
+						<div>ClassNameId: @website.classNameId</div>
+						<div>ClassPK: @website.classPK</div>
+						<div>Url: @website.url</div>
+						<div>TypeId: @website.typeId</div>
+						<div>Customprimary: @website.customprimary</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

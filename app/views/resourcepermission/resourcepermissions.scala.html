@@ -2,29 +2,33 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Resourcepermissions in the DB</h1>
-
-	<p>
-		<a href="@routes.ResourcepermissionApplication.addResourcepermission">Create New Resourcepermission</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(resourcepermission <- resourcepermissions) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ResourcepermissionApplication.get(resourcepermission.resourcePermissionId)">@resourcepermission.resourcePermissionId</a></div>
-				<div>MvccVersion: @resourcepermission.mvccVersion</div>
-				<div>CompanyId: @resourcepermission.companyId</div>
-				<div>Name: @resourcepermission.name</div>
-				<div>Scope: @resourcepermission.scope</div>
-				<div>PrimKey: @resourcepermission.primKey</div>
-				<div>RoleId: @resourcepermission.roleId</div>
-				<div>OwnerId: @resourcepermission.ownerId</div>
-				<div>ActionIds: @resourcepermission.actionIds</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Resourcepermission in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ResourcepermissionApplication.addResourcepermission">Create New Resourcepermission</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(resourcepermission <- resourcepermissions) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ResourcepermissionApplication.get(resourcepermission.resourcePermissionId)">@resourcepermission.resourcePermissionId</a></div>
+						<div>MvccVersion: @resourcepermission.mvccVersion</div>
+						<div>CompanyId: @resourcepermission.companyId</div>
+						<div>Name: @resourcepermission.name</div>
+						<div>Scope: @resourcepermission.scope</div>
+						<div>PrimKey: @resourcepermission.primKey</div>
+						<div>RoleId: @resourcepermission.roleId</div>
+						<div>OwnerId: @resourcepermission.ownerId</div>
+						<div>ActionIds: @resourcepermission.actionIds</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

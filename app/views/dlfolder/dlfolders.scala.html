@@ -2,42 +2,46 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Dlfolders in the DB</h1>
-
-	<p>
-		<a href="@routes.DlfolderApplication.addDlfolder">Create New Dlfolder</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(dlfolder <- dlfolders) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.DlfolderApplication.get(dlfolder.folderId)">@dlfolder.folderId</a></div>
-				<div>Uuid: @dlfolder.uuid</div>
-				<div>GroupId: @dlfolder.groupId</div>
-				<div>CompanyId: @dlfolder.companyId</div>
-				<div>UserId: @dlfolder.userId</div>
-				<div>UserName: @dlfolder.userName</div>
-				<div>CreateDate: @dlfolder.createDate</div>
-				<div>ModifiedDate: @dlfolder.modifiedDate</div>
-				<div>RepositoryId: @dlfolder.repositoryId</div>
-				<div>MountPoint: @dlfolder.mountPoint</div>
-				<div>ParentFolderId: @dlfolder.parentFolderId</div>
-				<div>TreePath: @dlfolder.treePath</div>
-				<div>Name: @dlfolder.name</div>
-				<div>Description: @dlfolder.description</div>
-				<div>LastPostDate: @dlfolder.lastPostDate</div>
-				<div>DefaultFileEntryTypeId: @dlfolder.defaultFileEntryTypeId</div>
-				<div>Hidden: @dlfolder.hidden</div>
-				<div>RestrictionType: @dlfolder.restrictionType</div>
-				<div>Status: @dlfolder.status</div>
-				<div>StatusByUserId: @dlfolder.statusByUserId</div>
-				<div>StatusByUserName: @dlfolder.statusByUserName</div>
-				<div>StatusDate: @dlfolder.statusDate</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Dlfolder in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.DlfolderApplication.addDlfolder">Create New Dlfolder</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(dlfolder <- dlfolders) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.DlfolderApplication.get(dlfolder.folderId)">@dlfolder.folderId</a></div>
+						<div>Uuid: @dlfolder.uuid</div>
+						<div>GroupId: @dlfolder.groupId</div>
+						<div>CompanyId: @dlfolder.companyId</div>
+						<div>UserId: @dlfolder.userId</div>
+						<div>UserName: @dlfolder.userName</div>
+						<div>CreateDate: @dlfolder.createDate</div>
+						<div>ModifiedDate: @dlfolder.modifiedDate</div>
+						<div>RepositoryId: @dlfolder.repositoryId</div>
+						<div>MountPoint: @dlfolder.mountPoint</div>
+						<div>ParentFolderId: @dlfolder.parentFolderId</div>
+						<div>TreePath: @dlfolder.treePath</div>
+						<div>Name: @dlfolder.name</div>
+						<div>Description: @dlfolder.description</div>
+						<div>LastPostDate: @dlfolder.lastPostDate</div>
+						<div>DefaultFileEntryTypeId: @dlfolder.defaultFileEntryTypeId</div>
+						<div>Hidden: @dlfolder.hidden</div>
+						<div>RestrictionType: @dlfolder.restrictionType</div>
+						<div>Status: @dlfolder.status</div>
+						<div>StatusByUserId: @dlfolder.statusByUserId</div>
+						<div>StatusByUserName: @dlfolder.statusByUserName</div>
+						<div>StatusDate: @dlfolder.statusDate</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

@@ -2,26 +2,30 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Dlcontents in the DB</h1>
-
-	<p>
-		<a href="@routes.DlcontentApplication.addDlcontent">Create New Dlcontent</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(dlcontent <- dlcontents) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.DlcontentApplication.get(dlcontent.contentId)">@dlcontent.contentId</a></div>
-				<div>GroupId: @dlcontent.groupId</div>
-				<div>CompanyId: @dlcontent.companyId</div>
-				<div>RepositoryId: @dlcontent.repositoryId</div>
-				<div>Path: @dlcontent.path</div>
-				<div>Version: @dlcontent.version</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Dlcontent in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.DlcontentApplication.addDlcontent">Create New Dlcontent</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(dlcontent <- dlcontents) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.DlcontentApplication.get(dlcontent.contentId)">@dlcontent.contentId</a></div>
+						<div>GroupId: @dlcontent.groupId</div>
+						<div>CompanyId: @dlcontent.companyId</div>
+						<div>RepositoryId: @dlcontent.repositoryId</div>
+						<div>Path: @dlcontent.path</div>
+						<div>Version: @dlcontent.version</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

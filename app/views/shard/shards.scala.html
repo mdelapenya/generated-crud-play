@@ -2,25 +2,29 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Shards in the DB</h1>
-
-	<p>
-		<a href="@routes.ShardApplication.addShard">Create New Shard</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(shard <- shards) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ShardApplication.get(shard.shardId)">@shard.shardId</a></div>
-				<div>MvccVersion: @shard.mvccVersion</div>
-				<div>ClassNameId: @shard.classNameId</div>
-				<div>ClassPK: @shard.classPK</div>
-				<div>Name: @shard.name</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Shard in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ShardApplication.addShard">Create New Shard</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(shard <- shards) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ShardApplication.get(shard.shardId)">@shard.shardId</a></div>
+						<div>MvccVersion: @shard.mvccVersion</div>
+						<div>ClassNameId: @shard.classNameId</div>
+						<div>ClassPK: @shard.classPK</div>
+						<div>Name: @shard.name</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

@@ -2,32 +2,36 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Ddmtemplateversions in the DB</h1>
-
-	<p>
-		<a href="@routes.DdmtemplateversionApplication.addDdmtemplateversion">Create New Ddmtemplateversion</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(ddmtemplateversion <- ddmtemplateversions) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.DdmtemplateversionApplication.get(ddmtemplateversion.templateVersionId)">@ddmtemplateversion.templateVersionId</a></div>
-				<div>GroupId: @ddmtemplateversion.groupId</div>
-				<div>CompanyId: @ddmtemplateversion.companyId</div>
-				<div>UserId: @ddmtemplateversion.userId</div>
-				<div>UserName: @ddmtemplateversion.userName</div>
-				<div>CreateDate: @ddmtemplateversion.createDate</div>
-				<div>TemplateId: @ddmtemplateversion.templateId</div>
-				<div>Version: @ddmtemplateversion.version</div>
-				<div>Name: @ddmtemplateversion.name</div>
-				<div>Description: @ddmtemplateversion.description</div>
-				<div>Language: @ddmtemplateversion.language</div>
-				<div>Script: @ddmtemplateversion.script</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Ddmtemplateversion in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.DdmtemplateversionApplication.addDdmtemplateversion">Create New Ddmtemplateversion</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(ddmtemplateversion <- ddmtemplateversions) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.DdmtemplateversionApplication.get(ddmtemplateversion.templateVersionId)">@ddmtemplateversion.templateVersionId</a></div>
+						<div>GroupId: @ddmtemplateversion.groupId</div>
+						<div>CompanyId: @ddmtemplateversion.companyId</div>
+						<div>UserId: @ddmtemplateversion.userId</div>
+						<div>UserName: @ddmtemplateversion.userName</div>
+						<div>CreateDate: @ddmtemplateversion.createDate</div>
+						<div>TemplateId: @ddmtemplateversion.templateId</div>
+						<div>Version: @ddmtemplateversion.version</div>
+						<div>Name: @ddmtemplateversion.name</div>
+						<div>Description: @ddmtemplateversion.description</div>
+						<div>Language: @ddmtemplateversion.language</div>
+						<div>Script: @ddmtemplateversion.script</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

@@ -2,35 +2,39 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Assetcategorys in the DB</h1>
-
-	<p>
-		<a href="@routes.AssetcategoryApplication.addAssetcategory">Create New Assetcategory</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(assetcategory <- assetcategorys) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.AssetcategoryApplication.get(assetcategory.categoryId)">@assetcategory.categoryId</a></div>
-				<div>Uuid: @assetcategory.uuid</div>
-				<div>GroupId: @assetcategory.groupId</div>
-				<div>CompanyId: @assetcategory.companyId</div>
-				<div>UserId: @assetcategory.userId</div>
-				<div>UserName: @assetcategory.userName</div>
-				<div>CreateDate: @assetcategory.createDate</div>
-				<div>ModifiedDate: @assetcategory.modifiedDate</div>
-				<div>ParentCategoryId: @assetcategory.parentCategoryId</div>
-				<div>LeftCategoryId: @assetcategory.leftCategoryId</div>
-				<div>RightCategoryId: @assetcategory.rightCategoryId</div>
-				<div>Name: @assetcategory.name</div>
-				<div>Title: @assetcategory.title</div>
-				<div>Description: @assetcategory.description</div>
-				<div>VocabularyId: @assetcategory.vocabularyId</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Assetcategory in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.AssetcategoryApplication.addAssetcategory">Create New Assetcategory</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(assetcategory <- assetcategorys) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.AssetcategoryApplication.get(assetcategory.categoryId)">@assetcategory.categoryId</a></div>
+						<div>Uuid: @assetcategory.uuid</div>
+						<div>GroupId: @assetcategory.groupId</div>
+						<div>CompanyId: @assetcategory.companyId</div>
+						<div>UserId: @assetcategory.userId</div>
+						<div>UserName: @assetcategory.userName</div>
+						<div>CreateDate: @assetcategory.createDate</div>
+						<div>ModifiedDate: @assetcategory.modifiedDate</div>
+						<div>ParentCategoryId: @assetcategory.parentCategoryId</div>
+						<div>LeftCategoryId: @assetcategory.leftCategoryId</div>
+						<div>RightCategoryId: @assetcategory.rightCategoryId</div>
+						<div>Name: @assetcategory.name</div>
+						<div>Title: @assetcategory.title</div>
+						<div>Description: @assetcategory.description</div>
+						<div>VocabularyId: @assetcategory.vocabularyId</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

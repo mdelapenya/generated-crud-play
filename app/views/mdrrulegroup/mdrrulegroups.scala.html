@@ -2,30 +2,34 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Mdrrulegroups in the DB</h1>
-
-	<p>
-		<a href="@routes.MdrrulegroupApplication.addMdrrulegroup">Create New Mdrrulegroup</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(mdrrulegroup <- mdrrulegroups) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.MdrrulegroupApplication.get(mdrrulegroup.ruleGroupId)">@mdrrulegroup.ruleGroupId</a></div>
-				<div>Uuid: @mdrrulegroup.uuid</div>
-				<div>GroupId: @mdrrulegroup.groupId</div>
-				<div>CompanyId: @mdrrulegroup.companyId</div>
-				<div>UserId: @mdrrulegroup.userId</div>
-				<div>UserName: @mdrrulegroup.userName</div>
-				<div>CreateDate: @mdrrulegroup.createDate</div>
-				<div>ModifiedDate: @mdrrulegroup.modifiedDate</div>
-				<div>Name: @mdrrulegroup.name</div>
-				<div>Description: @mdrrulegroup.description</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Mdrrulegroup in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.MdrrulegroupApplication.addMdrrulegroup">Create New Mdrrulegroup</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(mdrrulegroup <- mdrrulegroups) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.MdrrulegroupApplication.get(mdrrulegroup.ruleGroupId)">@mdrrulegroup.ruleGroupId</a></div>
+						<div>Uuid: @mdrrulegroup.uuid</div>
+						<div>GroupId: @mdrrulegroup.groupId</div>
+						<div>CompanyId: @mdrrulegroup.companyId</div>
+						<div>UserId: @mdrrulegroup.userId</div>
+						<div>UserName: @mdrrulegroup.userName</div>
+						<div>CreateDate: @mdrrulegroup.createDate</div>
+						<div>ModifiedDate: @mdrrulegroup.modifiedDate</div>
+						<div>Name: @mdrrulegroup.name</div>
+						<div>Description: @mdrrulegroup.description</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

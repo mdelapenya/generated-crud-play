@@ -2,29 +2,33 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Mbbans in the DB</h1>
-
-	<p>
-		<a href="@routes.MbbanApplication.addMbban">Create New Mbban</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(mbban <- mbbans) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.MbbanApplication.get(mbban.banId)">@mbban.banId</a></div>
-				<div>Uuid: @mbban.uuid</div>
-				<div>GroupId: @mbban.groupId</div>
-				<div>CompanyId: @mbban.companyId</div>
-				<div>UserId: @mbban.userId</div>
-				<div>UserName: @mbban.userName</div>
-				<div>CreateDate: @mbban.createDate</div>
-				<div>ModifiedDate: @mbban.modifiedDate</div>
-				<div>BanUserId: @mbban.banUserId</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Mbban in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.MbbanApplication.addMbban">Create New Mbban</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(mbban <- mbbans) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.MbbanApplication.get(mbban.banId)">@mbban.banId</a></div>
+						<div>Uuid: @mbban.uuid</div>
+						<div>GroupId: @mbban.groupId</div>
+						<div>CompanyId: @mbban.companyId</div>
+						<div>UserId: @mbban.userId</div>
+						<div>UserName: @mbban.userName</div>
+						<div>CreateDate: @mbban.createDate</div>
+						<div>ModifiedDate: @mbban.modifiedDate</div>
+						<div>BanUserId: @mbban.banUserId</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

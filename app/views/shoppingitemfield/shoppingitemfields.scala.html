@@ -2,25 +2,29 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Shoppingitemfields in the DB</h1>
-
-	<p>
-		<a href="@routes.ShoppingitemfieldApplication.addShoppingitemfield">Create New Shoppingitemfield</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(shoppingitemfield <- shoppingitemfields) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ShoppingitemfieldApplication.get(shoppingitemfield.itemFieldId)">@shoppingitemfield.itemFieldId</a></div>
-				<div>ItemId: @shoppingitemfield.itemId</div>
-				<div>Name: @shoppingitemfield.name</div>
-				<div>Values: @shoppingitemfield.values</div>
-				<div>Description: @shoppingitemfield.description</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Shoppingitemfield in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ShoppingitemfieldApplication.addShoppingitemfield">Create New Shoppingitemfield</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(shoppingitemfield <- shoppingitemfields) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ShoppingitemfieldApplication.get(shoppingitemfield.itemFieldId)">@shoppingitemfield.itemFieldId</a></div>
+						<div>ItemId: @shoppingitemfield.itemId</div>
+						<div>Name: @shoppingitemfield.name</div>
+						<div>Values: @shoppingitemfield.values</div>
+						<div>Description: @shoppingitemfield.description</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

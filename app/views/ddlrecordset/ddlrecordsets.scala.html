@@ -2,34 +2,38 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Ddlrecordsets in the DB</h1>
-
-	<p>
-		<a href="@routes.DdlrecordsetApplication.addDdlrecordset">Create New Ddlrecordset</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(ddlrecordset <- ddlrecordsets) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.DdlrecordsetApplication.get(ddlrecordset.recordSetId)">@ddlrecordset.recordSetId</a></div>
-				<div>Uuid: @ddlrecordset.uuid</div>
-				<div>GroupId: @ddlrecordset.groupId</div>
-				<div>CompanyId: @ddlrecordset.companyId</div>
-				<div>UserId: @ddlrecordset.userId</div>
-				<div>UserName: @ddlrecordset.userName</div>
-				<div>CreateDate: @ddlrecordset.createDate</div>
-				<div>ModifiedDate: @ddlrecordset.modifiedDate</div>
-				<div>DDMStructureId: @ddlrecordset.DDMStructureId</div>
-				<div>RecordSetKey: @ddlrecordset.recordSetKey</div>
-				<div>Name: @ddlrecordset.name</div>
-				<div>Description: @ddlrecordset.description</div>
-				<div>MinDisplayRows: @ddlrecordset.minDisplayRows</div>
-				<div>Scope: @ddlrecordset.scope</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Ddlrecordset in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.DdlrecordsetApplication.addDdlrecordset">Create New Ddlrecordset</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(ddlrecordset <- ddlrecordsets) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.DdlrecordsetApplication.get(ddlrecordset.recordSetId)">@ddlrecordset.recordSetId</a></div>
+						<div>Uuid: @ddlrecordset.uuid</div>
+						<div>GroupId: @ddlrecordset.groupId</div>
+						<div>CompanyId: @ddlrecordset.companyId</div>
+						<div>UserId: @ddlrecordset.userId</div>
+						<div>UserName: @ddlrecordset.userName</div>
+						<div>CreateDate: @ddlrecordset.createDate</div>
+						<div>ModifiedDate: @ddlrecordset.modifiedDate</div>
+						<div>DDMStructureId: @ddlrecordset.DDMStructureId</div>
+						<div>RecordSetKey: @ddlrecordset.recordSetKey</div>
+						<div>Name: @ddlrecordset.name</div>
+						<div>Description: @ddlrecordset.description</div>
+						<div>MinDisplayRows: @ddlrecordset.minDisplayRows</div>
+						<div>Scope: @ddlrecordset.scope</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

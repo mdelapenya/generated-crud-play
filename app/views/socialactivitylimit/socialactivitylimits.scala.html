@@ -2,29 +2,33 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Socialactivitylimits in the DB</h1>
-
-	<p>
-		<a href="@routes.SocialactivitylimitApplication.addSocialactivitylimit">Create New Socialactivitylimit</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(socialactivitylimit <- socialactivitylimits) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.SocialactivitylimitApplication.get(socialactivitylimit.activityLimitId)">@socialactivitylimit.activityLimitId</a></div>
-				<div>GroupId: @socialactivitylimit.groupId</div>
-				<div>CompanyId: @socialactivitylimit.companyId</div>
-				<div>UserId: @socialactivitylimit.userId</div>
-				<div>ClassNameId: @socialactivitylimit.classNameId</div>
-				<div>ClassPK: @socialactivitylimit.classPK</div>
-				<div>ActivityType: @socialactivitylimit.activityType</div>
-				<div>ActivityCounterName: @socialactivitylimit.activityCounterName</div>
-				<div>Value: @socialactivitylimit.value</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Socialactivitylimit in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.SocialactivitylimitApplication.addSocialactivitylimit">Create New Socialactivitylimit</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(socialactivitylimit <- socialactivitylimits) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.SocialactivitylimitApplication.get(socialactivitylimit.activityLimitId)">@socialactivitylimit.activityLimitId</a></div>
+						<div>GroupId: @socialactivitylimit.groupId</div>
+						<div>CompanyId: @socialactivitylimit.companyId</div>
+						<div>UserId: @socialactivitylimit.userId</div>
+						<div>ClassNameId: @socialactivitylimit.classNameId</div>
+						<div>ClassPK: @socialactivitylimit.classPK</div>
+						<div>ActivityType: @socialactivitylimit.activityType</div>
+						<div>ActivityCounterName: @socialactivitylimit.activityCounterName</div>
+						<div>Value: @socialactivitylimit.value</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

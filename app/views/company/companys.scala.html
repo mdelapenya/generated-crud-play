@@ -2,31 +2,35 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Companys in the DB</h1>
-
-	<p>
-		<a href="@routes.CompanyApplication.addCompany">Create New Company</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(company <- companys) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.CompanyApplication.get(company.companyId)">@company.companyId</a></div>
-				<div>MvccVersion: @company.mvccVersion</div>
-				<div>AccountId: @company.accountId</div>
-				<div>WebId: @company.webId</div>
-				<div>Key: @company.key</div>
-				<div>Mx: @company.mx</div>
-				<div>HomeURL: @company.homeURL</div>
-				<div>LogoId: @company.logoId</div>
-				<div>System: @company.system</div>
-				<div>MaxUsers: @company.maxUsers</div>
-				<div>Active: @company.active</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Company in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.CompanyApplication.addCompany">Create New Company</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(company <- companys) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.CompanyApplication.get(company.companyId)">@company.companyId</a></div>
+						<div>MvccVersion: @company.mvccVersion</div>
+						<div>AccountId: @company.accountId</div>
+						<div>WebId: @company.webId</div>
+						<div>Key: @company.key</div>
+						<div>Mx: @company.mx</div>
+						<div>HomeURL: @company.homeURL</div>
+						<div>LogoId: @company.logoId</div>
+						<div>System: @company.system</div>
+						<div>MaxUsers: @company.maxUsers</div>
+						<div>Active: @company.active</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

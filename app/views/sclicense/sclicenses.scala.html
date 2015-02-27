@@ -2,26 +2,30 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Sclicenses in the DB</h1>
-
-	<p>
-		<a href="@routes.SclicenseApplication.addSclicense">Create New Sclicense</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(sclicense <- sclicenses) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.SclicenseApplication.get(sclicense.licenseId)">@sclicense.licenseId</a></div>
-				<div>Name: @sclicense.name</div>
-				<div>Url: @sclicense.url</div>
-				<div>OpenSource: @sclicense.openSource</div>
-				<div>Active: @sclicense.active</div>
-				<div>Recommended: @sclicense.recommended</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Sclicense in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.SclicenseApplication.addSclicense">Create New Sclicense</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(sclicense <- sclicenses) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.SclicenseApplication.get(sclicense.licenseId)">@sclicense.licenseId</a></div>
+						<div>Name: @sclicense.name</div>
+						<div>Url: @sclicense.url</div>
+						<div>OpenSource: @sclicense.openSource</div>
+						<div>Active: @sclicense.active</div>
+						<div>Recommended: @sclicense.recommended</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

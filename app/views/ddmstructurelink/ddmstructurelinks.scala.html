@@ -2,24 +2,28 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Ddmstructurelinks in the DB</h1>
-
-	<p>
-		<a href="@routes.DdmstructurelinkApplication.addDdmstructurelink">Create New Ddmstructurelink</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(ddmstructurelink <- ddmstructurelinks) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.DdmstructurelinkApplication.get(ddmstructurelink.structureLinkId)">@ddmstructurelink.structureLinkId</a></div>
-				<div>ClassNameId: @ddmstructurelink.classNameId</div>
-				<div>ClassPK: @ddmstructurelink.classPK</div>
-				<div>StructureId: @ddmstructurelink.structureId</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Ddmstructurelink in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.DdmstructurelinkApplication.addDdmstructurelink">Create New Ddmstructurelink</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(ddmstructurelink <- ddmstructurelinks) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.DdmstructurelinkApplication.get(ddmstructurelink.structureLinkId)">@ddmstructurelink.structureLinkId</a></div>
+						<div>ClassNameId: @ddmstructurelink.classNameId</div>
+						<div>ClassPK: @ddmstructurelink.classPK</div>
+						<div>StructureId: @ddmstructurelink.structureId</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

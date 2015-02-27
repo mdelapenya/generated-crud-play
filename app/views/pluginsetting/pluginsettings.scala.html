@@ -2,27 +2,31 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Pluginsettings in the DB</h1>
-
-	<p>
-		<a href="@routes.PluginsettingApplication.addPluginsetting">Create New Pluginsetting</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(pluginsetting <- pluginsettings) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.PluginsettingApplication.get(pluginsetting.pluginSettingId)">@pluginsetting.pluginSettingId</a></div>
-				<div>MvccVersion: @pluginsetting.mvccVersion</div>
-				<div>CompanyId: @pluginsetting.companyId</div>
-				<div>PluginId: @pluginsetting.pluginId</div>
-				<div>PluginType: @pluginsetting.pluginType</div>
-				<div>Roles: @pluginsetting.roles</div>
-				<div>Active: @pluginsetting.active</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Pluginsetting in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.PluginsettingApplication.addPluginsetting">Create New Pluginsetting</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(pluginsetting <- pluginsettings) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.PluginsettingApplication.get(pluginsetting.pluginSettingId)">@pluginsetting.pluginSettingId</a></div>
+						<div>MvccVersion: @pluginsetting.mvccVersion</div>
+						<div>CompanyId: @pluginsetting.companyId</div>
+						<div>PluginId: @pluginsetting.pluginId</div>
+						<div>PluginType: @pluginsetting.pluginType</div>
+						<div>Roles: @pluginsetting.roles</div>
+						<div>Active: @pluginsetting.active</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

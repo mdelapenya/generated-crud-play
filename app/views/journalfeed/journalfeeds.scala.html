@@ -2,42 +2,46 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Journalfeeds in the DB</h1>
-
-	<p>
-		<a href="@routes.JournalfeedApplication.addJournalfeed">Create New Journalfeed</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(journalfeed <- journalfeeds) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.JournalfeedApplication.get(journalfeed.id)">@journalfeed.id</a></div>
-				<div>Uuid: @journalfeed.uuid</div>
-				<div>GroupId: @journalfeed.groupId</div>
-				<div>CompanyId: @journalfeed.companyId</div>
-				<div>UserId: @journalfeed.userId</div>
-				<div>UserName: @journalfeed.userName</div>
-				<div>CreateDate: @journalfeed.createDate</div>
-				<div>ModifiedDate: @journalfeed.modifiedDate</div>
-				<div>FeedId: @journalfeed.feedId</div>
-				<div>Name: @journalfeed.name</div>
-				<div>Description: @journalfeed.description</div>
-				<div>DDMStructureKey: @journalfeed.DDMStructureKey</div>
-				<div>DDMTemplateKey: @journalfeed.DDMTemplateKey</div>
-				<div>DDMRendererTemplateKey: @journalfeed.DDMRendererTemplateKey</div>
-				<div>Delta: @journalfeed.delta</div>
-				<div>OrderByCol: @journalfeed.orderByCol</div>
-				<div>OrderByType: @journalfeed.orderByType</div>
-				<div>TargetLayoutFriendlyUrl: @journalfeed.targetLayoutFriendlyUrl</div>
-				<div>TargetPortletId: @journalfeed.targetPortletId</div>
-				<div>ContentField: @journalfeed.contentField</div>
-				<div>FeedFormat: @journalfeed.feedFormat</div>
-				<div>FeedVersion: @journalfeed.feedVersion</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Journalfeed in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.JournalfeedApplication.addJournalfeed">Create New Journalfeed</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(journalfeed <- journalfeeds) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.JournalfeedApplication.get(journalfeed.id)">@journalfeed.id</a></div>
+						<div>Uuid: @journalfeed.uuid</div>
+						<div>GroupId: @journalfeed.groupId</div>
+						<div>CompanyId: @journalfeed.companyId</div>
+						<div>UserId: @journalfeed.userId</div>
+						<div>UserName: @journalfeed.userName</div>
+						<div>CreateDate: @journalfeed.createDate</div>
+						<div>ModifiedDate: @journalfeed.modifiedDate</div>
+						<div>FeedId: @journalfeed.feedId</div>
+						<div>Name: @journalfeed.name</div>
+						<div>Description: @journalfeed.description</div>
+						<div>DDMStructureKey: @journalfeed.DDMStructureKey</div>
+						<div>DDMTemplateKey: @journalfeed.DDMTemplateKey</div>
+						<div>DDMRendererTemplateKey: @journalfeed.DDMRendererTemplateKey</div>
+						<div>Delta: @journalfeed.delta</div>
+						<div>OrderByCol: @journalfeed.orderByCol</div>
+						<div>OrderByType: @journalfeed.orderByType</div>
+						<div>TargetLayoutFriendlyUrl: @journalfeed.targetLayoutFriendlyUrl</div>
+						<div>TargetPortletId: @journalfeed.targetPortletId</div>
+						<div>ContentField: @journalfeed.contentField</div>
+						<div>FeedFormat: @journalfeed.feedFormat</div>
+						<div>FeedVersion: @journalfeed.feedVersion</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

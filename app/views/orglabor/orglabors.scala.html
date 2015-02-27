@@ -2,38 +2,42 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Orglabors in the DB</h1>
-
-	<p>
-		<a href="@routes.OrglaborApplication.addOrglabor">Create New Orglabor</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(orglabor <- orglabors) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.OrglaborApplication.get(orglabor.orgLaborId)">@orglabor.orgLaborId</a></div>
-				<div>MvccVersion: @orglabor.mvccVersion</div>
-				<div>OrganizationId: @orglabor.organizationId</div>
-				<div>TypeId: @orglabor.typeId</div>
-				<div>SunOpen: @orglabor.sunOpen</div>
-				<div>SunClose: @orglabor.sunClose</div>
-				<div>MonOpen: @orglabor.monOpen</div>
-				<div>MonClose: @orglabor.monClose</div>
-				<div>TueOpen: @orglabor.tueOpen</div>
-				<div>TueClose: @orglabor.tueClose</div>
-				<div>WedOpen: @orglabor.wedOpen</div>
-				<div>WedClose: @orglabor.wedClose</div>
-				<div>ThuOpen: @orglabor.thuOpen</div>
-				<div>ThuClose: @orglabor.thuClose</div>
-				<div>FriOpen: @orglabor.friOpen</div>
-				<div>FriClose: @orglabor.friClose</div>
-				<div>SatOpen: @orglabor.satOpen</div>
-				<div>SatClose: @orglabor.satClose</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Orglabor in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.OrglaborApplication.addOrglabor">Create New Orglabor</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(orglabor <- orglabors) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.OrglaborApplication.get(orglabor.orgLaborId)">@orglabor.orgLaborId</a></div>
+						<div>MvccVersion: @orglabor.mvccVersion</div>
+						<div>OrganizationId: @orglabor.organizationId</div>
+						<div>TypeId: @orglabor.typeId</div>
+						<div>SunOpen: @orglabor.sunOpen</div>
+						<div>SunClose: @orglabor.sunClose</div>
+						<div>MonOpen: @orglabor.monOpen</div>
+						<div>MonClose: @orglabor.monClose</div>
+						<div>TueOpen: @orglabor.tueOpen</div>
+						<div>TueClose: @orglabor.tueClose</div>
+						<div>WedOpen: @orglabor.wedOpen</div>
+						<div>WedClose: @orglabor.wedClose</div>
+						<div>ThuOpen: @orglabor.thuOpen</div>
+						<div>ThuClose: @orglabor.thuClose</div>
+						<div>FriOpen: @orglabor.friOpen</div>
+						<div>FriClose: @orglabor.friClose</div>
+						<div>SatOpen: @orglabor.satOpen</div>
+						<div>SatClose: @orglabor.satClose</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

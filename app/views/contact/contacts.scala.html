@@ -2,54 +2,58 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Contacts in the DB</h1>
-
-	<p>
-		<a href="@routes.ContactApplication.addContact">Create New Contact</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(contact <- contacts) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ContactApplication.get(contact.contactId)">@contact.contactId</a></div>
-				<div>MvccVersion: @contact.mvccVersion</div>
-				<div>CompanyId: @contact.companyId</div>
-				<div>UserId: @contact.userId</div>
-				<div>UserName: @contact.userName</div>
-				<div>CreateDate: @contact.createDate</div>
-				<div>ModifiedDate: @contact.modifiedDate</div>
-				<div>ClassNameId: @contact.classNameId</div>
-				<div>ClassPK: @contact.classPK</div>
-				<div>AccountId: @contact.accountId</div>
-				<div>ParentContactId: @contact.parentContactId</div>
-				<div>EmailAddress: @contact.emailAddress</div>
-				<div>FirstName: @contact.firstName</div>
-				<div>MiddleName: @contact.middleName</div>
-				<div>LastName: @contact.lastName</div>
-				<div>PrefixId: @contact.prefixId</div>
-				<div>SuffixId: @contact.suffixId</div>
-				<div>Male: @contact.male</div>
-				<div>Birthday: @contact.birthday</div>
-				<div>SmsSn: @contact.smsSn</div>
-				<div>AimSn: @contact.aimSn</div>
-				<div>FacebookSn: @contact.facebookSn</div>
-				<div>IcqSn: @contact.icqSn</div>
-				<div>JabberSn: @contact.jabberSn</div>
-				<div>MsnSn: @contact.msnSn</div>
-				<div>MySpaceSn: @contact.mySpaceSn</div>
-				<div>SkypeSn: @contact.skypeSn</div>
-				<div>TwitterSn: @contact.twitterSn</div>
-				<div>YmSn: @contact.ymSn</div>
-				<div>EmployeeStatusId: @contact.employeeStatusId</div>
-				<div>EmployeeNumber: @contact.employeeNumber</div>
-				<div>JobTitle: @contact.jobTitle</div>
-				<div>JobClass: @contact.jobClass</div>
-				<div>HoursOfOperation: @contact.hoursOfOperation</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Contact in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ContactApplication.addContact">Create New Contact</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(contact <- contacts) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ContactApplication.get(contact.contactId)">@contact.contactId</a></div>
+						<div>MvccVersion: @contact.mvccVersion</div>
+						<div>CompanyId: @contact.companyId</div>
+						<div>UserId: @contact.userId</div>
+						<div>UserName: @contact.userName</div>
+						<div>CreateDate: @contact.createDate</div>
+						<div>ModifiedDate: @contact.modifiedDate</div>
+						<div>ClassNameId: @contact.classNameId</div>
+						<div>ClassPK: @contact.classPK</div>
+						<div>AccountId: @contact.accountId</div>
+						<div>ParentContactId: @contact.parentContactId</div>
+						<div>EmailAddress: @contact.emailAddress</div>
+						<div>FirstName: @contact.firstName</div>
+						<div>MiddleName: @contact.middleName</div>
+						<div>LastName: @contact.lastName</div>
+						<div>PrefixId: @contact.prefixId</div>
+						<div>SuffixId: @contact.suffixId</div>
+						<div>Male: @contact.male</div>
+						<div>Birthday: @contact.birthday</div>
+						<div>SmsSn: @contact.smsSn</div>
+						<div>AimSn: @contact.aimSn</div>
+						<div>FacebookSn: @contact.facebookSn</div>
+						<div>IcqSn: @contact.icqSn</div>
+						<div>JabberSn: @contact.jabberSn</div>
+						<div>MsnSn: @contact.msnSn</div>
+						<div>MySpaceSn: @contact.mySpaceSn</div>
+						<div>SkypeSn: @contact.skypeSn</div>
+						<div>TwitterSn: @contact.twitterSn</div>
+						<div>YmSn: @contact.ymSn</div>
+						<div>EmployeeStatusId: @contact.employeeStatusId</div>
+						<div>EmployeeNumber: @contact.employeeNumber</div>
+						<div>JobTitle: @contact.jobTitle</div>
+						<div>JobClass: @contact.jobClass</div>
+						<div>HoursOfOperation: @contact.hoursOfOperation</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

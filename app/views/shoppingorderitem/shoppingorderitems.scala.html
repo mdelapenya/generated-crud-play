@@ -2,30 +2,34 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Shoppingorderitems in the DB</h1>
-
-	<p>
-		<a href="@routes.ShoppingorderitemApplication.addShoppingorderitem">Create New Shoppingorderitem</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(shoppingorderitem <- shoppingorderitems) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ShoppingorderitemApplication.get(shoppingorderitem.orderItemId)">@shoppingorderitem.orderItemId</a></div>
-				<div>OrderId: @shoppingorderitem.orderId</div>
-				<div>ItemId: @shoppingorderitem.itemId</div>
-				<div>Sku: @shoppingorderitem.sku</div>
-				<div>Name: @shoppingorderitem.name</div>
-				<div>Description: @shoppingorderitem.description</div>
-				<div>Properties: @shoppingorderitem.properties</div>
-				<div>Price: @shoppingorderitem.price</div>
-				<div>Quantity: @shoppingorderitem.quantity</div>
-				<div>ShippedDate: @shoppingorderitem.shippedDate</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Shoppingorderitem in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ShoppingorderitemApplication.addShoppingorderitem">Create New Shoppingorderitem</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(shoppingorderitem <- shoppingorderitems) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ShoppingorderitemApplication.get(shoppingorderitem.orderItemId)">@shoppingorderitem.orderItemId</a></div>
+						<div>OrderId: @shoppingorderitem.orderId</div>
+						<div>ItemId: @shoppingorderitem.itemId</div>
+						<div>Sku: @shoppingorderitem.sku</div>
+						<div>Name: @shoppingorderitem.name</div>
+						<div>Description: @shoppingorderitem.description</div>
+						<div>Properties: @shoppingorderitem.properties</div>
+						<div>Price: @shoppingorderitem.price</div>
+						<div>Quantity: @shoppingorderitem.quantity</div>
+						<div>ShippedDate: @shoppingorderitem.shippedDate</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

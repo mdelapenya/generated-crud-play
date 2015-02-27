@@ -2,33 +2,37 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Layoutfriendlyurls in the DB</h1>
-
-	<p>
-		<a href="@routes.LayoutfriendlyurlApplication.addLayoutfriendlyurl">Create New Layoutfriendlyurl</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(layoutfriendlyurl <- layoutfriendlyurls) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.LayoutfriendlyurlApplication.get(layoutfriendlyurl.layoutFriendlyURLId)">@layoutfriendlyurl.layoutFriendlyURLId</a></div>
-				<div>MvccVersion: @layoutfriendlyurl.mvccVersion</div>
-				<div>Uuid: @layoutfriendlyurl.uuid</div>
-				<div>GroupId: @layoutfriendlyurl.groupId</div>
-				<div>CompanyId: @layoutfriendlyurl.companyId</div>
-				<div>UserId: @layoutfriendlyurl.userId</div>
-				<div>UserName: @layoutfriendlyurl.userName</div>
-				<div>CreateDate: @layoutfriendlyurl.createDate</div>
-				<div>ModifiedDate: @layoutfriendlyurl.modifiedDate</div>
-				<div>Plid: @layoutfriendlyurl.plid</div>
-				<div>PrivateLayout: @layoutfriendlyurl.privateLayout</div>
-				<div>FriendlyURL: @layoutfriendlyurl.friendlyURL</div>
-				<div>LanguageId: @layoutfriendlyurl.languageId</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Layoutfriendlyurl in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.LayoutfriendlyurlApplication.addLayoutfriendlyurl">Create New Layoutfriendlyurl</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(layoutfriendlyurl <- layoutfriendlyurls) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.LayoutfriendlyurlApplication.get(layoutfriendlyurl.layoutFriendlyURLId)">@layoutfriendlyurl.layoutFriendlyURLId</a></div>
+						<div>MvccVersion: @layoutfriendlyurl.mvccVersion</div>
+						<div>Uuid: @layoutfriendlyurl.uuid</div>
+						<div>GroupId: @layoutfriendlyurl.groupId</div>
+						<div>CompanyId: @layoutfriendlyurl.companyId</div>
+						<div>UserId: @layoutfriendlyurl.userId</div>
+						<div>UserName: @layoutfriendlyurl.userName</div>
+						<div>CreateDate: @layoutfriendlyurl.createDate</div>
+						<div>ModifiedDate: @layoutfriendlyurl.modifiedDate</div>
+						<div>Plid: @layoutfriendlyurl.plid</div>
+						<div>PrivateLayout: @layoutfriendlyurl.privateLayout</div>
+						<div>FriendlyURL: @layoutfriendlyurl.friendlyURL</div>
+						<div>LanguageId: @layoutfriendlyurl.languageId</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

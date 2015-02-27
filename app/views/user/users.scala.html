@@ -2,61 +2,65 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Users in the DB</h1>
-
-	<p>
-		<a href="@routes.UserApplication.addUser">Create New User</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(user <- users) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.UserApplication.get(user.userId)">@user.userId</a></div>
-				<div>MvccVersion: @user.mvccVersion</div>
-				<div>Uuid: @user.uuid</div>
-				<div>CompanyId: @user.companyId</div>
-				<div>CreateDate: @user.createDate</div>
-				<div>ModifiedDate: @user.modifiedDate</div>
-				<div>DefaultUser: @user.defaultUser</div>
-				<div>ContactId: @user.contactId</div>
-				<div>Password: @user.password</div>
-				<div>PasswordEncrypted: @user.passwordEncrypted</div>
-				<div>PasswordReset: @user.passwordReset</div>
-				<div>PasswordModifiedDate: @user.passwordModifiedDate</div>
-				<div>Digest: @user.digest</div>
-				<div>ReminderQueryQuestion: @user.reminderQueryQuestion</div>
-				<div>ReminderQueryAnswer: @user.reminderQueryAnswer</div>
-				<div>GraceLoginCount: @user.graceLoginCount</div>
-				<div>ScreenName: @user.screenName</div>
-				<div>EmailAddress: @user.emailAddress</div>
-				<div>FacebookId: @user.facebookId</div>
-				<div>LdapServerId: @user.ldapServerId</div>
-				<div>OpenId: @user.openId</div>
-				<div>PortraitId: @user.portraitId</div>
-				<div>LanguageId: @user.languageId</div>
-				<div>TimeZoneId: @user.timeZoneId</div>
-				<div>Greeting: @user.greeting</div>
-				<div>Comments: @user.comments</div>
-				<div>FirstName: @user.firstName</div>
-				<div>MiddleName: @user.middleName</div>
-				<div>LastName: @user.lastName</div>
-				<div>JobTitle: @user.jobTitle</div>
-				<div>LoginDate: @user.loginDate</div>
-				<div>LoginIP: @user.loginIP</div>
-				<div>LastLoginDate: @user.lastLoginDate</div>
-				<div>LastLoginIP: @user.lastLoginIP</div>
-				<div>LastFailedLoginDate: @user.lastFailedLoginDate</div>
-				<div>FailedLoginAttempts: @user.failedLoginAttempts</div>
-				<div>Lockout: @user.lockout</div>
-				<div>LockoutDate: @user.lockoutDate</div>
-				<div>AgreedToTermsOfUse: @user.agreedToTermsOfUse</div>
-				<div>EmailAddressVerified: @user.emailAddressVerified</div>
-				<div>Status: @user.status</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>User in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.UserApplication.addUser">Create New User</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(user <- users) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.UserApplication.get(user.userId)">@user.userId</a></div>
+						<div>MvccVersion: @user.mvccVersion</div>
+						<div>Uuid: @user.uuid</div>
+						<div>CompanyId: @user.companyId</div>
+						<div>CreateDate: @user.createDate</div>
+						<div>ModifiedDate: @user.modifiedDate</div>
+						<div>DefaultUser: @user.defaultUser</div>
+						<div>ContactId: @user.contactId</div>
+						<div>Password: @user.password</div>
+						<div>PasswordEncrypted: @user.passwordEncrypted</div>
+						<div>PasswordReset: @user.passwordReset</div>
+						<div>PasswordModifiedDate: @user.passwordModifiedDate</div>
+						<div>Digest: @user.digest</div>
+						<div>ReminderQueryQuestion: @user.reminderQueryQuestion</div>
+						<div>ReminderQueryAnswer: @user.reminderQueryAnswer</div>
+						<div>GraceLoginCount: @user.graceLoginCount</div>
+						<div>ScreenName: @user.screenName</div>
+						<div>EmailAddress: @user.emailAddress</div>
+						<div>FacebookId: @user.facebookId</div>
+						<div>LdapServerId: @user.ldapServerId</div>
+						<div>OpenId: @user.openId</div>
+						<div>PortraitId: @user.portraitId</div>
+						<div>LanguageId: @user.languageId</div>
+						<div>TimeZoneId: @user.timeZoneId</div>
+						<div>Greeting: @user.greeting</div>
+						<div>Comments: @user.comments</div>
+						<div>FirstName: @user.firstName</div>
+						<div>MiddleName: @user.middleName</div>
+						<div>LastName: @user.lastName</div>
+						<div>JobTitle: @user.jobTitle</div>
+						<div>LoginDate: @user.loginDate</div>
+						<div>LoginIP: @user.loginIP</div>
+						<div>LastLoginDate: @user.lastLoginDate</div>
+						<div>LastLoginIP: @user.lastLoginIP</div>
+						<div>LastFailedLoginDate: @user.lastFailedLoginDate</div>
+						<div>FailedLoginAttempts: @user.failedLoginAttempts</div>
+						<div>Lockout: @user.lockout</div>
+						<div>LockoutDate: @user.lockoutDate</div>
+						<div>AgreedToTermsOfUse: @user.agreedToTermsOfUse</div>
+						<div>EmailAddressVerified: @user.emailAddressVerified</div>
+						<div>Status: @user.status</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

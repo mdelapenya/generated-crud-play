@@ -2,27 +2,31 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Portletpreferencess in the DB</h1>
-
-	<p>
-		<a href="@routes.PortletpreferencesApplication.addPortletpreferences">Create New Portletpreferences</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(portletpreferences <- portletpreferencess) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.PortletpreferencesApplication.get(portletpreferences.portletPreferencesId)">@portletpreferences.portletPreferencesId</a></div>
-				<div>MvccVersion: @portletpreferences.mvccVersion</div>
-				<div>OwnerId: @portletpreferences.ownerId</div>
-				<div>OwnerType: @portletpreferences.ownerType</div>
-				<div>Plid: @portletpreferences.plid</div>
-				<div>PortletId: @portletpreferences.portletId</div>
-				<div>Preferences: @portletpreferences.preferences</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Portletpreferences in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.PortletpreferencesApplication.addPortletpreferences">Create New Portletpreferences</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(portletpreferences <- portletpreferencess) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.PortletpreferencesApplication.get(portletpreferences.portletPreferencesId)">@portletpreferences.portletPreferencesId</a></div>
+						<div>MvccVersion: @portletpreferences.mvccVersion</div>
+						<div>OwnerId: @portletpreferences.ownerId</div>
+						<div>OwnerType: @portletpreferences.ownerType</div>
+						<div>Plid: @portletpreferences.plid</div>
+						<div>PortletId: @portletpreferences.portletId</div>
+						<div>Preferences: @portletpreferences.preferences</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

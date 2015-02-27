@@ -2,25 +2,29 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Ddmstoragelinks in the DB</h1>
-
-	<p>
-		<a href="@routes.DdmstoragelinkApplication.addDdmstoragelink">Create New Ddmstoragelink</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(ddmstoragelink <- ddmstoragelinks) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.DdmstoragelinkApplication.get(ddmstoragelink.storageLinkId)">@ddmstoragelink.storageLinkId</a></div>
-				<div>Uuid: @ddmstoragelink.uuid</div>
-				<div>ClassNameId: @ddmstoragelink.classNameId</div>
-				<div>ClassPK: @ddmstoragelink.classPK</div>
-				<div>StructureId: @ddmstoragelink.structureId</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Ddmstoragelink in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.DdmstoragelinkApplication.addDdmstoragelink">Create New Ddmstoragelink</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(ddmstoragelink <- ddmstoragelinks) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.DdmstoragelinkApplication.get(ddmstoragelink.storageLinkId)">@ddmstoragelink.storageLinkId</a></div>
+						<div>Uuid: @ddmstoragelink.uuid</div>
+						<div>ClassNameId: @ddmstoragelink.classNameId</div>
+						<div>ClassPK: @ddmstoragelink.classPK</div>
+						<div>StructureId: @ddmstoragelink.structureId</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

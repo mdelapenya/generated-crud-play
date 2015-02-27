@@ -2,25 +2,29 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Portalpreferencess in the DB</h1>
-
-	<p>
-		<a href="@routes.PortalpreferencesApplication.addPortalpreferences">Create New Portalpreferences</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(portalpreferences <- portalpreferencess) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.PortalpreferencesApplication.get(portalpreferences.portalPreferencesId)">@portalpreferences.portalPreferencesId</a></div>
-				<div>MvccVersion: @portalpreferences.mvccVersion</div>
-				<div>OwnerId: @portalpreferences.ownerId</div>
-				<div>OwnerType: @portalpreferences.ownerType</div>
-				<div>Preferences: @portalpreferences.preferences</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Portalpreferences in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.PortalpreferencesApplication.addPortalpreferences">Create New Portalpreferences</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(portalpreferences <- portalpreferencess) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.PortalpreferencesApplication.get(portalpreferences.portalPreferencesId)">@portalpreferences.portalPreferencesId</a></div>
+						<div>MvccVersion: @portalpreferences.mvccVersion</div>
+						<div>OwnerId: @portalpreferences.ownerId</div>
+						<div>OwnerType: @portalpreferences.ownerType</div>
+						<div>Preferences: @portalpreferences.preferences</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

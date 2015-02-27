@@ -2,32 +2,36 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Scproductversions in the DB</h1>
-
-	<p>
-		<a href="@routes.ScproductversionApplication.addScproductversion">Create New Scproductversion</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(scproductversion <- scproductversions) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ScproductversionApplication.get(scproductversion.productVersionId)">@scproductversion.productVersionId</a></div>
-				<div>CompanyId: @scproductversion.companyId</div>
-				<div>UserId: @scproductversion.userId</div>
-				<div>UserName: @scproductversion.userName</div>
-				<div>CreateDate: @scproductversion.createDate</div>
-				<div>ModifiedDate: @scproductversion.modifiedDate</div>
-				<div>ProductEntryId: @scproductversion.productEntryId</div>
-				<div>Version: @scproductversion.version</div>
-				<div>ChangeLog: @scproductversion.changeLog</div>
-				<div>DownloadPageURL: @scproductversion.downloadPageURL</div>
-				<div>DirectDownloadURL: @scproductversion.directDownloadURL</div>
-				<div>RepoStoreArtifact: @scproductversion.repoStoreArtifact</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Scproductversion in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ScproductversionApplication.addScproductversion">Create New Scproductversion</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(scproductversion <- scproductversions) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ScproductversionApplication.get(scproductversion.productVersionId)">@scproductversion.productVersionId</a></div>
+						<div>CompanyId: @scproductversion.companyId</div>
+						<div>UserId: @scproductversion.userId</div>
+						<div>UserName: @scproductversion.userName</div>
+						<div>CreateDate: @scproductversion.createDate</div>
+						<div>ModifiedDate: @scproductversion.modifiedDate</div>
+						<div>ProductEntryId: @scproductversion.productEntryId</div>
+						<div>Version: @scproductversion.version</div>
+						<div>ChangeLog: @scproductversion.changeLog</div>
+						<div>DownloadPageURL: @scproductversion.downloadPageURL</div>
+						<div>DirectDownloadURL: @scproductversion.directDownloadURL</div>
+						<div>RepoStoreArtifact: @scproductversion.repoStoreArtifact</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

@@ -2,27 +2,31 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Scproductscreenshots in the DB</h1>
-
-	<p>
-		<a href="@routes.ScproductscreenshotApplication.addScproductscreenshot">Create New Scproductscreenshot</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(scproductscreenshot <- scproductscreenshots) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ScproductscreenshotApplication.get(scproductscreenshot.productScreenshotId)">@scproductscreenshot.productScreenshotId</a></div>
-				<div>CompanyId: @scproductscreenshot.companyId</div>
-				<div>GroupId: @scproductscreenshot.groupId</div>
-				<div>ProductEntryId: @scproductscreenshot.productEntryId</div>
-				<div>ThumbnailId: @scproductscreenshot.thumbnailId</div>
-				<div>FullImageId: @scproductscreenshot.fullImageId</div>
-				<div>Priority: @scproductscreenshot.priority</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Scproductscreenshot in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ScproductscreenshotApplication.addScproductscreenshot">Create New Scproductscreenshot</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(scproductscreenshot <- scproductscreenshots) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ScproductscreenshotApplication.get(scproductscreenshot.productScreenshotId)">@scproductscreenshot.productScreenshotId</a></div>
+						<div>CompanyId: @scproductscreenshot.companyId</div>
+						<div>GroupId: @scproductscreenshot.groupId</div>
+						<div>ProductEntryId: @scproductscreenshot.productEntryId</div>
+						<div>ThumbnailId: @scproductscreenshot.thumbnailId</div>
+						<div>FullImageId: @scproductscreenshot.fullImageId</div>
+						<div>Priority: @scproductscreenshot.priority</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

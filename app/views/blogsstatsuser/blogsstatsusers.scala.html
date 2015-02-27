@@ -2,29 +2,33 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Blogsstatsusers in the DB</h1>
-
-	<p>
-		<a href="@routes.BlogsstatsuserApplication.addBlogsstatsuser">Create New Blogsstatsuser</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(blogsstatsuser <- blogsstatsusers) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.BlogsstatsuserApplication.get(blogsstatsuser.statsUserId)">@blogsstatsuser.statsUserId</a></div>
-				<div>GroupId: @blogsstatsuser.groupId</div>
-				<div>CompanyId: @blogsstatsuser.companyId</div>
-				<div>UserId: @blogsstatsuser.userId</div>
-				<div>EntryCount: @blogsstatsuser.entryCount</div>
-				<div>LastPostDate: @blogsstatsuser.lastPostDate</div>
-				<div>RatingsTotalEntries: @blogsstatsuser.ratingsTotalEntries</div>
-				<div>RatingsTotalScore: @blogsstatsuser.ratingsTotalScore</div>
-				<div>RatingsAverageScore: @blogsstatsuser.ratingsAverageScore</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Blogsstatsuser in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.BlogsstatsuserApplication.addBlogsstatsuser">Create New Blogsstatsuser</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(blogsstatsuser <- blogsstatsusers) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.BlogsstatsuserApplication.get(blogsstatsuser.statsUserId)">@blogsstatsuser.statsUserId</a></div>
+						<div>GroupId: @blogsstatsuser.groupId</div>
+						<div>CompanyId: @blogsstatsuser.companyId</div>
+						<div>UserId: @blogsstatsuser.userId</div>
+						<div>EntryCount: @blogsstatsuser.entryCount</div>
+						<div>LastPostDate: @blogsstatsuser.lastPostDate</div>
+						<div>RatingsTotalEntries: @blogsstatsuser.ratingsTotalEntries</div>
+						<div>RatingsTotalScore: @blogsstatsuser.ratingsTotalScore</div>
+						<div>RatingsAverageScore: @blogsstatsuser.ratingsAverageScore</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

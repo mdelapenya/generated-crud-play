@@ -2,30 +2,34 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Ratingsentrys in the DB</h1>
-
-	<p>
-		<a href="@routes.RatingsentryApplication.addRatingsentry">Create New Ratingsentry</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(ratingsentry <- ratingsentrys) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.RatingsentryApplication.get(ratingsentry.entryId)">@ratingsentry.entryId</a></div>
-				<div>Uuid: @ratingsentry.uuid</div>
-				<div>CompanyId: @ratingsentry.companyId</div>
-				<div>UserId: @ratingsentry.userId</div>
-				<div>UserName: @ratingsentry.userName</div>
-				<div>CreateDate: @ratingsentry.createDate</div>
-				<div>ModifiedDate: @ratingsentry.modifiedDate</div>
-				<div>ClassNameId: @ratingsentry.classNameId</div>
-				<div>ClassPK: @ratingsentry.classPK</div>
-				<div>Score: @ratingsentry.score</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Ratingsentry in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.RatingsentryApplication.addRatingsentry">Create New Ratingsentry</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(ratingsentry <- ratingsentrys) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.RatingsentryApplication.get(ratingsentry.entryId)">@ratingsentry.entryId</a></div>
+						<div>Uuid: @ratingsentry.uuid</div>
+						<div>CompanyId: @ratingsentry.companyId</div>
+						<div>UserId: @ratingsentry.userId</div>
+						<div>UserName: @ratingsentry.userName</div>
+						<div>CreateDate: @ratingsentry.createDate</div>
+						<div>ModifiedDate: @ratingsentry.modifiedDate</div>
+						<div>ClassNameId: @ratingsentry.classNameId</div>
+						<div>ClassPK: @ratingsentry.classPK</div>
+						<div>Score: @ratingsentry.score</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

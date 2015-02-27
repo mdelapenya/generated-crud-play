@@ -2,27 +2,31 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Images in the DB</h1>
-
-	<p>
-		<a href="@routes.ImageApplication.addImage">Create New Image</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(image <- images) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ImageApplication.get(image.imageId)">@image.imageId</a></div>
-				<div>MvccVersion: @image.mvccVersion</div>
-				<div>ModifiedDate: @image.modifiedDate</div>
-				<div>Customtype: @image.customtype</div>
-				<div>Height: @image.height</div>
-				<div>Width: @image.width</div>
-				<div>Size: @image.size</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Image in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ImageApplication.addImage">Create New Image</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(image <- images) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ImageApplication.get(image.imageId)">@image.imageId</a></div>
+						<div>MvccVersion: @image.mvccVersion</div>
+						<div>ModifiedDate: @image.modifiedDate</div>
+						<div>Customtype: @image.customtype</div>
+						<div>Height: @image.height</div>
+						<div>Width: @image.width</div>
+						<div>Size: @image.size</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

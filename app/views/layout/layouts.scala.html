@@ -2,51 +2,55 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Layouts in the DB</h1>
-
-	<p>
-		<a href="@routes.LayoutApplication.addLayout">Create New Layout</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(layout <- layouts) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.LayoutApplication.get(layout.plid)">@layout.plid</a></div>
-				<div>MvccVersion: @layout.mvccVersion</div>
-				<div>Uuid: @layout.uuid</div>
-				<div>GroupId: @layout.groupId</div>
-				<div>CompanyId: @layout.companyId</div>
-				<div>UserId: @layout.userId</div>
-				<div>UserName: @layout.userName</div>
-				<div>CreateDate: @layout.createDate</div>
-				<div>ModifiedDate: @layout.modifiedDate</div>
-				<div>PrivateLayout: @layout.privateLayout</div>
-				<div>LayoutId: @layout.layoutId</div>
-				<div>ParentLayoutId: @layout.parentLayoutId</div>
-				<div>Name: @layout.name</div>
-				<div>Title: @layout.title</div>
-				<div>Description: @layout.description</div>
-				<div>Keywords: @layout.keywords</div>
-				<div>Robots: @layout.robots</div>
-				<div>Customtype: @layout.customtype</div>
-				<div>TypeSettings: @layout.typeSettings</div>
-				<div>Hidden: @layout.hidden</div>
-				<div>FriendlyURL: @layout.friendlyURL</div>
-				<div>IconImageId: @layout.iconImageId</div>
-				<div>ThemeId: @layout.themeId</div>
-				<div>ColorSchemeId: @layout.colorSchemeId</div>
-				<div>WapThemeId: @layout.wapThemeId</div>
-				<div>WapColorSchemeId: @layout.wapColorSchemeId</div>
-				<div>Css: @layout.css</div>
-				<div>Priority: @layout.priority</div>
-				<div>LayoutPrototypeUuid: @layout.layoutPrototypeUuid</div>
-				<div>LayoutPrototypeLinkEnabled: @layout.layoutPrototypeLinkEnabled</div>
-				<div>SourcePrototypeLayoutUuid: @layout.sourcePrototypeLayoutUuid</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Layout in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.LayoutApplication.addLayout">Create New Layout</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(layout <- layouts) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.LayoutApplication.get(layout.plid)">@layout.plid</a></div>
+						<div>MvccVersion: @layout.mvccVersion</div>
+						<div>Uuid: @layout.uuid</div>
+						<div>GroupId: @layout.groupId</div>
+						<div>CompanyId: @layout.companyId</div>
+						<div>UserId: @layout.userId</div>
+						<div>UserName: @layout.userName</div>
+						<div>CreateDate: @layout.createDate</div>
+						<div>ModifiedDate: @layout.modifiedDate</div>
+						<div>PrivateLayout: @layout.privateLayout</div>
+						<div>LayoutId: @layout.layoutId</div>
+						<div>ParentLayoutId: @layout.parentLayoutId</div>
+						<div>Name: @layout.name</div>
+						<div>Title: @layout.title</div>
+						<div>Description: @layout.description</div>
+						<div>Keywords: @layout.keywords</div>
+						<div>Robots: @layout.robots</div>
+						<div>Customtype: @layout.customtype</div>
+						<div>TypeSettings: @layout.typeSettings</div>
+						<div>Hidden: @layout.hidden</div>
+						<div>FriendlyURL: @layout.friendlyURL</div>
+						<div>IconImageId: @layout.iconImageId</div>
+						<div>ThemeId: @layout.themeId</div>
+						<div>ColorSchemeId: @layout.colorSchemeId</div>
+						<div>WapThemeId: @layout.wapThemeId</div>
+						<div>WapColorSchemeId: @layout.wapColorSchemeId</div>
+						<div>Css: @layout.css</div>
+						<div>Priority: @layout.priority</div>
+						<div>LayoutPrototypeUuid: @layout.layoutPrototypeUuid</div>
+						<div>LayoutPrototypeLinkEnabled: @layout.layoutPrototypeLinkEnabled</div>
+						<div>SourcePrototypeLayoutUuid: @layout.sourcePrototypeLayoutUuid</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

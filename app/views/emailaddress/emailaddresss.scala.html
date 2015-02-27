@@ -2,33 +2,37 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Emailaddresss in the DB</h1>
-
-	<p>
-		<a href="@routes.EmailaddressApplication.addEmailaddress">Create New Emailaddress</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(emailaddress <- emailaddresss) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.EmailaddressApplication.get(emailaddress.emailAddressId)">@emailaddress.emailAddressId</a></div>
-				<div>MvccVersion: @emailaddress.mvccVersion</div>
-				<div>Uuid: @emailaddress.uuid</div>
-				<div>CompanyId: @emailaddress.companyId</div>
-				<div>UserId: @emailaddress.userId</div>
-				<div>UserName: @emailaddress.userName</div>
-				<div>CreateDate: @emailaddress.createDate</div>
-				<div>ModifiedDate: @emailaddress.modifiedDate</div>
-				<div>ClassNameId: @emailaddress.classNameId</div>
-				<div>ClassPK: @emailaddress.classPK</div>
-				<div>Address: @emailaddress.address</div>
-				<div>TypeId: @emailaddress.typeId</div>
-				<div>Customprimary: @emailaddress.customprimary</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Emailaddress in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.EmailaddressApplication.addEmailaddress">Create New Emailaddress</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(emailaddress <- emailaddresss) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.EmailaddressApplication.get(emailaddress.emailAddressId)">@emailaddress.emailAddressId</a></div>
+						<div>MvccVersion: @emailaddress.mvccVersion</div>
+						<div>Uuid: @emailaddress.uuid</div>
+						<div>CompanyId: @emailaddress.companyId</div>
+						<div>UserId: @emailaddress.userId</div>
+						<div>UserName: @emailaddress.userName</div>
+						<div>CreateDate: @emailaddress.createDate</div>
+						<div>ModifiedDate: @emailaddress.modifiedDate</div>
+						<div>ClassNameId: @emailaddress.classNameId</div>
+						<div>ClassPK: @emailaddress.classPK</div>
+						<div>Address: @emailaddress.address</div>
+						<div>TypeId: @emailaddress.typeId</div>
+						<div>Customprimary: @emailaddress.customprimary</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

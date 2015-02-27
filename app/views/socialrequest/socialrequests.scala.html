@@ -2,33 +2,37 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Socialrequests in the DB</h1>
-
-	<p>
-		<a href="@routes.SocialrequestApplication.addSocialrequest">Create New Socialrequest</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(socialrequest <- socialrequests) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.SocialrequestApplication.get(socialrequest.requestId)">@socialrequest.requestId</a></div>
-				<div>Uuid: @socialrequest.uuid</div>
-				<div>GroupId: @socialrequest.groupId</div>
-				<div>CompanyId: @socialrequest.companyId</div>
-				<div>UserId: @socialrequest.userId</div>
-				<div>CreateDate: @socialrequest.createDate</div>
-				<div>ModifiedDate: @socialrequest.modifiedDate</div>
-				<div>ClassNameId: @socialrequest.classNameId</div>
-				<div>ClassPK: @socialrequest.classPK</div>
-				<div>Customtype: @socialrequest.customtype</div>
-				<div>ExtraData: @socialrequest.extraData</div>
-				<div>ReceiverUserId: @socialrequest.receiverUserId</div>
-				<div>Status: @socialrequest.status</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Socialrequest in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.SocialrequestApplication.addSocialrequest">Create New Socialrequest</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(socialrequest <- socialrequests) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.SocialrequestApplication.get(socialrequest.requestId)">@socialrequest.requestId</a></div>
+						<div>Uuid: @socialrequest.uuid</div>
+						<div>GroupId: @socialrequest.groupId</div>
+						<div>CompanyId: @socialrequest.companyId</div>
+						<div>UserId: @socialrequest.userId</div>
+						<div>CreateDate: @socialrequest.createDate</div>
+						<div>ModifiedDate: @socialrequest.modifiedDate</div>
+						<div>ClassNameId: @socialrequest.classNameId</div>
+						<div>ClassPK: @socialrequest.classPK</div>
+						<div>Customtype: @socialrequest.customtype</div>
+						<div>ExtraData: @socialrequest.extraData</div>
+						<div>ReceiverUserId: @socialrequest.receiverUserId</div>
+						<div>Status: @socialrequest.status</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

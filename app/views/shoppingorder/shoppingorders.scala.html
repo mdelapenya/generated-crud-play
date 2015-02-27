@@ -2,71 +2,75 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Shoppingorders in the DB</h1>
-
-	<p>
-		<a href="@routes.ShoppingorderApplication.addShoppingorder">Create New Shoppingorder</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(shoppingorder <- shoppingorders) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.ShoppingorderApplication.get(shoppingorder.orderId)">@shoppingorder.orderId</a></div>
-				<div>GroupId: @shoppingorder.groupId</div>
-				<div>CompanyId: @shoppingorder.companyId</div>
-				<div>UserId: @shoppingorder.userId</div>
-				<div>UserName: @shoppingorder.userName</div>
-				<div>CreateDate: @shoppingorder.createDate</div>
-				<div>ModifiedDate: @shoppingorder.modifiedDate</div>
-				<div>Number: @shoppingorder.number</div>
-				<div>Tax: @shoppingorder.tax</div>
-				<div>Shipping: @shoppingorder.shipping</div>
-				<div>AltShipping: @shoppingorder.altShipping</div>
-				<div>RequiresShipping: @shoppingorder.requiresShipping</div>
-				<div>Insure: @shoppingorder.insure</div>
-				<div>Insurance: @shoppingorder.insurance</div>
-				<div>CouponCodes: @shoppingorder.couponCodes</div>
-				<div>CouponDiscount: @shoppingorder.couponDiscount</div>
-				<div>BillingFirstName: @shoppingorder.billingFirstName</div>
-				<div>BillingLastName: @shoppingorder.billingLastName</div>
-				<div>BillingEmailAddress: @shoppingorder.billingEmailAddress</div>
-				<div>BillingCompany: @shoppingorder.billingCompany</div>
-				<div>BillingStreet: @shoppingorder.billingStreet</div>
-				<div>BillingCity: @shoppingorder.billingCity</div>
-				<div>BillingState: @shoppingorder.billingState</div>
-				<div>BillingZip: @shoppingorder.billingZip</div>
-				<div>BillingCountry: @shoppingorder.billingCountry</div>
-				<div>BillingPhone: @shoppingorder.billingPhone</div>
-				<div>ShipToBilling: @shoppingorder.shipToBilling</div>
-				<div>ShippingFirstName: @shoppingorder.shippingFirstName</div>
-				<div>ShippingLastName: @shoppingorder.shippingLastName</div>
-				<div>ShippingEmailAddress: @shoppingorder.shippingEmailAddress</div>
-				<div>ShippingCompany: @shoppingorder.shippingCompany</div>
-				<div>ShippingStreet: @shoppingorder.shippingStreet</div>
-				<div>ShippingCity: @shoppingorder.shippingCity</div>
-				<div>ShippingState: @shoppingorder.shippingState</div>
-				<div>ShippingZip: @shoppingorder.shippingZip</div>
-				<div>ShippingCountry: @shoppingorder.shippingCountry</div>
-				<div>ShippingPhone: @shoppingorder.shippingPhone</div>
-				<div>CcName: @shoppingorder.ccName</div>
-				<div>CcType: @shoppingorder.ccType</div>
-				<div>CcNumber: @shoppingorder.ccNumber</div>
-				<div>CcExpMonth: @shoppingorder.ccExpMonth</div>
-				<div>CcExpYear: @shoppingorder.ccExpYear</div>
-				<div>CcVerNumber: @shoppingorder.ccVerNumber</div>
-				<div>Comments: @shoppingorder.comments</div>
-				<div>PpTxnId: @shoppingorder.ppTxnId</div>
-				<div>PpPaymentStatus: @shoppingorder.ppPaymentStatus</div>
-				<div>PpPaymentGross: @shoppingorder.ppPaymentGross</div>
-				<div>PpReceiverEmail: @shoppingorder.ppReceiverEmail</div>
-				<div>PpPayerEmail: @shoppingorder.ppPayerEmail</div>
-				<div>SendOrderEmail: @shoppingorder.sendOrderEmail</div>
-				<div>SendShippingEmail: @shoppingorder.sendShippingEmail</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Shoppingorder in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.ShoppingorderApplication.addShoppingorder">Create New Shoppingorder</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(shoppingorder <- shoppingorders) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.ShoppingorderApplication.get(shoppingorder.orderId)">@shoppingorder.orderId</a></div>
+						<div>GroupId: @shoppingorder.groupId</div>
+						<div>CompanyId: @shoppingorder.companyId</div>
+						<div>UserId: @shoppingorder.userId</div>
+						<div>UserName: @shoppingorder.userName</div>
+						<div>CreateDate: @shoppingorder.createDate</div>
+						<div>ModifiedDate: @shoppingorder.modifiedDate</div>
+						<div>Number: @shoppingorder.number</div>
+						<div>Tax: @shoppingorder.tax</div>
+						<div>Shipping: @shoppingorder.shipping</div>
+						<div>AltShipping: @shoppingorder.altShipping</div>
+						<div>RequiresShipping: @shoppingorder.requiresShipping</div>
+						<div>Insure: @shoppingorder.insure</div>
+						<div>Insurance: @shoppingorder.insurance</div>
+						<div>CouponCodes: @shoppingorder.couponCodes</div>
+						<div>CouponDiscount: @shoppingorder.couponDiscount</div>
+						<div>BillingFirstName: @shoppingorder.billingFirstName</div>
+						<div>BillingLastName: @shoppingorder.billingLastName</div>
+						<div>BillingEmailAddress: @shoppingorder.billingEmailAddress</div>
+						<div>BillingCompany: @shoppingorder.billingCompany</div>
+						<div>BillingStreet: @shoppingorder.billingStreet</div>
+						<div>BillingCity: @shoppingorder.billingCity</div>
+						<div>BillingState: @shoppingorder.billingState</div>
+						<div>BillingZip: @shoppingorder.billingZip</div>
+						<div>BillingCountry: @shoppingorder.billingCountry</div>
+						<div>BillingPhone: @shoppingorder.billingPhone</div>
+						<div>ShipToBilling: @shoppingorder.shipToBilling</div>
+						<div>ShippingFirstName: @shoppingorder.shippingFirstName</div>
+						<div>ShippingLastName: @shoppingorder.shippingLastName</div>
+						<div>ShippingEmailAddress: @shoppingorder.shippingEmailAddress</div>
+						<div>ShippingCompany: @shoppingorder.shippingCompany</div>
+						<div>ShippingStreet: @shoppingorder.shippingStreet</div>
+						<div>ShippingCity: @shoppingorder.shippingCity</div>
+						<div>ShippingState: @shoppingorder.shippingState</div>
+						<div>ShippingZip: @shoppingorder.shippingZip</div>
+						<div>ShippingCountry: @shoppingorder.shippingCountry</div>
+						<div>ShippingPhone: @shoppingorder.shippingPhone</div>
+						<div>CcName: @shoppingorder.ccName</div>
+						<div>CcType: @shoppingorder.ccType</div>
+						<div>CcNumber: @shoppingorder.ccNumber</div>
+						<div>CcExpMonth: @shoppingorder.ccExpMonth</div>
+						<div>CcExpYear: @shoppingorder.ccExpYear</div>
+						<div>CcVerNumber: @shoppingorder.ccVerNumber</div>
+						<div>Comments: @shoppingorder.comments</div>
+						<div>PpTxnId: @shoppingorder.ppTxnId</div>
+						<div>PpPaymentStatus: @shoppingorder.ppPaymentStatus</div>
+						<div>PpPaymentGross: @shoppingorder.ppPaymentGross</div>
+						<div>PpReceiverEmail: @shoppingorder.ppReceiverEmail</div>
+						<div>PpPayerEmail: @shoppingorder.ppPayerEmail</div>
+						<div>SendOrderEmail: @shoppingorder.sendOrderEmail</div>
+						<div>SendShippingEmail: @shoppingorder.sendShippingEmail</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }

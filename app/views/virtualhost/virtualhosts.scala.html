@@ -2,25 +2,29 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<h1>Virtualhosts in the DB</h1>
-
-	<p>
-		<a href="@routes.VirtualhostApplication.addVirtualhost">Create New Virtualhost</a>
-		<a href="@routes.Application.models">Back to Models</a>
-	</p>
-
-	<ul>
-	@for(virtualhost <- virtualhosts) {
-		<li>
-			<div>
-				<div>ID: <a href="@routes.VirtualhostApplication.get(virtualhost.virtualHostId)">@virtualhost.virtualHostId</a></div>
-				<div>MvccVersion: @virtualhost.mvccVersion</div>
-				<div>CompanyId: @virtualhost.companyId</div>
-				<div>LayoutSetId: @virtualhost.layoutSetId</div>
-				<div>Hostname: @virtualhost.hostname</div>
-			</div>
-		</li>
-	}
-	</ul>
-
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Virtualhost in the DB</h1>
+			<p class="lead">
+				What do you want to do with them?
+				<a class="btn btn-success" href="@routes.VirtualhostApplication.addVirtualhost">Create New Virtualhost</a>
+				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
+			</p>
+		</div>
+		<div class="container">
+			<ul>
+			@for(virtualhost <- virtualhosts) {
+				<li>
+					<div>
+						<div>ID: <a href="@routes.VirtualhostApplication.get(virtualhost.virtualHostId)">@virtualhost.virtualHostId</a></div>
+						<div>MvccVersion: @virtualhost.mvccVersion</div>
+						<div>CompanyId: @virtualhost.companyId</div>
+						<div>LayoutSetId: @virtualhost.layoutSetId</div>
+						<div>Hostname: @virtualhost.hostname</div>
+					</div>
+				</li>
+			}
+			</ul>
+		</div>
+	</div>
 }
