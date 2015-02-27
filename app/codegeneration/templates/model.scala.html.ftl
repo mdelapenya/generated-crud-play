@@ -31,7 +31,7 @@
 				</#if>
 				</#list>
 
-				<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
 	</div>
