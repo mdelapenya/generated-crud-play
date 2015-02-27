@@ -31,10 +31,10 @@ public class ${model.name?cap_first} extends Model {
 	@Constraints.Required
 		</#if>
 		<#if field.hasMaxLength()>
-	@Constraints.MaxLength(${field.maxLength})
+	@Constraints.MaxLength(#{field.maxLength})
 		</#if>
 		<#if field.hasMinLength()>
-	@Constraints.Min(${field.minLength})
+	@Constraints.Min(#{field.minLength})
 		</#if>
 		<#if field.type == "Date">
 	@Formats.DateTime(pattern="dd/MM/yyyy")
