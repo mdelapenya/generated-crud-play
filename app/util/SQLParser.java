@@ -181,6 +181,9 @@ public class SQLParser {
 		if (sanitized.equalsIgnoreCase("type_")) {
 			sanitized = sanitized.replace("type_", "customType");
 		}
+		else if (sanitized.equalsIgnoreCase("primary_")) {
+			sanitized = sanitized.replace("primary_", "customPrimary");
+		}
 
 		return sanitized.trim().replace("_", "");
 	}
