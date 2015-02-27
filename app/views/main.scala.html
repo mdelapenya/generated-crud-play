@@ -11,6 +11,7 @@
 
         <!-- Bootstrap -->
         <link href="@routes.Assets.at("stylesheets/bootstrap.min.css")" rel="stylesheet">
+        <link href="@routes.Assets.at("stylesheets/main.css")" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,9 +24,15 @@
     <body>
         @content
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="@routes.Assets.at("javascripts/bootstrap.min.js")"></script>
+		<footer id="footer" class="text-center" role="contentinfo">
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+			<!-- Include all compiled plugins (below), or include individual files as needed -->
+			<script src="@routes.Assets.at("javascripts/bootstrap.min.js")"></script>
+
+			<p>Designed and built with all the love in the world by <a href="https://twitter.com/mdelapenya" target="_blank">&#64;mdelapenya</a>.</p>
+			<p>Code licensed under <a href="http://www.gnu.org/licenses/lgpl-2.1.html">GNU Lesser General Public License</a>.</p>
+			<p>Currently v.1.0.0 . <a href="https://github.com/mdelapenya/generated-crud-play">GitHub</a></p>
+		</footer>
     </body>
 </html>

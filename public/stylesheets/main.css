@@ -1,0 +1,17 @@
+footer {
+	margin-top: 2em;
+}
+
+#footer {
+	position: relative;
+	margin: 0;
+	background: #39454b;
+	color: #999;
+	color: rgba(185,186,187,0.5);
+	overflow: hidden;
+}
+
+#footer a:hover {
+	color: #fff;
+	color: rgba(185,186,187,1.0);
+}
