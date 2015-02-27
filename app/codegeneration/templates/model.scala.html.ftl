@@ -15,20 +15,19 @@
 			<#if primaryKey.name != field.name>
 			<!-- ${field.name?cap_first} -->
 				<#if field.type == "boolean">
+			<div class="checkbox">
 			@helper.checkbox(${model.name}FormData("${field.name}"))
 				<#else>
+			<div class="form-group">
 			@helper.inputText(${model.name}FormData("${field.name}"))
 				</#if>
+			</div>
 			</#if>
 			</#list>
 
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.${model.name?cap_first}Application.all()">Back to ${model.name?cap_first} List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
-				</div>
-			</div>
+			<a href="@routes.${model.name?cap_first}Application.all()">Back to ${model.name?cap_first} List</a>
+			<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+			<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
 		}
 	</fieldset>
 
