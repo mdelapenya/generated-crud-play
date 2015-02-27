@@ -11,7 +11,7 @@
 				<h1>Edition of ${model.name?cap_first} #@${model.name}FormData("${primaryKey.name}").value</h1>
 				<p class="lead">
 					What do you want to do with them?
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
 					<a href="@routes.${model.name?cap_first}Application.all()">Back to ${model.name?cap_first}s</a>
 				</p>
 			</div>
