@@ -26,7 +26,7 @@ public class Application extends Controller {
     public static Result index() {
 		String error = flash("error");
 
-        return ok(index.render("Welcome to GeneratedCRUD application", error));
+        return ok(index.render("Welcome to GeneratedCRUD", error));
     }
 
 	public static Result models() {
