@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(lock <- locks) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.LockApplication.get(lock.lockId)">@lock.lockId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.LockApplication.get(lock.lockId)">@lock.lockId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @lock.mvccVersion
 					</li>
@@ -54,6 +53,7 @@
 						ExpirationDate: @lock.expirationDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

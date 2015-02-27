@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(company <- companys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.CompanyApplication.get(company.companyId)">@company.companyId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.CompanyApplication.get(company.companyId)">@company.companyId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @company.mvccVersion
 					</li>
@@ -51,6 +50,7 @@
 						Active: @company.active
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

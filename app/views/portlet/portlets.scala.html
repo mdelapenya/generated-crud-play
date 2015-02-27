@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(portlet <- portlets) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.PortletApplication.get(portlet.id)">@portlet.id</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.PortletApplication.get(portlet.id)">@portlet.id</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @portlet.mvccVersion
 					</li>
@@ -36,6 +35,7 @@
 						Active: @portlet.active
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

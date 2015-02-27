@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(mbmessage <- mbmessages) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.MbmessageApplication.get(mbmessage.messageId)">@mbmessage.messageId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.MbmessageApplication.get(mbmessage.messageId)">@mbmessage.messageId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @mbmessage.uuid
 					</li>
@@ -93,6 +92,7 @@
 						StatusDate: @mbmessage.statusDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

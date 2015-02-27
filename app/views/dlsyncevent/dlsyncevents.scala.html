@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(dlsyncevent <- dlsyncevents) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DlsynceventApplication.get(dlsyncevent.syncEventId)">@dlsyncevent.syncEventId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DlsynceventApplication.get(dlsyncevent.syncEventId)">@dlsyncevent.syncEventId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						ModifiedTime: @dlsyncevent.modifiedTime
 					</li>
@@ -33,6 +32,7 @@
 						TypePK: @dlsyncevent.typePK
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.SubscriptionApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(subscriptionFormData("subscriptionId") != "0") {
+				@if(subscriptionFormData("subscriptionId").value != "0") {
 				<h1>Edition of Subscription #@subscriptionFormData("subscriptionId").value</h1>
 				} else {
 				<h1>Creation of a Subscription</h1>

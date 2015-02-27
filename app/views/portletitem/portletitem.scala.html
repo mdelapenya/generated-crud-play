@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.PortletitemApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(portletitemFormData("portletItemId") != "0") {
+				@if(portletitemFormData("portletItemId").value != "0") {
 				<h1>Edition of Portletitem #@portletitemFormData("portletItemId").value</h1>
 				} else {
 				<h1>Creation of a Portletitem</h1>

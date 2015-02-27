@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(backgroundtask <- backgroundtasks) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.BackgroundtaskApplication.get(backgroundtask.backgroundTaskId)">@backgroundtask.backgroundTaskId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.BackgroundtaskApplication.get(backgroundtask.backgroundTaskId)">@backgroundtask.backgroundTaskId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @backgroundtask.mvccVersion
 					</li>
@@ -66,6 +65,7 @@
 						StatusMessage: @backgroundtask.statusMessage
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

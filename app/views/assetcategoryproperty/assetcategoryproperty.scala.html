@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.AssetcategorypropertyApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(assetcategorypropertyFormData("categoryPropertyId") != "0") {
+				@if(assetcategorypropertyFormData("categoryPropertyId").value != "0") {
 				<h1>Edition of Assetcategoryproperty #@assetcategorypropertyFormData("categoryPropertyId").value</h1>
 				} else {
 				<h1>Creation of a Assetcategoryproperty</h1>

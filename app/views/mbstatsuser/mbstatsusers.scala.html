@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(mbstatsuser <- mbstatsusers) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.MbstatsuserApplication.get(mbstatsuser.statsUserId)">@mbstatsuser.statsUserId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.MbstatsuserApplication.get(mbstatsuser.statsUserId)">@mbstatsuser.statsUserId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @mbstatsuser.groupId
 					</li>
@@ -33,6 +32,7 @@
 						LastPostDate: @mbstatsuser.lastPostDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

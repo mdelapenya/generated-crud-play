@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.DlfileversionApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(dlfileversionFormData("fileVersionId") != "0") {
+				@if(dlfileversionFormData("fileVersionId").value != "0") {
 				<h1>Edition of Dlfileversion #@dlfileversionFormData("fileVersionId").value</h1>
 				} else {
 				<h1>Creation of a Dlfileversion</h1>

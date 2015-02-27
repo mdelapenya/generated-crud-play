@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(layoutfriendlyurl <- layoutfriendlyurls) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.LayoutfriendlyurlApplication.get(layoutfriendlyurl.layoutFriendlyURLId)">@layoutfriendlyurl.layoutFriendlyURLId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.LayoutfriendlyurlApplication.get(layoutfriendlyurl.layoutFriendlyURLId)">@layoutfriendlyurl.layoutFriendlyURLId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @layoutfriendlyurl.mvccVersion
 					</li>
@@ -57,6 +56,7 @@
 						LanguageId: @layoutfriendlyurl.languageId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(mbban <- mbbans) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.MbbanApplication.get(mbban.banId)">@mbban.banId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.MbbanApplication.get(mbban.banId)">@mbban.banId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @mbban.uuid
 					</li>
@@ -45,6 +44,7 @@
 						BanUserId: @mbban.banUserId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

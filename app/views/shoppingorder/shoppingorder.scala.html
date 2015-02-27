@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.ShoppingorderApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(shoppingorderFormData("orderId") != "0") {
+				@if(shoppingorderFormData("orderId").value != "0") {
 				<h1>Edition of Shoppingorder #@shoppingorderFormData("orderId").value</h1>
 				} else {
 				<h1>Creation of a Shoppingorder</h1>

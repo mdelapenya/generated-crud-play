@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(shoppingcart <- shoppingcarts) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ShoppingcartApplication.get(shoppingcart.cartId)">@shoppingcart.cartId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ShoppingcartApplication.get(shoppingcart.cartId)">@shoppingcart.cartId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @shoppingcart.groupId
 					</li>
@@ -51,6 +50,7 @@
 						Insure: @shoppingcart.insure
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

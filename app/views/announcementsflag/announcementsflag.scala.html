@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.AnnouncementsflagApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(announcementsflagFormData("flagId") != "0") {
+				@if(announcementsflagFormData("flagId").value != "0") {
 				<h1>Edition of Announcementsflag #@announcementsflagFormData("flagId").value</h1>
 				} else {
 				<h1>Creation of a Announcementsflag</h1>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(listtype <- listtypes) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ListtypeApplication.get(listtype.listTypeId)">@listtype.listTypeId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ListtypeApplication.get(listtype.listTypeId)">@listtype.listTypeId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @listtype.mvccVersion
 					</li>
@@ -30,6 +29,7 @@
 						Customtype: @listtype.customtype
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(assetentry <- assetentrys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.AssetentryApplication.get(assetentry.entryId)">@assetentry.entryId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.AssetentryApplication.get(assetentry.entryId)">@assetentry.entryId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @assetentry.groupId
 					</li>
@@ -99,6 +98,7 @@
 						ViewCount: @assetentry.viewCount
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

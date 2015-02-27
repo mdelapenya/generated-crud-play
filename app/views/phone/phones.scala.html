@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(phone <- phones) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.PhoneApplication.get(phone.phoneId)">@phone.phoneId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.PhoneApplication.get(phone.phoneId)">@phone.phoneId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @phone.mvccVersion
 					</li>
@@ -60,6 +59,7 @@
 						Customprimary: @phone.customprimary
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

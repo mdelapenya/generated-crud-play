@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.DdmstructurelayoutApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(ddmstructurelayoutFormData("structureLayoutId") != "0") {
+				@if(ddmstructurelayoutFormData("structureLayoutId").value != "0") {
 				<h1>Edition of Ddmstructurelayout #@ddmstructurelayoutFormData("structureLayoutId").value</h1>
 				} else {
 				<h1>Creation of a Ddmstructurelayout</h1>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(ddlrecordversion <- ddlrecordversions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DdlrecordversionApplication.get(ddlrecordversion.recordVersionId)">@ddlrecordversion.recordVersionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DdlrecordversionApplication.get(ddlrecordversion.recordVersionId)">@ddlrecordversion.recordVersionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @ddlrecordversion.groupId
 					</li>
@@ -63,6 +62,7 @@
 						StatusDate: @ddlrecordversion.statusDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

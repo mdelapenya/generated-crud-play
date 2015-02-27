@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(assettagstats <- assettagstatss) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.AssettagstatsApplication.get(assettagstats.tagStatsId)">@assettagstats.tagStatsId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.AssettagstatsApplication.get(assettagstats.tagStatsId)">@assettagstats.tagStatsId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						TagId: @assettagstats.tagId
 					</li>
@@ -30,6 +29,7 @@
 						AssetCount: @assettagstats.assetCount
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

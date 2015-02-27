@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.ClustergroupApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(clustergroupFormData("clusterGroupId") != "0") {
+				@if(clustergroupFormData("clusterGroupId").value != "0") {
 				<h1>Edition of Clustergroup #@clustergroupFormData("clusterGroupId").value</h1>
 				} else {
 				<h1>Creation of a Clustergroup</h1>

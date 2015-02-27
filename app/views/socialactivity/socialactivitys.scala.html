@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(socialactivity <- socialactivitys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.SocialactivityApplication.get(socialactivity.activityId)">@socialactivity.activityId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.SocialactivityApplication.get(socialactivity.activityId)">@socialactivity.activityId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @socialactivity.groupId
 					</li>
@@ -60,6 +59,7 @@
 						ReceiverUserId: @socialactivity.receiverUserId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

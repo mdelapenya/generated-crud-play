@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(journalarticleimage <- journalarticleimages) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.JournalarticleimageApplication.get(journalarticleimage.articleImageId)">@journalarticleimage.articleImageId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.JournalarticleimageApplication.get(journalarticleimage.articleImageId)">@journalarticleimage.articleImageId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @journalarticleimage.groupId
 					</li>
@@ -42,6 +41,7 @@
 						TempImage: @journalarticleimage.tempImage
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

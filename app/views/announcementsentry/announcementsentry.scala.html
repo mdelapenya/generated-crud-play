@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.AnnouncementsentryApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(announcementsentryFormData("entryId") != "0") {
+				@if(announcementsentryFormData("entryId").value != "0") {
 				<h1>Edition of Announcementsentry #@announcementsentryFormData("entryId").value</h1>
 				} else {
 				<h1>Creation of a Announcementsentry</h1>

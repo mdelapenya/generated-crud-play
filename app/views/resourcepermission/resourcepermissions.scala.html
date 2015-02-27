@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(resourcepermission <- resourcepermissions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ResourcepermissionApplication.get(resourcepermission.resourcePermissionId)">@resourcepermission.resourcePermissionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ResourcepermissionApplication.get(resourcepermission.resourcePermissionId)">@resourcepermission.resourcePermissionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @resourcepermission.mvccVersion
 					</li>
@@ -45,6 +44,7 @@
 						ActionIds: @resourcepermission.actionIds
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

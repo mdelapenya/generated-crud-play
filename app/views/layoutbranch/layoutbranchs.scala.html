@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(layoutbranch <- layoutbranchs) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.LayoutbranchApplication.get(layoutbranch.layoutBranchId)">@layoutbranch.layoutBranchId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.LayoutbranchApplication.get(layoutbranch.layoutBranchId)">@layoutbranch.layoutBranchId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @layoutbranch.mvccVersion
 					</li>
@@ -51,6 +50,7 @@
 						Master: @layoutbranch.master
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

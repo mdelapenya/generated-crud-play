@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.AssettagApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(assettagFormData("tagId") != "0") {
+				@if(assettagFormData("tagId").value != "0") {
 				<h1>Edition of Assettag #@assettagFormData("tagId").value</h1>
 				} else {
 				<h1>Creation of a Assettag</h1>

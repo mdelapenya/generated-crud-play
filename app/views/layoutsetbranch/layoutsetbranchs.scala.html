@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(layoutsetbranch <- layoutsetbranchs) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.LayoutsetbranchApplication.get(layoutsetbranch.layoutSetBranchId)">@layoutsetbranch.layoutSetBranchId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.LayoutsetbranchApplication.get(layoutsetbranch.layoutSetBranchId)">@layoutsetbranch.layoutSetBranchId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @layoutsetbranch.mvccVersion
 					</li>
@@ -81,6 +80,7 @@
 						LayoutSetPrototypeLinkEnabled: @layoutsetbranch.layoutSetPrototypeLinkEnabled
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(sclicense <- sclicenses) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.SclicenseApplication.get(sclicense.licenseId)">@sclicense.licenseId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.SclicenseApplication.get(sclicense.licenseId)">@sclicense.licenseId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Name: @sclicense.name
 					</li>
@@ -36,6 +35,7 @@
 						Recommended: @sclicense.recommended
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

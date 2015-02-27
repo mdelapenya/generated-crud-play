@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(release <- releases) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ReleaseApplication.get(release.releaseId)">@release.releaseId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ReleaseApplication.get(release.releaseId)">@release.releaseId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @release.mvccVersion
 					</li>
@@ -48,6 +47,7 @@
 						TestString: @release.testString
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

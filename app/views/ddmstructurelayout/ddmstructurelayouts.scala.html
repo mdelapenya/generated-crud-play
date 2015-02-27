@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(ddmstructurelayout <- ddmstructurelayouts) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DdmstructurelayoutApplication.get(ddmstructurelayout.structureLayoutId)">@ddmstructurelayout.structureLayoutId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DdmstructurelayoutApplication.get(ddmstructurelayout.structureLayoutId)">@ddmstructurelayout.structureLayoutId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @ddmstructurelayout.uuid
 					</li>
@@ -48,6 +47,7 @@
 						Definition: @ddmstructurelayout.definition
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

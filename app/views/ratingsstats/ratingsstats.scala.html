@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.RatingsstatsApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(ratingsstatsFormData("statsId") != "0") {
+				@if(ratingsstatsFormData("statsId").value != "0") {
 				<h1>Edition of Ratingsstats #@ratingsstatsFormData("statsId").value</h1>
 				} else {
 				<h1>Creation of a Ratingsstats</h1>

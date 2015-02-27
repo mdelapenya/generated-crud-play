@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(expandovalue <- expandovalues) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ExpandovalueApplication.get(expandovalue.valueId)">@expandovalue.valueId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ExpandovalueApplication.get(expandovalue.valueId)">@expandovalue.valueId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						CompanyId: @expandovalue.companyId
 					</li>
@@ -42,6 +41,7 @@
 						Data: @expandovalue.data
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

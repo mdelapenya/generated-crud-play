@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(scproductentry <- scproductentrys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ScproductentryApplication.get(scproductentry.productEntryId)">@scproductentry.productEntryId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ScproductentryApplication.get(scproductentry.productEntryId)">@scproductentry.productEntryId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @scproductentry.groupId
 					</li>
@@ -66,6 +65,7 @@
 						RepoArtifactId: @scproductentry.repoArtifactId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

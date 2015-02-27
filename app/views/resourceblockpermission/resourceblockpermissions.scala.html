@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(resourceblockpermission <- resourceblockpermissions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ResourceblockpermissionApplication.get(resourceblockpermission.resourceBlockPermissionId)">@resourceblockpermission.resourceBlockPermissionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ResourceblockpermissionApplication.get(resourceblockpermission.resourceBlockPermissionId)">@resourceblockpermission.resourceBlockPermissionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @resourceblockpermission.mvccVersion
 					</li>
@@ -33,6 +32,7 @@
 						ActionIds: @resourceblockpermission.actionIds
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

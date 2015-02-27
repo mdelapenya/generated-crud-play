@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(shoppingorder <- shoppingorders) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ShoppingorderApplication.get(shoppingorder.orderId)">@shoppingorder.orderId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ShoppingorderApplication.get(shoppingorder.orderId)">@shoppingorder.orderId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @shoppingorder.groupId
 					</li>
@@ -171,6 +170,7 @@
 						SendShippingEmail: @shoppingorder.sendShippingEmail
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

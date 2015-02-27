@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.WorkflowdefinitionlinkApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(workflowdefinitionlinkFormData("workflowDefinitionLinkId") != "0") {
+				@if(workflowdefinitionlinkFormData("workflowDefinitionLinkId").value != "0") {
 				<h1>Edition of Workflowdefinitionlink #@workflowdefinitionlinkFormData("workflowDefinitionLinkId").value</h1>
 				} else {
 				<h1>Creation of a Workflowdefinitionlink</h1>

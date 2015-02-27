@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(shard <- shards) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ShardApplication.get(shard.shardId)">@shard.shardId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ShardApplication.get(shard.shardId)">@shard.shardId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @shard.mvccVersion
 					</li>
@@ -33,6 +32,7 @@
 						Name: @shard.name
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

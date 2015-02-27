@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.DlcontentApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(dlcontentFormData("contentId") != "0") {
+				@if(dlcontentFormData("contentId").value != "0") {
 				<h1>Edition of Dlcontent #@dlcontentFormData("contentId").value</h1>
 				} else {
 				<h1>Creation of a Dlcontent</h1>

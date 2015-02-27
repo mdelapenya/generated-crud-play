@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(orglabor <- orglabors) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.OrglaborApplication.get(orglabor.orgLaborId)">@orglabor.orgLaborId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.OrglaborApplication.get(orglabor.orgLaborId)">@orglabor.orgLaborId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @orglabor.mvccVersion
 					</li>
@@ -72,6 +71,7 @@
 						SatClose: @orglabor.satClose
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

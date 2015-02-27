@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.CustomgroupApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(customgroupFormData("groupId") != "0") {
+				@if(customgroupFormData("groupId").value != "0") {
 				<h1>Edition of Customgroup #@customgroupFormData("groupId").value</h1>
 				} else {
 				<h1>Creation of a Customgroup</h1>

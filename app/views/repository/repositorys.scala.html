@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(repository <- repositorys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.RepositoryApplication.get(repository.repositoryId)">@repository.repositoryId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.RepositoryApplication.get(repository.repositoryId)">@repository.repositoryId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @repository.mvccVersion
 					</li>
@@ -63,6 +62,7 @@
 						DlFolderId: @repository.dlFolderId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(socialactivitylimit <- socialactivitylimits) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.SocialactivitylimitApplication.get(socialactivitylimit.activityLimitId)">@socialactivitylimit.activityLimitId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.SocialactivitylimitApplication.get(socialactivitylimit.activityLimitId)">@socialactivitylimit.activityLimitId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @socialactivitylimit.groupId
 					</li>
@@ -45,6 +44,7 @@
 						Value: @socialactivitylimit.value
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

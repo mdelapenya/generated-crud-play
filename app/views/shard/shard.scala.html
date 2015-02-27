@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.ShardApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(shardFormData("shardId") != "0") {
+				@if(shardFormData("shardId").value != "0") {
 				<h1>Edition of Shard #@shardFormData("shardId").value</h1>
 				} else {
 				<h1>Creation of a Shard</h1>

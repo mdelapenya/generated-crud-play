@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.ExpandovalueApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(expandovalueFormData("valueId") != "0") {
+				@if(expandovalueFormData("valueId").value != "0") {
 				<h1>Edition of Expandovalue #@expandovalueFormData("valueId").value</h1>
 				} else {
 				<h1>Creation of a Expandovalue</h1>

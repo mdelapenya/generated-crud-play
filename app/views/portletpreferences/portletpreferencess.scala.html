@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(portletpreferences <- portletpreferencess) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.PortletpreferencesApplication.get(portletpreferences.portletPreferencesId)">@portletpreferences.portletPreferencesId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.PortletpreferencesApplication.get(portletpreferences.portletPreferencesId)">@portletpreferences.portletPreferencesId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @portletpreferences.mvccVersion
 					</li>
@@ -39,6 +38,7 @@
 						Preferences: @portletpreferences.preferences
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

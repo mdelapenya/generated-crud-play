@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(mbmailinglist <- mbmailinglists) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.MbmailinglistApplication.get(mbmailinglist.mailingListId)">@mbmailinglist.mailingListId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.MbmailinglistApplication.get(mbmailinglist.mailingListId)">@mbmailinglist.mailingListId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @mbmailinglist.uuid
 					</li>
@@ -96,6 +95,7 @@
 						Active: @mbmailinglist.active
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

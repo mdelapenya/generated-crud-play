@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.LayoutsetbranchApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(layoutsetbranchFormData("layoutSetBranchId") != "0") {
+				@if(layoutsetbranchFormData("layoutSetBranchId").value != "0") {
 				<h1>Edition of Layoutsetbranch #@layoutsetbranchFormData("layoutSetBranchId").value</h1>
 				} else {
 				<h1>Creation of a Layoutsetbranch</h1>

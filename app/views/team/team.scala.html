@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.TeamApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(teamFormData("teamId") != "0") {
+				@if(teamFormData("teamId").value != "0") {
 				<h1>Edition of Team #@teamFormData("teamId").value</h1>
 				} else {
 				<h1>Creation of a Team</h1>

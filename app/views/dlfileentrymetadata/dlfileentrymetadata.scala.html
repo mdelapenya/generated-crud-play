@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.DlfileentrymetadataApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(dlfileentrymetadataFormData("fileEntryMetadataId") != "0") {
+				@if(dlfileentrymetadataFormData("fileEntryMetadataId").value != "0") {
 				<h1>Edition of Dlfileentrymetadata #@dlfileentrymetadataFormData("fileEntryMetadataId").value</h1>
 				} else {
 				<h1>Creation of a Dlfileentrymetadata</h1>

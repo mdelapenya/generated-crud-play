@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.SocialrelationApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(socialrelationFormData("relationId") != "0") {
+				@if(socialrelationFormData("relationId").value != "0") {
 				<h1>Edition of Socialrelation #@socialrelationFormData("relationId").value</h1>
 				} else {
 				<h1>Creation of a Socialrelation</h1>

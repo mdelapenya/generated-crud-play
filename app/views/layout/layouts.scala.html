@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(layout <- layouts) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.LayoutApplication.get(layout.plid)">@layout.plid</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.LayoutApplication.get(layout.plid)">@layout.plid</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @layout.mvccVersion
 					</li>
@@ -111,6 +110,7 @@
 						SourcePrototypeLayoutUuid: @layout.sourcePrototypeLayoutUuid
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

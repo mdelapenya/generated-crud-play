@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(mbthread <- mbthreads) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.MbthreadApplication.get(mbthread.threadId)">@mbthread.threadId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.MbthreadApplication.get(mbthread.threadId)">@mbthread.threadId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @mbthread.uuid
 					</li>
@@ -81,6 +80,7 @@
 						StatusDate: @mbthread.statusDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

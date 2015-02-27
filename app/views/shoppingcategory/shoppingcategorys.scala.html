@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(shoppingcategory <- shoppingcategorys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ShoppingcategoryApplication.get(shoppingcategory.categoryId)">@shoppingcategory.categoryId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ShoppingcategoryApplication.get(shoppingcategory.categoryId)">@shoppingcategory.categoryId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @shoppingcategory.groupId
 					</li>
@@ -48,6 +47,7 @@
 						Description: @shoppingcategory.description
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

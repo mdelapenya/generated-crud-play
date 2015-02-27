@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.ExpandocolumnApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(expandocolumnFormData("columnId") != "0") {
+				@if(expandocolumnFormData("columnId").value != "0") {
 				<h1>Edition of Expandocolumn #@expandocolumnFormData("columnId").value</h1>
 				} else {
 				<h1>Creation of a Expandocolumn</h1>

@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.PortletpreferencesApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(portletpreferencesFormData("portletPreferencesId") != "0") {
+				@if(portletpreferencesFormData("portletPreferencesId").value != "0") {
 				<h1>Edition of Portletpreferences #@portletpreferencesFormData("portletPreferencesId").value</h1>
 				} else {
 				<h1>Creation of a Portletpreferences</h1>

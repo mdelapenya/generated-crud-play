@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(useridmapper <- useridmappers) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.UseridmapperApplication.get(useridmapper.userIdMapperId)">@useridmapper.userIdMapperId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.UseridmapperApplication.get(useridmapper.userIdMapperId)">@useridmapper.userIdMapperId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @useridmapper.mvccVersion
 					</li>
@@ -36,6 +35,7 @@
 						ExternalUserId: @useridmapper.externalUserId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

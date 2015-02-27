@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(announcementsentry <- announcementsentrys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.AnnouncementsentryApplication.get(announcementsentry.entryId)">@announcementsentry.entryId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.AnnouncementsentryApplication.get(announcementsentry.entryId)">@announcementsentry.entryId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @announcementsentry.uuid
 					</li>
@@ -69,6 +68,7 @@
 						Alert: @announcementsentry.alert
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

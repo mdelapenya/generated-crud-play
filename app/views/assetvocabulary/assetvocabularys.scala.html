@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(assetvocabulary <- assetvocabularys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.AssetvocabularyApplication.get(assetvocabulary.vocabularyId)">@assetvocabulary.vocabularyId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.AssetvocabularyApplication.get(assetvocabulary.vocabularyId)">@assetvocabulary.vocabularyId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @assetvocabulary.uuid
 					</li>
@@ -54,6 +53,7 @@
 						Settings: @assetvocabulary.settings
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

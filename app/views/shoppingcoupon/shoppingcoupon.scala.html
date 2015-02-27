@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.ShoppingcouponApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(shoppingcouponFormData("couponId") != "0") {
+				@if(shoppingcouponFormData("couponId").value != "0") {
 				<h1>Edition of Shoppingcoupon #@shoppingcouponFormData("couponId").value</h1>
 				} else {
 				<h1>Creation of a Shoppingcoupon</h1>

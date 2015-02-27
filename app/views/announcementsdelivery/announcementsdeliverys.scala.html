@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(announcementsdelivery <- announcementsdeliverys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.AnnouncementsdeliveryApplication.get(announcementsdelivery.deliveryId)">@announcementsdelivery.deliveryId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.AnnouncementsdeliveryApplication.get(announcementsdelivery.deliveryId)">@announcementsdelivery.deliveryId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						CompanyId: @announcementsdelivery.companyId
 					</li>
@@ -39,6 +38,7 @@
 						Website: @announcementsdelivery.website
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(webdavprops <- webdavpropss) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.WebdavpropsApplication.get(webdavprops.webDavPropsId)">@webdavprops.webDavPropsId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.WebdavpropsApplication.get(webdavprops.webDavPropsId)">@webdavprops.webDavPropsId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @webdavprops.mvccVersion
 					</li>
@@ -42,6 +41,7 @@
 						Props: @webdavprops.props
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

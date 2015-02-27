@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(customgroup <- customgroups) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.CustomgroupApplication.get(customgroup.groupId)">@customgroup.groupId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.CustomgroupApplication.get(customgroup.groupId)">@customgroup.groupId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @customgroup.mvccVersion
 					</li>
@@ -84,6 +83,7 @@
 						Active: @customgroup.active
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

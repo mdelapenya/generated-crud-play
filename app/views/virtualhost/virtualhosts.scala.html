@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(virtualhost <- virtualhosts) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.VirtualhostApplication.get(virtualhost.virtualHostId)">@virtualhost.virtualHostId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.VirtualhostApplication.get(virtualhost.virtualHostId)">@virtualhost.virtualHostId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @virtualhost.mvccVersion
 					</li>
@@ -33,6 +32,7 @@
 						Hostname: @virtualhost.hostname
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

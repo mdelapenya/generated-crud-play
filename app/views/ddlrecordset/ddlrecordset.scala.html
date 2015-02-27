@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.DdlrecordsetApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(ddlrecordsetFormData("recordSetId") != "0") {
+				@if(ddlrecordsetFormData("recordSetId").value != "0") {
 				<h1>Edition of Ddlrecordset #@ddlrecordsetFormData("recordSetId").value</h1>
 				} else {
 				<h1>Creation of a Ddlrecordset</h1>

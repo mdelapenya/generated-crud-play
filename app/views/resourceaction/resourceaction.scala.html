@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.ResourceactionApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(resourceactionFormData("resourceActionId") != "0") {
+				@if(resourceactionFormData("resourceActionId").value != "0") {
 				<h1>Edition of Resourceaction #@resourceactionFormData("resourceActionId").value</h1>
 				} else {
 				<h1>Creation of a Resourceaction</h1>

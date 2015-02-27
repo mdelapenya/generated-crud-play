@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(expandotable <- expandotables) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ExpandotableApplication.get(expandotable.tableId)">@expandotable.tableId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ExpandotableApplication.get(expandotable.tableId)">@expandotable.tableId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						CompanyId: @expandotable.companyId
 					</li>
@@ -30,6 +29,7 @@
 						Name: @expandotable.name
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

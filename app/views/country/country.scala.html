@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.CountryApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(countryFormData("countryId") != "0") {
+				@if(countryFormData("countryId").value != "0") {
 				<h1>Edition of Country #@countryFormData("countryId").value</h1>
 				} else {
 				<h1>Creation of a Country</h1>

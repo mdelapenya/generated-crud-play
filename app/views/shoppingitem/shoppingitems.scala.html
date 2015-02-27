@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(shoppingitem <- shoppingitems) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ShoppingitemApplication.get(shoppingitem.itemId)">@shoppingitem.itemId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ShoppingitemApplication.get(shoppingitem.itemId)">@shoppingitem.itemId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @shoppingitem.groupId
 					</li>
@@ -120,6 +119,7 @@
 						LargeImageURL: @shoppingitem.largeImageURL
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

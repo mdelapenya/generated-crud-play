@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(dlfileentrymetadata <- dlfileentrymetadatas) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DlfileentrymetadataApplication.get(dlfileentrymetadata.fileEntryMetadataId)">@dlfileentrymetadata.fileEntryMetadataId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DlfileentrymetadataApplication.get(dlfileentrymetadata.fileEntryMetadataId)">@dlfileentrymetadata.fileEntryMetadataId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @dlfileentrymetadata.uuid
 					</li>
@@ -39,6 +38,7 @@
 						FileVersionId: @dlfileentrymetadata.fileVersionId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

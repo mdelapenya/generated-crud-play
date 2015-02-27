@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.BackgroundtaskApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(backgroundtaskFormData("backgroundTaskId") != "0") {
+				@if(backgroundtaskFormData("backgroundTaskId").value != "0") {
 				<h1>Edition of Backgroundtask #@backgroundtaskFormData("backgroundTaskId").value</h1>
 				} else {
 				<h1>Creation of a Backgroundtask</h1>

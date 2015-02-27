@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(region <- regions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.RegionApplication.get(region.regionId)">@region.regionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.RegionApplication.get(region.regionId)">@region.regionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @region.mvccVersion
 					</li>
@@ -36,6 +35,7 @@
 						Active: @region.active
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

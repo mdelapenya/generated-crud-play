@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.AssetlinkApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(assetlinkFormData("linkId") != "0") {
+				@if(assetlinkFormData("linkId").value != "0") {
 				<h1>Edition of Assetlink #@assetlinkFormData("linkId").value</h1>
 				} else {
 				<h1>Creation of a Assetlink</h1>

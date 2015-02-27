@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(announcementsflag <- announcementsflags) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.AnnouncementsflagApplication.get(announcementsflag.flagId)">@announcementsflag.flagId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.AnnouncementsflagApplication.get(announcementsflag.flagId)">@announcementsflag.flagId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						UserId: @announcementsflag.userId
 					</li>
@@ -33,6 +32,7 @@
 						Value: @announcementsflag.value
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

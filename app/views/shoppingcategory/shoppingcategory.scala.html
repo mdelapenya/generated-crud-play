@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.ShoppingcategoryApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(shoppingcategoryFormData("categoryId") != "0") {
+				@if(shoppingcategoryFormData("categoryId").value != "0") {
 				<h1>Edition of Shoppingcategory #@shoppingcategoryFormData("categoryId").value</h1>
 				} else {
 				<h1>Creation of a Shoppingcategory</h1>

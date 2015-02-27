@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.MdrrulegroupinstanceApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(mdrrulegroupinstanceFormData("ruleGroupInstanceId") != "0") {
+				@if(mdrrulegroupinstanceFormData("ruleGroupInstanceId").value != "0") {
 				<h1>Edition of Mdrrulegroupinstance #@mdrrulegroupinstanceFormData("ruleGroupInstanceId").value</h1>
 				} else {
 				<h1>Creation of a Mdrrulegroupinstance</h1>

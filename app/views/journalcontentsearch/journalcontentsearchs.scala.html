@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(journalcontentsearch <- journalcontentsearchs) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.JournalcontentsearchApplication.get(journalcontentsearch.contentSearchId)">@journalcontentsearch.contentSearchId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.JournalcontentsearchApplication.get(journalcontentsearch.contentSearchId)">@journalcontentsearch.contentSearchId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @journalcontentsearch.groupId
 					</li>
@@ -39,6 +38,7 @@
 						ArticleId: @journalcontentsearch.articleId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

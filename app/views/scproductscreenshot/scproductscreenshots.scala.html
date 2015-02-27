@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(scproductscreenshot <- scproductscreenshots) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ScproductscreenshotApplication.get(scproductscreenshot.productScreenshotId)">@scproductscreenshot.productScreenshotId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ScproductscreenshotApplication.get(scproductscreenshot.productScreenshotId)">@scproductscreenshot.productScreenshotId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						CompanyId: @scproductscreenshot.companyId
 					</li>
@@ -39,6 +38,7 @@
 						Priority: @scproductscreenshot.priority
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

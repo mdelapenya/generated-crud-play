@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.MbstatsuserApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(mbstatsuserFormData("statsUserId") != "0") {
+				@if(mbstatsuserFormData("statsUserId").value != "0") {
 				<h1>Edition of Mbstatsuser #@mbstatsuserFormData("statsUserId").value</h1>
 				} else {
 				<h1>Creation of a Mbstatsuser</h1>

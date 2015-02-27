@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.UsergroupApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(usergroupFormData("userGroupId") != "0") {
+				@if(usergroupFormData("userGroupId").value != "0") {
 				<h1>Edition of Usergroup #@usergroupFormData("userGroupId").value</h1>
 				} else {
 				<h1>Creation of a Usergroup</h1>

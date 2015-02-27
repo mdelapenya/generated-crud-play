@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(ddmstructurelink <- ddmstructurelinks) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DdmstructurelinkApplication.get(ddmstructurelink.structureLinkId)">@ddmstructurelink.structureLinkId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DdmstructurelinkApplication.get(ddmstructurelink.structureLinkId)">@ddmstructurelink.structureLinkId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						ClassNameId: @ddmstructurelink.classNameId
 					</li>
@@ -30,6 +29,7 @@
 						StructureId: @ddmstructurelink.structureId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

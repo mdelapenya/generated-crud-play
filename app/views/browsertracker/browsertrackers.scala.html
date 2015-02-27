@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(browsertracker <- browsertrackers) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.BrowsertrackerApplication.get(browsertracker.browserTrackerId)">@browsertracker.browserTrackerId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.BrowsertrackerApplication.get(browsertracker.browserTrackerId)">@browsertracker.browserTrackerId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @browsertracker.mvccVersion
 					</li>
@@ -30,6 +29,7 @@
 						BrowserKey: @browsertracker.browserKey
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

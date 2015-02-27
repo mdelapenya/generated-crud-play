@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(exportimportconfiguration <- exportimportconfigurations) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ExportimportconfigurationApplication.get(exportimportconfiguration.exportImportConfigurationId)">@exportimportconfiguration.exportImportConfigurationId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ExportimportconfigurationApplication.get(exportimportconfiguration.exportImportConfigurationId)">@exportimportconfiguration.exportImportConfigurationId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @exportimportconfiguration.mvccVersion
 					</li>
@@ -66,6 +65,7 @@
 						StatusDate: @exportimportconfiguration.statusDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

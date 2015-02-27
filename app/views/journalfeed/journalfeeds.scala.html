@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(journalfeed <- journalfeeds) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.JournalfeedApplication.get(journalfeed.id)">@journalfeed.id</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.JournalfeedApplication.get(journalfeed.id)">@journalfeed.id</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @journalfeed.uuid
 					</li>
@@ -84,6 +83,7 @@
 						FeedVersion: @journalfeed.feedVersion
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

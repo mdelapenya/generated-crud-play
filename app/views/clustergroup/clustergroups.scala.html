@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(clustergroup <- clustergroups) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ClustergroupApplication.get(clustergroup.clusterGroupId)">@clustergroup.clusterGroupId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ClustergroupApplication.get(clustergroup.clusterGroupId)">@clustergroup.clusterGroupId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @clustergroup.mvccVersion
 					</li>
@@ -33,6 +32,7 @@
 						WholeCluster: @clustergroup.wholeCluster
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

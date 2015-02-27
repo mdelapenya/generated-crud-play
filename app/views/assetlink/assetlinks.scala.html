@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(assetlink <- assetlinks) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.AssetlinkApplication.get(assetlink.linkId)">@assetlink.linkId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.AssetlinkApplication.get(assetlink.linkId)">@assetlink.linkId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						CompanyId: @assetlink.companyId
 					</li>
@@ -45,6 +44,7 @@
 						Weight: @assetlink.weight
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

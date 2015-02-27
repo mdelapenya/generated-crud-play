@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(layoutrevision <- layoutrevisions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.LayoutrevisionApplication.get(layoutrevision.layoutRevisionId)">@layoutrevision.layoutRevisionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.LayoutrevisionApplication.get(layoutrevision.layoutRevisionId)">@layoutrevision.layoutRevisionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @layoutrevision.mvccVersion
 					</li>
@@ -111,6 +110,7 @@
 						StatusDate: @layoutrevision.statusDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

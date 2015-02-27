@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(dlfilerank <- dlfileranks) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DlfilerankApplication.get(dlfilerank.fileRankId)">@dlfilerank.fileRankId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DlfilerankApplication.get(dlfilerank.fileRankId)">@dlfilerank.fileRankId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @dlfilerank.groupId
 					</li>
@@ -39,6 +38,7 @@
 						Active: @dlfilerank.active
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

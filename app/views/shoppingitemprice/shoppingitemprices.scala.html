@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(shoppingitemprice <- shoppingitemprices) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ShoppingitempriceApplication.get(shoppingitemprice.itemPriceId)">@shoppingitemprice.itemPriceId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ShoppingitempriceApplication.get(shoppingitemprice.itemPriceId)">@shoppingitemprice.itemPriceId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						ItemId: @shoppingitemprice.itemId
 					</li>
@@ -48,6 +47,7 @@
 						Status: @shoppingitemprice.status
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

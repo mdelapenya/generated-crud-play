@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(dlfileentrytype <- dlfileentrytypes) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DlfileentrytypeApplication.get(dlfileentrytype.fileEntryTypeId)">@dlfileentrytype.fileEntryTypeId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DlfileentrytypeApplication.get(dlfileentrytype.fileEntryTypeId)">@dlfileentrytype.fileEntryTypeId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @dlfileentrytype.uuid
 					</li>
@@ -51,6 +50,7 @@
 						Description: @dlfileentrytype.description
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.UseridmapperApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(useridmapperFormData("userIdMapperId") != "0") {
+				@if(useridmapperFormData("userIdMapperId").value != "0") {
 				<h1>Edition of Useridmapper #@useridmapperFormData("userIdMapperId").value</h1>
 				} else {
 				<h1>Creation of a Useridmapper</h1>

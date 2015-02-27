@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.DdmtemplateversionApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(ddmtemplateversionFormData("templateVersionId") != "0") {
+				@if(ddmtemplateversionFormData("templateVersionId").value != "0") {
 				<h1>Edition of Ddmtemplateversion #@ddmtemplateversionFormData("templateVersionId").value</h1>
 				} else {
 				<h1>Creation of a Ddmtemplateversion</h1>

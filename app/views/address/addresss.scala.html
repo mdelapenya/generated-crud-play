@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(address <- addresss) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.AddressApplication.get(address.addressId)">@address.addressId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.AddressApplication.get(address.addressId)">@address.addressId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @address.mvccVersion
 					</li>
@@ -78,6 +77,7 @@
 						Customprimary: @address.customprimary
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

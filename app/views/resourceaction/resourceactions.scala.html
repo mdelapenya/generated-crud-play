@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(resourceaction <- resourceactions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ResourceactionApplication.get(resourceaction.resourceActionId)">@resourceaction.resourceActionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ResourceactionApplication.get(resourceaction.resourceActionId)">@resourceaction.resourceActionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @resourceaction.mvccVersion
 					</li>
@@ -33,6 +32,7 @@
 						BitwiseValue: @resourceaction.bitwiseValue
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

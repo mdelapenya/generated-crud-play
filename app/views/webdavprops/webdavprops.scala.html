@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.WebdavpropsApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(webdavpropsFormData("webDavPropsId") != "0") {
+				@if(webdavpropsFormData("webDavPropsId").value != "0") {
 				<h1>Edition of Webdavprops #@webdavpropsFormData("webDavPropsId").value</h1>
 				} else {
 				<h1>Creation of a Webdavprops</h1>

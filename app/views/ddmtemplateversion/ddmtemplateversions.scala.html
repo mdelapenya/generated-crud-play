@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(ddmtemplateversion <- ddmtemplateversions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DdmtemplateversionApplication.get(ddmtemplateversion.templateVersionId)">@ddmtemplateversion.templateVersionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DdmtemplateversionApplication.get(ddmtemplateversion.templateVersionId)">@ddmtemplateversion.templateVersionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @ddmtemplateversion.groupId
 					</li>
@@ -54,6 +53,7 @@
 						Script: @ddmtemplateversion.script
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

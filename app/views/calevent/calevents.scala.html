@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(calevent <- calevents) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.CaleventApplication.get(calevent.eventId)">@calevent.eventId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.CaleventApplication.get(calevent.eventId)">@calevent.eventId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @calevent.uuid
 					</li>
@@ -87,6 +86,7 @@
 						SecondReminder: @calevent.secondReminder
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

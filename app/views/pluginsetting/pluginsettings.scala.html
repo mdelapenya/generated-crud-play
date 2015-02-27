@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(pluginsetting <- pluginsettings) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.PluginsettingApplication.get(pluginsetting.pluginSettingId)">@pluginsetting.pluginSettingId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.PluginsettingApplication.get(pluginsetting.pluginSettingId)">@pluginsetting.pluginSettingId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @pluginsetting.mvccVersion
 					</li>
@@ -39,6 +38,7 @@
 						Active: @pluginsetting.active
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

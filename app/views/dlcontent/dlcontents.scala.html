@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(dlcontent <- dlcontents) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DlcontentApplication.get(dlcontent.contentId)">@dlcontent.contentId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DlcontentApplication.get(dlcontent.contentId)">@dlcontent.contentId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @dlcontent.groupId
 					</li>
@@ -36,6 +35,7 @@
 						Version: @dlcontent.version
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

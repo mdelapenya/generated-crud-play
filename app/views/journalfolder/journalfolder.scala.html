@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.JournalfolderApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(journalfolderFormData("folderId") != "0") {
+				@if(journalfolderFormData("folderId").value != "0") {
 				<h1>Edition of Journalfolder #@journalfolderFormData("folderId").value</h1>
 				} else {
 				<h1>Creation of a Journalfolder</h1>

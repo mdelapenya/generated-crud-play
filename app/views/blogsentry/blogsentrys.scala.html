@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(blogsentry <- blogsentrys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.BlogsentryApplication.get(blogsentry.entryId)">@blogsentry.entryId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.BlogsentryApplication.get(blogsentry.entryId)">@blogsentry.entryId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @blogsentry.uuid
 					</li>
@@ -99,6 +98,7 @@
 						StatusDate: @blogsentry.statusDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

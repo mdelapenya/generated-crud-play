@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(usernotificationdelivery <- usernotificationdeliverys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.UsernotificationdeliveryApplication.get(usernotificationdelivery.userNotificationDeliveryId)">@usernotificationdelivery.userNotificationDeliveryId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.UsernotificationdeliveryApplication.get(usernotificationdelivery.userNotificationDeliveryId)">@usernotificationdelivery.userNotificationDeliveryId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @usernotificationdelivery.mvccVersion
 					</li>
@@ -45,6 +44,7 @@
 						Deliver: @usernotificationdelivery.deliver
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

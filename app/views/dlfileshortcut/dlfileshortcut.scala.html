@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.DlfileshortcutApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(dlfileshortcutFormData("fileShortcutId") != "0") {
+				@if(dlfileshortcutFormData("fileShortcutId").value != "0") {
 				<h1>Edition of Dlfileshortcut #@dlfileshortcutFormData("fileShortcutId").value</h1>
 				} else {
 				<h1>Creation of a Dlfileshortcut</h1>

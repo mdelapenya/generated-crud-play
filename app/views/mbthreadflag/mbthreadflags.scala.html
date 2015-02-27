@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(mbthreadflag <- mbthreadflags) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.MbthreadflagApplication.get(mbthreadflag.threadFlagId)">@mbthreadflag.threadFlagId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.MbthreadflagApplication.get(mbthreadflag.threadFlagId)">@mbthreadflag.threadFlagId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @mbthreadflag.uuid
 					</li>
@@ -45,6 +44,7 @@
 						ThreadId: @mbthreadflag.threadId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

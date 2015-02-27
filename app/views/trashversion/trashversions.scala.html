@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(trashversion <- trashversions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.TrashversionApplication.get(trashversion.versionId)">@trashversion.versionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.TrashversionApplication.get(trashversion.versionId)">@trashversion.versionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						EntryId: @trashversion.entryId
 					</li>
@@ -36,6 +35,7 @@
 						Status: @trashversion.status
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

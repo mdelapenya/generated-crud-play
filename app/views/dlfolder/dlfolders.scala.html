@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(dlfolder <- dlfolders) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DlfolderApplication.get(dlfolder.folderId)">@dlfolder.folderId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DlfolderApplication.get(dlfolder.folderId)">@dlfolder.folderId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @dlfolder.uuid
 					</li>
@@ -84,6 +83,7 @@
 						StatusDate: @dlfolder.statusDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

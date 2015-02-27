@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(ddmstoragelink <- ddmstoragelinks) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DdmstoragelinkApplication.get(ddmstoragelink.storageLinkId)">@ddmstoragelink.storageLinkId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DdmstoragelinkApplication.get(ddmstoragelink.storageLinkId)">@ddmstoragelink.storageLinkId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @ddmstoragelink.uuid
 					</li>
@@ -33,6 +32,7 @@
 						StructureId: @ddmstoragelink.structureId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.JournalarticleApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(journalarticleFormData("id") != "0") {
+				@if(journalarticleFormData("id").value != "0") {
 				<h1>Edition of Journalarticle #@journalarticleFormData("id").value</h1>
 				} else {
 				<h1>Creation of a Journalarticle</h1>

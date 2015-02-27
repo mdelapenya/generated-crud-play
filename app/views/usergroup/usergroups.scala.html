@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(usergroup <- usergroups) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.UsergroupApplication.get(usergroup.userGroupId)">@usergroup.userGroupId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.UsergroupApplication.get(usergroup.userGroupId)">@usergroup.userGroupId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @usergroup.mvccVersion
 					</li>
@@ -54,6 +53,7 @@
 						AddedByLDAPImport: @usergroup.addedByLDAPImport
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

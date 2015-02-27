@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(contact <- contacts) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ContactApplication.get(contact.contactId)">@contact.contactId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ContactApplication.get(contact.contactId)">@contact.contactId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @contact.mvccVersion
 					</li>
@@ -120,6 +119,7 @@
 						HoursOfOperation: @contact.hoursOfOperation
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

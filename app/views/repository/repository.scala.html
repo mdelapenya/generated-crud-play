@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.RepositoryApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(repositoryFormData("repositoryId") != "0") {
+				@if(repositoryFormData("repositoryId").value != "0") {
 				<h1>Edition of Repository #@repositoryFormData("repositoryId").value</h1>
 				} else {
 				<h1>Creation of a Repository</h1>

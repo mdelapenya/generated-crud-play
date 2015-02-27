@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(ddmtemplate <- ddmtemplates) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DdmtemplateApplication.get(ddmtemplate.templateId)">@ddmtemplate.templateId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DdmtemplateApplication.get(ddmtemplate.templateId)">@ddmtemplate.templateId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @ddmtemplate.uuid
 					</li>
@@ -87,6 +86,7 @@
 						SmallImageURL: @ddmtemplate.smallImageURL
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

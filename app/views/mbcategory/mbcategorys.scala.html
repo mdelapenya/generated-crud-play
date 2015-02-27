@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(mbcategory <- mbcategorys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.MbcategoryApplication.get(mbcategory.categoryId)">@mbcategory.categoryId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.MbcategoryApplication.get(mbcategory.categoryId)">@mbcategory.categoryId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @mbcategory.uuid
 					</li>
@@ -75,6 +74,7 @@
 						StatusDate: @mbcategory.statusDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

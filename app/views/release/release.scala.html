@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.ReleaseApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(releaseFormData("releaseId") != "0") {
+				@if(releaseFormData("releaseId").value != "0") {
 				<h1>Edition of Release #@releaseFormData("releaseId").value</h1>
 				} else {
 				<h1>Creation of a Release</h1>

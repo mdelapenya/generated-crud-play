@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.SocialactivitysettingApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(socialactivitysettingFormData("activitySettingId") != "0") {
+				@if(socialactivitysettingFormData("activitySettingId").value != "0") {
 				<h1>Edition of Socialactivitysetting #@socialactivitysettingFormData("activitySettingId").value</h1>
 				} else {
 				<h1>Creation of a Socialactivitysetting</h1>

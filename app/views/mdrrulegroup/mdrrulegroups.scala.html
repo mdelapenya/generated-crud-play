@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(mdrrulegroup <- mdrrulegroups) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.MdrrulegroupApplication.get(mdrrulegroup.ruleGroupId)">@mdrrulegroup.ruleGroupId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.MdrrulegroupApplication.get(mdrrulegroup.ruleGroupId)">@mdrrulegroup.ruleGroupId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @mdrrulegroup.uuid
 					</li>
@@ -48,6 +47,7 @@
 						Description: @mdrrulegroup.description
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

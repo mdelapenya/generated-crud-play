@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.ClassnameApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(classnameFormData("classNameId") != "0") {
+				@if(classnameFormData("classNameId").value != "0") {
 				<h1>Edition of Classname #@classnameFormData("classNameId").value</h1>
 				} else {
 				<h1>Creation of a Classname</h1>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(usertrackerpath <- usertrackerpaths) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.UsertrackerpathApplication.get(usertrackerpath.userTrackerPathId)">@usertrackerpath.userTrackerPathId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.UsertrackerpathApplication.get(usertrackerpath.userTrackerPathId)">@usertrackerpath.userTrackerPathId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @usertrackerpath.mvccVersion
 					</li>
@@ -33,6 +32,7 @@
 						PathDate: @usertrackerpath.pathDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

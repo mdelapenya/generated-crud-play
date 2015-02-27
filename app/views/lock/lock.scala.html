@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.LockApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(lockFormData("lockId") != "0") {
+				@if(lockFormData("lockId").value != "0") {
 				<h1>Edition of Lock #@lockFormData("lockId").value</h1>
 				} else {
 				<h1>Creation of a Lock</h1>

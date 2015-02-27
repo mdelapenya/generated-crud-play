@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.OrganizationApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(organizationFormData("organizationId") != "0") {
+				@if(organizationFormData("organizationId").value != "0") {
 				<h1>Edition of Organization #@organizationFormData("organizationId").value</h1>
 				} else {
 				<h1>Creation of a Organization</h1>

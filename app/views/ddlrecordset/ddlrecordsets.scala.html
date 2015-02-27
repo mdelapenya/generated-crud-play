@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(ddlrecordset <- ddlrecordsets) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DdlrecordsetApplication.get(ddlrecordset.recordSetId)">@ddlrecordset.recordSetId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DdlrecordsetApplication.get(ddlrecordset.recordSetId)">@ddlrecordset.recordSetId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @ddlrecordset.uuid
 					</li>
@@ -60,6 +59,7 @@
 						Scope: @ddlrecordset.scope
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

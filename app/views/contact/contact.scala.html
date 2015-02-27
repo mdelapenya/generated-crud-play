@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.ContactApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(contactFormData("contactId") != "0") {
+				@if(contactFormData("contactId").value != "0") {
 				<h1>Edition of Contact #@contactFormData("contactId").value</h1>
 				} else {
 				<h1>Creation of a Contact</h1>

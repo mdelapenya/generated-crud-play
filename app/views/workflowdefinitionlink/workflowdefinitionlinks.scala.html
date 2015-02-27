@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(workflowdefinitionlink <- workflowdefinitionlinks) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.WorkflowdefinitionlinkApplication.get(workflowdefinitionlink.workflowDefinitionLinkId)">@workflowdefinitionlink.workflowDefinitionLinkId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.WorkflowdefinitionlinkApplication.get(workflowdefinitionlink.workflowDefinitionLinkId)">@workflowdefinitionlink.workflowDefinitionLinkId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @workflowdefinitionlink.mvccVersion
 					</li>
@@ -57,6 +56,7 @@
 						WorkflowDefinitionVersion: @workflowdefinitionlink.workflowDefinitionVersion
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

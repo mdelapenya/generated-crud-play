@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(user <- users) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.UserApplication.get(user.userId)">@user.userId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.UserApplication.get(user.userId)">@user.userId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @user.mvccVersion
 					</li>
@@ -141,6 +140,7 @@
 						Status: @user.status
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

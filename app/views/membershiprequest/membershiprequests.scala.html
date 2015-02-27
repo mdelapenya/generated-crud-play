@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(membershiprequest <- membershiprequests) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.MembershiprequestApplication.get(membershiprequest.membershipRequestId)">@membershiprequest.membershipRequestId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.MembershiprequestApplication.get(membershiprequest.membershipRequestId)">@membershiprequest.membershipRequestId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @membershiprequest.mvccVersion
 					</li>
@@ -51,6 +50,7 @@
 						StatusId: @membershiprequest.statusId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(trashentry <- trashentrys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.TrashentryApplication.get(trashentry.entryId)">@trashentry.entryId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.TrashentryApplication.get(trashentry.entryId)">@trashentry.entryId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @trashentry.groupId
 					</li>
@@ -51,6 +50,7 @@
 						Status: @trashentry.status
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

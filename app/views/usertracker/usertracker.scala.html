@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.UsertrackerApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(usertrackerFormData("userTrackerId") != "0") {
+				@if(usertrackerFormData("userTrackerId").value != "0") {
 				<h1>Edition of Usertracker #@usertrackerFormData("userTrackerId").value</h1>
 				} else {
 				<h1>Creation of a Usertracker</h1>

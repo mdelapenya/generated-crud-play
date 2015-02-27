@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(dlfileshortcut <- dlfileshortcuts) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DlfileshortcutApplication.get(dlfileshortcut.fileShortcutId)">@dlfileshortcut.fileShortcutId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DlfileshortcutApplication.get(dlfileshortcut.fileShortcutId)">@dlfileshortcut.fileShortcutId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @dlfileshortcut.uuid
 					</li>
@@ -69,6 +68,7 @@
 						StatusDate: @dlfileshortcut.statusDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

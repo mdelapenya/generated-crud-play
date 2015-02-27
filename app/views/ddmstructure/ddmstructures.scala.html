@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(ddmstructure <- ddmstructures) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DdmstructureApplication.get(ddmstructure.structureId)">@ddmstructure.structureId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DdmstructureApplication.get(ddmstructure.structureId)">@ddmstructure.structureId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @ddmstructure.uuid
 					</li>
@@ -69,6 +68,7 @@
 						Customtype: @ddmstructure.customtype
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

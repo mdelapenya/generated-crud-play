@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.DdmstructurelinkApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(ddmstructurelinkFormData("structureLinkId") != "0") {
+				@if(ddmstructurelinkFormData("structureLinkId").value != "0") {
 				<h1>Edition of Ddmstructurelink #@ddmstructurelinkFormData("structureLinkId").value</h1>
 				} else {
 				<h1>Creation of a Ddmstructurelink</h1>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(scproductversion <- scproductversions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ScproductversionApplication.get(scproductversion.productVersionId)">@scproductversion.productVersionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ScproductversionApplication.get(scproductversion.productVersionId)">@scproductversion.productVersionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						CompanyId: @scproductversion.companyId
 					</li>
@@ -54,6 +53,7 @@
 						RepoStoreArtifact: @scproductversion.repoStoreArtifact
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

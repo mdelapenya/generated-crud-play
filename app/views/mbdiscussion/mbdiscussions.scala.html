@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(mbdiscussion <- mbdiscussions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.MbdiscussionApplication.get(mbdiscussion.discussionId)">@mbdiscussion.discussionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.MbdiscussionApplication.get(mbdiscussion.discussionId)">@mbdiscussion.discussionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @mbdiscussion.uuid
 					</li>
@@ -51,6 +50,7 @@
 						ThreadId: @mbdiscussion.threadId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

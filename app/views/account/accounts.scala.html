@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(account <- accounts) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.AccountApplication.get(account.accountId)">@account.accountId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.AccountApplication.get(account.accountId)">@account.accountId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @account.mvccVersion
 					</li>
@@ -69,6 +68,7 @@
 						Size: @account.size
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

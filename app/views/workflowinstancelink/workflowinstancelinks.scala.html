@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(workflowinstancelink <- workflowinstancelinks) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.WorkflowinstancelinkApplication.get(workflowinstancelink.workflowInstanceLinkId)">@workflowinstancelink.workflowInstanceLinkId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.WorkflowinstancelinkApplication.get(workflowinstancelink.workflowInstanceLinkId)">@workflowinstancelink.workflowInstanceLinkId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @workflowinstancelink.mvccVersion
 					</li>
@@ -51,6 +50,7 @@
 						WorkflowInstanceId: @workflowinstancelink.workflowInstanceId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(socialactivityachievement <- socialactivityachievements) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.SocialactivityachievementApplication.get(socialactivityachievement.activityAchievementId)">@socialactivityachievement.activityAchievementId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.SocialactivityachievementApplication.get(socialactivityachievement.activityAchievementId)">@socialactivityachievement.activityAchievementId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @socialactivityachievement.groupId
 					</li>
@@ -39,6 +38,7 @@
 						FirstInGroup: @socialactivityachievement.firstInGroup
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

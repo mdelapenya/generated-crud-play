@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(ddmcontent <- ddmcontents) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DdmcontentApplication.get(ddmcontent.contentId)">@ddmcontent.contentId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DdmcontentApplication.get(ddmcontent.contentId)">@ddmcontent.contentId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @ddmcontent.uuid
 					</li>
@@ -51,6 +50,7 @@
 						Data: @ddmcontent.data
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

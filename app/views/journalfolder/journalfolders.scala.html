@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(journalfolder <- journalfolders) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.JournalfolderApplication.get(journalfolder.folderId)">@journalfolder.folderId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.JournalfolderApplication.get(journalfolder.folderId)">@journalfolder.folderId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @journalfolder.uuid
 					</li>
@@ -69,6 +68,7 @@
 						StatusDate: @journalfolder.statusDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

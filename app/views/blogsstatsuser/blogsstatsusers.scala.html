@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(blogsstatsuser <- blogsstatsusers) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.BlogsstatsuserApplication.get(blogsstatsuser.statsUserId)">@blogsstatsuser.statsUserId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.BlogsstatsuserApplication.get(blogsstatsuser.statsUserId)">@blogsstatsuser.statsUserId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @blogsstatsuser.groupId
 					</li>
@@ -45,6 +44,7 @@
 						RatingsAverageScore: @blogsstatsuser.ratingsAverageScore
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

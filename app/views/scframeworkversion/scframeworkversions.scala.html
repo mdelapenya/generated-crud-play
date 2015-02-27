@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(scframeworkversion <- scframeworkversions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ScframeworkversionApplication.get(scframeworkversion.frameworkVersionId)">@scframeworkversion.frameworkVersionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ScframeworkversionApplication.get(scframeworkversion.frameworkVersionId)">@scframeworkversion.frameworkVersionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @scframeworkversion.groupId
 					</li>
@@ -51,6 +50,7 @@
 						Priority: @scframeworkversion.priority
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

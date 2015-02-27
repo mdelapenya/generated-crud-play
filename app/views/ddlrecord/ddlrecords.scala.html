@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(ddlrecord <- ddlrecords) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DdlrecordApplication.get(ddlrecord.recordId)">@ddlrecord.recordId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DdlrecordApplication.get(ddlrecord.recordId)">@ddlrecord.recordId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @ddlrecord.uuid
 					</li>
@@ -60,6 +59,7 @@
 						DisplayIndex: @ddlrecord.displayIndex
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

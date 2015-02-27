@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(subscription <- subscriptions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.SubscriptionApplication.get(subscription.subscriptionId)">@subscription.subscriptionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.SubscriptionApplication.get(subscription.subscriptionId)">@subscription.subscriptionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @subscription.mvccVersion
 					</li>
@@ -51,6 +50,7 @@
 						Frequency: @subscription.frequency
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

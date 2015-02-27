@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(ratingsentry <- ratingsentrys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.RatingsentryApplication.get(ratingsentry.entryId)">@ratingsentry.entryId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.RatingsentryApplication.get(ratingsentry.entryId)">@ratingsentry.entryId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @ratingsentry.uuid
 					</li>
@@ -48,6 +47,7 @@
 						Score: @ratingsentry.score
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

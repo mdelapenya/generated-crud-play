@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(systemevent <- systemevents) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.SystemeventApplication.get(systemevent.systemEventId)">@systemevent.systemEventId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.SystemeventApplication.get(systemevent.systemEventId)">@systemevent.systemEventId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @systemevent.mvccVersion
 					</li>
@@ -63,6 +62,7 @@
 						ExtraData: @systemevent.extraData
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

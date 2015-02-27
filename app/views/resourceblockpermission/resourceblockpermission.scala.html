@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.ResourceblockpermissionApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(resourceblockpermissionFormData("resourceBlockPermissionId") != "0") {
+				@if(resourceblockpermissionFormData("resourceBlockPermissionId").value != "0") {
 				<h1>Edition of Resourceblockpermission #@resourceblockpermissionFormData("resourceBlockPermissionId").value</h1>
 				} else {
 				<h1>Creation of a Resourceblockpermission</h1>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(dlfileversion <- dlfileversions) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.DlfileversionApplication.get(dlfileversion.fileVersionId)">@dlfileversion.fileVersionId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.DlfileversionApplication.get(dlfileversion.fileVersionId)">@dlfileversion.fileVersionId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @dlfileversion.uuid
 					</li>
@@ -99,6 +98,7 @@
 						StatusDate: @dlfileversion.statusDate
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(journalarticleresource <- journalarticleresources) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.JournalarticleresourceApplication.get(journalarticleresource.resourcePrimKey)">@journalarticleresource.resourcePrimKey</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.JournalarticleresourceApplication.get(journalarticleresource.resourcePrimKey)">@journalarticleresource.resourcePrimKey</a>
-					</li>
 					<li class="btn btn-default disabled">
 						Uuid: @journalarticleresource.uuid
 					</li>
@@ -30,6 +29,7 @@
 						ArticleId: @journalarticleresource.articleId
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

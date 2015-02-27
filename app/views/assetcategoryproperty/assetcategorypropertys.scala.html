@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(assetcategoryproperty <- assetcategorypropertys) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.AssetcategorypropertyApplication.get(assetcategoryproperty.categoryPropertyId)">@assetcategoryproperty.categoryPropertyId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.AssetcategorypropertyApplication.get(assetcategoryproperty.categoryPropertyId)">@assetcategoryproperty.categoryPropertyId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						CompanyId: @assetcategoryproperty.companyId
 					</li>
@@ -45,6 +44,7 @@
 						Value: @assetcategoryproperty.value
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

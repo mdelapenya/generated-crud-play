@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(website <- websites) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.WebsiteApplication.get(website.websiteId)">@website.websiteId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.WebsiteApplication.get(website.websiteId)">@website.websiteId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @website.mvccVersion
 					</li>
@@ -57,6 +56,7 @@
 						Customprimary: @website.customprimary
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

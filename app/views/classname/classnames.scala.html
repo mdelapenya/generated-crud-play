@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(classname <- classnames) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ClassnameApplication.get(classname.classNameId)">@classname.classNameId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ClassnameApplication.get(classname.classNameId)">@classname.classNameId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @classname.mvccVersion
 					</li>
@@ -27,6 +26,7 @@
 						Value: @classname.value
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

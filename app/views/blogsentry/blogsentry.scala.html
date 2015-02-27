@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.BlogsentryApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(blogsentryFormData("entryId") != "0") {
+				@if(blogsentryFormData("entryId").value != "0") {
 				<h1>Edition of Blogsentry #@blogsentryFormData("entryId").value</h1>
 				} else {
 				<h1>Creation of a Blogsentry</h1>

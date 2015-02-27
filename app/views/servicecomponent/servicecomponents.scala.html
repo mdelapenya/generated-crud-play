@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(servicecomponent <- servicecomponents) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ServicecomponentApplication.get(servicecomponent.serviceComponentId)">@servicecomponent.serviceComponentId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ServicecomponentApplication.get(servicecomponent.serviceComponentId)">@servicecomponent.serviceComponentId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @servicecomponent.mvccVersion
 					</li>
@@ -36,6 +35,7 @@
 						Data: @servicecomponent.data
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

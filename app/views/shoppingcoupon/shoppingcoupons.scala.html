@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(shoppingcoupon <- shoppingcoupons) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.ShoppingcouponApplication.get(shoppingcoupon.couponId)">@shoppingcoupon.couponId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.ShoppingcouponApplication.get(shoppingcoupon.couponId)">@shoppingcoupon.couponId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						GroupId: @shoppingcoupon.groupId
 					</li>
@@ -72,6 +71,7 @@
 						DiscountType: @shoppingcoupon.discountType
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

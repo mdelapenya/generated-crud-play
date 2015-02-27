@@ -16,10 +16,9 @@
 		</div>
 		<div class="container">
 			@for(layoutset <- layoutsets) {
+			<div class="row">
+				<a class="btn btn-info" href="@routes.LayoutsetApplication.get(layoutset.layoutSetId)">@layoutset.layoutSetId</a>
 				<ul>
-					<li class="btn btn-info">
-						ID: <a href="@routes.LayoutsetApplication.get(layoutset.layoutSetId)">@layoutset.layoutSetId</a>
-					</li>
 					<li class="btn btn-default disabled">
 						MvccVersion: @layoutset.mvccVersion
 					</li>
@@ -69,6 +68,7 @@
 						LayoutSetPrototypeLinkEnabled: @layoutset.layoutSetPrototypeLinkEnabled
 					</li>
 				</ul>
+			</div>
 			}
 		</div>
 	</div>

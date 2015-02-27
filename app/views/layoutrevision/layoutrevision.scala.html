@@ -7,7 +7,7 @@
 	<div class="container">
 		@form(routes.LayoutrevisionApplication.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(layoutrevisionFormData("layoutRevisionId") != "0") {
+				@if(layoutrevisionFormData("layoutRevisionId").value != "0") {
 				<h1>Edition of Layoutrevision #@layoutrevisionFormData("layoutRevisionId").value</h1>
 				} else {
 				<h1>Creation of a Layoutrevision</h1>
