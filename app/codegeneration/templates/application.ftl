@@ -16,6 +16,7 @@ import play.mvc.Result;
 import views.html.${model.name}.${model.name};
 import views.html.${model.name}.${model.name}s;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -95,6 +96,14 @@ public class ${model.name?cap_first}Application extends Controller {
 			<#list model.fields as field>
 				<#if field.type == "long">
 				${model.name}.set${field.name?cap_first}(Long.valueOf(${model.name}FormData.${field.name}));
+				<#elseif field.type == "int">
+				${model.name}.set${field.name?cap_first}(Integer.valueOf(${model.name}FormData.${field.name}));
+				<#elseif field.type == "boolean">
+				${model.name}.set${field.name?cap_first}(Boolean.valueOf(${model.name}FormData.${field.name}));
+				<#elseif field.type == "double">
+				${model.name}.set${field.name?cap_first}(Double.valueOf(${model.name}FormData.${field.name}));
+				<#elseif field.type == "Date">
+				${model.name}.set${field.name?cap_first}(new Date(${model.name}FormData.${field.name}));
 				<#else>
 				${model.name}.set${field.name?cap_first}(${model.name}FormData.${field.name});
 				</#if>
