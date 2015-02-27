@@ -12,7 +12,7 @@
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
 			<p>
-				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected ${model.name?cap_first}.
+				Or click the <a class="btn btn-info" href="#">button</a> to view selected ${model.name?cap_first}.
 			</p>
 		</div>
 		<div class="container">
