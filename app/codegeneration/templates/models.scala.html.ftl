@@ -20,7 +20,7 @@
 				<ul>
 					<li class="btn btn-info">
 						ID: <a href="@routes.${model.name?cap_first}Application.get(${model.name}.${primaryKey.name})">@${model.name}.${primaryKey.name}</a>
-					</div>
+					</li>
 					<#list model.fields as field>
 						<#if primaryKey.name != field.name>
 					<li class="btn btn-default disabled">
