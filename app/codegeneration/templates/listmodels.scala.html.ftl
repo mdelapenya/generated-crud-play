@@ -27,7 +27,7 @@
 							${model.name?cap_first}
 						</td>
 						<td>
-							<a href="@routes.${model.name?cap_first}Application.all">
+							<a class="btn btn-info" href="@routes.${model.name?cap_first}Application.all">
 								Show
 							</a>
 						</td>
