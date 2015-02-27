@@ -1,0 +1,30 @@
+@(countrys: List[models.country.Country])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Countrys in the DB</h1>
+
+	<p>
+		<a href="@routes.CountryApplication.addCountry">Create New Country</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(country <- countrys) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.CountryApplication.get(country.countryId)">@country.countryId</a></div>
+				<div>MvccVersion: @country.mvccVersion</div>
+				<div>Name: @country.name</div>
+				<div>A2: @country.a2</div>
+				<div>A3: @country.a3</div>
+				<div>Number: @country.number</div>
+				<div>Idd: @country.idd</div>
+				<div>ZipRequired: @country.zipRequired</div>
+				<div>Active: @country.active</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

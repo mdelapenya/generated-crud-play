@@ -1,0 +1,37 @@
+@(exportimportconfigurations: List[models.exportimportconfiguration.Exportimportconfiguration])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Exportimportconfigurations in the DB</h1>
+
+	<p>
+		<a href="@routes.ExportimportconfigurationApplication.addExportimportconfiguration">Create New Exportimportconfiguration</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(exportimportconfiguration <- exportimportconfigurations) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.ExportimportconfigurationApplication.get(exportimportconfiguration.exportImportConfigurationId)">@exportimportconfiguration.exportImportConfigurationId</a></div>
+				<div>MvccVersion: @exportimportconfiguration.mvccVersion</div>
+				<div>GroupId: @exportimportconfiguration.groupId</div>
+				<div>CompanyId: @exportimportconfiguration.companyId</div>
+				<div>UserId: @exportimportconfiguration.userId</div>
+				<div>UserName: @exportimportconfiguration.userName</div>
+				<div>CreateDate: @exportimportconfiguration.createDate</div>
+				<div>ModifiedDate: @exportimportconfiguration.modifiedDate</div>
+				<div>Name: @exportimportconfiguration.name</div>
+				<div>Description: @exportimportconfiguration.description</div>
+				<div>Customtype: @exportimportconfiguration.customtype</div>
+				<div>Settings: @exportimportconfiguration.settings</div>
+				<div>Status: @exportimportconfiguration.status</div>
+				<div>StatusByUserId: @exportimportconfiguration.statusByUserId</div>
+				<div>StatusByUserName: @exportimportconfiguration.statusByUserName</div>
+				<div>StatusDate: @exportimportconfiguration.statusDate</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

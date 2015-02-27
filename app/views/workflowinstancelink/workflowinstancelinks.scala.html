@@ -1,0 +1,32 @@
+@(workflowinstancelinks: List[models.workflowinstancelink.Workflowinstancelink])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Workflowinstancelinks in the DB</h1>
+
+	<p>
+		<a href="@routes.WorkflowinstancelinkApplication.addWorkflowinstancelink">Create New Workflowinstancelink</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(workflowinstancelink <- workflowinstancelinks) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.WorkflowinstancelinkApplication.get(workflowinstancelink.workflowInstanceLinkId)">@workflowinstancelink.workflowInstanceLinkId</a></div>
+				<div>MvccVersion: @workflowinstancelink.mvccVersion</div>
+				<div>GroupId: @workflowinstancelink.groupId</div>
+				<div>CompanyId: @workflowinstancelink.companyId</div>
+				<div>UserId: @workflowinstancelink.userId</div>
+				<div>UserName: @workflowinstancelink.userName</div>
+				<div>CreateDate: @workflowinstancelink.createDate</div>
+				<div>ModifiedDate: @workflowinstancelink.modifiedDate</div>
+				<div>ClassNameId: @workflowinstancelink.classNameId</div>
+				<div>ClassPK: @workflowinstancelink.classPK</div>
+				<div>WorkflowInstanceId: @workflowinstancelink.workflowInstanceId</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

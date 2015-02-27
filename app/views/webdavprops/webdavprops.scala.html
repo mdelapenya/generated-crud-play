@@ -1,0 +1,38 @@
+@(webdavpropsFormData: Form[controllers.webdavprops.WebdavpropsFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Webdavprops #@webdavpropsFormData("webDavPropsId").value</legend>
+
+		@form(routes.WebdavpropsApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(webdavpropsFormData("webDavPropsId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(webdavpropsFormData("mvccVersion"))
+			<!-- CompanyId -->
+			@helper.inputText(webdavpropsFormData("companyId"))
+			<!-- CreateDate -->
+			@helper.inputText(webdavpropsFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(webdavpropsFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(webdavpropsFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(webdavpropsFormData("classPK"))
+			<!-- Props -->
+			@helper.inputText(webdavpropsFormData("props"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.WebdavpropsApplication.all()">Back to Webdavprops List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

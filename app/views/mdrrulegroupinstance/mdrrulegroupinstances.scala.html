@@ -1,0 +1,33 @@
+@(mdrrulegroupinstances: List[models.mdrrulegroupinstance.Mdrrulegroupinstance])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Mdrrulegroupinstances in the DB</h1>
+
+	<p>
+		<a href="@routes.MdrrulegroupinstanceApplication.addMdrrulegroupinstance">Create New Mdrrulegroupinstance</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(mdrrulegroupinstance <- mdrrulegroupinstances) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.MdrrulegroupinstanceApplication.get(mdrrulegroupinstance.ruleGroupInstanceId)">@mdrrulegroupinstance.ruleGroupInstanceId</a></div>
+				<div>Uuid: @mdrrulegroupinstance.uuid</div>
+				<div>GroupId: @mdrrulegroupinstance.groupId</div>
+				<div>CompanyId: @mdrrulegroupinstance.companyId</div>
+				<div>UserId: @mdrrulegroupinstance.userId</div>
+				<div>UserName: @mdrrulegroupinstance.userName</div>
+				<div>CreateDate: @mdrrulegroupinstance.createDate</div>
+				<div>ModifiedDate: @mdrrulegroupinstance.modifiedDate</div>
+				<div>ClassNameId: @mdrrulegroupinstance.classNameId</div>
+				<div>ClassPK: @mdrrulegroupinstance.classPK</div>
+				<div>RuleGroupId: @mdrrulegroupinstance.ruleGroupId</div>
+				<div>Priority: @mdrrulegroupinstance.priority</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

@@ -1,0 +1,36 @@
+@(dlfilerankFormData: Form[controllers.dlfilerank.DlfilerankFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Dlfilerank #@dlfilerankFormData("fileRankId").value</legend>
+
+		@form(routes.DlfilerankApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(dlfilerankFormData("fileRankId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(dlfilerankFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(dlfilerankFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(dlfilerankFormData("userId"))
+			<!-- CreateDate -->
+			@helper.inputText(dlfilerankFormData("createDate"))
+			<!-- FileEntryId -->
+			@helper.inputText(dlfilerankFormData("fileEntryId"))
+			<!-- Active -->
+			@helper.inputText(dlfilerankFormData("active"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DlfilerankApplication.all()">Back to Dlfilerank List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

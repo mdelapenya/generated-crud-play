@@ -1,0 +1,26 @@
+@(resourceactions: List[models.resourceaction.Resourceaction])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Resourceactions in the DB</h1>
+
+	<p>
+		<a href="@routes.ResourceactionApplication.addResourceaction">Create New Resourceaction</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(resourceaction <- resourceactions) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.ResourceactionApplication.get(resourceaction.resourceActionId)">@resourceaction.resourceActionId</a></div>
+				<div>MvccVersion: @resourceaction.mvccVersion</div>
+				<div>Name: @resourceaction.name</div>
+				<div>ActionId: @resourceaction.actionId</div>
+				<div>BitwiseValue: @resourceaction.bitwiseValue</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

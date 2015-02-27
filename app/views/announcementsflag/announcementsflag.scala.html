@@ -1,0 +1,32 @@
+@(announcementsflagFormData: Form[controllers.announcementsflag.AnnouncementsflagFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Announcementsflag #@announcementsflagFormData("flagId").value</legend>
+
+		@form(routes.AnnouncementsflagApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(announcementsflagFormData("flagId"), 'readonly -> "readonly")
+
+			<!-- UserId -->
+			@helper.inputText(announcementsflagFormData("userId"))
+			<!-- CreateDate -->
+			@helper.inputText(announcementsflagFormData("createDate"))
+			<!-- EntryId -->
+			@helper.inputText(announcementsflagFormData("entryId"))
+			<!-- Value -->
+			@helper.inputText(announcementsflagFormData("value"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.AnnouncementsflagApplication.all()">Back to Announcementsflag List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

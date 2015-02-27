@@ -1,0 +1,34 @@
+@(trashversionFormData: Form[controllers.trashversion.TrashversionFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Trashversion #@trashversionFormData("versionId").value</legend>
+
+		@form(routes.TrashversionApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(trashversionFormData("versionId"), 'readonly -> "readonly")
+
+			<!-- EntryId -->
+			@helper.inputText(trashversionFormData("entryId"))
+			<!-- ClassNameId -->
+			@helper.inputText(trashversionFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(trashversionFormData("classPK"))
+			<!-- TypeSettings -->
+			@helper.inputText(trashversionFormData("typeSettings"))
+			<!-- Status -->
+			@helper.inputText(trashversionFormData("status"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.TrashversionApplication.all()">Back to Trashversion List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

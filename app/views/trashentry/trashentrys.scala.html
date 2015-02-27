@@ -1,0 +1,32 @@
+@(trashentrys: List[models.trashentry.Trashentry])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Trashentrys in the DB</h1>
+
+	<p>
+		<a href="@routes.TrashentryApplication.addTrashentry">Create New Trashentry</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(trashentry <- trashentrys) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.TrashentryApplication.get(trashentry.entryId)">@trashentry.entryId</a></div>
+				<div>GroupId: @trashentry.groupId</div>
+				<div>CompanyId: @trashentry.companyId</div>
+				<div>UserId: @trashentry.userId</div>
+				<div>UserName: @trashentry.userName</div>
+				<div>CreateDate: @trashentry.createDate</div>
+				<div>ClassNameId: @trashentry.classNameId</div>
+				<div>ClassPK: @trashentry.classPK</div>
+				<div>SystemEventSetKey: @trashentry.systemEventSetKey</div>
+				<div>TypeSettings: @trashentry.typeSettings</div>
+				<div>Status: @trashentry.status</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

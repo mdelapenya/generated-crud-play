@@ -1,0 +1,48 @@
+@(usernotificationeventFormData: Form[controllers.usernotificationevent.UsernotificationeventFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Usernotificationevent #@usernotificationeventFormData("userNotificationEventId").value</legend>
+
+		@form(routes.UsernotificationeventApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(usernotificationeventFormData("userNotificationEventId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(usernotificationeventFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(usernotificationeventFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(usernotificationeventFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(usernotificationeventFormData("userId"))
+			<!-- Customtype -->
+			@helper.inputText(usernotificationeventFormData("customtype"))
+			<!-- Timestamp -->
+			@helper.inputText(usernotificationeventFormData("timestamp"))
+			<!-- DeliveryType -->
+			@helper.inputText(usernotificationeventFormData("deliveryType"))
+			<!-- DeliverBy -->
+			@helper.inputText(usernotificationeventFormData("deliverBy"))
+			<!-- Delivered -->
+			@helper.inputText(usernotificationeventFormData("delivered"))
+			<!-- Payload -->
+			@helper.inputText(usernotificationeventFormData("payload"))
+			<!-- ActionRequired -->
+			@helper.inputText(usernotificationeventFormData("actionRequired"))
+			<!-- Archived -->
+			@helper.inputText(usernotificationeventFormData("archived"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.UsernotificationeventApplication.all()">Back to Usernotificationevent List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

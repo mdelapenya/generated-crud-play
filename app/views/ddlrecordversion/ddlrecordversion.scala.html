@@ -1,0 +1,52 @@
+@(ddlrecordversionFormData: Form[controllers.ddlrecordversion.DdlrecordversionFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Ddlrecordversion #@ddlrecordversionFormData("recordVersionId").value</legend>
+
+		@form(routes.DdlrecordversionApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(ddlrecordversionFormData("recordVersionId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(ddlrecordversionFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(ddlrecordversionFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(ddlrecordversionFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(ddlrecordversionFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(ddlrecordversionFormData("createDate"))
+			<!-- DDMStorageId -->
+			@helper.inputText(ddlrecordversionFormData("DDMStorageId"))
+			<!-- RecordSetId -->
+			@helper.inputText(ddlrecordversionFormData("recordSetId"))
+			<!-- RecordId -->
+			@helper.inputText(ddlrecordversionFormData("recordId"))
+			<!-- Version -->
+			@helper.inputText(ddlrecordversionFormData("version"))
+			<!-- DisplayIndex -->
+			@helper.inputText(ddlrecordversionFormData("displayIndex"))
+			<!-- Status -->
+			@helper.inputText(ddlrecordversionFormData("status"))
+			<!-- StatusByUserId -->
+			@helper.inputText(ddlrecordversionFormData("statusByUserId"))
+			<!-- StatusByUserName -->
+			@helper.inputText(ddlrecordversionFormData("statusByUserName"))
+			<!-- StatusDate -->
+			@helper.inputText(ddlrecordversionFormData("statusDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DdlrecordversionApplication.all()">Back to Ddlrecordversion List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

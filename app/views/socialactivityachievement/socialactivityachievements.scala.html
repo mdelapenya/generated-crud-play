@@ -1,0 +1,28 @@
+@(socialactivityachievements: List[models.socialactivityachievement.Socialactivityachievement])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Socialactivityachievements in the DB</h1>
+
+	<p>
+		<a href="@routes.SocialactivityachievementApplication.addSocialactivityachievement">Create New Socialactivityachievement</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(socialactivityachievement <- socialactivityachievements) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.SocialactivityachievementApplication.get(socialactivityachievement.activityAchievementId)">@socialactivityachievement.activityAchievementId</a></div>
+				<div>GroupId: @socialactivityachievement.groupId</div>
+				<div>CompanyId: @socialactivityachievement.companyId</div>
+				<div>UserId: @socialactivityachievement.userId</div>
+				<div>CreateDate: @socialactivityachievement.createDate</div>
+				<div>Name: @socialactivityachievement.name</div>
+				<div>FirstInGroup: @socialactivityachievement.firstInGroup</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

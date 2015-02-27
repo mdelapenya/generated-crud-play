@@ -1,0 +1,44 @@
+@(socialactivitysetFormData: Form[controllers.socialactivityset.SocialactivitysetFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Socialactivityset #@socialactivitysetFormData("activitySetId").value</legend>
+
+		@form(routes.SocialactivitysetApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(socialactivitysetFormData("activitySetId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(socialactivitysetFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(socialactivitysetFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(socialactivitysetFormData("userId"))
+			<!-- CreateDate -->
+			@helper.inputText(socialactivitysetFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(socialactivitysetFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(socialactivitysetFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(socialactivitysetFormData("classPK"))
+			<!-- Customtype -->
+			@helper.inputText(socialactivitysetFormData("customtype"))
+			<!-- ExtraData -->
+			@helper.inputText(socialactivitysetFormData("extraData"))
+			<!-- ActivityCount -->
+			@helper.inputText(socialactivitysetFormData("activityCount"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.SocialactivitysetApplication.all()">Back to Socialactivityset List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

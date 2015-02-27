@@ -1,0 +1,50 @@
+@(phoneFormData: Form[controllers.phone.PhoneFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Phone #@phoneFormData("phoneId").value</legend>
+
+		@form(routes.PhoneApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(phoneFormData("phoneId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(phoneFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(phoneFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(phoneFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(phoneFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(phoneFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(phoneFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(phoneFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(phoneFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(phoneFormData("classPK"))
+			<!-- Number -->
+			@helper.inputText(phoneFormData("number"))
+			<!-- Extension -->
+			@helper.inputText(phoneFormData("extension"))
+			<!-- TypeId -->
+			@helper.inputText(phoneFormData("typeId"))
+			<!-- Customprimary -->
+			@helper.inputText(phoneFormData("customprimary"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.PhoneApplication.all()">Back to Phone List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,36 @@
+@(pluginsettingFormData: Form[controllers.pluginsetting.PluginsettingFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Pluginsetting #@pluginsettingFormData("pluginSettingId").value</legend>
+
+		@form(routes.PluginsettingApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(pluginsettingFormData("pluginSettingId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(pluginsettingFormData("mvccVersion"))
+			<!-- CompanyId -->
+			@helper.inputText(pluginsettingFormData("companyId"))
+			<!-- PluginId -->
+			@helper.inputText(pluginsettingFormData("pluginId"))
+			<!-- PluginType -->
+			@helper.inputText(pluginsettingFormData("pluginType"))
+			<!-- Roles -->
+			@helper.inputText(pluginsettingFormData("roles"))
+			<!-- Active -->
+			@helper.inputText(pluginsettingFormData("active"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.PluginsettingApplication.all()">Back to Pluginsetting List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

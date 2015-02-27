@@ -1,0 +1,48 @@
+@(socialactivitycounterFormData: Form[controllers.socialactivitycounter.SocialactivitycounterFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Socialactivitycounter #@socialactivitycounterFormData("activityCounterId").value</legend>
+
+		@form(routes.SocialactivitycounterApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(socialactivitycounterFormData("activityCounterId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(socialactivitycounterFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(socialactivitycounterFormData("companyId"))
+			<!-- ClassNameId -->
+			@helper.inputText(socialactivitycounterFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(socialactivitycounterFormData("classPK"))
+			<!-- Name -->
+			@helper.inputText(socialactivitycounterFormData("name"))
+			<!-- OwnerType -->
+			@helper.inputText(socialactivitycounterFormData("ownerType"))
+			<!-- CurrentValue -->
+			@helper.inputText(socialactivitycounterFormData("currentValue"))
+			<!-- TotalValue -->
+			@helper.inputText(socialactivitycounterFormData("totalValue"))
+			<!-- GraceValue -->
+			@helper.inputText(socialactivitycounterFormData("graceValue"))
+			<!-- StartPeriod -->
+			@helper.inputText(socialactivitycounterFormData("startPeriod"))
+			<!-- EndPeriod -->
+			@helper.inputText(socialactivitycounterFormData("endPeriod"))
+			<!-- Active -->
+			@helper.inputText(socialactivitycounterFormData("active"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.SocialactivitycounterApplication.all()">Back to Socialactivitycounter List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

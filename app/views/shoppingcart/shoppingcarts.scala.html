@@ -1,0 +1,32 @@
+@(shoppingcarts: List[models.shoppingcart.Shoppingcart])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Shoppingcarts in the DB</h1>
+
+	<p>
+		<a href="@routes.ShoppingcartApplication.addShoppingcart">Create New Shoppingcart</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(shoppingcart <- shoppingcarts) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.ShoppingcartApplication.get(shoppingcart.cartId)">@shoppingcart.cartId</a></div>
+				<div>GroupId: @shoppingcart.groupId</div>
+				<div>CompanyId: @shoppingcart.companyId</div>
+				<div>UserId: @shoppingcart.userId</div>
+				<div>UserName: @shoppingcart.userName</div>
+				<div>CreateDate: @shoppingcart.createDate</div>
+				<div>ModifiedDate: @shoppingcart.modifiedDate</div>
+				<div>ItemIds: @shoppingcart.itemIds</div>
+				<div>CouponCodes: @shoppingcart.couponCodes</div>
+				<div>AltShipping: @shoppingcart.altShipping</div>
+				<div>Insure: @shoppingcart.insure</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

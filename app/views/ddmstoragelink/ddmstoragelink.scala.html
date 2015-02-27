@@ -1,0 +1,32 @@
+@(ddmstoragelinkFormData: Form[controllers.ddmstoragelink.DdmstoragelinkFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Ddmstoragelink #@ddmstoragelinkFormData("storageLinkId").value</legend>
+
+		@form(routes.DdmstoragelinkApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(ddmstoragelinkFormData("storageLinkId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(ddmstoragelinkFormData("uuid"))
+			<!-- ClassNameId -->
+			@helper.inputText(ddmstoragelinkFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(ddmstoragelinkFormData("classPK"))
+			<!-- StructureId -->
+			@helper.inputText(ddmstoragelinkFormData("structureId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DdmstoragelinkApplication.all()">Back to Ddmstoragelink List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,54 @@
+@(backgroundtaskFormData: Form[controllers.backgroundtask.BackgroundtaskFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Backgroundtask #@backgroundtaskFormData("backgroundTaskId").value</legend>
+
+		@form(routes.BackgroundtaskApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(backgroundtaskFormData("backgroundTaskId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(backgroundtaskFormData("mvccVersion"))
+			<!-- GroupId -->
+			@helper.inputText(backgroundtaskFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(backgroundtaskFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(backgroundtaskFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(backgroundtaskFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(backgroundtaskFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(backgroundtaskFormData("modifiedDate"))
+			<!-- Name -->
+			@helper.inputText(backgroundtaskFormData("name"))
+			<!-- ServletContextNames -->
+			@helper.inputText(backgroundtaskFormData("servletContextNames"))
+			<!-- TaskExecutorClassName -->
+			@helper.inputText(backgroundtaskFormData("taskExecutorClassName"))
+			<!-- TaskContextMap -->
+			@helper.inputText(backgroundtaskFormData("taskContextMap"))
+			<!-- Completed -->
+			@helper.inputText(backgroundtaskFormData("completed"))
+			<!-- CompletionDate -->
+			@helper.inputText(backgroundtaskFormData("completionDate"))
+			<!-- Status -->
+			@helper.inputText(backgroundtaskFormData("status"))
+			<!-- StatusMessage -->
+			@helper.inputText(backgroundtaskFormData("statusMessage"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.BackgroundtaskApplication.all()">Back to Backgroundtask List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

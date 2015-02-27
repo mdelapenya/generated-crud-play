@@ -1,0 +1,52 @@
+@(systemeventFormData: Form[controllers.systemevent.SystemeventFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Systemevent #@systemeventFormData("systemEventId").value</legend>
+
+		@form(routes.SystemeventApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(systemeventFormData("systemEventId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(systemeventFormData("mvccVersion"))
+			<!-- GroupId -->
+			@helper.inputText(systemeventFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(systemeventFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(systemeventFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(systemeventFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(systemeventFormData("createDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(systemeventFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(systemeventFormData("classPK"))
+			<!-- ClassUuid -->
+			@helper.inputText(systemeventFormData("classUuid"))
+			<!-- ReferrerClassNameId -->
+			@helper.inputText(systemeventFormData("referrerClassNameId"))
+			<!-- ParentSystemEventId -->
+			@helper.inputText(systemeventFormData("parentSystemEventId"))
+			<!-- SystemEventSetKey -->
+			@helper.inputText(systemeventFormData("systemEventSetKey"))
+			<!-- Customtype -->
+			@helper.inputText(systemeventFormData("customtype"))
+			<!-- ExtraData -->
+			@helper.inputText(systemeventFormData("extraData"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.SystemeventApplication.all()">Back to Systemevent List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

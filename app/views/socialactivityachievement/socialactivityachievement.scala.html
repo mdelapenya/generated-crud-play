@@ -1,0 +1,36 @@
+@(socialactivityachievementFormData: Form[controllers.socialactivityachievement.SocialactivityachievementFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Socialactivityachievement #@socialactivityachievementFormData("activityAchievementId").value</legend>
+
+		@form(routes.SocialactivityachievementApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(socialactivityachievementFormData("activityAchievementId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(socialactivityachievementFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(socialactivityachievementFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(socialactivityachievementFormData("userId"))
+			<!-- CreateDate -->
+			@helper.inputText(socialactivityachievementFormData("createDate"))
+			<!-- Name -->
+			@helper.inputText(socialactivityachievementFormData("name"))
+			<!-- FirstInGroup -->
+			@helper.inputText(socialactivityachievementFormData("firstInGroup"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.SocialactivityachievementApplication.all()">Back to Socialactivityachievement List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,30 @@
+@(browsertrackerFormData: Form[controllers.browsertracker.BrowsertrackerFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Browsertracker #@browsertrackerFormData("browserTrackerId").value</legend>
+
+		@form(routes.BrowsertrackerApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(browsertrackerFormData("browserTrackerId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(browsertrackerFormData("mvccVersion"))
+			<!-- UserId -->
+			@helper.inputText(browsertrackerFormData("userId"))
+			<!-- BrowserKey -->
+			@helper.inputText(browsertrackerFormData("browserKey"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.BrowsertrackerApplication.all()">Back to Browsertracker List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

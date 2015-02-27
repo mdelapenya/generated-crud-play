@@ -1,0 +1,40 @@
+@(blogsstatsuserFormData: Form[controllers.blogsstatsuser.BlogsstatsuserFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Blogsstatsuser #@blogsstatsuserFormData("statsUserId").value</legend>
+
+		@form(routes.BlogsstatsuserApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(blogsstatsuserFormData("statsUserId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(blogsstatsuserFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(blogsstatsuserFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(blogsstatsuserFormData("userId"))
+			<!-- EntryCount -->
+			@helper.inputText(blogsstatsuserFormData("entryCount"))
+			<!-- LastPostDate -->
+			@helper.inputText(blogsstatsuserFormData("lastPostDate"))
+			<!-- RatingsTotalEntries -->
+			@helper.inputText(blogsstatsuserFormData("ratingsTotalEntries"))
+			<!-- RatingsTotalScore -->
+			@helper.inputText(blogsstatsuserFormData("ratingsTotalScore"))
+			<!-- RatingsAverageScore -->
+			@helper.inputText(blogsstatsuserFormData("ratingsAverageScore"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.BlogsstatsuserApplication.all()">Back to Blogsstatsuser List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,52 @@
+@(mdractionFormData: Form[controllers.mdraction.MdractionFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Mdraction #@mdractionFormData("actionId").value</legend>
+
+		@form(routes.MdractionApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(mdractionFormData("actionId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(mdractionFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(mdractionFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(mdractionFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(mdractionFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(mdractionFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(mdractionFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(mdractionFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(mdractionFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(mdractionFormData("classPK"))
+			<!-- RuleGroupInstanceId -->
+			@helper.inputText(mdractionFormData("ruleGroupInstanceId"))
+			<!-- Name -->
+			@helper.inputText(mdractionFormData("name"))
+			<!-- Description -->
+			@helper.inputText(mdractionFormData("description"))
+			<!-- Customtype -->
+			@helper.inputText(mdractionFormData("customtype"))
+			<!-- TypeSettings -->
+			@helper.inputText(mdractionFormData("typeSettings"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.MdractionApplication.all()">Back to Mdraction List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

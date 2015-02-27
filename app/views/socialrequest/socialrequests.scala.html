@@ -1,0 +1,34 @@
+@(socialrequests: List[models.socialrequest.Socialrequest])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Socialrequests in the DB</h1>
+
+	<p>
+		<a href="@routes.SocialrequestApplication.addSocialrequest">Create New Socialrequest</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(socialrequest <- socialrequests) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.SocialrequestApplication.get(socialrequest.requestId)">@socialrequest.requestId</a></div>
+				<div>Uuid: @socialrequest.uuid</div>
+				<div>GroupId: @socialrequest.groupId</div>
+				<div>CompanyId: @socialrequest.companyId</div>
+				<div>UserId: @socialrequest.userId</div>
+				<div>CreateDate: @socialrequest.createDate</div>
+				<div>ModifiedDate: @socialrequest.modifiedDate</div>
+				<div>ClassNameId: @socialrequest.classNameId</div>
+				<div>ClassPK: @socialrequest.classPK</div>
+				<div>Customtype: @socialrequest.customtype</div>
+				<div>ExtraData: @socialrequest.extraData</div>
+				<div>ReceiverUserId: @socialrequest.receiverUserId</div>
+				<div>Status: @socialrequest.status</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

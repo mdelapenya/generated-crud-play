@@ -1,0 +1,32 @@
+@(mbdiscussions: List[models.mbdiscussion.Mbdiscussion])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Mbdiscussions in the DB</h1>
+
+	<p>
+		<a href="@routes.MbdiscussionApplication.addMbdiscussion">Create New Mbdiscussion</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(mbdiscussion <- mbdiscussions) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.MbdiscussionApplication.get(mbdiscussion.discussionId)">@mbdiscussion.discussionId</a></div>
+				<div>Uuid: @mbdiscussion.uuid</div>
+				<div>GroupId: @mbdiscussion.groupId</div>
+				<div>CompanyId: @mbdiscussion.companyId</div>
+				<div>UserId: @mbdiscussion.userId</div>
+				<div>UserName: @mbdiscussion.userName</div>
+				<div>CreateDate: @mbdiscussion.createDate</div>
+				<div>ModifiedDate: @mbdiscussion.modifiedDate</div>
+				<div>ClassNameId: @mbdiscussion.classNameId</div>
+				<div>ClassPK: @mbdiscussion.classPK</div>
+				<div>ThreadId: @mbdiscussion.threadId</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

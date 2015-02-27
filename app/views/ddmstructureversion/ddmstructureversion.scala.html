@@ -1,0 +1,48 @@
+@(ddmstructureversionFormData: Form[controllers.ddmstructureversion.DdmstructureversionFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Ddmstructureversion #@ddmstructureversionFormData("structureVersionId").value</legend>
+
+		@form(routes.DdmstructureversionApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(ddmstructureversionFormData("structureVersionId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(ddmstructureversionFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(ddmstructureversionFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(ddmstructureversionFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(ddmstructureversionFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(ddmstructureversionFormData("createDate"))
+			<!-- StructureId -->
+			@helper.inputText(ddmstructureversionFormData("structureId"))
+			<!-- Version -->
+			@helper.inputText(ddmstructureversionFormData("version"))
+			<!-- Name -->
+			@helper.inputText(ddmstructureversionFormData("name"))
+			<!-- Description -->
+			@helper.inputText(ddmstructureversionFormData("description"))
+			<!-- Definition -->
+			@helper.inputText(ddmstructureversionFormData("definition"))
+			<!-- StorageType -->
+			@helper.inputText(ddmstructureversionFormData("storageType"))
+			<!-- Customtype -->
+			@helper.inputText(ddmstructureversionFormData("customtype"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DdmstructureversionApplication.all()">Back to Ddmstructureversion List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

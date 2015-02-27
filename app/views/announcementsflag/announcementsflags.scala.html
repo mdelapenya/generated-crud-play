@@ -1,0 +1,26 @@
+@(announcementsflags: List[models.announcementsflag.Announcementsflag])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Announcementsflags in the DB</h1>
+
+	<p>
+		<a href="@routes.AnnouncementsflagApplication.addAnnouncementsflag">Create New Announcementsflag</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(announcementsflag <- announcementsflags) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.AnnouncementsflagApplication.get(announcementsflag.flagId)">@announcementsflag.flagId</a></div>
+				<div>UserId: @announcementsflag.userId</div>
+				<div>CreateDate: @announcementsflag.createDate</div>
+				<div>EntryId: @announcementsflag.entryId</div>
+				<div>Value: @announcementsflag.value</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

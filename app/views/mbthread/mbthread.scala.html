@@ -1,0 +1,64 @@
+@(mbthreadFormData: Form[controllers.mbthread.MbthreadFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Mbthread #@mbthreadFormData("threadId").value</legend>
+
+		@form(routes.MbthreadApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(mbthreadFormData("threadId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(mbthreadFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(mbthreadFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(mbthreadFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(mbthreadFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(mbthreadFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(mbthreadFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(mbthreadFormData("modifiedDate"))
+			<!-- CategoryId -->
+			@helper.inputText(mbthreadFormData("categoryId"))
+			<!-- RootMessageId -->
+			@helper.inputText(mbthreadFormData("rootMessageId"))
+			<!-- RootMessageUserId -->
+			@helper.inputText(mbthreadFormData("rootMessageUserId"))
+			<!-- MessageCount -->
+			@helper.inputText(mbthreadFormData("messageCount"))
+			<!-- ViewCount -->
+			@helper.inputText(mbthreadFormData("viewCount"))
+			<!-- LastPostByUserId -->
+			@helper.inputText(mbthreadFormData("lastPostByUserId"))
+			<!-- LastPostDate -->
+			@helper.inputText(mbthreadFormData("lastPostDate"))
+			<!-- Priority -->
+			@helper.inputText(mbthreadFormData("priority"))
+			<!-- Question -->
+			@helper.inputText(mbthreadFormData("question"))
+			<!-- Status -->
+			@helper.inputText(mbthreadFormData("status"))
+			<!-- StatusByUserId -->
+			@helper.inputText(mbthreadFormData("statusByUserId"))
+			<!-- StatusByUserName -->
+			@helper.inputText(mbthreadFormData("statusByUserName"))
+			<!-- StatusDate -->
+			@helper.inputText(mbthreadFormData("statusDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.MbthreadApplication.all()">Back to Mbthread List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,28 @@
+@(resourcetypepermissions: List[models.resourcetypepermission.Resourcetypepermission])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Resourcetypepermissions in the DB</h1>
+
+	<p>
+		<a href="@routes.ResourcetypepermissionApplication.addResourcetypepermission">Create New Resourcetypepermission</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(resourcetypepermission <- resourcetypepermissions) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.ResourcetypepermissionApplication.get(resourcetypepermission.resourceTypePermissionId)">@resourcetypepermission.resourceTypePermissionId</a></div>
+				<div>MvccVersion: @resourcetypepermission.mvccVersion</div>
+				<div>CompanyId: @resourcetypepermission.companyId</div>
+				<div>GroupId: @resourcetypepermission.groupId</div>
+				<div>Name: @resourcetypepermission.name</div>
+				<div>RoleId: @resourcetypepermission.roleId</div>
+				<div>ActionIds: @resourcetypepermission.actionIds</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

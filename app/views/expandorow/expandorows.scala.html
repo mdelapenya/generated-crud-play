@@ -1,0 +1,26 @@
+@(expandorows: List[models.expandorow.Expandorow])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Expandorows in the DB</h1>
+
+	<p>
+		<a href="@routes.ExpandorowApplication.addExpandorow">Create New Expandorow</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(expandorow <- expandorows) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.ExpandorowApplication.get(expandorow.rowId)">@expandorow.rowId</a></div>
+				<div>CompanyId: @expandorow.companyId</div>
+				<div>ModifiedDate: @expandorow.modifiedDate</div>
+				<div>TableId: @expandorow.tableId</div>
+				<div>ClassPK: @expandorow.classPK</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

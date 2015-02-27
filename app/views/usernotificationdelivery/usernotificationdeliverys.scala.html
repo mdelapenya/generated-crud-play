@@ -1,0 +1,30 @@
+@(usernotificationdeliverys: List[models.usernotificationdelivery.Usernotificationdelivery])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Usernotificationdeliverys in the DB</h1>
+
+	<p>
+		<a href="@routes.UsernotificationdeliveryApplication.addUsernotificationdelivery">Create New Usernotificationdelivery</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(usernotificationdelivery <- usernotificationdeliverys) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.UsernotificationdeliveryApplication.get(usernotificationdelivery.userNotificationDeliveryId)">@usernotificationdelivery.userNotificationDeliveryId</a></div>
+				<div>MvccVersion: @usernotificationdelivery.mvccVersion</div>
+				<div>CompanyId: @usernotificationdelivery.companyId</div>
+				<div>UserId: @usernotificationdelivery.userId</div>
+				<div>PortletId: @usernotificationdelivery.portletId</div>
+				<div>ClassNameId: @usernotificationdelivery.classNameId</div>
+				<div>NotificationType: @usernotificationdelivery.notificationType</div>
+				<div>DeliveryType: @usernotificationdelivery.deliveryType</div>
+				<div>Deliver: @usernotificationdelivery.deliver</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

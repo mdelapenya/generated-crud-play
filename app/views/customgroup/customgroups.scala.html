@@ -1,0 +1,43 @@
+@(customgroups: List[models.customgroup.Customgroup])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Customgroups in the DB</h1>
+
+	<p>
+		<a href="@routes.CustomgroupApplication.addCustomgroup">Create New Customgroup</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(customgroup <- customgroups) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.CustomgroupApplication.get(customgroup.groupId)">@customgroup.groupId</a></div>
+				<div>MvccVersion: @customgroup.mvccVersion</div>
+				<div>Uuid: @customgroup.uuid</div>
+				<div>CompanyId: @customgroup.companyId</div>
+				<div>CreatorUserId: @customgroup.creatorUserId</div>
+				<div>ClassNameId: @customgroup.classNameId</div>
+				<div>ClassPK: @customgroup.classPK</div>
+				<div>ParentGroupId: @customgroup.parentGroupId</div>
+				<div>LiveGroupId: @customgroup.liveGroupId</div>
+				<div>TreePath: @customgroup.treePath</div>
+				<div>GroupKey: @customgroup.groupKey</div>
+				<div>Name: @customgroup.name</div>
+				<div>Description: @customgroup.description</div>
+				<div>Customtype: @customgroup.customtype</div>
+				<div>TypeSettings: @customgroup.typeSettings</div>
+				<div>ManualMembership: @customgroup.manualMembership</div>
+				<div>MembershipRestriction: @customgroup.membershipRestriction</div>
+				<div>FriendlyURL: @customgroup.friendlyURL</div>
+				<div>Site: @customgroup.site</div>
+				<div>RemoteStagingGroupCount: @customgroup.remoteStagingGroupCount</div>
+				<div>InheritContent: @customgroup.inheritContent</div>
+				<div>Active: @customgroup.active</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

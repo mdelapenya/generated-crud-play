@@ -1,0 +1,27 @@
+@(portlets: List[models.portlet.Portlet])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Portlets in the DB</h1>
+
+	<p>
+		<a href="@routes.PortletApplication.addPortlet">Create New Portlet</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(portlet <- portlets) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.PortletApplication.get(portlet.id)">@portlet.id</a></div>
+				<div>MvccVersion: @portlet.mvccVersion</div>
+				<div>CompanyId: @portlet.companyId</div>
+				<div>PortletId: @portlet.portletId</div>
+				<div>Roles: @portlet.roles</div>
+				<div>Active: @portlet.active</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

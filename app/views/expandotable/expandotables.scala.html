@@ -1,0 +1,25 @@
+@(expandotables: List[models.expandotable.Expandotable])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Expandotables in the DB</h1>
+
+	<p>
+		<a href="@routes.ExpandotableApplication.addExpandotable">Create New Expandotable</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(expandotable <- expandotables) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.ExpandotableApplication.get(expandotable.tableId)">@expandotable.tableId</a></div>
+				<div>CompanyId: @expandotable.companyId</div>
+				<div>ClassNameId: @expandotable.classNameId</div>
+				<div>Name: @expandotable.name</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

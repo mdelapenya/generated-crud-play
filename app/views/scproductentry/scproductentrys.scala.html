@@ -1,0 +1,37 @@
+@(scproductentrys: List[models.scproductentry.Scproductentry])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Scproductentrys in the DB</h1>
+
+	<p>
+		<a href="@routes.ScproductentryApplication.addScproductentry">Create New Scproductentry</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(scproductentry <- scproductentrys) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.ScproductentryApplication.get(scproductentry.productEntryId)">@scproductentry.productEntryId</a></div>
+				<div>GroupId: @scproductentry.groupId</div>
+				<div>CompanyId: @scproductentry.companyId</div>
+				<div>UserId: @scproductentry.userId</div>
+				<div>UserName: @scproductentry.userName</div>
+				<div>CreateDate: @scproductentry.createDate</div>
+				<div>ModifiedDate: @scproductentry.modifiedDate</div>
+				<div>Name: @scproductentry.name</div>
+				<div>Customtype: @scproductentry.customtype</div>
+				<div>Tags: @scproductentry.tags</div>
+				<div>ShortDescription: @scproductentry.shortDescription</div>
+				<div>LongDescription: @scproductentry.longDescription</div>
+				<div>PageURL: @scproductentry.pageURL</div>
+				<div>Author: @scproductentry.author</div>
+				<div>RepoGroupId: @scproductentry.repoGroupId</div>
+				<div>RepoArtifactId: @scproductentry.repoArtifactId</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

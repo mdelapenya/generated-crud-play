@@ -1,0 +1,52 @@
+@(repositoryFormData: Form[controllers.repository.RepositoryFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Repository #@repositoryFormData("repositoryId").value</legend>
+
+		@form(routes.RepositoryApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(repositoryFormData("repositoryId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(repositoryFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(repositoryFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(repositoryFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(repositoryFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(repositoryFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(repositoryFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(repositoryFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(repositoryFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(repositoryFormData("classNameId"))
+			<!-- Name -->
+			@helper.inputText(repositoryFormData("name"))
+			<!-- Description -->
+			@helper.inputText(repositoryFormData("description"))
+			<!-- PortletId -->
+			@helper.inputText(repositoryFormData("portletId"))
+			<!-- TypeSettings -->
+			@helper.inputText(repositoryFormData("typeSettings"))
+			<!-- DlFolderId -->
+			@helper.inputText(repositoryFormData("dlFolderId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.RepositoryApplication.all()">Back to Repository List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

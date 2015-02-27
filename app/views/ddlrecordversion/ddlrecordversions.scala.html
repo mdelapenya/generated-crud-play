@@ -1,0 +1,36 @@
+@(ddlrecordversions: List[models.ddlrecordversion.Ddlrecordversion])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Ddlrecordversions in the DB</h1>
+
+	<p>
+		<a href="@routes.DdlrecordversionApplication.addDdlrecordversion">Create New Ddlrecordversion</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(ddlrecordversion <- ddlrecordversions) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.DdlrecordversionApplication.get(ddlrecordversion.recordVersionId)">@ddlrecordversion.recordVersionId</a></div>
+				<div>GroupId: @ddlrecordversion.groupId</div>
+				<div>CompanyId: @ddlrecordversion.companyId</div>
+				<div>UserId: @ddlrecordversion.userId</div>
+				<div>UserName: @ddlrecordversion.userName</div>
+				<div>CreateDate: @ddlrecordversion.createDate</div>
+				<div>DDMStorageId: @ddlrecordversion.DDMStorageId</div>
+				<div>RecordSetId: @ddlrecordversion.recordSetId</div>
+				<div>RecordId: @ddlrecordversion.recordId</div>
+				<div>Version: @ddlrecordversion.version</div>
+				<div>DisplayIndex: @ddlrecordversion.displayIndex</div>
+				<div>Status: @ddlrecordversion.status</div>
+				<div>StatusByUserId: @ddlrecordversion.statusByUserId</div>
+				<div>StatusByUserName: @ddlrecordversion.statusByUserName</div>
+				<div>StatusDate: @ddlrecordversion.statusDate</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

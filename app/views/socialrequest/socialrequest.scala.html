@@ -1,0 +1,48 @@
+@(socialrequestFormData: Form[controllers.socialrequest.SocialrequestFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Socialrequest #@socialrequestFormData("requestId").value</legend>
+
+		@form(routes.SocialrequestApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(socialrequestFormData("requestId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(socialrequestFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(socialrequestFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(socialrequestFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(socialrequestFormData("userId"))
+			<!-- CreateDate -->
+			@helper.inputText(socialrequestFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(socialrequestFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(socialrequestFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(socialrequestFormData("classPK"))
+			<!-- Customtype -->
+			@helper.inputText(socialrequestFormData("customtype"))
+			<!-- ExtraData -->
+			@helper.inputText(socialrequestFormData("extraData"))
+			<!-- ReceiverUserId -->
+			@helper.inputText(socialrequestFormData("receiverUserId"))
+			<!-- Status -->
+			@helper.inputText(socialrequestFormData("status"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.SocialrequestApplication.all()">Back to Socialrequest List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

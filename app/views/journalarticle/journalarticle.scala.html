@@ -1,0 +1,88 @@
+@(journalarticleFormData: Form[controllers.journalarticle.JournalarticleFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Journalarticle #@journalarticleFormData("id").value</legend>
+
+		@form(routes.JournalarticleApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(journalarticleFormData("id"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(journalarticleFormData("uuid"))
+			<!-- ResourcePrimKey -->
+			@helper.inputText(journalarticleFormData("resourcePrimKey"))
+			<!-- GroupId -->
+			@helper.inputText(journalarticleFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(journalarticleFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(journalarticleFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(journalarticleFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(journalarticleFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(journalarticleFormData("modifiedDate"))
+			<!-- FolderId -->
+			@helper.inputText(journalarticleFormData("folderId"))
+			<!-- ClassNameId -->
+			@helper.inputText(journalarticleFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(journalarticleFormData("classPK"))
+			<!-- TreePath -->
+			@helper.inputText(journalarticleFormData("treePath"))
+			<!-- ArticleId -->
+			@helper.inputText(journalarticleFormData("articleId"))
+			<!-- Version -->
+			@helper.inputText(journalarticleFormData("version"))
+			<!-- Title -->
+			@helper.inputText(journalarticleFormData("title"))
+			<!-- UrlTitle -->
+			@helper.inputText(journalarticleFormData("urlTitle"))
+			<!-- Description -->
+			@helper.inputText(journalarticleFormData("description"))
+			<!-- Content -->
+			@helper.inputText(journalarticleFormData("content"))
+			<!-- DDMStructureKey -->
+			@helper.inputText(journalarticleFormData("DDMStructureKey"))
+			<!-- DDMTemplateKey -->
+			@helper.inputText(journalarticleFormData("DDMTemplateKey"))
+			<!-- LayoutUuid -->
+			@helper.inputText(journalarticleFormData("layoutUuid"))
+			<!-- DisplayDate -->
+			@helper.inputText(journalarticleFormData("displayDate"))
+			<!-- ExpirationDate -->
+			@helper.inputText(journalarticleFormData("expirationDate"))
+			<!-- ReviewDate -->
+			@helper.inputText(journalarticleFormData("reviewDate"))
+			<!-- Indexable -->
+			@helper.inputText(journalarticleFormData("indexable"))
+			<!-- SmallImage -->
+			@helper.inputText(journalarticleFormData("smallImage"))
+			<!-- SmallImageId -->
+			@helper.inputText(journalarticleFormData("smallImageId"))
+			<!-- SmallImageURL -->
+			@helper.inputText(journalarticleFormData("smallImageURL"))
+			<!-- Status -->
+			@helper.inputText(journalarticleFormData("status"))
+			<!-- StatusByUserId -->
+			@helper.inputText(journalarticleFormData("statusByUserId"))
+			<!-- StatusByUserName -->
+			@helper.inputText(journalarticleFormData("statusByUserName"))
+			<!-- StatusDate -->
+			@helper.inputText(journalarticleFormData("statusDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.JournalarticleApplication.all()">Back to Journalarticle List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

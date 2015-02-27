@@ -1,0 +1,38 @@
+@(journalfolders: List[models.journalfolder.Journalfolder])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Journalfolders in the DB</h1>
+
+	<p>
+		<a href="@routes.JournalfolderApplication.addJournalfolder">Create New Journalfolder</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(journalfolder <- journalfolders) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.JournalfolderApplication.get(journalfolder.folderId)">@journalfolder.folderId</a></div>
+				<div>Uuid: @journalfolder.uuid</div>
+				<div>GroupId: @journalfolder.groupId</div>
+				<div>CompanyId: @journalfolder.companyId</div>
+				<div>UserId: @journalfolder.userId</div>
+				<div>UserName: @journalfolder.userName</div>
+				<div>CreateDate: @journalfolder.createDate</div>
+				<div>ModifiedDate: @journalfolder.modifiedDate</div>
+				<div>ParentFolderId: @journalfolder.parentFolderId</div>
+				<div>TreePath: @journalfolder.treePath</div>
+				<div>Name: @journalfolder.name</div>
+				<div>Description: @journalfolder.description</div>
+				<div>RestrictionType: @journalfolder.restrictionType</div>
+				<div>Status: @journalfolder.status</div>
+				<div>StatusByUserId: @journalfolder.statusByUserId</div>
+				<div>StatusByUserName: @journalfolder.statusByUserName</div>
+				<div>StatusDate: @journalfolder.statusDate</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

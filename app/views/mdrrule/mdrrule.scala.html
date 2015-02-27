@@ -1,0 +1,48 @@
+@(mdrruleFormData: Form[controllers.mdrrule.MdrruleFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Mdrrule #@mdrruleFormData("ruleId").value</legend>
+
+		@form(routes.MdrruleApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(mdrruleFormData("ruleId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(mdrruleFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(mdrruleFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(mdrruleFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(mdrruleFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(mdrruleFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(mdrruleFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(mdrruleFormData("modifiedDate"))
+			<!-- RuleGroupId -->
+			@helper.inputText(mdrruleFormData("ruleGroupId"))
+			<!-- Name -->
+			@helper.inputText(mdrruleFormData("name"))
+			<!-- Description -->
+			@helper.inputText(mdrruleFormData("description"))
+			<!-- Customtype -->
+			@helper.inputText(mdrruleFormData("customtype"))
+			<!-- TypeSettings -->
+			@helper.inputText(mdrruleFormData("typeSettings"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.MdrruleApplication.all()">Back to Mdrrule List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

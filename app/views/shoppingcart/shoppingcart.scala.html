@@ -1,0 +1,44 @@
+@(shoppingcartFormData: Form[controllers.shoppingcart.ShoppingcartFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Shoppingcart #@shoppingcartFormData("cartId").value</legend>
+
+		@form(routes.ShoppingcartApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(shoppingcartFormData("cartId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(shoppingcartFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(shoppingcartFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(shoppingcartFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(shoppingcartFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(shoppingcartFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(shoppingcartFormData("modifiedDate"))
+			<!-- ItemIds -->
+			@helper.inputText(shoppingcartFormData("itemIds"))
+			<!-- CouponCodes -->
+			@helper.inputText(shoppingcartFormData("couponCodes"))
+			<!-- AltShipping -->
+			@helper.inputText(shoppingcartFormData("altShipping"))
+			<!-- Insure -->
+			@helper.inputText(shoppingcartFormData("insure"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ShoppingcartApplication.all()">Back to Shoppingcart List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

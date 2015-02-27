@@ -1,0 +1,44 @@
+@(portletitemFormData: Form[controllers.portletitem.PortletitemFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Portletitem #@portletitemFormData("portletItemId").value</legend>
+
+		@form(routes.PortletitemApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(portletitemFormData("portletItemId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(portletitemFormData("mvccVersion"))
+			<!-- GroupId -->
+			@helper.inputText(portletitemFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(portletitemFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(portletitemFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(portletitemFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(portletitemFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(portletitemFormData("modifiedDate"))
+			<!-- Name -->
+			@helper.inputText(portletitemFormData("name"))
+			<!-- PortletId -->
+			@helper.inputText(portletitemFormData("portletId"))
+			<!-- ClassNameId -->
+			@helper.inputText(portletitemFormData("classNameId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.PortletitemApplication.all()">Back to Portletitem List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

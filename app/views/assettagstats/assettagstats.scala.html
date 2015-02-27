@@ -1,0 +1,30 @@
+@(assettagstatsFormData: Form[controllers.assettagstats.AssettagstatsFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Assettagstats #@assettagstatsFormData("tagStatsId").value</legend>
+
+		@form(routes.AssettagstatsApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(assettagstatsFormData("tagStatsId"), 'readonly -> "readonly")
+
+			<!-- TagId -->
+			@helper.inputText(assettagstatsFormData("tagId"))
+			<!-- ClassNameId -->
+			@helper.inputText(assettagstatsFormData("classNameId"))
+			<!-- AssetCount -->
+			@helper.inputText(assettagstatsFormData("assetCount"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.AssettagstatsApplication.all()">Back to Assettagstats List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

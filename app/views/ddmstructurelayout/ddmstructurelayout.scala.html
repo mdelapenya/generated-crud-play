@@ -1,0 +1,42 @@
+@(ddmstructurelayoutFormData: Form[controllers.ddmstructurelayout.DdmstructurelayoutFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Ddmstructurelayout #@ddmstructurelayoutFormData("structureLayoutId").value</legend>
+
+		@form(routes.DdmstructurelayoutApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(ddmstructurelayoutFormData("structureLayoutId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(ddmstructurelayoutFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(ddmstructurelayoutFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(ddmstructurelayoutFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(ddmstructurelayoutFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(ddmstructurelayoutFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(ddmstructurelayoutFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(ddmstructurelayoutFormData("modifiedDate"))
+			<!-- StructureVersionId -->
+			@helper.inputText(ddmstructurelayoutFormData("structureVersionId"))
+			<!-- Definition -->
+			@helper.inputText(ddmstructurelayoutFormData("definition"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DdmstructurelayoutApplication.all()">Back to Ddmstructurelayout List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

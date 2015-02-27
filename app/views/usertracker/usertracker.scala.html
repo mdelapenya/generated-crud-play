@@ -1,0 +1,40 @@
+@(usertrackerFormData: Form[controllers.usertracker.UsertrackerFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Usertracker #@usertrackerFormData("userTrackerId").value</legend>
+
+		@form(routes.UsertrackerApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(usertrackerFormData("userTrackerId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(usertrackerFormData("mvccVersion"))
+			<!-- CompanyId -->
+			@helper.inputText(usertrackerFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(usertrackerFormData("userId"))
+			<!-- ModifiedDate -->
+			@helper.inputText(usertrackerFormData("modifiedDate"))
+			<!-- SessionId -->
+			@helper.inputText(usertrackerFormData("sessionId"))
+			<!-- RemoteAddr -->
+			@helper.inputText(usertrackerFormData("remoteAddr"))
+			<!-- RemoteHost -->
+			@helper.inputText(usertrackerFormData("remoteHost"))
+			<!-- UserAgent -->
+			@helper.inputText(usertrackerFormData("userAgent"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.UsertrackerApplication.all()">Back to Usertracker List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

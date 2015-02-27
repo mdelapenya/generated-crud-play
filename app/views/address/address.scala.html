@@ -1,0 +1,62 @@
+@(addressFormData: Form[controllers.address.AddressFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Address #@addressFormData("addressId").value</legend>
+
+		@form(routes.AddressApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(addressFormData("addressId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(addressFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(addressFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(addressFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(addressFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(addressFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(addressFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(addressFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(addressFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(addressFormData("classPK"))
+			<!-- Street1 -->
+			@helper.inputText(addressFormData("street1"))
+			<!-- Street2 -->
+			@helper.inputText(addressFormData("street2"))
+			<!-- Street3 -->
+			@helper.inputText(addressFormData("street3"))
+			<!-- City -->
+			@helper.inputText(addressFormData("city"))
+			<!-- Zip -->
+			@helper.inputText(addressFormData("zip"))
+			<!-- RegionId -->
+			@helper.inputText(addressFormData("regionId"))
+			<!-- CountryId -->
+			@helper.inputText(addressFormData("countryId"))
+			<!-- TypeId -->
+			@helper.inputText(addressFormData("typeId"))
+			<!-- Mailing -->
+			@helper.inputText(addressFormData("mailing"))
+			<!-- Customprimary -->
+			@helper.inputText(addressFormData("customprimary"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.AddressApplication.all()">Back to Address List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

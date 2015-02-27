@@ -13,3 +13,2009 @@ GET /assets/*file controllers.Assets.at(path="/public", file)
 
 # Upload SQL file
 POST /upload controllers.Application.uploadSQL
+
+##
+## Model routes
+##
+
+# Account
+
+# View a account
+GET /accounts/:id controllers.AccountApplication.get(id: Long)
+
+# Go to the create account view
+GET /account/add controllers.AccountApplication.addAccount
+
+# Display all accounts
+GET /accounts controllers.AccountApplication.all
+
+# Save a account
+POST /account/submit controllers.AccountApplication.submit()
+
+# Address
+
+# View a address
+GET /addresss/:id controllers.AddressApplication.get(id: Long)
+
+# Go to the create address view
+GET /address/add controllers.AddressApplication.addAddress
+
+# Display all addresss
+GET /addresss controllers.AddressApplication.all
+
+# Save a address
+POST /address/submit controllers.AddressApplication.submit()
+
+# Announcementsdelivery
+
+# View a announcementsdelivery
+GET /announcementsdeliverys/:id controllers.AnnouncementsdeliveryApplication.get(id: Long)
+
+# Go to the create announcementsdelivery view
+GET /announcementsdelivery/add controllers.AnnouncementsdeliveryApplication.addAnnouncementsdelivery
+
+# Display all announcementsdeliverys
+GET /announcementsdeliverys controllers.AnnouncementsdeliveryApplication.all
+
+# Save a announcementsdelivery
+POST /announcementsdelivery/submit controllers.AnnouncementsdeliveryApplication.submit()
+
+# Announcementsentry
+
+# View a announcementsentry
+GET /announcementsentrys/:id controllers.AnnouncementsentryApplication.get(id: Long)
+
+# Go to the create announcementsentry view
+GET /announcementsentry/add controllers.AnnouncementsentryApplication.addAnnouncementsentry
+
+# Display all announcementsentrys
+GET /announcementsentrys controllers.AnnouncementsentryApplication.all
+
+# Save a announcementsentry
+POST /announcementsentry/submit controllers.AnnouncementsentryApplication.submit()
+
+# Announcementsflag
+
+# View a announcementsflag
+GET /announcementsflags/:id controllers.AnnouncementsflagApplication.get(id: Long)
+
+# Go to the create announcementsflag view
+GET /announcementsflag/add controllers.AnnouncementsflagApplication.addAnnouncementsflag
+
+# Display all announcementsflags
+GET /announcementsflags controllers.AnnouncementsflagApplication.all
+
+# Save a announcementsflag
+POST /announcementsflag/submit controllers.AnnouncementsflagApplication.submit()
+
+# Assetcategory
+
+# View a assetcategory
+GET /assetcategorys/:id controllers.AssetcategoryApplication.get(id: Long)
+
+# Go to the create assetcategory view
+GET /assetcategory/add controllers.AssetcategoryApplication.addAssetcategory
+
+# Display all assetcategorys
+GET /assetcategorys controllers.AssetcategoryApplication.all
+
+# Save a assetcategory
+POST /assetcategory/submit controllers.AssetcategoryApplication.submit()
+
+# Assetcategoryproperty
+
+# View a assetcategoryproperty
+GET /assetcategorypropertys/:id controllers.AssetcategorypropertyApplication.get(id: Long)
+
+# Go to the create assetcategoryproperty view
+GET /assetcategoryproperty/add controllers.AssetcategorypropertyApplication.addAssetcategoryproperty
+
+# Display all assetcategorypropertys
+GET /assetcategorypropertys controllers.AssetcategorypropertyApplication.all
+
+# Save a assetcategoryproperty
+POST /assetcategoryproperty/submit controllers.AssetcategorypropertyApplication.submit()
+
+# Assetentry
+
+# View a assetentry
+GET /assetentrys/:id controllers.AssetentryApplication.get(id: Long)
+
+# Go to the create assetentry view
+GET /assetentry/add controllers.AssetentryApplication.addAssetentry
+
+# Display all assetentrys
+GET /assetentrys controllers.AssetentryApplication.all
+
+# Save a assetentry
+POST /assetentry/submit controllers.AssetentryApplication.submit()
+
+# Assetlink
+
+# View a assetlink
+GET /assetlinks/:id controllers.AssetlinkApplication.get(id: Long)
+
+# Go to the create assetlink view
+GET /assetlink/add controllers.AssetlinkApplication.addAssetlink
+
+# Display all assetlinks
+GET /assetlinks controllers.AssetlinkApplication.all
+
+# Save a assetlink
+POST /assetlink/submit controllers.AssetlinkApplication.submit()
+
+# Assettag
+
+# View a assettag
+GET /assettags/:id controllers.AssettagApplication.get(id: Long)
+
+# Go to the create assettag view
+GET /assettag/add controllers.AssettagApplication.addAssettag
+
+# Display all assettags
+GET /assettags controllers.AssettagApplication.all
+
+# Save a assettag
+POST /assettag/submit controllers.AssettagApplication.submit()
+
+# Assettagstats
+
+# View a assettagstats
+GET /assettagstatss/:id controllers.AssettagstatsApplication.get(id: Long)
+
+# Go to the create assettagstats view
+GET /assettagstats/add controllers.AssettagstatsApplication.addAssettagstats
+
+# Display all assettagstatss
+GET /assettagstatss controllers.AssettagstatsApplication.all
+
+# Save a assettagstats
+POST /assettagstats/submit controllers.AssettagstatsApplication.submit()
+
+# Assetvocabulary
+
+# View a assetvocabulary
+GET /assetvocabularys/:id controllers.AssetvocabularyApplication.get(id: Long)
+
+# Go to the create assetvocabulary view
+GET /assetvocabulary/add controllers.AssetvocabularyApplication.addAssetvocabulary
+
+# Display all assetvocabularys
+GET /assetvocabularys controllers.AssetvocabularyApplication.all
+
+# Save a assetvocabulary
+POST /assetvocabulary/submit controllers.AssetvocabularyApplication.submit()
+
+# Backgroundtask
+
+# View a backgroundtask
+GET /backgroundtasks/:id controllers.BackgroundtaskApplication.get(id: Long)
+
+# Go to the create backgroundtask view
+GET /backgroundtask/add controllers.BackgroundtaskApplication.addBackgroundtask
+
+# Display all backgroundtasks
+GET /backgroundtasks controllers.BackgroundtaskApplication.all
+
+# Save a backgroundtask
+POST /backgroundtask/submit controllers.BackgroundtaskApplication.submit()
+
+# Blogsentry
+
+# View a blogsentry
+GET /blogsentrys/:id controllers.BlogsentryApplication.get(id: Long)
+
+# Go to the create blogsentry view
+GET /blogsentry/add controllers.BlogsentryApplication.addBlogsentry
+
+# Display all blogsentrys
+GET /blogsentrys controllers.BlogsentryApplication.all
+
+# Save a blogsentry
+POST /blogsentry/submit controllers.BlogsentryApplication.submit()
+
+# Blogsstatsuser
+
+# View a blogsstatsuser
+GET /blogsstatsusers/:id controllers.BlogsstatsuserApplication.get(id: Long)
+
+# Go to the create blogsstatsuser view
+GET /blogsstatsuser/add controllers.BlogsstatsuserApplication.addBlogsstatsuser
+
+# Display all blogsstatsusers
+GET /blogsstatsusers controllers.BlogsstatsuserApplication.all
+
+# Save a blogsstatsuser
+POST /blogsstatsuser/submit controllers.BlogsstatsuserApplication.submit()
+
+# Browsertracker
+
+# View a browsertracker
+GET /browsertrackers/:id controllers.BrowsertrackerApplication.get(id: Long)
+
+# Go to the create browsertracker view
+GET /browsertracker/add controllers.BrowsertrackerApplication.addBrowsertracker
+
+# Display all browsertrackers
+GET /browsertrackers controllers.BrowsertrackerApplication.all
+
+# Save a browsertracker
+POST /browsertracker/submit controllers.BrowsertrackerApplication.submit()
+
+# Calevent
+
+# View a calevent
+GET /calevents/:id controllers.CaleventApplication.get(id: Long)
+
+# Go to the create calevent view
+GET /calevent/add controllers.CaleventApplication.addCalevent
+
+# Display all calevents
+GET /calevents controllers.CaleventApplication.all
+
+# Save a calevent
+POST /calevent/submit controllers.CaleventApplication.submit()
+
+# Classname
+
+# View a classname
+GET /classnames/:id controllers.ClassnameApplication.get(id: Long)
+
+# Go to the create classname view
+GET /classname/add controllers.ClassnameApplication.addClassname
+
+# Display all classnames
+GET /classnames controllers.ClassnameApplication.all
+
+# Save a classname
+POST /classname/submit controllers.ClassnameApplication.submit()
+
+# Clustergroup
+
+# View a clustergroup
+GET /clustergroups/:id controllers.ClustergroupApplication.get(id: Long)
+
+# Go to the create clustergroup view
+GET /clustergroup/add controllers.ClustergroupApplication.addClustergroup
+
+# Display all clustergroups
+GET /clustergroups controllers.ClustergroupApplication.all
+
+# Save a clustergroup
+POST /clustergroup/submit controllers.ClustergroupApplication.submit()
+
+# Company
+
+# View a company
+GET /companys/:id controllers.CompanyApplication.get(id: Long)
+
+# Go to the create company view
+GET /company/add controllers.CompanyApplication.addCompany
+
+# Display all companys
+GET /companys controllers.CompanyApplication.all
+
+# Save a company
+POST /company/submit controllers.CompanyApplication.submit()
+
+# Contact
+
+# View a contact
+GET /contacts/:id controllers.ContactApplication.get(id: Long)
+
+# Go to the create contact view
+GET /contact/add controllers.ContactApplication.addContact
+
+# Display all contacts
+GET /contacts controllers.ContactApplication.all
+
+# Save a contact
+POST /contact/submit controllers.ContactApplication.submit()
+
+# Country
+
+# View a country
+GET /countrys/:id controllers.CountryApplication.get(id: Long)
+
+# Go to the create country view
+GET /country/add controllers.CountryApplication.addCountry
+
+# Display all countrys
+GET /countrys controllers.CountryApplication.all
+
+# Save a country
+POST /country/submit controllers.CountryApplication.submit()
+
+# Ddlrecord
+
+# View a ddlrecord
+GET /ddlrecords/:id controllers.DdlrecordApplication.get(id: Long)
+
+# Go to the create ddlrecord view
+GET /ddlrecord/add controllers.DdlrecordApplication.addDdlrecord
+
+# Display all ddlrecords
+GET /ddlrecords controllers.DdlrecordApplication.all
+
+# Save a ddlrecord
+POST /ddlrecord/submit controllers.DdlrecordApplication.submit()
+
+# Ddlrecordset
+
+# View a ddlrecordset
+GET /ddlrecordsets/:id controllers.DdlrecordsetApplication.get(id: Long)
+
+# Go to the create ddlrecordset view
+GET /ddlrecordset/add controllers.DdlrecordsetApplication.addDdlrecordset
+
+# Display all ddlrecordsets
+GET /ddlrecordsets controllers.DdlrecordsetApplication.all
+
+# Save a ddlrecordset
+POST /ddlrecordset/submit controllers.DdlrecordsetApplication.submit()
+
+# Ddlrecordversion
+
+# View a ddlrecordversion
+GET /ddlrecordversions/:id controllers.DdlrecordversionApplication.get(id: Long)
+
+# Go to the create ddlrecordversion view
+GET /ddlrecordversion/add controllers.DdlrecordversionApplication.addDdlrecordversion
+
+# Display all ddlrecordversions
+GET /ddlrecordversions controllers.DdlrecordversionApplication.all
+
+# Save a ddlrecordversion
+POST /ddlrecordversion/submit controllers.DdlrecordversionApplication.submit()
+
+# Ddmcontent
+
+# View a ddmcontent
+GET /ddmcontents/:id controllers.DdmcontentApplication.get(id: Long)
+
+# Go to the create ddmcontent view
+GET /ddmcontent/add controllers.DdmcontentApplication.addDdmcontent
+
+# Display all ddmcontents
+GET /ddmcontents controllers.DdmcontentApplication.all
+
+# Save a ddmcontent
+POST /ddmcontent/submit controllers.DdmcontentApplication.submit()
+
+# Ddmstoragelink
+
+# View a ddmstoragelink
+GET /ddmstoragelinks/:id controllers.DdmstoragelinkApplication.get(id: Long)
+
+# Go to the create ddmstoragelink view
+GET /ddmstoragelink/add controllers.DdmstoragelinkApplication.addDdmstoragelink
+
+# Display all ddmstoragelinks
+GET /ddmstoragelinks controllers.DdmstoragelinkApplication.all
+
+# Save a ddmstoragelink
+POST /ddmstoragelink/submit controllers.DdmstoragelinkApplication.submit()
+
+# Ddmstructure
+
+# View a ddmstructure
+GET /ddmstructures/:id controllers.DdmstructureApplication.get(id: Long)
+
+# Go to the create ddmstructure view
+GET /ddmstructure/add controllers.DdmstructureApplication.addDdmstructure
+
+# Display all ddmstructures
+GET /ddmstructures controllers.DdmstructureApplication.all
+
+# Save a ddmstructure
+POST /ddmstructure/submit controllers.DdmstructureApplication.submit()
+
+# Ddmstructurelayout
+
+# View a ddmstructurelayout
+GET /ddmstructurelayouts/:id controllers.DdmstructurelayoutApplication.get(id: Long)
+
+# Go to the create ddmstructurelayout view
+GET /ddmstructurelayout/add controllers.DdmstructurelayoutApplication.addDdmstructurelayout
+
+# Display all ddmstructurelayouts
+GET /ddmstructurelayouts controllers.DdmstructurelayoutApplication.all
+
+# Save a ddmstructurelayout
+POST /ddmstructurelayout/submit controllers.DdmstructurelayoutApplication.submit()
+
+# Ddmstructurelink
+
+# View a ddmstructurelink
+GET /ddmstructurelinks/:id controllers.DdmstructurelinkApplication.get(id: Long)
+
+# Go to the create ddmstructurelink view
+GET /ddmstructurelink/add controllers.DdmstructurelinkApplication.addDdmstructurelink
+
+# Display all ddmstructurelinks
+GET /ddmstructurelinks controllers.DdmstructurelinkApplication.all
+
+# Save a ddmstructurelink
+POST /ddmstructurelink/submit controllers.DdmstructurelinkApplication.submit()
+
+# Ddmstructureversion
+
+# View a ddmstructureversion
+GET /ddmstructureversions/:id controllers.DdmstructureversionApplication.get(id: Long)
+
+# Go to the create ddmstructureversion view
+GET /ddmstructureversion/add controllers.DdmstructureversionApplication.addDdmstructureversion
+
+# Display all ddmstructureversions
+GET /ddmstructureversions controllers.DdmstructureversionApplication.all
+
+# Save a ddmstructureversion
+POST /ddmstructureversion/submit controllers.DdmstructureversionApplication.submit()
+
+# Ddmtemplate
+
+# View a ddmtemplate
+GET /ddmtemplates/:id controllers.DdmtemplateApplication.get(id: Long)
+
+# Go to the create ddmtemplate view
+GET /ddmtemplate/add controllers.DdmtemplateApplication.addDdmtemplate
+
+# Display all ddmtemplates
+GET /ddmtemplates controllers.DdmtemplateApplication.all
+
+# Save a ddmtemplate
+POST /ddmtemplate/submit controllers.DdmtemplateApplication.submit()
+
+# Ddmtemplateversion
+
+# View a ddmtemplateversion
+GET /ddmtemplateversions/:id controllers.DdmtemplateversionApplication.get(id: Long)
+
+# Go to the create ddmtemplateversion view
+GET /ddmtemplateversion/add controllers.DdmtemplateversionApplication.addDdmtemplateversion
+
+# Display all ddmtemplateversions
+GET /ddmtemplateversions controllers.DdmtemplateversionApplication.all
+
+# Save a ddmtemplateversion
+POST /ddmtemplateversion/submit controllers.DdmtemplateversionApplication.submit()
+
+# Dlcontent
+
+# View a dlcontent
+GET /dlcontents/:id controllers.DlcontentApplication.get(id: Long)
+
+# Go to the create dlcontent view
+GET /dlcontent/add controllers.DlcontentApplication.addDlcontent
+
+# Display all dlcontents
+GET /dlcontents controllers.DlcontentApplication.all
+
+# Save a dlcontent
+POST /dlcontent/submit controllers.DlcontentApplication.submit()
+
+# Dlfileentry
+
+# View a dlfileentry
+GET /dlfileentrys/:id controllers.DlfileentryApplication.get(id: Long)
+
+# Go to the create dlfileentry view
+GET /dlfileentry/add controllers.DlfileentryApplication.addDlfileentry
+
+# Display all dlfileentrys
+GET /dlfileentrys controllers.DlfileentryApplication.all
+
+# Save a dlfileentry
+POST /dlfileentry/submit controllers.DlfileentryApplication.submit()
+
+# Dlfileentrymetadata
+
+# View a dlfileentrymetadata
+GET /dlfileentrymetadatas/:id controllers.DlfileentrymetadataApplication.get(id: Long)
+
+# Go to the create dlfileentrymetadata view
+GET /dlfileentrymetadata/add controllers.DlfileentrymetadataApplication.addDlfileentrymetadata
+
+# Display all dlfileentrymetadatas
+GET /dlfileentrymetadatas controllers.DlfileentrymetadataApplication.all
+
+# Save a dlfileentrymetadata
+POST /dlfileentrymetadata/submit controllers.DlfileentrymetadataApplication.submit()
+
+# Dlfileentrytype
+
+# View a dlfileentrytype
+GET /dlfileentrytypes/:id controllers.DlfileentrytypeApplication.get(id: Long)
+
+# Go to the create dlfileentrytype view
+GET /dlfileentrytype/add controllers.DlfileentrytypeApplication.addDlfileentrytype
+
+# Display all dlfileentrytypes
+GET /dlfileentrytypes controllers.DlfileentrytypeApplication.all
+
+# Save a dlfileentrytype
+POST /dlfileentrytype/submit controllers.DlfileentrytypeApplication.submit()
+
+# Dlfilerank
+
+# View a dlfilerank
+GET /dlfileranks/:id controllers.DlfilerankApplication.get(id: Long)
+
+# Go to the create dlfilerank view
+GET /dlfilerank/add controllers.DlfilerankApplication.addDlfilerank
+
+# Display all dlfileranks
+GET /dlfileranks controllers.DlfilerankApplication.all
+
+# Save a dlfilerank
+POST /dlfilerank/submit controllers.DlfilerankApplication.submit()
+
+# Dlfileshortcut
+
+# View a dlfileshortcut
+GET /dlfileshortcuts/:id controllers.DlfileshortcutApplication.get(id: Long)
+
+# Go to the create dlfileshortcut view
+GET /dlfileshortcut/add controllers.DlfileshortcutApplication.addDlfileshortcut
+
+# Display all dlfileshortcuts
+GET /dlfileshortcuts controllers.DlfileshortcutApplication.all
+
+# Save a dlfileshortcut
+POST /dlfileshortcut/submit controllers.DlfileshortcutApplication.submit()
+
+# Dlfileversion
+
+# View a dlfileversion
+GET /dlfileversions/:id controllers.DlfileversionApplication.get(id: Long)
+
+# Go to the create dlfileversion view
+GET /dlfileversion/add controllers.DlfileversionApplication.addDlfileversion
+
+# Display all dlfileversions
+GET /dlfileversions controllers.DlfileversionApplication.all
+
+# Save a dlfileversion
+POST /dlfileversion/submit controllers.DlfileversionApplication.submit()
+
+# Dlfolder
+
+# View a dlfolder
+GET /dlfolders/:id controllers.DlfolderApplication.get(id: Long)
+
+# Go to the create dlfolder view
+GET /dlfolder/add controllers.DlfolderApplication.addDlfolder
+
+# Display all dlfolders
+GET /dlfolders controllers.DlfolderApplication.all
+
+# Save a dlfolder
+POST /dlfolder/submit controllers.DlfolderApplication.submit()
+
+# Dlsyncevent
+
+# View a dlsyncevent
+GET /dlsyncevents/:id controllers.DlsynceventApplication.get(id: Long)
+
+# Go to the create dlsyncevent view
+GET /dlsyncevent/add controllers.DlsynceventApplication.addDlsyncevent
+
+# Display all dlsyncevents
+GET /dlsyncevents controllers.DlsynceventApplication.all
+
+# Save a dlsyncevent
+POST /dlsyncevent/submit controllers.DlsynceventApplication.submit()
+
+# Emailaddress
+
+# View a emailaddress
+GET /emailaddresss/:id controllers.EmailaddressApplication.get(id: Long)
+
+# Go to the create emailaddress view
+GET /emailaddress/add controllers.EmailaddressApplication.addEmailaddress
+
+# Display all emailaddresss
+GET /emailaddresss controllers.EmailaddressApplication.all
+
+# Save a emailaddress
+POST /emailaddress/submit controllers.EmailaddressApplication.submit()
+
+# Expandocolumn
+
+# View a expandocolumn
+GET /expandocolumns/:id controllers.ExpandocolumnApplication.get(id: Long)
+
+# Go to the create expandocolumn view
+GET /expandocolumn/add controllers.ExpandocolumnApplication.addExpandocolumn
+
+# Display all expandocolumns
+GET /expandocolumns controllers.ExpandocolumnApplication.all
+
+# Save a expandocolumn
+POST /expandocolumn/submit controllers.ExpandocolumnApplication.submit()
+
+# Expandorow
+
+# View a expandorow
+GET /expandorows/:id controllers.ExpandorowApplication.get(id: Long)
+
+# Go to the create expandorow view
+GET /expandorow/add controllers.ExpandorowApplication.addExpandorow
+
+# Display all expandorows
+GET /expandorows controllers.ExpandorowApplication.all
+
+# Save a expandorow
+POST /expandorow/submit controllers.ExpandorowApplication.submit()
+
+# Expandotable
+
+# View a expandotable
+GET /expandotables/:id controllers.ExpandotableApplication.get(id: Long)
+
+# Go to the create expandotable view
+GET /expandotable/add controllers.ExpandotableApplication.addExpandotable
+
+# Display all expandotables
+GET /expandotables controllers.ExpandotableApplication.all
+
+# Save a expandotable
+POST /expandotable/submit controllers.ExpandotableApplication.submit()
+
+# Expandovalue
+
+# View a expandovalue
+GET /expandovalues/:id controllers.ExpandovalueApplication.get(id: Long)
+
+# Go to the create expandovalue view
+GET /expandovalue/add controllers.ExpandovalueApplication.addExpandovalue
+
+# Display all expandovalues
+GET /expandovalues controllers.ExpandovalueApplication.all
+
+# Save a expandovalue
+POST /expandovalue/submit controllers.ExpandovalueApplication.submit()
+
+# Exportimportconfiguration
+
+# View a exportimportconfiguration
+GET /exportimportconfigurations/:id controllers.ExportimportconfigurationApplication.get(id: Long)
+
+# Go to the create exportimportconfiguration view
+GET /exportimportconfiguration/add controllers.ExportimportconfigurationApplication.addExportimportconfiguration
+
+# Display all exportimportconfigurations
+GET /exportimportconfigurations controllers.ExportimportconfigurationApplication.all
+
+# Save a exportimportconfiguration
+POST /exportimportconfiguration/submit controllers.ExportimportconfigurationApplication.submit()
+
+# Customgroup
+
+# View a customgroup
+GET /customgroups/:id controllers.CustomgroupApplication.get(id: Long)
+
+# Go to the create customgroup view
+GET /customgroup/add controllers.CustomgroupApplication.addCustomgroup
+
+# Display all customgroups
+GET /customgroups controllers.CustomgroupApplication.all
+
+# Save a customgroup
+POST /customgroup/submit controllers.CustomgroupApplication.submit()
+
+# Image
+
+# View a image
+GET /images/:id controllers.ImageApplication.get(id: Long)
+
+# Go to the create image view
+GET /image/add controllers.ImageApplication.addImage
+
+# Display all images
+GET /images controllers.ImageApplication.all
+
+# Save a image
+POST /image/submit controllers.ImageApplication.submit()
+
+# Journalarticle
+
+# View a journalarticle
+GET /journalarticles/:id controllers.JournalarticleApplication.get(id: Long)
+
+# Go to the create journalarticle view
+GET /journalarticle/add controllers.JournalarticleApplication.addJournalarticle
+
+# Display all journalarticles
+GET /journalarticles controllers.JournalarticleApplication.all
+
+# Save a journalarticle
+POST /journalarticle/submit controllers.JournalarticleApplication.submit()
+
+# Journalarticleimage
+
+# View a journalarticleimage
+GET /journalarticleimages/:id controllers.JournalarticleimageApplication.get(id: Long)
+
+# Go to the create journalarticleimage view
+GET /journalarticleimage/add controllers.JournalarticleimageApplication.addJournalarticleimage
+
+# Display all journalarticleimages
+GET /journalarticleimages controllers.JournalarticleimageApplication.all
+
+# Save a journalarticleimage
+POST /journalarticleimage/submit controllers.JournalarticleimageApplication.submit()
+
+# Journalarticleresource
+
+# View a journalarticleresource
+GET /journalarticleresources/:id controllers.JournalarticleresourceApplication.get(id: Long)
+
+# Go to the create journalarticleresource view
+GET /journalarticleresource/add controllers.JournalarticleresourceApplication.addJournalarticleresource
+
+# Display all journalarticleresources
+GET /journalarticleresources controllers.JournalarticleresourceApplication.all
+
+# Save a journalarticleresource
+POST /journalarticleresource/submit controllers.JournalarticleresourceApplication.submit()
+
+# Journalcontentsearch
+
+# View a journalcontentsearch
+GET /journalcontentsearchs/:id controllers.JournalcontentsearchApplication.get(id: Long)
+
+# Go to the create journalcontentsearch view
+GET /journalcontentsearch/add controllers.JournalcontentsearchApplication.addJournalcontentsearch
+
+# Display all journalcontentsearchs
+GET /journalcontentsearchs controllers.JournalcontentsearchApplication.all
+
+# Save a journalcontentsearch
+POST /journalcontentsearch/submit controllers.JournalcontentsearchApplication.submit()
+
+# Journalfeed
+
+# View a journalfeed
+GET /journalfeeds/:id controllers.JournalfeedApplication.get(id: Long)
+
+# Go to the create journalfeed view
+GET /journalfeed/add controllers.JournalfeedApplication.addJournalfeed
+
+# Display all journalfeeds
+GET /journalfeeds controllers.JournalfeedApplication.all
+
+# Save a journalfeed
+POST /journalfeed/submit controllers.JournalfeedApplication.submit()
+
+# Journalfolder
+
+# View a journalfolder
+GET /journalfolders/:id controllers.JournalfolderApplication.get(id: Long)
+
+# Go to the create journalfolder view
+GET /journalfolder/add controllers.JournalfolderApplication.addJournalfolder
+
+# Display all journalfolders
+GET /journalfolders controllers.JournalfolderApplication.all
+
+# Save a journalfolder
+POST /journalfolder/submit controllers.JournalfolderApplication.submit()
+
+# Layout
+
+# View a layout
+GET /layouts/:id controllers.LayoutApplication.get(id: Long)
+
+# Go to the create layout view
+GET /layout/add controllers.LayoutApplication.addLayout
+
+# Display all layouts
+GET /layouts controllers.LayoutApplication.all
+
+# Save a layout
+POST /layout/submit controllers.LayoutApplication.submit()
+
+# Layoutbranch
+
+# View a layoutbranch
+GET /layoutbranchs/:id controllers.LayoutbranchApplication.get(id: Long)
+
+# Go to the create layoutbranch view
+GET /layoutbranch/add controllers.LayoutbranchApplication.addLayoutbranch
+
+# Display all layoutbranchs
+GET /layoutbranchs controllers.LayoutbranchApplication.all
+
+# Save a layoutbranch
+POST /layoutbranch/submit controllers.LayoutbranchApplication.submit()
+
+# Layoutfriendlyurl
+
+# View a layoutfriendlyurl
+GET /layoutfriendlyurls/:id controllers.LayoutfriendlyurlApplication.get(id: Long)
+
+# Go to the create layoutfriendlyurl view
+GET /layoutfriendlyurl/add controllers.LayoutfriendlyurlApplication.addLayoutfriendlyurl
+
+# Display all layoutfriendlyurls
+GET /layoutfriendlyurls controllers.LayoutfriendlyurlApplication.all
+
+# Save a layoutfriendlyurl
+POST /layoutfriendlyurl/submit controllers.LayoutfriendlyurlApplication.submit()
+
+# Layoutprototype
+
+# View a layoutprototype
+GET /layoutprototypes/:id controllers.LayoutprototypeApplication.get(id: Long)
+
+# Go to the create layoutprototype view
+GET /layoutprototype/add controllers.LayoutprototypeApplication.addLayoutprototype
+
+# Display all layoutprototypes
+GET /layoutprototypes controllers.LayoutprototypeApplication.all
+
+# Save a layoutprototype
+POST /layoutprototype/submit controllers.LayoutprototypeApplication.submit()
+
+# Layoutrevision
+
+# View a layoutrevision
+GET /layoutrevisions/:id controllers.LayoutrevisionApplication.get(id: Long)
+
+# Go to the create layoutrevision view
+GET /layoutrevision/add controllers.LayoutrevisionApplication.addLayoutrevision
+
+# Display all layoutrevisions
+GET /layoutrevisions controllers.LayoutrevisionApplication.all
+
+# Save a layoutrevision
+POST /layoutrevision/submit controllers.LayoutrevisionApplication.submit()
+
+# Layoutset
+
+# View a layoutset
+GET /layoutsets/:id controllers.LayoutsetApplication.get(id: Long)
+
+# Go to the create layoutset view
+GET /layoutset/add controllers.LayoutsetApplication.addLayoutset
+
+# Display all layoutsets
+GET /layoutsets controllers.LayoutsetApplication.all
+
+# Save a layoutset
+POST /layoutset/submit controllers.LayoutsetApplication.submit()
+
+# Layoutsetbranch
+
+# View a layoutsetbranch
+GET /layoutsetbranchs/:id controllers.LayoutsetbranchApplication.get(id: Long)
+
+# Go to the create layoutsetbranch view
+GET /layoutsetbranch/add controllers.LayoutsetbranchApplication.addLayoutsetbranch
+
+# Display all layoutsetbranchs
+GET /layoutsetbranchs controllers.LayoutsetbranchApplication.all
+
+# Save a layoutsetbranch
+POST /layoutsetbranch/submit controllers.LayoutsetbranchApplication.submit()
+
+# Layoutsetprototype
+
+# View a layoutsetprototype
+GET /layoutsetprototypes/:id controllers.LayoutsetprototypeApplication.get(id: Long)
+
+# Go to the create layoutsetprototype view
+GET /layoutsetprototype/add controllers.LayoutsetprototypeApplication.addLayoutsetprototype
+
+# Display all layoutsetprototypes
+GET /layoutsetprototypes controllers.LayoutsetprototypeApplication.all
+
+# Save a layoutsetprototype
+POST /layoutsetprototype/submit controllers.LayoutsetprototypeApplication.submit()
+
+# Listtype
+
+# View a listtype
+GET /listtypes/:id controllers.ListtypeApplication.get(id: Long)
+
+# Go to the create listtype view
+GET /listtype/add controllers.ListtypeApplication.addListtype
+
+# Display all listtypes
+GET /listtypes controllers.ListtypeApplication.all
+
+# Save a listtype
+POST /listtype/submit controllers.ListtypeApplication.submit()
+
+# Lock
+
+# View a lock
+GET /locks/:id controllers.LockApplication.get(id: Long)
+
+# Go to the create lock view
+GET /lock/add controllers.LockApplication.addLock
+
+# Display all locks
+GET /locks controllers.LockApplication.all
+
+# Save a lock
+POST /lock/submit controllers.LockApplication.submit()
+
+# Mbban
+
+# View a mbban
+GET /mbbans/:id controllers.MbbanApplication.get(id: Long)
+
+# Go to the create mbban view
+GET /mbban/add controllers.MbbanApplication.addMbban
+
+# Display all mbbans
+GET /mbbans controllers.MbbanApplication.all
+
+# Save a mbban
+POST /mbban/submit controllers.MbbanApplication.submit()
+
+# Mbcategory
+
+# View a mbcategory
+GET /mbcategorys/:id controllers.MbcategoryApplication.get(id: Long)
+
+# Go to the create mbcategory view
+GET /mbcategory/add controllers.MbcategoryApplication.addMbcategory
+
+# Display all mbcategorys
+GET /mbcategorys controllers.MbcategoryApplication.all
+
+# Save a mbcategory
+POST /mbcategory/submit controllers.MbcategoryApplication.submit()
+
+# Mbdiscussion
+
+# View a mbdiscussion
+GET /mbdiscussions/:id controllers.MbdiscussionApplication.get(id: Long)
+
+# Go to the create mbdiscussion view
+GET /mbdiscussion/add controllers.MbdiscussionApplication.addMbdiscussion
+
+# Display all mbdiscussions
+GET /mbdiscussions controllers.MbdiscussionApplication.all
+
+# Save a mbdiscussion
+POST /mbdiscussion/submit controllers.MbdiscussionApplication.submit()
+
+# Mbmailinglist
+
+# View a mbmailinglist
+GET /mbmailinglists/:id controllers.MbmailinglistApplication.get(id: Long)
+
+# Go to the create mbmailinglist view
+GET /mbmailinglist/add controllers.MbmailinglistApplication.addMbmailinglist
+
+# Display all mbmailinglists
+GET /mbmailinglists controllers.MbmailinglistApplication.all
+
+# Save a mbmailinglist
+POST /mbmailinglist/submit controllers.MbmailinglistApplication.submit()
+
+# Mbmessage
+
+# View a mbmessage
+GET /mbmessages/:id controllers.MbmessageApplication.get(id: Long)
+
+# Go to the create mbmessage view
+GET /mbmessage/add controllers.MbmessageApplication.addMbmessage
+
+# Display all mbmessages
+GET /mbmessages controllers.MbmessageApplication.all
+
+# Save a mbmessage
+POST /mbmessage/submit controllers.MbmessageApplication.submit()
+
+# Mbstatsuser
+
+# View a mbstatsuser
+GET /mbstatsusers/:id controllers.MbstatsuserApplication.get(id: Long)
+
+# Go to the create mbstatsuser view
+GET /mbstatsuser/add controllers.MbstatsuserApplication.addMbstatsuser
+
+# Display all mbstatsusers
+GET /mbstatsusers controllers.MbstatsuserApplication.all
+
+# Save a mbstatsuser
+POST /mbstatsuser/submit controllers.MbstatsuserApplication.submit()
+
+# Mbthread
+
+# View a mbthread
+GET /mbthreads/:id controllers.MbthreadApplication.get(id: Long)
+
+# Go to the create mbthread view
+GET /mbthread/add controllers.MbthreadApplication.addMbthread
+
+# Display all mbthreads
+GET /mbthreads controllers.MbthreadApplication.all
+
+# Save a mbthread
+POST /mbthread/submit controllers.MbthreadApplication.submit()
+
+# Mbthreadflag
+
+# View a mbthreadflag
+GET /mbthreadflags/:id controllers.MbthreadflagApplication.get(id: Long)
+
+# Go to the create mbthreadflag view
+GET /mbthreadflag/add controllers.MbthreadflagApplication.addMbthreadflag
+
+# Display all mbthreadflags
+GET /mbthreadflags controllers.MbthreadflagApplication.all
+
+# Save a mbthreadflag
+POST /mbthreadflag/submit controllers.MbthreadflagApplication.submit()
+
+# Mdraction
+
+# View a mdraction
+GET /mdractions/:id controllers.MdractionApplication.get(id: Long)
+
+# Go to the create mdraction view
+GET /mdraction/add controllers.MdractionApplication.addMdraction
+
+# Display all mdractions
+GET /mdractions controllers.MdractionApplication.all
+
+# Save a mdraction
+POST /mdraction/submit controllers.MdractionApplication.submit()
+
+# Mdrrule
+
+# View a mdrrule
+GET /mdrrules/:id controllers.MdrruleApplication.get(id: Long)
+
+# Go to the create mdrrule view
+GET /mdrrule/add controllers.MdrruleApplication.addMdrrule
+
+# Display all mdrrules
+GET /mdrrules controllers.MdrruleApplication.all
+
+# Save a mdrrule
+POST /mdrrule/submit controllers.MdrruleApplication.submit()
+
+# Mdrrulegroup
+
+# View a mdrrulegroup
+GET /mdrrulegroups/:id controllers.MdrrulegroupApplication.get(id: Long)
+
+# Go to the create mdrrulegroup view
+GET /mdrrulegroup/add controllers.MdrrulegroupApplication.addMdrrulegroup
+
+# Display all mdrrulegroups
+GET /mdrrulegroups controllers.MdrrulegroupApplication.all
+
+# Save a mdrrulegroup
+POST /mdrrulegroup/submit controllers.MdrrulegroupApplication.submit()
+
+# Mdrrulegroupinstance
+
+# View a mdrrulegroupinstance
+GET /mdrrulegroupinstances/:id controllers.MdrrulegroupinstanceApplication.get(id: Long)
+
+# Go to the create mdrrulegroupinstance view
+GET /mdrrulegroupinstance/add controllers.MdrrulegroupinstanceApplication.addMdrrulegroupinstance
+
+# Display all mdrrulegroupinstances
+GET /mdrrulegroupinstances controllers.MdrrulegroupinstanceApplication.all
+
+# Save a mdrrulegroupinstance
+POST /mdrrulegroupinstance/submit controllers.MdrrulegroupinstanceApplication.submit()
+
+# Membershiprequest
+
+# View a membershiprequest
+GET /membershiprequests/:id controllers.MembershiprequestApplication.get(id: Long)
+
+# Go to the create membershiprequest view
+GET /membershiprequest/add controllers.MembershiprequestApplication.addMembershiprequest
+
+# Display all membershiprequests
+GET /membershiprequests controllers.MembershiprequestApplication.all
+
+# Save a membershiprequest
+POST /membershiprequest/submit controllers.MembershiprequestApplication.submit()
+
+# Organization
+
+# View a organization
+GET /organizations/:id controllers.OrganizationApplication.get(id: Long)
+
+# Go to the create organization view
+GET /organization/add controllers.OrganizationApplication.addOrganization
+
+# Display all organizations
+GET /organizations controllers.OrganizationApplication.all
+
+# Save a organization
+POST /organization/submit controllers.OrganizationApplication.submit()
+
+# Orglabor
+
+# View a orglabor
+GET /orglabors/:id controllers.OrglaborApplication.get(id: Long)
+
+# Go to the create orglabor view
+GET /orglabor/add controllers.OrglaborApplication.addOrglabor
+
+# Display all orglabors
+GET /orglabors controllers.OrglaborApplication.all
+
+# Save a orglabor
+POST /orglabor/submit controllers.OrglaborApplication.submit()
+
+# Passwordpolicy
+
+# View a passwordpolicy
+GET /passwordpolicys/:id controllers.PasswordpolicyApplication.get(id: Long)
+
+# Go to the create passwordpolicy view
+GET /passwordpolicy/add controllers.PasswordpolicyApplication.addPasswordpolicy
+
+# Display all passwordpolicys
+GET /passwordpolicys controllers.PasswordpolicyApplication.all
+
+# Save a passwordpolicy
+POST /passwordpolicy/submit controllers.PasswordpolicyApplication.submit()
+
+# Passwordpolicyrel
+
+# View a passwordpolicyrel
+GET /passwordpolicyrels/:id controllers.PasswordpolicyrelApplication.get(id: Long)
+
+# Go to the create passwordpolicyrel view
+GET /passwordpolicyrel/add controllers.PasswordpolicyrelApplication.addPasswordpolicyrel
+
+# Display all passwordpolicyrels
+GET /passwordpolicyrels controllers.PasswordpolicyrelApplication.all
+
+# Save a passwordpolicyrel
+POST /passwordpolicyrel/submit controllers.PasswordpolicyrelApplication.submit()
+
+# Passwordtracker
+
+# View a passwordtracker
+GET /passwordtrackers/:id controllers.PasswordtrackerApplication.get(id: Long)
+
+# Go to the create passwordtracker view
+GET /passwordtracker/add controllers.PasswordtrackerApplication.addPasswordtracker
+
+# Display all passwordtrackers
+GET /passwordtrackers controllers.PasswordtrackerApplication.all
+
+# Save a passwordtracker
+POST /passwordtracker/submit controllers.PasswordtrackerApplication.submit()
+
+# Phone
+
+# View a phone
+GET /phones/:id controllers.PhoneApplication.get(id: Long)
+
+# Go to the create phone view
+GET /phone/add controllers.PhoneApplication.addPhone
+
+# Display all phones
+GET /phones controllers.PhoneApplication.all
+
+# Save a phone
+POST /phone/submit controllers.PhoneApplication.submit()
+
+# Pluginsetting
+
+# View a pluginsetting
+GET /pluginsettings/:id controllers.PluginsettingApplication.get(id: Long)
+
+# Go to the create pluginsetting view
+GET /pluginsetting/add controllers.PluginsettingApplication.addPluginsetting
+
+# Display all pluginsettings
+GET /pluginsettings controllers.PluginsettingApplication.all
+
+# Save a pluginsetting
+POST /pluginsetting/submit controllers.PluginsettingApplication.submit()
+
+# Portalpreferences
+
+# View a portalpreferences
+GET /portalpreferencess/:id controllers.PortalpreferencesApplication.get(id: Long)
+
+# Go to the create portalpreferences view
+GET /portalpreferences/add controllers.PortalpreferencesApplication.addPortalpreferences
+
+# Display all portalpreferencess
+GET /portalpreferencess controllers.PortalpreferencesApplication.all
+
+# Save a portalpreferences
+POST /portalpreferences/submit controllers.PortalpreferencesApplication.submit()
+
+# Portlet
+
+# View a portlet
+GET /portlets/:id controllers.PortletApplication.get(id: Long)
+
+# Go to the create portlet view
+GET /portlet/add controllers.PortletApplication.addPortlet
+
+# Display all portlets
+GET /portlets controllers.PortletApplication.all
+
+# Save a portlet
+POST /portlet/submit controllers.PortletApplication.submit()
+
+# Portletitem
+
+# View a portletitem
+GET /portletitems/:id controllers.PortletitemApplication.get(id: Long)
+
+# Go to the create portletitem view
+GET /portletitem/add controllers.PortletitemApplication.addPortletitem
+
+# Display all portletitems
+GET /portletitems controllers.PortletitemApplication.all
+
+# Save a portletitem
+POST /portletitem/submit controllers.PortletitemApplication.submit()
+
+# Portletpreferences
+
+# View a portletpreferences
+GET /portletpreferencess/:id controllers.PortletpreferencesApplication.get(id: Long)
+
+# Go to the create portletpreferences view
+GET /portletpreferences/add controllers.PortletpreferencesApplication.addPortletpreferences
+
+# Display all portletpreferencess
+GET /portletpreferencess controllers.PortletpreferencesApplication.all
+
+# Save a portletpreferences
+POST /portletpreferences/submit controllers.PortletpreferencesApplication.submit()
+
+# Ratingsentry
+
+# View a ratingsentry
+GET /ratingsentrys/:id controllers.RatingsentryApplication.get(id: Long)
+
+# Go to the create ratingsentry view
+GET /ratingsentry/add controllers.RatingsentryApplication.addRatingsentry
+
+# Display all ratingsentrys
+GET /ratingsentrys controllers.RatingsentryApplication.all
+
+# Save a ratingsentry
+POST /ratingsentry/submit controllers.RatingsentryApplication.submit()
+
+# Ratingsstats
+
+# View a ratingsstats
+GET /ratingsstatss/:id controllers.RatingsstatsApplication.get(id: Long)
+
+# Go to the create ratingsstats view
+GET /ratingsstats/add controllers.RatingsstatsApplication.addRatingsstats
+
+# Display all ratingsstatss
+GET /ratingsstatss controllers.RatingsstatsApplication.all
+
+# Save a ratingsstats
+POST /ratingsstats/submit controllers.RatingsstatsApplication.submit()
+
+# Region
+
+# View a region
+GET /regions/:id controllers.RegionApplication.get(id: Long)
+
+# Go to the create region view
+GET /region/add controllers.RegionApplication.addRegion
+
+# Display all regions
+GET /regions controllers.RegionApplication.all
+
+# Save a region
+POST /region/submit controllers.RegionApplication.submit()
+
+# Release
+
+# View a release
+GET /releases/:id controllers.ReleaseApplication.get(id: Long)
+
+# Go to the create release view
+GET /release/add controllers.ReleaseApplication.addRelease
+
+# Display all releases
+GET /releases controllers.ReleaseApplication.all
+
+# Save a release
+POST /release/submit controllers.ReleaseApplication.submit()
+
+# Repository
+
+# View a repository
+GET /repositorys/:id controllers.RepositoryApplication.get(id: Long)
+
+# Go to the create repository view
+GET /repository/add controllers.RepositoryApplication.addRepository
+
+# Display all repositorys
+GET /repositorys controllers.RepositoryApplication.all
+
+# Save a repository
+POST /repository/submit controllers.RepositoryApplication.submit()
+
+# Repositoryentry
+
+# View a repositoryentry
+GET /repositoryentrys/:id controllers.RepositoryentryApplication.get(id: Long)
+
+# Go to the create repositoryentry view
+GET /repositoryentry/add controllers.RepositoryentryApplication.addRepositoryentry
+
+# Display all repositoryentrys
+GET /repositoryentrys controllers.RepositoryentryApplication.all
+
+# Save a repositoryentry
+POST /repositoryentry/submit controllers.RepositoryentryApplication.submit()
+
+# Resourceaction
+
+# View a resourceaction
+GET /resourceactions/:id controllers.ResourceactionApplication.get(id: Long)
+
+# Go to the create resourceaction view
+GET /resourceaction/add controllers.ResourceactionApplication.addResourceaction
+
+# Display all resourceactions
+GET /resourceactions controllers.ResourceactionApplication.all
+
+# Save a resourceaction
+POST /resourceaction/submit controllers.ResourceactionApplication.submit()
+
+# Resourceblock
+
+# View a resourceblock
+GET /resourceblocks/:id controllers.ResourceblockApplication.get(id: Long)
+
+# Go to the create resourceblock view
+GET /resourceblock/add controllers.ResourceblockApplication.addResourceblock
+
+# Display all resourceblocks
+GET /resourceblocks controllers.ResourceblockApplication.all
+
+# Save a resourceblock
+POST /resourceblock/submit controllers.ResourceblockApplication.submit()
+
+# Resourceblockpermission
+
+# View a resourceblockpermission
+GET /resourceblockpermissions/:id controllers.ResourceblockpermissionApplication.get(id: Long)
+
+# Go to the create resourceblockpermission view
+GET /resourceblockpermission/add controllers.ResourceblockpermissionApplication.addResourceblockpermission
+
+# Display all resourceblockpermissions
+GET /resourceblockpermissions controllers.ResourceblockpermissionApplication.all
+
+# Save a resourceblockpermission
+POST /resourceblockpermission/submit controllers.ResourceblockpermissionApplication.submit()
+
+# Resourcepermission
+
+# View a resourcepermission
+GET /resourcepermissions/:id controllers.ResourcepermissionApplication.get(id: Long)
+
+# Go to the create resourcepermission view
+GET /resourcepermission/add controllers.ResourcepermissionApplication.addResourcepermission
+
+# Display all resourcepermissions
+GET /resourcepermissions controllers.ResourcepermissionApplication.all
+
+# Save a resourcepermission
+POST /resourcepermission/submit controllers.ResourcepermissionApplication.submit()
+
+# Resourcetypepermission
+
+# View a resourcetypepermission
+GET /resourcetypepermissions/:id controllers.ResourcetypepermissionApplication.get(id: Long)
+
+# Go to the create resourcetypepermission view
+GET /resourcetypepermission/add controllers.ResourcetypepermissionApplication.addResourcetypepermission
+
+# Display all resourcetypepermissions
+GET /resourcetypepermissions controllers.ResourcetypepermissionApplication.all
+
+# Save a resourcetypepermission
+POST /resourcetypepermission/submit controllers.ResourcetypepermissionApplication.submit()
+
+# Role
+
+# View a role
+GET /roles/:id controllers.RoleApplication.get(id: Long)
+
+# Go to the create role view
+GET /role/add controllers.RoleApplication.addRole
+
+# Display all roles
+GET /roles controllers.RoleApplication.all
+
+# Save a role
+POST /role/submit controllers.RoleApplication.submit()
+
+# Scframeworkversion
+
+# View a scframeworkversion
+GET /scframeworkversions/:id controllers.ScframeworkversionApplication.get(id: Long)
+
+# Go to the create scframeworkversion view
+GET /scframeworkversion/add controllers.ScframeworkversionApplication.addScframeworkversion
+
+# Display all scframeworkversions
+GET /scframeworkversions controllers.ScframeworkversionApplication.all
+
+# Save a scframeworkversion
+POST /scframeworkversion/submit controllers.ScframeworkversionApplication.submit()
+
+# Sclicense
+
+# View a sclicense
+GET /sclicenses/:id controllers.SclicenseApplication.get(id: Long)
+
+# Go to the create sclicense view
+GET /sclicense/add controllers.SclicenseApplication.addSclicense
+
+# Display all sclicenses
+GET /sclicenses controllers.SclicenseApplication.all
+
+# Save a sclicense
+POST /sclicense/submit controllers.SclicenseApplication.submit()
+
+# Scproductentry
+
+# View a scproductentry
+GET /scproductentrys/:id controllers.ScproductentryApplication.get(id: Long)
+
+# Go to the create scproductentry view
+GET /scproductentry/add controllers.ScproductentryApplication.addScproductentry
+
+# Display all scproductentrys
+GET /scproductentrys controllers.ScproductentryApplication.all
+
+# Save a scproductentry
+POST /scproductentry/submit controllers.ScproductentryApplication.submit()
+
+# Scproductscreenshot
+
+# View a scproductscreenshot
+GET /scproductscreenshots/:id controllers.ScproductscreenshotApplication.get(id: Long)
+
+# Go to the create scproductscreenshot view
+GET /scproductscreenshot/add controllers.ScproductscreenshotApplication.addScproductscreenshot
+
+# Display all scproductscreenshots
+GET /scproductscreenshots controllers.ScproductscreenshotApplication.all
+
+# Save a scproductscreenshot
+POST /scproductscreenshot/submit controllers.ScproductscreenshotApplication.submit()
+
+# Scproductversion
+
+# View a scproductversion
+GET /scproductversions/:id controllers.ScproductversionApplication.get(id: Long)
+
+# Go to the create scproductversion view
+GET /scproductversion/add controllers.ScproductversionApplication.addScproductversion
+
+# Display all scproductversions
+GET /scproductversions controllers.ScproductversionApplication.all
+
+# Save a scproductversion
+POST /scproductversion/submit controllers.ScproductversionApplication.submit()
+
+# Servicecomponent
+
+# View a servicecomponent
+GET /servicecomponents/:id controllers.ServicecomponentApplication.get(id: Long)
+
+# Go to the create servicecomponent view
+GET /servicecomponent/add controllers.ServicecomponentApplication.addServicecomponent
+
+# Display all servicecomponents
+GET /servicecomponents controllers.ServicecomponentApplication.all
+
+# Save a servicecomponent
+POST /servicecomponent/submit controllers.ServicecomponentApplication.submit()
+
+# Shard
+
+# View a shard
+GET /shards/:id controllers.ShardApplication.get(id: Long)
+
+# Go to the create shard view
+GET /shard/add controllers.ShardApplication.addShard
+
+# Display all shards
+GET /shards controllers.ShardApplication.all
+
+# Save a shard
+POST /shard/submit controllers.ShardApplication.submit()
+
+# Shoppingcart
+
+# View a shoppingcart
+GET /shoppingcarts/:id controllers.ShoppingcartApplication.get(id: Long)
+
+# Go to the create shoppingcart view
+GET /shoppingcart/add controllers.ShoppingcartApplication.addShoppingcart
+
+# Display all shoppingcarts
+GET /shoppingcarts controllers.ShoppingcartApplication.all
+
+# Save a shoppingcart
+POST /shoppingcart/submit controllers.ShoppingcartApplication.submit()
+
+# Shoppingcategory
+
+# View a shoppingcategory
+GET /shoppingcategorys/:id controllers.ShoppingcategoryApplication.get(id: Long)
+
+# Go to the create shoppingcategory view
+GET /shoppingcategory/add controllers.ShoppingcategoryApplication.addShoppingcategory
+
+# Display all shoppingcategorys
+GET /shoppingcategorys controllers.ShoppingcategoryApplication.all
+
+# Save a shoppingcategory
+POST /shoppingcategory/submit controllers.ShoppingcategoryApplication.submit()
+
+# Shoppingcoupon
+
+# View a shoppingcoupon
+GET /shoppingcoupons/:id controllers.ShoppingcouponApplication.get(id: Long)
+
+# Go to the create shoppingcoupon view
+GET /shoppingcoupon/add controllers.ShoppingcouponApplication.addShoppingcoupon
+
+# Display all shoppingcoupons
+GET /shoppingcoupons controllers.ShoppingcouponApplication.all
+
+# Save a shoppingcoupon
+POST /shoppingcoupon/submit controllers.ShoppingcouponApplication.submit()
+
+# Shoppingitem
+
+# View a shoppingitem
+GET /shoppingitems/:id controllers.ShoppingitemApplication.get(id: Long)
+
+# Go to the create shoppingitem view
+GET /shoppingitem/add controllers.ShoppingitemApplication.addShoppingitem
+
+# Display all shoppingitems
+GET /shoppingitems controllers.ShoppingitemApplication.all
+
+# Save a shoppingitem
+POST /shoppingitem/submit controllers.ShoppingitemApplication.submit()
+
+# Shoppingitemfield
+
+# View a shoppingitemfield
+GET /shoppingitemfields/:id controllers.ShoppingitemfieldApplication.get(id: Long)
+
+# Go to the create shoppingitemfield view
+GET /shoppingitemfield/add controllers.ShoppingitemfieldApplication.addShoppingitemfield
+
+# Display all shoppingitemfields
+GET /shoppingitemfields controllers.ShoppingitemfieldApplication.all
+
+# Save a shoppingitemfield
+POST /shoppingitemfield/submit controllers.ShoppingitemfieldApplication.submit()
+
+# Shoppingitemprice
+
+# View a shoppingitemprice
+GET /shoppingitemprices/:id controllers.ShoppingitempriceApplication.get(id: Long)
+
+# Go to the create shoppingitemprice view
+GET /shoppingitemprice/add controllers.ShoppingitempriceApplication.addShoppingitemprice
+
+# Display all shoppingitemprices
+GET /shoppingitemprices controllers.ShoppingitempriceApplication.all
+
+# Save a shoppingitemprice
+POST /shoppingitemprice/submit controllers.ShoppingitempriceApplication.submit()
+
+# Shoppingorder
+
+# View a shoppingorder
+GET /shoppingorders/:id controllers.ShoppingorderApplication.get(id: Long)
+
+# Go to the create shoppingorder view
+GET /shoppingorder/add controllers.ShoppingorderApplication.addShoppingorder
+
+# Display all shoppingorders
+GET /shoppingorders controllers.ShoppingorderApplication.all
+
+# Save a shoppingorder
+POST /shoppingorder/submit controllers.ShoppingorderApplication.submit()
+
+# Shoppingorderitem
+
+# View a shoppingorderitem
+GET /shoppingorderitems/:id controllers.ShoppingorderitemApplication.get(id: Long)
+
+# Go to the create shoppingorderitem view
+GET /shoppingorderitem/add controllers.ShoppingorderitemApplication.addShoppingorderitem
+
+# Display all shoppingorderitems
+GET /shoppingorderitems controllers.ShoppingorderitemApplication.all
+
+# Save a shoppingorderitem
+POST /shoppingorderitem/submit controllers.ShoppingorderitemApplication.submit()
+
+# Socialactivity
+
+# View a socialactivity
+GET /socialactivitys/:id controllers.SocialactivityApplication.get(id: Long)
+
+# Go to the create socialactivity view
+GET /socialactivity/add controllers.SocialactivityApplication.addSocialactivity
+
+# Display all socialactivitys
+GET /socialactivitys controllers.SocialactivityApplication.all
+
+# Save a socialactivity
+POST /socialactivity/submit controllers.SocialactivityApplication.submit()
+
+# Socialactivityachievement
+
+# View a socialactivityachievement
+GET /socialactivityachievements/:id controllers.SocialactivityachievementApplication.get(id: Long)
+
+# Go to the create socialactivityachievement view
+GET /socialactivityachievement/add controllers.SocialactivityachievementApplication.addSocialactivityachievement
+
+# Display all socialactivityachievements
+GET /socialactivityachievements controllers.SocialactivityachievementApplication.all
+
+# Save a socialactivityachievement
+POST /socialactivityachievement/submit controllers.SocialactivityachievementApplication.submit()
+
+# Socialactivitycounter
+
+# View a socialactivitycounter
+GET /socialactivitycounters/:id controllers.SocialactivitycounterApplication.get(id: Long)
+
+# Go to the create socialactivitycounter view
+GET /socialactivitycounter/add controllers.SocialactivitycounterApplication.addSocialactivitycounter
+
+# Display all socialactivitycounters
+GET /socialactivitycounters controllers.SocialactivitycounterApplication.all
+
+# Save a socialactivitycounter
+POST /socialactivitycounter/submit controllers.SocialactivitycounterApplication.submit()
+
+# Socialactivitylimit
+
+# View a socialactivitylimit
+GET /socialactivitylimits/:id controllers.SocialactivitylimitApplication.get(id: Long)
+
+# Go to the create socialactivitylimit view
+GET /socialactivitylimit/add controllers.SocialactivitylimitApplication.addSocialactivitylimit
+
+# Display all socialactivitylimits
+GET /socialactivitylimits controllers.SocialactivitylimitApplication.all
+
+# Save a socialactivitylimit
+POST /socialactivitylimit/submit controllers.SocialactivitylimitApplication.submit()
+
+# Socialactivityset
+
+# View a socialactivityset
+GET /socialactivitysets/:id controllers.SocialactivitysetApplication.get(id: Long)
+
+# Go to the create socialactivityset view
+GET /socialactivityset/add controllers.SocialactivitysetApplication.addSocialactivityset
+
+# Display all socialactivitysets
+GET /socialactivitysets controllers.SocialactivitysetApplication.all
+
+# Save a socialactivityset
+POST /socialactivityset/submit controllers.SocialactivitysetApplication.submit()
+
+# Socialactivitysetting
+
+# View a socialactivitysetting
+GET /socialactivitysettings/:id controllers.SocialactivitysettingApplication.get(id: Long)
+
+# Go to the create socialactivitysetting view
+GET /socialactivitysetting/add controllers.SocialactivitysettingApplication.addSocialactivitysetting
+
+# Display all socialactivitysettings
+GET /socialactivitysettings controllers.SocialactivitysettingApplication.all
+
+# Save a socialactivitysetting
+POST /socialactivitysetting/submit controllers.SocialactivitysettingApplication.submit()
+
+# Socialrelation
+
+# View a socialrelation
+GET /socialrelations/:id controllers.SocialrelationApplication.get(id: Long)
+
+# Go to the create socialrelation view
+GET /socialrelation/add controllers.SocialrelationApplication.addSocialrelation
+
+# Display all socialrelations
+GET /socialrelations controllers.SocialrelationApplication.all
+
+# Save a socialrelation
+POST /socialrelation/submit controllers.SocialrelationApplication.submit()
+
+# Socialrequest
+
+# View a socialrequest
+GET /socialrequests/:id controllers.SocialrequestApplication.get(id: Long)
+
+# Go to the create socialrequest view
+GET /socialrequest/add controllers.SocialrequestApplication.addSocialrequest
+
+# Display all socialrequests
+GET /socialrequests controllers.SocialrequestApplication.all
+
+# Save a socialrequest
+POST /socialrequest/submit controllers.SocialrequestApplication.submit()
+
+# Subscription
+
+# View a subscription
+GET /subscriptions/:id controllers.SubscriptionApplication.get(id: Long)
+
+# Go to the create subscription view
+GET /subscription/add controllers.SubscriptionApplication.addSubscription
+
+# Display all subscriptions
+GET /subscriptions controllers.SubscriptionApplication.all
+
+# Save a subscription
+POST /subscription/submit controllers.SubscriptionApplication.submit()
+
+# Systemevent
+
+# View a systemevent
+GET /systemevents/:id controllers.SystemeventApplication.get(id: Long)
+
+# Go to the create systemevent view
+GET /systemevent/add controllers.SystemeventApplication.addSystemevent
+
+# Display all systemevents
+GET /systemevents controllers.SystemeventApplication.all
+
+# Save a systemevent
+POST /systemevent/submit controllers.SystemeventApplication.submit()
+
+# Team
+
+# View a team
+GET /teams/:id controllers.TeamApplication.get(id: Long)
+
+# Go to the create team view
+GET /team/add controllers.TeamApplication.addTeam
+
+# Display all teams
+GET /teams controllers.TeamApplication.all
+
+# Save a team
+POST /team/submit controllers.TeamApplication.submit()
+
+# Ticket
+
+# View a ticket
+GET /tickets/:id controllers.TicketApplication.get(id: Long)
+
+# Go to the create ticket view
+GET /ticket/add controllers.TicketApplication.addTicket
+
+# Display all tickets
+GET /tickets controllers.TicketApplication.all
+
+# Save a ticket
+POST /ticket/submit controllers.TicketApplication.submit()
+
+# Trashentry
+
+# View a trashentry
+GET /trashentrys/:id controllers.TrashentryApplication.get(id: Long)
+
+# Go to the create trashentry view
+GET /trashentry/add controllers.TrashentryApplication.addTrashentry
+
+# Display all trashentrys
+GET /trashentrys controllers.TrashentryApplication.all
+
+# Save a trashentry
+POST /trashentry/submit controllers.TrashentryApplication.submit()
+
+# Trashversion
+
+# View a trashversion
+GET /trashversions/:id controllers.TrashversionApplication.get(id: Long)
+
+# Go to the create trashversion view
+GET /trashversion/add controllers.TrashversionApplication.addTrashversion
+
+# Display all trashversions
+GET /trashversions controllers.TrashversionApplication.all
+
+# Save a trashversion
+POST /trashversion/submit controllers.TrashversionApplication.submit()
+
+# Usernotificationdelivery
+
+# View a usernotificationdelivery
+GET /usernotificationdeliverys/:id controllers.UsernotificationdeliveryApplication.get(id: Long)
+
+# Go to the create usernotificationdelivery view
+GET /usernotificationdelivery/add controllers.UsernotificationdeliveryApplication.addUsernotificationdelivery
+
+# Display all usernotificationdeliverys
+GET /usernotificationdeliverys controllers.UsernotificationdeliveryApplication.all
+
+# Save a usernotificationdelivery
+POST /usernotificationdelivery/submit controllers.UsernotificationdeliveryApplication.submit()
+
+# User
+
+# View a user
+GET /users/:id controllers.UserApplication.get(id: Long)
+
+# Go to the create user view
+GET /user/add controllers.UserApplication.addUser
+
+# Display all users
+GET /users controllers.UserApplication.all
+
+# Save a user
+POST /user/submit controllers.UserApplication.submit()
+
+# Usergroup
+
+# View a usergroup
+GET /usergroups/:id controllers.UsergroupApplication.get(id: Long)
+
+# Go to the create usergroup view
+GET /usergroup/add controllers.UsergroupApplication.addUsergroup
+
+# Display all usergroups
+GET /usergroups controllers.UsergroupApplication.all
+
+# Save a usergroup
+POST /usergroup/submit controllers.UsergroupApplication.submit()
+
+# Useridmapper
+
+# View a useridmapper
+GET /useridmappers/:id controllers.UseridmapperApplication.get(id: Long)
+
+# Go to the create useridmapper view
+GET /useridmapper/add controllers.UseridmapperApplication.addUseridmapper
+
+# Display all useridmappers
+GET /useridmappers controllers.UseridmapperApplication.all
+
+# Save a useridmapper
+POST /useridmapper/submit controllers.UseridmapperApplication.submit()
+
+# Usernotificationevent
+
+# View a usernotificationevent
+GET /usernotificationevents/:id controllers.UsernotificationeventApplication.get(id: Long)
+
+# Go to the create usernotificationevent view
+GET /usernotificationevent/add controllers.UsernotificationeventApplication.addUsernotificationevent
+
+# Display all usernotificationevents
+GET /usernotificationevents controllers.UsernotificationeventApplication.all
+
+# Save a usernotificationevent
+POST /usernotificationevent/submit controllers.UsernotificationeventApplication.submit()
+
+# Usertracker
+
+# View a usertracker
+GET /usertrackers/:id controllers.UsertrackerApplication.get(id: Long)
+
+# Go to the create usertracker view
+GET /usertracker/add controllers.UsertrackerApplication.addUsertracker
+
+# Display all usertrackers
+GET /usertrackers controllers.UsertrackerApplication.all
+
+# Save a usertracker
+POST /usertracker/submit controllers.UsertrackerApplication.submit()
+
+# Usertrackerpath
+
+# View a usertrackerpath
+GET /usertrackerpaths/:id controllers.UsertrackerpathApplication.get(id: Long)
+
+# Go to the create usertrackerpath view
+GET /usertrackerpath/add controllers.UsertrackerpathApplication.addUsertrackerpath
+
+# Display all usertrackerpaths
+GET /usertrackerpaths controllers.UsertrackerpathApplication.all
+
+# Save a usertrackerpath
+POST /usertrackerpath/submit controllers.UsertrackerpathApplication.submit()
+
+# Virtualhost
+
+# View a virtualhost
+GET /virtualhosts/:id controllers.VirtualhostApplication.get(id: Long)
+
+# Go to the create virtualhost view
+GET /virtualhost/add controllers.VirtualhostApplication.addVirtualhost
+
+# Display all virtualhosts
+GET /virtualhosts controllers.VirtualhostApplication.all
+
+# Save a virtualhost
+POST /virtualhost/submit controllers.VirtualhostApplication.submit()
+
+# Webdavprops
+
+# View a webdavprops
+GET /webdavpropss/:id controllers.WebdavpropsApplication.get(id: Long)
+
+# Go to the create webdavprops view
+GET /webdavprops/add controllers.WebdavpropsApplication.addWebdavprops
+
+# Display all webdavpropss
+GET /webdavpropss controllers.WebdavpropsApplication.all
+
+# Save a webdavprops
+POST /webdavprops/submit controllers.WebdavpropsApplication.submit()
+
+# Website
+
+# View a website
+GET /websites/:id controllers.WebsiteApplication.get(id: Long)
+
+# Go to the create website view
+GET /website/add controllers.WebsiteApplication.addWebsite
+
+# Display all websites
+GET /websites controllers.WebsiteApplication.all
+
+# Save a website
+POST /website/submit controllers.WebsiteApplication.submit()
+
+# Workflowdefinitionlink
+
+# View a workflowdefinitionlink
+GET /workflowdefinitionlinks/:id controllers.WorkflowdefinitionlinkApplication.get(id: Long)
+
+# Go to the create workflowdefinitionlink view
+GET /workflowdefinitionlink/add controllers.WorkflowdefinitionlinkApplication.addWorkflowdefinitionlink
+
+# Display all workflowdefinitionlinks
+GET /workflowdefinitionlinks controllers.WorkflowdefinitionlinkApplication.all
+
+# Save a workflowdefinitionlink
+POST /workflowdefinitionlink/submit controllers.WorkflowdefinitionlinkApplication.submit()
+
+# Workflowinstancelink
+
+# View a workflowinstancelink
+GET /workflowinstancelinks/:id controllers.WorkflowinstancelinkApplication.get(id: Long)
+
+# Go to the create workflowinstancelink view
+GET /workflowinstancelink/add controllers.WorkflowinstancelinkApplication.addWorkflowinstancelink
+
+# Display all workflowinstancelinks
+GET /workflowinstancelinks controllers.WorkflowinstancelinkApplication.all
+
+# Save a workflowinstancelink
+POST /workflowinstancelink/submit controllers.WorkflowinstancelinkApplication.submit()

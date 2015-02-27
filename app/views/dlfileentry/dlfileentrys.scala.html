@@ -1,0 +1,50 @@
+@(dlfileentrys: List[models.dlfileentry.Dlfileentry])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Dlfileentrys in the DB</h1>
+
+	<p>
+		<a href="@routes.DlfileentryApplication.addDlfileentry">Create New Dlfileentry</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(dlfileentry <- dlfileentrys) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.DlfileentryApplication.get(dlfileentry.fileEntryId)">@dlfileentry.fileEntryId</a></div>
+				<div>Uuid: @dlfileentry.uuid</div>
+				<div>GroupId: @dlfileentry.groupId</div>
+				<div>CompanyId: @dlfileentry.companyId</div>
+				<div>UserId: @dlfileentry.userId</div>
+				<div>UserName: @dlfileentry.userName</div>
+				<div>CreateDate: @dlfileentry.createDate</div>
+				<div>ModifiedDate: @dlfileentry.modifiedDate</div>
+				<div>ClassNameId: @dlfileentry.classNameId</div>
+				<div>ClassPK: @dlfileentry.classPK</div>
+				<div>RepositoryId: @dlfileentry.repositoryId</div>
+				<div>FolderId: @dlfileentry.folderId</div>
+				<div>TreePath: @dlfileentry.treePath</div>
+				<div>Name: @dlfileentry.name</div>
+				<div>FileName: @dlfileentry.fileName</div>
+				<div>Extension: @dlfileentry.extension</div>
+				<div>MimeType: @dlfileentry.mimeType</div>
+				<div>Title: @dlfileentry.title</div>
+				<div>Description: @dlfileentry.description</div>
+				<div>ExtraSettings: @dlfileentry.extraSettings</div>
+				<div>FileEntryTypeId: @dlfileentry.fileEntryTypeId</div>
+				<div>Version: @dlfileentry.version</div>
+				<div>Size: @dlfileentry.size</div>
+				<div>ReadCount: @dlfileentry.readCount</div>
+				<div>SmallImageId: @dlfileentry.smallImageId</div>
+				<div>LargeImageId: @dlfileentry.largeImageId</div>
+				<div>Custom1ImageId: @dlfileentry.custom1ImageId</div>
+				<div>Custom2ImageId: @dlfileentry.custom2ImageId</div>
+				<div>ManualCheckInRequired: @dlfileentry.manualCheckInRequired</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

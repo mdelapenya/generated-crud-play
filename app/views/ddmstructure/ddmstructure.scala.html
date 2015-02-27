@@ -1,0 +1,56 @@
+@(ddmstructureFormData: Form[controllers.ddmstructure.DdmstructureFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Ddmstructure #@ddmstructureFormData("structureId").value</legend>
+
+		@form(routes.DdmstructureApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(ddmstructureFormData("structureId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(ddmstructureFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(ddmstructureFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(ddmstructureFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(ddmstructureFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(ddmstructureFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(ddmstructureFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(ddmstructureFormData("modifiedDate"))
+			<!-- ParentStructureId -->
+			@helper.inputText(ddmstructureFormData("parentStructureId"))
+			<!-- ClassNameId -->
+			@helper.inputText(ddmstructureFormData("classNameId"))
+			<!-- StructureKey -->
+			@helper.inputText(ddmstructureFormData("structureKey"))
+			<!-- Version -->
+			@helper.inputText(ddmstructureFormData("version"))
+			<!-- Name -->
+			@helper.inputText(ddmstructureFormData("name"))
+			<!-- Description -->
+			@helper.inputText(ddmstructureFormData("description"))
+			<!-- Definition -->
+			@helper.inputText(ddmstructureFormData("definition"))
+			<!-- StorageType -->
+			@helper.inputText(ddmstructureFormData("storageType"))
+			<!-- Customtype -->
+			@helper.inputText(ddmstructureFormData("customtype"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DdmstructureApplication.all()">Back to Ddmstructure List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

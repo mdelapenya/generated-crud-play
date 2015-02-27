@@ -1,0 +1,33 @@
+@(locks: List[models.lock.Lock])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Locks in the DB</h1>
+
+	<p>
+		<a href="@routes.LockApplication.addLock">Create New Lock</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(lock <- locks) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.LockApplication.get(lock.lockId)">@lock.lockId</a></div>
+				<div>MvccVersion: @lock.mvccVersion</div>
+				<div>Uuid: @lock.uuid</div>
+				<div>CompanyId: @lock.companyId</div>
+				<div>UserId: @lock.userId</div>
+				<div>UserName: @lock.userName</div>
+				<div>CreateDate: @lock.createDate</div>
+				<div>ClassName: @lock.className</div>
+				<div>Key: @lock.key</div>
+				<div>Owner: @lock.owner</div>
+				<div>Inheritable: @lock.inheritable</div>
+				<div>ExpirationDate: @lock.expirationDate</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

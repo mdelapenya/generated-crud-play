@@ -1,0 +1,84 @@
+@(layoutrevisionFormData: Form[controllers.layoutrevision.LayoutrevisionFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Layoutrevision #@layoutrevisionFormData("layoutRevisionId").value</legend>
+
+		@form(routes.LayoutrevisionApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(layoutrevisionFormData("layoutRevisionId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(layoutrevisionFormData("mvccVersion"))
+			<!-- GroupId -->
+			@helper.inputText(layoutrevisionFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(layoutrevisionFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(layoutrevisionFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(layoutrevisionFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(layoutrevisionFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(layoutrevisionFormData("modifiedDate"))
+			<!-- LayoutSetBranchId -->
+			@helper.inputText(layoutrevisionFormData("layoutSetBranchId"))
+			<!-- LayoutBranchId -->
+			@helper.inputText(layoutrevisionFormData("layoutBranchId"))
+			<!-- ParentLayoutRevisionId -->
+			@helper.inputText(layoutrevisionFormData("parentLayoutRevisionId"))
+			<!-- Head -->
+			@helper.inputText(layoutrevisionFormData("head"))
+			<!-- Major -->
+			@helper.inputText(layoutrevisionFormData("major"))
+			<!-- Plid -->
+			@helper.inputText(layoutrevisionFormData("plid"))
+			<!-- PrivateLayout -->
+			@helper.inputText(layoutrevisionFormData("privateLayout"))
+			<!-- Name -->
+			@helper.inputText(layoutrevisionFormData("name"))
+			<!-- Title -->
+			@helper.inputText(layoutrevisionFormData("title"))
+			<!-- Description -->
+			@helper.inputText(layoutrevisionFormData("description"))
+			<!-- Keywords -->
+			@helper.inputText(layoutrevisionFormData("keywords"))
+			<!-- Robots -->
+			@helper.inputText(layoutrevisionFormData("robots"))
+			<!-- TypeSettings -->
+			@helper.inputText(layoutrevisionFormData("typeSettings"))
+			<!-- IconImageId -->
+			@helper.inputText(layoutrevisionFormData("iconImageId"))
+			<!-- ThemeId -->
+			@helper.inputText(layoutrevisionFormData("themeId"))
+			<!-- ColorSchemeId -->
+			@helper.inputText(layoutrevisionFormData("colorSchemeId"))
+			<!-- WapThemeId -->
+			@helper.inputText(layoutrevisionFormData("wapThemeId"))
+			<!-- WapColorSchemeId -->
+			@helper.inputText(layoutrevisionFormData("wapColorSchemeId"))
+			<!-- Css -->
+			@helper.inputText(layoutrevisionFormData("css"))
+			<!-- Status -->
+			@helper.inputText(layoutrevisionFormData("status"))
+			<!-- StatusByUserId -->
+			@helper.inputText(layoutrevisionFormData("statusByUserId"))
+			<!-- StatusByUserName -->
+			@helper.inputText(layoutrevisionFormData("statusByUserName"))
+			<!-- StatusDate -->
+			@helper.inputText(layoutrevisionFormData("statusDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.LayoutrevisionApplication.all()">Back to Layoutrevision List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,30 @@
+@(ddmstructurelinkFormData: Form[controllers.ddmstructurelink.DdmstructurelinkFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Ddmstructurelink #@ddmstructurelinkFormData("structureLinkId").value</legend>
+
+		@form(routes.DdmstructurelinkApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(ddmstructurelinkFormData("structureLinkId"), 'readonly -> "readonly")
+
+			<!-- ClassNameId -->
+			@helper.inputText(ddmstructurelinkFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(ddmstructurelinkFormData("classPK"))
+			<!-- StructureId -->
+			@helper.inputText(ddmstructurelinkFormData("structureId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DdmstructurelinkApplication.all()">Back to Ddmstructurelink List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

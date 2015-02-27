@@ -1,0 +1,48 @@
+@(assetentrys: List[models.assetentry.Assetentry])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Assetentrys in the DB</h1>
+
+	<p>
+		<a href="@routes.AssetentryApplication.addAssetentry">Create New Assetentry</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(assetentry <- assetentrys) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.AssetentryApplication.get(assetentry.entryId)">@assetentry.entryId</a></div>
+				<div>GroupId: @assetentry.groupId</div>
+				<div>CompanyId: @assetentry.companyId</div>
+				<div>UserId: @assetentry.userId</div>
+				<div>UserName: @assetentry.userName</div>
+				<div>CreateDate: @assetentry.createDate</div>
+				<div>ModifiedDate: @assetentry.modifiedDate</div>
+				<div>ClassNameId: @assetentry.classNameId</div>
+				<div>ClassPK: @assetentry.classPK</div>
+				<div>ClassUuid: @assetentry.classUuid</div>
+				<div>ClassTypeId: @assetentry.classTypeId</div>
+				<div>Listable: @assetentry.listable</div>
+				<div>Visible: @assetentry.visible</div>
+				<div>StartDate: @assetentry.startDate</div>
+				<div>EndDate: @assetentry.endDate</div>
+				<div>PublishDate: @assetentry.publishDate</div>
+				<div>ExpirationDate: @assetentry.expirationDate</div>
+				<div>MimeType: @assetentry.mimeType</div>
+				<div>Title: @assetentry.title</div>
+				<div>Description: @assetentry.description</div>
+				<div>Summary: @assetentry.summary</div>
+				<div>Url: @assetentry.url</div>
+				<div>LayoutUuid: @assetentry.layoutUuid</div>
+				<div>Height: @assetentry.height</div>
+				<div>Width: @assetentry.width</div>
+				<div>Priority: @assetentry.priority</div>
+				<div>ViewCount: @assetentry.viewCount</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

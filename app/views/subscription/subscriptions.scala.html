@@ -1,0 +1,32 @@
+@(subscriptions: List[models.subscription.Subscription])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Subscriptions in the DB</h1>
+
+	<p>
+		<a href="@routes.SubscriptionApplication.addSubscription">Create New Subscription</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(subscription <- subscriptions) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.SubscriptionApplication.get(subscription.subscriptionId)">@subscription.subscriptionId</a></div>
+				<div>MvccVersion: @subscription.mvccVersion</div>
+				<div>GroupId: @subscription.groupId</div>
+				<div>CompanyId: @subscription.companyId</div>
+				<div>UserId: @subscription.userId</div>
+				<div>UserName: @subscription.userName</div>
+				<div>CreateDate: @subscription.createDate</div>
+				<div>ModifiedDate: @subscription.modifiedDate</div>
+				<div>ClassNameId: @subscription.classNameId</div>
+				<div>ClassPK: @subscription.classPK</div>
+				<div>Frequency: @subscription.frequency</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

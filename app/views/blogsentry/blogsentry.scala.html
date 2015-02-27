@@ -1,0 +1,76 @@
+@(blogsentryFormData: Form[controllers.blogsentry.BlogsentryFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Blogsentry #@blogsentryFormData("entryId").value</legend>
+
+		@form(routes.BlogsentryApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(blogsentryFormData("entryId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(blogsentryFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(blogsentryFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(blogsentryFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(blogsentryFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(blogsentryFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(blogsentryFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(blogsentryFormData("modifiedDate"))
+			<!-- Title -->
+			@helper.inputText(blogsentryFormData("title"))
+			<!-- Subtitle -->
+			@helper.inputText(blogsentryFormData("subtitle"))
+			<!-- UrlTitle -->
+			@helper.inputText(blogsentryFormData("urlTitle"))
+			<!-- Description -->
+			@helper.inputText(blogsentryFormData("description"))
+			<!-- Content -->
+			@helper.inputText(blogsentryFormData("content"))
+			<!-- DisplayDate -->
+			@helper.inputText(blogsentryFormData("displayDate"))
+			<!-- AllowPingbacks -->
+			@helper.inputText(blogsentryFormData("allowPingbacks"))
+			<!-- AllowTrackbacks -->
+			@helper.inputText(blogsentryFormData("allowTrackbacks"))
+			<!-- Trackbacks -->
+			@helper.inputText(blogsentryFormData("trackbacks"))
+			<!-- CoverImageFileEntryId -->
+			@helper.inputText(blogsentryFormData("coverImageFileEntryId"))
+			<!-- CoverImageURL -->
+			@helper.inputText(blogsentryFormData("coverImageURL"))
+			<!-- SmallImage -->
+			@helper.inputText(blogsentryFormData("smallImage"))
+			<!-- SmallImageFileEntryId -->
+			@helper.inputText(blogsentryFormData("smallImageFileEntryId"))
+			<!-- SmallImageId -->
+			@helper.inputText(blogsentryFormData("smallImageId"))
+			<!-- SmallImageURL -->
+			@helper.inputText(blogsentryFormData("smallImageURL"))
+			<!-- Status -->
+			@helper.inputText(blogsentryFormData("status"))
+			<!-- StatusByUserId -->
+			@helper.inputText(blogsentryFormData("statusByUserId"))
+			<!-- StatusByUserName -->
+			@helper.inputText(blogsentryFormData("statusByUserName"))
+			<!-- StatusDate -->
+			@helper.inputText(blogsentryFormData("statusDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.BlogsentryApplication.all()">Back to Blogsentry List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,25 @@
+@(assettagstatss: List[models.assettagstats.Assettagstats])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Assettagstatss in the DB</h1>
+
+	<p>
+		<a href="@routes.AssettagstatsApplication.addAssettagstats">Create New Assettagstats</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(assettagstats <- assettagstatss) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.AssettagstatsApplication.get(assettagstats.tagStatsId)">@assettagstats.tagStatsId</a></div>
+				<div>TagId: @assettagstats.tagId</div>
+				<div>ClassNameId: @assettagstats.classNameId</div>
+				<div>AssetCount: @assettagstats.assetCount</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

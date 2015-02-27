@@ -1,0 +1,40 @@
+@(assetlinkFormData: Form[controllers.assetlink.AssetlinkFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Assetlink #@assetlinkFormData("linkId").value</legend>
+
+		@form(routes.AssetlinkApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(assetlinkFormData("linkId"), 'readonly -> "readonly")
+
+			<!-- CompanyId -->
+			@helper.inputText(assetlinkFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(assetlinkFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(assetlinkFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(assetlinkFormData("createDate"))
+			<!-- EntryId1 -->
+			@helper.inputText(assetlinkFormData("entryId1"))
+			<!-- EntryId2 -->
+			@helper.inputText(assetlinkFormData("entryId2"))
+			<!-- Customtype -->
+			@helper.inputText(assetlinkFormData("customtype"))
+			<!-- Weight -->
+			@helper.inputText(assetlinkFormData("weight"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.AssetlinkApplication.all()">Back to Assetlink List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

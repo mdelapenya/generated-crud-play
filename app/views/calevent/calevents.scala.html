@@ -1,0 +1,44 @@
+@(calevents: List[models.calevent.Calevent])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Calevents in the DB</h1>
+
+	<p>
+		<a href="@routes.CaleventApplication.addCalevent">Create New Calevent</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(calevent <- calevents) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.CaleventApplication.get(calevent.eventId)">@calevent.eventId</a></div>
+				<div>Uuid: @calevent.uuid</div>
+				<div>GroupId: @calevent.groupId</div>
+				<div>CompanyId: @calevent.companyId</div>
+				<div>UserId: @calevent.userId</div>
+				<div>UserName: @calevent.userName</div>
+				<div>CreateDate: @calevent.createDate</div>
+				<div>ModifiedDate: @calevent.modifiedDate</div>
+				<div>Title: @calevent.title</div>
+				<div>Description: @calevent.description</div>
+				<div>Location: @calevent.location</div>
+				<div>StartDate: @calevent.startDate</div>
+				<div>EndDate: @calevent.endDate</div>
+				<div>DurationHour: @calevent.durationHour</div>
+				<div>DurationMinute: @calevent.durationMinute</div>
+				<div>AllDay: @calevent.allDay</div>
+				<div>TimeZoneSensitive: @calevent.timeZoneSensitive</div>
+				<div>Customtype: @calevent.customtype</div>
+				<div>Repeating: @calevent.repeating</div>
+				<div>Recurrence: @calevent.recurrence</div>
+				<div>RemindBy: @calevent.remindBy</div>
+				<div>FirstReminder: @calevent.firstReminder</div>
+				<div>SecondReminder: @calevent.secondReminder</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

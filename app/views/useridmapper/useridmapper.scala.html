@@ -1,0 +1,34 @@
+@(useridmapperFormData: Form[controllers.useridmapper.UseridmapperFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Useridmapper #@useridmapperFormData("userIdMapperId").value</legend>
+
+		@form(routes.UseridmapperApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(useridmapperFormData("userIdMapperId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(useridmapperFormData("mvccVersion"))
+			<!-- UserId -->
+			@helper.inputText(useridmapperFormData("userId"))
+			<!-- Customtype -->
+			@helper.inputText(useridmapperFormData("customtype"))
+			<!-- Description -->
+			@helper.inputText(useridmapperFormData("description"))
+			<!-- ExternalUserId -->
+			@helper.inputText(useridmapperFormData("externalUserId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.UseridmapperApplication.all()">Back to Useridmapper List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

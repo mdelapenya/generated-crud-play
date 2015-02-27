@@ -1,0 +1,36 @@
+@(dlfileentrymetadataFormData: Form[controllers.dlfileentrymetadata.DlfileentrymetadataFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Dlfileentrymetadata #@dlfileentrymetadataFormData("fileEntryMetadataId").value</legend>
+
+		@form(routes.DlfileentrymetadataApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(dlfileentrymetadataFormData("fileEntryMetadataId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(dlfileentrymetadataFormData("uuid"))
+			<!-- DDMStorageId -->
+			@helper.inputText(dlfileentrymetadataFormData("DDMStorageId"))
+			<!-- DDMStructureId -->
+			@helper.inputText(dlfileentrymetadataFormData("DDMStructureId"))
+			<!-- FileEntryTypeId -->
+			@helper.inputText(dlfileentrymetadataFormData("fileEntryTypeId"))
+			<!-- FileEntryId -->
+			@helper.inputText(dlfileentrymetadataFormData("fileEntryId"))
+			<!-- FileVersionId -->
+			@helper.inputText(dlfileentrymetadataFormData("fileVersionId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DlfileentrymetadataApplication.all()">Back to Dlfileentrymetadata List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

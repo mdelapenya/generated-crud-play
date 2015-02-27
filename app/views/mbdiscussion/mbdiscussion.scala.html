@@ -1,0 +1,44 @@
+@(mbdiscussionFormData: Form[controllers.mbdiscussion.MbdiscussionFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Mbdiscussion #@mbdiscussionFormData("discussionId").value</legend>
+
+		@form(routes.MbdiscussionApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(mbdiscussionFormData("discussionId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(mbdiscussionFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(mbdiscussionFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(mbdiscussionFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(mbdiscussionFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(mbdiscussionFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(mbdiscussionFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(mbdiscussionFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(mbdiscussionFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(mbdiscussionFormData("classPK"))
+			<!-- ThreadId -->
+			@helper.inputText(mbdiscussionFormData("threadId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.MbdiscussionApplication.all()">Back to Mbdiscussion List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

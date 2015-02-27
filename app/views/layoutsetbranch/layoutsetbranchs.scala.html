@@ -1,0 +1,42 @@
+@(layoutsetbranchs: List[models.layoutsetbranch.Layoutsetbranch])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Layoutsetbranchs in the DB</h1>
+
+	<p>
+		<a href="@routes.LayoutsetbranchApplication.addLayoutsetbranch">Create New Layoutsetbranch</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(layoutsetbranch <- layoutsetbranchs) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.LayoutsetbranchApplication.get(layoutsetbranch.layoutSetBranchId)">@layoutsetbranch.layoutSetBranchId</a></div>
+				<div>MvccVersion: @layoutsetbranch.mvccVersion</div>
+				<div>GroupId: @layoutsetbranch.groupId</div>
+				<div>CompanyId: @layoutsetbranch.companyId</div>
+				<div>UserId: @layoutsetbranch.userId</div>
+				<div>UserName: @layoutsetbranch.userName</div>
+				<div>CreateDate: @layoutsetbranch.createDate</div>
+				<div>ModifiedDate: @layoutsetbranch.modifiedDate</div>
+				<div>PrivateLayout: @layoutsetbranch.privateLayout</div>
+				<div>Name: @layoutsetbranch.name</div>
+				<div>Description: @layoutsetbranch.description</div>
+				<div>Master: @layoutsetbranch.master</div>
+				<div>LogoId: @layoutsetbranch.logoId</div>
+				<div>ThemeId: @layoutsetbranch.themeId</div>
+				<div>ColorSchemeId: @layoutsetbranch.colorSchemeId</div>
+				<div>WapThemeId: @layoutsetbranch.wapThemeId</div>
+				<div>WapColorSchemeId: @layoutsetbranch.wapColorSchemeId</div>
+				<div>Css: @layoutsetbranch.css</div>
+				<div>Settings: @layoutsetbranch.settings</div>
+				<div>LayoutSetPrototypeUuid: @layoutsetbranch.layoutSetPrototypeUuid</div>
+				<div>LayoutSetPrototypeLinkEnabled: @layoutsetbranch.layoutSetPrototypeLinkEnabled</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

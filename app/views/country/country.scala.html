@@ -1,0 +1,40 @@
+@(countryFormData: Form[controllers.country.CountryFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Country #@countryFormData("countryId").value</legend>
+
+		@form(routes.CountryApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(countryFormData("countryId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(countryFormData("mvccVersion"))
+			<!-- Name -->
+			@helper.inputText(countryFormData("name"))
+			<!-- A2 -->
+			@helper.inputText(countryFormData("a2"))
+			<!-- A3 -->
+			@helper.inputText(countryFormData("a3"))
+			<!-- Number -->
+			@helper.inputText(countryFormData("number"))
+			<!-- Idd -->
+			@helper.inputText(countryFormData("idd"))
+			<!-- ZipRequired -->
+			@helper.inputText(countryFormData("zipRequired"))
+			<!-- Active -->
+			@helper.inputText(countryFormData("active"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.CountryApplication.all()">Back to Country List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

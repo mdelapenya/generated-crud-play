@@ -1,0 +1,66 @@
+@(dlfolderFormData: Form[controllers.dlfolder.DlfolderFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Dlfolder #@dlfolderFormData("folderId").value</legend>
+
+		@form(routes.DlfolderApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(dlfolderFormData("folderId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(dlfolderFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(dlfolderFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(dlfolderFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(dlfolderFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(dlfolderFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(dlfolderFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(dlfolderFormData("modifiedDate"))
+			<!-- RepositoryId -->
+			@helper.inputText(dlfolderFormData("repositoryId"))
+			<!-- MountPoint -->
+			@helper.inputText(dlfolderFormData("mountPoint"))
+			<!-- ParentFolderId -->
+			@helper.inputText(dlfolderFormData("parentFolderId"))
+			<!-- TreePath -->
+			@helper.inputText(dlfolderFormData("treePath"))
+			<!-- Name -->
+			@helper.inputText(dlfolderFormData("name"))
+			<!-- Description -->
+			@helper.inputText(dlfolderFormData("description"))
+			<!-- LastPostDate -->
+			@helper.inputText(dlfolderFormData("lastPostDate"))
+			<!-- DefaultFileEntryTypeId -->
+			@helper.inputText(dlfolderFormData("defaultFileEntryTypeId"))
+			<!-- Hidden -->
+			@helper.inputText(dlfolderFormData("hidden"))
+			<!-- RestrictionType -->
+			@helper.inputText(dlfolderFormData("restrictionType"))
+			<!-- Status -->
+			@helper.inputText(dlfolderFormData("status"))
+			<!-- StatusByUserId -->
+			@helper.inputText(dlfolderFormData("statusByUserId"))
+			<!-- StatusByUserName -->
+			@helper.inputText(dlfolderFormData("statusByUserName"))
+			<!-- StatusDate -->
+			@helper.inputText(dlfolderFormData("statusDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DlfolderApplication.all()">Back to Dlfolder List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

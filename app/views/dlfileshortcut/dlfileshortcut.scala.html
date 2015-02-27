@@ -1,0 +1,56 @@
+@(dlfileshortcutFormData: Form[controllers.dlfileshortcut.DlfileshortcutFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Dlfileshortcut #@dlfileshortcutFormData("fileShortcutId").value</legend>
+
+		@form(routes.DlfileshortcutApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(dlfileshortcutFormData("fileShortcutId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(dlfileshortcutFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(dlfileshortcutFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(dlfileshortcutFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(dlfileshortcutFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(dlfileshortcutFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(dlfileshortcutFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(dlfileshortcutFormData("modifiedDate"))
+			<!-- RepositoryId -->
+			@helper.inputText(dlfileshortcutFormData("repositoryId"))
+			<!-- FolderId -->
+			@helper.inputText(dlfileshortcutFormData("folderId"))
+			<!-- ToFileEntryId -->
+			@helper.inputText(dlfileshortcutFormData("toFileEntryId"))
+			<!-- TreePath -->
+			@helper.inputText(dlfileshortcutFormData("treePath"))
+			<!-- Active -->
+			@helper.inputText(dlfileshortcutFormData("active"))
+			<!-- Status -->
+			@helper.inputText(dlfileshortcutFormData("status"))
+			<!-- StatusByUserId -->
+			@helper.inputText(dlfileshortcutFormData("statusByUserId"))
+			<!-- StatusByUserName -->
+			@helper.inputText(dlfileshortcutFormData("statusByUserName"))
+			<!-- StatusDate -->
+			@helper.inputText(dlfileshortcutFormData("statusDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DlfileshortcutApplication.all()">Back to Dlfileshortcut List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

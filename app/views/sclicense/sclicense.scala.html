@@ -1,0 +1,34 @@
+@(sclicenseFormData: Form[controllers.sclicense.SclicenseFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Sclicense #@sclicenseFormData("licenseId").value</legend>
+
+		@form(routes.SclicenseApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(sclicenseFormData("licenseId"), 'readonly -> "readonly")
+
+			<!-- Name -->
+			@helper.inputText(sclicenseFormData("name"))
+			<!-- Url -->
+			@helper.inputText(sclicenseFormData("url"))
+			<!-- OpenSource -->
+			@helper.inputText(sclicenseFormData("openSource"))
+			<!-- Active -->
+			@helper.inputText(sclicenseFormData("active"))
+			<!-- Recommended -->
+			@helper.inputText(sclicenseFormData("recommended"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.SclicenseApplication.all()">Back to Sclicense List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

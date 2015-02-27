@@ -1,0 +1,46 @@
+@(layoutprototypeFormData: Form[controllers.layoutprototype.LayoutprototypeFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Layoutprototype #@layoutprototypeFormData("layoutPrototypeId").value</legend>
+
+		@form(routes.LayoutprototypeApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(layoutprototypeFormData("layoutPrototypeId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(layoutprototypeFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(layoutprototypeFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(layoutprototypeFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(layoutprototypeFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(layoutprototypeFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(layoutprototypeFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(layoutprototypeFormData("modifiedDate"))
+			<!-- Name -->
+			@helper.inputText(layoutprototypeFormData("name"))
+			<!-- Description -->
+			@helper.inputText(layoutprototypeFormData("description"))
+			<!-- Settings -->
+			@helper.inputText(layoutprototypeFormData("settings"))
+			<!-- Active -->
+			@helper.inputText(layoutprototypeFormData("active"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.LayoutprototypeApplication.all()">Back to Layoutprototype List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

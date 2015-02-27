@@ -1,0 +1,36 @@
+@(systemevents: List[models.systemevent.Systemevent])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Systemevents in the DB</h1>
+
+	<p>
+		<a href="@routes.SystemeventApplication.addSystemevent">Create New Systemevent</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(systemevent <- systemevents) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.SystemeventApplication.get(systemevent.systemEventId)">@systemevent.systemEventId</a></div>
+				<div>MvccVersion: @systemevent.mvccVersion</div>
+				<div>GroupId: @systemevent.groupId</div>
+				<div>CompanyId: @systemevent.companyId</div>
+				<div>UserId: @systemevent.userId</div>
+				<div>UserName: @systemevent.userName</div>
+				<div>CreateDate: @systemevent.createDate</div>
+				<div>ClassNameId: @systemevent.classNameId</div>
+				<div>ClassPK: @systemevent.classPK</div>
+				<div>ClassUuid: @systemevent.classUuid</div>
+				<div>ReferrerClassNameId: @systemevent.referrerClassNameId</div>
+				<div>ParentSystemEventId: @systemevent.parentSystemEventId</div>
+				<div>SystemEventSetKey: @systemevent.systemEventSetKey</div>
+				<div>Customtype: @systemevent.customtype</div>
+				<div>ExtraData: @systemevent.extraData</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

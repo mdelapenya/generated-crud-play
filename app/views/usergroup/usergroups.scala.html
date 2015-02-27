@@ -1,0 +1,33 @@
+@(usergroups: List[models.usergroup.Usergroup])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Usergroups in the DB</h1>
+
+	<p>
+		<a href="@routes.UsergroupApplication.addUsergroup">Create New Usergroup</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(usergroup <- usergroups) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.UsergroupApplication.get(usergroup.userGroupId)">@usergroup.userGroupId</a></div>
+				<div>MvccVersion: @usergroup.mvccVersion</div>
+				<div>Uuid: @usergroup.uuid</div>
+				<div>CompanyId: @usergroup.companyId</div>
+				<div>UserId: @usergroup.userId</div>
+				<div>UserName: @usergroup.userName</div>
+				<div>CreateDate: @usergroup.createDate</div>
+				<div>ModifiedDate: @usergroup.modifiedDate</div>
+				<div>ParentUserGroupId: @usergroup.parentUserGroupId</div>
+				<div>Name: @usergroup.name</div>
+				<div>Description: @usergroup.description</div>
+				<div>AddedByLDAPImport: @usergroup.addedByLDAPImport</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

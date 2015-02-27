@@ -1,0 +1,42 @@
+@(shoppingitempriceFormData: Form[controllers.shoppingitemprice.ShoppingitempriceFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Shoppingitemprice #@shoppingitempriceFormData("itemPriceId").value</legend>
+
+		@form(routes.ShoppingitempriceApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(shoppingitempriceFormData("itemPriceId"), 'readonly -> "readonly")
+
+			<!-- ItemId -->
+			@helper.inputText(shoppingitempriceFormData("itemId"))
+			<!-- MinQuantity -->
+			@helper.inputText(shoppingitempriceFormData("minQuantity"))
+			<!-- MaxQuantity -->
+			@helper.inputText(shoppingitempriceFormData("maxQuantity"))
+			<!-- Price -->
+			@helper.inputText(shoppingitempriceFormData("price"))
+			<!-- Discount -->
+			@helper.inputText(shoppingitempriceFormData("discount"))
+			<!-- Taxable -->
+			@helper.inputText(shoppingitempriceFormData("taxable"))
+			<!-- Shipping -->
+			@helper.inputText(shoppingitempriceFormData("shipping"))
+			<!-- UseShippingFormula -->
+			@helper.inputText(shoppingitempriceFormData("useShippingFormula"))
+			<!-- Status -->
+			@helper.inputText(shoppingitempriceFormData("status"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ShoppingitempriceApplication.all()">Back to Shoppingitemprice List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

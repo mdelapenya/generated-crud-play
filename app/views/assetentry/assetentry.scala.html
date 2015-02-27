@@ -1,0 +1,76 @@
+@(assetentryFormData: Form[controllers.assetentry.AssetentryFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Assetentry #@assetentryFormData("entryId").value</legend>
+
+		@form(routes.AssetentryApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(assetentryFormData("entryId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(assetentryFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(assetentryFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(assetentryFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(assetentryFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(assetentryFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(assetentryFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(assetentryFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(assetentryFormData("classPK"))
+			<!-- ClassUuid -->
+			@helper.inputText(assetentryFormData("classUuid"))
+			<!-- ClassTypeId -->
+			@helper.inputText(assetentryFormData("classTypeId"))
+			<!-- Listable -->
+			@helper.inputText(assetentryFormData("listable"))
+			<!-- Visible -->
+			@helper.inputText(assetentryFormData("visible"))
+			<!-- StartDate -->
+			@helper.inputText(assetentryFormData("startDate"))
+			<!-- EndDate -->
+			@helper.inputText(assetentryFormData("endDate"))
+			<!-- PublishDate -->
+			@helper.inputText(assetentryFormData("publishDate"))
+			<!-- ExpirationDate -->
+			@helper.inputText(assetentryFormData("expirationDate"))
+			<!-- MimeType -->
+			@helper.inputText(assetentryFormData("mimeType"))
+			<!-- Title -->
+			@helper.inputText(assetentryFormData("title"))
+			<!-- Description -->
+			@helper.inputText(assetentryFormData("description"))
+			<!-- Summary -->
+			@helper.inputText(assetentryFormData("summary"))
+			<!-- Url -->
+			@helper.inputText(assetentryFormData("url"))
+			<!-- LayoutUuid -->
+			@helper.inputText(assetentryFormData("layoutUuid"))
+			<!-- Height -->
+			@helper.inputText(assetentryFormData("height"))
+			<!-- Width -->
+			@helper.inputText(assetentryFormData("width"))
+			<!-- Priority -->
+			@helper.inputText(assetentryFormData("priority"))
+			<!-- ViewCount -->
+			@helper.inputText(assetentryFormData("viewCount"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.AssetentryApplication.all()">Back to Assetentry List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

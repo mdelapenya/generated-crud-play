@@ -1,0 +1,40 @@
+@(mbthreadflagFormData: Form[controllers.mbthreadflag.MbthreadflagFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Mbthreadflag #@mbthreadflagFormData("threadFlagId").value</legend>
+
+		@form(routes.MbthreadflagApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(mbthreadflagFormData("threadFlagId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(mbthreadflagFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(mbthreadflagFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(mbthreadflagFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(mbthreadflagFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(mbthreadflagFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(mbthreadflagFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(mbthreadflagFormData("modifiedDate"))
+			<!-- ThreadId -->
+			@helper.inputText(mbthreadflagFormData("threadId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.MbthreadflagApplication.all()">Back to Mbthreadflag List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

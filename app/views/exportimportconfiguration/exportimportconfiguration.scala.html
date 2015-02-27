@@ -1,0 +1,54 @@
+@(exportimportconfigurationFormData: Form[controllers.exportimportconfiguration.ExportimportconfigurationFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Exportimportconfiguration #@exportimportconfigurationFormData("exportImportConfigurationId").value</legend>
+
+		@form(routes.ExportimportconfigurationApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(exportimportconfigurationFormData("exportImportConfigurationId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(exportimportconfigurationFormData("mvccVersion"))
+			<!-- GroupId -->
+			@helper.inputText(exportimportconfigurationFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(exportimportconfigurationFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(exportimportconfigurationFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(exportimportconfigurationFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(exportimportconfigurationFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(exportimportconfigurationFormData("modifiedDate"))
+			<!-- Name -->
+			@helper.inputText(exportimportconfigurationFormData("name"))
+			<!-- Description -->
+			@helper.inputText(exportimportconfigurationFormData("description"))
+			<!-- Customtype -->
+			@helper.inputText(exportimportconfigurationFormData("customtype"))
+			<!-- Settings -->
+			@helper.inputText(exportimportconfigurationFormData("settings"))
+			<!-- Status -->
+			@helper.inputText(exportimportconfigurationFormData("status"))
+			<!-- StatusByUserId -->
+			@helper.inputText(exportimportconfigurationFormData("statusByUserId"))
+			<!-- StatusByUserName -->
+			@helper.inputText(exportimportconfigurationFormData("statusByUserName"))
+			<!-- StatusDate -->
+			@helper.inputText(exportimportconfigurationFormData("statusDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ExportimportconfigurationApplication.all()">Back to Exportimportconfiguration List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

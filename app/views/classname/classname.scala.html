@@ -1,0 +1,28 @@
+@(classnameFormData: Form[controllers.classname.ClassnameFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Classname #@classnameFormData("classNameId").value</legend>
+
+		@form(routes.ClassnameApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(classnameFormData("classNameId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(classnameFormData("mvccVersion"))
+			<!-- Value -->
+			@helper.inputText(classnameFormData("value"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ClassnameApplication.all()">Back to Classname List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,32 @@
+@(resourceactionFormData: Form[controllers.resourceaction.ResourceactionFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Resourceaction #@resourceactionFormData("resourceActionId").value</legend>
+
+		@form(routes.ResourceactionApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(resourceactionFormData("resourceActionId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(resourceactionFormData("mvccVersion"))
+			<!-- Name -->
+			@helper.inputText(resourceactionFormData("name"))
+			<!-- ActionId -->
+			@helper.inputText(resourceactionFormData("actionId"))
+			<!-- BitwiseValue -->
+			@helper.inputText(resourceactionFormData("bitwiseValue"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ResourceactionApplication.all()">Back to Resourceaction List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

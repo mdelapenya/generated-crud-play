@@ -1,0 +1,40 @@
+@(mbbanFormData: Form[controllers.mbban.MbbanFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Mbban #@mbbanFormData("banId").value</legend>
+
+		@form(routes.MbbanApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(mbbanFormData("banId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(mbbanFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(mbbanFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(mbbanFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(mbbanFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(mbbanFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(mbbanFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(mbbanFormData("modifiedDate"))
+			<!-- BanUserId -->
+			@helper.inputText(mbbanFormData("banUserId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.MbbanApplication.all()">Back to Mbban List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

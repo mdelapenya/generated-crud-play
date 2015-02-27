@@ -1,0 +1,124 @@
+@(shoppingorderFormData: Form[controllers.shoppingorder.ShoppingorderFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Shoppingorder #@shoppingorderFormData("orderId").value</legend>
+
+		@form(routes.ShoppingorderApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(shoppingorderFormData("orderId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(shoppingorderFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(shoppingorderFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(shoppingorderFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(shoppingorderFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(shoppingorderFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(shoppingorderFormData("modifiedDate"))
+			<!-- Number -->
+			@helper.inputText(shoppingorderFormData("number"))
+			<!-- Tax -->
+			@helper.inputText(shoppingorderFormData("tax"))
+			<!-- Shipping -->
+			@helper.inputText(shoppingorderFormData("shipping"))
+			<!-- AltShipping -->
+			@helper.inputText(shoppingorderFormData("altShipping"))
+			<!-- RequiresShipping -->
+			@helper.inputText(shoppingorderFormData("requiresShipping"))
+			<!-- Insure -->
+			@helper.inputText(shoppingorderFormData("insure"))
+			<!-- Insurance -->
+			@helper.inputText(shoppingorderFormData("insurance"))
+			<!-- CouponCodes -->
+			@helper.inputText(shoppingorderFormData("couponCodes"))
+			<!-- CouponDiscount -->
+			@helper.inputText(shoppingorderFormData("couponDiscount"))
+			<!-- BillingFirstName -->
+			@helper.inputText(shoppingorderFormData("billingFirstName"))
+			<!-- BillingLastName -->
+			@helper.inputText(shoppingorderFormData("billingLastName"))
+			<!-- BillingEmailAddress -->
+			@helper.inputText(shoppingorderFormData("billingEmailAddress"))
+			<!-- BillingCompany -->
+			@helper.inputText(shoppingorderFormData("billingCompany"))
+			<!-- BillingStreet -->
+			@helper.inputText(shoppingorderFormData("billingStreet"))
+			<!-- BillingCity -->
+			@helper.inputText(shoppingorderFormData("billingCity"))
+			<!-- BillingState -->
+			@helper.inputText(shoppingorderFormData("billingState"))
+			<!-- BillingZip -->
+			@helper.inputText(shoppingorderFormData("billingZip"))
+			<!-- BillingCountry -->
+			@helper.inputText(shoppingorderFormData("billingCountry"))
+			<!-- BillingPhone -->
+			@helper.inputText(shoppingorderFormData("billingPhone"))
+			<!-- ShipToBilling -->
+			@helper.inputText(shoppingorderFormData("shipToBilling"))
+			<!-- ShippingFirstName -->
+			@helper.inputText(shoppingorderFormData("shippingFirstName"))
+			<!-- ShippingLastName -->
+			@helper.inputText(shoppingorderFormData("shippingLastName"))
+			<!-- ShippingEmailAddress -->
+			@helper.inputText(shoppingorderFormData("shippingEmailAddress"))
+			<!-- ShippingCompany -->
+			@helper.inputText(shoppingorderFormData("shippingCompany"))
+			<!-- ShippingStreet -->
+			@helper.inputText(shoppingorderFormData("shippingStreet"))
+			<!-- ShippingCity -->
+			@helper.inputText(shoppingorderFormData("shippingCity"))
+			<!-- ShippingState -->
+			@helper.inputText(shoppingorderFormData("shippingState"))
+			<!-- ShippingZip -->
+			@helper.inputText(shoppingorderFormData("shippingZip"))
+			<!-- ShippingCountry -->
+			@helper.inputText(shoppingorderFormData("shippingCountry"))
+			<!-- ShippingPhone -->
+			@helper.inputText(shoppingorderFormData("shippingPhone"))
+			<!-- CcName -->
+			@helper.inputText(shoppingorderFormData("ccName"))
+			<!-- CcType -->
+			@helper.inputText(shoppingorderFormData("ccType"))
+			<!-- CcNumber -->
+			@helper.inputText(shoppingorderFormData("ccNumber"))
+			<!-- CcExpMonth -->
+			@helper.inputText(shoppingorderFormData("ccExpMonth"))
+			<!-- CcExpYear -->
+			@helper.inputText(shoppingorderFormData("ccExpYear"))
+			<!-- CcVerNumber -->
+			@helper.inputText(shoppingorderFormData("ccVerNumber"))
+			<!-- Comments -->
+			@helper.inputText(shoppingorderFormData("comments"))
+			<!-- PpTxnId -->
+			@helper.inputText(shoppingorderFormData("ppTxnId"))
+			<!-- PpPaymentStatus -->
+			@helper.inputText(shoppingorderFormData("ppPaymentStatus"))
+			<!-- PpPaymentGross -->
+			@helper.inputText(shoppingorderFormData("ppPaymentGross"))
+			<!-- PpReceiverEmail -->
+			@helper.inputText(shoppingorderFormData("ppReceiverEmail"))
+			<!-- PpPayerEmail -->
+			@helper.inputText(shoppingorderFormData("ppPayerEmail"))
+			<!-- SendOrderEmail -->
+			@helper.inputText(shoppingorderFormData("sendOrderEmail"))
+			<!-- SendShippingEmail -->
+			@helper.inputText(shoppingorderFormData("sendShippingEmail"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ShoppingorderApplication.all()">Back to Shoppingorder List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

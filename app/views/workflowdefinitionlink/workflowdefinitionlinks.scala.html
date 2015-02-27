@@ -1,0 +1,34 @@
+@(workflowdefinitionlinks: List[models.workflowdefinitionlink.Workflowdefinitionlink])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Workflowdefinitionlinks in the DB</h1>
+
+	<p>
+		<a href="@routes.WorkflowdefinitionlinkApplication.addWorkflowdefinitionlink">Create New Workflowdefinitionlink</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(workflowdefinitionlink <- workflowdefinitionlinks) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.WorkflowdefinitionlinkApplication.get(workflowdefinitionlink.workflowDefinitionLinkId)">@workflowdefinitionlink.workflowDefinitionLinkId</a></div>
+				<div>MvccVersion: @workflowdefinitionlink.mvccVersion</div>
+				<div>GroupId: @workflowdefinitionlink.groupId</div>
+				<div>CompanyId: @workflowdefinitionlink.companyId</div>
+				<div>UserId: @workflowdefinitionlink.userId</div>
+				<div>UserName: @workflowdefinitionlink.userName</div>
+				<div>CreateDate: @workflowdefinitionlink.createDate</div>
+				<div>ModifiedDate: @workflowdefinitionlink.modifiedDate</div>
+				<div>ClassNameId: @workflowdefinitionlink.classNameId</div>
+				<div>ClassPK: @workflowdefinitionlink.classPK</div>
+				<div>TypePK: @workflowdefinitionlink.typePK</div>
+				<div>WorkflowDefinitionName: @workflowdefinitionlink.workflowDefinitionName</div>
+				<div>WorkflowDefinitionVersion: @workflowdefinitionlink.workflowDefinitionVersion</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

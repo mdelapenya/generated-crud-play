@@ -1,0 +1,34 @@
+@(regionFormData: Form[controllers.region.RegionFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Region #@regionFormData("regionId").value</legend>
+
+		@form(routes.RegionApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(regionFormData("regionId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(regionFormData("mvccVersion"))
+			<!-- CountryId -->
+			@helper.inputText(regionFormData("countryId"))
+			<!-- RegionCode -->
+			@helper.inputText(regionFormData("regionCode"))
+			<!-- Name -->
+			@helper.inputText(regionFormData("name"))
+			<!-- Active -->
+			@helper.inputText(regionFormData("active"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.RegionApplication.all()">Back to Region List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,47 @@
+@(mbmailinglists: List[models.mbmailinglist.Mbmailinglist])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Mbmailinglists in the DB</h1>
+
+	<p>
+		<a href="@routes.MbmailinglistApplication.addMbmailinglist">Create New Mbmailinglist</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(mbmailinglist <- mbmailinglists) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.MbmailinglistApplication.get(mbmailinglist.mailingListId)">@mbmailinglist.mailingListId</a></div>
+				<div>Uuid: @mbmailinglist.uuid</div>
+				<div>GroupId: @mbmailinglist.groupId</div>
+				<div>CompanyId: @mbmailinglist.companyId</div>
+				<div>UserId: @mbmailinglist.userId</div>
+				<div>UserName: @mbmailinglist.userName</div>
+				<div>CreateDate: @mbmailinglist.createDate</div>
+				<div>ModifiedDate: @mbmailinglist.modifiedDate</div>
+				<div>CategoryId: @mbmailinglist.categoryId</div>
+				<div>EmailAddress: @mbmailinglist.emailAddress</div>
+				<div>InProtocol: @mbmailinglist.inProtocol</div>
+				<div>InServerName: @mbmailinglist.inServerName</div>
+				<div>InServerPort: @mbmailinglist.inServerPort</div>
+				<div>InUseSSL: @mbmailinglist.inUseSSL</div>
+				<div>InUserName: @mbmailinglist.inUserName</div>
+				<div>InPassword: @mbmailinglist.inPassword</div>
+				<div>InReadInterval: @mbmailinglist.inReadInterval</div>
+				<div>OutEmailAddress: @mbmailinglist.outEmailAddress</div>
+				<div>OutCustom: @mbmailinglist.outCustom</div>
+				<div>OutServerName: @mbmailinglist.outServerName</div>
+				<div>OutServerPort: @mbmailinglist.outServerPort</div>
+				<div>OutUseSSL: @mbmailinglist.outUseSSL</div>
+				<div>OutUserName: @mbmailinglist.outUserName</div>
+				<div>OutPassword: @mbmailinglist.outPassword</div>
+				<div>AllowAnonymous: @mbmailinglist.allowAnonymous</div>
+				<div>Active: @mbmailinglist.active</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

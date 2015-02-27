@@ -1,0 +1,38 @@
+@(expandovalueFormData: Form[controllers.expandovalue.ExpandovalueFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Expandovalue #@expandovalueFormData("valueId").value</legend>
+
+		@form(routes.ExpandovalueApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(expandovalueFormData("valueId"), 'readonly -> "readonly")
+
+			<!-- CompanyId -->
+			@helper.inputText(expandovalueFormData("companyId"))
+			<!-- TableId -->
+			@helper.inputText(expandovalueFormData("tableId"))
+			<!-- ColumnId -->
+			@helper.inputText(expandovalueFormData("columnId"))
+			<!-- RowId -->
+			@helper.inputText(expandovalueFormData("rowId"))
+			<!-- ClassNameId -->
+			@helper.inputText(expandovalueFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(expandovalueFormData("classPK"))
+			<!-- Data -->
+			@helper.inputText(expandovalueFormData("data"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ExpandovalueApplication.all()">Back to Expandovalue List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

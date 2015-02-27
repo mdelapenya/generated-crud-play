@@ -1,0 +1,68 @@
+@(caleventFormData: Form[controllers.calevent.CaleventFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Calevent #@caleventFormData("eventId").value</legend>
+
+		@form(routes.CaleventApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(caleventFormData("eventId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(caleventFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(caleventFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(caleventFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(caleventFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(caleventFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(caleventFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(caleventFormData("modifiedDate"))
+			<!-- Title -->
+			@helper.inputText(caleventFormData("title"))
+			<!-- Description -->
+			@helper.inputText(caleventFormData("description"))
+			<!-- Location -->
+			@helper.inputText(caleventFormData("location"))
+			<!-- StartDate -->
+			@helper.inputText(caleventFormData("startDate"))
+			<!-- EndDate -->
+			@helper.inputText(caleventFormData("endDate"))
+			<!-- DurationHour -->
+			@helper.inputText(caleventFormData("durationHour"))
+			<!-- DurationMinute -->
+			@helper.inputText(caleventFormData("durationMinute"))
+			<!-- AllDay -->
+			@helper.inputText(caleventFormData("allDay"))
+			<!-- TimeZoneSensitive -->
+			@helper.inputText(caleventFormData("timeZoneSensitive"))
+			<!-- Customtype -->
+			@helper.inputText(caleventFormData("customtype"))
+			<!-- Repeating -->
+			@helper.inputText(caleventFormData("repeating"))
+			<!-- Recurrence -->
+			@helper.inputText(caleventFormData("recurrence"))
+			<!-- RemindBy -->
+			@helper.inputText(caleventFormData("remindBy"))
+			<!-- FirstReminder -->
+			@helper.inputText(caleventFormData("firstReminder"))
+			<!-- SecondReminder -->
+			@helper.inputText(caleventFormData("secondReminder"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.CaleventApplication.all()">Back to Calevent List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

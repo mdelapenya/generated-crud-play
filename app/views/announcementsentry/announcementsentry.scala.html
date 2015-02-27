@@ -1,0 +1,56 @@
+@(announcementsentryFormData: Form[controllers.announcementsentry.AnnouncementsentryFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Announcementsentry #@announcementsentryFormData("entryId").value</legend>
+
+		@form(routes.AnnouncementsentryApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(announcementsentryFormData("entryId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(announcementsentryFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(announcementsentryFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(announcementsentryFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(announcementsentryFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(announcementsentryFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(announcementsentryFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(announcementsentryFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(announcementsentryFormData("classPK"))
+			<!-- Title -->
+			@helper.inputText(announcementsentryFormData("title"))
+			<!-- Content -->
+			@helper.inputText(announcementsentryFormData("content"))
+			<!-- Url -->
+			@helper.inputText(announcementsentryFormData("url"))
+			<!-- Customtype -->
+			@helper.inputText(announcementsentryFormData("customtype"))
+			<!-- DisplayDate -->
+			@helper.inputText(announcementsentryFormData("displayDate"))
+			<!-- ExpirationDate -->
+			@helper.inputText(announcementsentryFormData("expirationDate"))
+			<!-- Priority -->
+			@helper.inputText(announcementsentryFormData("priority"))
+			<!-- Alert -->
+			@helper.inputText(announcementsentryFormData("alert"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.AnnouncementsentryApplication.all()">Back to Announcementsentry List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

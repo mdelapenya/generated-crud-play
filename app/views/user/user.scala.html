@@ -1,0 +1,104 @@
+@(userFormData: Form[controllers.user.UserFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of User #@userFormData("userId").value</legend>
+
+		@form(routes.UserApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(userFormData("userId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(userFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(userFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(userFormData("companyId"))
+			<!-- CreateDate -->
+			@helper.inputText(userFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(userFormData("modifiedDate"))
+			<!-- DefaultUser -->
+			@helper.inputText(userFormData("defaultUser"))
+			<!-- ContactId -->
+			@helper.inputText(userFormData("contactId"))
+			<!-- Password -->
+			@helper.inputText(userFormData("password"))
+			<!-- PasswordEncrypted -->
+			@helper.inputText(userFormData("passwordEncrypted"))
+			<!-- PasswordReset -->
+			@helper.inputText(userFormData("passwordReset"))
+			<!-- PasswordModifiedDate -->
+			@helper.inputText(userFormData("passwordModifiedDate"))
+			<!-- Digest -->
+			@helper.inputText(userFormData("digest"))
+			<!-- ReminderQueryQuestion -->
+			@helper.inputText(userFormData("reminderQueryQuestion"))
+			<!-- ReminderQueryAnswer -->
+			@helper.inputText(userFormData("reminderQueryAnswer"))
+			<!-- GraceLoginCount -->
+			@helper.inputText(userFormData("graceLoginCount"))
+			<!-- ScreenName -->
+			@helper.inputText(userFormData("screenName"))
+			<!-- EmailAddress -->
+			@helper.inputText(userFormData("emailAddress"))
+			<!-- FacebookId -->
+			@helper.inputText(userFormData("facebookId"))
+			<!-- LdapServerId -->
+			@helper.inputText(userFormData("ldapServerId"))
+			<!-- OpenId -->
+			@helper.inputText(userFormData("openId"))
+			<!-- PortraitId -->
+			@helper.inputText(userFormData("portraitId"))
+			<!-- LanguageId -->
+			@helper.inputText(userFormData("languageId"))
+			<!-- TimeZoneId -->
+			@helper.inputText(userFormData("timeZoneId"))
+			<!-- Greeting -->
+			@helper.inputText(userFormData("greeting"))
+			<!-- Comments -->
+			@helper.inputText(userFormData("comments"))
+			<!-- FirstName -->
+			@helper.inputText(userFormData("firstName"))
+			<!-- MiddleName -->
+			@helper.inputText(userFormData("middleName"))
+			<!-- LastName -->
+			@helper.inputText(userFormData("lastName"))
+			<!-- JobTitle -->
+			@helper.inputText(userFormData("jobTitle"))
+			<!-- LoginDate -->
+			@helper.inputText(userFormData("loginDate"))
+			<!-- LoginIP -->
+			@helper.inputText(userFormData("loginIP"))
+			<!-- LastLoginDate -->
+			@helper.inputText(userFormData("lastLoginDate"))
+			<!-- LastLoginIP -->
+			@helper.inputText(userFormData("lastLoginIP"))
+			<!-- LastFailedLoginDate -->
+			@helper.inputText(userFormData("lastFailedLoginDate"))
+			<!-- FailedLoginAttempts -->
+			@helper.inputText(userFormData("failedLoginAttempts"))
+			<!-- Lockout -->
+			@helper.inputText(userFormData("lockout"))
+			<!-- LockoutDate -->
+			@helper.inputText(userFormData("lockoutDate"))
+			<!-- AgreedToTermsOfUse -->
+			@helper.inputText(userFormData("agreedToTermsOfUse"))
+			<!-- EmailAddressVerified -->
+			@helper.inputText(userFormData("emailAddressVerified"))
+			<!-- Status -->
+			@helper.inputText(userFormData("status"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.UserApplication.all()">Back to User List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

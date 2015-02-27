@@ -1,0 +1,30 @@
+@(expandotableFormData: Form[controllers.expandotable.ExpandotableFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Expandotable #@expandotableFormData("tableId").value</legend>
+
+		@form(routes.ExpandotableApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(expandotableFormData("tableId"), 'readonly -> "readonly")
+
+			<!-- CompanyId -->
+			@helper.inputText(expandotableFormData("companyId"))
+			<!-- ClassNameId -->
+			@helper.inputText(expandotableFormData("classNameId"))
+			<!-- Name -->
+			@helper.inputText(expandotableFormData("name"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ExpandotableApplication.all()">Back to Expandotable List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,32 @@
+@(layoutbranchs: List[models.layoutbranch.Layoutbranch])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Layoutbranchs in the DB</h1>
+
+	<p>
+		<a href="@routes.LayoutbranchApplication.addLayoutbranch">Create New Layoutbranch</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(layoutbranch <- layoutbranchs) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.LayoutbranchApplication.get(layoutbranch.layoutBranchId)">@layoutbranch.layoutBranchId</a></div>
+				<div>MvccVersion: @layoutbranch.mvccVersion</div>
+				<div>GroupId: @layoutbranch.groupId</div>
+				<div>CompanyId: @layoutbranch.companyId</div>
+				<div>UserId: @layoutbranch.userId</div>
+				<div>UserName: @layoutbranch.userName</div>
+				<div>LayoutSetBranchId: @layoutbranch.layoutSetBranchId</div>
+				<div>Plid: @layoutbranch.plid</div>
+				<div>Name: @layoutbranch.name</div>
+				<div>Description: @layoutbranch.description</div>
+				<div>Master: @layoutbranch.master</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

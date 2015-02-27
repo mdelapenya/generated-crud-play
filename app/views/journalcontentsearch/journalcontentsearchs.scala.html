@@ -1,0 +1,28 @@
+@(journalcontentsearchs: List[models.journalcontentsearch.Journalcontentsearch])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Journalcontentsearchs in the DB</h1>
+
+	<p>
+		<a href="@routes.JournalcontentsearchApplication.addJournalcontentsearch">Create New Journalcontentsearch</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(journalcontentsearch <- journalcontentsearchs) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.JournalcontentsearchApplication.get(journalcontentsearch.contentSearchId)">@journalcontentsearch.contentSearchId</a></div>
+				<div>GroupId: @journalcontentsearch.groupId</div>
+				<div>CompanyId: @journalcontentsearch.companyId</div>
+				<div>PrivateLayout: @journalcontentsearch.privateLayout</div>
+				<div>LayoutId: @journalcontentsearch.layoutId</div>
+				<div>PortletId: @journalcontentsearch.portletId</div>
+				<div>ArticleId: @journalcontentsearch.articleId</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

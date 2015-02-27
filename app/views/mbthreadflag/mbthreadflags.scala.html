@@ -1,0 +1,30 @@
+@(mbthreadflags: List[models.mbthreadflag.Mbthreadflag])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Mbthreadflags in the DB</h1>
+
+	<p>
+		<a href="@routes.MbthreadflagApplication.addMbthreadflag">Create New Mbthreadflag</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(mbthreadflag <- mbthreadflags) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.MbthreadflagApplication.get(mbthreadflag.threadFlagId)">@mbthreadflag.threadFlagId</a></div>
+				<div>Uuid: @mbthreadflag.uuid</div>
+				<div>GroupId: @mbthreadflag.groupId</div>
+				<div>CompanyId: @mbthreadflag.companyId</div>
+				<div>UserId: @mbthreadflag.userId</div>
+				<div>UserName: @mbthreadflag.userName</div>
+				<div>CreateDate: @mbthreadflag.createDate</div>
+				<div>ModifiedDate: @mbthreadflag.modifiedDate</div>
+				<div>ThreadId: @mbthreadflag.threadId</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

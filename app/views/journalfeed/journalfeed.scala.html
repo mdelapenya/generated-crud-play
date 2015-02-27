@@ -1,0 +1,66 @@
+@(journalfeedFormData: Form[controllers.journalfeed.JournalfeedFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Journalfeed #@journalfeedFormData("id").value</legend>
+
+		@form(routes.JournalfeedApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(journalfeedFormData("id"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(journalfeedFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(journalfeedFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(journalfeedFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(journalfeedFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(journalfeedFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(journalfeedFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(journalfeedFormData("modifiedDate"))
+			<!-- FeedId -->
+			@helper.inputText(journalfeedFormData("feedId"))
+			<!-- Name -->
+			@helper.inputText(journalfeedFormData("name"))
+			<!-- Description -->
+			@helper.inputText(journalfeedFormData("description"))
+			<!-- DDMStructureKey -->
+			@helper.inputText(journalfeedFormData("DDMStructureKey"))
+			<!-- DDMTemplateKey -->
+			@helper.inputText(journalfeedFormData("DDMTemplateKey"))
+			<!-- DDMRendererTemplateKey -->
+			@helper.inputText(journalfeedFormData("DDMRendererTemplateKey"))
+			<!-- Delta -->
+			@helper.inputText(journalfeedFormData("delta"))
+			<!-- OrderByCol -->
+			@helper.inputText(journalfeedFormData("orderByCol"))
+			<!-- OrderByType -->
+			@helper.inputText(journalfeedFormData("orderByType"))
+			<!-- TargetLayoutFriendlyUrl -->
+			@helper.inputText(journalfeedFormData("targetLayoutFriendlyUrl"))
+			<!-- TargetPortletId -->
+			@helper.inputText(journalfeedFormData("targetPortletId"))
+			<!-- ContentField -->
+			@helper.inputText(journalfeedFormData("contentField"))
+			<!-- FeedFormat -->
+			@helper.inputText(journalfeedFormData("feedFormat"))
+			<!-- FeedVersion -->
+			@helper.inputText(journalfeedFormData("feedVersion"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.JournalfeedApplication.all()">Back to Journalfeed List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

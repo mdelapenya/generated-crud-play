@@ -1,0 +1,27 @@
+@(dlcontents: List[models.dlcontent.Dlcontent])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Dlcontents in the DB</h1>
+
+	<p>
+		<a href="@routes.DlcontentApplication.addDlcontent">Create New Dlcontent</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(dlcontent <- dlcontents) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.DlcontentApplication.get(dlcontent.contentId)">@dlcontent.contentId</a></div>
+				<div>GroupId: @dlcontent.groupId</div>
+				<div>CompanyId: @dlcontent.companyId</div>
+				<div>RepositoryId: @dlcontent.repositoryId</div>
+				<div>Path: @dlcontent.path</div>
+				<div>Version: @dlcontent.version</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

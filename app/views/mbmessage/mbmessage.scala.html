@@ -1,0 +1,72 @@
+@(mbmessageFormData: Form[controllers.mbmessage.MbmessageFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Mbmessage #@mbmessageFormData("messageId").value</legend>
+
+		@form(routes.MbmessageApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(mbmessageFormData("messageId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(mbmessageFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(mbmessageFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(mbmessageFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(mbmessageFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(mbmessageFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(mbmessageFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(mbmessageFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(mbmessageFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(mbmessageFormData("classPK"))
+			<!-- CategoryId -->
+			@helper.inputText(mbmessageFormData("categoryId"))
+			<!-- ThreadId -->
+			@helper.inputText(mbmessageFormData("threadId"))
+			<!-- RootMessageId -->
+			@helper.inputText(mbmessageFormData("rootMessageId"))
+			<!-- ParentMessageId -->
+			@helper.inputText(mbmessageFormData("parentMessageId"))
+			<!-- Subject -->
+			@helper.inputText(mbmessageFormData("subject"))
+			<!-- Body -->
+			@helper.inputText(mbmessageFormData("body"))
+			<!-- Format -->
+			@helper.inputText(mbmessageFormData("format"))
+			<!-- Anonymous -->
+			@helper.inputText(mbmessageFormData("anonymous"))
+			<!-- Priority -->
+			@helper.inputText(mbmessageFormData("priority"))
+			<!-- AllowPingbacks -->
+			@helper.inputText(mbmessageFormData("allowPingbacks"))
+			<!-- Answer -->
+			@helper.inputText(mbmessageFormData("answer"))
+			<!-- Status -->
+			@helper.inputText(mbmessageFormData("status"))
+			<!-- StatusByUserId -->
+			@helper.inputText(mbmessageFormData("statusByUserId"))
+			<!-- StatusByUserName -->
+			@helper.inputText(mbmessageFormData("statusByUserName"))
+			<!-- StatusDate -->
+			@helper.inputText(mbmessageFormData("statusDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.MbmessageApplication.all()">Back to Mbmessage List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

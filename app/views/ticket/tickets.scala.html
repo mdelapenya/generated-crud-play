@@ -1,0 +1,31 @@
+@(tickets: List[models.ticket.Ticket])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Tickets in the DB</h1>
+
+	<p>
+		<a href="@routes.TicketApplication.addTicket">Create New Ticket</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(ticket <- tickets) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.TicketApplication.get(ticket.ticketId)">@ticket.ticketId</a></div>
+				<div>MvccVersion: @ticket.mvccVersion</div>
+				<div>CompanyId: @ticket.companyId</div>
+				<div>CreateDate: @ticket.createDate</div>
+				<div>ClassNameId: @ticket.classNameId</div>
+				<div>ClassPK: @ticket.classPK</div>
+				<div>Key: @ticket.key</div>
+				<div>Customtype: @ticket.customtype</div>
+				<div>ExtraInfo: @ticket.extraInfo</div>
+				<div>ExpirationDate: @ticket.expirationDate</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

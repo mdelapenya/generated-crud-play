@@ -1,0 +1,80 @@
+@(dlfileentryFormData: Form[controllers.dlfileentry.DlfileentryFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Dlfileentry #@dlfileentryFormData("fileEntryId").value</legend>
+
+		@form(routes.DlfileentryApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(dlfileentryFormData("fileEntryId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(dlfileentryFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(dlfileentryFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(dlfileentryFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(dlfileentryFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(dlfileentryFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(dlfileentryFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(dlfileentryFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(dlfileentryFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(dlfileentryFormData("classPK"))
+			<!-- RepositoryId -->
+			@helper.inputText(dlfileentryFormData("repositoryId"))
+			<!-- FolderId -->
+			@helper.inputText(dlfileentryFormData("folderId"))
+			<!-- TreePath -->
+			@helper.inputText(dlfileentryFormData("treePath"))
+			<!-- Name -->
+			@helper.inputText(dlfileentryFormData("name"))
+			<!-- FileName -->
+			@helper.inputText(dlfileentryFormData("fileName"))
+			<!-- Extension -->
+			@helper.inputText(dlfileentryFormData("extension"))
+			<!-- MimeType -->
+			@helper.inputText(dlfileentryFormData("mimeType"))
+			<!-- Title -->
+			@helper.inputText(dlfileentryFormData("title"))
+			<!-- Description -->
+			@helper.inputText(dlfileentryFormData("description"))
+			<!-- ExtraSettings -->
+			@helper.inputText(dlfileentryFormData("extraSettings"))
+			<!-- FileEntryTypeId -->
+			@helper.inputText(dlfileentryFormData("fileEntryTypeId"))
+			<!-- Version -->
+			@helper.inputText(dlfileentryFormData("version"))
+			<!-- Size -->
+			@helper.inputText(dlfileentryFormData("size"))
+			<!-- ReadCount -->
+			@helper.inputText(dlfileentryFormData("readCount"))
+			<!-- SmallImageId -->
+			@helper.inputText(dlfileentryFormData("smallImageId"))
+			<!-- LargeImageId -->
+			@helper.inputText(dlfileentryFormData("largeImageId"))
+			<!-- Custom1ImageId -->
+			@helper.inputText(dlfileentryFormData("custom1ImageId"))
+			<!-- Custom2ImageId -->
+			@helper.inputText(dlfileentryFormData("custom2ImageId"))
+			<!-- ManualCheckInRequired -->
+			@helper.inputText(dlfileentryFormData("manualCheckInRequired"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DlfileentryApplication.all()">Back to Dlfileentry List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

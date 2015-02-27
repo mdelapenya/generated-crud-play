@@ -1,0 +1,46 @@
+@(scproductversionFormData: Form[controllers.scproductversion.ScproductversionFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Scproductversion #@scproductversionFormData("productVersionId").value</legend>
+
+		@form(routes.ScproductversionApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(scproductversionFormData("productVersionId"), 'readonly -> "readonly")
+
+			<!-- CompanyId -->
+			@helper.inputText(scproductversionFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(scproductversionFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(scproductversionFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(scproductversionFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(scproductversionFormData("modifiedDate"))
+			<!-- ProductEntryId -->
+			@helper.inputText(scproductversionFormData("productEntryId"))
+			<!-- Version -->
+			@helper.inputText(scproductversionFormData("version"))
+			<!-- ChangeLog -->
+			@helper.inputText(scproductversionFormData("changeLog"))
+			<!-- DownloadPageURL -->
+			@helper.inputText(scproductversionFormData("downloadPageURL"))
+			<!-- DirectDownloadURL -->
+			@helper.inputText(scproductversionFormData("directDownloadURL"))
+			<!-- RepoStoreArtifact -->
+			@helper.inputText(scproductversionFormData("repoStoreArtifact"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ScproductversionApplication.all()">Back to Scproductversion List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

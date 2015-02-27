@@ -1,0 +1,33 @@
+@(layoutprototypes: List[models.layoutprototype.Layoutprototype])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Layoutprototypes in the DB</h1>
+
+	<p>
+		<a href="@routes.LayoutprototypeApplication.addLayoutprototype">Create New Layoutprototype</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(layoutprototype <- layoutprototypes) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.LayoutprototypeApplication.get(layoutprototype.layoutPrototypeId)">@layoutprototype.layoutPrototypeId</a></div>
+				<div>MvccVersion: @layoutprototype.mvccVersion</div>
+				<div>Uuid: @layoutprototype.uuid</div>
+				<div>CompanyId: @layoutprototype.companyId</div>
+				<div>UserId: @layoutprototype.userId</div>
+				<div>UserName: @layoutprototype.userName</div>
+				<div>CreateDate: @layoutprototype.createDate</div>
+				<div>ModifiedDate: @layoutprototype.modifiedDate</div>
+				<div>Name: @layoutprototype.name</div>
+				<div>Description: @layoutprototype.description</div>
+				<div>Settings: @layoutprototype.settings</div>
+				<div>Active: @layoutprototype.active</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

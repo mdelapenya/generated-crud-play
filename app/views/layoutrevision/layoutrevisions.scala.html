@@ -1,0 +1,52 @@
+@(layoutrevisions: List[models.layoutrevision.Layoutrevision])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Layoutrevisions in the DB</h1>
+
+	<p>
+		<a href="@routes.LayoutrevisionApplication.addLayoutrevision">Create New Layoutrevision</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(layoutrevision <- layoutrevisions) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.LayoutrevisionApplication.get(layoutrevision.layoutRevisionId)">@layoutrevision.layoutRevisionId</a></div>
+				<div>MvccVersion: @layoutrevision.mvccVersion</div>
+				<div>GroupId: @layoutrevision.groupId</div>
+				<div>CompanyId: @layoutrevision.companyId</div>
+				<div>UserId: @layoutrevision.userId</div>
+				<div>UserName: @layoutrevision.userName</div>
+				<div>CreateDate: @layoutrevision.createDate</div>
+				<div>ModifiedDate: @layoutrevision.modifiedDate</div>
+				<div>LayoutSetBranchId: @layoutrevision.layoutSetBranchId</div>
+				<div>LayoutBranchId: @layoutrevision.layoutBranchId</div>
+				<div>ParentLayoutRevisionId: @layoutrevision.parentLayoutRevisionId</div>
+				<div>Head: @layoutrevision.head</div>
+				<div>Major: @layoutrevision.major</div>
+				<div>Plid: @layoutrevision.plid</div>
+				<div>PrivateLayout: @layoutrevision.privateLayout</div>
+				<div>Name: @layoutrevision.name</div>
+				<div>Title: @layoutrevision.title</div>
+				<div>Description: @layoutrevision.description</div>
+				<div>Keywords: @layoutrevision.keywords</div>
+				<div>Robots: @layoutrevision.robots</div>
+				<div>TypeSettings: @layoutrevision.typeSettings</div>
+				<div>IconImageId: @layoutrevision.iconImageId</div>
+				<div>ThemeId: @layoutrevision.themeId</div>
+				<div>ColorSchemeId: @layoutrevision.colorSchemeId</div>
+				<div>WapThemeId: @layoutrevision.wapThemeId</div>
+				<div>WapColorSchemeId: @layoutrevision.wapColorSchemeId</div>
+				<div>Css: @layoutrevision.css</div>
+				<div>Status: @layoutrevision.status</div>
+				<div>StatusByUserId: @layoutrevision.statusByUserId</div>
+				<div>StatusByUserName: @layoutrevision.statusByUserName</div>
+				<div>StatusDate: @layoutrevision.statusDate</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

@@ -1,0 +1,36 @@
+@(portletpreferencesFormData: Form[controllers.portletpreferences.PortletpreferencesFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Portletpreferences #@portletpreferencesFormData("portletPreferencesId").value</legend>
+
+		@form(routes.PortletpreferencesApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(portletpreferencesFormData("portletPreferencesId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(portletpreferencesFormData("mvccVersion"))
+			<!-- OwnerId -->
+			@helper.inputText(portletpreferencesFormData("ownerId"))
+			<!-- OwnerType -->
+			@helper.inputText(portletpreferencesFormData("ownerType"))
+			<!-- Plid -->
+			@helper.inputText(portletpreferencesFormData("plid"))
+			<!-- PortletId -->
+			@helper.inputText(portletpreferencesFormData("portletId"))
+			<!-- Preferences -->
+			@helper.inputText(portletpreferencesFormData("preferences"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.PortletpreferencesApplication.all()">Back to Portletpreferences List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

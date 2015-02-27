@@ -1,0 +1,64 @@
+@(layoutsetbranchFormData: Form[controllers.layoutsetbranch.LayoutsetbranchFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Layoutsetbranch #@layoutsetbranchFormData("layoutSetBranchId").value</legend>
+
+		@form(routes.LayoutsetbranchApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(layoutsetbranchFormData("layoutSetBranchId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(layoutsetbranchFormData("mvccVersion"))
+			<!-- GroupId -->
+			@helper.inputText(layoutsetbranchFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(layoutsetbranchFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(layoutsetbranchFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(layoutsetbranchFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(layoutsetbranchFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(layoutsetbranchFormData("modifiedDate"))
+			<!-- PrivateLayout -->
+			@helper.inputText(layoutsetbranchFormData("privateLayout"))
+			<!-- Name -->
+			@helper.inputText(layoutsetbranchFormData("name"))
+			<!-- Description -->
+			@helper.inputText(layoutsetbranchFormData("description"))
+			<!-- Master -->
+			@helper.inputText(layoutsetbranchFormData("master"))
+			<!-- LogoId -->
+			@helper.inputText(layoutsetbranchFormData("logoId"))
+			<!-- ThemeId -->
+			@helper.inputText(layoutsetbranchFormData("themeId"))
+			<!-- ColorSchemeId -->
+			@helper.inputText(layoutsetbranchFormData("colorSchemeId"))
+			<!-- WapThemeId -->
+			@helper.inputText(layoutsetbranchFormData("wapThemeId"))
+			<!-- WapColorSchemeId -->
+			@helper.inputText(layoutsetbranchFormData("wapColorSchemeId"))
+			<!-- Css -->
+			@helper.inputText(layoutsetbranchFormData("css"))
+			<!-- Settings -->
+			@helper.inputText(layoutsetbranchFormData("settings"))
+			<!-- LayoutSetPrototypeUuid -->
+			@helper.inputText(layoutsetbranchFormData("layoutSetPrototypeUuid"))
+			<!-- LayoutSetPrototypeLinkEnabled -->
+			@helper.inputText(layoutsetbranchFormData("layoutSetPrototypeLinkEnabled"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.LayoutsetbranchApplication.all()">Back to Layoutsetbranch List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

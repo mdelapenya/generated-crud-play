@@ -1,0 +1,84 @@
+@(layoutFormData: Form[controllers.layout.LayoutFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Layout #@layoutFormData("plid").value</legend>
+
+		@form(routes.LayoutApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(layoutFormData("plid"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(layoutFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(layoutFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(layoutFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(layoutFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(layoutFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(layoutFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(layoutFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(layoutFormData("modifiedDate"))
+			<!-- PrivateLayout -->
+			@helper.inputText(layoutFormData("privateLayout"))
+			<!-- LayoutId -->
+			@helper.inputText(layoutFormData("layoutId"))
+			<!-- ParentLayoutId -->
+			@helper.inputText(layoutFormData("parentLayoutId"))
+			<!-- Name -->
+			@helper.inputText(layoutFormData("name"))
+			<!-- Title -->
+			@helper.inputText(layoutFormData("title"))
+			<!-- Description -->
+			@helper.inputText(layoutFormData("description"))
+			<!-- Keywords -->
+			@helper.inputText(layoutFormData("keywords"))
+			<!-- Robots -->
+			@helper.inputText(layoutFormData("robots"))
+			<!-- Customtype -->
+			@helper.inputText(layoutFormData("customtype"))
+			<!-- TypeSettings -->
+			@helper.inputText(layoutFormData("typeSettings"))
+			<!-- Hidden -->
+			@helper.inputText(layoutFormData("hidden"))
+			<!-- FriendlyURL -->
+			@helper.inputText(layoutFormData("friendlyURL"))
+			<!-- IconImageId -->
+			@helper.inputText(layoutFormData("iconImageId"))
+			<!-- ThemeId -->
+			@helper.inputText(layoutFormData("themeId"))
+			<!-- ColorSchemeId -->
+			@helper.inputText(layoutFormData("colorSchemeId"))
+			<!-- WapThemeId -->
+			@helper.inputText(layoutFormData("wapThemeId"))
+			<!-- WapColorSchemeId -->
+			@helper.inputText(layoutFormData("wapColorSchemeId"))
+			<!-- Css -->
+			@helper.inputText(layoutFormData("css"))
+			<!-- Priority -->
+			@helper.inputText(layoutFormData("priority"))
+			<!-- LayoutPrototypeUuid -->
+			@helper.inputText(layoutFormData("layoutPrototypeUuid"))
+			<!-- LayoutPrototypeLinkEnabled -->
+			@helper.inputText(layoutFormData("layoutPrototypeLinkEnabled"))
+			<!-- SourcePrototypeLayoutUuid -->
+			@helper.inputText(layoutFormData("sourcePrototypeLayoutUuid"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.LayoutApplication.all()">Back to Layout List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

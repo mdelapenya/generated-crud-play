@@ -1,0 +1,34 @@
+@(ddmstructureversions: List[models.ddmstructureversion.Ddmstructureversion])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Ddmstructureversions in the DB</h1>
+
+	<p>
+		<a href="@routes.DdmstructureversionApplication.addDdmstructureversion">Create New Ddmstructureversion</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(ddmstructureversion <- ddmstructureversions) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.DdmstructureversionApplication.get(ddmstructureversion.structureVersionId)">@ddmstructureversion.structureVersionId</a></div>
+				<div>GroupId: @ddmstructureversion.groupId</div>
+				<div>CompanyId: @ddmstructureversion.companyId</div>
+				<div>UserId: @ddmstructureversion.userId</div>
+				<div>UserName: @ddmstructureversion.userName</div>
+				<div>CreateDate: @ddmstructureversion.createDate</div>
+				<div>StructureId: @ddmstructureversion.structureId</div>
+				<div>Version: @ddmstructureversion.version</div>
+				<div>Name: @ddmstructureversion.name</div>
+				<div>Description: @ddmstructureversion.description</div>
+				<div>Definition: @ddmstructureversion.definition</div>
+				<div>StorageType: @ddmstructureversion.storageType</div>
+				<div>Customtype: @ddmstructureversion.customtype</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

@@ -1,0 +1,35 @@
+@(phones: List[models.phone.Phone])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Phones in the DB</h1>
+
+	<p>
+		<a href="@routes.PhoneApplication.addPhone">Create New Phone</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(phone <- phones) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.PhoneApplication.get(phone.phoneId)">@phone.phoneId</a></div>
+				<div>MvccVersion: @phone.mvccVersion</div>
+				<div>Uuid: @phone.uuid</div>
+				<div>CompanyId: @phone.companyId</div>
+				<div>UserId: @phone.userId</div>
+				<div>UserName: @phone.userName</div>
+				<div>CreateDate: @phone.createDate</div>
+				<div>ModifiedDate: @phone.modifiedDate</div>
+				<div>ClassNameId: @phone.classNameId</div>
+				<div>ClassPK: @phone.classPK</div>
+				<div>Number: @phone.number</div>
+				<div>Extension: @phone.extension</div>
+				<div>TypeId: @phone.typeId</div>
+				<div>Customprimary: @phone.customprimary</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

@@ -1,0 +1,48 @@
+@(emailaddressFormData: Form[controllers.emailaddress.EmailaddressFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Emailaddress #@emailaddressFormData("emailAddressId").value</legend>
+
+		@form(routes.EmailaddressApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(emailaddressFormData("emailAddressId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(emailaddressFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(emailaddressFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(emailaddressFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(emailaddressFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(emailaddressFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(emailaddressFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(emailaddressFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(emailaddressFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(emailaddressFormData("classPK"))
+			<!-- Address -->
+			@helper.inputText(emailaddressFormData("address"))
+			<!-- TypeId -->
+			@helper.inputText(emailaddressFormData("typeId"))
+			<!-- Customprimary -->
+			@helper.inputText(emailaddressFormData("customprimary"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.EmailaddressApplication.all()">Back to Emailaddress List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

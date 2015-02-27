@@ -1,0 +1,38 @@
+@(journalarticleimageFormData: Form[controllers.journalarticleimage.JournalarticleimageFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Journalarticleimage #@journalarticleimageFormData("articleImageId").value</legend>
+
+		@form(routes.JournalarticleimageApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(journalarticleimageFormData("articleImageId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(journalarticleimageFormData("groupId"))
+			<!-- ArticleId -->
+			@helper.inputText(journalarticleimageFormData("articleId"))
+			<!-- Version -->
+			@helper.inputText(journalarticleimageFormData("version"))
+			<!-- ElInstanceId -->
+			@helper.inputText(journalarticleimageFormData("elInstanceId"))
+			<!-- ElName -->
+			@helper.inputText(journalarticleimageFormData("elName"))
+			<!-- LanguageId -->
+			@helper.inputText(journalarticleimageFormData("languageId"))
+			<!-- TempImage -->
+			@helper.inputText(journalarticleimageFormData("tempImage"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.JournalarticleimageApplication.all()">Back to Journalarticleimage List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

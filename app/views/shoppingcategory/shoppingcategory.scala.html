@@ -1,0 +1,42 @@
+@(shoppingcategoryFormData: Form[controllers.shoppingcategory.ShoppingcategoryFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Shoppingcategory #@shoppingcategoryFormData("categoryId").value</legend>
+
+		@form(routes.ShoppingcategoryApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(shoppingcategoryFormData("categoryId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(shoppingcategoryFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(shoppingcategoryFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(shoppingcategoryFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(shoppingcategoryFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(shoppingcategoryFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(shoppingcategoryFormData("modifiedDate"))
+			<!-- ParentCategoryId -->
+			@helper.inputText(shoppingcategoryFormData("parentCategoryId"))
+			<!-- Name -->
+			@helper.inputText(shoppingcategoryFormData("name"))
+			<!-- Description -->
+			@helper.inputText(shoppingcategoryFormData("description"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ShoppingcategoryApplication.all()">Back to Shoppingcategory List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

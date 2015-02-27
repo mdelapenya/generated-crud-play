@@ -1,0 +1,44 @@
+@(dlfileentrytypeFormData: Form[controllers.dlfileentrytype.DlfileentrytypeFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Dlfileentrytype #@dlfileentrytypeFormData("fileEntryTypeId").value</legend>
+
+		@form(routes.DlfileentrytypeApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(dlfileentrytypeFormData("fileEntryTypeId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(dlfileentrytypeFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(dlfileentrytypeFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(dlfileentrytypeFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(dlfileentrytypeFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(dlfileentrytypeFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(dlfileentrytypeFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(dlfileentrytypeFormData("modifiedDate"))
+			<!-- FileEntryTypeKey -->
+			@helper.inputText(dlfileentrytypeFormData("fileEntryTypeKey"))
+			<!-- Name -->
+			@helper.inputText(dlfileentrytypeFormData("name"))
+			<!-- Description -->
+			@helper.inputText(dlfileentrytypeFormData("description"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DlfileentrytypeApplication.all()">Back to Dlfileentrytype List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

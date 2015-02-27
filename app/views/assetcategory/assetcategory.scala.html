@@ -1,0 +1,52 @@
+@(assetcategoryFormData: Form[controllers.assetcategory.AssetcategoryFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Assetcategory #@assetcategoryFormData("categoryId").value</legend>
+
+		@form(routes.AssetcategoryApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(assetcategoryFormData("categoryId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(assetcategoryFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(assetcategoryFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(assetcategoryFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(assetcategoryFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(assetcategoryFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(assetcategoryFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(assetcategoryFormData("modifiedDate"))
+			<!-- ParentCategoryId -->
+			@helper.inputText(assetcategoryFormData("parentCategoryId"))
+			<!-- LeftCategoryId -->
+			@helper.inputText(assetcategoryFormData("leftCategoryId"))
+			<!-- RightCategoryId -->
+			@helper.inputText(assetcategoryFormData("rightCategoryId"))
+			<!-- Name -->
+			@helper.inputText(assetcategoryFormData("name"))
+			<!-- Title -->
+			@helper.inputText(assetcategoryFormData("title"))
+			<!-- Description -->
+			@helper.inputText(assetcategoryFormData("description"))
+			<!-- VocabularyId -->
+			@helper.inputText(assetcategoryFormData("vocabularyId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.AssetcategoryApplication.all()">Back to Assetcategory List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

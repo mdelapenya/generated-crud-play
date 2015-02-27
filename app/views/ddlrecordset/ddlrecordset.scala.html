@@ -1,0 +1,50 @@
+@(ddlrecordsetFormData: Form[controllers.ddlrecordset.DdlrecordsetFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Ddlrecordset #@ddlrecordsetFormData("recordSetId").value</legend>
+
+		@form(routes.DdlrecordsetApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(ddlrecordsetFormData("recordSetId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(ddlrecordsetFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(ddlrecordsetFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(ddlrecordsetFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(ddlrecordsetFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(ddlrecordsetFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(ddlrecordsetFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(ddlrecordsetFormData("modifiedDate"))
+			<!-- DDMStructureId -->
+			@helper.inputText(ddlrecordsetFormData("DDMStructureId"))
+			<!-- RecordSetKey -->
+			@helper.inputText(ddlrecordsetFormData("recordSetKey"))
+			<!-- Name -->
+			@helper.inputText(ddlrecordsetFormData("name"))
+			<!-- Description -->
+			@helper.inputText(ddlrecordsetFormData("description"))
+			<!-- MinDisplayRows -->
+			@helper.inputText(ddlrecordsetFormData("minDisplayRows"))
+			<!-- Scope -->
+			@helper.inputText(ddlrecordsetFormData("scope"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DdlrecordsetApplication.all()">Back to Ddlrecordset List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

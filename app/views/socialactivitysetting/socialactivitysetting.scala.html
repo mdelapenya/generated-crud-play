@@ -1,0 +1,36 @@
+@(socialactivitysettingFormData: Form[controllers.socialactivitysetting.SocialactivitysettingFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Socialactivitysetting #@socialactivitysettingFormData("activitySettingId").value</legend>
+
+		@form(routes.SocialactivitysettingApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(socialactivitysettingFormData("activitySettingId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(socialactivitysettingFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(socialactivitysettingFormData("companyId"))
+			<!-- ClassNameId -->
+			@helper.inputText(socialactivitysettingFormData("classNameId"))
+			<!-- ActivityType -->
+			@helper.inputText(socialactivitysettingFormData("activityType"))
+			<!-- Name -->
+			@helper.inputText(socialactivitysettingFormData("name"))
+			<!-- Value -->
+			@helper.inputText(socialactivitysettingFormData("value"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.SocialactivitysettingApplication.all()">Back to Socialactivitysetting List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,46 @@
+@(assetvocabularyFormData: Form[controllers.assetvocabulary.AssetvocabularyFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Assetvocabulary #@assetvocabularyFormData("vocabularyId").value</legend>
+
+		@form(routes.AssetvocabularyApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(assetvocabularyFormData("vocabularyId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(assetvocabularyFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(assetvocabularyFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(assetvocabularyFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(assetvocabularyFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(assetvocabularyFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(assetvocabularyFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(assetvocabularyFormData("modifiedDate"))
+			<!-- Name -->
+			@helper.inputText(assetvocabularyFormData("name"))
+			<!-- Title -->
+			@helper.inputText(assetvocabularyFormData("title"))
+			<!-- Description -->
+			@helper.inputText(assetvocabularyFormData("description"))
+			<!-- Settings -->
+			@helper.inputText(assetvocabularyFormData("settings"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.AssetvocabularyApplication.all()">Back to Assetvocabulary List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

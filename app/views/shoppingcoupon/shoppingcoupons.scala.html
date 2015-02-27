@@ -1,0 +1,39 @@
+@(shoppingcoupons: List[models.shoppingcoupon.Shoppingcoupon])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Shoppingcoupons in the DB</h1>
+
+	<p>
+		<a href="@routes.ShoppingcouponApplication.addShoppingcoupon">Create New Shoppingcoupon</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(shoppingcoupon <- shoppingcoupons) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.ShoppingcouponApplication.get(shoppingcoupon.couponId)">@shoppingcoupon.couponId</a></div>
+				<div>GroupId: @shoppingcoupon.groupId</div>
+				<div>CompanyId: @shoppingcoupon.companyId</div>
+				<div>UserId: @shoppingcoupon.userId</div>
+				<div>UserName: @shoppingcoupon.userName</div>
+				<div>CreateDate: @shoppingcoupon.createDate</div>
+				<div>ModifiedDate: @shoppingcoupon.modifiedDate</div>
+				<div>Code: @shoppingcoupon.code</div>
+				<div>Name: @shoppingcoupon.name</div>
+				<div>Description: @shoppingcoupon.description</div>
+				<div>StartDate: @shoppingcoupon.startDate</div>
+				<div>EndDate: @shoppingcoupon.endDate</div>
+				<div>Active: @shoppingcoupon.active</div>
+				<div>LimitCategories: @shoppingcoupon.limitCategories</div>
+				<div>LimitSkus: @shoppingcoupon.limitSkus</div>
+				<div>MinOrder: @shoppingcoupon.minOrder</div>
+				<div>Discount: @shoppingcoupon.discount</div>
+				<div>DiscountType: @shoppingcoupon.discountType</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

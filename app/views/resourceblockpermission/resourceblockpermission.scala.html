@@ -1,0 +1,32 @@
+@(resourceblockpermissionFormData: Form[controllers.resourceblockpermission.ResourceblockpermissionFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Resourceblockpermission #@resourceblockpermissionFormData("resourceBlockPermissionId").value</legend>
+
+		@form(routes.ResourceblockpermissionApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(resourceblockpermissionFormData("resourceBlockPermissionId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(resourceblockpermissionFormData("mvccVersion"))
+			<!-- ResourceBlockId -->
+			@helper.inputText(resourceblockpermissionFormData("resourceBlockId"))
+			<!-- RoleId -->
+			@helper.inputText(resourceblockpermissionFormData("roleId"))
+			<!-- ActionIds -->
+			@helper.inputText(resourceblockpermissionFormData("actionIds"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ResourceblockpermissionApplication.all()">Back to Resourceblockpermission List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

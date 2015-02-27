@@ -1,0 +1,32 @@
+@(clustergroupFormData: Form[controllers.clustergroup.ClustergroupFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Clustergroup #@clustergroupFormData("clusterGroupId").value</legend>
+
+		@form(routes.ClustergroupApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(clustergroupFormData("clusterGroupId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(clustergroupFormData("mvccVersion"))
+			<!-- Name -->
+			@helper.inputText(clustergroupFormData("name"))
+			<!-- ClusterNodeIds -->
+			@helper.inputText(clustergroupFormData("clusterNodeIds"))
+			<!-- WholeCluster -->
+			@helper.inputText(clustergroupFormData("wholeCluster"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ClustergroupApplication.all()">Back to Clustergroup List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

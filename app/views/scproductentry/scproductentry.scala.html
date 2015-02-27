@@ -1,0 +1,54 @@
+@(scproductentryFormData: Form[controllers.scproductentry.ScproductentryFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Scproductentry #@scproductentryFormData("productEntryId").value</legend>
+
+		@form(routes.ScproductentryApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(scproductentryFormData("productEntryId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(scproductentryFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(scproductentryFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(scproductentryFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(scproductentryFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(scproductentryFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(scproductentryFormData("modifiedDate"))
+			<!-- Name -->
+			@helper.inputText(scproductentryFormData("name"))
+			<!-- Customtype -->
+			@helper.inputText(scproductentryFormData("customtype"))
+			<!-- Tags -->
+			@helper.inputText(scproductentryFormData("tags"))
+			<!-- ShortDescription -->
+			@helper.inputText(scproductentryFormData("shortDescription"))
+			<!-- LongDescription -->
+			@helper.inputText(scproductentryFormData("longDescription"))
+			<!-- PageURL -->
+			@helper.inputText(scproductentryFormData("pageURL"))
+			<!-- Author -->
+			@helper.inputText(scproductentryFormData("author"))
+			<!-- RepoGroupId -->
+			@helper.inputText(scproductentryFormData("repoGroupId"))
+			<!-- RepoArtifactId -->
+			@helper.inputText(scproductentryFormData("repoArtifactId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ScproductentryApplication.all()">Back to Scproductentry List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

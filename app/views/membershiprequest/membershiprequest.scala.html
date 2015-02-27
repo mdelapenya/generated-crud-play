@@ -1,0 +1,44 @@
+@(membershiprequestFormData: Form[controllers.membershiprequest.MembershiprequestFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Membershiprequest #@membershiprequestFormData("membershipRequestId").value</legend>
+
+		@form(routes.MembershiprequestApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(membershiprequestFormData("membershipRequestId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(membershiprequestFormData("mvccVersion"))
+			<!-- GroupId -->
+			@helper.inputText(membershiprequestFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(membershiprequestFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(membershiprequestFormData("userId"))
+			<!-- CreateDate -->
+			@helper.inputText(membershiprequestFormData("createDate"))
+			<!-- Comments -->
+			@helper.inputText(membershiprequestFormData("comments"))
+			<!-- ReplyComments -->
+			@helper.inputText(membershiprequestFormData("replyComments"))
+			<!-- ReplyDate -->
+			@helper.inputText(membershiprequestFormData("replyDate"))
+			<!-- ReplierUserId -->
+			@helper.inputText(membershiprequestFormData("replierUserId"))
+			<!-- StatusId -->
+			@helper.inputText(membershiprequestFormData("statusId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.MembershiprequestApplication.all()">Back to Membershiprequest List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

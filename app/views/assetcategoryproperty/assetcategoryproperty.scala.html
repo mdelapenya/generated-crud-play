@@ -1,0 +1,40 @@
+@(assetcategorypropertyFormData: Form[controllers.assetcategoryproperty.AssetcategorypropertyFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Assetcategoryproperty #@assetcategorypropertyFormData("categoryPropertyId").value</legend>
+
+		@form(routes.AssetcategorypropertyApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(assetcategorypropertyFormData("categoryPropertyId"), 'readonly -> "readonly")
+
+			<!-- CompanyId -->
+			@helper.inputText(assetcategorypropertyFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(assetcategorypropertyFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(assetcategorypropertyFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(assetcategorypropertyFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(assetcategorypropertyFormData("modifiedDate"))
+			<!-- CategoryId -->
+			@helper.inputText(assetcategorypropertyFormData("categoryId"))
+			<!-- Key -->
+			@helper.inputText(assetcategorypropertyFormData("key"))
+			<!-- Value -->
+			@helper.inputText(assetcategorypropertyFormData("value"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.AssetcategorypropertyApplication.all()">Back to Assetcategoryproperty List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

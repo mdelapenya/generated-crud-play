@@ -1,0 +1,24 @@
+@(classnames: List[models.classname.Classname])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Classnames in the DB</h1>
+
+	<p>
+		<a href="@routes.ClassnameApplication.addClassname">Create New Classname</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(classname <- classnames) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.ClassnameApplication.get(classname.classNameId)">@classname.classNameId</a></div>
+				<div>MvccVersion: @classname.mvccVersion</div>
+				<div>Value: @classname.value</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

@@ -1,0 +1,30 @@
+@(listtypeFormData: Form[controllers.listtype.ListtypeFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Listtype #@listtypeFormData("listTypeId").value</legend>
+
+		@form(routes.ListtypeApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(listtypeFormData("listTypeId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(listtypeFormData("mvccVersion"))
+			<!-- Name -->
+			@helper.inputText(listtypeFormData("name"))
+			<!-- Customtype -->
+			@helper.inputText(listtypeFormData("customtype"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ListtypeApplication.all()">Back to Listtype List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

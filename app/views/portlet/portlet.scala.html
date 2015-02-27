@@ -1,0 +1,34 @@
+@(portletFormData: Form[controllers.portlet.PortletFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Portlet #@portletFormData("id").value</legend>
+
+		@form(routes.PortletApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(portletFormData("id"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(portletFormData("mvccVersion"))
+			<!-- CompanyId -->
+			@helper.inputText(portletFormData("companyId"))
+			<!-- PortletId -->
+			@helper.inputText(portletFormData("portletId"))
+			<!-- Roles -->
+			@helper.inputText(portletFormData("roles"))
+			<!-- Active -->
+			@helper.inputText(portletFormData("active"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.PortletApplication.all()">Back to Portlet List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

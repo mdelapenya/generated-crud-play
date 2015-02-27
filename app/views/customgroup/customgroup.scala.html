@@ -1,0 +1,66 @@
+@(customgroupFormData: Form[controllers.customgroup.CustomgroupFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Customgroup #@customgroupFormData("groupId").value</legend>
+
+		@form(routes.CustomgroupApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(customgroupFormData("groupId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(customgroupFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(customgroupFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(customgroupFormData("companyId"))
+			<!-- CreatorUserId -->
+			@helper.inputText(customgroupFormData("creatorUserId"))
+			<!-- ClassNameId -->
+			@helper.inputText(customgroupFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(customgroupFormData("classPK"))
+			<!-- ParentGroupId -->
+			@helper.inputText(customgroupFormData("parentGroupId"))
+			<!-- LiveGroupId -->
+			@helper.inputText(customgroupFormData("liveGroupId"))
+			<!-- TreePath -->
+			@helper.inputText(customgroupFormData("treePath"))
+			<!-- GroupKey -->
+			@helper.inputText(customgroupFormData("groupKey"))
+			<!-- Name -->
+			@helper.inputText(customgroupFormData("name"))
+			<!-- Description -->
+			@helper.inputText(customgroupFormData("description"))
+			<!-- Customtype -->
+			@helper.inputText(customgroupFormData("customtype"))
+			<!-- TypeSettings -->
+			@helper.inputText(customgroupFormData("typeSettings"))
+			<!-- ManualMembership -->
+			@helper.inputText(customgroupFormData("manualMembership"))
+			<!-- MembershipRestriction -->
+			@helper.inputText(customgroupFormData("membershipRestriction"))
+			<!-- FriendlyURL -->
+			@helper.inputText(customgroupFormData("friendlyURL"))
+			<!-- Site -->
+			@helper.inputText(customgroupFormData("site"))
+			<!-- RemoteStagingGroupCount -->
+			@helper.inputText(customgroupFormData("remoteStagingGroupCount"))
+			<!-- InheritContent -->
+			@helper.inputText(customgroupFormData("inheritContent"))
+			<!-- Active -->
+			@helper.inputText(customgroupFormData("active"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.CustomgroupApplication.all()">Back to Customgroup List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

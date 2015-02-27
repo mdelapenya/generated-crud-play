@@ -1,0 +1,36 @@
+@(scproductscreenshotFormData: Form[controllers.scproductscreenshot.ScproductscreenshotFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Scproductscreenshot #@scproductscreenshotFormData("productScreenshotId").value</legend>
+
+		@form(routes.ScproductscreenshotApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(scproductscreenshotFormData("productScreenshotId"), 'readonly -> "readonly")
+
+			<!-- CompanyId -->
+			@helper.inputText(scproductscreenshotFormData("companyId"))
+			<!-- GroupId -->
+			@helper.inputText(scproductscreenshotFormData("groupId"))
+			<!-- ProductEntryId -->
+			@helper.inputText(scproductscreenshotFormData("productEntryId"))
+			<!-- ThumbnailId -->
+			@helper.inputText(scproductscreenshotFormData("thumbnailId"))
+			<!-- FullImageId -->
+			@helper.inputText(scproductscreenshotFormData("fullImageId"))
+			<!-- Priority -->
+			@helper.inputText(scproductscreenshotFormData("priority"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ScproductscreenshotApplication.all()">Back to Scproductscreenshot List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

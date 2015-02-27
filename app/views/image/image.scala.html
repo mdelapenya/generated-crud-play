@@ -1,0 +1,36 @@
+@(imageFormData: Form[controllers.image.ImageFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Image #@imageFormData("imageId").value</legend>
+
+		@form(routes.ImageApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(imageFormData("imageId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(imageFormData("mvccVersion"))
+			<!-- ModifiedDate -->
+			@helper.inputText(imageFormData("modifiedDate"))
+			<!-- Customtype -->
+			@helper.inputText(imageFormData("customtype"))
+			<!-- Height -->
+			@helper.inputText(imageFormData("height"))
+			<!-- Width -->
+			@helper.inputText(imageFormData("width"))
+			<!-- Size -->
+			@helper.inputText(imageFormData("size"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ImageApplication.all()">Back to Image List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,32 @@
+@(membershiprequests: List[models.membershiprequest.Membershiprequest])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Membershiprequests in the DB</h1>
+
+	<p>
+		<a href="@routes.MembershiprequestApplication.addMembershiprequest">Create New Membershiprequest</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(membershiprequest <- membershiprequests) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.MembershiprequestApplication.get(membershiprequest.membershipRequestId)">@membershiprequest.membershipRequestId</a></div>
+				<div>MvccVersion: @membershiprequest.mvccVersion</div>
+				<div>GroupId: @membershiprequest.groupId</div>
+				<div>CompanyId: @membershiprequest.companyId</div>
+				<div>UserId: @membershiprequest.userId</div>
+				<div>CreateDate: @membershiprequest.createDate</div>
+				<div>Comments: @membershiprequest.comments</div>
+				<div>ReplyComments: @membershiprequest.replyComments</div>
+				<div>ReplyDate: @membershiprequest.replyDate</div>
+				<div>ReplierUserId: @membershiprequest.replierUserId</div>
+				<div>StatusId: @membershiprequest.statusId</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

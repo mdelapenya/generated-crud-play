@@ -1,0 +1,32 @@
+@(portletitems: List[models.portletitem.Portletitem])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Portletitems in the DB</h1>
+
+	<p>
+		<a href="@routes.PortletitemApplication.addPortletitem">Create New Portletitem</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(portletitem <- portletitems) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.PortletitemApplication.get(portletitem.portletItemId)">@portletitem.portletItemId</a></div>
+				<div>MvccVersion: @portletitem.mvccVersion</div>
+				<div>GroupId: @portletitem.groupId</div>
+				<div>CompanyId: @portletitem.companyId</div>
+				<div>UserId: @portletitem.userId</div>
+				<div>UserName: @portletitem.userName</div>
+				<div>CreateDate: @portletitem.createDate</div>
+				<div>ModifiedDate: @portletitem.modifiedDate</div>
+				<div>Name: @portletitem.name</div>
+				<div>PortletId: @portletitem.portletId</div>
+				<div>ClassNameId: @portletitem.classNameId</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

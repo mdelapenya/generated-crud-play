@@ -1,0 +1,28 @@
+@(dlfileentrymetadatas: List[models.dlfileentrymetadata.Dlfileentrymetadata])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Dlfileentrymetadatas in the DB</h1>
+
+	<p>
+		<a href="@routes.DlfileentrymetadataApplication.addDlfileentrymetadata">Create New Dlfileentrymetadata</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(dlfileentrymetadata <- dlfileentrymetadatas) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.DlfileentrymetadataApplication.get(dlfileentrymetadata.fileEntryMetadataId)">@dlfileentrymetadata.fileEntryMetadataId</a></div>
+				<div>Uuid: @dlfileentrymetadata.uuid</div>
+				<div>DDMStorageId: @dlfileentrymetadata.DDMStorageId</div>
+				<div>DDMStructureId: @dlfileentrymetadata.DDMStructureId</div>
+				<div>FileEntryTypeId: @dlfileentrymetadata.fileEntryTypeId</div>
+				<div>FileEntryId: @dlfileentrymetadata.fileEntryId</div>
+				<div>FileVersionId: @dlfileentrymetadata.fileVersionId</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

@@ -1,0 +1,68 @@
+@(ddmtemplateFormData: Form[controllers.ddmtemplate.DdmtemplateFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Ddmtemplate #@ddmtemplateFormData("templateId").value</legend>
+
+		@form(routes.DdmtemplateApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(ddmtemplateFormData("templateId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(ddmtemplateFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(ddmtemplateFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(ddmtemplateFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(ddmtemplateFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(ddmtemplateFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(ddmtemplateFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(ddmtemplateFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(ddmtemplateFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(ddmtemplateFormData("classPK"))
+			<!-- SourceClassNameId -->
+			@helper.inputText(ddmtemplateFormData("sourceClassNameId"))
+			<!-- TemplateKey -->
+			@helper.inputText(ddmtemplateFormData("templateKey"))
+			<!-- Version -->
+			@helper.inputText(ddmtemplateFormData("version"))
+			<!-- Name -->
+			@helper.inputText(ddmtemplateFormData("name"))
+			<!-- Description -->
+			@helper.inputText(ddmtemplateFormData("description"))
+			<!-- Customtype -->
+			@helper.inputText(ddmtemplateFormData("customtype"))
+			<!-- Mode -->
+			@helper.inputText(ddmtemplateFormData("mode"))
+			<!-- Language -->
+			@helper.inputText(ddmtemplateFormData("language"))
+			<!-- Script -->
+			@helper.inputText(ddmtemplateFormData("script"))
+			<!-- Cacheable -->
+			@helper.inputText(ddmtemplateFormData("cacheable"))
+			<!-- SmallImage -->
+			@helper.inputText(ddmtemplateFormData("smallImage"))
+			<!-- SmallImageId -->
+			@helper.inputText(ddmtemplateFormData("smallImageId"))
+			<!-- SmallImageURL -->
+			@helper.inputText(ddmtemplateFormData("smallImageURL"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DdmtemplateApplication.all()">Back to Ddmtemplate List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

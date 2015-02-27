@@ -1,0 +1,39 @@
+@(organizations: List[models.organization.Organization])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Organizations in the DB</h1>
+
+	<p>
+		<a href="@routes.OrganizationApplication.addOrganization">Create New Organization</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(organization <- organizations) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.OrganizationApplication.get(organization.organizationId)">@organization.organizationId</a></div>
+				<div>MvccVersion: @organization.mvccVersion</div>
+				<div>Uuid: @organization.uuid</div>
+				<div>CompanyId: @organization.companyId</div>
+				<div>UserId: @organization.userId</div>
+				<div>UserName: @organization.userName</div>
+				<div>CreateDate: @organization.createDate</div>
+				<div>ModifiedDate: @organization.modifiedDate</div>
+				<div>ParentOrganizationId: @organization.parentOrganizationId</div>
+				<div>TreePath: @organization.treePath</div>
+				<div>Name: @organization.name</div>
+				<div>Customtype: @organization.customtype</div>
+				<div>Recursable: @organization.recursable</div>
+				<div>RegionId: @organization.regionId</div>
+				<div>CountryId: @organization.countryId</div>
+				<div>StatusId: @organization.statusId</div>
+				<div>Comments: @organization.comments</div>
+				<div>LogoId: @organization.logoId</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

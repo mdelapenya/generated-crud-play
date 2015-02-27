@@ -1,0 +1,42 @@
+@(releaseFormData: Form[controllers.release.ReleaseFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Release #@releaseFormData("releaseId").value</legend>
+
+		@form(routes.ReleaseApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(releaseFormData("releaseId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(releaseFormData("mvccVersion"))
+			<!-- CreateDate -->
+			@helper.inputText(releaseFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(releaseFormData("modifiedDate"))
+			<!-- ServletContextName -->
+			@helper.inputText(releaseFormData("servletContextName"))
+			<!-- BuildNumber -->
+			@helper.inputText(releaseFormData("buildNumber"))
+			<!-- BuildDate -->
+			@helper.inputText(releaseFormData("buildDate"))
+			<!-- Verified -->
+			@helper.inputText(releaseFormData("verified"))
+			<!-- State -->
+			@helper.inputText(releaseFormData("state"))
+			<!-- TestString -->
+			@helper.inputText(releaseFormData("testString"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ReleaseApplication.all()">Back to Release List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

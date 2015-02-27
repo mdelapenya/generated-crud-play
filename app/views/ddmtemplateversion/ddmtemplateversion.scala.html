@@ -1,0 +1,46 @@
+@(ddmtemplateversionFormData: Form[controllers.ddmtemplateversion.DdmtemplateversionFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Ddmtemplateversion #@ddmtemplateversionFormData("templateVersionId").value</legend>
+
+		@form(routes.DdmtemplateversionApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(ddmtemplateversionFormData("templateVersionId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(ddmtemplateversionFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(ddmtemplateversionFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(ddmtemplateversionFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(ddmtemplateversionFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(ddmtemplateversionFormData("createDate"))
+			<!-- TemplateId -->
+			@helper.inputText(ddmtemplateversionFormData("templateId"))
+			<!-- Version -->
+			@helper.inputText(ddmtemplateversionFormData("version"))
+			<!-- Name -->
+			@helper.inputText(ddmtemplateversionFormData("name"))
+			<!-- Description -->
+			@helper.inputText(ddmtemplateversionFormData("description"))
+			<!-- Language -->
+			@helper.inputText(ddmtemplateversionFormData("language"))
+			<!-- Script -->
+			@helper.inputText(ddmtemplateversionFormData("script"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.DdmtemplateversionApplication.all()">Back to Ddmtemplateversion List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

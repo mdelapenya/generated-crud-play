@@ -1,0 +1,52 @@
+@(roleFormData: Form[controllers.role.RoleFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Role #@roleFormData("roleId").value</legend>
+
+		@form(routes.RoleApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(roleFormData("roleId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(roleFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(roleFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(roleFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(roleFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(roleFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(roleFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(roleFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(roleFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(roleFormData("classPK"))
+			<!-- Name -->
+			@helper.inputText(roleFormData("name"))
+			<!-- Title -->
+			@helper.inputText(roleFormData("title"))
+			<!-- Description -->
+			@helper.inputText(roleFormData("description"))
+			<!-- Customtype -->
+			@helper.inputText(roleFormData("customtype"))
+			<!-- Subtype -->
+			@helper.inputText(roleFormData("subtype"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.RoleApplication.all()">Back to Role List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

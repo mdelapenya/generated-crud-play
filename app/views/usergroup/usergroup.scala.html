@@ -1,0 +1,46 @@
+@(usergroupFormData: Form[controllers.usergroup.UsergroupFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Usergroup #@usergroupFormData("userGroupId").value</legend>
+
+		@form(routes.UsergroupApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(usergroupFormData("userGroupId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(usergroupFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(usergroupFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(usergroupFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(usergroupFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(usergroupFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(usergroupFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(usergroupFormData("modifiedDate"))
+			<!-- ParentUserGroupId -->
+			@helper.inputText(usergroupFormData("parentUserGroupId"))
+			<!-- Name -->
+			@helper.inputText(usergroupFormData("name"))
+			<!-- Description -->
+			@helper.inputText(usergroupFormData("description"))
+			<!-- AddedByLDAPImport -->
+			@helper.inputText(usergroupFormData("addedByLDAPImport"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.UsergroupApplication.all()">Back to Usergroup List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

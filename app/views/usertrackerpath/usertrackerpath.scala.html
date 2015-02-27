@@ -1,0 +1,32 @@
+@(usertrackerpathFormData: Form[controllers.usertrackerpath.UsertrackerpathFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Usertrackerpath #@usertrackerpathFormData("userTrackerPathId").value</legend>
+
+		@form(routes.UsertrackerpathApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(usertrackerpathFormData("userTrackerPathId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(usertrackerpathFormData("mvccVersion"))
+			<!-- UserTrackerId -->
+			@helper.inputText(usertrackerpathFormData("userTrackerId"))
+			<!-- Path -->
+			@helper.inputText(usertrackerpathFormData("path"))
+			<!-- PathDate -->
+			@helper.inputText(usertrackerpathFormData("pathDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.UsertrackerpathApplication.all()">Back to Usertrackerpath List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

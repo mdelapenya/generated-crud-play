@@ -1,0 +1,32 @@
+@(mbstatsuserFormData: Form[controllers.mbstatsuser.MbstatsuserFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Mbstatsuser #@mbstatsuserFormData("statsUserId").value</legend>
+
+		@form(routes.MbstatsuserApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(mbstatsuserFormData("statsUserId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(mbstatsuserFormData("groupId"))
+			<!-- UserId -->
+			@helper.inputText(mbstatsuserFormData("userId"))
+			<!-- MessageCount -->
+			@helper.inputText(mbstatsuserFormData("messageCount"))
+			<!-- LastPostDate -->
+			@helper.inputText(mbstatsuserFormData("lastPostDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.MbstatsuserApplication.all()">Back to Mbstatsuser List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

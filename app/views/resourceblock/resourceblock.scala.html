@@ -1,0 +1,36 @@
+@(resourceblockFormData: Form[controllers.resourceblock.ResourceblockFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Resourceblock #@resourceblockFormData("resourceBlockId").value</legend>
+
+		@form(routes.ResourceblockApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(resourceblockFormData("resourceBlockId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(resourceblockFormData("mvccVersion"))
+			<!-- CompanyId -->
+			@helper.inputText(resourceblockFormData("companyId"))
+			<!-- GroupId -->
+			@helper.inputText(resourceblockFormData("groupId"))
+			<!-- Name -->
+			@helper.inputText(resourceblockFormData("name"))
+			<!-- PermissionsHash -->
+			@helper.inputText(resourceblockFormData("permissionsHash"))
+			<!-- ReferenceCount -->
+			@helper.inputText(resourceblockFormData("referenceCount"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ResourceblockApplication.all()">Back to Resourceblock List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

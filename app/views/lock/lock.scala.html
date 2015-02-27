@@ -1,0 +1,46 @@
+@(lockFormData: Form[controllers.lock.LockFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Lock #@lockFormData("lockId").value</legend>
+
+		@form(routes.LockApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(lockFormData("lockId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(lockFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(lockFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(lockFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(lockFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(lockFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(lockFormData("createDate"))
+			<!-- ClassName -->
+			@helper.inputText(lockFormData("className"))
+			<!-- Key -->
+			@helper.inputText(lockFormData("key"))
+			<!-- Owner -->
+			@helper.inputText(lockFormData("owner"))
+			<!-- Inheritable -->
+			@helper.inputText(lockFormData("inheritable"))
+			<!-- ExpirationDate -->
+			@helper.inputText(lockFormData("expirationDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.LockApplication.all()">Back to Lock List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,44 @@
+@(layoutbranchFormData: Form[controllers.layoutbranch.LayoutbranchFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Layoutbranch #@layoutbranchFormData("layoutBranchId").value</legend>
+
+		@form(routes.LayoutbranchApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(layoutbranchFormData("layoutBranchId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(layoutbranchFormData("mvccVersion"))
+			<!-- GroupId -->
+			@helper.inputText(layoutbranchFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(layoutbranchFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(layoutbranchFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(layoutbranchFormData("userName"))
+			<!-- LayoutSetBranchId -->
+			@helper.inputText(layoutbranchFormData("layoutSetBranchId"))
+			<!-- Plid -->
+			@helper.inputText(layoutbranchFormData("plid"))
+			<!-- Name -->
+			@helper.inputText(layoutbranchFormData("name"))
+			<!-- Description -->
+			@helper.inputText(layoutbranchFormData("description"))
+			<!-- Master -->
+			@helper.inputText(layoutbranchFormData("master"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.LayoutbranchApplication.all()">Back to Layoutbranch List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

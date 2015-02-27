@@ -1,0 +1,58 @@
+@(organizationFormData: Form[controllers.organization.OrganizationFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Organization #@organizationFormData("organizationId").value</legend>
+
+		@form(routes.OrganizationApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(organizationFormData("organizationId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(organizationFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(organizationFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(organizationFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(organizationFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(organizationFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(organizationFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(organizationFormData("modifiedDate"))
+			<!-- ParentOrganizationId -->
+			@helper.inputText(organizationFormData("parentOrganizationId"))
+			<!-- TreePath -->
+			@helper.inputText(organizationFormData("treePath"))
+			<!-- Name -->
+			@helper.inputText(organizationFormData("name"))
+			<!-- Customtype -->
+			@helper.inputText(organizationFormData("customtype"))
+			<!-- Recursable -->
+			@helper.inputText(organizationFormData("recursable"))
+			<!-- RegionId -->
+			@helper.inputText(organizationFormData("regionId"))
+			<!-- CountryId -->
+			@helper.inputText(organizationFormData("countryId"))
+			<!-- StatusId -->
+			@helper.inputText(organizationFormData("statusId"))
+			<!-- Comments -->
+			@helper.inputText(organizationFormData("comments"))
+			<!-- LogoId -->
+			@helper.inputText(organizationFormData("logoId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.OrganizationApplication.all()">Back to Organization List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

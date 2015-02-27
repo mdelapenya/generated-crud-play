@@ -1,0 +1,27 @@
+@(regions: List[models.region.Region])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Regions in the DB</h1>
+
+	<p>
+		<a href="@routes.RegionApplication.addRegion">Create New Region</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(region <- regions) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.RegionApplication.get(region.regionId)">@region.regionId</a></div>
+				<div>MvccVersion: @region.mvccVersion</div>
+				<div>CountryId: @region.countryId</div>
+				<div>RegionCode: @region.regionCode</div>
+				<div>Name: @region.name</div>
+				<div>Active: @region.active</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

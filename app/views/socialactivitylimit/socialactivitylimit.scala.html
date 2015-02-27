@@ -1,0 +1,40 @@
+@(socialactivitylimitFormData: Form[controllers.socialactivitylimit.SocialactivitylimitFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Socialactivitylimit #@socialactivitylimitFormData("activityLimitId").value</legend>
+
+		@form(routes.SocialactivitylimitApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(socialactivitylimitFormData("activityLimitId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(socialactivitylimitFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(socialactivitylimitFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(socialactivitylimitFormData("userId"))
+			<!-- ClassNameId -->
+			@helper.inputText(socialactivitylimitFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(socialactivitylimitFormData("classPK"))
+			<!-- ActivityType -->
+			@helper.inputText(socialactivitylimitFormData("activityType"))
+			<!-- ActivityCounterName -->
+			@helper.inputText(socialactivitylimitFormData("activityCounterName"))
+			<!-- Value -->
+			@helper.inputText(socialactivitylimitFormData("value"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.SocialactivitylimitApplication.all()">Back to Socialactivitylimit List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

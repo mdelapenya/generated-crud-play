@@ -1,0 +1,38 @@
+@(announcementsentrys: List[models.announcementsentry.Announcementsentry])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Announcementsentrys in the DB</h1>
+
+	<p>
+		<a href="@routes.AnnouncementsentryApplication.addAnnouncementsentry">Create New Announcementsentry</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(announcementsentry <- announcementsentrys) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.AnnouncementsentryApplication.get(announcementsentry.entryId)">@announcementsentry.entryId</a></div>
+				<div>Uuid: @announcementsentry.uuid</div>
+				<div>CompanyId: @announcementsentry.companyId</div>
+				<div>UserId: @announcementsentry.userId</div>
+				<div>UserName: @announcementsentry.userName</div>
+				<div>CreateDate: @announcementsentry.createDate</div>
+				<div>ModifiedDate: @announcementsentry.modifiedDate</div>
+				<div>ClassNameId: @announcementsentry.classNameId</div>
+				<div>ClassPK: @announcementsentry.classPK</div>
+				<div>Title: @announcementsentry.title</div>
+				<div>Content: @announcementsentry.content</div>
+				<div>Url: @announcementsentry.url</div>
+				<div>Customtype: @announcementsentry.customtype</div>
+				<div>DisplayDate: @announcementsentry.displayDate</div>
+				<div>ExpirationDate: @announcementsentry.expirationDate</div>
+				<div>Priority: @announcementsentry.priority</div>
+				<div>Alert: @announcementsentry.alert</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

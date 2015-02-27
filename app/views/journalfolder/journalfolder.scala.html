@@ -1,0 +1,56 @@
+@(journalfolderFormData: Form[controllers.journalfolder.JournalfolderFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Journalfolder #@journalfolderFormData("folderId").value</legend>
+
+		@form(routes.JournalfolderApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(journalfolderFormData("folderId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(journalfolderFormData("uuid"))
+			<!-- GroupId -->
+			@helper.inputText(journalfolderFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(journalfolderFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(journalfolderFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(journalfolderFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(journalfolderFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(journalfolderFormData("modifiedDate"))
+			<!-- ParentFolderId -->
+			@helper.inputText(journalfolderFormData("parentFolderId"))
+			<!-- TreePath -->
+			@helper.inputText(journalfolderFormData("treePath"))
+			<!-- Name -->
+			@helper.inputText(journalfolderFormData("name"))
+			<!-- Description -->
+			@helper.inputText(journalfolderFormData("description"))
+			<!-- RestrictionType -->
+			@helper.inputText(journalfolderFormData("restrictionType"))
+			<!-- Status -->
+			@helper.inputText(journalfolderFormData("status"))
+			<!-- StatusByUserId -->
+			@helper.inputText(journalfolderFormData("statusByUserId"))
+			<!-- StatusByUserName -->
+			@helper.inputText(journalfolderFormData("statusByUserName"))
+			<!-- StatusDate -->
+			@helper.inputText(journalfolderFormData("statusDate"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.JournalfolderApplication.all()">Back to Journalfolder List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

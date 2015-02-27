@@ -1,0 +1,40 @@
+@(usernotificationdeliveryFormData: Form[controllers.usernotificationdelivery.UsernotificationdeliveryFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Usernotificationdelivery #@usernotificationdeliveryFormData("userNotificationDeliveryId").value</legend>
+
+		@form(routes.UsernotificationdeliveryApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(usernotificationdeliveryFormData("userNotificationDeliveryId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(usernotificationdeliveryFormData("mvccVersion"))
+			<!-- CompanyId -->
+			@helper.inputText(usernotificationdeliveryFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(usernotificationdeliveryFormData("userId"))
+			<!-- PortletId -->
+			@helper.inputText(usernotificationdeliveryFormData("portletId"))
+			<!-- ClassNameId -->
+			@helper.inputText(usernotificationdeliveryFormData("classNameId"))
+			<!-- NotificationType -->
+			@helper.inputText(usernotificationdeliveryFormData("notificationType"))
+			<!-- DeliveryType -->
+			@helper.inputText(usernotificationdeliveryFormData("deliveryType"))
+			<!-- Deliver -->
+			@helper.inputText(usernotificationdeliveryFormData("deliver"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.UsernotificationdeliveryApplication.all()">Back to Usernotificationdelivery List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

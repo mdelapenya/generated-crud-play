@@ -1,0 +1,36 @@
+@(journalcontentsearchFormData: Form[controllers.journalcontentsearch.JournalcontentsearchFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Journalcontentsearch #@journalcontentsearchFormData("contentSearchId").value</legend>
+
+		@form(routes.JournalcontentsearchApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(journalcontentsearchFormData("contentSearchId"), 'readonly -> "readonly")
+
+			<!-- GroupId -->
+			@helper.inputText(journalcontentsearchFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(journalcontentsearchFormData("companyId"))
+			<!-- PrivateLayout -->
+			@helper.inputText(journalcontentsearchFormData("privateLayout"))
+			<!-- LayoutId -->
+			@helper.inputText(journalcontentsearchFormData("layoutId"))
+			<!-- PortletId -->
+			@helper.inputText(journalcontentsearchFormData("portletId"))
+			<!-- ArticleId -->
+			@helper.inputText(journalcontentsearchFormData("articleId"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.JournalcontentsearchApplication.all()">Back to Journalcontentsearch List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

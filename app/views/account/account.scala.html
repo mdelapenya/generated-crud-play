@@ -1,0 +1,56 @@
+@(accountFormData: Form[controllers.account.AccountFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Account #@accountFormData("accountId").value</legend>
+
+		@form(routes.AccountApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(accountFormData("accountId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(accountFormData("mvccVersion"))
+			<!-- CompanyId -->
+			@helper.inputText(accountFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(accountFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(accountFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(accountFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(accountFormData("modifiedDate"))
+			<!-- ParentAccountId -->
+			@helper.inputText(accountFormData("parentAccountId"))
+			<!-- Name -->
+			@helper.inputText(accountFormData("name"))
+			<!-- LegalName -->
+			@helper.inputText(accountFormData("legalName"))
+			<!-- LegalId -->
+			@helper.inputText(accountFormData("legalId"))
+			<!-- LegalType -->
+			@helper.inputText(accountFormData("legalType"))
+			<!-- SicCode -->
+			@helper.inputText(accountFormData("sicCode"))
+			<!-- TickerSymbol -->
+			@helper.inputText(accountFormData("tickerSymbol"))
+			<!-- Industry -->
+			@helper.inputText(accountFormData("industry"))
+			<!-- Customtype -->
+			@helper.inputText(accountFormData("customtype"))
+			<!-- Size -->
+			@helper.inputText(accountFormData("size"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.AccountApplication.all()">Back to Account List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

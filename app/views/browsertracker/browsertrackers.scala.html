@@ -1,0 +1,25 @@
+@(browsertrackers: List[models.browsertracker.Browsertracker])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Browsertrackers in the DB</h1>
+
+	<p>
+		<a href="@routes.BrowsertrackerApplication.addBrowsertracker">Create New Browsertracker</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(browsertracker <- browsertrackers) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.BrowsertrackerApplication.get(browsertracker.browserTrackerId)">@browsertracker.browserTrackerId</a></div>
+				<div>MvccVersion: @browsertracker.mvccVersion</div>
+				<div>UserId: @browsertracker.userId</div>
+				<div>BrowserKey: @browsertracker.browserKey</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

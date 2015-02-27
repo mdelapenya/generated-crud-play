@@ -1,0 +1,31 @@
+@(teams: List[models.team.Team])
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<h1>Teams in the DB</h1>
+
+	<p>
+		<a href="@routes.TeamApplication.addTeam">Create New Team</a>
+		<a href="@routes.Application.models">Back to Models</a>
+	</p>
+
+	<ul>
+	@for(team <- teams) {
+		<li>
+			<div>
+				<div>ID: <a href="@routes.TeamApplication.get(team.teamId)">@team.teamId</a></div>
+				<div>MvccVersion: @team.mvccVersion</div>
+				<div>CompanyId: @team.companyId</div>
+				<div>UserId: @team.userId</div>
+				<div>UserName: @team.userName</div>
+				<div>CreateDate: @team.createDate</div>
+				<div>ModifiedDate: @team.modifiedDate</div>
+				<div>GroupId: @team.groupId</div>
+				<div>Name: @team.name</div>
+				<div>Description: @team.description</div>
+			</div>
+		</li>
+	}
+	</ul>
+
+}

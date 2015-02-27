@@ -1,0 +1,34 @@
+@(servicecomponentFormData: Form[controllers.servicecomponent.ServicecomponentFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Servicecomponent #@servicecomponentFormData("serviceComponentId").value</legend>
+
+		@form(routes.ServicecomponentApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(servicecomponentFormData("serviceComponentId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(servicecomponentFormData("mvccVersion"))
+			<!-- BuildNamespace -->
+			@helper.inputText(servicecomponentFormData("buildNamespace"))
+			<!-- BuildNumber -->
+			@helper.inputText(servicecomponentFormData("buildNumber"))
+			<!-- BuildDate -->
+			@helper.inputText(servicecomponentFormData("buildDate"))
+			<!-- Data -->
+			@helper.inputText(servicecomponentFormData("data"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.ServicecomponentApplication.all()">Back to Servicecomponent List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

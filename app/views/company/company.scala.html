@@ -1,0 +1,44 @@
+@(companyFormData: Form[controllers.company.CompanyFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Company #@companyFormData("companyId").value</legend>
+
+		@form(routes.CompanyApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(companyFormData("companyId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(companyFormData("mvccVersion"))
+			<!-- AccountId -->
+			@helper.inputText(companyFormData("accountId"))
+			<!-- WebId -->
+			@helper.inputText(companyFormData("webId"))
+			<!-- Key -->
+			@helper.inputText(companyFormData("key"))
+			<!-- Mx -->
+			@helper.inputText(companyFormData("mx"))
+			<!-- HomeURL -->
+			@helper.inputText(companyFormData("homeURL"))
+			<!-- LogoId -->
+			@helper.inputText(companyFormData("logoId"))
+			<!-- System -->
+			@helper.inputText(companyFormData("system"))
+			<!-- MaxUsers -->
+			@helper.inputText(companyFormData("maxUsers"))
+			<!-- Active -->
+			@helper.inputText(companyFormData("active"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.CompanyApplication.all()">Back to Company List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

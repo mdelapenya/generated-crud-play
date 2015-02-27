@@ -1,0 +1,36 @@
+@(socialrelationFormData: Form[controllers.socialrelation.SocialrelationFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Socialrelation #@socialrelationFormData("relationId").value</legend>
+
+		@form(routes.SocialrelationApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(socialrelationFormData("relationId"), 'readonly -> "readonly")
+
+			<!-- Uuid -->
+			@helper.inputText(socialrelationFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(socialrelationFormData("companyId"))
+			<!-- CreateDate -->
+			@helper.inputText(socialrelationFormData("createDate"))
+			<!-- UserId1 -->
+			@helper.inputText(socialrelationFormData("userId1"))
+			<!-- UserId2 -->
+			@helper.inputText(socialrelationFormData("userId2"))
+			<!-- Customtype -->
+			@helper.inputText(socialrelationFormData("customtype"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.SocialrelationApplication.all()">Back to Socialrelation List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

@@ -1,0 +1,44 @@
+@(subscriptionFormData: Form[controllers.subscription.SubscriptionFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Subscription #@subscriptionFormData("subscriptionId").value</legend>
+
+		@form(routes.SubscriptionApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(subscriptionFormData("subscriptionId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(subscriptionFormData("mvccVersion"))
+			<!-- GroupId -->
+			@helper.inputText(subscriptionFormData("groupId"))
+			<!-- CompanyId -->
+			@helper.inputText(subscriptionFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(subscriptionFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(subscriptionFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(subscriptionFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(subscriptionFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(subscriptionFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(subscriptionFormData("classPK"))
+			<!-- Frequency -->
+			@helper.inputText(subscriptionFormData("frequency"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.SubscriptionApplication.all()">Back to Subscription List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}

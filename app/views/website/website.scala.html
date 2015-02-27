@@ -1,0 +1,48 @@
+@(websiteFormData: Form[controllers.website.WebsiteFormData])
+
+@import helper._
+
+@main("Welcome to GeneratedCRUD application") {
+
+	<fieldset>
+		<legend>Edition of Website #@websiteFormData("websiteId").value</legend>
+
+		@form(routes.WebsiteApplication.submit(), 'class -> "form-horizontal") {
+			@helper.inputText(websiteFormData("websiteId"), 'readonly -> "readonly")
+
+			<!-- MvccVersion -->
+			@helper.inputText(websiteFormData("mvccVersion"))
+			<!-- Uuid -->
+			@helper.inputText(websiteFormData("uuid"))
+			<!-- CompanyId -->
+			@helper.inputText(websiteFormData("companyId"))
+			<!-- UserId -->
+			@helper.inputText(websiteFormData("userId"))
+			<!-- UserName -->
+			@helper.inputText(websiteFormData("userName"))
+			<!-- CreateDate -->
+			@helper.inputText(websiteFormData("createDate"))
+			<!-- ModifiedDate -->
+			@helper.inputText(websiteFormData("modifiedDate"))
+			<!-- ClassNameId -->
+			@helper.inputText(websiteFormData("classNameId"))
+			<!-- ClassPK -->
+			@helper.inputText(websiteFormData("classPK"))
+			<!-- Url -->
+			@helper.inputText(websiteFormData("url"))
+			<!-- TypeId -->
+			@helper.inputText(websiteFormData("typeId"))
+			<!-- Customprimary -->
+			@helper.inputText(websiteFormData("customprimary"))
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a href="@routes.WebsiteApplication.all()">Back to Website List</a>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
+					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				</div>
+			</div>
+		}
+	</fieldset>
+
+}
