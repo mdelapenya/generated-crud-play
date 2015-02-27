@@ -37,9 +37,9 @@
 			<!-- DisplayDate -->
 			@helper.inputText(blogsentryFormData("displayDate"))
 			<!-- AllowPingbacks -->
-			@helper.inputText(blogsentryFormData("allowPingbacks"))
+			@helper.checkbox(blogsentryFormData("allowPingbacks"))
 			<!-- AllowTrackbacks -->
-			@helper.inputText(blogsentryFormData("allowTrackbacks"))
+			@helper.checkbox(blogsentryFormData("allowTrackbacks"))
 			<!-- Trackbacks -->
 			@helper.inputText(blogsentryFormData("trackbacks"))
 			<!-- CoverImageFileEntryId -->
@@ -47,7 +47,7 @@
 			<!-- CoverImageURL -->
 			@helper.inputText(blogsentryFormData("coverImageURL"))
 			<!-- SmallImage -->
-			@helper.inputText(blogsentryFormData("smallImage"))
+			@helper.checkbox(blogsentryFormData("smallImage"))
 			<!-- SmallImageFileEntryId -->
 			@helper.inputText(blogsentryFormData("smallImageFileEntryId"))
 			<!-- SmallImageId -->

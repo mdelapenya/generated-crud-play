@@ -25,13 +25,13 @@
 			<!-- ModifiedDate -->
 			@helper.inputText(layoutsetbranchFormData("modifiedDate"))
 			<!-- PrivateLayout -->
-			@helper.inputText(layoutsetbranchFormData("privateLayout"))
+			@helper.checkbox(layoutsetbranchFormData("privateLayout"))
 			<!-- Name -->
 			@helper.inputText(layoutsetbranchFormData("name"))
 			<!-- Description -->
 			@helper.inputText(layoutsetbranchFormData("description"))
 			<!-- Master -->
-			@helper.inputText(layoutsetbranchFormData("master"))
+			@helper.checkbox(layoutsetbranchFormData("master"))
 			<!-- LogoId -->
 			@helper.inputText(layoutsetbranchFormData("logoId"))
 			<!-- ThemeId -->
@@ -49,7 +49,7 @@
 			<!-- LayoutSetPrototypeUuid -->
 			@helper.inputText(layoutsetbranchFormData("layoutSetPrototypeUuid"))
 			<!-- LayoutSetPrototypeLinkEnabled -->
-			@helper.inputText(layoutsetbranchFormData("layoutSetPrototypeLinkEnabled"))
+			@helper.checkbox(layoutsetbranchFormData("layoutSetPrototypeLinkEnabled"))
 
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">

@@ -31,9 +31,9 @@
 			<!-- AltShipping -->
 			@helper.inputText(shoppingorderFormData("altShipping"))
 			<!-- RequiresShipping -->
-			@helper.inputText(shoppingorderFormData("requiresShipping"))
+			@helper.checkbox(shoppingorderFormData("requiresShipping"))
 			<!-- Insure -->
-			@helper.inputText(shoppingorderFormData("insure"))
+			@helper.checkbox(shoppingorderFormData("insure"))
 			<!-- Insurance -->
 			@helper.inputText(shoppingorderFormData("insurance"))
 			<!-- CouponCodes -->
@@ -61,7 +61,7 @@
 			<!-- BillingPhone -->
 			@helper.inputText(shoppingorderFormData("billingPhone"))
 			<!-- ShipToBilling -->
-			@helper.inputText(shoppingorderFormData("shipToBilling"))
+			@helper.checkbox(shoppingorderFormData("shipToBilling"))
 			<!-- ShippingFirstName -->
 			@helper.inputText(shoppingorderFormData("shippingFirstName"))
 			<!-- ShippingLastName -->
@@ -107,9 +107,9 @@
 			<!-- PpPayerEmail -->
 			@helper.inputText(shoppingorderFormData("ppPayerEmail"))
 			<!-- SendOrderEmail -->
-			@helper.inputText(shoppingorderFormData("sendOrderEmail"))
+			@helper.checkbox(shoppingorderFormData("sendOrderEmail"))
 			<!-- SendShippingEmail -->
-			@helper.inputText(shoppingorderFormData("sendShippingEmail"))
+			@helper.checkbox(shoppingorderFormData("sendShippingEmail"))
 
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">

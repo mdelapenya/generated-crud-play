@@ -27,13 +27,13 @@
 			<!-- DeliverBy -->
 			@helper.inputText(usernotificationeventFormData("deliverBy"))
 			<!-- Delivered -->
-			@helper.inputText(usernotificationeventFormData("delivered"))
+			@helper.checkbox(usernotificationeventFormData("delivered"))
 			<!-- Payload -->
 			@helper.inputText(usernotificationeventFormData("payload"))
 			<!-- ActionRequired -->
-			@helper.inputText(usernotificationeventFormData("actionRequired"))
+			@helper.checkbox(usernotificationeventFormData("actionRequired"))
 			<!-- Archived -->
-			@helper.inputText(usernotificationeventFormData("archived"))
+			@helper.checkbox(usernotificationeventFormData("archived"))
 
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">

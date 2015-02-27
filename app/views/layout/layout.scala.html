@@ -27,7 +27,7 @@
 			<!-- ModifiedDate -->
 			@helper.inputText(layoutFormData("modifiedDate"))
 			<!-- PrivateLayout -->
-			@helper.inputText(layoutFormData("privateLayout"))
+			@helper.checkbox(layoutFormData("privateLayout"))
 			<!-- LayoutId -->
 			@helper.inputText(layoutFormData("layoutId"))
 			<!-- ParentLayoutId -->
@@ -47,7 +47,7 @@
 			<!-- TypeSettings -->
 			@helper.inputText(layoutFormData("typeSettings"))
 			<!-- Hidden -->
-			@helper.inputText(layoutFormData("hidden"))
+			@helper.checkbox(layoutFormData("hidden"))
 			<!-- FriendlyURL -->
 			@helper.inputText(layoutFormData("friendlyURL"))
 			<!-- IconImageId -->
@@ -67,7 +67,7 @@
 			<!-- LayoutPrototypeUuid -->
 			@helper.inputText(layoutFormData("layoutPrototypeUuid"))
 			<!-- LayoutPrototypeLinkEnabled -->
-			@helper.inputText(layoutFormData("layoutPrototypeLinkEnabled"))
+			@helper.checkbox(layoutFormData("layoutPrototypeLinkEnabled"))
 			<!-- SourcePrototypeLayoutUuid -->
 			@helper.inputText(layoutFormData("sourcePrototypeLayoutUuid"))
 

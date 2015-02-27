@@ -43,13 +43,13 @@
 			<!-- Format -->
 			@helper.inputText(mbmessageFormData("format"))
 			<!-- Anonymous -->
-			@helper.inputText(mbmessageFormData("anonymous"))
+			@helper.checkbox(mbmessageFormData("anonymous"))
 			<!-- Priority -->
 			@helper.inputText(mbmessageFormData("priority"))
 			<!-- AllowPingbacks -->
-			@helper.inputText(mbmessageFormData("allowPingbacks"))
+			@helper.checkbox(mbmessageFormData("allowPingbacks"))
 			<!-- Answer -->
-			@helper.inputText(mbmessageFormData("answer"))
+			@helper.checkbox(mbmessageFormData("answer"))
 			<!-- Status -->
 			@helper.inputText(mbmessageFormData("status"))
 			<!-- StatusByUserId -->
