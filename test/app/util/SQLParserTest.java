@@ -88,7 +88,7 @@ public class SQLParserTest {
 
 		List<Model> models = SQLParser.parse(tablesSql);
 
-		assertThat(models.size()).isEqualTo(146);
+		assertThat(models.size()).isEqualTo(143);
 
 		Model model1 = models.get(0);
 
