@@ -6,6 +6,11 @@
 			<p class="lead">
 				Do you want to turn back to Home? Please click here: <a class="btn btn-danger" href="@routes.Application.index">Home</a>
 			</p>
+			<p id="models-tags">
+				<#list models as model>
+					${model.name?cap_first}
+				</#list>
+			</p>
 		</div>
 		<div class="container">
 			<table class="table table-bordered table-hover">
