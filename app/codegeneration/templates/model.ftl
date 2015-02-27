@@ -5,6 +5,8 @@ package models.${model.name};
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import controllers.${model.name}.${model.name?cap_first}FormData;
@@ -26,6 +28,7 @@ public class ${model.name?cap_first} extends Model {
 	<#list model.fields as field>
 		<#if field.isPrimaryKey>
 	@Id
+	@GeneratedValue(strategy=GenerationType.TABLE)
 		</#if>
 		<#if field.isRequired && !field.isPrimaryKey>
 	@Constraints.Required
