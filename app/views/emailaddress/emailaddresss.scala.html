@@ -10,29 +10,54 @@
 				<a class="btn btn-success" href="@routes.EmailaddressApplication.addEmailaddress">Create New Emailaddress</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Emailaddress.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(emailaddress <- emailaddresss) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.EmailaddressApplication.get(emailaddress.emailAddressId)">@emailaddress.emailAddressId</a></div>
-						<div>MvccVersion: @emailaddress.mvccVersion</div>
-						<div>Uuid: @emailaddress.uuid</div>
-						<div>CompanyId: @emailaddress.companyId</div>
-						<div>UserId: @emailaddress.userId</div>
-						<div>UserName: @emailaddress.userName</div>
-						<div>CreateDate: @emailaddress.createDate</div>
-						<div>ModifiedDate: @emailaddress.modifiedDate</div>
-						<div>ClassNameId: @emailaddress.classNameId</div>
-						<div>ClassPK: @emailaddress.classPK</div>
-						<div>Address: @emailaddress.address</div>
-						<div>TypeId: @emailaddress.typeId</div>
-						<div>Customprimary: @emailaddress.customprimary</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.EmailaddressApplication.get(emailaddress.emailAddressId)">@emailaddress.emailAddressId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @emailaddress.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @emailaddress.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @emailaddress.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @emailaddress.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @emailaddress.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @emailaddress.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @emailaddress.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @emailaddress.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @emailaddress.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						Address: @emailaddress.address
+					</li>
+					<li class="btn btn-default disabled">
+						TypeId: @emailaddress.typeId
+					</li>
+					<li class="btn btn-default disabled">
+						Customprimary: @emailaddress.customprimary
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

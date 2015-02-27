@@ -10,33 +10,66 @@
 				<a class="btn btn-success" href="@routes.LayoutsetApplication.addLayoutset">Create New Layoutset</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Layoutset.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(layoutset <- layoutsets) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.LayoutsetApplication.get(layoutset.layoutSetId)">@layoutset.layoutSetId</a></div>
-						<div>MvccVersion: @layoutset.mvccVersion</div>
-						<div>GroupId: @layoutset.groupId</div>
-						<div>CompanyId: @layoutset.companyId</div>
-						<div>CreateDate: @layoutset.createDate</div>
-						<div>ModifiedDate: @layoutset.modifiedDate</div>
-						<div>PrivateLayout: @layoutset.privateLayout</div>
-						<div>LogoId: @layoutset.logoId</div>
-						<div>ThemeId: @layoutset.themeId</div>
-						<div>ColorSchemeId: @layoutset.colorSchemeId</div>
-						<div>WapThemeId: @layoutset.wapThemeId</div>
-						<div>WapColorSchemeId: @layoutset.wapColorSchemeId</div>
-						<div>Css: @layoutset.css</div>
-						<div>PageCount: @layoutset.pageCount</div>
-						<div>Settings: @layoutset.settings</div>
-						<div>LayoutSetPrototypeUuid: @layoutset.layoutSetPrototypeUuid</div>
-						<div>LayoutSetPrototypeLinkEnabled: @layoutset.layoutSetPrototypeLinkEnabled</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.LayoutsetApplication.get(layoutset.layoutSetId)">@layoutset.layoutSetId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @layoutset.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @layoutset.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @layoutset.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @layoutset.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @layoutset.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						PrivateLayout: @layoutset.privateLayout
+					</li>
+					<li class="btn btn-default disabled">
+						LogoId: @layoutset.logoId
+					</li>
+					<li class="btn btn-default disabled">
+						ThemeId: @layoutset.themeId
+					</li>
+					<li class="btn btn-default disabled">
+						ColorSchemeId: @layoutset.colorSchemeId
+					</li>
+					<li class="btn btn-default disabled">
+						WapThemeId: @layoutset.wapThemeId
+					</li>
+					<li class="btn btn-default disabled">
+						WapColorSchemeId: @layoutset.wapColorSchemeId
+					</li>
+					<li class="btn btn-default disabled">
+						Css: @layoutset.css
+					</li>
+					<li class="btn btn-default disabled">
+						PageCount: @layoutset.pageCount
+					</li>
+					<li class="btn btn-default disabled">
+						Settings: @layoutset.settings
+					</li>
+					<li class="btn btn-default disabled">
+						LayoutSetPrototypeUuid: @layoutset.layoutSetPrototypeUuid
+					</li>
+					<li class="btn btn-default disabled">
+						LayoutSetPrototypeLinkEnabled: @layoutset.layoutSetPrototypeLinkEnabled
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

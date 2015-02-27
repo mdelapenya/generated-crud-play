@@ -10,23 +10,36 @@
 				<a class="btn btn-success" href="@routes.PluginsettingApplication.addPluginsetting">Create New Pluginsetting</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Pluginsetting.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(pluginsetting <- pluginsettings) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.PluginsettingApplication.get(pluginsetting.pluginSettingId)">@pluginsetting.pluginSettingId</a></div>
-						<div>MvccVersion: @pluginsetting.mvccVersion</div>
-						<div>CompanyId: @pluginsetting.companyId</div>
-						<div>PluginId: @pluginsetting.pluginId</div>
-						<div>PluginType: @pluginsetting.pluginType</div>
-						<div>Roles: @pluginsetting.roles</div>
-						<div>Active: @pluginsetting.active</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.PluginsettingApplication.get(pluginsetting.pluginSettingId)">@pluginsetting.pluginSettingId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @pluginsetting.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @pluginsetting.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						PluginId: @pluginsetting.pluginId
+					</li>
+					<li class="btn btn-default disabled">
+						PluginType: @pluginsetting.pluginType
+					</li>
+					<li class="btn btn-default disabled">
+						Roles: @pluginsetting.roles
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @pluginsetting.active
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

@@ -10,34 +10,69 @@
 				<a class="btn btn-success" href="@routes.ShoppingcouponApplication.addShoppingcoupon">Create New Shoppingcoupon</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Shoppingcoupon.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(shoppingcoupon <- shoppingcoupons) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ShoppingcouponApplication.get(shoppingcoupon.couponId)">@shoppingcoupon.couponId</a></div>
-						<div>GroupId: @shoppingcoupon.groupId</div>
-						<div>CompanyId: @shoppingcoupon.companyId</div>
-						<div>UserId: @shoppingcoupon.userId</div>
-						<div>UserName: @shoppingcoupon.userName</div>
-						<div>CreateDate: @shoppingcoupon.createDate</div>
-						<div>ModifiedDate: @shoppingcoupon.modifiedDate</div>
-						<div>Code: @shoppingcoupon.code</div>
-						<div>Name: @shoppingcoupon.name</div>
-						<div>Description: @shoppingcoupon.description</div>
-						<div>StartDate: @shoppingcoupon.startDate</div>
-						<div>EndDate: @shoppingcoupon.endDate</div>
-						<div>Active: @shoppingcoupon.active</div>
-						<div>LimitCategories: @shoppingcoupon.limitCategories</div>
-						<div>LimitSkus: @shoppingcoupon.limitSkus</div>
-						<div>MinOrder: @shoppingcoupon.minOrder</div>
-						<div>Discount: @shoppingcoupon.discount</div>
-						<div>DiscountType: @shoppingcoupon.discountType</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ShoppingcouponApplication.get(shoppingcoupon.couponId)">@shoppingcoupon.couponId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @shoppingcoupon.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @shoppingcoupon.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @shoppingcoupon.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @shoppingcoupon.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @shoppingcoupon.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @shoppingcoupon.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Code: @shoppingcoupon.code
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @shoppingcoupon.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @shoppingcoupon.description
+					</li>
+					<li class="btn btn-default disabled">
+						StartDate: @shoppingcoupon.startDate
+					</li>
+					<li class="btn btn-default disabled">
+						EndDate: @shoppingcoupon.endDate
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @shoppingcoupon.active
+					</li>
+					<li class="btn btn-default disabled">
+						LimitCategories: @shoppingcoupon.limitCategories
+					</li>
+					<li class="btn btn-default disabled">
+						LimitSkus: @shoppingcoupon.limitSkus
+					</li>
+					<li class="btn btn-default disabled">
+						MinOrder: @shoppingcoupon.minOrder
+					</li>
+					<li class="btn btn-default disabled">
+						Discount: @shoppingcoupon.discount
+					</li>
+					<li class="btn btn-default disabled">
+						DiscountType: @shoppingcoupon.discountType
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

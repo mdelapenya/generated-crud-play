@@ -10,33 +10,66 @@
 				<a class="btn btn-success" href="@routes.AnnouncementsentryApplication.addAnnouncementsentry">Create New Announcementsentry</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Announcementsentry.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(announcementsentry <- announcementsentrys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.AnnouncementsentryApplication.get(announcementsentry.entryId)">@announcementsentry.entryId</a></div>
-						<div>Uuid: @announcementsentry.uuid</div>
-						<div>CompanyId: @announcementsentry.companyId</div>
-						<div>UserId: @announcementsentry.userId</div>
-						<div>UserName: @announcementsentry.userName</div>
-						<div>CreateDate: @announcementsentry.createDate</div>
-						<div>ModifiedDate: @announcementsentry.modifiedDate</div>
-						<div>ClassNameId: @announcementsentry.classNameId</div>
-						<div>ClassPK: @announcementsentry.classPK</div>
-						<div>Title: @announcementsentry.title</div>
-						<div>Content: @announcementsentry.content</div>
-						<div>Url: @announcementsentry.url</div>
-						<div>Customtype: @announcementsentry.customtype</div>
-						<div>DisplayDate: @announcementsentry.displayDate</div>
-						<div>ExpirationDate: @announcementsentry.expirationDate</div>
-						<div>Priority: @announcementsentry.priority</div>
-						<div>Alert: @announcementsentry.alert</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.AnnouncementsentryApplication.get(announcementsentry.entryId)">@announcementsentry.entryId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @announcementsentry.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @announcementsentry.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @announcementsentry.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @announcementsentry.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @announcementsentry.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @announcementsentry.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @announcementsentry.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @announcementsentry.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						Title: @announcementsentry.title
+					</li>
+					<li class="btn btn-default disabled">
+						Content: @announcementsentry.content
+					</li>
+					<li class="btn btn-default disabled">
+						Url: @announcementsentry.url
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @announcementsentry.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						DisplayDate: @announcementsentry.displayDate
+					</li>
+					<li class="btn btn-default disabled">
+						ExpirationDate: @announcementsentry.expirationDate
+					</li>
+					<li class="btn btn-default disabled">
+						Priority: @announcementsentry.priority
+					</li>
+					<li class="btn btn-default disabled">
+						Alert: @announcementsentry.alert
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

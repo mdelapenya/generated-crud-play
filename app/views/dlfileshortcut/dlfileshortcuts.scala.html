@@ -10,33 +10,66 @@
 				<a class="btn btn-success" href="@routes.DlfileshortcutApplication.addDlfileshortcut">Create New Dlfileshortcut</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Dlfileshortcut.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(dlfileshortcut <- dlfileshortcuts) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DlfileshortcutApplication.get(dlfileshortcut.fileShortcutId)">@dlfileshortcut.fileShortcutId</a></div>
-						<div>Uuid: @dlfileshortcut.uuid</div>
-						<div>GroupId: @dlfileshortcut.groupId</div>
-						<div>CompanyId: @dlfileshortcut.companyId</div>
-						<div>UserId: @dlfileshortcut.userId</div>
-						<div>UserName: @dlfileshortcut.userName</div>
-						<div>CreateDate: @dlfileshortcut.createDate</div>
-						<div>ModifiedDate: @dlfileshortcut.modifiedDate</div>
-						<div>RepositoryId: @dlfileshortcut.repositoryId</div>
-						<div>FolderId: @dlfileshortcut.folderId</div>
-						<div>ToFileEntryId: @dlfileshortcut.toFileEntryId</div>
-						<div>TreePath: @dlfileshortcut.treePath</div>
-						<div>Active: @dlfileshortcut.active</div>
-						<div>Status: @dlfileshortcut.status</div>
-						<div>StatusByUserId: @dlfileshortcut.statusByUserId</div>
-						<div>StatusByUserName: @dlfileshortcut.statusByUserName</div>
-						<div>StatusDate: @dlfileshortcut.statusDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DlfileshortcutApplication.get(dlfileshortcut.fileShortcutId)">@dlfileshortcut.fileShortcutId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @dlfileshortcut.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @dlfileshortcut.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @dlfileshortcut.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @dlfileshortcut.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @dlfileshortcut.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @dlfileshortcut.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @dlfileshortcut.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						RepositoryId: @dlfileshortcut.repositoryId
+					</li>
+					<li class="btn btn-default disabled">
+						FolderId: @dlfileshortcut.folderId
+					</li>
+					<li class="btn btn-default disabled">
+						ToFileEntryId: @dlfileshortcut.toFileEntryId
+					</li>
+					<li class="btn btn-default disabled">
+						TreePath: @dlfileshortcut.treePath
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @dlfileshortcut.active
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @dlfileshortcut.status
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserId: @dlfileshortcut.statusByUserId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserName: @dlfileshortcut.statusByUserName
+					</li>
+					<li class="btn btn-default disabled">
+						StatusDate: @dlfileshortcut.statusDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

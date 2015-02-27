@@ -10,22 +10,33 @@
 				<a class="btn btn-success" href="@routes.DlcontentApplication.addDlcontent">Create New Dlcontent</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Dlcontent.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(dlcontent <- dlcontents) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DlcontentApplication.get(dlcontent.contentId)">@dlcontent.contentId</a></div>
-						<div>GroupId: @dlcontent.groupId</div>
-						<div>CompanyId: @dlcontent.companyId</div>
-						<div>RepositoryId: @dlcontent.repositoryId</div>
-						<div>Path: @dlcontent.path</div>
-						<div>Version: @dlcontent.version</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DlcontentApplication.get(dlcontent.contentId)">@dlcontent.contentId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @dlcontent.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @dlcontent.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						RepositoryId: @dlcontent.repositoryId
+					</li>
+					<li class="btn btn-default disabled">
+						Path: @dlcontent.path
+					</li>
+					<li class="btn btn-default disabled">
+						Version: @dlcontent.version
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

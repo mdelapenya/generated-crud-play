@@ -10,45 +10,102 @@
 				<a class="btn btn-success" href="@routes.DlfileentryApplication.addDlfileentry">Create New Dlfileentry</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Dlfileentry.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(dlfileentry <- dlfileentrys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DlfileentryApplication.get(dlfileentry.fileEntryId)">@dlfileentry.fileEntryId</a></div>
-						<div>Uuid: @dlfileentry.uuid</div>
-						<div>GroupId: @dlfileentry.groupId</div>
-						<div>CompanyId: @dlfileentry.companyId</div>
-						<div>UserId: @dlfileentry.userId</div>
-						<div>UserName: @dlfileentry.userName</div>
-						<div>CreateDate: @dlfileentry.createDate</div>
-						<div>ModifiedDate: @dlfileentry.modifiedDate</div>
-						<div>ClassNameId: @dlfileentry.classNameId</div>
-						<div>ClassPK: @dlfileentry.classPK</div>
-						<div>RepositoryId: @dlfileentry.repositoryId</div>
-						<div>FolderId: @dlfileentry.folderId</div>
-						<div>TreePath: @dlfileentry.treePath</div>
-						<div>Name: @dlfileentry.name</div>
-						<div>FileName: @dlfileentry.fileName</div>
-						<div>Extension: @dlfileentry.extension</div>
-						<div>MimeType: @dlfileentry.mimeType</div>
-						<div>Title: @dlfileentry.title</div>
-						<div>Description: @dlfileentry.description</div>
-						<div>ExtraSettings: @dlfileentry.extraSettings</div>
-						<div>FileEntryTypeId: @dlfileentry.fileEntryTypeId</div>
-						<div>Version: @dlfileentry.version</div>
-						<div>Size: @dlfileentry.size</div>
-						<div>ReadCount: @dlfileentry.readCount</div>
-						<div>SmallImageId: @dlfileentry.smallImageId</div>
-						<div>LargeImageId: @dlfileentry.largeImageId</div>
-						<div>Custom1ImageId: @dlfileentry.custom1ImageId</div>
-						<div>Custom2ImageId: @dlfileentry.custom2ImageId</div>
-						<div>ManualCheckInRequired: @dlfileentry.manualCheckInRequired</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DlfileentryApplication.get(dlfileentry.fileEntryId)">@dlfileentry.fileEntryId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @dlfileentry.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @dlfileentry.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @dlfileentry.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @dlfileentry.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @dlfileentry.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @dlfileentry.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @dlfileentry.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @dlfileentry.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @dlfileentry.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						RepositoryId: @dlfileentry.repositoryId
+					</li>
+					<li class="btn btn-default disabled">
+						FolderId: @dlfileentry.folderId
+					</li>
+					<li class="btn btn-default disabled">
+						TreePath: @dlfileentry.treePath
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @dlfileentry.name
+					</li>
+					<li class="btn btn-default disabled">
+						FileName: @dlfileentry.fileName
+					</li>
+					<li class="btn btn-default disabled">
+						Extension: @dlfileentry.extension
+					</li>
+					<li class="btn btn-default disabled">
+						MimeType: @dlfileentry.mimeType
+					</li>
+					<li class="btn btn-default disabled">
+						Title: @dlfileentry.title
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @dlfileentry.description
+					</li>
+					<li class="btn btn-default disabled">
+						ExtraSettings: @dlfileentry.extraSettings
+					</li>
+					<li class="btn btn-default disabled">
+						FileEntryTypeId: @dlfileentry.fileEntryTypeId
+					</li>
+					<li class="btn btn-default disabled">
+						Version: @dlfileentry.version
+					</li>
+					<li class="btn btn-default disabled">
+						Size: @dlfileentry.size
+					</li>
+					<li class="btn btn-default disabled">
+						ReadCount: @dlfileentry.readCount
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImageId: @dlfileentry.smallImageId
+					</li>
+					<li class="btn btn-default disabled">
+						LargeImageId: @dlfileentry.largeImageId
+					</li>
+					<li class="btn btn-default disabled">
+						Custom1ImageId: @dlfileentry.custom1ImageId
+					</li>
+					<li class="btn btn-default disabled">
+						Custom2ImageId: @dlfileentry.custom2ImageId
+					</li>
+					<li class="btn btn-default disabled">
+						ManualCheckInRequired: @dlfileentry.manualCheckInRequired
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

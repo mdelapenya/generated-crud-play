@@ -10,23 +10,36 @@
 				<a class="btn btn-success" href="@routes.DlfileentrymetadataApplication.addDlfileentrymetadata">Create New Dlfileentrymetadata</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Dlfileentrymetadata.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(dlfileentrymetadata <- dlfileentrymetadatas) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DlfileentrymetadataApplication.get(dlfileentrymetadata.fileEntryMetadataId)">@dlfileentrymetadata.fileEntryMetadataId</a></div>
-						<div>Uuid: @dlfileentrymetadata.uuid</div>
-						<div>DDMStorageId: @dlfileentrymetadata.DDMStorageId</div>
-						<div>DDMStructureId: @dlfileentrymetadata.DDMStructureId</div>
-						<div>FileEntryTypeId: @dlfileentrymetadata.fileEntryTypeId</div>
-						<div>FileEntryId: @dlfileentrymetadata.fileEntryId</div>
-						<div>FileVersionId: @dlfileentrymetadata.fileVersionId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DlfileentrymetadataApplication.get(dlfileentrymetadata.fileEntryMetadataId)">@dlfileentrymetadata.fileEntryMetadataId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @dlfileentrymetadata.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						DDMStorageId: @dlfileentrymetadata.DDMStorageId
+					</li>
+					<li class="btn btn-default disabled">
+						DDMStructureId: @dlfileentrymetadata.DDMStructureId
+					</li>
+					<li class="btn btn-default disabled">
+						FileEntryTypeId: @dlfileentrymetadata.fileEntryTypeId
+					</li>
+					<li class="btn btn-default disabled">
+						FileEntryId: @dlfileentrymetadata.fileEntryId
+					</li>
+					<li class="btn btn-default disabled">
+						FileVersionId: @dlfileentrymetadata.fileVersionId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

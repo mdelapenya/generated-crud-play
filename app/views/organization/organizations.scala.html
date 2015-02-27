@@ -10,34 +10,69 @@
 				<a class="btn btn-success" href="@routes.OrganizationApplication.addOrganization">Create New Organization</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Organization.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(organization <- organizations) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.OrganizationApplication.get(organization.organizationId)">@organization.organizationId</a></div>
-						<div>MvccVersion: @organization.mvccVersion</div>
-						<div>Uuid: @organization.uuid</div>
-						<div>CompanyId: @organization.companyId</div>
-						<div>UserId: @organization.userId</div>
-						<div>UserName: @organization.userName</div>
-						<div>CreateDate: @organization.createDate</div>
-						<div>ModifiedDate: @organization.modifiedDate</div>
-						<div>ParentOrganizationId: @organization.parentOrganizationId</div>
-						<div>TreePath: @organization.treePath</div>
-						<div>Name: @organization.name</div>
-						<div>Customtype: @organization.customtype</div>
-						<div>Recursable: @organization.recursable</div>
-						<div>RegionId: @organization.regionId</div>
-						<div>CountryId: @organization.countryId</div>
-						<div>StatusId: @organization.statusId</div>
-						<div>Comments: @organization.comments</div>
-						<div>LogoId: @organization.logoId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.OrganizationApplication.get(organization.organizationId)">@organization.organizationId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @organization.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @organization.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @organization.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @organization.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @organization.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @organization.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @organization.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ParentOrganizationId: @organization.parentOrganizationId
+					</li>
+					<li class="btn btn-default disabled">
+						TreePath: @organization.treePath
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @organization.name
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @organization.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						Recursable: @organization.recursable
+					</li>
+					<li class="btn btn-default disabled">
+						RegionId: @organization.regionId
+					</li>
+					<li class="btn btn-default disabled">
+						CountryId: @organization.countryId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusId: @organization.statusId
+					</li>
+					<li class="btn btn-default disabled">
+						Comments: @organization.comments
+					</li>
+					<li class="btn btn-default disabled">
+						LogoId: @organization.logoId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

@@ -10,23 +10,36 @@
 				<a class="btn btn-success" href="@routes.ScproductscreenshotApplication.addScproductscreenshot">Create New Scproductscreenshot</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Scproductscreenshot.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(scproductscreenshot <- scproductscreenshots) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ScproductscreenshotApplication.get(scproductscreenshot.productScreenshotId)">@scproductscreenshot.productScreenshotId</a></div>
-						<div>CompanyId: @scproductscreenshot.companyId</div>
-						<div>GroupId: @scproductscreenshot.groupId</div>
-						<div>ProductEntryId: @scproductscreenshot.productEntryId</div>
-						<div>ThumbnailId: @scproductscreenshot.thumbnailId</div>
-						<div>FullImageId: @scproductscreenshot.fullImageId</div>
-						<div>Priority: @scproductscreenshot.priority</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ScproductscreenshotApplication.get(scproductscreenshot.productScreenshotId)">@scproductscreenshot.productScreenshotId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @scproductscreenshot.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @scproductscreenshot.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						ProductEntryId: @scproductscreenshot.productEntryId
+					</li>
+					<li class="btn btn-default disabled">
+						ThumbnailId: @scproductscreenshot.thumbnailId
+					</li>
+					<li class="btn btn-default disabled">
+						FullImageId: @scproductscreenshot.fullImageId
+					</li>
+					<li class="btn btn-default disabled">
+						Priority: @scproductscreenshot.priority
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

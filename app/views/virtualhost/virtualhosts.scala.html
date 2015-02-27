@@ -10,21 +10,30 @@
 				<a class="btn btn-success" href="@routes.VirtualhostApplication.addVirtualhost">Create New Virtualhost</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Virtualhost.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(virtualhost <- virtualhosts) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.VirtualhostApplication.get(virtualhost.virtualHostId)">@virtualhost.virtualHostId</a></div>
-						<div>MvccVersion: @virtualhost.mvccVersion</div>
-						<div>CompanyId: @virtualhost.companyId</div>
-						<div>LayoutSetId: @virtualhost.layoutSetId</div>
-						<div>Hostname: @virtualhost.hostname</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.VirtualhostApplication.get(virtualhost.virtualHostId)">@virtualhost.virtualHostId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @virtualhost.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @virtualhost.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						LayoutSetId: @virtualhost.layoutSetId
+					</li>
+					<li class="btn btn-default disabled">
+						Hostname: @virtualhost.hostname
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

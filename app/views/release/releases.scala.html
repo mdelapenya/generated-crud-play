@@ -10,26 +10,45 @@
 				<a class="btn btn-success" href="@routes.ReleaseApplication.addRelease">Create New Release</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Release.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(release <- releases) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ReleaseApplication.get(release.releaseId)">@release.releaseId</a></div>
-						<div>MvccVersion: @release.mvccVersion</div>
-						<div>CreateDate: @release.createDate</div>
-						<div>ModifiedDate: @release.modifiedDate</div>
-						<div>ServletContextName: @release.servletContextName</div>
-						<div>BuildNumber: @release.buildNumber</div>
-						<div>BuildDate: @release.buildDate</div>
-						<div>Verified: @release.verified</div>
-						<div>State: @release.state</div>
-						<div>TestString: @release.testString</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ReleaseApplication.get(release.releaseId)">@release.releaseId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @release.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @release.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @release.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ServletContextName: @release.servletContextName
+					</li>
+					<li class="btn btn-default disabled">
+						BuildNumber: @release.buildNumber
+					</li>
+					<li class="btn btn-default disabled">
+						BuildDate: @release.buildDate
+					</li>
+					<li class="btn btn-default disabled">
+						Verified: @release.verified
+					</li>
+					<li class="btn btn-default disabled">
+						State: @release.state
+					</li>
+					<li class="btn btn-default disabled">
+						TestString: @release.testString
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

@@ -10,19 +10,24 @@
 				<a class="btn btn-success" href="@routes.ClassnameApplication.addClassname">Create New Classname</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Classname.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(classname <- classnames) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ClassnameApplication.get(classname.classNameId)">@classname.classNameId</a></div>
-						<div>MvccVersion: @classname.mvccVersion</div>
-						<div>Value: @classname.value</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ClassnameApplication.get(classname.classNameId)">@classname.classNameId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @classname.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Value: @classname.value
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

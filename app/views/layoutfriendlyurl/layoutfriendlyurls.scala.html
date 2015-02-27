@@ -10,29 +10,54 @@
 				<a class="btn btn-success" href="@routes.LayoutfriendlyurlApplication.addLayoutfriendlyurl">Create New Layoutfriendlyurl</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Layoutfriendlyurl.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(layoutfriendlyurl <- layoutfriendlyurls) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.LayoutfriendlyurlApplication.get(layoutfriendlyurl.layoutFriendlyURLId)">@layoutfriendlyurl.layoutFriendlyURLId</a></div>
-						<div>MvccVersion: @layoutfriendlyurl.mvccVersion</div>
-						<div>Uuid: @layoutfriendlyurl.uuid</div>
-						<div>GroupId: @layoutfriendlyurl.groupId</div>
-						<div>CompanyId: @layoutfriendlyurl.companyId</div>
-						<div>UserId: @layoutfriendlyurl.userId</div>
-						<div>UserName: @layoutfriendlyurl.userName</div>
-						<div>CreateDate: @layoutfriendlyurl.createDate</div>
-						<div>ModifiedDate: @layoutfriendlyurl.modifiedDate</div>
-						<div>Plid: @layoutfriendlyurl.plid</div>
-						<div>PrivateLayout: @layoutfriendlyurl.privateLayout</div>
-						<div>FriendlyURL: @layoutfriendlyurl.friendlyURL</div>
-						<div>LanguageId: @layoutfriendlyurl.languageId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.LayoutfriendlyurlApplication.get(layoutfriendlyurl.layoutFriendlyURLId)">@layoutfriendlyurl.layoutFriendlyURLId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @layoutfriendlyurl.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @layoutfriendlyurl.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @layoutfriendlyurl.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @layoutfriendlyurl.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @layoutfriendlyurl.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @layoutfriendlyurl.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @layoutfriendlyurl.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @layoutfriendlyurl.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Plid: @layoutfriendlyurl.plid
+					</li>
+					<li class="btn btn-default disabled">
+						PrivateLayout: @layoutfriendlyurl.privateLayout
+					</li>
+					<li class="btn btn-default disabled">
+						FriendlyURL: @layoutfriendlyurl.friendlyURL
+					</li>
+					<li class="btn btn-default disabled">
+						LanguageId: @layoutfriendlyurl.languageId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

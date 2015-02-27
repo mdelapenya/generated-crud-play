@@ -10,34 +10,69 @@
 				<a class="btn btn-success" href="@routes.OrglaborApplication.addOrglabor">Create New Orglabor</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Orglabor.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(orglabor <- orglabors) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.OrglaborApplication.get(orglabor.orgLaborId)">@orglabor.orgLaborId</a></div>
-						<div>MvccVersion: @orglabor.mvccVersion</div>
-						<div>OrganizationId: @orglabor.organizationId</div>
-						<div>TypeId: @orglabor.typeId</div>
-						<div>SunOpen: @orglabor.sunOpen</div>
-						<div>SunClose: @orglabor.sunClose</div>
-						<div>MonOpen: @orglabor.monOpen</div>
-						<div>MonClose: @orglabor.monClose</div>
-						<div>TueOpen: @orglabor.tueOpen</div>
-						<div>TueClose: @orglabor.tueClose</div>
-						<div>WedOpen: @orglabor.wedOpen</div>
-						<div>WedClose: @orglabor.wedClose</div>
-						<div>ThuOpen: @orglabor.thuOpen</div>
-						<div>ThuClose: @orglabor.thuClose</div>
-						<div>FriOpen: @orglabor.friOpen</div>
-						<div>FriClose: @orglabor.friClose</div>
-						<div>SatOpen: @orglabor.satOpen</div>
-						<div>SatClose: @orglabor.satClose</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.OrglaborApplication.get(orglabor.orgLaborId)">@orglabor.orgLaborId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @orglabor.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						OrganizationId: @orglabor.organizationId
+					</li>
+					<li class="btn btn-default disabled">
+						TypeId: @orglabor.typeId
+					</li>
+					<li class="btn btn-default disabled">
+						SunOpen: @orglabor.sunOpen
+					</li>
+					<li class="btn btn-default disabled">
+						SunClose: @orglabor.sunClose
+					</li>
+					<li class="btn btn-default disabled">
+						MonOpen: @orglabor.monOpen
+					</li>
+					<li class="btn btn-default disabled">
+						MonClose: @orglabor.monClose
+					</li>
+					<li class="btn btn-default disabled">
+						TueOpen: @orglabor.tueOpen
+					</li>
+					<li class="btn btn-default disabled">
+						TueClose: @orglabor.tueClose
+					</li>
+					<li class="btn btn-default disabled">
+						WedOpen: @orglabor.wedOpen
+					</li>
+					<li class="btn btn-default disabled">
+						WedClose: @orglabor.wedClose
+					</li>
+					<li class="btn btn-default disabled">
+						ThuOpen: @orglabor.thuOpen
+					</li>
+					<li class="btn btn-default disabled">
+						ThuClose: @orglabor.thuClose
+					</li>
+					<li class="btn btn-default disabled">
+						FriOpen: @orglabor.friOpen
+					</li>
+					<li class="btn btn-default disabled">
+						FriClose: @orglabor.friClose
+					</li>
+					<li class="btn btn-default disabled">
+						SatOpen: @orglabor.satOpen
+					</li>
+					<li class="btn btn-default disabled">
+						SatClose: @orglabor.satClose
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

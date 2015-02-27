@@ -10,37 +10,78 @@
 				<a class="btn btn-success" href="@routes.LayoutsetbranchApplication.addLayoutsetbranch">Create New Layoutsetbranch</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Layoutsetbranch.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(layoutsetbranch <- layoutsetbranchs) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.LayoutsetbranchApplication.get(layoutsetbranch.layoutSetBranchId)">@layoutsetbranch.layoutSetBranchId</a></div>
-						<div>MvccVersion: @layoutsetbranch.mvccVersion</div>
-						<div>GroupId: @layoutsetbranch.groupId</div>
-						<div>CompanyId: @layoutsetbranch.companyId</div>
-						<div>UserId: @layoutsetbranch.userId</div>
-						<div>UserName: @layoutsetbranch.userName</div>
-						<div>CreateDate: @layoutsetbranch.createDate</div>
-						<div>ModifiedDate: @layoutsetbranch.modifiedDate</div>
-						<div>PrivateLayout: @layoutsetbranch.privateLayout</div>
-						<div>Name: @layoutsetbranch.name</div>
-						<div>Description: @layoutsetbranch.description</div>
-						<div>Master: @layoutsetbranch.master</div>
-						<div>LogoId: @layoutsetbranch.logoId</div>
-						<div>ThemeId: @layoutsetbranch.themeId</div>
-						<div>ColorSchemeId: @layoutsetbranch.colorSchemeId</div>
-						<div>WapThemeId: @layoutsetbranch.wapThemeId</div>
-						<div>WapColorSchemeId: @layoutsetbranch.wapColorSchemeId</div>
-						<div>Css: @layoutsetbranch.css</div>
-						<div>Settings: @layoutsetbranch.settings</div>
-						<div>LayoutSetPrototypeUuid: @layoutsetbranch.layoutSetPrototypeUuid</div>
-						<div>LayoutSetPrototypeLinkEnabled: @layoutsetbranch.layoutSetPrototypeLinkEnabled</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.LayoutsetbranchApplication.get(layoutsetbranch.layoutSetBranchId)">@layoutsetbranch.layoutSetBranchId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @layoutsetbranch.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @layoutsetbranch.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @layoutsetbranch.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @layoutsetbranch.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @layoutsetbranch.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @layoutsetbranch.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @layoutsetbranch.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						PrivateLayout: @layoutsetbranch.privateLayout
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @layoutsetbranch.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @layoutsetbranch.description
+					</li>
+					<li class="btn btn-default disabled">
+						Master: @layoutsetbranch.master
+					</li>
+					<li class="btn btn-default disabled">
+						LogoId: @layoutsetbranch.logoId
+					</li>
+					<li class="btn btn-default disabled">
+						ThemeId: @layoutsetbranch.themeId
+					</li>
+					<li class="btn btn-default disabled">
+						ColorSchemeId: @layoutsetbranch.colorSchemeId
+					</li>
+					<li class="btn btn-default disabled">
+						WapThemeId: @layoutsetbranch.wapThemeId
+					</li>
+					<li class="btn btn-default disabled">
+						WapColorSchemeId: @layoutsetbranch.wapColorSchemeId
+					</li>
+					<li class="btn btn-default disabled">
+						Css: @layoutsetbranch.css
+					</li>
+					<li class="btn btn-default disabled">
+						Settings: @layoutsetbranch.settings
+					</li>
+					<li class="btn btn-default disabled">
+						LayoutSetPrototypeUuid: @layoutsetbranch.layoutSetPrototypeUuid
+					</li>
+					<li class="btn btn-default disabled">
+						LayoutSetPrototypeLinkEnabled: @layoutsetbranch.layoutSetPrototypeLinkEnabled
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

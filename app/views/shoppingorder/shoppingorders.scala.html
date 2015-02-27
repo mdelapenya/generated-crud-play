@@ -10,67 +10,168 @@
 				<a class="btn btn-success" href="@routes.ShoppingorderApplication.addShoppingorder">Create New Shoppingorder</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Shoppingorder.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(shoppingorder <- shoppingorders) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ShoppingorderApplication.get(shoppingorder.orderId)">@shoppingorder.orderId</a></div>
-						<div>GroupId: @shoppingorder.groupId</div>
-						<div>CompanyId: @shoppingorder.companyId</div>
-						<div>UserId: @shoppingorder.userId</div>
-						<div>UserName: @shoppingorder.userName</div>
-						<div>CreateDate: @shoppingorder.createDate</div>
-						<div>ModifiedDate: @shoppingorder.modifiedDate</div>
-						<div>Number: @shoppingorder.number</div>
-						<div>Tax: @shoppingorder.tax</div>
-						<div>Shipping: @shoppingorder.shipping</div>
-						<div>AltShipping: @shoppingorder.altShipping</div>
-						<div>RequiresShipping: @shoppingorder.requiresShipping</div>
-						<div>Insure: @shoppingorder.insure</div>
-						<div>Insurance: @shoppingorder.insurance</div>
-						<div>CouponCodes: @shoppingorder.couponCodes</div>
-						<div>CouponDiscount: @shoppingorder.couponDiscount</div>
-						<div>BillingFirstName: @shoppingorder.billingFirstName</div>
-						<div>BillingLastName: @shoppingorder.billingLastName</div>
-						<div>BillingEmailAddress: @shoppingorder.billingEmailAddress</div>
-						<div>BillingCompany: @shoppingorder.billingCompany</div>
-						<div>BillingStreet: @shoppingorder.billingStreet</div>
-						<div>BillingCity: @shoppingorder.billingCity</div>
-						<div>BillingState: @shoppingorder.billingState</div>
-						<div>BillingZip: @shoppingorder.billingZip</div>
-						<div>BillingCountry: @shoppingorder.billingCountry</div>
-						<div>BillingPhone: @shoppingorder.billingPhone</div>
-						<div>ShipToBilling: @shoppingorder.shipToBilling</div>
-						<div>ShippingFirstName: @shoppingorder.shippingFirstName</div>
-						<div>ShippingLastName: @shoppingorder.shippingLastName</div>
-						<div>ShippingEmailAddress: @shoppingorder.shippingEmailAddress</div>
-						<div>ShippingCompany: @shoppingorder.shippingCompany</div>
-						<div>ShippingStreet: @shoppingorder.shippingStreet</div>
-						<div>ShippingCity: @shoppingorder.shippingCity</div>
-						<div>ShippingState: @shoppingorder.shippingState</div>
-						<div>ShippingZip: @shoppingorder.shippingZip</div>
-						<div>ShippingCountry: @shoppingorder.shippingCountry</div>
-						<div>ShippingPhone: @shoppingorder.shippingPhone</div>
-						<div>CcName: @shoppingorder.ccName</div>
-						<div>CcType: @shoppingorder.ccType</div>
-						<div>CcNumber: @shoppingorder.ccNumber</div>
-						<div>CcExpMonth: @shoppingorder.ccExpMonth</div>
-						<div>CcExpYear: @shoppingorder.ccExpYear</div>
-						<div>CcVerNumber: @shoppingorder.ccVerNumber</div>
-						<div>Comments: @shoppingorder.comments</div>
-						<div>PpTxnId: @shoppingorder.ppTxnId</div>
-						<div>PpPaymentStatus: @shoppingorder.ppPaymentStatus</div>
-						<div>PpPaymentGross: @shoppingorder.ppPaymentGross</div>
-						<div>PpReceiverEmail: @shoppingorder.ppReceiverEmail</div>
-						<div>PpPayerEmail: @shoppingorder.ppPayerEmail</div>
-						<div>SendOrderEmail: @shoppingorder.sendOrderEmail</div>
-						<div>SendShippingEmail: @shoppingorder.sendShippingEmail</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ShoppingorderApplication.get(shoppingorder.orderId)">@shoppingorder.orderId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @shoppingorder.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @shoppingorder.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @shoppingorder.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @shoppingorder.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @shoppingorder.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @shoppingorder.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Number: @shoppingorder.number
+					</li>
+					<li class="btn btn-default disabled">
+						Tax: @shoppingorder.tax
+					</li>
+					<li class="btn btn-default disabled">
+						Shipping: @shoppingorder.shipping
+					</li>
+					<li class="btn btn-default disabled">
+						AltShipping: @shoppingorder.altShipping
+					</li>
+					<li class="btn btn-default disabled">
+						RequiresShipping: @shoppingorder.requiresShipping
+					</li>
+					<li class="btn btn-default disabled">
+						Insure: @shoppingorder.insure
+					</li>
+					<li class="btn btn-default disabled">
+						Insurance: @shoppingorder.insurance
+					</li>
+					<li class="btn btn-default disabled">
+						CouponCodes: @shoppingorder.couponCodes
+					</li>
+					<li class="btn btn-default disabled">
+						CouponDiscount: @shoppingorder.couponDiscount
+					</li>
+					<li class="btn btn-default disabled">
+						BillingFirstName: @shoppingorder.billingFirstName
+					</li>
+					<li class="btn btn-default disabled">
+						BillingLastName: @shoppingorder.billingLastName
+					</li>
+					<li class="btn btn-default disabled">
+						BillingEmailAddress: @shoppingorder.billingEmailAddress
+					</li>
+					<li class="btn btn-default disabled">
+						BillingCompany: @shoppingorder.billingCompany
+					</li>
+					<li class="btn btn-default disabled">
+						BillingStreet: @shoppingorder.billingStreet
+					</li>
+					<li class="btn btn-default disabled">
+						BillingCity: @shoppingorder.billingCity
+					</li>
+					<li class="btn btn-default disabled">
+						BillingState: @shoppingorder.billingState
+					</li>
+					<li class="btn btn-default disabled">
+						BillingZip: @shoppingorder.billingZip
+					</li>
+					<li class="btn btn-default disabled">
+						BillingCountry: @shoppingorder.billingCountry
+					</li>
+					<li class="btn btn-default disabled">
+						BillingPhone: @shoppingorder.billingPhone
+					</li>
+					<li class="btn btn-default disabled">
+						ShipToBilling: @shoppingorder.shipToBilling
+					</li>
+					<li class="btn btn-default disabled">
+						ShippingFirstName: @shoppingorder.shippingFirstName
+					</li>
+					<li class="btn btn-default disabled">
+						ShippingLastName: @shoppingorder.shippingLastName
+					</li>
+					<li class="btn btn-default disabled">
+						ShippingEmailAddress: @shoppingorder.shippingEmailAddress
+					</li>
+					<li class="btn btn-default disabled">
+						ShippingCompany: @shoppingorder.shippingCompany
+					</li>
+					<li class="btn btn-default disabled">
+						ShippingStreet: @shoppingorder.shippingStreet
+					</li>
+					<li class="btn btn-default disabled">
+						ShippingCity: @shoppingorder.shippingCity
+					</li>
+					<li class="btn btn-default disabled">
+						ShippingState: @shoppingorder.shippingState
+					</li>
+					<li class="btn btn-default disabled">
+						ShippingZip: @shoppingorder.shippingZip
+					</li>
+					<li class="btn btn-default disabled">
+						ShippingCountry: @shoppingorder.shippingCountry
+					</li>
+					<li class="btn btn-default disabled">
+						ShippingPhone: @shoppingorder.shippingPhone
+					</li>
+					<li class="btn btn-default disabled">
+						CcName: @shoppingorder.ccName
+					</li>
+					<li class="btn btn-default disabled">
+						CcType: @shoppingorder.ccType
+					</li>
+					<li class="btn btn-default disabled">
+						CcNumber: @shoppingorder.ccNumber
+					</li>
+					<li class="btn btn-default disabled">
+						CcExpMonth: @shoppingorder.ccExpMonth
+					</li>
+					<li class="btn btn-default disabled">
+						CcExpYear: @shoppingorder.ccExpYear
+					</li>
+					<li class="btn btn-default disabled">
+						CcVerNumber: @shoppingorder.ccVerNumber
+					</li>
+					<li class="btn btn-default disabled">
+						Comments: @shoppingorder.comments
+					</li>
+					<li class="btn btn-default disabled">
+						PpTxnId: @shoppingorder.ppTxnId
+					</li>
+					<li class="btn btn-default disabled">
+						PpPaymentStatus: @shoppingorder.ppPaymentStatus
+					</li>
+					<li class="btn btn-default disabled">
+						PpPaymentGross: @shoppingorder.ppPaymentGross
+					</li>
+					<li class="btn btn-default disabled">
+						PpReceiverEmail: @shoppingorder.ppReceiverEmail
+					</li>
+					<li class="btn btn-default disabled">
+						PpPayerEmail: @shoppingorder.ppPayerEmail
+					</li>
+					<li class="btn btn-default disabled">
+						SendOrderEmail: @shoppingorder.sendOrderEmail
+					</li>
+					<li class="btn btn-default disabled">
+						SendShippingEmail: @shoppingorder.sendShippingEmail
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

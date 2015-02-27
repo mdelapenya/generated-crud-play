@@ -10,23 +10,36 @@
 				<a class="btn btn-success" href="@routes.SocialactivitysettingApplication.addSocialactivitysetting">Create New Socialactivitysetting</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Socialactivitysetting.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(socialactivitysetting <- socialactivitysettings) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.SocialactivitysettingApplication.get(socialactivitysetting.activitySettingId)">@socialactivitysetting.activitySettingId</a></div>
-						<div>GroupId: @socialactivitysetting.groupId</div>
-						<div>CompanyId: @socialactivitysetting.companyId</div>
-						<div>ClassNameId: @socialactivitysetting.classNameId</div>
-						<div>ActivityType: @socialactivitysetting.activityType</div>
-						<div>Name: @socialactivitysetting.name</div>
-						<div>Value: @socialactivitysetting.value</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.SocialactivitysettingApplication.get(socialactivitysetting.activitySettingId)">@socialactivitysetting.activitySettingId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @socialactivitysetting.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @socialactivitysetting.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @socialactivitysetting.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ActivityType: @socialactivitysetting.activityType
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @socialactivitysetting.name
+					</li>
+					<li class="btn btn-default disabled">
+						Value: @socialactivitysetting.value
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

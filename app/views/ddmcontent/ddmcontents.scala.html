@@ -10,27 +10,48 @@
 				<a class="btn btn-success" href="@routes.DdmcontentApplication.addDdmcontent">Create New Ddmcontent</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Ddmcontent.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(ddmcontent <- ddmcontents) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DdmcontentApplication.get(ddmcontent.contentId)">@ddmcontent.contentId</a></div>
-						<div>Uuid: @ddmcontent.uuid</div>
-						<div>GroupId: @ddmcontent.groupId</div>
-						<div>CompanyId: @ddmcontent.companyId</div>
-						<div>UserId: @ddmcontent.userId</div>
-						<div>UserName: @ddmcontent.userName</div>
-						<div>CreateDate: @ddmcontent.createDate</div>
-						<div>ModifiedDate: @ddmcontent.modifiedDate</div>
-						<div>Name: @ddmcontent.name</div>
-						<div>Description: @ddmcontent.description</div>
-						<div>Data: @ddmcontent.data</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DdmcontentApplication.get(ddmcontent.contentId)">@ddmcontent.contentId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @ddmcontent.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @ddmcontent.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @ddmcontent.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @ddmcontent.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @ddmcontent.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @ddmcontent.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @ddmcontent.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @ddmcontent.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @ddmcontent.description
+					</li>
+					<li class="btn btn-default disabled">
+						Data: @ddmcontent.data
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

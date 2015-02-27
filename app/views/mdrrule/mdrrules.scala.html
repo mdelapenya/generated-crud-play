@@ -10,29 +10,54 @@
 				<a class="btn btn-success" href="@routes.MdrruleApplication.addMdrrule">Create New Mdrrule</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Mdrrule.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(mdrrule <- mdrrules) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MdrruleApplication.get(mdrrule.ruleId)">@mdrrule.ruleId</a></div>
-						<div>Uuid: @mdrrule.uuid</div>
-						<div>GroupId: @mdrrule.groupId</div>
-						<div>CompanyId: @mdrrule.companyId</div>
-						<div>UserId: @mdrrule.userId</div>
-						<div>UserName: @mdrrule.userName</div>
-						<div>CreateDate: @mdrrule.createDate</div>
-						<div>ModifiedDate: @mdrrule.modifiedDate</div>
-						<div>RuleGroupId: @mdrrule.ruleGroupId</div>
-						<div>Name: @mdrrule.name</div>
-						<div>Description: @mdrrule.description</div>
-						<div>Customtype: @mdrrule.customtype</div>
-						<div>TypeSettings: @mdrrule.typeSettings</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MdrruleApplication.get(mdrrule.ruleId)">@mdrrule.ruleId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @mdrrule.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @mdrrule.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @mdrrule.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @mdrrule.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @mdrrule.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @mdrrule.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @mdrrule.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						RuleGroupId: @mdrrule.ruleGroupId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @mdrrule.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @mdrrule.description
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @mdrrule.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						TypeSettings: @mdrrule.typeSettings
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

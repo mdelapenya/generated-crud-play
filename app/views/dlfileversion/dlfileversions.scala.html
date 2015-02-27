@@ -10,43 +10,96 @@
 				<a class="btn btn-success" href="@routes.DlfileversionApplication.addDlfileversion">Create New Dlfileversion</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Dlfileversion.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(dlfileversion <- dlfileversions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DlfileversionApplication.get(dlfileversion.fileVersionId)">@dlfileversion.fileVersionId</a></div>
-						<div>Uuid: @dlfileversion.uuid</div>
-						<div>GroupId: @dlfileversion.groupId</div>
-						<div>CompanyId: @dlfileversion.companyId</div>
-						<div>UserId: @dlfileversion.userId</div>
-						<div>UserName: @dlfileversion.userName</div>
-						<div>CreateDate: @dlfileversion.createDate</div>
-						<div>ModifiedDate: @dlfileversion.modifiedDate</div>
-						<div>RepositoryId: @dlfileversion.repositoryId</div>
-						<div>FolderId: @dlfileversion.folderId</div>
-						<div>FileEntryId: @dlfileversion.fileEntryId</div>
-						<div>TreePath: @dlfileversion.treePath</div>
-						<div>FileName: @dlfileversion.fileName</div>
-						<div>Extension: @dlfileversion.extension</div>
-						<div>MimeType: @dlfileversion.mimeType</div>
-						<div>Title: @dlfileversion.title</div>
-						<div>Description: @dlfileversion.description</div>
-						<div>ChangeLog: @dlfileversion.changeLog</div>
-						<div>ExtraSettings: @dlfileversion.extraSettings</div>
-						<div>FileEntryTypeId: @dlfileversion.fileEntryTypeId</div>
-						<div>Version: @dlfileversion.version</div>
-						<div>Size: @dlfileversion.size</div>
-						<div>Checksum: @dlfileversion.checksum</div>
-						<div>Status: @dlfileversion.status</div>
-						<div>StatusByUserId: @dlfileversion.statusByUserId</div>
-						<div>StatusByUserName: @dlfileversion.statusByUserName</div>
-						<div>StatusDate: @dlfileversion.statusDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DlfileversionApplication.get(dlfileversion.fileVersionId)">@dlfileversion.fileVersionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @dlfileversion.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @dlfileversion.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @dlfileversion.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @dlfileversion.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @dlfileversion.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @dlfileversion.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @dlfileversion.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						RepositoryId: @dlfileversion.repositoryId
+					</li>
+					<li class="btn btn-default disabled">
+						FolderId: @dlfileversion.folderId
+					</li>
+					<li class="btn btn-default disabled">
+						FileEntryId: @dlfileversion.fileEntryId
+					</li>
+					<li class="btn btn-default disabled">
+						TreePath: @dlfileversion.treePath
+					</li>
+					<li class="btn btn-default disabled">
+						FileName: @dlfileversion.fileName
+					</li>
+					<li class="btn btn-default disabled">
+						Extension: @dlfileversion.extension
+					</li>
+					<li class="btn btn-default disabled">
+						MimeType: @dlfileversion.mimeType
+					</li>
+					<li class="btn btn-default disabled">
+						Title: @dlfileversion.title
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @dlfileversion.description
+					</li>
+					<li class="btn btn-default disabled">
+						ChangeLog: @dlfileversion.changeLog
+					</li>
+					<li class="btn btn-default disabled">
+						ExtraSettings: @dlfileversion.extraSettings
+					</li>
+					<li class="btn btn-default disabled">
+						FileEntryTypeId: @dlfileversion.fileEntryTypeId
+					</li>
+					<li class="btn btn-default disabled">
+						Version: @dlfileversion.version
+					</li>
+					<li class="btn btn-default disabled">
+						Size: @dlfileversion.size
+					</li>
+					<li class="btn btn-default disabled">
+						Checksum: @dlfileversion.checksum
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @dlfileversion.status
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserId: @dlfileversion.statusByUserId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserName: @dlfileversion.statusByUserName
+					</li>
+					<li class="btn btn-default disabled">
+						StatusDate: @dlfileversion.statusDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

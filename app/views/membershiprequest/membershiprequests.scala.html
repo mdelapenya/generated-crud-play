@@ -10,27 +10,48 @@
 				<a class="btn btn-success" href="@routes.MembershiprequestApplication.addMembershiprequest">Create New Membershiprequest</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Membershiprequest.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(membershiprequest <- membershiprequests) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MembershiprequestApplication.get(membershiprequest.membershipRequestId)">@membershiprequest.membershipRequestId</a></div>
-						<div>MvccVersion: @membershiprequest.mvccVersion</div>
-						<div>GroupId: @membershiprequest.groupId</div>
-						<div>CompanyId: @membershiprequest.companyId</div>
-						<div>UserId: @membershiprequest.userId</div>
-						<div>CreateDate: @membershiprequest.createDate</div>
-						<div>Comments: @membershiprequest.comments</div>
-						<div>ReplyComments: @membershiprequest.replyComments</div>
-						<div>ReplyDate: @membershiprequest.replyDate</div>
-						<div>ReplierUserId: @membershiprequest.replierUserId</div>
-						<div>StatusId: @membershiprequest.statusId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MembershiprequestApplication.get(membershiprequest.membershipRequestId)">@membershiprequest.membershipRequestId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @membershiprequest.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @membershiprequest.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @membershiprequest.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @membershiprequest.userId
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @membershiprequest.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						Comments: @membershiprequest.comments
+					</li>
+					<li class="btn btn-default disabled">
+						ReplyComments: @membershiprequest.replyComments
+					</li>
+					<li class="btn btn-default disabled">
+						ReplyDate: @membershiprequest.replyDate
+					</li>
+					<li class="btn btn-default disabled">
+						ReplierUserId: @membershiprequest.replierUserId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusId: @membershiprequest.statusId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

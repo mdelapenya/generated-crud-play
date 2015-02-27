@@ -10,21 +10,30 @@
 				<a class="btn btn-success" href="@routes.DlsynceventApplication.addDlsyncevent">Create New Dlsyncevent</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Dlsyncevent.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(dlsyncevent <- dlsyncevents) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DlsynceventApplication.get(dlsyncevent.syncEventId)">@dlsyncevent.syncEventId</a></div>
-						<div>ModifiedTime: @dlsyncevent.modifiedTime</div>
-						<div>Event: @dlsyncevent.event</div>
-						<div>Customtype: @dlsyncevent.customtype</div>
-						<div>TypePK: @dlsyncevent.typePK</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DlsynceventApplication.get(dlsyncevent.syncEventId)">@dlsyncevent.syncEventId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						ModifiedTime: @dlsyncevent.modifiedTime
+					</li>
+					<li class="btn btn-default disabled">
+						Event: @dlsyncevent.event
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @dlsyncevent.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						TypePK: @dlsyncevent.typePK
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

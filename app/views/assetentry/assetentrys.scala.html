@@ -10,43 +10,96 @@
 				<a class="btn btn-success" href="@routes.AssetentryApplication.addAssetentry">Create New Assetentry</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Assetentry.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(assetentry <- assetentrys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.AssetentryApplication.get(assetentry.entryId)">@assetentry.entryId</a></div>
-						<div>GroupId: @assetentry.groupId</div>
-						<div>CompanyId: @assetentry.companyId</div>
-						<div>UserId: @assetentry.userId</div>
-						<div>UserName: @assetentry.userName</div>
-						<div>CreateDate: @assetentry.createDate</div>
-						<div>ModifiedDate: @assetentry.modifiedDate</div>
-						<div>ClassNameId: @assetentry.classNameId</div>
-						<div>ClassPK: @assetentry.classPK</div>
-						<div>ClassUuid: @assetentry.classUuid</div>
-						<div>ClassTypeId: @assetentry.classTypeId</div>
-						<div>Listable: @assetentry.listable</div>
-						<div>Visible: @assetentry.visible</div>
-						<div>StartDate: @assetentry.startDate</div>
-						<div>EndDate: @assetentry.endDate</div>
-						<div>PublishDate: @assetentry.publishDate</div>
-						<div>ExpirationDate: @assetentry.expirationDate</div>
-						<div>MimeType: @assetentry.mimeType</div>
-						<div>Title: @assetentry.title</div>
-						<div>Description: @assetentry.description</div>
-						<div>Summary: @assetentry.summary</div>
-						<div>Url: @assetentry.url</div>
-						<div>LayoutUuid: @assetentry.layoutUuid</div>
-						<div>Height: @assetentry.height</div>
-						<div>Width: @assetentry.width</div>
-						<div>Priority: @assetentry.priority</div>
-						<div>ViewCount: @assetentry.viewCount</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.AssetentryApplication.get(assetentry.entryId)">@assetentry.entryId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @assetentry.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @assetentry.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @assetentry.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @assetentry.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @assetentry.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @assetentry.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @assetentry.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @assetentry.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						ClassUuid: @assetentry.classUuid
+					</li>
+					<li class="btn btn-default disabled">
+						ClassTypeId: @assetentry.classTypeId
+					</li>
+					<li class="btn btn-default disabled">
+						Listable: @assetentry.listable
+					</li>
+					<li class="btn btn-default disabled">
+						Visible: @assetentry.visible
+					</li>
+					<li class="btn btn-default disabled">
+						StartDate: @assetentry.startDate
+					</li>
+					<li class="btn btn-default disabled">
+						EndDate: @assetentry.endDate
+					</li>
+					<li class="btn btn-default disabled">
+						PublishDate: @assetentry.publishDate
+					</li>
+					<li class="btn btn-default disabled">
+						ExpirationDate: @assetentry.expirationDate
+					</li>
+					<li class="btn btn-default disabled">
+						MimeType: @assetentry.mimeType
+					</li>
+					<li class="btn btn-default disabled">
+						Title: @assetentry.title
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @assetentry.description
+					</li>
+					<li class="btn btn-default disabled">
+						Summary: @assetentry.summary
+					</li>
+					<li class="btn btn-default disabled">
+						Url: @assetentry.url
+					</li>
+					<li class="btn btn-default disabled">
+						LayoutUuid: @assetentry.layoutUuid
+					</li>
+					<li class="btn btn-default disabled">
+						Height: @assetentry.height
+					</li>
+					<li class="btn btn-default disabled">
+						Width: @assetentry.width
+					</li>
+					<li class="btn btn-default disabled">
+						Priority: @assetentry.priority
+					</li>
+					<li class="btn btn-default disabled">
+						ViewCount: @assetentry.viewCount
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

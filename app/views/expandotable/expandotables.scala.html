@@ -10,20 +10,27 @@
 				<a class="btn btn-success" href="@routes.ExpandotableApplication.addExpandotable">Create New Expandotable</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Expandotable.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(expandotable <- expandotables) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ExpandotableApplication.get(expandotable.tableId)">@expandotable.tableId</a></div>
-						<div>CompanyId: @expandotable.companyId</div>
-						<div>ClassNameId: @expandotable.classNameId</div>
-						<div>Name: @expandotable.name</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ExpandotableApplication.get(expandotable.tableId)">@expandotable.tableId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @expandotable.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @expandotable.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @expandotable.name
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

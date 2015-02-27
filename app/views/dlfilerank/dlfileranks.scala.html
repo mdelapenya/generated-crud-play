@@ -10,23 +10,36 @@
 				<a class="btn btn-success" href="@routes.DlfilerankApplication.addDlfilerank">Create New Dlfilerank</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Dlfilerank.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(dlfilerank <- dlfileranks) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DlfilerankApplication.get(dlfilerank.fileRankId)">@dlfilerank.fileRankId</a></div>
-						<div>GroupId: @dlfilerank.groupId</div>
-						<div>CompanyId: @dlfilerank.companyId</div>
-						<div>UserId: @dlfilerank.userId</div>
-						<div>CreateDate: @dlfilerank.createDate</div>
-						<div>FileEntryId: @dlfilerank.fileEntryId</div>
-						<div>Active: @dlfilerank.active</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DlfilerankApplication.get(dlfilerank.fileRankId)">@dlfilerank.fileRankId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @dlfilerank.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @dlfilerank.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @dlfilerank.userId
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @dlfilerank.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						FileEntryId: @dlfilerank.fileEntryId
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @dlfilerank.active
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

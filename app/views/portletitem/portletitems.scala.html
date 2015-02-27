@@ -10,27 +10,48 @@
 				<a class="btn btn-success" href="@routes.PortletitemApplication.addPortletitem">Create New Portletitem</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Portletitem.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(portletitem <- portletitems) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.PortletitemApplication.get(portletitem.portletItemId)">@portletitem.portletItemId</a></div>
-						<div>MvccVersion: @portletitem.mvccVersion</div>
-						<div>GroupId: @portletitem.groupId</div>
-						<div>CompanyId: @portletitem.companyId</div>
-						<div>UserId: @portletitem.userId</div>
-						<div>UserName: @portletitem.userName</div>
-						<div>CreateDate: @portletitem.createDate</div>
-						<div>ModifiedDate: @portletitem.modifiedDate</div>
-						<div>Name: @portletitem.name</div>
-						<div>PortletId: @portletitem.portletId</div>
-						<div>ClassNameId: @portletitem.classNameId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.PortletitemApplication.get(portletitem.portletItemId)">@portletitem.portletItemId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @portletitem.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @portletitem.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @portletitem.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @portletitem.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @portletitem.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @portletitem.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @portletitem.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @portletitem.name
+					</li>
+					<li class="btn btn-default disabled">
+						PortletId: @portletitem.portletId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @portletitem.classNameId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

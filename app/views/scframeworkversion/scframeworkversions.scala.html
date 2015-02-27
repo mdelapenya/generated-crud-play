@@ -10,27 +10,48 @@
 				<a class="btn btn-success" href="@routes.ScframeworkversionApplication.addScframeworkversion">Create New Scframeworkversion</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Scframeworkversion.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(scframeworkversion <- scframeworkversions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ScframeworkversionApplication.get(scframeworkversion.frameworkVersionId)">@scframeworkversion.frameworkVersionId</a></div>
-						<div>GroupId: @scframeworkversion.groupId</div>
-						<div>CompanyId: @scframeworkversion.companyId</div>
-						<div>UserId: @scframeworkversion.userId</div>
-						<div>UserName: @scframeworkversion.userName</div>
-						<div>CreateDate: @scframeworkversion.createDate</div>
-						<div>ModifiedDate: @scframeworkversion.modifiedDate</div>
-						<div>Name: @scframeworkversion.name</div>
-						<div>Url: @scframeworkversion.url</div>
-						<div>Active: @scframeworkversion.active</div>
-						<div>Priority: @scframeworkversion.priority</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ScframeworkversionApplication.get(scframeworkversion.frameworkVersionId)">@scframeworkversion.frameworkVersionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @scframeworkversion.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @scframeworkversion.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @scframeworkversion.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @scframeworkversion.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @scframeworkversion.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @scframeworkversion.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @scframeworkversion.name
+					</li>
+					<li class="btn btn-default disabled">
+						Url: @scframeworkversion.url
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @scframeworkversion.active
+					</li>
+					<li class="btn btn-default disabled">
+						Priority: @scframeworkversion.priority
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

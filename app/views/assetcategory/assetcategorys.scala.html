@@ -10,31 +10,60 @@
 				<a class="btn btn-success" href="@routes.AssetcategoryApplication.addAssetcategory">Create New Assetcategory</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Assetcategory.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(assetcategory <- assetcategorys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.AssetcategoryApplication.get(assetcategory.categoryId)">@assetcategory.categoryId</a></div>
-						<div>Uuid: @assetcategory.uuid</div>
-						<div>GroupId: @assetcategory.groupId</div>
-						<div>CompanyId: @assetcategory.companyId</div>
-						<div>UserId: @assetcategory.userId</div>
-						<div>UserName: @assetcategory.userName</div>
-						<div>CreateDate: @assetcategory.createDate</div>
-						<div>ModifiedDate: @assetcategory.modifiedDate</div>
-						<div>ParentCategoryId: @assetcategory.parentCategoryId</div>
-						<div>LeftCategoryId: @assetcategory.leftCategoryId</div>
-						<div>RightCategoryId: @assetcategory.rightCategoryId</div>
-						<div>Name: @assetcategory.name</div>
-						<div>Title: @assetcategory.title</div>
-						<div>Description: @assetcategory.description</div>
-						<div>VocabularyId: @assetcategory.vocabularyId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.AssetcategoryApplication.get(assetcategory.categoryId)">@assetcategory.categoryId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @assetcategory.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @assetcategory.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @assetcategory.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @assetcategory.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @assetcategory.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @assetcategory.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @assetcategory.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ParentCategoryId: @assetcategory.parentCategoryId
+					</li>
+					<li class="btn btn-default disabled">
+						LeftCategoryId: @assetcategory.leftCategoryId
+					</li>
+					<li class="btn btn-default disabled">
+						RightCategoryId: @assetcategory.rightCategoryId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @assetcategory.name
+					</li>
+					<li class="btn btn-default disabled">
+						Title: @assetcategory.title
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @assetcategory.description
+					</li>
+					<li class="btn btn-default disabled">
+						VocabularyId: @assetcategory.vocabularyId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

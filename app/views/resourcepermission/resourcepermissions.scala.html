@@ -10,25 +10,42 @@
 				<a class="btn btn-success" href="@routes.ResourcepermissionApplication.addResourcepermission">Create New Resourcepermission</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Resourcepermission.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(resourcepermission <- resourcepermissions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ResourcepermissionApplication.get(resourcepermission.resourcePermissionId)">@resourcepermission.resourcePermissionId</a></div>
-						<div>MvccVersion: @resourcepermission.mvccVersion</div>
-						<div>CompanyId: @resourcepermission.companyId</div>
-						<div>Name: @resourcepermission.name</div>
-						<div>Scope: @resourcepermission.scope</div>
-						<div>PrimKey: @resourcepermission.primKey</div>
-						<div>RoleId: @resourcepermission.roleId</div>
-						<div>OwnerId: @resourcepermission.ownerId</div>
-						<div>ActionIds: @resourcepermission.actionIds</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ResourcepermissionApplication.get(resourcepermission.resourcePermissionId)">@resourcepermission.resourcePermissionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @resourcepermission.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @resourcepermission.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @resourcepermission.name
+					</li>
+					<li class="btn btn-default disabled">
+						Scope: @resourcepermission.scope
+					</li>
+					<li class="btn btn-default disabled">
+						PrimKey: @resourcepermission.primKey
+					</li>
+					<li class="btn btn-default disabled">
+						RoleId: @resourcepermission.roleId
+					</li>
+					<li class="btn btn-default disabled">
+						OwnerId: @resourcepermission.ownerId
+					</li>
+					<li class="btn btn-default disabled">
+						ActionIds: @resourcepermission.actionIds
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

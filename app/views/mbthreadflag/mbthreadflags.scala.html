@@ -10,25 +10,42 @@
 				<a class="btn btn-success" href="@routes.MbthreadflagApplication.addMbthreadflag">Create New Mbthreadflag</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Mbthreadflag.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(mbthreadflag <- mbthreadflags) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MbthreadflagApplication.get(mbthreadflag.threadFlagId)">@mbthreadflag.threadFlagId</a></div>
-						<div>Uuid: @mbthreadflag.uuid</div>
-						<div>GroupId: @mbthreadflag.groupId</div>
-						<div>CompanyId: @mbthreadflag.companyId</div>
-						<div>UserId: @mbthreadflag.userId</div>
-						<div>UserName: @mbthreadflag.userName</div>
-						<div>CreateDate: @mbthreadflag.createDate</div>
-						<div>ModifiedDate: @mbthreadflag.modifiedDate</div>
-						<div>ThreadId: @mbthreadflag.threadId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MbthreadflagApplication.get(mbthreadflag.threadFlagId)">@mbthreadflag.threadFlagId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @mbthreadflag.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @mbthreadflag.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @mbthreadflag.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @mbthreadflag.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @mbthreadflag.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @mbthreadflag.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @mbthreadflag.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ThreadId: @mbthreadflag.threadId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

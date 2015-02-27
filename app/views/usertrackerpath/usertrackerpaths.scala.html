@@ -10,21 +10,30 @@
 				<a class="btn btn-success" href="@routes.UsertrackerpathApplication.addUsertrackerpath">Create New Usertrackerpath</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Usertrackerpath.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(usertrackerpath <- usertrackerpaths) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.UsertrackerpathApplication.get(usertrackerpath.userTrackerPathId)">@usertrackerpath.userTrackerPathId</a></div>
-						<div>MvccVersion: @usertrackerpath.mvccVersion</div>
-						<div>UserTrackerId: @usertrackerpath.userTrackerId</div>
-						<div>Path: @usertrackerpath.path</div>
-						<div>PathDate: @usertrackerpath.pathDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.UsertrackerpathApplication.get(usertrackerpath.userTrackerPathId)">@usertrackerpath.userTrackerPathId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @usertrackerpath.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						UserTrackerId: @usertrackerpath.userTrackerId
+					</li>
+					<li class="btn btn-default disabled">
+						Path: @usertrackerpath.path
+					</li>
+					<li class="btn btn-default disabled">
+						PathDate: @usertrackerpath.pathDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

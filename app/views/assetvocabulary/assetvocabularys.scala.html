@@ -10,28 +10,51 @@
 				<a class="btn btn-success" href="@routes.AssetvocabularyApplication.addAssetvocabulary">Create New Assetvocabulary</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Assetvocabulary.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(assetvocabulary <- assetvocabularys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.AssetvocabularyApplication.get(assetvocabulary.vocabularyId)">@assetvocabulary.vocabularyId</a></div>
-						<div>Uuid: @assetvocabulary.uuid</div>
-						<div>GroupId: @assetvocabulary.groupId</div>
-						<div>CompanyId: @assetvocabulary.companyId</div>
-						<div>UserId: @assetvocabulary.userId</div>
-						<div>UserName: @assetvocabulary.userName</div>
-						<div>CreateDate: @assetvocabulary.createDate</div>
-						<div>ModifiedDate: @assetvocabulary.modifiedDate</div>
-						<div>Name: @assetvocabulary.name</div>
-						<div>Title: @assetvocabulary.title</div>
-						<div>Description: @assetvocabulary.description</div>
-						<div>Settings: @assetvocabulary.settings</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.AssetvocabularyApplication.get(assetvocabulary.vocabularyId)">@assetvocabulary.vocabularyId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @assetvocabulary.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @assetvocabulary.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @assetvocabulary.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @assetvocabulary.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @assetvocabulary.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @assetvocabulary.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @assetvocabulary.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @assetvocabulary.name
+					</li>
+					<li class="btn btn-default disabled">
+						Title: @assetvocabulary.title
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @assetvocabulary.description
+					</li>
+					<li class="btn btn-default disabled">
+						Settings: @assetvocabulary.settings
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

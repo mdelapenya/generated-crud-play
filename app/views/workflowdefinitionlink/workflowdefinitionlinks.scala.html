@@ -10,29 +10,54 @@
 				<a class="btn btn-success" href="@routes.WorkflowdefinitionlinkApplication.addWorkflowdefinitionlink">Create New Workflowdefinitionlink</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Workflowdefinitionlink.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(workflowdefinitionlink <- workflowdefinitionlinks) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.WorkflowdefinitionlinkApplication.get(workflowdefinitionlink.workflowDefinitionLinkId)">@workflowdefinitionlink.workflowDefinitionLinkId</a></div>
-						<div>MvccVersion: @workflowdefinitionlink.mvccVersion</div>
-						<div>GroupId: @workflowdefinitionlink.groupId</div>
-						<div>CompanyId: @workflowdefinitionlink.companyId</div>
-						<div>UserId: @workflowdefinitionlink.userId</div>
-						<div>UserName: @workflowdefinitionlink.userName</div>
-						<div>CreateDate: @workflowdefinitionlink.createDate</div>
-						<div>ModifiedDate: @workflowdefinitionlink.modifiedDate</div>
-						<div>ClassNameId: @workflowdefinitionlink.classNameId</div>
-						<div>ClassPK: @workflowdefinitionlink.classPK</div>
-						<div>TypePK: @workflowdefinitionlink.typePK</div>
-						<div>WorkflowDefinitionName: @workflowdefinitionlink.workflowDefinitionName</div>
-						<div>WorkflowDefinitionVersion: @workflowdefinitionlink.workflowDefinitionVersion</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.WorkflowdefinitionlinkApplication.get(workflowdefinitionlink.workflowDefinitionLinkId)">@workflowdefinitionlink.workflowDefinitionLinkId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @workflowdefinitionlink.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @workflowdefinitionlink.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @workflowdefinitionlink.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @workflowdefinitionlink.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @workflowdefinitionlink.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @workflowdefinitionlink.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @workflowdefinitionlink.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @workflowdefinitionlink.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @workflowdefinitionlink.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						TypePK: @workflowdefinitionlink.typePK
+					</li>
+					<li class="btn btn-default disabled">
+						WorkflowDefinitionName: @workflowdefinitionlink.workflowDefinitionName
+					</li>
+					<li class="btn btn-default disabled">
+						WorkflowDefinitionVersion: @workflowdefinitionlink.workflowDefinitionVersion
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

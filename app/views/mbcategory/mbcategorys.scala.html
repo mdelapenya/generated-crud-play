@@ -10,35 +10,72 @@
 				<a class="btn btn-success" href="@routes.MbcategoryApplication.addMbcategory">Create New Mbcategory</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Mbcategory.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(mbcategory <- mbcategorys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MbcategoryApplication.get(mbcategory.categoryId)">@mbcategory.categoryId</a></div>
-						<div>Uuid: @mbcategory.uuid</div>
-						<div>GroupId: @mbcategory.groupId</div>
-						<div>CompanyId: @mbcategory.companyId</div>
-						<div>UserId: @mbcategory.userId</div>
-						<div>UserName: @mbcategory.userName</div>
-						<div>CreateDate: @mbcategory.createDate</div>
-						<div>ModifiedDate: @mbcategory.modifiedDate</div>
-						<div>ParentCategoryId: @mbcategory.parentCategoryId</div>
-						<div>Name: @mbcategory.name</div>
-						<div>Description: @mbcategory.description</div>
-						<div>DisplayStyle: @mbcategory.displayStyle</div>
-						<div>ThreadCount: @mbcategory.threadCount</div>
-						<div>MessageCount: @mbcategory.messageCount</div>
-						<div>LastPostDate: @mbcategory.lastPostDate</div>
-						<div>Status: @mbcategory.status</div>
-						<div>StatusByUserId: @mbcategory.statusByUserId</div>
-						<div>StatusByUserName: @mbcategory.statusByUserName</div>
-						<div>StatusDate: @mbcategory.statusDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MbcategoryApplication.get(mbcategory.categoryId)">@mbcategory.categoryId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @mbcategory.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @mbcategory.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @mbcategory.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @mbcategory.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @mbcategory.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @mbcategory.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @mbcategory.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ParentCategoryId: @mbcategory.parentCategoryId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @mbcategory.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @mbcategory.description
+					</li>
+					<li class="btn btn-default disabled">
+						DisplayStyle: @mbcategory.displayStyle
+					</li>
+					<li class="btn btn-default disabled">
+						ThreadCount: @mbcategory.threadCount
+					</li>
+					<li class="btn btn-default disabled">
+						MessageCount: @mbcategory.messageCount
+					</li>
+					<li class="btn btn-default disabled">
+						LastPostDate: @mbcategory.lastPostDate
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @mbcategory.status
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserId: @mbcategory.statusByUserId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserName: @mbcategory.statusByUserName
+					</li>
+					<li class="btn btn-default disabled">
+						StatusDate: @mbcategory.statusDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

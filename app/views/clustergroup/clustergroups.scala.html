@@ -10,21 +10,30 @@
 				<a class="btn btn-success" href="@routes.ClustergroupApplication.addClustergroup">Create New Clustergroup</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Clustergroup.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(clustergroup <- clustergroups) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ClustergroupApplication.get(clustergroup.clusterGroupId)">@clustergroup.clusterGroupId</a></div>
-						<div>MvccVersion: @clustergroup.mvccVersion</div>
-						<div>Name: @clustergroup.name</div>
-						<div>ClusterNodeIds: @clustergroup.clusterNodeIds</div>
-						<div>WholeCluster: @clustergroup.wholeCluster</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ClustergroupApplication.get(clustergroup.clusterGroupId)">@clustergroup.clusterGroupId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @clustergroup.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @clustergroup.name
+					</li>
+					<li class="btn btn-default disabled">
+						ClusterNodeIds: @clustergroup.clusterNodeIds
+					</li>
+					<li class="btn btn-default disabled">
+						WholeCluster: @clustergroup.wholeCluster
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

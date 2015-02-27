@@ -10,33 +10,66 @@
 				<a class="btn btn-success" href="@routes.JournalfolderApplication.addJournalfolder">Create New Journalfolder</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Journalfolder.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(journalfolder <- journalfolders) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.JournalfolderApplication.get(journalfolder.folderId)">@journalfolder.folderId</a></div>
-						<div>Uuid: @journalfolder.uuid</div>
-						<div>GroupId: @journalfolder.groupId</div>
-						<div>CompanyId: @journalfolder.companyId</div>
-						<div>UserId: @journalfolder.userId</div>
-						<div>UserName: @journalfolder.userName</div>
-						<div>CreateDate: @journalfolder.createDate</div>
-						<div>ModifiedDate: @journalfolder.modifiedDate</div>
-						<div>ParentFolderId: @journalfolder.parentFolderId</div>
-						<div>TreePath: @journalfolder.treePath</div>
-						<div>Name: @journalfolder.name</div>
-						<div>Description: @journalfolder.description</div>
-						<div>RestrictionType: @journalfolder.restrictionType</div>
-						<div>Status: @journalfolder.status</div>
-						<div>StatusByUserId: @journalfolder.statusByUserId</div>
-						<div>StatusByUserName: @journalfolder.statusByUserName</div>
-						<div>StatusDate: @journalfolder.statusDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.JournalfolderApplication.get(journalfolder.folderId)">@journalfolder.folderId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @journalfolder.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @journalfolder.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @journalfolder.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @journalfolder.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @journalfolder.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @journalfolder.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @journalfolder.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ParentFolderId: @journalfolder.parentFolderId
+					</li>
+					<li class="btn btn-default disabled">
+						TreePath: @journalfolder.treePath
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @journalfolder.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @journalfolder.description
+					</li>
+					<li class="btn btn-default disabled">
+						RestrictionType: @journalfolder.restrictionType
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @journalfolder.status
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserId: @journalfolder.statusByUserId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserName: @journalfolder.statusByUserName
+					</li>
+					<li class="btn btn-default disabled">
+						StatusDate: @journalfolder.statusDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

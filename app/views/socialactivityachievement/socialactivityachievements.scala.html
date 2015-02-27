@@ -10,23 +10,36 @@
 				<a class="btn btn-success" href="@routes.SocialactivityachievementApplication.addSocialactivityachievement">Create New Socialactivityachievement</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Socialactivityachievement.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(socialactivityachievement <- socialactivityachievements) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.SocialactivityachievementApplication.get(socialactivityachievement.activityAchievementId)">@socialactivityachievement.activityAchievementId</a></div>
-						<div>GroupId: @socialactivityachievement.groupId</div>
-						<div>CompanyId: @socialactivityachievement.companyId</div>
-						<div>UserId: @socialactivityachievement.userId</div>
-						<div>CreateDate: @socialactivityachievement.createDate</div>
-						<div>Name: @socialactivityachievement.name</div>
-						<div>FirstInGroup: @socialactivityachievement.firstInGroup</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.SocialactivityachievementApplication.get(socialactivityachievement.activityAchievementId)">@socialactivityachievement.activityAchievementId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @socialactivityachievement.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @socialactivityachievement.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @socialactivityachievement.userId
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @socialactivityachievement.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @socialactivityachievement.name
+					</li>
+					<li class="btn btn-default disabled">
+						FirstInGroup: @socialactivityachievement.firstInGroup
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

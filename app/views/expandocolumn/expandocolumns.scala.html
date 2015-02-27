@@ -10,23 +10,36 @@
 				<a class="btn btn-success" href="@routes.ExpandocolumnApplication.addExpandocolumn">Create New Expandocolumn</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Expandocolumn.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(expandocolumn <- expandocolumns) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ExpandocolumnApplication.get(expandocolumn.columnId)">@expandocolumn.columnId</a></div>
-						<div>CompanyId: @expandocolumn.companyId</div>
-						<div>TableId: @expandocolumn.tableId</div>
-						<div>Name: @expandocolumn.name</div>
-						<div>Customtype: @expandocolumn.customtype</div>
-						<div>DefaultData: @expandocolumn.defaultData</div>
-						<div>TypeSettings: @expandocolumn.typeSettings</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ExpandocolumnApplication.get(expandocolumn.columnId)">@expandocolumn.columnId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @expandocolumn.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						TableId: @expandocolumn.tableId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @expandocolumn.name
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @expandocolumn.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						DefaultData: @expandocolumn.defaultData
+					</li>
+					<li class="btn btn-default disabled">
+						TypeSettings: @expandocolumn.typeSettings
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

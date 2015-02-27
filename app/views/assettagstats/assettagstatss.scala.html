@@ -10,20 +10,27 @@
 				<a class="btn btn-success" href="@routes.AssettagstatsApplication.addAssettagstats">Create New Assettagstats</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Assettagstats.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(assettagstats <- assettagstatss) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.AssettagstatsApplication.get(assettagstats.tagStatsId)">@assettagstats.tagStatsId</a></div>
-						<div>TagId: @assettagstats.tagId</div>
-						<div>ClassNameId: @assettagstats.classNameId</div>
-						<div>AssetCount: @assettagstats.assetCount</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.AssettagstatsApplication.get(assettagstats.tagStatsId)">@assettagstats.tagStatsId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						TagId: @assettagstats.tagId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @assettagstats.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						AssetCount: @assettagstats.assetCount
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

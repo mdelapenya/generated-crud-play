@@ -10,32 +10,63 @@
 				<a class="btn btn-success" href="@routes.ScproductentryApplication.addScproductentry">Create New Scproductentry</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Scproductentry.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(scproductentry <- scproductentrys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ScproductentryApplication.get(scproductentry.productEntryId)">@scproductentry.productEntryId</a></div>
-						<div>GroupId: @scproductentry.groupId</div>
-						<div>CompanyId: @scproductentry.companyId</div>
-						<div>UserId: @scproductentry.userId</div>
-						<div>UserName: @scproductentry.userName</div>
-						<div>CreateDate: @scproductentry.createDate</div>
-						<div>ModifiedDate: @scproductentry.modifiedDate</div>
-						<div>Name: @scproductentry.name</div>
-						<div>Customtype: @scproductentry.customtype</div>
-						<div>Tags: @scproductentry.tags</div>
-						<div>ShortDescription: @scproductentry.shortDescription</div>
-						<div>LongDescription: @scproductentry.longDescription</div>
-						<div>PageURL: @scproductentry.pageURL</div>
-						<div>Author: @scproductentry.author</div>
-						<div>RepoGroupId: @scproductentry.repoGroupId</div>
-						<div>RepoArtifactId: @scproductentry.repoArtifactId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ScproductentryApplication.get(scproductentry.productEntryId)">@scproductentry.productEntryId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @scproductentry.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @scproductentry.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @scproductentry.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @scproductentry.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @scproductentry.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @scproductentry.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @scproductentry.name
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @scproductentry.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						Tags: @scproductentry.tags
+					</li>
+					<li class="btn btn-default disabled">
+						ShortDescription: @scproductentry.shortDescription
+					</li>
+					<li class="btn btn-default disabled">
+						LongDescription: @scproductentry.longDescription
+					</li>
+					<li class="btn btn-default disabled">
+						PageURL: @scproductentry.pageURL
+					</li>
+					<li class="btn btn-default disabled">
+						Author: @scproductentry.author
+					</li>
+					<li class="btn btn-default disabled">
+						RepoGroupId: @scproductentry.repoGroupId
+					</li>
+					<li class="btn btn-default disabled">
+						RepoArtifactId: @scproductentry.repoArtifactId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

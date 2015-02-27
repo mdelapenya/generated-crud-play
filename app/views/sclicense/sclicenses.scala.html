@@ -10,22 +10,33 @@
 				<a class="btn btn-success" href="@routes.SclicenseApplication.addSclicense">Create New Sclicense</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Sclicense.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(sclicense <- sclicenses) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.SclicenseApplication.get(sclicense.licenseId)">@sclicense.licenseId</a></div>
-						<div>Name: @sclicense.name</div>
-						<div>Url: @sclicense.url</div>
-						<div>OpenSource: @sclicense.openSource</div>
-						<div>Active: @sclicense.active</div>
-						<div>Recommended: @sclicense.recommended</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.SclicenseApplication.get(sclicense.licenseId)">@sclicense.licenseId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Name: @sclicense.name
+					</li>
+					<li class="btn btn-default disabled">
+						Url: @sclicense.url
+					</li>
+					<li class="btn btn-default disabled">
+						OpenSource: @sclicense.openSource
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @sclicense.active
+					</li>
+					<li class="btn btn-default disabled">
+						Recommended: @sclicense.recommended
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

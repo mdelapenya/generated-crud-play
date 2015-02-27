@@ -10,27 +10,48 @@
 				<a class="btn btn-success" href="@routes.SocialactivitysetApplication.addSocialactivityset">Create New Socialactivityset</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Socialactivityset.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(socialactivityset <- socialactivitysets) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.SocialactivitysetApplication.get(socialactivityset.activitySetId)">@socialactivityset.activitySetId</a></div>
-						<div>GroupId: @socialactivityset.groupId</div>
-						<div>CompanyId: @socialactivityset.companyId</div>
-						<div>UserId: @socialactivityset.userId</div>
-						<div>CreateDate: @socialactivityset.createDate</div>
-						<div>ModifiedDate: @socialactivityset.modifiedDate</div>
-						<div>ClassNameId: @socialactivityset.classNameId</div>
-						<div>ClassPK: @socialactivityset.classPK</div>
-						<div>Customtype: @socialactivityset.customtype</div>
-						<div>ExtraData: @socialactivityset.extraData</div>
-						<div>ActivityCount: @socialactivityset.activityCount</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.SocialactivitysetApplication.get(socialactivityset.activitySetId)">@socialactivityset.activitySetId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @socialactivityset.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @socialactivityset.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @socialactivityset.userId
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @socialactivityset.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @socialactivityset.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @socialactivityset.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @socialactivityset.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @socialactivityset.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						ExtraData: @socialactivityset.extraData
+					</li>
+					<li class="btn btn-default disabled">
+						ActivityCount: @socialactivityset.activityCount
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

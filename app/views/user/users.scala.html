@@ -10,57 +10,138 @@
 				<a class="btn btn-success" href="@routes.UserApplication.addUser">Create New User</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected User.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(user <- users) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.UserApplication.get(user.userId)">@user.userId</a></div>
-						<div>MvccVersion: @user.mvccVersion</div>
-						<div>Uuid: @user.uuid</div>
-						<div>CompanyId: @user.companyId</div>
-						<div>CreateDate: @user.createDate</div>
-						<div>ModifiedDate: @user.modifiedDate</div>
-						<div>DefaultUser: @user.defaultUser</div>
-						<div>ContactId: @user.contactId</div>
-						<div>Password: @user.password</div>
-						<div>PasswordEncrypted: @user.passwordEncrypted</div>
-						<div>PasswordReset: @user.passwordReset</div>
-						<div>PasswordModifiedDate: @user.passwordModifiedDate</div>
-						<div>Digest: @user.digest</div>
-						<div>ReminderQueryQuestion: @user.reminderQueryQuestion</div>
-						<div>ReminderQueryAnswer: @user.reminderQueryAnswer</div>
-						<div>GraceLoginCount: @user.graceLoginCount</div>
-						<div>ScreenName: @user.screenName</div>
-						<div>EmailAddress: @user.emailAddress</div>
-						<div>FacebookId: @user.facebookId</div>
-						<div>LdapServerId: @user.ldapServerId</div>
-						<div>OpenId: @user.openId</div>
-						<div>PortraitId: @user.portraitId</div>
-						<div>LanguageId: @user.languageId</div>
-						<div>TimeZoneId: @user.timeZoneId</div>
-						<div>Greeting: @user.greeting</div>
-						<div>Comments: @user.comments</div>
-						<div>FirstName: @user.firstName</div>
-						<div>MiddleName: @user.middleName</div>
-						<div>LastName: @user.lastName</div>
-						<div>JobTitle: @user.jobTitle</div>
-						<div>LoginDate: @user.loginDate</div>
-						<div>LoginIP: @user.loginIP</div>
-						<div>LastLoginDate: @user.lastLoginDate</div>
-						<div>LastLoginIP: @user.lastLoginIP</div>
-						<div>LastFailedLoginDate: @user.lastFailedLoginDate</div>
-						<div>FailedLoginAttempts: @user.failedLoginAttempts</div>
-						<div>Lockout: @user.lockout</div>
-						<div>LockoutDate: @user.lockoutDate</div>
-						<div>AgreedToTermsOfUse: @user.agreedToTermsOfUse</div>
-						<div>EmailAddressVerified: @user.emailAddressVerified</div>
-						<div>Status: @user.status</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.UserApplication.get(user.userId)">@user.userId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @user.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @user.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @user.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @user.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @user.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						DefaultUser: @user.defaultUser
+					</li>
+					<li class="btn btn-default disabled">
+						ContactId: @user.contactId
+					</li>
+					<li class="btn btn-default disabled">
+						Password: @user.password
+					</li>
+					<li class="btn btn-default disabled">
+						PasswordEncrypted: @user.passwordEncrypted
+					</li>
+					<li class="btn btn-default disabled">
+						PasswordReset: @user.passwordReset
+					</li>
+					<li class="btn btn-default disabled">
+						PasswordModifiedDate: @user.passwordModifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Digest: @user.digest
+					</li>
+					<li class="btn btn-default disabled">
+						ReminderQueryQuestion: @user.reminderQueryQuestion
+					</li>
+					<li class="btn btn-default disabled">
+						ReminderQueryAnswer: @user.reminderQueryAnswer
+					</li>
+					<li class="btn btn-default disabled">
+						GraceLoginCount: @user.graceLoginCount
+					</li>
+					<li class="btn btn-default disabled">
+						ScreenName: @user.screenName
+					</li>
+					<li class="btn btn-default disabled">
+						EmailAddress: @user.emailAddress
+					</li>
+					<li class="btn btn-default disabled">
+						FacebookId: @user.facebookId
+					</li>
+					<li class="btn btn-default disabled">
+						LdapServerId: @user.ldapServerId
+					</li>
+					<li class="btn btn-default disabled">
+						OpenId: @user.openId
+					</li>
+					<li class="btn btn-default disabled">
+						PortraitId: @user.portraitId
+					</li>
+					<li class="btn btn-default disabled">
+						LanguageId: @user.languageId
+					</li>
+					<li class="btn btn-default disabled">
+						TimeZoneId: @user.timeZoneId
+					</li>
+					<li class="btn btn-default disabled">
+						Greeting: @user.greeting
+					</li>
+					<li class="btn btn-default disabled">
+						Comments: @user.comments
+					</li>
+					<li class="btn btn-default disabled">
+						FirstName: @user.firstName
+					</li>
+					<li class="btn btn-default disabled">
+						MiddleName: @user.middleName
+					</li>
+					<li class="btn btn-default disabled">
+						LastName: @user.lastName
+					</li>
+					<li class="btn btn-default disabled">
+						JobTitle: @user.jobTitle
+					</li>
+					<li class="btn btn-default disabled">
+						LoginDate: @user.loginDate
+					</li>
+					<li class="btn btn-default disabled">
+						LoginIP: @user.loginIP
+					</li>
+					<li class="btn btn-default disabled">
+						LastLoginDate: @user.lastLoginDate
+					</li>
+					<li class="btn btn-default disabled">
+						LastLoginIP: @user.lastLoginIP
+					</li>
+					<li class="btn btn-default disabled">
+						LastFailedLoginDate: @user.lastFailedLoginDate
+					</li>
+					<li class="btn btn-default disabled">
+						FailedLoginAttempts: @user.failedLoginAttempts
+					</li>
+					<li class="btn btn-default disabled">
+						Lockout: @user.lockout
+					</li>
+					<li class="btn btn-default disabled">
+						LockoutDate: @user.lockoutDate
+					</li>
+					<li class="btn btn-default disabled">
+						AgreedToTermsOfUse: @user.agreedToTermsOfUse
+					</li>
+					<li class="btn btn-default disabled">
+						EmailAddressVerified: @user.emailAddressVerified
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @user.status
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

@@ -10,21 +10,30 @@
 				<a class="btn btn-success" href="@routes.ResourceactionApplication.addResourceaction">Create New Resourceaction</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Resourceaction.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(resourceaction <- resourceactions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ResourceactionApplication.get(resourceaction.resourceActionId)">@resourceaction.resourceActionId</a></div>
-						<div>MvccVersion: @resourceaction.mvccVersion</div>
-						<div>Name: @resourceaction.name</div>
-						<div>ActionId: @resourceaction.actionId</div>
-						<div>BitwiseValue: @resourceaction.bitwiseValue</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ResourceactionApplication.get(resourceaction.resourceActionId)">@resourceaction.resourceActionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @resourceaction.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @resourceaction.name
+					</li>
+					<li class="btn btn-default disabled">
+						ActionId: @resourceaction.actionId
+					</li>
+					<li class="btn btn-default disabled">
+						BitwiseValue: @resourceaction.bitwiseValue
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

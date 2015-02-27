@@ -10,33 +10,66 @@
 				<a class="btn btn-success" href="@routes.AccountApplication.addAccount">Create New Account</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Account.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(account <- accounts) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.AccountApplication.get(account.accountId)">@account.accountId</a></div>
-						<div>MvccVersion: @account.mvccVersion</div>
-						<div>CompanyId: @account.companyId</div>
-						<div>UserId: @account.userId</div>
-						<div>UserName: @account.userName</div>
-						<div>CreateDate: @account.createDate</div>
-						<div>ModifiedDate: @account.modifiedDate</div>
-						<div>ParentAccountId: @account.parentAccountId</div>
-						<div>Name: @account.name</div>
-						<div>LegalName: @account.legalName</div>
-						<div>LegalId: @account.legalId</div>
-						<div>LegalType: @account.legalType</div>
-						<div>SicCode: @account.sicCode</div>
-						<div>TickerSymbol: @account.tickerSymbol</div>
-						<div>Industry: @account.industry</div>
-						<div>Customtype: @account.customtype</div>
-						<div>Size: @account.size</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.AccountApplication.get(account.accountId)">@account.accountId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @account.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @account.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @account.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @account.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @account.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @account.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ParentAccountId: @account.parentAccountId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @account.name
+					</li>
+					<li class="btn btn-default disabled">
+						LegalName: @account.legalName
+					</li>
+					<li class="btn btn-default disabled">
+						LegalId: @account.legalId
+					</li>
+					<li class="btn btn-default disabled">
+						LegalType: @account.legalType
+					</li>
+					<li class="btn btn-default disabled">
+						SicCode: @account.sicCode
+					</li>
+					<li class="btn btn-default disabled">
+						TickerSymbol: @account.tickerSymbol
+					</li>
+					<li class="btn btn-default disabled">
+						Industry: @account.industry
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @account.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						Size: @account.size
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

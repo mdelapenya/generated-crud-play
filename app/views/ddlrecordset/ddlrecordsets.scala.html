@@ -10,30 +10,57 @@
 				<a class="btn btn-success" href="@routes.DdlrecordsetApplication.addDdlrecordset">Create New Ddlrecordset</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Ddlrecordset.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(ddlrecordset <- ddlrecordsets) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DdlrecordsetApplication.get(ddlrecordset.recordSetId)">@ddlrecordset.recordSetId</a></div>
-						<div>Uuid: @ddlrecordset.uuid</div>
-						<div>GroupId: @ddlrecordset.groupId</div>
-						<div>CompanyId: @ddlrecordset.companyId</div>
-						<div>UserId: @ddlrecordset.userId</div>
-						<div>UserName: @ddlrecordset.userName</div>
-						<div>CreateDate: @ddlrecordset.createDate</div>
-						<div>ModifiedDate: @ddlrecordset.modifiedDate</div>
-						<div>DDMStructureId: @ddlrecordset.DDMStructureId</div>
-						<div>RecordSetKey: @ddlrecordset.recordSetKey</div>
-						<div>Name: @ddlrecordset.name</div>
-						<div>Description: @ddlrecordset.description</div>
-						<div>MinDisplayRows: @ddlrecordset.minDisplayRows</div>
-						<div>Scope: @ddlrecordset.scope</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DdlrecordsetApplication.get(ddlrecordset.recordSetId)">@ddlrecordset.recordSetId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @ddlrecordset.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @ddlrecordset.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @ddlrecordset.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @ddlrecordset.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @ddlrecordset.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @ddlrecordset.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @ddlrecordset.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						DDMStructureId: @ddlrecordset.DDMStructureId
+					</li>
+					<li class="btn btn-default disabled">
+						RecordSetKey: @ddlrecordset.recordSetKey
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @ddlrecordset.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @ddlrecordset.description
+					</li>
+					<li class="btn btn-default disabled">
+						MinDisplayRows: @ddlrecordset.minDisplayRows
+					</li>
+					<li class="btn btn-default disabled">
+						Scope: @ddlrecordset.scope
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

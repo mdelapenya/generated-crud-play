@@ -10,43 +10,96 @@
 				<a class="btn btn-success" href="@routes.BlogsentryApplication.addBlogsentry">Create New Blogsentry</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Blogsentry.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(blogsentry <- blogsentrys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.BlogsentryApplication.get(blogsentry.entryId)">@blogsentry.entryId</a></div>
-						<div>Uuid: @blogsentry.uuid</div>
-						<div>GroupId: @blogsentry.groupId</div>
-						<div>CompanyId: @blogsentry.companyId</div>
-						<div>UserId: @blogsentry.userId</div>
-						<div>UserName: @blogsentry.userName</div>
-						<div>CreateDate: @blogsentry.createDate</div>
-						<div>ModifiedDate: @blogsentry.modifiedDate</div>
-						<div>Title: @blogsentry.title</div>
-						<div>Subtitle: @blogsentry.subtitle</div>
-						<div>UrlTitle: @blogsentry.urlTitle</div>
-						<div>Description: @blogsentry.description</div>
-						<div>Content: @blogsentry.content</div>
-						<div>DisplayDate: @blogsentry.displayDate</div>
-						<div>AllowPingbacks: @blogsentry.allowPingbacks</div>
-						<div>AllowTrackbacks: @blogsentry.allowTrackbacks</div>
-						<div>Trackbacks: @blogsentry.trackbacks</div>
-						<div>CoverImageFileEntryId: @blogsentry.coverImageFileEntryId</div>
-						<div>CoverImageURL: @blogsentry.coverImageURL</div>
-						<div>SmallImage: @blogsentry.smallImage</div>
-						<div>SmallImageFileEntryId: @blogsentry.smallImageFileEntryId</div>
-						<div>SmallImageId: @blogsentry.smallImageId</div>
-						<div>SmallImageURL: @blogsentry.smallImageURL</div>
-						<div>Status: @blogsentry.status</div>
-						<div>StatusByUserId: @blogsentry.statusByUserId</div>
-						<div>StatusByUserName: @blogsentry.statusByUserName</div>
-						<div>StatusDate: @blogsentry.statusDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.BlogsentryApplication.get(blogsentry.entryId)">@blogsentry.entryId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @blogsentry.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @blogsentry.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @blogsentry.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @blogsentry.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @blogsentry.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @blogsentry.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @blogsentry.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Title: @blogsentry.title
+					</li>
+					<li class="btn btn-default disabled">
+						Subtitle: @blogsentry.subtitle
+					</li>
+					<li class="btn btn-default disabled">
+						UrlTitle: @blogsentry.urlTitle
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @blogsentry.description
+					</li>
+					<li class="btn btn-default disabled">
+						Content: @blogsentry.content
+					</li>
+					<li class="btn btn-default disabled">
+						DisplayDate: @blogsentry.displayDate
+					</li>
+					<li class="btn btn-default disabled">
+						AllowPingbacks: @blogsentry.allowPingbacks
+					</li>
+					<li class="btn btn-default disabled">
+						AllowTrackbacks: @blogsentry.allowTrackbacks
+					</li>
+					<li class="btn btn-default disabled">
+						Trackbacks: @blogsentry.trackbacks
+					</li>
+					<li class="btn btn-default disabled">
+						CoverImageFileEntryId: @blogsentry.coverImageFileEntryId
+					</li>
+					<li class="btn btn-default disabled">
+						CoverImageURL: @blogsentry.coverImageURL
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImage: @blogsentry.smallImage
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImageFileEntryId: @blogsentry.smallImageFileEntryId
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImageId: @blogsentry.smallImageId
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImageURL: @blogsentry.smallImageURL
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @blogsentry.status
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserId: @blogsentry.statusByUserId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserName: @blogsentry.statusByUserName
+					</li>
+					<li class="btn btn-default disabled">
+						StatusDate: @blogsentry.statusDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

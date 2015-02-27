@@ -10,28 +10,51 @@
 				<a class="btn btn-success" href="@routes.DdmtemplateversionApplication.addDdmtemplateversion">Create New Ddmtemplateversion</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Ddmtemplateversion.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(ddmtemplateversion <- ddmtemplateversions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DdmtemplateversionApplication.get(ddmtemplateversion.templateVersionId)">@ddmtemplateversion.templateVersionId</a></div>
-						<div>GroupId: @ddmtemplateversion.groupId</div>
-						<div>CompanyId: @ddmtemplateversion.companyId</div>
-						<div>UserId: @ddmtemplateversion.userId</div>
-						<div>UserName: @ddmtemplateversion.userName</div>
-						<div>CreateDate: @ddmtemplateversion.createDate</div>
-						<div>TemplateId: @ddmtemplateversion.templateId</div>
-						<div>Version: @ddmtemplateversion.version</div>
-						<div>Name: @ddmtemplateversion.name</div>
-						<div>Description: @ddmtemplateversion.description</div>
-						<div>Language: @ddmtemplateversion.language</div>
-						<div>Script: @ddmtemplateversion.script</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DdmtemplateversionApplication.get(ddmtemplateversion.templateVersionId)">@ddmtemplateversion.templateVersionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @ddmtemplateversion.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @ddmtemplateversion.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @ddmtemplateversion.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @ddmtemplateversion.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @ddmtemplateversion.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						TemplateId: @ddmtemplateversion.templateId
+					</li>
+					<li class="btn btn-default disabled">
+						Version: @ddmtemplateversion.version
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @ddmtemplateversion.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @ddmtemplateversion.description
+					</li>
+					<li class="btn btn-default disabled">
+						Language: @ddmtemplateversion.language
+					</li>
+					<li class="btn btn-default disabled">
+						Script: @ddmtemplateversion.script
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

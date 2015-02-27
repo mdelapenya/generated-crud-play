@@ -10,20 +10,27 @@
 				<a class="btn btn-success" href="@routes.BrowsertrackerApplication.addBrowsertracker">Create New Browsertracker</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Browsertracker.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(browsertracker <- browsertrackers) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.BrowsertrackerApplication.get(browsertracker.browserTrackerId)">@browsertracker.browserTrackerId</a></div>
-						<div>MvccVersion: @browsertracker.mvccVersion</div>
-						<div>UserId: @browsertracker.userId</div>
-						<div>BrowserKey: @browsertracker.browserKey</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.BrowsertrackerApplication.get(browsertracker.browserTrackerId)">@browsertracker.browserTrackerId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @browsertracker.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @browsertracker.userId
+					</li>
+					<li class="btn btn-default disabled">
+						BrowserKey: @browsertracker.browserKey
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

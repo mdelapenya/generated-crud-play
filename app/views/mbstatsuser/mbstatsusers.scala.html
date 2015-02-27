@@ -10,21 +10,30 @@
 				<a class="btn btn-success" href="@routes.MbstatsuserApplication.addMbstatsuser">Create New Mbstatsuser</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Mbstatsuser.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(mbstatsuser <- mbstatsusers) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MbstatsuserApplication.get(mbstatsuser.statsUserId)">@mbstatsuser.statsUserId</a></div>
-						<div>GroupId: @mbstatsuser.groupId</div>
-						<div>UserId: @mbstatsuser.userId</div>
-						<div>MessageCount: @mbstatsuser.messageCount</div>
-						<div>LastPostDate: @mbstatsuser.lastPostDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MbstatsuserApplication.get(mbstatsuser.statsUserId)">@mbstatsuser.statsUserId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @mbstatsuser.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @mbstatsuser.userId
+					</li>
+					<li class="btn btn-default disabled">
+						MessageCount: @mbstatsuser.messageCount
+					</li>
+					<li class="btn btn-default disabled">
+						LastPostDate: @mbstatsuser.lastPostDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

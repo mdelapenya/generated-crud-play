@@ -10,39 +10,84 @@
 				<a class="btn btn-success" href="@routes.CaleventApplication.addCalevent">Create New Calevent</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Calevent.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(calevent <- calevents) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.CaleventApplication.get(calevent.eventId)">@calevent.eventId</a></div>
-						<div>Uuid: @calevent.uuid</div>
-						<div>GroupId: @calevent.groupId</div>
-						<div>CompanyId: @calevent.companyId</div>
-						<div>UserId: @calevent.userId</div>
-						<div>UserName: @calevent.userName</div>
-						<div>CreateDate: @calevent.createDate</div>
-						<div>ModifiedDate: @calevent.modifiedDate</div>
-						<div>Title: @calevent.title</div>
-						<div>Description: @calevent.description</div>
-						<div>Location: @calevent.location</div>
-						<div>StartDate: @calevent.startDate</div>
-						<div>EndDate: @calevent.endDate</div>
-						<div>DurationHour: @calevent.durationHour</div>
-						<div>DurationMinute: @calevent.durationMinute</div>
-						<div>AllDay: @calevent.allDay</div>
-						<div>TimeZoneSensitive: @calevent.timeZoneSensitive</div>
-						<div>Customtype: @calevent.customtype</div>
-						<div>Repeating: @calevent.repeating</div>
-						<div>Recurrence: @calevent.recurrence</div>
-						<div>RemindBy: @calevent.remindBy</div>
-						<div>FirstReminder: @calevent.firstReminder</div>
-						<div>SecondReminder: @calevent.secondReminder</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.CaleventApplication.get(calevent.eventId)">@calevent.eventId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @calevent.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @calevent.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @calevent.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @calevent.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @calevent.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @calevent.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @calevent.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Title: @calevent.title
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @calevent.description
+					</li>
+					<li class="btn btn-default disabled">
+						Location: @calevent.location
+					</li>
+					<li class="btn btn-default disabled">
+						StartDate: @calevent.startDate
+					</li>
+					<li class="btn btn-default disabled">
+						EndDate: @calevent.endDate
+					</li>
+					<li class="btn btn-default disabled">
+						DurationHour: @calevent.durationHour
+					</li>
+					<li class="btn btn-default disabled">
+						DurationMinute: @calevent.durationMinute
+					</li>
+					<li class="btn btn-default disabled">
+						AllDay: @calevent.allDay
+					</li>
+					<li class="btn btn-default disabled">
+						TimeZoneSensitive: @calevent.timeZoneSensitive
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @calevent.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						Repeating: @calevent.repeating
+					</li>
+					<li class="btn btn-default disabled">
+						Recurrence: @calevent.recurrence
+					</li>
+					<li class="btn btn-default disabled">
+						RemindBy: @calevent.remindBy
+					</li>
+					<li class="btn btn-default disabled">
+						FirstReminder: @calevent.firstReminder
+					</li>
+					<li class="btn btn-default disabled">
+						SecondReminder: @calevent.secondReminder
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

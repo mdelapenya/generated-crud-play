@@ -10,23 +10,36 @@
 				<a class="btn btn-success" href="@routes.ImageApplication.addImage">Create New Image</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Image.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(image <- images) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ImageApplication.get(image.imageId)">@image.imageId</a></div>
-						<div>MvccVersion: @image.mvccVersion</div>
-						<div>ModifiedDate: @image.modifiedDate</div>
-						<div>Customtype: @image.customtype</div>
-						<div>Height: @image.height</div>
-						<div>Width: @image.width</div>
-						<div>Size: @image.size</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ImageApplication.get(image.imageId)">@image.imageId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @image.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @image.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @image.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						Height: @image.height
+					</li>
+					<li class="btn btn-default disabled">
+						Width: @image.width
+					</li>
+					<li class="btn btn-default disabled">
+						Size: @image.size
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

@@ -10,27 +10,48 @@
 				<a class="btn btn-success" href="@routes.LayoutbranchApplication.addLayoutbranch">Create New Layoutbranch</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Layoutbranch.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(layoutbranch <- layoutbranchs) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.LayoutbranchApplication.get(layoutbranch.layoutBranchId)">@layoutbranch.layoutBranchId</a></div>
-						<div>MvccVersion: @layoutbranch.mvccVersion</div>
-						<div>GroupId: @layoutbranch.groupId</div>
-						<div>CompanyId: @layoutbranch.companyId</div>
-						<div>UserId: @layoutbranch.userId</div>
-						<div>UserName: @layoutbranch.userName</div>
-						<div>LayoutSetBranchId: @layoutbranch.layoutSetBranchId</div>
-						<div>Plid: @layoutbranch.plid</div>
-						<div>Name: @layoutbranch.name</div>
-						<div>Description: @layoutbranch.description</div>
-						<div>Master: @layoutbranch.master</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.LayoutbranchApplication.get(layoutbranch.layoutBranchId)">@layoutbranch.layoutBranchId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @layoutbranch.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @layoutbranch.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @layoutbranch.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @layoutbranch.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @layoutbranch.userName
+					</li>
+					<li class="btn btn-default disabled">
+						LayoutSetBranchId: @layoutbranch.layoutSetBranchId
+					</li>
+					<li class="btn btn-default disabled">
+						Plid: @layoutbranch.plid
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @layoutbranch.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @layoutbranch.description
+					</li>
+					<li class="btn btn-default disabled">
+						Master: @layoutbranch.master
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

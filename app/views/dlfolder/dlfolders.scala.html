@@ -10,38 +10,81 @@
 				<a class="btn btn-success" href="@routes.DlfolderApplication.addDlfolder">Create New Dlfolder</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Dlfolder.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(dlfolder <- dlfolders) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DlfolderApplication.get(dlfolder.folderId)">@dlfolder.folderId</a></div>
-						<div>Uuid: @dlfolder.uuid</div>
-						<div>GroupId: @dlfolder.groupId</div>
-						<div>CompanyId: @dlfolder.companyId</div>
-						<div>UserId: @dlfolder.userId</div>
-						<div>UserName: @dlfolder.userName</div>
-						<div>CreateDate: @dlfolder.createDate</div>
-						<div>ModifiedDate: @dlfolder.modifiedDate</div>
-						<div>RepositoryId: @dlfolder.repositoryId</div>
-						<div>MountPoint: @dlfolder.mountPoint</div>
-						<div>ParentFolderId: @dlfolder.parentFolderId</div>
-						<div>TreePath: @dlfolder.treePath</div>
-						<div>Name: @dlfolder.name</div>
-						<div>Description: @dlfolder.description</div>
-						<div>LastPostDate: @dlfolder.lastPostDate</div>
-						<div>DefaultFileEntryTypeId: @dlfolder.defaultFileEntryTypeId</div>
-						<div>Hidden: @dlfolder.hidden</div>
-						<div>RestrictionType: @dlfolder.restrictionType</div>
-						<div>Status: @dlfolder.status</div>
-						<div>StatusByUserId: @dlfolder.statusByUserId</div>
-						<div>StatusByUserName: @dlfolder.statusByUserName</div>
-						<div>StatusDate: @dlfolder.statusDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DlfolderApplication.get(dlfolder.folderId)">@dlfolder.folderId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @dlfolder.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @dlfolder.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @dlfolder.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @dlfolder.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @dlfolder.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @dlfolder.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @dlfolder.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						RepositoryId: @dlfolder.repositoryId
+					</li>
+					<li class="btn btn-default disabled">
+						MountPoint: @dlfolder.mountPoint
+					</li>
+					<li class="btn btn-default disabled">
+						ParentFolderId: @dlfolder.parentFolderId
+					</li>
+					<li class="btn btn-default disabled">
+						TreePath: @dlfolder.treePath
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @dlfolder.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @dlfolder.description
+					</li>
+					<li class="btn btn-default disabled">
+						LastPostDate: @dlfolder.lastPostDate
+					</li>
+					<li class="btn btn-default disabled">
+						DefaultFileEntryTypeId: @dlfolder.defaultFileEntryTypeId
+					</li>
+					<li class="btn btn-default disabled">
+						Hidden: @dlfolder.hidden
+					</li>
+					<li class="btn btn-default disabled">
+						RestrictionType: @dlfolder.restrictionType
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @dlfolder.status
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserId: @dlfolder.statusByUserId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserName: @dlfolder.statusByUserName
+					</li>
+					<li class="btn btn-default disabled">
+						StatusDate: @dlfolder.statusDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

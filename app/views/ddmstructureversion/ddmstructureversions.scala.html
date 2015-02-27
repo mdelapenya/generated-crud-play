@@ -10,29 +10,54 @@
 				<a class="btn btn-success" href="@routes.DdmstructureversionApplication.addDdmstructureversion">Create New Ddmstructureversion</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Ddmstructureversion.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(ddmstructureversion <- ddmstructureversions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DdmstructureversionApplication.get(ddmstructureversion.structureVersionId)">@ddmstructureversion.structureVersionId</a></div>
-						<div>GroupId: @ddmstructureversion.groupId</div>
-						<div>CompanyId: @ddmstructureversion.companyId</div>
-						<div>UserId: @ddmstructureversion.userId</div>
-						<div>UserName: @ddmstructureversion.userName</div>
-						<div>CreateDate: @ddmstructureversion.createDate</div>
-						<div>StructureId: @ddmstructureversion.structureId</div>
-						<div>Version: @ddmstructureversion.version</div>
-						<div>Name: @ddmstructureversion.name</div>
-						<div>Description: @ddmstructureversion.description</div>
-						<div>Definition: @ddmstructureversion.definition</div>
-						<div>StorageType: @ddmstructureversion.storageType</div>
-						<div>Customtype: @ddmstructureversion.customtype</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DdmstructureversionApplication.get(ddmstructureversion.structureVersionId)">@ddmstructureversion.structureVersionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @ddmstructureversion.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @ddmstructureversion.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @ddmstructureversion.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @ddmstructureversion.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @ddmstructureversion.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						StructureId: @ddmstructureversion.structureId
+					</li>
+					<li class="btn btn-default disabled">
+						Version: @ddmstructureversion.version
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @ddmstructureversion.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @ddmstructureversion.description
+					</li>
+					<li class="btn btn-default disabled">
+						Definition: @ddmstructureversion.definition
+					</li>
+					<li class="btn btn-default disabled">
+						StorageType: @ddmstructureversion.storageType
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @ddmstructureversion.customtype
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

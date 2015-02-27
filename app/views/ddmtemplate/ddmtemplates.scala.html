@@ -10,39 +10,84 @@
 				<a class="btn btn-success" href="@routes.DdmtemplateApplication.addDdmtemplate">Create New Ddmtemplate</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Ddmtemplate.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(ddmtemplate <- ddmtemplates) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DdmtemplateApplication.get(ddmtemplate.templateId)">@ddmtemplate.templateId</a></div>
-						<div>Uuid: @ddmtemplate.uuid</div>
-						<div>GroupId: @ddmtemplate.groupId</div>
-						<div>CompanyId: @ddmtemplate.companyId</div>
-						<div>UserId: @ddmtemplate.userId</div>
-						<div>UserName: @ddmtemplate.userName</div>
-						<div>CreateDate: @ddmtemplate.createDate</div>
-						<div>ModifiedDate: @ddmtemplate.modifiedDate</div>
-						<div>ClassNameId: @ddmtemplate.classNameId</div>
-						<div>ClassPK: @ddmtemplate.classPK</div>
-						<div>SourceClassNameId: @ddmtemplate.sourceClassNameId</div>
-						<div>TemplateKey: @ddmtemplate.templateKey</div>
-						<div>Version: @ddmtemplate.version</div>
-						<div>Name: @ddmtemplate.name</div>
-						<div>Description: @ddmtemplate.description</div>
-						<div>Customtype: @ddmtemplate.customtype</div>
-						<div>Mode: @ddmtemplate.mode</div>
-						<div>Language: @ddmtemplate.language</div>
-						<div>Script: @ddmtemplate.script</div>
-						<div>Cacheable: @ddmtemplate.cacheable</div>
-						<div>SmallImage: @ddmtemplate.smallImage</div>
-						<div>SmallImageId: @ddmtemplate.smallImageId</div>
-						<div>SmallImageURL: @ddmtemplate.smallImageURL</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DdmtemplateApplication.get(ddmtemplate.templateId)">@ddmtemplate.templateId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @ddmtemplate.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @ddmtemplate.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @ddmtemplate.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @ddmtemplate.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @ddmtemplate.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @ddmtemplate.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @ddmtemplate.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @ddmtemplate.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @ddmtemplate.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						SourceClassNameId: @ddmtemplate.sourceClassNameId
+					</li>
+					<li class="btn btn-default disabled">
+						TemplateKey: @ddmtemplate.templateKey
+					</li>
+					<li class="btn btn-default disabled">
+						Version: @ddmtemplate.version
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @ddmtemplate.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @ddmtemplate.description
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @ddmtemplate.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						Mode: @ddmtemplate.mode
+					</li>
+					<li class="btn btn-default disabled">
+						Language: @ddmtemplate.language
+					</li>
+					<li class="btn btn-default disabled">
+						Script: @ddmtemplate.script
+					</li>
+					<li class="btn btn-default disabled">
+						Cacheable: @ddmtemplate.cacheable
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImage: @ddmtemplate.smallImage
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImageId: @ddmtemplate.smallImageId
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImageURL: @ddmtemplate.smallImageURL
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

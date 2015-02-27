@@ -10,31 +10,60 @@
 				<a class="btn btn-success" href="@routes.MdractionApplication.addMdraction">Create New Mdraction</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Mdraction.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(mdraction <- mdractions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MdractionApplication.get(mdraction.actionId)">@mdraction.actionId</a></div>
-						<div>Uuid: @mdraction.uuid</div>
-						<div>GroupId: @mdraction.groupId</div>
-						<div>CompanyId: @mdraction.companyId</div>
-						<div>UserId: @mdraction.userId</div>
-						<div>UserName: @mdraction.userName</div>
-						<div>CreateDate: @mdraction.createDate</div>
-						<div>ModifiedDate: @mdraction.modifiedDate</div>
-						<div>ClassNameId: @mdraction.classNameId</div>
-						<div>ClassPK: @mdraction.classPK</div>
-						<div>RuleGroupInstanceId: @mdraction.ruleGroupInstanceId</div>
-						<div>Name: @mdraction.name</div>
-						<div>Description: @mdraction.description</div>
-						<div>Customtype: @mdraction.customtype</div>
-						<div>TypeSettings: @mdraction.typeSettings</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MdractionApplication.get(mdraction.actionId)">@mdraction.actionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @mdraction.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @mdraction.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @mdraction.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @mdraction.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @mdraction.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @mdraction.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @mdraction.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @mdraction.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @mdraction.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						RuleGroupInstanceId: @mdraction.ruleGroupInstanceId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @mdraction.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @mdraction.description
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @mdraction.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						TypeSettings: @mdraction.typeSettings
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

@@ -10,24 +10,39 @@
 				<a class="btn btn-success" href="@routes.JournalarticleimageApplication.addJournalarticleimage">Create New Journalarticleimage</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Journalarticleimage.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(journalarticleimage <- journalarticleimages) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.JournalarticleimageApplication.get(journalarticleimage.articleImageId)">@journalarticleimage.articleImageId</a></div>
-						<div>GroupId: @journalarticleimage.groupId</div>
-						<div>ArticleId: @journalarticleimage.articleId</div>
-						<div>Version: @journalarticleimage.version</div>
-						<div>ElInstanceId: @journalarticleimage.elInstanceId</div>
-						<div>ElName: @journalarticleimage.elName</div>
-						<div>LanguageId: @journalarticleimage.languageId</div>
-						<div>TempImage: @journalarticleimage.tempImage</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.JournalarticleimageApplication.get(journalarticleimage.articleImageId)">@journalarticleimage.articleImageId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @journalarticleimage.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						ArticleId: @journalarticleimage.articleId
+					</li>
+					<li class="btn btn-default disabled">
+						Version: @journalarticleimage.version
+					</li>
+					<li class="btn btn-default disabled">
+						ElInstanceId: @journalarticleimage.elInstanceId
+					</li>
+					<li class="btn btn-default disabled">
+						ElName: @journalarticleimage.elName
+					</li>
+					<li class="btn btn-default disabled">
+						LanguageId: @journalarticleimage.languageId
+					</li>
+					<li class="btn btn-default disabled">
+						TempImage: @journalarticleimage.tempImage
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

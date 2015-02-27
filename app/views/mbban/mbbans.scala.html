@@ -10,25 +10,42 @@
 				<a class="btn btn-success" href="@routes.MbbanApplication.addMbban">Create New Mbban</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Mbban.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(mbban <- mbbans) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MbbanApplication.get(mbban.banId)">@mbban.banId</a></div>
-						<div>Uuid: @mbban.uuid</div>
-						<div>GroupId: @mbban.groupId</div>
-						<div>CompanyId: @mbban.companyId</div>
-						<div>UserId: @mbban.userId</div>
-						<div>UserName: @mbban.userName</div>
-						<div>CreateDate: @mbban.createDate</div>
-						<div>ModifiedDate: @mbban.modifiedDate</div>
-						<div>BanUserId: @mbban.banUserId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MbbanApplication.get(mbban.banId)">@mbban.banId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @mbban.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @mbban.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @mbban.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @mbban.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @mbban.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @mbban.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @mbban.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						BanUserId: @mbban.banUserId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

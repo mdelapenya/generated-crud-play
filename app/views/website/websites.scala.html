@@ -10,29 +10,54 @@
 				<a class="btn btn-success" href="@routes.WebsiteApplication.addWebsite">Create New Website</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Website.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(website <- websites) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.WebsiteApplication.get(website.websiteId)">@website.websiteId</a></div>
-						<div>MvccVersion: @website.mvccVersion</div>
-						<div>Uuid: @website.uuid</div>
-						<div>CompanyId: @website.companyId</div>
-						<div>UserId: @website.userId</div>
-						<div>UserName: @website.userName</div>
-						<div>CreateDate: @website.createDate</div>
-						<div>ModifiedDate: @website.modifiedDate</div>
-						<div>ClassNameId: @website.classNameId</div>
-						<div>ClassPK: @website.classPK</div>
-						<div>Url: @website.url</div>
-						<div>TypeId: @website.typeId</div>
-						<div>Customprimary: @website.customprimary</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.WebsiteApplication.get(website.websiteId)">@website.websiteId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @website.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @website.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @website.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @website.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @website.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @website.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @website.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @website.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @website.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						Url: @website.url
+					</li>
+					<li class="btn btn-default disabled">
+						TypeId: @website.typeId
+					</li>
+					<li class="btn btn-default disabled">
+						Customprimary: @website.customprimary
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

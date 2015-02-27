@@ -10,22 +10,33 @@
 				<a class="btn btn-success" href="@routes.PortletApplication.addPortlet">Create New Portlet</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Portlet.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(portlet <- portlets) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.PortletApplication.get(portlet.id)">@portlet.id</a></div>
-						<div>MvccVersion: @portlet.mvccVersion</div>
-						<div>CompanyId: @portlet.companyId</div>
-						<div>PortletId: @portlet.portletId</div>
-						<div>Roles: @portlet.roles</div>
-						<div>Active: @portlet.active</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.PortletApplication.get(portlet.id)">@portlet.id</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @portlet.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @portlet.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						PortletId: @portlet.portletId
+					</li>
+					<li class="btn btn-default disabled">
+						Roles: @portlet.roles
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @portlet.active
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

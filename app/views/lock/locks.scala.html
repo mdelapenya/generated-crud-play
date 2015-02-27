@@ -10,28 +10,51 @@
 				<a class="btn btn-success" href="@routes.LockApplication.addLock">Create New Lock</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Lock.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(lock <- locks) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.LockApplication.get(lock.lockId)">@lock.lockId</a></div>
-						<div>MvccVersion: @lock.mvccVersion</div>
-						<div>Uuid: @lock.uuid</div>
-						<div>CompanyId: @lock.companyId</div>
-						<div>UserId: @lock.userId</div>
-						<div>UserName: @lock.userName</div>
-						<div>CreateDate: @lock.createDate</div>
-						<div>ClassName: @lock.className</div>
-						<div>Key: @lock.key</div>
-						<div>Owner: @lock.owner</div>
-						<div>Inheritable: @lock.inheritable</div>
-						<div>ExpirationDate: @lock.expirationDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.LockApplication.get(lock.lockId)">@lock.lockId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @lock.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @lock.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @lock.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @lock.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @lock.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @lock.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassName: @lock.className
+					</li>
+					<li class="btn btn-default disabled">
+						Key: @lock.key
+					</li>
+					<li class="btn btn-default disabled">
+						Owner: @lock.owner
+					</li>
+					<li class="btn btn-default disabled">
+						Inheritable: @lock.inheritable
+					</li>
+					<li class="btn btn-default disabled">
+						ExpirationDate: @lock.expirationDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

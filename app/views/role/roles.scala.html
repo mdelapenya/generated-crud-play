@@ -10,31 +10,60 @@
 				<a class="btn btn-success" href="@routes.RoleApplication.addRole">Create New Role</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Role.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(role <- roles) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.RoleApplication.get(role.roleId)">@role.roleId</a></div>
-						<div>MvccVersion: @role.mvccVersion</div>
-						<div>Uuid: @role.uuid</div>
-						<div>CompanyId: @role.companyId</div>
-						<div>UserId: @role.userId</div>
-						<div>UserName: @role.userName</div>
-						<div>CreateDate: @role.createDate</div>
-						<div>ModifiedDate: @role.modifiedDate</div>
-						<div>ClassNameId: @role.classNameId</div>
-						<div>ClassPK: @role.classPK</div>
-						<div>Name: @role.name</div>
-						<div>Title: @role.title</div>
-						<div>Description: @role.description</div>
-						<div>Customtype: @role.customtype</div>
-						<div>Subtype: @role.subtype</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.RoleApplication.get(role.roleId)">@role.roleId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @role.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @role.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @role.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @role.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @role.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @role.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @role.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @role.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @role.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @role.name
+					</li>
+					<li class="btn btn-default disabled">
+						Title: @role.title
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @role.description
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @role.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						Subtype: @role.subtype
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

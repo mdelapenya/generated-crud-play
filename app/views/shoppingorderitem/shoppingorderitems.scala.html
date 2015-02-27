@@ -10,26 +10,45 @@
 				<a class="btn btn-success" href="@routes.ShoppingorderitemApplication.addShoppingorderitem">Create New Shoppingorderitem</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Shoppingorderitem.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(shoppingorderitem <- shoppingorderitems) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ShoppingorderitemApplication.get(shoppingorderitem.orderItemId)">@shoppingorderitem.orderItemId</a></div>
-						<div>OrderId: @shoppingorderitem.orderId</div>
-						<div>ItemId: @shoppingorderitem.itemId</div>
-						<div>Sku: @shoppingorderitem.sku</div>
-						<div>Name: @shoppingorderitem.name</div>
-						<div>Description: @shoppingorderitem.description</div>
-						<div>Properties: @shoppingorderitem.properties</div>
-						<div>Price: @shoppingorderitem.price</div>
-						<div>Quantity: @shoppingorderitem.quantity</div>
-						<div>ShippedDate: @shoppingorderitem.shippedDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ShoppingorderitemApplication.get(shoppingorderitem.orderItemId)">@shoppingorderitem.orderItemId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						OrderId: @shoppingorderitem.orderId
+					</li>
+					<li class="btn btn-default disabled">
+						ItemId: @shoppingorderitem.itemId
+					</li>
+					<li class="btn btn-default disabled">
+						Sku: @shoppingorderitem.sku
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @shoppingorderitem.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @shoppingorderitem.description
+					</li>
+					<li class="btn btn-default disabled">
+						Properties: @shoppingorderitem.properties
+					</li>
+					<li class="btn btn-default disabled">
+						Price: @shoppingorderitem.price
+					</li>
+					<li class="btn btn-default disabled">
+						Quantity: @shoppingorderitem.quantity
+					</li>
+					<li class="btn btn-default disabled">
+						ShippedDate: @shoppingorderitem.shippedDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

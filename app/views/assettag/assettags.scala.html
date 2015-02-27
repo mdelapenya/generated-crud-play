@@ -10,25 +10,42 @@
 				<a class="btn btn-success" href="@routes.AssettagApplication.addAssettag">Create New Assettag</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Assettag.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(assettag <- assettags) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.AssettagApplication.get(assettag.tagId)">@assettag.tagId</a></div>
-						<div>GroupId: @assettag.groupId</div>
-						<div>CompanyId: @assettag.companyId</div>
-						<div>UserId: @assettag.userId</div>
-						<div>UserName: @assettag.userName</div>
-						<div>CreateDate: @assettag.createDate</div>
-						<div>ModifiedDate: @assettag.modifiedDate</div>
-						<div>Name: @assettag.name</div>
-						<div>AssetCount: @assettag.assetCount</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.AssettagApplication.get(assettag.tagId)">@assettag.tagId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @assettag.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @assettag.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @assettag.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @assettag.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @assettag.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @assettag.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @assettag.name
+					</li>
+					<li class="btn btn-default disabled">
+						AssetCount: @assettag.assetCount
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

@@ -10,28 +10,51 @@
 				<a class="btn btn-success" href="@routes.LayoutprototypeApplication.addLayoutprototype">Create New Layoutprototype</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Layoutprototype.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(layoutprototype <- layoutprototypes) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.LayoutprototypeApplication.get(layoutprototype.layoutPrototypeId)">@layoutprototype.layoutPrototypeId</a></div>
-						<div>MvccVersion: @layoutprototype.mvccVersion</div>
-						<div>Uuid: @layoutprototype.uuid</div>
-						<div>CompanyId: @layoutprototype.companyId</div>
-						<div>UserId: @layoutprototype.userId</div>
-						<div>UserName: @layoutprototype.userName</div>
-						<div>CreateDate: @layoutprototype.createDate</div>
-						<div>ModifiedDate: @layoutprototype.modifiedDate</div>
-						<div>Name: @layoutprototype.name</div>
-						<div>Description: @layoutprototype.description</div>
-						<div>Settings: @layoutprototype.settings</div>
-						<div>Active: @layoutprototype.active</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.LayoutprototypeApplication.get(layoutprototype.layoutPrototypeId)">@layoutprototype.layoutPrototypeId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @layoutprototype.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @layoutprototype.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @layoutprototype.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @layoutprototype.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @layoutprototype.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @layoutprototype.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @layoutprototype.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @layoutprototype.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @layoutprototype.description
+					</li>
+					<li class="btn btn-default disabled">
+						Settings: @layoutprototype.settings
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @layoutprototype.active
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

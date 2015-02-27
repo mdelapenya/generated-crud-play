@@ -10,20 +10,27 @@
 				<a class="btn btn-success" href="@routes.ListtypeApplication.addListtype">Create New Listtype</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Listtype.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(listtype <- listtypes) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ListtypeApplication.get(listtype.listTypeId)">@listtype.listTypeId</a></div>
-						<div>MvccVersion: @listtype.mvccVersion</div>
-						<div>Name: @listtype.name</div>
-						<div>Customtype: @listtype.customtype</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ListtypeApplication.get(listtype.listTypeId)">@listtype.listTypeId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @listtype.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @listtype.name
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @listtype.customtype
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

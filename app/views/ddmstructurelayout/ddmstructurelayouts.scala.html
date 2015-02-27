@@ -10,26 +10,45 @@
 				<a class="btn btn-success" href="@routes.DdmstructurelayoutApplication.addDdmstructurelayout">Create New Ddmstructurelayout</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Ddmstructurelayout.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(ddmstructurelayout <- ddmstructurelayouts) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DdmstructurelayoutApplication.get(ddmstructurelayout.structureLayoutId)">@ddmstructurelayout.structureLayoutId</a></div>
-						<div>Uuid: @ddmstructurelayout.uuid</div>
-						<div>GroupId: @ddmstructurelayout.groupId</div>
-						<div>CompanyId: @ddmstructurelayout.companyId</div>
-						<div>UserId: @ddmstructurelayout.userId</div>
-						<div>UserName: @ddmstructurelayout.userName</div>
-						<div>CreateDate: @ddmstructurelayout.createDate</div>
-						<div>ModifiedDate: @ddmstructurelayout.modifiedDate</div>
-						<div>StructureVersionId: @ddmstructurelayout.structureVersionId</div>
-						<div>Definition: @ddmstructurelayout.definition</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DdmstructurelayoutApplication.get(ddmstructurelayout.structureLayoutId)">@ddmstructurelayout.structureLayoutId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @ddmstructurelayout.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @ddmstructurelayout.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @ddmstructurelayout.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @ddmstructurelayout.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @ddmstructurelayout.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @ddmstructurelayout.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @ddmstructurelayout.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						StructureVersionId: @ddmstructurelayout.structureVersionId
+					</li>
+					<li class="btn btn-default disabled">
+						Definition: @ddmstructurelayout.definition
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

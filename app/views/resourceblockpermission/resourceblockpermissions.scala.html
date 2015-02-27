@@ -10,21 +10,30 @@
 				<a class="btn btn-success" href="@routes.ResourceblockpermissionApplication.addResourceblockpermission">Create New Resourceblockpermission</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Resourceblockpermission.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(resourceblockpermission <- resourceblockpermissions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ResourceblockpermissionApplication.get(resourceblockpermission.resourceBlockPermissionId)">@resourceblockpermission.resourceBlockPermissionId</a></div>
-						<div>MvccVersion: @resourceblockpermission.mvccVersion</div>
-						<div>ResourceBlockId: @resourceblockpermission.resourceBlockId</div>
-						<div>RoleId: @resourceblockpermission.roleId</div>
-						<div>ActionIds: @resourceblockpermission.actionIds</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ResourceblockpermissionApplication.get(resourceblockpermission.resourceBlockPermissionId)">@resourceblockpermission.resourceBlockPermissionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @resourceblockpermission.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						ResourceBlockId: @resourceblockpermission.resourceBlockId
+					</li>
+					<li class="btn btn-default disabled">
+						RoleId: @resourceblockpermission.roleId
+					</li>
+					<li class="btn btn-default disabled">
+						ActionIds: @resourceblockpermission.actionIds
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

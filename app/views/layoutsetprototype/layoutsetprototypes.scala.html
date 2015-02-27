@@ -10,28 +10,51 @@
 				<a class="btn btn-success" href="@routes.LayoutsetprototypeApplication.addLayoutsetprototype">Create New Layoutsetprototype</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Layoutsetprototype.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(layoutsetprototype <- layoutsetprototypes) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.LayoutsetprototypeApplication.get(layoutsetprototype.layoutSetPrototypeId)">@layoutsetprototype.layoutSetPrototypeId</a></div>
-						<div>MvccVersion: @layoutsetprototype.mvccVersion</div>
-						<div>Uuid: @layoutsetprototype.uuid</div>
-						<div>CompanyId: @layoutsetprototype.companyId</div>
-						<div>UserId: @layoutsetprototype.userId</div>
-						<div>UserName: @layoutsetprototype.userName</div>
-						<div>CreateDate: @layoutsetprototype.createDate</div>
-						<div>ModifiedDate: @layoutsetprototype.modifiedDate</div>
-						<div>Name: @layoutsetprototype.name</div>
-						<div>Description: @layoutsetprototype.description</div>
-						<div>Settings: @layoutsetprototype.settings</div>
-						<div>Active: @layoutsetprototype.active</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.LayoutsetprototypeApplication.get(layoutsetprototype.layoutSetPrototypeId)">@layoutsetprototype.layoutSetPrototypeId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @layoutsetprototype.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @layoutsetprototype.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @layoutsetprototype.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @layoutsetprototype.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @layoutsetprototype.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @layoutsetprototype.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @layoutsetprototype.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @layoutsetprototype.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @layoutsetprototype.description
+					</li>
+					<li class="btn btn-default disabled">
+						Settings: @layoutsetprototype.settings
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @layoutsetprototype.active
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

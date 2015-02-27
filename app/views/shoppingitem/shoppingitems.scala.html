@@ -10,50 +10,117 @@
 				<a class="btn btn-success" href="@routes.ShoppingitemApplication.addShoppingitem">Create New Shoppingitem</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Shoppingitem.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(shoppingitem <- shoppingitems) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ShoppingitemApplication.get(shoppingitem.itemId)">@shoppingitem.itemId</a></div>
-						<div>GroupId: @shoppingitem.groupId</div>
-						<div>CompanyId: @shoppingitem.companyId</div>
-						<div>UserId: @shoppingitem.userId</div>
-						<div>UserName: @shoppingitem.userName</div>
-						<div>CreateDate: @shoppingitem.createDate</div>
-						<div>ModifiedDate: @shoppingitem.modifiedDate</div>
-						<div>CategoryId: @shoppingitem.categoryId</div>
-						<div>Sku: @shoppingitem.sku</div>
-						<div>Name: @shoppingitem.name</div>
-						<div>Description: @shoppingitem.description</div>
-						<div>Properties: @shoppingitem.properties</div>
-						<div>Fields: @shoppingitem.fields</div>
-						<div>FieldsQuantities: @shoppingitem.fieldsQuantities</div>
-						<div>MinQuantity: @shoppingitem.minQuantity</div>
-						<div>MaxQuantity: @shoppingitem.maxQuantity</div>
-						<div>Price: @shoppingitem.price</div>
-						<div>Discount: @shoppingitem.discount</div>
-						<div>Taxable: @shoppingitem.taxable</div>
-						<div>Shipping: @shoppingitem.shipping</div>
-						<div>UseShippingFormula: @shoppingitem.useShippingFormula</div>
-						<div>RequiresShipping: @shoppingitem.requiresShipping</div>
-						<div>StockQuantity: @shoppingitem.stockQuantity</div>
-						<div>Featured: @shoppingitem.featured</div>
-						<div>Sale: @shoppingitem.sale</div>
-						<div>SmallImage: @shoppingitem.smallImage</div>
-						<div>SmallImageId: @shoppingitem.smallImageId</div>
-						<div>SmallImageURL: @shoppingitem.smallImageURL</div>
-						<div>MediumImage: @shoppingitem.mediumImage</div>
-						<div>MediumImageId: @shoppingitem.mediumImageId</div>
-						<div>MediumImageURL: @shoppingitem.mediumImageURL</div>
-						<div>LargeImage: @shoppingitem.largeImage</div>
-						<div>LargeImageId: @shoppingitem.largeImageId</div>
-						<div>LargeImageURL: @shoppingitem.largeImageURL</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ShoppingitemApplication.get(shoppingitem.itemId)">@shoppingitem.itemId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @shoppingitem.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @shoppingitem.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @shoppingitem.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @shoppingitem.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @shoppingitem.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @shoppingitem.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						CategoryId: @shoppingitem.categoryId
+					</li>
+					<li class="btn btn-default disabled">
+						Sku: @shoppingitem.sku
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @shoppingitem.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @shoppingitem.description
+					</li>
+					<li class="btn btn-default disabled">
+						Properties: @shoppingitem.properties
+					</li>
+					<li class="btn btn-default disabled">
+						Fields: @shoppingitem.fields
+					</li>
+					<li class="btn btn-default disabled">
+						FieldsQuantities: @shoppingitem.fieldsQuantities
+					</li>
+					<li class="btn btn-default disabled">
+						MinQuantity: @shoppingitem.minQuantity
+					</li>
+					<li class="btn btn-default disabled">
+						MaxQuantity: @shoppingitem.maxQuantity
+					</li>
+					<li class="btn btn-default disabled">
+						Price: @shoppingitem.price
+					</li>
+					<li class="btn btn-default disabled">
+						Discount: @shoppingitem.discount
+					</li>
+					<li class="btn btn-default disabled">
+						Taxable: @shoppingitem.taxable
+					</li>
+					<li class="btn btn-default disabled">
+						Shipping: @shoppingitem.shipping
+					</li>
+					<li class="btn btn-default disabled">
+						UseShippingFormula: @shoppingitem.useShippingFormula
+					</li>
+					<li class="btn btn-default disabled">
+						RequiresShipping: @shoppingitem.requiresShipping
+					</li>
+					<li class="btn btn-default disabled">
+						StockQuantity: @shoppingitem.stockQuantity
+					</li>
+					<li class="btn btn-default disabled">
+						Featured: @shoppingitem.featured
+					</li>
+					<li class="btn btn-default disabled">
+						Sale: @shoppingitem.sale
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImage: @shoppingitem.smallImage
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImageId: @shoppingitem.smallImageId
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImageURL: @shoppingitem.smallImageURL
+					</li>
+					<li class="btn btn-default disabled">
+						MediumImage: @shoppingitem.mediumImage
+					</li>
+					<li class="btn btn-default disabled">
+						MediumImageId: @shoppingitem.mediumImageId
+					</li>
+					<li class="btn btn-default disabled">
+						MediumImageURL: @shoppingitem.mediumImageURL
+					</li>
+					<li class="btn btn-default disabled">
+						LargeImage: @shoppingitem.largeImage
+					</li>
+					<li class="btn btn-default disabled">
+						LargeImageId: @shoppingitem.largeImageId
+					</li>
+					<li class="btn btn-default disabled">
+						LargeImageURL: @shoppingitem.largeImageURL
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

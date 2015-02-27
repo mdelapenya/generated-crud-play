@@ -10,42 +10,93 @@
 				<a class="btn btn-success" href="@routes.MbmailinglistApplication.addMbmailinglist">Create New Mbmailinglist</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Mbmailinglist.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(mbmailinglist <- mbmailinglists) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MbmailinglistApplication.get(mbmailinglist.mailingListId)">@mbmailinglist.mailingListId</a></div>
-						<div>Uuid: @mbmailinglist.uuid</div>
-						<div>GroupId: @mbmailinglist.groupId</div>
-						<div>CompanyId: @mbmailinglist.companyId</div>
-						<div>UserId: @mbmailinglist.userId</div>
-						<div>UserName: @mbmailinglist.userName</div>
-						<div>CreateDate: @mbmailinglist.createDate</div>
-						<div>ModifiedDate: @mbmailinglist.modifiedDate</div>
-						<div>CategoryId: @mbmailinglist.categoryId</div>
-						<div>EmailAddress: @mbmailinglist.emailAddress</div>
-						<div>InProtocol: @mbmailinglist.inProtocol</div>
-						<div>InServerName: @mbmailinglist.inServerName</div>
-						<div>InServerPort: @mbmailinglist.inServerPort</div>
-						<div>InUseSSL: @mbmailinglist.inUseSSL</div>
-						<div>InUserName: @mbmailinglist.inUserName</div>
-						<div>InPassword: @mbmailinglist.inPassword</div>
-						<div>InReadInterval: @mbmailinglist.inReadInterval</div>
-						<div>OutEmailAddress: @mbmailinglist.outEmailAddress</div>
-						<div>OutCustom: @mbmailinglist.outCustom</div>
-						<div>OutServerName: @mbmailinglist.outServerName</div>
-						<div>OutServerPort: @mbmailinglist.outServerPort</div>
-						<div>OutUseSSL: @mbmailinglist.outUseSSL</div>
-						<div>OutUserName: @mbmailinglist.outUserName</div>
-						<div>OutPassword: @mbmailinglist.outPassword</div>
-						<div>AllowAnonymous: @mbmailinglist.allowAnonymous</div>
-						<div>Active: @mbmailinglist.active</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MbmailinglistApplication.get(mbmailinglist.mailingListId)">@mbmailinglist.mailingListId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @mbmailinglist.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @mbmailinglist.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @mbmailinglist.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @mbmailinglist.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @mbmailinglist.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @mbmailinglist.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @mbmailinglist.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						CategoryId: @mbmailinglist.categoryId
+					</li>
+					<li class="btn btn-default disabled">
+						EmailAddress: @mbmailinglist.emailAddress
+					</li>
+					<li class="btn btn-default disabled">
+						InProtocol: @mbmailinglist.inProtocol
+					</li>
+					<li class="btn btn-default disabled">
+						InServerName: @mbmailinglist.inServerName
+					</li>
+					<li class="btn btn-default disabled">
+						InServerPort: @mbmailinglist.inServerPort
+					</li>
+					<li class="btn btn-default disabled">
+						InUseSSL: @mbmailinglist.inUseSSL
+					</li>
+					<li class="btn btn-default disabled">
+						InUserName: @mbmailinglist.inUserName
+					</li>
+					<li class="btn btn-default disabled">
+						InPassword: @mbmailinglist.inPassword
+					</li>
+					<li class="btn btn-default disabled">
+						InReadInterval: @mbmailinglist.inReadInterval
+					</li>
+					<li class="btn btn-default disabled">
+						OutEmailAddress: @mbmailinglist.outEmailAddress
+					</li>
+					<li class="btn btn-default disabled">
+						OutCustom: @mbmailinglist.outCustom
+					</li>
+					<li class="btn btn-default disabled">
+						OutServerName: @mbmailinglist.outServerName
+					</li>
+					<li class="btn btn-default disabled">
+						OutServerPort: @mbmailinglist.outServerPort
+					</li>
+					<li class="btn btn-default disabled">
+						OutUseSSL: @mbmailinglist.outUseSSL
+					</li>
+					<li class="btn btn-default disabled">
+						OutUserName: @mbmailinglist.outUserName
+					</li>
+					<li class="btn btn-default disabled">
+						OutPassword: @mbmailinglist.outPassword
+					</li>
+					<li class="btn btn-default disabled">
+						AllowAnonymous: @mbmailinglist.allowAnonymous
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @mbmailinglist.active
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

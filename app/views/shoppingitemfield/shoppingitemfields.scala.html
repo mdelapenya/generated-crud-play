@@ -10,21 +10,30 @@
 				<a class="btn btn-success" href="@routes.ShoppingitemfieldApplication.addShoppingitemfield">Create New Shoppingitemfield</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Shoppingitemfield.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(shoppingitemfield <- shoppingitemfields) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ShoppingitemfieldApplication.get(shoppingitemfield.itemFieldId)">@shoppingitemfield.itemFieldId</a></div>
-						<div>ItemId: @shoppingitemfield.itemId</div>
-						<div>Name: @shoppingitemfield.name</div>
-						<div>Values: @shoppingitemfield.values</div>
-						<div>Description: @shoppingitemfield.description</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ShoppingitemfieldApplication.get(shoppingitemfield.itemFieldId)">@shoppingitemfield.itemFieldId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						ItemId: @shoppingitemfield.itemId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @shoppingitemfield.name
+					</li>
+					<li class="btn btn-default disabled">
+						Values: @shoppingitemfield.values
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @shoppingitemfield.description
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

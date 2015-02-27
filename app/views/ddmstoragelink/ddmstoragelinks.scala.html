@@ -10,21 +10,30 @@
 				<a class="btn btn-success" href="@routes.DdmstoragelinkApplication.addDdmstoragelink">Create New Ddmstoragelink</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Ddmstoragelink.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(ddmstoragelink <- ddmstoragelinks) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DdmstoragelinkApplication.get(ddmstoragelink.storageLinkId)">@ddmstoragelink.storageLinkId</a></div>
-						<div>Uuid: @ddmstoragelink.uuid</div>
-						<div>ClassNameId: @ddmstoragelink.classNameId</div>
-						<div>ClassPK: @ddmstoragelink.classPK</div>
-						<div>StructureId: @ddmstoragelink.structureId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DdmstoragelinkApplication.get(ddmstoragelink.storageLinkId)">@ddmstoragelink.storageLinkId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @ddmstoragelink.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @ddmstoragelink.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @ddmstoragelink.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						StructureId: @ddmstoragelink.structureId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

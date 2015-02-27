@@ -10,30 +10,57 @@
 				<a class="btn btn-success" href="@routes.SocialactivityApplication.addSocialactivity">Create New Socialactivity</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Socialactivity.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(socialactivity <- socialactivitys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.SocialactivityApplication.get(socialactivity.activityId)">@socialactivity.activityId</a></div>
-						<div>GroupId: @socialactivity.groupId</div>
-						<div>CompanyId: @socialactivity.companyId</div>
-						<div>UserId: @socialactivity.userId</div>
-						<div>CreateDate: @socialactivity.createDate</div>
-						<div>ActivitySetId: @socialactivity.activitySetId</div>
-						<div>MirrorActivityId: @socialactivity.mirrorActivityId</div>
-						<div>ClassNameId: @socialactivity.classNameId</div>
-						<div>ClassPK: @socialactivity.classPK</div>
-						<div>ParentClassNameId: @socialactivity.parentClassNameId</div>
-						<div>ParentClassPK: @socialactivity.parentClassPK</div>
-						<div>Customtype: @socialactivity.customtype</div>
-						<div>ExtraData: @socialactivity.extraData</div>
-						<div>ReceiverUserId: @socialactivity.receiverUserId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.SocialactivityApplication.get(socialactivity.activityId)">@socialactivity.activityId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @socialactivity.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @socialactivity.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @socialactivity.userId
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @socialactivity.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ActivitySetId: @socialactivity.activitySetId
+					</li>
+					<li class="btn btn-default disabled">
+						MirrorActivityId: @socialactivity.mirrorActivityId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @socialactivity.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @socialactivity.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						ParentClassNameId: @socialactivity.parentClassNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ParentClassPK: @socialactivity.parentClassPK
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @socialactivity.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						ExtraData: @socialactivity.extraData
+					</li>
+					<li class="btn btn-default disabled">
+						ReceiverUserId: @socialactivity.receiverUserId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

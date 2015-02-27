@@ -10,27 +10,48 @@
 				<a class="btn btn-success" href="@routes.CompanyApplication.addCompany">Create New Company</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Company.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(company <- companys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.CompanyApplication.get(company.companyId)">@company.companyId</a></div>
-						<div>MvccVersion: @company.mvccVersion</div>
-						<div>AccountId: @company.accountId</div>
-						<div>WebId: @company.webId</div>
-						<div>Key: @company.key</div>
-						<div>Mx: @company.mx</div>
-						<div>HomeURL: @company.homeURL</div>
-						<div>LogoId: @company.logoId</div>
-						<div>System: @company.system</div>
-						<div>MaxUsers: @company.maxUsers</div>
-						<div>Active: @company.active</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.CompanyApplication.get(company.companyId)">@company.companyId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @company.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						AccountId: @company.accountId
+					</li>
+					<li class="btn btn-default disabled">
+						WebId: @company.webId
+					</li>
+					<li class="btn btn-default disabled">
+						Key: @company.key
+					</li>
+					<li class="btn btn-default disabled">
+						Mx: @company.mx
+					</li>
+					<li class="btn btn-default disabled">
+						HomeURL: @company.homeURL
+					</li>
+					<li class="btn btn-default disabled">
+						LogoId: @company.logoId
+					</li>
+					<li class="btn btn-default disabled">
+						System: @company.system
+					</li>
+					<li class="btn btn-default disabled">
+						MaxUsers: @company.maxUsers
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @company.active
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

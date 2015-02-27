@@ -10,37 +10,78 @@
 				<a class="btn btn-success" href="@routes.MbthreadApplication.addMbthread">Create New Mbthread</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Mbthread.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(mbthread <- mbthreads) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MbthreadApplication.get(mbthread.threadId)">@mbthread.threadId</a></div>
-						<div>Uuid: @mbthread.uuid</div>
-						<div>GroupId: @mbthread.groupId</div>
-						<div>CompanyId: @mbthread.companyId</div>
-						<div>UserId: @mbthread.userId</div>
-						<div>UserName: @mbthread.userName</div>
-						<div>CreateDate: @mbthread.createDate</div>
-						<div>ModifiedDate: @mbthread.modifiedDate</div>
-						<div>CategoryId: @mbthread.categoryId</div>
-						<div>RootMessageId: @mbthread.rootMessageId</div>
-						<div>RootMessageUserId: @mbthread.rootMessageUserId</div>
-						<div>MessageCount: @mbthread.messageCount</div>
-						<div>ViewCount: @mbthread.viewCount</div>
-						<div>LastPostByUserId: @mbthread.lastPostByUserId</div>
-						<div>LastPostDate: @mbthread.lastPostDate</div>
-						<div>Priority: @mbthread.priority</div>
-						<div>Question: @mbthread.question</div>
-						<div>Status: @mbthread.status</div>
-						<div>StatusByUserId: @mbthread.statusByUserId</div>
-						<div>StatusByUserName: @mbthread.statusByUserName</div>
-						<div>StatusDate: @mbthread.statusDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MbthreadApplication.get(mbthread.threadId)">@mbthread.threadId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @mbthread.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @mbthread.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @mbthread.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @mbthread.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @mbthread.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @mbthread.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @mbthread.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						CategoryId: @mbthread.categoryId
+					</li>
+					<li class="btn btn-default disabled">
+						RootMessageId: @mbthread.rootMessageId
+					</li>
+					<li class="btn btn-default disabled">
+						RootMessageUserId: @mbthread.rootMessageUserId
+					</li>
+					<li class="btn btn-default disabled">
+						MessageCount: @mbthread.messageCount
+					</li>
+					<li class="btn btn-default disabled">
+						ViewCount: @mbthread.viewCount
+					</li>
+					<li class="btn btn-default disabled">
+						LastPostByUserId: @mbthread.lastPostByUserId
+					</li>
+					<li class="btn btn-default disabled">
+						LastPostDate: @mbthread.lastPostDate
+					</li>
+					<li class="btn btn-default disabled">
+						Priority: @mbthread.priority
+					</li>
+					<li class="btn btn-default disabled">
+						Question: @mbthread.question
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @mbthread.status
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserId: @mbthread.statusByUserId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserName: @mbthread.statusByUserName
+					</li>
+					<li class="btn btn-default disabled">
+						StatusDate: @mbthread.statusDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

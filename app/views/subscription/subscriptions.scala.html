@@ -10,27 +10,48 @@
 				<a class="btn btn-success" href="@routes.SubscriptionApplication.addSubscription">Create New Subscription</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Subscription.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(subscription <- subscriptions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.SubscriptionApplication.get(subscription.subscriptionId)">@subscription.subscriptionId</a></div>
-						<div>MvccVersion: @subscription.mvccVersion</div>
-						<div>GroupId: @subscription.groupId</div>
-						<div>CompanyId: @subscription.companyId</div>
-						<div>UserId: @subscription.userId</div>
-						<div>UserName: @subscription.userName</div>
-						<div>CreateDate: @subscription.createDate</div>
-						<div>ModifiedDate: @subscription.modifiedDate</div>
-						<div>ClassNameId: @subscription.classNameId</div>
-						<div>ClassPK: @subscription.classPK</div>
-						<div>Frequency: @subscription.frequency</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.SubscriptionApplication.get(subscription.subscriptionId)">@subscription.subscriptionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @subscription.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @subscription.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @subscription.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @subscription.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @subscription.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @subscription.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @subscription.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @subscription.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @subscription.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						Frequency: @subscription.frequency
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

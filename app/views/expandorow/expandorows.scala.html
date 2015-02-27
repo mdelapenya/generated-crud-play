@@ -10,21 +10,30 @@
 				<a class="btn btn-success" href="@routes.ExpandorowApplication.addExpandorow">Create New Expandorow</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Expandorow.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(expandorow <- expandorows) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ExpandorowApplication.get(expandorow.rowId)">@expandorow.rowId</a></div>
-						<div>CompanyId: @expandorow.companyId</div>
-						<div>ModifiedDate: @expandorow.modifiedDate</div>
-						<div>TableId: @expandorow.tableId</div>
-						<div>ClassPK: @expandorow.classPK</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ExpandorowApplication.get(expandorow.rowId)">@expandorow.rowId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @expandorow.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @expandorow.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						TableId: @expandorow.tableId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @expandorow.classPK
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

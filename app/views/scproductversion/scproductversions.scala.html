@@ -10,28 +10,51 @@
 				<a class="btn btn-success" href="@routes.ScproductversionApplication.addScproductversion">Create New Scproductversion</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Scproductversion.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(scproductversion <- scproductversions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ScproductversionApplication.get(scproductversion.productVersionId)">@scproductversion.productVersionId</a></div>
-						<div>CompanyId: @scproductversion.companyId</div>
-						<div>UserId: @scproductversion.userId</div>
-						<div>UserName: @scproductversion.userName</div>
-						<div>CreateDate: @scproductversion.createDate</div>
-						<div>ModifiedDate: @scproductversion.modifiedDate</div>
-						<div>ProductEntryId: @scproductversion.productEntryId</div>
-						<div>Version: @scproductversion.version</div>
-						<div>ChangeLog: @scproductversion.changeLog</div>
-						<div>DownloadPageURL: @scproductversion.downloadPageURL</div>
-						<div>DirectDownloadURL: @scproductversion.directDownloadURL</div>
-						<div>RepoStoreArtifact: @scproductversion.repoStoreArtifact</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ScproductversionApplication.get(scproductversion.productVersionId)">@scproductversion.productVersionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @scproductversion.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @scproductversion.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @scproductversion.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @scproductversion.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @scproductversion.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ProductEntryId: @scproductversion.productEntryId
+					</li>
+					<li class="btn btn-default disabled">
+						Version: @scproductversion.version
+					</li>
+					<li class="btn btn-default disabled">
+						ChangeLog: @scproductversion.changeLog
+					</li>
+					<li class="btn btn-default disabled">
+						DownloadPageURL: @scproductversion.downloadPageURL
+					</li>
+					<li class="btn btn-default disabled">
+						DirectDownloadURL: @scproductversion.directDownloadURL
+					</li>
+					<li class="btn btn-default disabled">
+						RepoStoreArtifact: @scproductversion.repoStoreArtifact
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

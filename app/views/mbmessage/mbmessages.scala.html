@@ -10,41 +10,90 @@
 				<a class="btn btn-success" href="@routes.MbmessageApplication.addMbmessage">Create New Mbmessage</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Mbmessage.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(mbmessage <- mbmessages) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MbmessageApplication.get(mbmessage.messageId)">@mbmessage.messageId</a></div>
-						<div>Uuid: @mbmessage.uuid</div>
-						<div>GroupId: @mbmessage.groupId</div>
-						<div>CompanyId: @mbmessage.companyId</div>
-						<div>UserId: @mbmessage.userId</div>
-						<div>UserName: @mbmessage.userName</div>
-						<div>CreateDate: @mbmessage.createDate</div>
-						<div>ModifiedDate: @mbmessage.modifiedDate</div>
-						<div>ClassNameId: @mbmessage.classNameId</div>
-						<div>ClassPK: @mbmessage.classPK</div>
-						<div>CategoryId: @mbmessage.categoryId</div>
-						<div>ThreadId: @mbmessage.threadId</div>
-						<div>RootMessageId: @mbmessage.rootMessageId</div>
-						<div>ParentMessageId: @mbmessage.parentMessageId</div>
-						<div>Subject: @mbmessage.subject</div>
-						<div>Body: @mbmessage.body</div>
-						<div>Format: @mbmessage.format</div>
-						<div>Anonymous: @mbmessage.anonymous</div>
-						<div>Priority: @mbmessage.priority</div>
-						<div>AllowPingbacks: @mbmessage.allowPingbacks</div>
-						<div>Answer: @mbmessage.answer</div>
-						<div>Status: @mbmessage.status</div>
-						<div>StatusByUserId: @mbmessage.statusByUserId</div>
-						<div>StatusByUserName: @mbmessage.statusByUserName</div>
-						<div>StatusDate: @mbmessage.statusDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MbmessageApplication.get(mbmessage.messageId)">@mbmessage.messageId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @mbmessage.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @mbmessage.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @mbmessage.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @mbmessage.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @mbmessage.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @mbmessage.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @mbmessage.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @mbmessage.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @mbmessage.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						CategoryId: @mbmessage.categoryId
+					</li>
+					<li class="btn btn-default disabled">
+						ThreadId: @mbmessage.threadId
+					</li>
+					<li class="btn btn-default disabled">
+						RootMessageId: @mbmessage.rootMessageId
+					</li>
+					<li class="btn btn-default disabled">
+						ParentMessageId: @mbmessage.parentMessageId
+					</li>
+					<li class="btn btn-default disabled">
+						Subject: @mbmessage.subject
+					</li>
+					<li class="btn btn-default disabled">
+						Body: @mbmessage.body
+					</li>
+					<li class="btn btn-default disabled">
+						Format: @mbmessage.format
+					</li>
+					<li class="btn btn-default disabled">
+						Anonymous: @mbmessage.anonymous
+					</li>
+					<li class="btn btn-default disabled">
+						Priority: @mbmessage.priority
+					</li>
+					<li class="btn btn-default disabled">
+						AllowPingbacks: @mbmessage.allowPingbacks
+					</li>
+					<li class="btn btn-default disabled">
+						Answer: @mbmessage.answer
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @mbmessage.status
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserId: @mbmessage.statusByUserId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserName: @mbmessage.statusByUserName
+					</li>
+					<li class="btn btn-default disabled">
+						StatusDate: @mbmessage.statusDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

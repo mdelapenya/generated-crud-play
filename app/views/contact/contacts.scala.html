@@ -10,50 +10,117 @@
 				<a class="btn btn-success" href="@routes.ContactApplication.addContact">Create New Contact</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Contact.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(contact <- contacts) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ContactApplication.get(contact.contactId)">@contact.contactId</a></div>
-						<div>MvccVersion: @contact.mvccVersion</div>
-						<div>CompanyId: @contact.companyId</div>
-						<div>UserId: @contact.userId</div>
-						<div>UserName: @contact.userName</div>
-						<div>CreateDate: @contact.createDate</div>
-						<div>ModifiedDate: @contact.modifiedDate</div>
-						<div>ClassNameId: @contact.classNameId</div>
-						<div>ClassPK: @contact.classPK</div>
-						<div>AccountId: @contact.accountId</div>
-						<div>ParentContactId: @contact.parentContactId</div>
-						<div>EmailAddress: @contact.emailAddress</div>
-						<div>FirstName: @contact.firstName</div>
-						<div>MiddleName: @contact.middleName</div>
-						<div>LastName: @contact.lastName</div>
-						<div>PrefixId: @contact.prefixId</div>
-						<div>SuffixId: @contact.suffixId</div>
-						<div>Male: @contact.male</div>
-						<div>Birthday: @contact.birthday</div>
-						<div>SmsSn: @contact.smsSn</div>
-						<div>AimSn: @contact.aimSn</div>
-						<div>FacebookSn: @contact.facebookSn</div>
-						<div>IcqSn: @contact.icqSn</div>
-						<div>JabberSn: @contact.jabberSn</div>
-						<div>MsnSn: @contact.msnSn</div>
-						<div>MySpaceSn: @contact.mySpaceSn</div>
-						<div>SkypeSn: @contact.skypeSn</div>
-						<div>TwitterSn: @contact.twitterSn</div>
-						<div>YmSn: @contact.ymSn</div>
-						<div>EmployeeStatusId: @contact.employeeStatusId</div>
-						<div>EmployeeNumber: @contact.employeeNumber</div>
-						<div>JobTitle: @contact.jobTitle</div>
-						<div>JobClass: @contact.jobClass</div>
-						<div>HoursOfOperation: @contact.hoursOfOperation</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ContactApplication.get(contact.contactId)">@contact.contactId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @contact.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @contact.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @contact.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @contact.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @contact.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @contact.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @contact.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @contact.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						AccountId: @contact.accountId
+					</li>
+					<li class="btn btn-default disabled">
+						ParentContactId: @contact.parentContactId
+					</li>
+					<li class="btn btn-default disabled">
+						EmailAddress: @contact.emailAddress
+					</li>
+					<li class="btn btn-default disabled">
+						FirstName: @contact.firstName
+					</li>
+					<li class="btn btn-default disabled">
+						MiddleName: @contact.middleName
+					</li>
+					<li class="btn btn-default disabled">
+						LastName: @contact.lastName
+					</li>
+					<li class="btn btn-default disabled">
+						PrefixId: @contact.prefixId
+					</li>
+					<li class="btn btn-default disabled">
+						SuffixId: @contact.suffixId
+					</li>
+					<li class="btn btn-default disabled">
+						Male: @contact.male
+					</li>
+					<li class="btn btn-default disabled">
+						Birthday: @contact.birthday
+					</li>
+					<li class="btn btn-default disabled">
+						SmsSn: @contact.smsSn
+					</li>
+					<li class="btn btn-default disabled">
+						AimSn: @contact.aimSn
+					</li>
+					<li class="btn btn-default disabled">
+						FacebookSn: @contact.facebookSn
+					</li>
+					<li class="btn btn-default disabled">
+						IcqSn: @contact.icqSn
+					</li>
+					<li class="btn btn-default disabled">
+						JabberSn: @contact.jabberSn
+					</li>
+					<li class="btn btn-default disabled">
+						MsnSn: @contact.msnSn
+					</li>
+					<li class="btn btn-default disabled">
+						MySpaceSn: @contact.mySpaceSn
+					</li>
+					<li class="btn btn-default disabled">
+						SkypeSn: @contact.skypeSn
+					</li>
+					<li class="btn btn-default disabled">
+						TwitterSn: @contact.twitterSn
+					</li>
+					<li class="btn btn-default disabled">
+						YmSn: @contact.ymSn
+					</li>
+					<li class="btn btn-default disabled">
+						EmployeeStatusId: @contact.employeeStatusId
+					</li>
+					<li class="btn btn-default disabled">
+						EmployeeNumber: @contact.employeeNumber
+					</li>
+					<li class="btn btn-default disabled">
+						JobTitle: @contact.jobTitle
+					</li>
+					<li class="btn btn-default disabled">
+						JobClass: @contact.jobClass
+					</li>
+					<li class="btn btn-default disabled">
+						HoursOfOperation: @contact.hoursOfOperation
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

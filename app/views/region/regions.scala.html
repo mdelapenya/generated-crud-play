@@ -10,22 +10,33 @@
 				<a class="btn btn-success" href="@routes.RegionApplication.addRegion">Create New Region</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Region.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(region <- regions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.RegionApplication.get(region.regionId)">@region.regionId</a></div>
-						<div>MvccVersion: @region.mvccVersion</div>
-						<div>CountryId: @region.countryId</div>
-						<div>RegionCode: @region.regionCode</div>
-						<div>Name: @region.name</div>
-						<div>Active: @region.active</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.RegionApplication.get(region.regionId)">@region.regionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @region.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						CountryId: @region.countryId
+					</li>
+					<li class="btn btn-default disabled">
+						RegionCode: @region.regionCode
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @region.name
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @region.active
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

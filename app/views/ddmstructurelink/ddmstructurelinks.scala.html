@@ -10,20 +10,27 @@
 				<a class="btn btn-success" href="@routes.DdmstructurelinkApplication.addDdmstructurelink">Create New Ddmstructurelink</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Ddmstructurelink.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(ddmstructurelink <- ddmstructurelinks) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DdmstructurelinkApplication.get(ddmstructurelink.structureLinkId)">@ddmstructurelink.structureLinkId</a></div>
-						<div>ClassNameId: @ddmstructurelink.classNameId</div>
-						<div>ClassPK: @ddmstructurelink.classPK</div>
-						<div>StructureId: @ddmstructurelink.structureId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DdmstructurelinkApplication.get(ddmstructurelink.structureLinkId)">@ddmstructurelink.structureLinkId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @ddmstructurelink.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @ddmstructurelink.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						StructureId: @ddmstructurelink.structureId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

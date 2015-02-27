@@ -10,29 +10,54 @@
 				<a class="btn btn-success" href="@routes.UsernotificationeventApplication.addUsernotificationevent">Create New Usernotificationevent</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Usernotificationevent.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(usernotificationevent <- usernotificationevents) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.UsernotificationeventApplication.get(usernotificationevent.userNotificationEventId)">@usernotificationevent.userNotificationEventId</a></div>
-						<div>MvccVersion: @usernotificationevent.mvccVersion</div>
-						<div>Uuid: @usernotificationevent.uuid</div>
-						<div>CompanyId: @usernotificationevent.companyId</div>
-						<div>UserId: @usernotificationevent.userId</div>
-						<div>Customtype: @usernotificationevent.customtype</div>
-						<div>Timestamp: @usernotificationevent.timestamp</div>
-						<div>DeliveryType: @usernotificationevent.deliveryType</div>
-						<div>DeliverBy: @usernotificationevent.deliverBy</div>
-						<div>Delivered: @usernotificationevent.delivered</div>
-						<div>Payload: @usernotificationevent.payload</div>
-						<div>ActionRequired: @usernotificationevent.actionRequired</div>
-						<div>Archived: @usernotificationevent.archived</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.UsernotificationeventApplication.get(usernotificationevent.userNotificationEventId)">@usernotificationevent.userNotificationEventId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @usernotificationevent.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @usernotificationevent.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @usernotificationevent.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @usernotificationevent.userId
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @usernotificationevent.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						Timestamp: @usernotificationevent.timestamp
+					</li>
+					<li class="btn btn-default disabled">
+						DeliveryType: @usernotificationevent.deliveryType
+					</li>
+					<li class="btn btn-default disabled">
+						DeliverBy: @usernotificationevent.deliverBy
+					</li>
+					<li class="btn btn-default disabled">
+						Delivered: @usernotificationevent.delivered
+					</li>
+					<li class="btn btn-default disabled">
+						Payload: @usernotificationevent.payload
+					</li>
+					<li class="btn btn-default disabled">
+						ActionRequired: @usernotificationevent.actionRequired
+					</li>
+					<li class="btn btn-default disabled">
+						Archived: @usernotificationevent.archived
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

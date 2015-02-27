@@ -10,27 +10,48 @@
 				<a class="btn btn-success" href="@routes.DlfileentrytypeApplication.addDlfileentrytype">Create New Dlfileentrytype</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Dlfileentrytype.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(dlfileentrytype <- dlfileentrytypes) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DlfileentrytypeApplication.get(dlfileentrytype.fileEntryTypeId)">@dlfileentrytype.fileEntryTypeId</a></div>
-						<div>Uuid: @dlfileentrytype.uuid</div>
-						<div>GroupId: @dlfileentrytype.groupId</div>
-						<div>CompanyId: @dlfileentrytype.companyId</div>
-						<div>UserId: @dlfileentrytype.userId</div>
-						<div>UserName: @dlfileentrytype.userName</div>
-						<div>CreateDate: @dlfileentrytype.createDate</div>
-						<div>ModifiedDate: @dlfileentrytype.modifiedDate</div>
-						<div>FileEntryTypeKey: @dlfileentrytype.fileEntryTypeKey</div>
-						<div>Name: @dlfileentrytype.name</div>
-						<div>Description: @dlfileentrytype.description</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DlfileentrytypeApplication.get(dlfileentrytype.fileEntryTypeId)">@dlfileentrytype.fileEntryTypeId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @dlfileentrytype.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @dlfileentrytype.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @dlfileentrytype.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @dlfileentrytype.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @dlfileentrytype.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @dlfileentrytype.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @dlfileentrytype.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						FileEntryTypeKey: @dlfileentrytype.fileEntryTypeKey
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @dlfileentrytype.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @dlfileentrytype.description
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

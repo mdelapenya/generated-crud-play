@@ -10,23 +10,36 @@
 				<a class="btn btn-success" href="@routes.PortletpreferencesApplication.addPortletpreferences">Create New Portletpreferences</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Portletpreferences.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(portletpreferences <- portletpreferencess) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.PortletpreferencesApplication.get(portletpreferences.portletPreferencesId)">@portletpreferences.portletPreferencesId</a></div>
-						<div>MvccVersion: @portletpreferences.mvccVersion</div>
-						<div>OwnerId: @portletpreferences.ownerId</div>
-						<div>OwnerType: @portletpreferences.ownerType</div>
-						<div>Plid: @portletpreferences.plid</div>
-						<div>PortletId: @portletpreferences.portletId</div>
-						<div>Preferences: @portletpreferences.preferences</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.PortletpreferencesApplication.get(portletpreferences.portletPreferencesId)">@portletpreferences.portletPreferencesId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @portletpreferences.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						OwnerId: @portletpreferences.ownerId
+					</li>
+					<li class="btn btn-default disabled">
+						OwnerType: @portletpreferences.ownerType
+					</li>
+					<li class="btn btn-default disabled">
+						Plid: @portletpreferences.plid
+					</li>
+					<li class="btn btn-default disabled">
+						PortletId: @portletpreferences.portletId
+					</li>
+					<li class="btn btn-default disabled">
+						Preferences: @portletpreferences.preferences
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

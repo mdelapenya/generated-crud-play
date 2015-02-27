@@ -10,38 +10,81 @@
 				<a class="btn btn-success" href="@routes.CustomgroupApplication.addCustomgroup">Create New Customgroup</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Customgroup.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(customgroup <- customgroups) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.CustomgroupApplication.get(customgroup.groupId)">@customgroup.groupId</a></div>
-						<div>MvccVersion: @customgroup.mvccVersion</div>
-						<div>Uuid: @customgroup.uuid</div>
-						<div>CompanyId: @customgroup.companyId</div>
-						<div>CreatorUserId: @customgroup.creatorUserId</div>
-						<div>ClassNameId: @customgroup.classNameId</div>
-						<div>ClassPK: @customgroup.classPK</div>
-						<div>ParentGroupId: @customgroup.parentGroupId</div>
-						<div>LiveGroupId: @customgroup.liveGroupId</div>
-						<div>TreePath: @customgroup.treePath</div>
-						<div>GroupKey: @customgroup.groupKey</div>
-						<div>Name: @customgroup.name</div>
-						<div>Description: @customgroup.description</div>
-						<div>Customtype: @customgroup.customtype</div>
-						<div>TypeSettings: @customgroup.typeSettings</div>
-						<div>ManualMembership: @customgroup.manualMembership</div>
-						<div>MembershipRestriction: @customgroup.membershipRestriction</div>
-						<div>FriendlyURL: @customgroup.friendlyURL</div>
-						<div>Site: @customgroup.site</div>
-						<div>RemoteStagingGroupCount: @customgroup.remoteStagingGroupCount</div>
-						<div>InheritContent: @customgroup.inheritContent</div>
-						<div>Active: @customgroup.active</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.CustomgroupApplication.get(customgroup.groupId)">@customgroup.groupId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @customgroup.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @customgroup.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @customgroup.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						CreatorUserId: @customgroup.creatorUserId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @customgroup.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @customgroup.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						ParentGroupId: @customgroup.parentGroupId
+					</li>
+					<li class="btn btn-default disabled">
+						LiveGroupId: @customgroup.liveGroupId
+					</li>
+					<li class="btn btn-default disabled">
+						TreePath: @customgroup.treePath
+					</li>
+					<li class="btn btn-default disabled">
+						GroupKey: @customgroup.groupKey
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @customgroup.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @customgroup.description
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @customgroup.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						TypeSettings: @customgroup.typeSettings
+					</li>
+					<li class="btn btn-default disabled">
+						ManualMembership: @customgroup.manualMembership
+					</li>
+					<li class="btn btn-default disabled">
+						MembershipRestriction: @customgroup.membershipRestriction
+					</li>
+					<li class="btn btn-default disabled">
+						FriendlyURL: @customgroup.friendlyURL
+					</li>
+					<li class="btn btn-default disabled">
+						Site: @customgroup.site
+					</li>
+					<li class="btn btn-default disabled">
+						RemoteStagingGroupCount: @customgroup.remoteStagingGroupCount
+					</li>
+					<li class="btn btn-default disabled">
+						InheritContent: @customgroup.inheritContent
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @customgroup.active
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

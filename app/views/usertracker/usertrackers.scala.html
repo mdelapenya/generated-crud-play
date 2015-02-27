@@ -10,25 +10,42 @@
 				<a class="btn btn-success" href="@routes.UsertrackerApplication.addUsertracker">Create New Usertracker</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Usertracker.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(usertracker <- usertrackers) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.UsertrackerApplication.get(usertracker.userTrackerId)">@usertracker.userTrackerId</a></div>
-						<div>MvccVersion: @usertracker.mvccVersion</div>
-						<div>CompanyId: @usertracker.companyId</div>
-						<div>UserId: @usertracker.userId</div>
-						<div>ModifiedDate: @usertracker.modifiedDate</div>
-						<div>SessionId: @usertracker.sessionId</div>
-						<div>RemoteAddr: @usertracker.remoteAddr</div>
-						<div>RemoteHost: @usertracker.remoteHost</div>
-						<div>UserAgent: @usertracker.userAgent</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.UsertrackerApplication.get(usertracker.userTrackerId)">@usertracker.userTrackerId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @usertracker.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @usertracker.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @usertracker.userId
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @usertracker.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						SessionId: @usertracker.sessionId
+					</li>
+					<li class="btn btn-default disabled">
+						RemoteAddr: @usertracker.remoteAddr
+					</li>
+					<li class="btn btn-default disabled">
+						RemoteHost: @usertracker.remoteHost
+					</li>
+					<li class="btn btn-default disabled">
+						UserAgent: @usertracker.userAgent
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

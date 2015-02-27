@@ -10,26 +10,45 @@
 				<a class="btn btn-success" href="@routes.ShoppingitempriceApplication.addShoppingitemprice">Create New Shoppingitemprice</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Shoppingitemprice.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(shoppingitemprice <- shoppingitemprices) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ShoppingitempriceApplication.get(shoppingitemprice.itemPriceId)">@shoppingitemprice.itemPriceId</a></div>
-						<div>ItemId: @shoppingitemprice.itemId</div>
-						<div>MinQuantity: @shoppingitemprice.minQuantity</div>
-						<div>MaxQuantity: @shoppingitemprice.maxQuantity</div>
-						<div>Price: @shoppingitemprice.price</div>
-						<div>Discount: @shoppingitemprice.discount</div>
-						<div>Taxable: @shoppingitemprice.taxable</div>
-						<div>Shipping: @shoppingitemprice.shipping</div>
-						<div>UseShippingFormula: @shoppingitemprice.useShippingFormula</div>
-						<div>Status: @shoppingitemprice.status</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ShoppingitempriceApplication.get(shoppingitemprice.itemPriceId)">@shoppingitemprice.itemPriceId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						ItemId: @shoppingitemprice.itemId
+					</li>
+					<li class="btn btn-default disabled">
+						MinQuantity: @shoppingitemprice.minQuantity
+					</li>
+					<li class="btn btn-default disabled">
+						MaxQuantity: @shoppingitemprice.maxQuantity
+					</li>
+					<li class="btn btn-default disabled">
+						Price: @shoppingitemprice.price
+					</li>
+					<li class="btn btn-default disabled">
+						Discount: @shoppingitemprice.discount
+					</li>
+					<li class="btn btn-default disabled">
+						Taxable: @shoppingitemprice.taxable
+					</li>
+					<li class="btn btn-default disabled">
+						Shipping: @shoppingitemprice.shipping
+					</li>
+					<li class="btn btn-default disabled">
+						UseShippingFormula: @shoppingitemprice.useShippingFormula
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @shoppingitemprice.status
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

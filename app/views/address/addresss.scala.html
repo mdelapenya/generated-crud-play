@@ -10,36 +10,75 @@
 				<a class="btn btn-success" href="@routes.AddressApplication.addAddress">Create New Address</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Address.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(address <- addresss) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.AddressApplication.get(address.addressId)">@address.addressId</a></div>
-						<div>MvccVersion: @address.mvccVersion</div>
-						<div>Uuid: @address.uuid</div>
-						<div>CompanyId: @address.companyId</div>
-						<div>UserId: @address.userId</div>
-						<div>UserName: @address.userName</div>
-						<div>CreateDate: @address.createDate</div>
-						<div>ModifiedDate: @address.modifiedDate</div>
-						<div>ClassNameId: @address.classNameId</div>
-						<div>ClassPK: @address.classPK</div>
-						<div>Street1: @address.street1</div>
-						<div>Street2: @address.street2</div>
-						<div>Street3: @address.street3</div>
-						<div>City: @address.city</div>
-						<div>Zip: @address.zip</div>
-						<div>RegionId: @address.regionId</div>
-						<div>CountryId: @address.countryId</div>
-						<div>TypeId: @address.typeId</div>
-						<div>Mailing: @address.mailing</div>
-						<div>Customprimary: @address.customprimary</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.AddressApplication.get(address.addressId)">@address.addressId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @address.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @address.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @address.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @address.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @address.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @address.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @address.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @address.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @address.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						Street1: @address.street1
+					</li>
+					<li class="btn btn-default disabled">
+						Street2: @address.street2
+					</li>
+					<li class="btn btn-default disabled">
+						Street3: @address.street3
+					</li>
+					<li class="btn btn-default disabled">
+						City: @address.city
+					</li>
+					<li class="btn btn-default disabled">
+						Zip: @address.zip
+					</li>
+					<li class="btn btn-default disabled">
+						RegionId: @address.regionId
+					</li>
+					<li class="btn btn-default disabled">
+						CountryId: @address.countryId
+					</li>
+					<li class="btn btn-default disabled">
+						TypeId: @address.typeId
+					</li>
+					<li class="btn btn-default disabled">
+						Mailing: @address.mailing
+					</li>
+					<li class="btn btn-default disabled">
+						Customprimary: @address.customprimary
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

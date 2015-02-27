@@ -10,26 +10,45 @@
 				<a class="btn btn-success" href="@routes.MdrrulegroupApplication.addMdrrulegroup">Create New Mdrrulegroup</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Mdrrulegroup.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(mdrrulegroup <- mdrrulegroups) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MdrrulegroupApplication.get(mdrrulegroup.ruleGroupId)">@mdrrulegroup.ruleGroupId</a></div>
-						<div>Uuid: @mdrrulegroup.uuid</div>
-						<div>GroupId: @mdrrulegroup.groupId</div>
-						<div>CompanyId: @mdrrulegroup.companyId</div>
-						<div>UserId: @mdrrulegroup.userId</div>
-						<div>UserName: @mdrrulegroup.userName</div>
-						<div>CreateDate: @mdrrulegroup.createDate</div>
-						<div>ModifiedDate: @mdrrulegroup.modifiedDate</div>
-						<div>Name: @mdrrulegroup.name</div>
-						<div>Description: @mdrrulegroup.description</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MdrrulegroupApplication.get(mdrrulegroup.ruleGroupId)">@mdrrulegroup.ruleGroupId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @mdrrulegroup.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @mdrrulegroup.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @mdrrulegroup.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @mdrrulegroup.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @mdrrulegroup.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @mdrrulegroup.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @mdrrulegroup.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @mdrrulegroup.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @mdrrulegroup.description
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

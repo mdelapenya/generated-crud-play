@@ -10,30 +10,57 @@
 				<a class="btn btn-success" href="@routes.PhoneApplication.addPhone">Create New Phone</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Phone.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(phone <- phones) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.PhoneApplication.get(phone.phoneId)">@phone.phoneId</a></div>
-						<div>MvccVersion: @phone.mvccVersion</div>
-						<div>Uuid: @phone.uuid</div>
-						<div>CompanyId: @phone.companyId</div>
-						<div>UserId: @phone.userId</div>
-						<div>UserName: @phone.userName</div>
-						<div>CreateDate: @phone.createDate</div>
-						<div>ModifiedDate: @phone.modifiedDate</div>
-						<div>ClassNameId: @phone.classNameId</div>
-						<div>ClassPK: @phone.classPK</div>
-						<div>Number: @phone.number</div>
-						<div>Extension: @phone.extension</div>
-						<div>TypeId: @phone.typeId</div>
-						<div>Customprimary: @phone.customprimary</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.PhoneApplication.get(phone.phoneId)">@phone.phoneId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @phone.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @phone.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @phone.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @phone.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @phone.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @phone.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @phone.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @phone.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @phone.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						Number: @phone.number
+					</li>
+					<li class="btn btn-default disabled">
+						Extension: @phone.extension
+					</li>
+					<li class="btn btn-default disabled">
+						TypeId: @phone.typeId
+					</li>
+					<li class="btn btn-default disabled">
+						Customprimary: @phone.customprimary
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

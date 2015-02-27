@@ -10,25 +10,42 @@
 				<a class="btn btn-success" href="@routes.BlogsstatsuserApplication.addBlogsstatsuser">Create New Blogsstatsuser</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Blogsstatsuser.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(blogsstatsuser <- blogsstatsusers) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.BlogsstatsuserApplication.get(blogsstatsuser.statsUserId)">@blogsstatsuser.statsUserId</a></div>
-						<div>GroupId: @blogsstatsuser.groupId</div>
-						<div>CompanyId: @blogsstatsuser.companyId</div>
-						<div>UserId: @blogsstatsuser.userId</div>
-						<div>EntryCount: @blogsstatsuser.entryCount</div>
-						<div>LastPostDate: @blogsstatsuser.lastPostDate</div>
-						<div>RatingsTotalEntries: @blogsstatsuser.ratingsTotalEntries</div>
-						<div>RatingsTotalScore: @blogsstatsuser.ratingsTotalScore</div>
-						<div>RatingsAverageScore: @blogsstatsuser.ratingsAverageScore</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.BlogsstatsuserApplication.get(blogsstatsuser.statsUserId)">@blogsstatsuser.statsUserId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @blogsstatsuser.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @blogsstatsuser.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @blogsstatsuser.userId
+					</li>
+					<li class="btn btn-default disabled">
+						EntryCount: @blogsstatsuser.entryCount
+					</li>
+					<li class="btn btn-default disabled">
+						LastPostDate: @blogsstatsuser.lastPostDate
+					</li>
+					<li class="btn btn-default disabled">
+						RatingsTotalEntries: @blogsstatsuser.ratingsTotalEntries
+					</li>
+					<li class="btn btn-default disabled">
+						RatingsTotalScore: @blogsstatsuser.ratingsTotalScore
+					</li>
+					<li class="btn btn-default disabled">
+						RatingsAverageScore: @blogsstatsuser.ratingsAverageScore
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

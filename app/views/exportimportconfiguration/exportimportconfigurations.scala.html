@@ -10,32 +10,63 @@
 				<a class="btn btn-success" href="@routes.ExportimportconfigurationApplication.addExportimportconfiguration">Create New Exportimportconfiguration</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Exportimportconfiguration.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(exportimportconfiguration <- exportimportconfigurations) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ExportimportconfigurationApplication.get(exportimportconfiguration.exportImportConfigurationId)">@exportimportconfiguration.exportImportConfigurationId</a></div>
-						<div>MvccVersion: @exportimportconfiguration.mvccVersion</div>
-						<div>GroupId: @exportimportconfiguration.groupId</div>
-						<div>CompanyId: @exportimportconfiguration.companyId</div>
-						<div>UserId: @exportimportconfiguration.userId</div>
-						<div>UserName: @exportimportconfiguration.userName</div>
-						<div>CreateDate: @exportimportconfiguration.createDate</div>
-						<div>ModifiedDate: @exportimportconfiguration.modifiedDate</div>
-						<div>Name: @exportimportconfiguration.name</div>
-						<div>Description: @exportimportconfiguration.description</div>
-						<div>Customtype: @exportimportconfiguration.customtype</div>
-						<div>Settings: @exportimportconfiguration.settings</div>
-						<div>Status: @exportimportconfiguration.status</div>
-						<div>StatusByUserId: @exportimportconfiguration.statusByUserId</div>
-						<div>StatusByUserName: @exportimportconfiguration.statusByUserName</div>
-						<div>StatusDate: @exportimportconfiguration.statusDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ExportimportconfigurationApplication.get(exportimportconfiguration.exportImportConfigurationId)">@exportimportconfiguration.exportImportConfigurationId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @exportimportconfiguration.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @exportimportconfiguration.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @exportimportconfiguration.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @exportimportconfiguration.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @exportimportconfiguration.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @exportimportconfiguration.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @exportimportconfiguration.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @exportimportconfiguration.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @exportimportconfiguration.description
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @exportimportconfiguration.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						Settings: @exportimportconfiguration.settings
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @exportimportconfiguration.status
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserId: @exportimportconfiguration.statusByUserId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserName: @exportimportconfiguration.statusByUserName
+					</li>
+					<li class="btn btn-default disabled">
+						StatusDate: @exportimportconfiguration.statusDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

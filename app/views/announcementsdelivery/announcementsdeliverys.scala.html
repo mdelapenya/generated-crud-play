@@ -10,23 +10,36 @@
 				<a class="btn btn-success" href="@routes.AnnouncementsdeliveryApplication.addAnnouncementsdelivery">Create New Announcementsdelivery</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Announcementsdelivery.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(announcementsdelivery <- announcementsdeliverys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.AnnouncementsdeliveryApplication.get(announcementsdelivery.deliveryId)">@announcementsdelivery.deliveryId</a></div>
-						<div>CompanyId: @announcementsdelivery.companyId</div>
-						<div>UserId: @announcementsdelivery.userId</div>
-						<div>Customtype: @announcementsdelivery.customtype</div>
-						<div>Email: @announcementsdelivery.email</div>
-						<div>Sms: @announcementsdelivery.sms</div>
-						<div>Website: @announcementsdelivery.website</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.AnnouncementsdeliveryApplication.get(announcementsdelivery.deliveryId)">@announcementsdelivery.deliveryId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @announcementsdelivery.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @announcementsdelivery.userId
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @announcementsdelivery.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						Email: @announcementsdelivery.email
+					</li>
+					<li class="btn btn-default disabled">
+						Sms: @announcementsdelivery.sms
+					</li>
+					<li class="btn btn-default disabled">
+						Website: @announcementsdelivery.website
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

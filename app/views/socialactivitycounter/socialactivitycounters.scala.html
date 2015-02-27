@@ -10,29 +10,54 @@
 				<a class="btn btn-success" href="@routes.SocialactivitycounterApplication.addSocialactivitycounter">Create New Socialactivitycounter</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Socialactivitycounter.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(socialactivitycounter <- socialactivitycounters) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.SocialactivitycounterApplication.get(socialactivitycounter.activityCounterId)">@socialactivitycounter.activityCounterId</a></div>
-						<div>GroupId: @socialactivitycounter.groupId</div>
-						<div>CompanyId: @socialactivitycounter.companyId</div>
-						<div>ClassNameId: @socialactivitycounter.classNameId</div>
-						<div>ClassPK: @socialactivitycounter.classPK</div>
-						<div>Name: @socialactivitycounter.name</div>
-						<div>OwnerType: @socialactivitycounter.ownerType</div>
-						<div>CurrentValue: @socialactivitycounter.currentValue</div>
-						<div>TotalValue: @socialactivitycounter.totalValue</div>
-						<div>GraceValue: @socialactivitycounter.graceValue</div>
-						<div>StartPeriod: @socialactivitycounter.startPeriod</div>
-						<div>EndPeriod: @socialactivitycounter.endPeriod</div>
-						<div>Active: @socialactivitycounter.active</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.SocialactivitycounterApplication.get(socialactivitycounter.activityCounterId)">@socialactivitycounter.activityCounterId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @socialactivitycounter.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @socialactivitycounter.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @socialactivitycounter.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @socialactivitycounter.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @socialactivitycounter.name
+					</li>
+					<li class="btn btn-default disabled">
+						OwnerType: @socialactivitycounter.ownerType
+					</li>
+					<li class="btn btn-default disabled">
+						CurrentValue: @socialactivitycounter.currentValue
+					</li>
+					<li class="btn btn-default disabled">
+						TotalValue: @socialactivitycounter.totalValue
+					</li>
+					<li class="btn btn-default disabled">
+						GraceValue: @socialactivitycounter.graceValue
+					</li>
+					<li class="btn btn-default disabled">
+						StartPeriod: @socialactivitycounter.startPeriod
+					</li>
+					<li class="btn btn-default disabled">
+						EndPeriod: @socialactivitycounter.endPeriod
+					</li>
+					<li class="btn btn-default disabled">
+						Active: @socialactivitycounter.active
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

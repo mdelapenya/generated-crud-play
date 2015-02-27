@@ -10,28 +10,51 @@
 				<a class="btn btn-success" href="@routes.MdrrulegroupinstanceApplication.addMdrrulegroupinstance">Create New Mdrrulegroupinstance</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Mdrrulegroupinstance.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(mdrrulegroupinstance <- mdrrulegroupinstances) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MdrrulegroupinstanceApplication.get(mdrrulegroupinstance.ruleGroupInstanceId)">@mdrrulegroupinstance.ruleGroupInstanceId</a></div>
-						<div>Uuid: @mdrrulegroupinstance.uuid</div>
-						<div>GroupId: @mdrrulegroupinstance.groupId</div>
-						<div>CompanyId: @mdrrulegroupinstance.companyId</div>
-						<div>UserId: @mdrrulegroupinstance.userId</div>
-						<div>UserName: @mdrrulegroupinstance.userName</div>
-						<div>CreateDate: @mdrrulegroupinstance.createDate</div>
-						<div>ModifiedDate: @mdrrulegroupinstance.modifiedDate</div>
-						<div>ClassNameId: @mdrrulegroupinstance.classNameId</div>
-						<div>ClassPK: @mdrrulegroupinstance.classPK</div>
-						<div>RuleGroupId: @mdrrulegroupinstance.ruleGroupId</div>
-						<div>Priority: @mdrrulegroupinstance.priority</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MdrrulegroupinstanceApplication.get(mdrrulegroupinstance.ruleGroupInstanceId)">@mdrrulegroupinstance.ruleGroupInstanceId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @mdrrulegroupinstance.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @mdrrulegroupinstance.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @mdrrulegroupinstance.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @mdrrulegroupinstance.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @mdrrulegroupinstance.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @mdrrulegroupinstance.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @mdrrulegroupinstance.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @mdrrulegroupinstance.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @mdrrulegroupinstance.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						RuleGroupId: @mdrrulegroupinstance.ruleGroupId
+					</li>
+					<li class="btn btn-default disabled">
+						Priority: @mdrrulegroupinstance.priority
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

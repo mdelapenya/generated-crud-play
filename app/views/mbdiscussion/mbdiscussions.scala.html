@@ -10,27 +10,48 @@
 				<a class="btn btn-success" href="@routes.MbdiscussionApplication.addMbdiscussion">Create New Mbdiscussion</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Mbdiscussion.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(mbdiscussion <- mbdiscussions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.MbdiscussionApplication.get(mbdiscussion.discussionId)">@mbdiscussion.discussionId</a></div>
-						<div>Uuid: @mbdiscussion.uuid</div>
-						<div>GroupId: @mbdiscussion.groupId</div>
-						<div>CompanyId: @mbdiscussion.companyId</div>
-						<div>UserId: @mbdiscussion.userId</div>
-						<div>UserName: @mbdiscussion.userName</div>
-						<div>CreateDate: @mbdiscussion.createDate</div>
-						<div>ModifiedDate: @mbdiscussion.modifiedDate</div>
-						<div>ClassNameId: @mbdiscussion.classNameId</div>
-						<div>ClassPK: @mbdiscussion.classPK</div>
-						<div>ThreadId: @mbdiscussion.threadId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.MbdiscussionApplication.get(mbdiscussion.discussionId)">@mbdiscussion.discussionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @mbdiscussion.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @mbdiscussion.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @mbdiscussion.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @mbdiscussion.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @mbdiscussion.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @mbdiscussion.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @mbdiscussion.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @mbdiscussion.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @mbdiscussion.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						ThreadId: @mbdiscussion.threadId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

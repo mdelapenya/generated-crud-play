@@ -10,25 +10,42 @@
 				<a class="btn btn-success" href="@routes.SocialactivitylimitApplication.addSocialactivitylimit">Create New Socialactivitylimit</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Socialactivitylimit.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(socialactivitylimit <- socialactivitylimits) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.SocialactivitylimitApplication.get(socialactivitylimit.activityLimitId)">@socialactivitylimit.activityLimitId</a></div>
-						<div>GroupId: @socialactivitylimit.groupId</div>
-						<div>CompanyId: @socialactivitylimit.companyId</div>
-						<div>UserId: @socialactivitylimit.userId</div>
-						<div>ClassNameId: @socialactivitylimit.classNameId</div>
-						<div>ClassPK: @socialactivitylimit.classPK</div>
-						<div>ActivityType: @socialactivitylimit.activityType</div>
-						<div>ActivityCounterName: @socialactivitylimit.activityCounterName</div>
-						<div>Value: @socialactivitylimit.value</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.SocialactivitylimitApplication.get(socialactivitylimit.activityLimitId)">@socialactivitylimit.activityLimitId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @socialactivitylimit.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @socialactivitylimit.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @socialactivitylimit.userId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @socialactivitylimit.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @socialactivitylimit.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						ActivityType: @socialactivitylimit.activityType
+					</li>
+					<li class="btn btn-default disabled">
+						ActivityCounterName: @socialactivitylimit.activityCounterName
+					</li>
+					<li class="btn btn-default disabled">
+						Value: @socialactivitylimit.value
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

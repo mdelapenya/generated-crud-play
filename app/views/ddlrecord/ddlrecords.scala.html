@@ -10,30 +10,57 @@
 				<a class="btn btn-success" href="@routes.DdlrecordApplication.addDdlrecord">Create New Ddlrecord</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Ddlrecord.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(ddlrecord <- ddlrecords) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.DdlrecordApplication.get(ddlrecord.recordId)">@ddlrecord.recordId</a></div>
-						<div>Uuid: @ddlrecord.uuid</div>
-						<div>GroupId: @ddlrecord.groupId</div>
-						<div>CompanyId: @ddlrecord.companyId</div>
-						<div>UserId: @ddlrecord.userId</div>
-						<div>UserName: @ddlrecord.userName</div>
-						<div>VersionUserId: @ddlrecord.versionUserId</div>
-						<div>VersionUserName: @ddlrecord.versionUserName</div>
-						<div>CreateDate: @ddlrecord.createDate</div>
-						<div>ModifiedDate: @ddlrecord.modifiedDate</div>
-						<div>DDMStorageId: @ddlrecord.DDMStorageId</div>
-						<div>RecordSetId: @ddlrecord.recordSetId</div>
-						<div>Version: @ddlrecord.version</div>
-						<div>DisplayIndex: @ddlrecord.displayIndex</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.DdlrecordApplication.get(ddlrecord.recordId)">@ddlrecord.recordId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @ddlrecord.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @ddlrecord.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @ddlrecord.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @ddlrecord.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @ddlrecord.userName
+					</li>
+					<li class="btn btn-default disabled">
+						VersionUserId: @ddlrecord.versionUserId
+					</li>
+					<li class="btn btn-default disabled">
+						VersionUserName: @ddlrecord.versionUserName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @ddlrecord.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @ddlrecord.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						DDMStorageId: @ddlrecord.DDMStorageId
+					</li>
+					<li class="btn btn-default disabled">
+						RecordSetId: @ddlrecord.recordSetId
+					</li>
+					<li class="btn btn-default disabled">
+						Version: @ddlrecord.version
+					</li>
+					<li class="btn btn-default disabled">
+						DisplayIndex: @ddlrecord.displayIndex
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

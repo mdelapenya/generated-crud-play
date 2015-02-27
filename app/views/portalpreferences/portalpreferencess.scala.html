@@ -10,21 +10,30 @@
 				<a class="btn btn-success" href="@routes.PortalpreferencesApplication.addPortalpreferences">Create New Portalpreferences</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Portalpreferences.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(portalpreferences <- portalpreferencess) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.PortalpreferencesApplication.get(portalpreferences.portalPreferencesId)">@portalpreferences.portalPreferencesId</a></div>
-						<div>MvccVersion: @portalpreferences.mvccVersion</div>
-						<div>OwnerId: @portalpreferences.ownerId</div>
-						<div>OwnerType: @portalpreferences.ownerType</div>
-						<div>Preferences: @portalpreferences.preferences</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.PortalpreferencesApplication.get(portalpreferences.portalPreferencesId)">@portalpreferences.portalPreferencesId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @portalpreferences.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						OwnerId: @portalpreferences.ownerId
+					</li>
+					<li class="btn btn-default disabled">
+						OwnerType: @portalpreferences.ownerType
+					</li>
+					<li class="btn btn-default disabled">
+						Preferences: @portalpreferences.preferences
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

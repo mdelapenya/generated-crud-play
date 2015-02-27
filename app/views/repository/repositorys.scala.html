@@ -10,31 +10,60 @@
 				<a class="btn btn-success" href="@routes.RepositoryApplication.addRepository">Create New Repository</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Repository.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(repository <- repositorys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.RepositoryApplication.get(repository.repositoryId)">@repository.repositoryId</a></div>
-						<div>MvccVersion: @repository.mvccVersion</div>
-						<div>Uuid: @repository.uuid</div>
-						<div>GroupId: @repository.groupId</div>
-						<div>CompanyId: @repository.companyId</div>
-						<div>UserId: @repository.userId</div>
-						<div>UserName: @repository.userName</div>
-						<div>CreateDate: @repository.createDate</div>
-						<div>ModifiedDate: @repository.modifiedDate</div>
-						<div>ClassNameId: @repository.classNameId</div>
-						<div>Name: @repository.name</div>
-						<div>Description: @repository.description</div>
-						<div>PortletId: @repository.portletId</div>
-						<div>TypeSettings: @repository.typeSettings</div>
-						<div>DlFolderId: @repository.dlFolderId</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.RepositoryApplication.get(repository.repositoryId)">@repository.repositoryId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @repository.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @repository.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @repository.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @repository.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @repository.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @repository.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @repository.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @repository.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @repository.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @repository.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @repository.description
+					</li>
+					<li class="btn btn-default disabled">
+						PortletId: @repository.portletId
+					</li>
+					<li class="btn btn-default disabled">
+						TypeSettings: @repository.typeSettings
+					</li>
+					<li class="btn btn-default disabled">
+						DlFolderId: @repository.dlFolderId
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

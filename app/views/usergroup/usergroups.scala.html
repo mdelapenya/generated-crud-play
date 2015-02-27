@@ -10,28 +10,51 @@
 				<a class="btn btn-success" href="@routes.UsergroupApplication.addUsergroup">Create New Usergroup</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Usergroup.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(usergroup <- usergroups) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.UsergroupApplication.get(usergroup.userGroupId)">@usergroup.userGroupId</a></div>
-						<div>MvccVersion: @usergroup.mvccVersion</div>
-						<div>Uuid: @usergroup.uuid</div>
-						<div>CompanyId: @usergroup.companyId</div>
-						<div>UserId: @usergroup.userId</div>
-						<div>UserName: @usergroup.userName</div>
-						<div>CreateDate: @usergroup.createDate</div>
-						<div>ModifiedDate: @usergroup.modifiedDate</div>
-						<div>ParentUserGroupId: @usergroup.parentUserGroupId</div>
-						<div>Name: @usergroup.name</div>
-						<div>Description: @usergroup.description</div>
-						<div>AddedByLDAPImport: @usergroup.addedByLDAPImport</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.UsergroupApplication.get(usergroup.userGroupId)">@usergroup.userGroupId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @usergroup.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @usergroup.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @usergroup.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @usergroup.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @usergroup.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @usergroup.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @usergroup.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ParentUserGroupId: @usergroup.parentUserGroupId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @usergroup.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @usergroup.description
+					</li>
+					<li class="btn btn-default disabled">
+						AddedByLDAPImport: @usergroup.addedByLDAPImport
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

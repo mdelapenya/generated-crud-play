@@ -10,27 +10,48 @@
 				<a class="btn btn-success" href="@routes.ShoppingcartApplication.addShoppingcart">Create New Shoppingcart</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Shoppingcart.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(shoppingcart <- shoppingcarts) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ShoppingcartApplication.get(shoppingcart.cartId)">@shoppingcart.cartId</a></div>
-						<div>GroupId: @shoppingcart.groupId</div>
-						<div>CompanyId: @shoppingcart.companyId</div>
-						<div>UserId: @shoppingcart.userId</div>
-						<div>UserName: @shoppingcart.userName</div>
-						<div>CreateDate: @shoppingcart.createDate</div>
-						<div>ModifiedDate: @shoppingcart.modifiedDate</div>
-						<div>ItemIds: @shoppingcart.itemIds</div>
-						<div>CouponCodes: @shoppingcart.couponCodes</div>
-						<div>AltShipping: @shoppingcart.altShipping</div>
-						<div>Insure: @shoppingcart.insure</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ShoppingcartApplication.get(shoppingcart.cartId)">@shoppingcart.cartId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						GroupId: @shoppingcart.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @shoppingcart.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @shoppingcart.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @shoppingcart.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @shoppingcart.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @shoppingcart.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ItemIds: @shoppingcart.itemIds
+					</li>
+					<li class="btn btn-default disabled">
+						CouponCodes: @shoppingcart.couponCodes
+					</li>
+					<li class="btn btn-default disabled">
+						AltShipping: @shoppingcart.altShipping
+					</li>
+					<li class="btn btn-default disabled">
+						Insure: @shoppingcart.insure
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

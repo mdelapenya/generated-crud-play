@@ -10,28 +10,51 @@
 				<a class="btn btn-success" href="@routes.RepositoryentryApplication.addRepositoryentry">Create New Repositoryentry</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Repositoryentry.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(repositoryentry <- repositoryentrys) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.RepositoryentryApplication.get(repositoryentry.repositoryEntryId)">@repositoryentry.repositoryEntryId</a></div>
-						<div>MvccVersion: @repositoryentry.mvccVersion</div>
-						<div>Uuid: @repositoryentry.uuid</div>
-						<div>GroupId: @repositoryentry.groupId</div>
-						<div>CompanyId: @repositoryentry.companyId</div>
-						<div>UserId: @repositoryentry.userId</div>
-						<div>UserName: @repositoryentry.userName</div>
-						<div>CreateDate: @repositoryentry.createDate</div>
-						<div>ModifiedDate: @repositoryentry.modifiedDate</div>
-						<div>RepositoryId: @repositoryentry.repositoryId</div>
-						<div>MappedId: @repositoryentry.mappedId</div>
-						<div>ManualCheckInRequired: @repositoryentry.manualCheckInRequired</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.RepositoryentryApplication.get(repositoryentry.repositoryEntryId)">@repositoryentry.repositoryEntryId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @repositoryentry.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						Uuid: @repositoryentry.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @repositoryentry.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @repositoryentry.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @repositoryentry.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @repositoryentry.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @repositoryentry.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @repositoryentry.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						RepositoryId: @repositoryentry.repositoryId
+					</li>
+					<li class="btn btn-default disabled">
+						MappedId: @repositoryentry.mappedId
+					</li>
+					<li class="btn btn-default disabled">
+						ManualCheckInRequired: @repositoryentry.manualCheckInRequired
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

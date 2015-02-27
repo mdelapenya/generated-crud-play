@@ -10,32 +10,63 @@
 				<a class="btn btn-success" href="@routes.BackgroundtaskApplication.addBackgroundtask">Create New Backgroundtask</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Backgroundtask.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(backgroundtask <- backgroundtasks) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.BackgroundtaskApplication.get(backgroundtask.backgroundTaskId)">@backgroundtask.backgroundTaskId</a></div>
-						<div>MvccVersion: @backgroundtask.mvccVersion</div>
-						<div>GroupId: @backgroundtask.groupId</div>
-						<div>CompanyId: @backgroundtask.companyId</div>
-						<div>UserId: @backgroundtask.userId</div>
-						<div>UserName: @backgroundtask.userName</div>
-						<div>CreateDate: @backgroundtask.createDate</div>
-						<div>ModifiedDate: @backgroundtask.modifiedDate</div>
-						<div>Name: @backgroundtask.name</div>
-						<div>ServletContextNames: @backgroundtask.servletContextNames</div>
-						<div>TaskExecutorClassName: @backgroundtask.taskExecutorClassName</div>
-						<div>TaskContextMap: @backgroundtask.taskContextMap</div>
-						<div>Completed: @backgroundtask.completed</div>
-						<div>CompletionDate: @backgroundtask.completionDate</div>
-						<div>Status: @backgroundtask.status</div>
-						<div>StatusMessage: @backgroundtask.statusMessage</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.BackgroundtaskApplication.get(backgroundtask.backgroundTaskId)">@backgroundtask.backgroundTaskId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @backgroundtask.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @backgroundtask.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @backgroundtask.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @backgroundtask.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @backgroundtask.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @backgroundtask.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @backgroundtask.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @backgroundtask.name
+					</li>
+					<li class="btn btn-default disabled">
+						ServletContextNames: @backgroundtask.servletContextNames
+					</li>
+					<li class="btn btn-default disabled">
+						TaskExecutorClassName: @backgroundtask.taskExecutorClassName
+					</li>
+					<li class="btn btn-default disabled">
+						TaskContextMap: @backgroundtask.taskContextMap
+					</li>
+					<li class="btn btn-default disabled">
+						Completed: @backgroundtask.completed
+					</li>
+					<li class="btn btn-default disabled">
+						CompletionDate: @backgroundtask.completionDate
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @backgroundtask.status
+					</li>
+					<li class="btn btn-default disabled">
+						StatusMessage: @backgroundtask.statusMessage
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

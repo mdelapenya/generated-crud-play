@@ -10,49 +10,114 @@
 				<a class="btn btn-success" href="@routes.JournalarticleApplication.addJournalarticle">Create New Journalarticle</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Journalarticle.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(journalarticle <- journalarticles) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.JournalarticleApplication.get(journalarticle.id)">@journalarticle.id</a></div>
-						<div>Uuid: @journalarticle.uuid</div>
-						<div>ResourcePrimKey: @journalarticle.resourcePrimKey</div>
-						<div>GroupId: @journalarticle.groupId</div>
-						<div>CompanyId: @journalarticle.companyId</div>
-						<div>UserId: @journalarticle.userId</div>
-						<div>UserName: @journalarticle.userName</div>
-						<div>CreateDate: @journalarticle.createDate</div>
-						<div>ModifiedDate: @journalarticle.modifiedDate</div>
-						<div>FolderId: @journalarticle.folderId</div>
-						<div>ClassNameId: @journalarticle.classNameId</div>
-						<div>ClassPK: @journalarticle.classPK</div>
-						<div>TreePath: @journalarticle.treePath</div>
-						<div>ArticleId: @journalarticle.articleId</div>
-						<div>Version: @journalarticle.version</div>
-						<div>Title: @journalarticle.title</div>
-						<div>UrlTitle: @journalarticle.urlTitle</div>
-						<div>Description: @journalarticle.description</div>
-						<div>Content: @journalarticle.content</div>
-						<div>DDMStructureKey: @journalarticle.DDMStructureKey</div>
-						<div>DDMTemplateKey: @journalarticle.DDMTemplateKey</div>
-						<div>LayoutUuid: @journalarticle.layoutUuid</div>
-						<div>DisplayDate: @journalarticle.displayDate</div>
-						<div>ExpirationDate: @journalarticle.expirationDate</div>
-						<div>ReviewDate: @journalarticle.reviewDate</div>
-						<div>Indexable: @journalarticle.indexable</div>
-						<div>SmallImage: @journalarticle.smallImage</div>
-						<div>SmallImageId: @journalarticle.smallImageId</div>
-						<div>SmallImageURL: @journalarticle.smallImageURL</div>
-						<div>Status: @journalarticle.status</div>
-						<div>StatusByUserId: @journalarticle.statusByUserId</div>
-						<div>StatusByUserName: @journalarticle.statusByUserName</div>
-						<div>StatusDate: @journalarticle.statusDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.JournalarticleApplication.get(journalarticle.id)">@journalarticle.id</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @journalarticle.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						ResourcePrimKey: @journalarticle.resourcePrimKey
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @journalarticle.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @journalarticle.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @journalarticle.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @journalarticle.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @journalarticle.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @journalarticle.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						FolderId: @journalarticle.folderId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @journalarticle.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @journalarticle.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						TreePath: @journalarticle.treePath
+					</li>
+					<li class="btn btn-default disabled">
+						ArticleId: @journalarticle.articleId
+					</li>
+					<li class="btn btn-default disabled">
+						Version: @journalarticle.version
+					</li>
+					<li class="btn btn-default disabled">
+						Title: @journalarticle.title
+					</li>
+					<li class="btn btn-default disabled">
+						UrlTitle: @journalarticle.urlTitle
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @journalarticle.description
+					</li>
+					<li class="btn btn-default disabled">
+						Content: @journalarticle.content
+					</li>
+					<li class="btn btn-default disabled">
+						DDMStructureKey: @journalarticle.DDMStructureKey
+					</li>
+					<li class="btn btn-default disabled">
+						DDMTemplateKey: @journalarticle.DDMTemplateKey
+					</li>
+					<li class="btn btn-default disabled">
+						LayoutUuid: @journalarticle.layoutUuid
+					</li>
+					<li class="btn btn-default disabled">
+						DisplayDate: @journalarticle.displayDate
+					</li>
+					<li class="btn btn-default disabled">
+						ExpirationDate: @journalarticle.expirationDate
+					</li>
+					<li class="btn btn-default disabled">
+						ReviewDate: @journalarticle.reviewDate
+					</li>
+					<li class="btn btn-default disabled">
+						Indexable: @journalarticle.indexable
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImage: @journalarticle.smallImage
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImageId: @journalarticle.smallImageId
+					</li>
+					<li class="btn btn-default disabled">
+						SmallImageURL: @journalarticle.smallImageURL
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @journalarticle.status
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserId: @journalarticle.statusByUserId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserName: @journalarticle.statusByUserName
+					</li>
+					<li class="btn btn-default disabled">
+						StatusDate: @journalarticle.statusDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

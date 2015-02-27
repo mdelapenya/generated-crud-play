@@ -10,24 +10,39 @@
 				<a class="btn btn-success" href="@routes.WebdavpropsApplication.addWebdavprops">Create New Webdavprops</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Webdavprops.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(webdavprops <- webdavpropss) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.WebdavpropsApplication.get(webdavprops.webDavPropsId)">@webdavprops.webDavPropsId</a></div>
-						<div>MvccVersion: @webdavprops.mvccVersion</div>
-						<div>CompanyId: @webdavprops.companyId</div>
-						<div>CreateDate: @webdavprops.createDate</div>
-						<div>ModifiedDate: @webdavprops.modifiedDate</div>
-						<div>ClassNameId: @webdavprops.classNameId</div>
-						<div>ClassPK: @webdavprops.classPK</div>
-						<div>Props: @webdavprops.props</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.WebdavpropsApplication.get(webdavprops.webDavPropsId)">@webdavprops.webDavPropsId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @webdavprops.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @webdavprops.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @webdavprops.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @webdavprops.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @webdavprops.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @webdavprops.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						Props: @webdavprops.props
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

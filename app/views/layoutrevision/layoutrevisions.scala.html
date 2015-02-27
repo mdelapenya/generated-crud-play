@@ -10,47 +10,108 @@
 				<a class="btn btn-success" href="@routes.LayoutrevisionApplication.addLayoutrevision">Create New Layoutrevision</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Layoutrevision.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(layoutrevision <- layoutrevisions) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.LayoutrevisionApplication.get(layoutrevision.layoutRevisionId)">@layoutrevision.layoutRevisionId</a></div>
-						<div>MvccVersion: @layoutrevision.mvccVersion</div>
-						<div>GroupId: @layoutrevision.groupId</div>
-						<div>CompanyId: @layoutrevision.companyId</div>
-						<div>UserId: @layoutrevision.userId</div>
-						<div>UserName: @layoutrevision.userName</div>
-						<div>CreateDate: @layoutrevision.createDate</div>
-						<div>ModifiedDate: @layoutrevision.modifiedDate</div>
-						<div>LayoutSetBranchId: @layoutrevision.layoutSetBranchId</div>
-						<div>LayoutBranchId: @layoutrevision.layoutBranchId</div>
-						<div>ParentLayoutRevisionId: @layoutrevision.parentLayoutRevisionId</div>
-						<div>Head: @layoutrevision.head</div>
-						<div>Major: @layoutrevision.major</div>
-						<div>Plid: @layoutrevision.plid</div>
-						<div>PrivateLayout: @layoutrevision.privateLayout</div>
-						<div>Name: @layoutrevision.name</div>
-						<div>Title: @layoutrevision.title</div>
-						<div>Description: @layoutrevision.description</div>
-						<div>Keywords: @layoutrevision.keywords</div>
-						<div>Robots: @layoutrevision.robots</div>
-						<div>TypeSettings: @layoutrevision.typeSettings</div>
-						<div>IconImageId: @layoutrevision.iconImageId</div>
-						<div>ThemeId: @layoutrevision.themeId</div>
-						<div>ColorSchemeId: @layoutrevision.colorSchemeId</div>
-						<div>WapThemeId: @layoutrevision.wapThemeId</div>
-						<div>WapColorSchemeId: @layoutrevision.wapColorSchemeId</div>
-						<div>Css: @layoutrevision.css</div>
-						<div>Status: @layoutrevision.status</div>
-						<div>StatusByUserId: @layoutrevision.statusByUserId</div>
-						<div>StatusByUserName: @layoutrevision.statusByUserName</div>
-						<div>StatusDate: @layoutrevision.statusDate</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.LayoutrevisionApplication.get(layoutrevision.layoutRevisionId)">@layoutrevision.layoutRevisionId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @layoutrevision.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @layoutrevision.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @layoutrevision.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @layoutrevision.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @layoutrevision.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @layoutrevision.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @layoutrevision.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						LayoutSetBranchId: @layoutrevision.layoutSetBranchId
+					</li>
+					<li class="btn btn-default disabled">
+						LayoutBranchId: @layoutrevision.layoutBranchId
+					</li>
+					<li class="btn btn-default disabled">
+						ParentLayoutRevisionId: @layoutrevision.parentLayoutRevisionId
+					</li>
+					<li class="btn btn-default disabled">
+						Head: @layoutrevision.head
+					</li>
+					<li class="btn btn-default disabled">
+						Major: @layoutrevision.major
+					</li>
+					<li class="btn btn-default disabled">
+						Plid: @layoutrevision.plid
+					</li>
+					<li class="btn btn-default disabled">
+						PrivateLayout: @layoutrevision.privateLayout
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @layoutrevision.name
+					</li>
+					<li class="btn btn-default disabled">
+						Title: @layoutrevision.title
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @layoutrevision.description
+					</li>
+					<li class="btn btn-default disabled">
+						Keywords: @layoutrevision.keywords
+					</li>
+					<li class="btn btn-default disabled">
+						Robots: @layoutrevision.robots
+					</li>
+					<li class="btn btn-default disabled">
+						TypeSettings: @layoutrevision.typeSettings
+					</li>
+					<li class="btn btn-default disabled">
+						IconImageId: @layoutrevision.iconImageId
+					</li>
+					<li class="btn btn-default disabled">
+						ThemeId: @layoutrevision.themeId
+					</li>
+					<li class="btn btn-default disabled">
+						ColorSchemeId: @layoutrevision.colorSchemeId
+					</li>
+					<li class="btn btn-default disabled">
+						WapThemeId: @layoutrevision.wapThemeId
+					</li>
+					<li class="btn btn-default disabled">
+						WapColorSchemeId: @layoutrevision.wapColorSchemeId
+					</li>
+					<li class="btn btn-default disabled">
+						Css: @layoutrevision.css
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @layoutrevision.status
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserId: @layoutrevision.statusByUserId
+					</li>
+					<li class="btn btn-default disabled">
+						StatusByUserName: @layoutrevision.statusByUserName
+					</li>
+					<li class="btn btn-default disabled">
+						StatusDate: @layoutrevision.statusDate
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

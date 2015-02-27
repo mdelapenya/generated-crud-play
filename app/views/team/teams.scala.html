@@ -10,26 +10,45 @@
 				<a class="btn btn-success" href="@routes.TeamApplication.addTeam">Create New Team</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Team.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(team <- teams) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.TeamApplication.get(team.teamId)">@team.teamId</a></div>
-						<div>MvccVersion: @team.mvccVersion</div>
-						<div>CompanyId: @team.companyId</div>
-						<div>UserId: @team.userId</div>
-						<div>UserName: @team.userName</div>
-						<div>CreateDate: @team.createDate</div>
-						<div>ModifiedDate: @team.modifiedDate</div>
-						<div>GroupId: @team.groupId</div>
-						<div>Name: @team.name</div>
-						<div>Description: @team.description</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.TeamApplication.get(team.teamId)">@team.teamId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @team.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @team.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @team.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @team.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @team.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @team.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @team.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @team.name
+					</li>
+					<li class="btn btn-default disabled">
+						Description: @team.description
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

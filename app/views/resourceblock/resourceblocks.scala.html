@@ -10,23 +10,36 @@
 				<a class="btn btn-success" href="@routes.ResourceblockApplication.addResourceblock">Create New Resourceblock</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Resourceblock.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(resourceblock <- resourceblocks) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ResourceblockApplication.get(resourceblock.resourceBlockId)">@resourceblock.resourceBlockId</a></div>
-						<div>MvccVersion: @resourceblock.mvccVersion</div>
-						<div>CompanyId: @resourceblock.companyId</div>
-						<div>GroupId: @resourceblock.groupId</div>
-						<div>Name: @resourceblock.name</div>
-						<div>PermissionsHash: @resourceblock.permissionsHash</div>
-						<div>ReferenceCount: @resourceblock.referenceCount</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ResourceblockApplication.get(resourceblock.resourceBlockId)">@resourceblock.resourceBlockId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @resourceblock.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @resourceblock.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @resourceblock.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						Name: @resourceblock.name
+					</li>
+					<li class="btn btn-default disabled">
+						PermissionsHash: @resourceblock.permissionsHash
+					</li>
+					<li class="btn btn-default disabled">
+						ReferenceCount: @resourceblock.referenceCount
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

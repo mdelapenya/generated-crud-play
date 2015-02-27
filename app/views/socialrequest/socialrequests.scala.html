@@ -10,29 +10,54 @@
 				<a class="btn btn-success" href="@routes.SocialrequestApplication.addSocialrequest">Create New Socialrequest</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Socialrequest.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(socialrequest <- socialrequests) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.SocialrequestApplication.get(socialrequest.requestId)">@socialrequest.requestId</a></div>
-						<div>Uuid: @socialrequest.uuid</div>
-						<div>GroupId: @socialrequest.groupId</div>
-						<div>CompanyId: @socialrequest.companyId</div>
-						<div>UserId: @socialrequest.userId</div>
-						<div>CreateDate: @socialrequest.createDate</div>
-						<div>ModifiedDate: @socialrequest.modifiedDate</div>
-						<div>ClassNameId: @socialrequest.classNameId</div>
-						<div>ClassPK: @socialrequest.classPK</div>
-						<div>Customtype: @socialrequest.customtype</div>
-						<div>ExtraData: @socialrequest.extraData</div>
-						<div>ReceiverUserId: @socialrequest.receiverUserId</div>
-						<div>Status: @socialrequest.status</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.SocialrequestApplication.get(socialrequest.requestId)">@socialrequest.requestId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						Uuid: @socialrequest.uuid
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @socialrequest.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @socialrequest.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @socialrequest.userId
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @socialrequest.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ModifiedDate: @socialrequest.modifiedDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @socialrequest.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @socialrequest.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @socialrequest.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						ExtraData: @socialrequest.extraData
+					</li>
+					<li class="btn btn-default disabled">
+						ReceiverUserId: @socialrequest.receiverUserId
+					</li>
+					<li class="btn btn-default disabled">
+						Status: @socialrequest.status
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

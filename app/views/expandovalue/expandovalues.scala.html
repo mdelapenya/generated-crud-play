@@ -10,24 +10,39 @@
 				<a class="btn btn-success" href="@routes.ExpandovalueApplication.addExpandovalue">Create New Expandovalue</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Expandovalue.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(expandovalue <- expandovalues) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.ExpandovalueApplication.get(expandovalue.valueId)">@expandovalue.valueId</a></div>
-						<div>CompanyId: @expandovalue.companyId</div>
-						<div>TableId: @expandovalue.tableId</div>
-						<div>ColumnId: @expandovalue.columnId</div>
-						<div>RowId: @expandovalue.rowId</div>
-						<div>ClassNameId: @expandovalue.classNameId</div>
-						<div>ClassPK: @expandovalue.classPK</div>
-						<div>Data: @expandovalue.data</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.ExpandovalueApplication.get(expandovalue.valueId)">@expandovalue.valueId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @expandovalue.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						TableId: @expandovalue.tableId
+					</li>
+					<li class="btn btn-default disabled">
+						ColumnId: @expandovalue.columnId
+					</li>
+					<li class="btn btn-default disabled">
+						RowId: @expandovalue.rowId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @expandovalue.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @expandovalue.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						Data: @expandovalue.data
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }

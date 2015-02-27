@@ -10,31 +10,60 @@
 				<a class="btn btn-success" href="@routes.SystemeventApplication.addSystemevent">Create New Systemevent</a>
 				<a class="btn btn-warning" href="@routes.Application.models">Back to Models</a>
 			</p>
+			<p>
+				Or click the <a class="btn btn-info" href="#">Blue</a> button to view selected Systemevent.
+			</p>
 		</div>
 		<div class="container">
-			<ul>
 			@for(systemevent <- systemevents) {
-				<li>
-					<div>
-						<div>ID: <a href="@routes.SystemeventApplication.get(systemevent.systemEventId)">@systemevent.systemEventId</a></div>
-						<div>MvccVersion: @systemevent.mvccVersion</div>
-						<div>GroupId: @systemevent.groupId</div>
-						<div>CompanyId: @systemevent.companyId</div>
-						<div>UserId: @systemevent.userId</div>
-						<div>UserName: @systemevent.userName</div>
-						<div>CreateDate: @systemevent.createDate</div>
-						<div>ClassNameId: @systemevent.classNameId</div>
-						<div>ClassPK: @systemevent.classPK</div>
-						<div>ClassUuid: @systemevent.classUuid</div>
-						<div>ReferrerClassNameId: @systemevent.referrerClassNameId</div>
-						<div>ParentSystemEventId: @systemevent.parentSystemEventId</div>
-						<div>SystemEventSetKey: @systemevent.systemEventSetKey</div>
-						<div>Customtype: @systemevent.customtype</div>
-						<div>ExtraData: @systemevent.extraData</div>
+				<ul>
+					<li class="btn btn-info">
+						ID: <a href="@routes.SystemeventApplication.get(systemevent.systemEventId)">@systemevent.systemEventId</a>
 					</div>
-				</li>
+					<li class="btn btn-default disabled">
+						MvccVersion: @systemevent.mvccVersion
+					</li>
+					<li class="btn btn-default disabled">
+						GroupId: @systemevent.groupId
+					</li>
+					<li class="btn btn-default disabled">
+						CompanyId: @systemevent.companyId
+					</li>
+					<li class="btn btn-default disabled">
+						UserId: @systemevent.userId
+					</li>
+					<li class="btn btn-default disabled">
+						UserName: @systemevent.userName
+					</li>
+					<li class="btn btn-default disabled">
+						CreateDate: @systemevent.createDate
+					</li>
+					<li class="btn btn-default disabled">
+						ClassNameId: @systemevent.classNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ClassPK: @systemevent.classPK
+					</li>
+					<li class="btn btn-default disabled">
+						ClassUuid: @systemevent.classUuid
+					</li>
+					<li class="btn btn-default disabled">
+						ReferrerClassNameId: @systemevent.referrerClassNameId
+					</li>
+					<li class="btn btn-default disabled">
+						ParentSystemEventId: @systemevent.parentSystemEventId
+					</li>
+					<li class="btn btn-default disabled">
+						SystemEventSetKey: @systemevent.systemEventSetKey
+					</li>
+					<li class="btn btn-default disabled">
+						Customtype: @systemevent.customtype
+					</li>
+					<li class="btn btn-default disabled">
+						ExtraData: @systemevent.extraData
+					</li>
+				</ul>
 			}
-			</ul>
 		</div>
 	</div>
 }
