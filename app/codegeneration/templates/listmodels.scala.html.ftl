@@ -4,18 +4,20 @@
 
 	<table class="table table-striped">
 		<thead>
+			<th>#</th>
 			<th>Model Name</th>
 			<th>Actions</th>
 		</thead>
 		<tbody>
 	<#list models as model>
 			<tr>
+				<td>${model_index + 1}</td>
 				<td>
 					${model.name?cap_first}
 				</td>
 				<td>
 					<a href="@routes.${model.name?cap_first}Application.all">
-						Show ${model.name}s
+						Show
 					</a>
 				</td>
 			</tr>
