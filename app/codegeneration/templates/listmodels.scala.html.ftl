@@ -6,9 +6,9 @@
 			<p class="lead">
 				Do you want to turn back to Home? Please click here: <a class="btn btn-danger" href="@routes.Application.index">Home</a>
 			</p>
-			<p id="models-tags">
+			<p id="models-tags" style="font-size:12px">
 				<#list models as model>
-					${model.name?cap_first}
+				<a href="#${model.name?cap_first}">${model.name?cap_first}</a>&nbsp;
 				</#list>
 			</p>
 		</div>
@@ -22,7 +22,7 @@
 				<tbody>
 			<#list models as model>
 					<tr>
-						<td>${model_index + 1}</td>
+						<td><a name="${model.name?cap_first}">${model_index + 1}</a></td>
 						<td>
 							${model.name?cap_first}
 						</td>
