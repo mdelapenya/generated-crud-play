@@ -71,7 +71,7 @@ public class ${model.name?cap_first} extends Model {
 			<#if field.type == "String">
 		${field.name} = formData.${field.name};
 			<#elseif field.type == "int">
-		${field.name} = formData.Integer.valueOf(${field.name});
+		${field.name} = Integer.valueOf(formData.${field.name});
 			<#elseif field.type != "Date">
 		${field.name} = ${field.typeUppercase}.valueOf(formData.${field.name});
 			<#else>
