@@ -2,6 +2,7 @@
 @(${model.name}FormData: Form[controllers.${model.name}.${model.name?cap_first}FormData])
 
 @import helper._
+@import helper.twitterBootstrap._
 
 @main("Welcome to GeneratedCRUD application") {
 
