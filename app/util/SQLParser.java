@@ -4,7 +4,10 @@ import codegeneration.db.Field;
 import codegeneration.db.Model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -178,13 +181,25 @@ public class SQLParser {
 	private static String _sanitizelName(String name) {
 		String sanitized = name;
 
-		if (sanitized.equalsIgnoreCase("type_")) {
-			sanitized = sanitized.replace("type_", "customType");
-		}
-		else if (sanitized.equalsIgnoreCase("primary_")) {
-			sanitized = sanitized.replace("primary_", "customPrimary");
+		sanitized = sanitized.trim().replace("_", "");
+
+		if (_KEYWORDS_SET.contains(sanitized.toUpperCase())) {
+			sanitized = "custom" + sanitized;
 		}
 
-		return sanitized.trim().replace("_", "");
+		return sanitized;
 	}
+
+	private static final String[] _H2_KEYWORDS = {
+		"CROSS", "CURRENT_DATE", "CURRENT_TIME", "CURRENT_TIMESTAMP",
+		"DISTINCT", "EXCEPT", "EXISTS", "FALSE", "FETCH", "FOR", "FROM", "FULL",
+		"GROUP", "HAVING", "INNER", "INTERSECT", "IS", "JOIN", "LIKE", "LIMIT",
+		"MINUS", "NATURAL", "NOT", "NULL", "OFFSET", "ON", "ORDER", "PRIMARY",
+		"ROWNUM", "SELECT", "SYSDATE", "SYSTIME", "SYSTIMESTAMP", "TODAY",
+		"TRUE", "TYPE", "UNION", "UNIQUE", "WHERE"
+	};
+
+	private static final Set<String> _KEYWORDS_SET = new HashSet<>(
+		Arrays.asList(_H2_KEYWORDS));
+
 }
