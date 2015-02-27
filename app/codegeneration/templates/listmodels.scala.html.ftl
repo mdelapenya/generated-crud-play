@@ -2,14 +2,24 @@
 
 	<a href="@routes.Application.index">Exit</a>
 
-	<ul>
+	<table id="models">
+		<thead>
+			<th>Model Name</th>
+			<th>Actions</th>
+		</thead>
+		<tbody>
 	<#list models as model>
-		<li>
-			${model.name?cap_first}
-			(<a href="@routes.${model.name?cap_first}Application.all">
-				Show ${model.name}s
-			</a>)
-		</li>
+			<tr>
+				<td>
+					${model.name?cap_first}
+				</td>
+				<td>
+					<a href="@routes.${model.name?cap_first}Application.all">
+						Show ${model.name}s
+					</a>
+				</td>
+			</tr>
 	</#list>
-	</ul>
+		</tbody>
+	</table>
 }
