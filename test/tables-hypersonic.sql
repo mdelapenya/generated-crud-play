@@ -344,11 +344,6 @@ create table Contact_ (
 	hoursOfOperation varchar(75) null
 );
 
-create table Counter (
-	name varchar(75) not null primary key,
-	currentId bigint
-);
-
 create table Country (
 	mvccVersion bigint default 0,
 	countryId bigint not null primary key,
@@ -359,16 +354,6 @@ create table Country (
 	idd_ varchar(75) null,
 	zipRequired bit,
 	active_ bit
-);
-
-create table CyrusUser (
-	userId varchar(75) not null primary key,
-	password_ varchar(75) not null
-);
-
-create table CyrusVirtual (
-	emailAddress varchar(75) not null primary key,
-	userId varchar(75) not null
 );
 
 create table DDLRecord (
