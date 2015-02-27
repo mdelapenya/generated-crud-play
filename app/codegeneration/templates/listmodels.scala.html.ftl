@@ -4,7 +4,7 @@
 		<div class="jumbotron">
 			<h1>Explore models present in the DB</h1>
 			<p class="lead">
-				Do you want to turn back to Home? Please click here: <a class="btn btn-danger" href="@routes.Application.index">Home</a>
+				Do you want to turn back to Home? Please click here: <a class="btn btn-warning" href="@routes.Application.index">Home</a>
 			</p>
 			<p id="models-tags" style="font-size:12px">
 				<#list models as model>
