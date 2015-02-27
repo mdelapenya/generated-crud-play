@@ -20,7 +20,7 @@
 				</p>
 			</div>
 			<div class="container">
-				@helper.inputText(${model.name}FormData("${primaryKey.name}"), 'readonly -> "readonly")
+				<input type="hidden" id="${primaryKey.name}" name="${primaryKey.name}" value='@${model.name}FormData("${primaryKey.name}").value' />
 
 				<#list model.fields as field>
 				<#if primaryKey.name != field.name>
