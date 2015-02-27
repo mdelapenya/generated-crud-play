@@ -8,7 +8,7 @@
 	<div class="container">
 		@form(routes.${model.name?cap_first}Application.submit(), 'class -> "form-horizontal") {
 			<div class="jumbotron">
-				@if(${model.name}FormData("${primaryKey.name}") != "0") {
+				@if(${model.name}FormData("${primaryKey.name}").value != "0") {
 				<h1>Edition of ${model.name?cap_first} #@${model.name}FormData("${primaryKey.name}").value</h1>
 				} else {
 				<h1>Creation of a ${model.name?cap_first}</h1>
