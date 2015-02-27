@@ -2,7 +2,7 @@
 
 	<a href="@routes.Application.index">Exit</a>
 
-	<table class="table table-striped">
+	<table class="table table-bordered table-hover">
 		<thead>
 			<th>#</th>
 			<th>Model Name</th>
