@@ -55,6 +55,13 @@ public class Application extends Controller {
 
 				freemarkerEngine.generateModels(models);
 
+				// wait for Play compile process
+
+				try {
+					Thread.sleep(10000);
+				} catch (InterruptedException e) {
+				}
+
 				return models();
 			}
 
