@@ -4,41 +4,66 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Layoutbranch #@layoutbranchFormData("layoutBranchId").value</legend>
-
+	<div class="container">
 		@form(routes.LayoutbranchApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(layoutbranchFormData("layoutBranchId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(layoutbranchFormData("layoutBranchId") != "0") {
+				<h1>Edition of Layoutbranch #@layoutbranchFormData("layoutBranchId").value</h1>
+				} else {
+				<h1>Creation of a Layoutbranch</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.LayoutbranchApplication.all()">Back to Layoutbranchs</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="layoutBranchId" name="layoutBranchId" value='@layoutbranchFormData("layoutBranchId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(layoutbranchFormData("mvccVersion"))
-			<!-- GroupId -->
-			@helper.inputText(layoutbranchFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(layoutbranchFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(layoutbranchFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(layoutbranchFormData("userName"))
-			<!-- LayoutSetBranchId -->
-			@helper.inputText(layoutbranchFormData("layoutSetBranchId"))
-			<!-- Plid -->
-			@helper.inputText(layoutbranchFormData("plid"))
-			<!-- Name -->
-			@helper.inputText(layoutbranchFormData("name"))
-			<!-- Description -->
-			@helper.inputText(layoutbranchFormData("description"))
-			<!-- Master -->
-			@helper.checkbox(layoutbranchFormData("master"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.LayoutbranchApplication.all()">Back to Layoutbranch List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(layoutbranchFormData("mvccVersion"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(layoutbranchFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(layoutbranchFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(layoutbranchFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(layoutbranchFormData("userName"))
+				</div>
+				<!-- LayoutSetBranchId -->
+				<div class="form-group">
+				@helper.inputText(layoutbranchFormData("layoutSetBranchId"))
+				</div>
+				<!-- Plid -->
+				<div class="form-group">
+				@helper.inputText(layoutbranchFormData("plid"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(layoutbranchFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(layoutbranchFormData("description"))
+				</div>
+				<!-- Master -->
+				<div class="form-group">
+				@helper.checkbox(layoutbranchFormData("master"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

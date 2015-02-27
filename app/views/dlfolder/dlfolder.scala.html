@@ -4,63 +4,110 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Dlfolder #@dlfolderFormData("folderId").value</legend>
-
+	<div class="container">
 		@form(routes.DlfolderApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(dlfolderFormData("folderId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(dlfolderFormData("folderId") != "0") {
+				<h1>Edition of Dlfolder #@dlfolderFormData("folderId").value</h1>
+				} else {
+				<h1>Creation of a Dlfolder</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DlfolderApplication.all()">Back to Dlfolders</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="folderId" name="folderId" value='@dlfolderFormData("folderId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(dlfolderFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(dlfolderFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(dlfolderFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(dlfolderFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(dlfolderFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(dlfolderFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(dlfolderFormData("modifiedDate"))
-			<!-- RepositoryId -->
-			@helper.inputText(dlfolderFormData("repositoryId"))
-			<!-- MountPoint -->
-			@helper.checkbox(dlfolderFormData("mountPoint"))
-			<!-- ParentFolderId -->
-			@helper.inputText(dlfolderFormData("parentFolderId"))
-			<!-- TreePath -->
-			@helper.inputText(dlfolderFormData("treePath"))
-			<!-- Name -->
-			@helper.inputText(dlfolderFormData("name"))
-			<!-- Description -->
-			@helper.inputText(dlfolderFormData("description"))
-			<!-- LastPostDate -->
-			@helper.inputText(dlfolderFormData("lastPostDate"))
-			<!-- DefaultFileEntryTypeId -->
-			@helper.inputText(dlfolderFormData("defaultFileEntryTypeId"))
-			<!-- Hidden -->
-			@helper.checkbox(dlfolderFormData("hidden"))
-			<!-- RestrictionType -->
-			@helper.inputText(dlfolderFormData("restrictionType"))
-			<!-- Status -->
-			@helper.inputText(dlfolderFormData("status"))
-			<!-- StatusByUserId -->
-			@helper.inputText(dlfolderFormData("statusByUserId"))
-			<!-- StatusByUserName -->
-			@helper.inputText(dlfolderFormData("statusByUserName"))
-			<!-- StatusDate -->
-			@helper.inputText(dlfolderFormData("statusDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DlfolderApplication.all()">Back to Dlfolder List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("modifiedDate"))
+				</div>
+				<!-- RepositoryId -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("repositoryId"))
+				</div>
+				<!-- MountPoint -->
+				<div class="form-group">
+				@helper.checkbox(dlfolderFormData("mountPoint"))
+				</div>
+				<!-- ParentFolderId -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("parentFolderId"))
+				</div>
+				<!-- TreePath -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("treePath"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("description"))
+				</div>
+				<!-- LastPostDate -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("lastPostDate"))
+				</div>
+				<!-- DefaultFileEntryTypeId -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("defaultFileEntryTypeId"))
+				</div>
+				<!-- Hidden -->
+				<div class="form-group">
+				@helper.checkbox(dlfolderFormData("hidden"))
+				</div>
+				<!-- RestrictionType -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("restrictionType"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("status"))
+				</div>
+				<!-- StatusByUserId -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("statusByUserId"))
+				</div>
+				<!-- StatusByUserName -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("statusByUserName"))
+				</div>
+				<!-- StatusDate -->
+				<div class="form-group">
+				@helper.inputText(dlfolderFormData("statusDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

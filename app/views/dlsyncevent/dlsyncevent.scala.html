@@ -4,29 +4,42 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Dlsyncevent #@dlsynceventFormData("syncEventId").value</legend>
-
+	<div class="container">
 		@form(routes.DlsynceventApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(dlsynceventFormData("syncEventId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(dlsynceventFormData("syncEventId") != "0") {
+				<h1>Edition of Dlsyncevent #@dlsynceventFormData("syncEventId").value</h1>
+				} else {
+				<h1>Creation of a Dlsyncevent</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DlsynceventApplication.all()">Back to Dlsyncevents</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="syncEventId" name="syncEventId" value='@dlsynceventFormData("syncEventId").value' />
 
-			<!-- ModifiedTime -->
-			@helper.inputText(dlsynceventFormData("modifiedTime"))
-			<!-- Event -->
-			@helper.inputText(dlsynceventFormData("event"))
-			<!-- Customtype -->
-			@helper.inputText(dlsynceventFormData("customtype"))
-			<!-- TypePK -->
-			@helper.inputText(dlsynceventFormData("typePK"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DlsynceventApplication.all()">Back to Dlsyncevent List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- ModifiedTime -->
+				<div class="form-group">
+				@helper.inputText(dlsynceventFormData("modifiedTime"))
 				</div>
+				<!-- Event -->
+				<div class="form-group">
+				@helper.inputText(dlsynceventFormData("event"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(dlsynceventFormData("customtype"))
+				</div>
+				<!-- TypePK -->
+				<div class="form-group">
+				@helper.inputText(dlsynceventFormData("typePK"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

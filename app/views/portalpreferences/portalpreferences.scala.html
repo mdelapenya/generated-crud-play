@@ -4,29 +4,42 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Portalpreferences #@portalpreferencesFormData("portalPreferencesId").value</legend>
-
+	<div class="container">
 		@form(routes.PortalpreferencesApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(portalpreferencesFormData("portalPreferencesId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(portalpreferencesFormData("portalPreferencesId") != "0") {
+				<h1>Edition of Portalpreferences #@portalpreferencesFormData("portalPreferencesId").value</h1>
+				} else {
+				<h1>Creation of a Portalpreferences</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.PortalpreferencesApplication.all()">Back to Portalpreferencess</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="portalPreferencesId" name="portalPreferencesId" value='@portalpreferencesFormData("portalPreferencesId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(portalpreferencesFormData("mvccVersion"))
-			<!-- OwnerId -->
-			@helper.inputText(portalpreferencesFormData("ownerId"))
-			<!-- OwnerType -->
-			@helper.inputText(portalpreferencesFormData("ownerType"))
-			<!-- Preferences -->
-			@helper.inputText(portalpreferencesFormData("preferences"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.PortalpreferencesApplication.all()">Back to Portalpreferences List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(portalpreferencesFormData("mvccVersion"))
 				</div>
+				<!-- OwnerId -->
+				<div class="form-group">
+				@helper.inputText(portalpreferencesFormData("ownerId"))
+				</div>
+				<!-- OwnerType -->
+				<div class="form-group">
+				@helper.inputText(portalpreferencesFormData("ownerType"))
+				</div>
+				<!-- Preferences -->
+				<div class="form-group">
+				@helper.inputText(portalpreferencesFormData("preferences"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

@@ -4,33 +4,50 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Scproductscreenshot #@scproductscreenshotFormData("productScreenshotId").value</legend>
-
+	<div class="container">
 		@form(routes.ScproductscreenshotApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(scproductscreenshotFormData("productScreenshotId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(scproductscreenshotFormData("productScreenshotId") != "0") {
+				<h1>Edition of Scproductscreenshot #@scproductscreenshotFormData("productScreenshotId").value</h1>
+				} else {
+				<h1>Creation of a Scproductscreenshot</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ScproductscreenshotApplication.all()">Back to Scproductscreenshots</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="productScreenshotId" name="productScreenshotId" value='@scproductscreenshotFormData("productScreenshotId").value' />
 
-			<!-- CompanyId -->
-			@helper.inputText(scproductscreenshotFormData("companyId"))
-			<!-- GroupId -->
-			@helper.inputText(scproductscreenshotFormData("groupId"))
-			<!-- ProductEntryId -->
-			@helper.inputText(scproductscreenshotFormData("productEntryId"))
-			<!-- ThumbnailId -->
-			@helper.inputText(scproductscreenshotFormData("thumbnailId"))
-			<!-- FullImageId -->
-			@helper.inputText(scproductscreenshotFormData("fullImageId"))
-			<!-- Priority -->
-			@helper.inputText(scproductscreenshotFormData("priority"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ScproductscreenshotApplication.all()">Back to Scproductscreenshot List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(scproductscreenshotFormData("companyId"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(scproductscreenshotFormData("groupId"))
+				</div>
+				<!-- ProductEntryId -->
+				<div class="form-group">
+				@helper.inputText(scproductscreenshotFormData("productEntryId"))
+				</div>
+				<!-- ThumbnailId -->
+				<div class="form-group">
+				@helper.inputText(scproductscreenshotFormData("thumbnailId"))
+				</div>
+				<!-- FullImageId -->
+				<div class="form-group">
+				@helper.inputText(scproductscreenshotFormData("fullImageId"))
+				</div>
+				<!-- Priority -->
+				<div class="form-group">
+				@helper.inputText(scproductscreenshotFormData("priority"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

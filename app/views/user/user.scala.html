@@ -4,101 +4,186 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of User #@userFormData("userId").value</legend>
-
+	<div class="container">
 		@form(routes.UserApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(userFormData("userId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(userFormData("userId") != "0") {
+				<h1>Edition of User #@userFormData("userId").value</h1>
+				} else {
+				<h1>Creation of a User</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.UserApplication.all()">Back to Users</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="userId" name="userId" value='@userFormData("userId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(userFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(userFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(userFormData("companyId"))
-			<!-- CreateDate -->
-			@helper.inputText(userFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(userFormData("modifiedDate"))
-			<!-- DefaultUser -->
-			@helper.checkbox(userFormData("defaultUser"))
-			<!-- ContactId -->
-			@helper.inputText(userFormData("contactId"))
-			<!-- Password -->
-			@helper.inputText(userFormData("password"))
-			<!-- PasswordEncrypted -->
-			@helper.checkbox(userFormData("passwordEncrypted"))
-			<!-- PasswordReset -->
-			@helper.checkbox(userFormData("passwordReset"))
-			<!-- PasswordModifiedDate -->
-			@helper.inputText(userFormData("passwordModifiedDate"))
-			<!-- Digest -->
-			@helper.inputText(userFormData("digest"))
-			<!-- ReminderQueryQuestion -->
-			@helper.inputText(userFormData("reminderQueryQuestion"))
-			<!-- ReminderQueryAnswer -->
-			@helper.inputText(userFormData("reminderQueryAnswer"))
-			<!-- GraceLoginCount -->
-			@helper.inputText(userFormData("graceLoginCount"))
-			<!-- ScreenName -->
-			@helper.inputText(userFormData("screenName"))
-			<!-- EmailAddress -->
-			@helper.inputText(userFormData("emailAddress"))
-			<!-- FacebookId -->
-			@helper.inputText(userFormData("facebookId"))
-			<!-- LdapServerId -->
-			@helper.inputText(userFormData("ldapServerId"))
-			<!-- OpenId -->
-			@helper.inputText(userFormData("openId"))
-			<!-- PortraitId -->
-			@helper.inputText(userFormData("portraitId"))
-			<!-- LanguageId -->
-			@helper.inputText(userFormData("languageId"))
-			<!-- TimeZoneId -->
-			@helper.inputText(userFormData("timeZoneId"))
-			<!-- Greeting -->
-			@helper.inputText(userFormData("greeting"))
-			<!-- Comments -->
-			@helper.inputText(userFormData("comments"))
-			<!-- FirstName -->
-			@helper.inputText(userFormData("firstName"))
-			<!-- MiddleName -->
-			@helper.inputText(userFormData("middleName"))
-			<!-- LastName -->
-			@helper.inputText(userFormData("lastName"))
-			<!-- JobTitle -->
-			@helper.inputText(userFormData("jobTitle"))
-			<!-- LoginDate -->
-			@helper.inputText(userFormData("loginDate"))
-			<!-- LoginIP -->
-			@helper.inputText(userFormData("loginIP"))
-			<!-- LastLoginDate -->
-			@helper.inputText(userFormData("lastLoginDate"))
-			<!-- LastLoginIP -->
-			@helper.inputText(userFormData("lastLoginIP"))
-			<!-- LastFailedLoginDate -->
-			@helper.inputText(userFormData("lastFailedLoginDate"))
-			<!-- FailedLoginAttempts -->
-			@helper.inputText(userFormData("failedLoginAttempts"))
-			<!-- Lockout -->
-			@helper.checkbox(userFormData("lockout"))
-			<!-- LockoutDate -->
-			@helper.inputText(userFormData("lockoutDate"))
-			<!-- AgreedToTermsOfUse -->
-			@helper.checkbox(userFormData("agreedToTermsOfUse"))
-			<!-- EmailAddressVerified -->
-			@helper.checkbox(userFormData("emailAddressVerified"))
-			<!-- Status -->
-			@helper.inputText(userFormData("status"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.UserApplication.all()">Back to User List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(userFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(userFormData("uuid"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(userFormData("companyId"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(userFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(userFormData("modifiedDate"))
+				</div>
+				<!-- DefaultUser -->
+				<div class="form-group">
+				@helper.checkbox(userFormData("defaultUser"))
+				</div>
+				<!-- ContactId -->
+				<div class="form-group">
+				@helper.inputText(userFormData("contactId"))
+				</div>
+				<!-- Password -->
+				<div class="form-group">
+				@helper.inputText(userFormData("password"))
+				</div>
+				<!-- PasswordEncrypted -->
+				<div class="form-group">
+				@helper.checkbox(userFormData("passwordEncrypted"))
+				</div>
+				<!-- PasswordReset -->
+				<div class="form-group">
+				@helper.checkbox(userFormData("passwordReset"))
+				</div>
+				<!-- PasswordModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(userFormData("passwordModifiedDate"))
+				</div>
+				<!-- Digest -->
+				<div class="form-group">
+				@helper.inputText(userFormData("digest"))
+				</div>
+				<!-- ReminderQueryQuestion -->
+				<div class="form-group">
+				@helper.inputText(userFormData("reminderQueryQuestion"))
+				</div>
+				<!-- ReminderQueryAnswer -->
+				<div class="form-group">
+				@helper.inputText(userFormData("reminderQueryAnswer"))
+				</div>
+				<!-- GraceLoginCount -->
+				<div class="form-group">
+				@helper.inputText(userFormData("graceLoginCount"))
+				</div>
+				<!-- ScreenName -->
+				<div class="form-group">
+				@helper.inputText(userFormData("screenName"))
+				</div>
+				<!-- EmailAddress -->
+				<div class="form-group">
+				@helper.inputText(userFormData("emailAddress"))
+				</div>
+				<!-- FacebookId -->
+				<div class="form-group">
+				@helper.inputText(userFormData("facebookId"))
+				</div>
+				<!-- LdapServerId -->
+				<div class="form-group">
+				@helper.inputText(userFormData("ldapServerId"))
+				</div>
+				<!-- OpenId -->
+				<div class="form-group">
+				@helper.inputText(userFormData("openId"))
+				</div>
+				<!-- PortraitId -->
+				<div class="form-group">
+				@helper.inputText(userFormData("portraitId"))
+				</div>
+				<!-- LanguageId -->
+				<div class="form-group">
+				@helper.inputText(userFormData("languageId"))
+				</div>
+				<!-- TimeZoneId -->
+				<div class="form-group">
+				@helper.inputText(userFormData("timeZoneId"))
+				</div>
+				<!-- Greeting -->
+				<div class="form-group">
+				@helper.inputText(userFormData("greeting"))
+				</div>
+				<!-- Comments -->
+				<div class="form-group">
+				@helper.inputText(userFormData("comments"))
+				</div>
+				<!-- FirstName -->
+				<div class="form-group">
+				@helper.inputText(userFormData("firstName"))
+				</div>
+				<!-- MiddleName -->
+				<div class="form-group">
+				@helper.inputText(userFormData("middleName"))
+				</div>
+				<!-- LastName -->
+				<div class="form-group">
+				@helper.inputText(userFormData("lastName"))
+				</div>
+				<!-- JobTitle -->
+				<div class="form-group">
+				@helper.inputText(userFormData("jobTitle"))
+				</div>
+				<!-- LoginDate -->
+				<div class="form-group">
+				@helper.inputText(userFormData("loginDate"))
+				</div>
+				<!-- LoginIP -->
+				<div class="form-group">
+				@helper.inputText(userFormData("loginIP"))
+				</div>
+				<!-- LastLoginDate -->
+				<div class="form-group">
+				@helper.inputText(userFormData("lastLoginDate"))
+				</div>
+				<!-- LastLoginIP -->
+				<div class="form-group">
+				@helper.inputText(userFormData("lastLoginIP"))
+				</div>
+				<!-- LastFailedLoginDate -->
+				<div class="form-group">
+				@helper.inputText(userFormData("lastFailedLoginDate"))
+				</div>
+				<!-- FailedLoginAttempts -->
+				<div class="form-group">
+				@helper.inputText(userFormData("failedLoginAttempts"))
+				</div>
+				<!-- Lockout -->
+				<div class="form-group">
+				@helper.checkbox(userFormData("lockout"))
+				</div>
+				<!-- LockoutDate -->
+				<div class="form-group">
+				@helper.inputText(userFormData("lockoutDate"))
+				</div>
+				<!-- AgreedToTermsOfUse -->
+				<div class="form-group">
+				@helper.checkbox(userFormData("agreedToTermsOfUse"))
+				</div>
+				<!-- EmailAddressVerified -->
+				<div class="form-group">
+				@helper.checkbox(userFormData("emailAddressVerified"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(userFormData("status"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

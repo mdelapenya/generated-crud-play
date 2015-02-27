@@ -4,33 +4,50 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Socialrelation #@socialrelationFormData("relationId").value</legend>
-
+	<div class="container">
 		@form(routes.SocialrelationApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(socialrelationFormData("relationId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(socialrelationFormData("relationId") != "0") {
+				<h1>Edition of Socialrelation #@socialrelationFormData("relationId").value</h1>
+				} else {
+				<h1>Creation of a Socialrelation</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.SocialrelationApplication.all()">Back to Socialrelations</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="relationId" name="relationId" value='@socialrelationFormData("relationId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(socialrelationFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(socialrelationFormData("companyId"))
-			<!-- CreateDate -->
-			@helper.inputText(socialrelationFormData("createDate"))
-			<!-- UserId1 -->
-			@helper.inputText(socialrelationFormData("userId1"))
-			<!-- UserId2 -->
-			@helper.inputText(socialrelationFormData("userId2"))
-			<!-- Customtype -->
-			@helper.inputText(socialrelationFormData("customtype"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.SocialrelationApplication.all()">Back to Socialrelation List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(socialrelationFormData("uuid"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(socialrelationFormData("companyId"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(socialrelationFormData("createDate"))
+				</div>
+				<!-- UserId1 -->
+				<div class="form-group">
+				@helper.inputText(socialrelationFormData("userId1"))
+				</div>
+				<!-- UserId2 -->
+				<div class="form-group">
+				@helper.inputText(socialrelationFormData("userId2"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(socialrelationFormData("customtype"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

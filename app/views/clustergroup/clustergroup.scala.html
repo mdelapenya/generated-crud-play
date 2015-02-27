@@ -4,29 +4,42 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Clustergroup #@clustergroupFormData("clusterGroupId").value</legend>
-
+	<div class="container">
 		@form(routes.ClustergroupApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(clustergroupFormData("clusterGroupId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(clustergroupFormData("clusterGroupId") != "0") {
+				<h1>Edition of Clustergroup #@clustergroupFormData("clusterGroupId").value</h1>
+				} else {
+				<h1>Creation of a Clustergroup</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ClustergroupApplication.all()">Back to Clustergroups</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="clusterGroupId" name="clusterGroupId" value='@clustergroupFormData("clusterGroupId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(clustergroupFormData("mvccVersion"))
-			<!-- Name -->
-			@helper.inputText(clustergroupFormData("name"))
-			<!-- ClusterNodeIds -->
-			@helper.inputText(clustergroupFormData("clusterNodeIds"))
-			<!-- WholeCluster -->
-			@helper.checkbox(clustergroupFormData("wholeCluster"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ClustergroupApplication.all()">Back to Clustergroup List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(clustergroupFormData("mvccVersion"))
 				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(clustergroupFormData("name"))
+				</div>
+				<!-- ClusterNodeIds -->
+				<div class="form-group">
+				@helper.inputText(clustergroupFormData("clusterNodeIds"))
+				</div>
+				<!-- WholeCluster -->
+				<div class="form-group">
+				@helper.checkbox(clustergroupFormData("wholeCluster"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

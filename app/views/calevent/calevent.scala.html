@@ -4,65 +4,114 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Calevent #@caleventFormData("eventId").value</legend>
-
+	<div class="container">
 		@form(routes.CaleventApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(caleventFormData("eventId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(caleventFormData("eventId") != "0") {
+				<h1>Edition of Calevent #@caleventFormData("eventId").value</h1>
+				} else {
+				<h1>Creation of a Calevent</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.CaleventApplication.all()">Back to Calevents</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="eventId" name="eventId" value='@caleventFormData("eventId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(caleventFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(caleventFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(caleventFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(caleventFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(caleventFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(caleventFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(caleventFormData("modifiedDate"))
-			<!-- Title -->
-			@helper.inputText(caleventFormData("title"))
-			<!-- Description -->
-			@helper.inputText(caleventFormData("description"))
-			<!-- Location -->
-			@helper.inputText(caleventFormData("location"))
-			<!-- StartDate -->
-			@helper.inputText(caleventFormData("startDate"))
-			<!-- EndDate -->
-			@helper.inputText(caleventFormData("endDate"))
-			<!-- DurationHour -->
-			@helper.inputText(caleventFormData("durationHour"))
-			<!-- DurationMinute -->
-			@helper.inputText(caleventFormData("durationMinute"))
-			<!-- AllDay -->
-			@helper.checkbox(caleventFormData("allDay"))
-			<!-- TimeZoneSensitive -->
-			@helper.checkbox(caleventFormData("timeZoneSensitive"))
-			<!-- Customtype -->
-			@helper.inputText(caleventFormData("customtype"))
-			<!-- Repeating -->
-			@helper.checkbox(caleventFormData("repeating"))
-			<!-- Recurrence -->
-			@helper.inputText(caleventFormData("recurrence"))
-			<!-- RemindBy -->
-			@helper.inputText(caleventFormData("remindBy"))
-			<!-- FirstReminder -->
-			@helper.inputText(caleventFormData("firstReminder"))
-			<!-- SecondReminder -->
-			@helper.inputText(caleventFormData("secondReminder"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.CaleventApplication.all()">Back to Calevent List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("modifiedDate"))
+				</div>
+				<!-- Title -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("title"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("description"))
+				</div>
+				<!-- Location -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("location"))
+				</div>
+				<!-- StartDate -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("startDate"))
+				</div>
+				<!-- EndDate -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("endDate"))
+				</div>
+				<!-- DurationHour -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("durationHour"))
+				</div>
+				<!-- DurationMinute -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("durationMinute"))
+				</div>
+				<!-- AllDay -->
+				<div class="form-group">
+				@helper.checkbox(caleventFormData("allDay"))
+				</div>
+				<!-- TimeZoneSensitive -->
+				<div class="form-group">
+				@helper.checkbox(caleventFormData("timeZoneSensitive"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("customtype"))
+				</div>
+				<!-- Repeating -->
+				<div class="form-group">
+				@helper.checkbox(caleventFormData("repeating"))
+				</div>
+				<!-- Recurrence -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("recurrence"))
+				</div>
+				<!-- RemindBy -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("remindBy"))
+				</div>
+				<!-- FirstReminder -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("firstReminder"))
+				</div>
+				<!-- SecondReminder -->
+				<div class="form-group">
+				@helper.inputText(caleventFormData("secondReminder"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

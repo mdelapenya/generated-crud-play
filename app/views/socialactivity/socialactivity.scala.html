@@ -4,47 +4,78 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Socialactivity #@socialactivityFormData("activityId").value</legend>
-
+	<div class="container">
 		@form(routes.SocialactivityApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(socialactivityFormData("activityId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(socialactivityFormData("activityId") != "0") {
+				<h1>Edition of Socialactivity #@socialactivityFormData("activityId").value</h1>
+				} else {
+				<h1>Creation of a Socialactivity</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.SocialactivityApplication.all()">Back to Socialactivitys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="activityId" name="activityId" value='@socialactivityFormData("activityId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(socialactivityFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(socialactivityFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(socialactivityFormData("userId"))
-			<!-- CreateDate -->
-			@helper.inputText(socialactivityFormData("createDate"))
-			<!-- ActivitySetId -->
-			@helper.inputText(socialactivityFormData("activitySetId"))
-			<!-- MirrorActivityId -->
-			@helper.inputText(socialactivityFormData("mirrorActivityId"))
-			<!-- ClassNameId -->
-			@helper.inputText(socialactivityFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(socialactivityFormData("classPK"))
-			<!-- ParentClassNameId -->
-			@helper.inputText(socialactivityFormData("parentClassNameId"))
-			<!-- ParentClassPK -->
-			@helper.inputText(socialactivityFormData("parentClassPK"))
-			<!-- Customtype -->
-			@helper.inputText(socialactivityFormData("customtype"))
-			<!-- ExtraData -->
-			@helper.inputText(socialactivityFormData("extraData"))
-			<!-- ReceiverUserId -->
-			@helper.inputText(socialactivityFormData("receiverUserId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.SocialactivityApplication.all()">Back to Socialactivity List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("userId"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("createDate"))
+				</div>
+				<!-- ActivitySetId -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("activitySetId"))
+				</div>
+				<!-- MirrorActivityId -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("mirrorActivityId"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("classPK"))
+				</div>
+				<!-- ParentClassNameId -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("parentClassNameId"))
+				</div>
+				<!-- ParentClassPK -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("parentClassPK"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("customtype"))
+				</div>
+				<!-- ExtraData -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("extraData"))
+				</div>
+				<!-- ReceiverUserId -->
+				<div class="form-group">
+				@helper.inputText(socialactivityFormData("receiverUserId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

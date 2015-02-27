@@ -4,45 +4,74 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Usernotificationevent #@usernotificationeventFormData("userNotificationEventId").value</legend>
-
+	<div class="container">
 		@form(routes.UsernotificationeventApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(usernotificationeventFormData("userNotificationEventId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(usernotificationeventFormData("userNotificationEventId") != "0") {
+				<h1>Edition of Usernotificationevent #@usernotificationeventFormData("userNotificationEventId").value</h1>
+				} else {
+				<h1>Creation of a Usernotificationevent</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.UsernotificationeventApplication.all()">Back to Usernotificationevents</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="userNotificationEventId" name="userNotificationEventId" value='@usernotificationeventFormData("userNotificationEventId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(usernotificationeventFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(usernotificationeventFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(usernotificationeventFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(usernotificationeventFormData("userId"))
-			<!-- Customtype -->
-			@helper.inputText(usernotificationeventFormData("customtype"))
-			<!-- Timestamp -->
-			@helper.inputText(usernotificationeventFormData("timestamp"))
-			<!-- DeliveryType -->
-			@helper.inputText(usernotificationeventFormData("deliveryType"))
-			<!-- DeliverBy -->
-			@helper.inputText(usernotificationeventFormData("deliverBy"))
-			<!-- Delivered -->
-			@helper.checkbox(usernotificationeventFormData("delivered"))
-			<!-- Payload -->
-			@helper.inputText(usernotificationeventFormData("payload"))
-			<!-- ActionRequired -->
-			@helper.checkbox(usernotificationeventFormData("actionRequired"))
-			<!-- Archived -->
-			@helper.checkbox(usernotificationeventFormData("archived"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.UsernotificationeventApplication.all()">Back to Usernotificationevent List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(usernotificationeventFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(usernotificationeventFormData("uuid"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(usernotificationeventFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(usernotificationeventFormData("userId"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(usernotificationeventFormData("customtype"))
+				</div>
+				<!-- Timestamp -->
+				<div class="form-group">
+				@helper.inputText(usernotificationeventFormData("timestamp"))
+				</div>
+				<!-- DeliveryType -->
+				<div class="form-group">
+				@helper.inputText(usernotificationeventFormData("deliveryType"))
+				</div>
+				<!-- DeliverBy -->
+				<div class="form-group">
+				@helper.inputText(usernotificationeventFormData("deliverBy"))
+				</div>
+				<!-- Delivered -->
+				<div class="form-group">
+				@helper.checkbox(usernotificationeventFormData("delivered"))
+				</div>
+				<!-- Payload -->
+				<div class="form-group">
+				@helper.inputText(usernotificationeventFormData("payload"))
+				</div>
+				<!-- ActionRequired -->
+				<div class="form-group">
+				@helper.checkbox(usernotificationeventFormData("actionRequired"))
+				</div>
+				<!-- Archived -->
+				<div class="form-group">
+				@helper.checkbox(usernotificationeventFormData("archived"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

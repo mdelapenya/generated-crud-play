@@ -4,85 +4,154 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Journalarticle #@journalarticleFormData("id").value</legend>
-
+	<div class="container">
 		@form(routes.JournalarticleApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(journalarticleFormData("id"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(journalarticleFormData("id") != "0") {
+				<h1>Edition of Journalarticle #@journalarticleFormData("id").value</h1>
+				} else {
+				<h1>Creation of a Journalarticle</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.JournalarticleApplication.all()">Back to Journalarticles</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="id" name="id" value='@journalarticleFormData("id").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(journalarticleFormData("uuid"))
-			<!-- ResourcePrimKey -->
-			@helper.inputText(journalarticleFormData("resourcePrimKey"))
-			<!-- GroupId -->
-			@helper.inputText(journalarticleFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(journalarticleFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(journalarticleFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(journalarticleFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(journalarticleFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(journalarticleFormData("modifiedDate"))
-			<!-- FolderId -->
-			@helper.inputText(journalarticleFormData("folderId"))
-			<!-- ClassNameId -->
-			@helper.inputText(journalarticleFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(journalarticleFormData("classPK"))
-			<!-- TreePath -->
-			@helper.inputText(journalarticleFormData("treePath"))
-			<!-- ArticleId -->
-			@helper.inputText(journalarticleFormData("articleId"))
-			<!-- Version -->
-			@helper.inputText(journalarticleFormData("version"))
-			<!-- Title -->
-			@helper.inputText(journalarticleFormData("title"))
-			<!-- UrlTitle -->
-			@helper.inputText(journalarticleFormData("urlTitle"))
-			<!-- Description -->
-			@helper.inputText(journalarticleFormData("description"))
-			<!-- Content -->
-			@helper.inputText(journalarticleFormData("content"))
-			<!-- DDMStructureKey -->
-			@helper.inputText(journalarticleFormData("DDMStructureKey"))
-			<!-- DDMTemplateKey -->
-			@helper.inputText(journalarticleFormData("DDMTemplateKey"))
-			<!-- LayoutUuid -->
-			@helper.inputText(journalarticleFormData("layoutUuid"))
-			<!-- DisplayDate -->
-			@helper.inputText(journalarticleFormData("displayDate"))
-			<!-- ExpirationDate -->
-			@helper.inputText(journalarticleFormData("expirationDate"))
-			<!-- ReviewDate -->
-			@helper.inputText(journalarticleFormData("reviewDate"))
-			<!-- Indexable -->
-			@helper.checkbox(journalarticleFormData("indexable"))
-			<!-- SmallImage -->
-			@helper.checkbox(journalarticleFormData("smallImage"))
-			<!-- SmallImageId -->
-			@helper.inputText(journalarticleFormData("smallImageId"))
-			<!-- SmallImageURL -->
-			@helper.inputText(journalarticleFormData("smallImageURL"))
-			<!-- Status -->
-			@helper.inputText(journalarticleFormData("status"))
-			<!-- StatusByUserId -->
-			@helper.inputText(journalarticleFormData("statusByUserId"))
-			<!-- StatusByUserName -->
-			@helper.inputText(journalarticleFormData("statusByUserName"))
-			<!-- StatusDate -->
-			@helper.inputText(journalarticleFormData("statusDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.JournalarticleApplication.all()">Back to Journalarticle List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("uuid"))
 				</div>
+				<!-- ResourcePrimKey -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("resourcePrimKey"))
+				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("modifiedDate"))
+				</div>
+				<!-- FolderId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("folderId"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("classPK"))
+				</div>
+				<!-- TreePath -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("treePath"))
+				</div>
+				<!-- ArticleId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("articleId"))
+				</div>
+				<!-- Version -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("version"))
+				</div>
+				<!-- Title -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("title"))
+				</div>
+				<!-- UrlTitle -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("urlTitle"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("description"))
+				</div>
+				<!-- Content -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("content"))
+				</div>
+				<!-- DDMStructureKey -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("DDMStructureKey"))
+				</div>
+				<!-- DDMTemplateKey -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("DDMTemplateKey"))
+				</div>
+				<!-- LayoutUuid -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("layoutUuid"))
+				</div>
+				<!-- DisplayDate -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("displayDate"))
+				</div>
+				<!-- ExpirationDate -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("expirationDate"))
+				</div>
+				<!-- ReviewDate -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("reviewDate"))
+				</div>
+				<!-- Indexable -->
+				<div class="form-group">
+				@helper.checkbox(journalarticleFormData("indexable"))
+				</div>
+				<!-- SmallImage -->
+				<div class="form-group">
+				@helper.checkbox(journalarticleFormData("smallImage"))
+				</div>
+				<!-- SmallImageId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("smallImageId"))
+				</div>
+				<!-- SmallImageURL -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("smallImageURL"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("status"))
+				</div>
+				<!-- StatusByUserId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("statusByUserId"))
+				</div>
+				<!-- StatusByUserName -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("statusByUserName"))
+				</div>
+				<!-- StatusDate -->
+				<div class="form-group">
+				@helper.inputText(journalarticleFormData("statusDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

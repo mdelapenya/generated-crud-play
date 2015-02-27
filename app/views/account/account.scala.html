@@ -4,53 +4,90 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Account #@accountFormData("accountId").value</legend>
-
+	<div class="container">
 		@form(routes.AccountApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(accountFormData("accountId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(accountFormData("accountId") != "0") {
+				<h1>Edition of Account #@accountFormData("accountId").value</h1>
+				} else {
+				<h1>Creation of a Account</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.AccountApplication.all()">Back to Accounts</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="accountId" name="accountId" value='@accountFormData("accountId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(accountFormData("mvccVersion"))
-			<!-- CompanyId -->
-			@helper.inputText(accountFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(accountFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(accountFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(accountFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(accountFormData("modifiedDate"))
-			<!-- ParentAccountId -->
-			@helper.inputText(accountFormData("parentAccountId"))
-			<!-- Name -->
-			@helper.inputText(accountFormData("name"))
-			<!-- LegalName -->
-			@helper.inputText(accountFormData("legalName"))
-			<!-- LegalId -->
-			@helper.inputText(accountFormData("legalId"))
-			<!-- LegalType -->
-			@helper.inputText(accountFormData("legalType"))
-			<!-- SicCode -->
-			@helper.inputText(accountFormData("sicCode"))
-			<!-- TickerSymbol -->
-			@helper.inputText(accountFormData("tickerSymbol"))
-			<!-- Industry -->
-			@helper.inputText(accountFormData("industry"))
-			<!-- Customtype -->
-			@helper.inputText(accountFormData("customtype"))
-			<!-- Size -->
-			@helper.inputText(accountFormData("size"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.AccountApplication.all()">Back to Account List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("mvccVersion"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("modifiedDate"))
+				</div>
+				<!-- ParentAccountId -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("parentAccountId"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("name"))
+				</div>
+				<!-- LegalName -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("legalName"))
+				</div>
+				<!-- LegalId -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("legalId"))
+				</div>
+				<!-- LegalType -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("legalType"))
+				</div>
+				<!-- SicCode -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("sicCode"))
+				</div>
+				<!-- TickerSymbol -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("tickerSymbol"))
+				</div>
+				<!-- Industry -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("industry"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("customtype"))
+				</div>
+				<!-- Size -->
+				<div class="form-group">
+				@helper.inputText(accountFormData("size"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

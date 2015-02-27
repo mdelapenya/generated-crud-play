@@ -4,29 +4,42 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Virtualhost #@virtualhostFormData("virtualHostId").value</legend>
-
+	<div class="container">
 		@form(routes.VirtualhostApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(virtualhostFormData("virtualHostId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(virtualhostFormData("virtualHostId") != "0") {
+				<h1>Edition of Virtualhost #@virtualhostFormData("virtualHostId").value</h1>
+				} else {
+				<h1>Creation of a Virtualhost</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.VirtualhostApplication.all()">Back to Virtualhosts</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="virtualHostId" name="virtualHostId" value='@virtualhostFormData("virtualHostId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(virtualhostFormData("mvccVersion"))
-			<!-- CompanyId -->
-			@helper.inputText(virtualhostFormData("companyId"))
-			<!-- LayoutSetId -->
-			@helper.inputText(virtualhostFormData("layoutSetId"))
-			<!-- Hostname -->
-			@helper.inputText(virtualhostFormData("hostname"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.VirtualhostApplication.all()">Back to Virtualhost List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(virtualhostFormData("mvccVersion"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(virtualhostFormData("companyId"))
+				</div>
+				<!-- LayoutSetId -->
+				<div class="form-group">
+				@helper.inputText(virtualhostFormData("layoutSetId"))
+				</div>
+				<!-- Hostname -->
+				<div class="form-group">
+				@helper.inputText(virtualhostFormData("hostname"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

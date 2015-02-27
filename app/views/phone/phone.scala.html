@@ -4,47 +4,78 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Phone #@phoneFormData("phoneId").value</legend>
-
+	<div class="container">
 		@form(routes.PhoneApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(phoneFormData("phoneId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(phoneFormData("phoneId") != "0") {
+				<h1>Edition of Phone #@phoneFormData("phoneId").value</h1>
+				} else {
+				<h1>Creation of a Phone</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.PhoneApplication.all()">Back to Phones</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="phoneId" name="phoneId" value='@phoneFormData("phoneId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(phoneFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(phoneFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(phoneFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(phoneFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(phoneFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(phoneFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(phoneFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(phoneFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(phoneFormData("classPK"))
-			<!-- Number -->
-			@helper.inputText(phoneFormData("number"))
-			<!-- Extension -->
-			@helper.inputText(phoneFormData("extension"))
-			<!-- TypeId -->
-			@helper.inputText(phoneFormData("typeId"))
-			<!-- Customprimary -->
-			@helper.checkbox(phoneFormData("customprimary"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.PhoneApplication.all()">Back to Phone List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(phoneFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(phoneFormData("uuid"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(phoneFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(phoneFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(phoneFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(phoneFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(phoneFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(phoneFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(phoneFormData("classPK"))
+				</div>
+				<!-- Number -->
+				<div class="form-group">
+				@helper.inputText(phoneFormData("number"))
+				</div>
+				<!-- Extension -->
+				<div class="form-group">
+				@helper.inputText(phoneFormData("extension"))
+				</div>
+				<!-- TypeId -->
+				<div class="form-group">
+				@helper.inputText(phoneFormData("typeId"))
+				</div>
+				<!-- Customprimary -->
+				<div class="form-group">
+				@helper.checkbox(phoneFormData("customprimary"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

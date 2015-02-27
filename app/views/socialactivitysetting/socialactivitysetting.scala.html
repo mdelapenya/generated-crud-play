@@ -4,33 +4,50 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Socialactivitysetting #@socialactivitysettingFormData("activitySettingId").value</legend>
-
+	<div class="container">
 		@form(routes.SocialactivitysettingApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(socialactivitysettingFormData("activitySettingId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(socialactivitysettingFormData("activitySettingId") != "0") {
+				<h1>Edition of Socialactivitysetting #@socialactivitysettingFormData("activitySettingId").value</h1>
+				} else {
+				<h1>Creation of a Socialactivitysetting</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.SocialactivitysettingApplication.all()">Back to Socialactivitysettings</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="activitySettingId" name="activitySettingId" value='@socialactivitysettingFormData("activitySettingId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(socialactivitysettingFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(socialactivitysettingFormData("companyId"))
-			<!-- ClassNameId -->
-			@helper.inputText(socialactivitysettingFormData("classNameId"))
-			<!-- ActivityType -->
-			@helper.inputText(socialactivitysettingFormData("activityType"))
-			<!-- Name -->
-			@helper.inputText(socialactivitysettingFormData("name"))
-			<!-- Value -->
-			@helper.inputText(socialactivitysettingFormData("value"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.SocialactivitysettingApplication.all()">Back to Socialactivitysetting List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysettingFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysettingFormData("companyId"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysettingFormData("classNameId"))
+				</div>
+				<!-- ActivityType -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysettingFormData("activityType"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysettingFormData("name"))
+				</div>
+				<!-- Value -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysettingFormData("value"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

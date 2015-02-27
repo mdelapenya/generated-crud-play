@@ -4,81 +4,146 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Layoutrevision #@layoutrevisionFormData("layoutRevisionId").value</legend>
-
+	<div class="container">
 		@form(routes.LayoutrevisionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(layoutrevisionFormData("layoutRevisionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(layoutrevisionFormData("layoutRevisionId") != "0") {
+				<h1>Edition of Layoutrevision #@layoutrevisionFormData("layoutRevisionId").value</h1>
+				} else {
+				<h1>Creation of a Layoutrevision</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.LayoutrevisionApplication.all()">Back to Layoutrevisions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="layoutRevisionId" name="layoutRevisionId" value='@layoutrevisionFormData("layoutRevisionId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(layoutrevisionFormData("mvccVersion"))
-			<!-- GroupId -->
-			@helper.inputText(layoutrevisionFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(layoutrevisionFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(layoutrevisionFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(layoutrevisionFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(layoutrevisionFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(layoutrevisionFormData("modifiedDate"))
-			<!-- LayoutSetBranchId -->
-			@helper.inputText(layoutrevisionFormData("layoutSetBranchId"))
-			<!-- LayoutBranchId -->
-			@helper.inputText(layoutrevisionFormData("layoutBranchId"))
-			<!-- ParentLayoutRevisionId -->
-			@helper.inputText(layoutrevisionFormData("parentLayoutRevisionId"))
-			<!-- Head -->
-			@helper.checkbox(layoutrevisionFormData("head"))
-			<!-- Major -->
-			@helper.checkbox(layoutrevisionFormData("major"))
-			<!-- Plid -->
-			@helper.inputText(layoutrevisionFormData("plid"))
-			<!-- PrivateLayout -->
-			@helper.checkbox(layoutrevisionFormData("privateLayout"))
-			<!-- Name -->
-			@helper.inputText(layoutrevisionFormData("name"))
-			<!-- Title -->
-			@helper.inputText(layoutrevisionFormData("title"))
-			<!-- Description -->
-			@helper.inputText(layoutrevisionFormData("description"))
-			<!-- Keywords -->
-			@helper.inputText(layoutrevisionFormData("keywords"))
-			<!-- Robots -->
-			@helper.inputText(layoutrevisionFormData("robots"))
-			<!-- TypeSettings -->
-			@helper.inputText(layoutrevisionFormData("typeSettings"))
-			<!-- IconImageId -->
-			@helper.inputText(layoutrevisionFormData("iconImageId"))
-			<!-- ThemeId -->
-			@helper.inputText(layoutrevisionFormData("themeId"))
-			<!-- ColorSchemeId -->
-			@helper.inputText(layoutrevisionFormData("colorSchemeId"))
-			<!-- WapThemeId -->
-			@helper.inputText(layoutrevisionFormData("wapThemeId"))
-			<!-- WapColorSchemeId -->
-			@helper.inputText(layoutrevisionFormData("wapColorSchemeId"))
-			<!-- Css -->
-			@helper.inputText(layoutrevisionFormData("css"))
-			<!-- Status -->
-			@helper.inputText(layoutrevisionFormData("status"))
-			<!-- StatusByUserId -->
-			@helper.inputText(layoutrevisionFormData("statusByUserId"))
-			<!-- StatusByUserName -->
-			@helper.inputText(layoutrevisionFormData("statusByUserName"))
-			<!-- StatusDate -->
-			@helper.inputText(layoutrevisionFormData("statusDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.LayoutrevisionApplication.all()">Back to Layoutrevision List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("mvccVersion"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("modifiedDate"))
+				</div>
+				<!-- LayoutSetBranchId -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("layoutSetBranchId"))
+				</div>
+				<!-- LayoutBranchId -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("layoutBranchId"))
+				</div>
+				<!-- ParentLayoutRevisionId -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("parentLayoutRevisionId"))
+				</div>
+				<!-- Head -->
+				<div class="form-group">
+				@helper.checkbox(layoutrevisionFormData("head"))
+				</div>
+				<!-- Major -->
+				<div class="form-group">
+				@helper.checkbox(layoutrevisionFormData("major"))
+				</div>
+				<!-- Plid -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("plid"))
+				</div>
+				<!-- PrivateLayout -->
+				<div class="form-group">
+				@helper.checkbox(layoutrevisionFormData("privateLayout"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("name"))
+				</div>
+				<!-- Title -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("title"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("description"))
+				</div>
+				<!-- Keywords -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("keywords"))
+				</div>
+				<!-- Robots -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("robots"))
+				</div>
+				<!-- TypeSettings -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("typeSettings"))
+				</div>
+				<!-- IconImageId -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("iconImageId"))
+				</div>
+				<!-- ThemeId -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("themeId"))
+				</div>
+				<!-- ColorSchemeId -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("colorSchemeId"))
+				</div>
+				<!-- WapThemeId -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("wapThemeId"))
+				</div>
+				<!-- WapColorSchemeId -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("wapColorSchemeId"))
+				</div>
+				<!-- Css -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("css"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("status"))
+				</div>
+				<!-- StatusByUserId -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("statusByUserId"))
+				</div>
+				<!-- StatusByUserName -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("statusByUserName"))
+				</div>
+				<!-- StatusDate -->
+				<div class="form-group">
+				@helper.inputText(layoutrevisionFormData("statusDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

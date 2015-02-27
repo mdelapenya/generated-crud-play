@@ -4,73 +4,130 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Assetentry #@assetentryFormData("entryId").value</legend>
-
+	<div class="container">
 		@form(routes.AssetentryApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(assetentryFormData("entryId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(assetentryFormData("entryId") != "0") {
+				<h1>Edition of Assetentry #@assetentryFormData("entryId").value</h1>
+				} else {
+				<h1>Creation of a Assetentry</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.AssetentryApplication.all()">Back to Assetentrys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="entryId" name="entryId" value='@assetentryFormData("entryId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(assetentryFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(assetentryFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(assetentryFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(assetentryFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(assetentryFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(assetentryFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(assetentryFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(assetentryFormData("classPK"))
-			<!-- ClassUuid -->
-			@helper.inputText(assetentryFormData("classUuid"))
-			<!-- ClassTypeId -->
-			@helper.inputText(assetentryFormData("classTypeId"))
-			<!-- Listable -->
-			@helper.checkbox(assetentryFormData("listable"))
-			<!-- Visible -->
-			@helper.checkbox(assetentryFormData("visible"))
-			<!-- StartDate -->
-			@helper.inputText(assetentryFormData("startDate"))
-			<!-- EndDate -->
-			@helper.inputText(assetentryFormData("endDate"))
-			<!-- PublishDate -->
-			@helper.inputText(assetentryFormData("publishDate"))
-			<!-- ExpirationDate -->
-			@helper.inputText(assetentryFormData("expirationDate"))
-			<!-- MimeType -->
-			@helper.inputText(assetentryFormData("mimeType"))
-			<!-- Title -->
-			@helper.inputText(assetentryFormData("title"))
-			<!-- Description -->
-			@helper.inputText(assetentryFormData("description"))
-			<!-- Summary -->
-			@helper.inputText(assetentryFormData("summary"))
-			<!-- Url -->
-			@helper.inputText(assetentryFormData("url"))
-			<!-- LayoutUuid -->
-			@helper.inputText(assetentryFormData("layoutUuid"))
-			<!-- Height -->
-			@helper.inputText(assetentryFormData("height"))
-			<!-- Width -->
-			@helper.inputText(assetentryFormData("width"))
-			<!-- Priority -->
-			@helper.inputText(assetentryFormData("priority"))
-			<!-- ViewCount -->
-			@helper.inputText(assetentryFormData("viewCount"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.AssetentryApplication.all()">Back to Assetentry List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("classPK"))
+				</div>
+				<!-- ClassUuid -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("classUuid"))
+				</div>
+				<!-- ClassTypeId -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("classTypeId"))
+				</div>
+				<!-- Listable -->
+				<div class="form-group">
+				@helper.checkbox(assetentryFormData("listable"))
+				</div>
+				<!-- Visible -->
+				<div class="form-group">
+				@helper.checkbox(assetentryFormData("visible"))
+				</div>
+				<!-- StartDate -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("startDate"))
+				</div>
+				<!-- EndDate -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("endDate"))
+				</div>
+				<!-- PublishDate -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("publishDate"))
+				</div>
+				<!-- ExpirationDate -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("expirationDate"))
+				</div>
+				<!-- MimeType -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("mimeType"))
+				</div>
+				<!-- Title -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("title"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("description"))
+				</div>
+				<!-- Summary -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("summary"))
+				</div>
+				<!-- Url -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("url"))
+				</div>
+				<!-- LayoutUuid -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("layoutUuid"))
+				</div>
+				<!-- Height -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("height"))
+				</div>
+				<!-- Width -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("width"))
+				</div>
+				<!-- Priority -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("priority"))
+				</div>
+				<!-- ViewCount -->
+				<div class="form-group">
+				@helper.inputText(assetentryFormData("viewCount"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

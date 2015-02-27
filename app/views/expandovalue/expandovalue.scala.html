@@ -4,35 +4,54 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Expandovalue #@expandovalueFormData("valueId").value</legend>
-
+	<div class="container">
 		@form(routes.ExpandovalueApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(expandovalueFormData("valueId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(expandovalueFormData("valueId") != "0") {
+				<h1>Edition of Expandovalue #@expandovalueFormData("valueId").value</h1>
+				} else {
+				<h1>Creation of a Expandovalue</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ExpandovalueApplication.all()">Back to Expandovalues</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="valueId" name="valueId" value='@expandovalueFormData("valueId").value' />
 
-			<!-- CompanyId -->
-			@helper.inputText(expandovalueFormData("companyId"))
-			<!-- TableId -->
-			@helper.inputText(expandovalueFormData("tableId"))
-			<!-- ColumnId -->
-			@helper.inputText(expandovalueFormData("columnId"))
-			<!-- RowId -->
-			@helper.inputText(expandovalueFormData("rowId"))
-			<!-- ClassNameId -->
-			@helper.inputText(expandovalueFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(expandovalueFormData("classPK"))
-			<!-- Data -->
-			@helper.inputText(expandovalueFormData("data"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ExpandovalueApplication.all()">Back to Expandovalue List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(expandovalueFormData("companyId"))
 				</div>
+				<!-- TableId -->
+				<div class="form-group">
+				@helper.inputText(expandovalueFormData("tableId"))
+				</div>
+				<!-- ColumnId -->
+				<div class="form-group">
+				@helper.inputText(expandovalueFormData("columnId"))
+				</div>
+				<!-- RowId -->
+				<div class="form-group">
+				@helper.inputText(expandovalueFormData("rowId"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(expandovalueFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(expandovalueFormData("classPK"))
+				</div>
+				<!-- Data -->
+				<div class="form-group">
+				@helper.inputText(expandovalueFormData("data"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

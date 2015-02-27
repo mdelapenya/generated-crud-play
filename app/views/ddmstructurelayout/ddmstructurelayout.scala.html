@@ -4,39 +4,62 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Ddmstructurelayout #@ddmstructurelayoutFormData("structureLayoutId").value</legend>
-
+	<div class="container">
 		@form(routes.DdmstructurelayoutApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(ddmstructurelayoutFormData("structureLayoutId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(ddmstructurelayoutFormData("structureLayoutId") != "0") {
+				<h1>Edition of Ddmstructurelayout #@ddmstructurelayoutFormData("structureLayoutId").value</h1>
+				} else {
+				<h1>Creation of a Ddmstructurelayout</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DdmstructurelayoutApplication.all()">Back to Ddmstructurelayouts</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="structureLayoutId" name="structureLayoutId" value='@ddmstructurelayoutFormData("structureLayoutId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(ddmstructurelayoutFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(ddmstructurelayoutFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(ddmstructurelayoutFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(ddmstructurelayoutFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(ddmstructurelayoutFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(ddmstructurelayoutFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(ddmstructurelayoutFormData("modifiedDate"))
-			<!-- StructureVersionId -->
-			@helper.inputText(ddmstructurelayoutFormData("structureVersionId"))
-			<!-- Definition -->
-			@helper.inputText(ddmstructurelayoutFormData("definition"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DdmstructurelayoutApplication.all()">Back to Ddmstructurelayout List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(ddmstructurelayoutFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(ddmstructurelayoutFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(ddmstructurelayoutFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(ddmstructurelayoutFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(ddmstructurelayoutFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(ddmstructurelayoutFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(ddmstructurelayoutFormData("modifiedDate"))
+				</div>
+				<!-- StructureVersionId -->
+				<div class="form-group">
+				@helper.inputText(ddmstructurelayoutFormData("structureVersionId"))
+				</div>
+				<!-- Definition -->
+				<div class="form-group">
+				@helper.inputText(ddmstructurelayoutFormData("definition"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

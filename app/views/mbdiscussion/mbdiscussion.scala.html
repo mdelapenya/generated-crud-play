@@ -4,41 +4,66 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Mbdiscussion #@mbdiscussionFormData("discussionId").value</legend>
-
+	<div class="container">
 		@form(routes.MbdiscussionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(mbdiscussionFormData("discussionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(mbdiscussionFormData("discussionId") != "0") {
+				<h1>Edition of Mbdiscussion #@mbdiscussionFormData("discussionId").value</h1>
+				} else {
+				<h1>Creation of a Mbdiscussion</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.MbdiscussionApplication.all()">Back to Mbdiscussions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="discussionId" name="discussionId" value='@mbdiscussionFormData("discussionId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(mbdiscussionFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(mbdiscussionFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(mbdiscussionFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(mbdiscussionFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(mbdiscussionFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(mbdiscussionFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(mbdiscussionFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(mbdiscussionFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(mbdiscussionFormData("classPK"))
-			<!-- ThreadId -->
-			@helper.inputText(mbdiscussionFormData("threadId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.MbdiscussionApplication.all()">Back to Mbdiscussion List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(mbdiscussionFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(mbdiscussionFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(mbdiscussionFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(mbdiscussionFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(mbdiscussionFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(mbdiscussionFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(mbdiscussionFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(mbdiscussionFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(mbdiscussionFormData("classPK"))
+				</div>
+				<!-- ThreadId -->
+				<div class="form-group">
+				@helper.inputText(mbdiscussionFormData("threadId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

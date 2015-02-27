@@ -4,43 +4,70 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Repositoryentry #@repositoryentryFormData("repositoryEntryId").value</legend>
-
+	<div class="container">
 		@form(routes.RepositoryentryApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(repositoryentryFormData("repositoryEntryId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(repositoryentryFormData("repositoryEntryId") != "0") {
+				<h1>Edition of Repositoryentry #@repositoryentryFormData("repositoryEntryId").value</h1>
+				} else {
+				<h1>Creation of a Repositoryentry</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.RepositoryentryApplication.all()">Back to Repositoryentrys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="repositoryEntryId" name="repositoryEntryId" value='@repositoryentryFormData("repositoryEntryId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(repositoryentryFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(repositoryentryFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(repositoryentryFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(repositoryentryFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(repositoryentryFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(repositoryentryFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(repositoryentryFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(repositoryentryFormData("modifiedDate"))
-			<!-- RepositoryId -->
-			@helper.inputText(repositoryentryFormData("repositoryId"))
-			<!-- MappedId -->
-			@helper.inputText(repositoryentryFormData("mappedId"))
-			<!-- ManualCheckInRequired -->
-			@helper.checkbox(repositoryentryFormData("manualCheckInRequired"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.RepositoryentryApplication.all()">Back to Repositoryentry List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(repositoryentryFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(repositoryentryFormData("uuid"))
+				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(repositoryentryFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(repositoryentryFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(repositoryentryFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(repositoryentryFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(repositoryentryFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(repositoryentryFormData("modifiedDate"))
+				</div>
+				<!-- RepositoryId -->
+				<div class="form-group">
+				@helper.inputText(repositoryentryFormData("repositoryId"))
+				</div>
+				<!-- MappedId -->
+				<div class="form-group">
+				@helper.inputText(repositoryentryFormData("mappedId"))
+				</div>
+				<!-- ManualCheckInRequired -->
+				<div class="form-group">
+				@helper.checkbox(repositoryentryFormData("manualCheckInRequired"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

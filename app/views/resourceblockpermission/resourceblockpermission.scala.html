@@ -4,29 +4,42 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Resourceblockpermission #@resourceblockpermissionFormData("resourceBlockPermissionId").value</legend>
-
+	<div class="container">
 		@form(routes.ResourceblockpermissionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(resourceblockpermissionFormData("resourceBlockPermissionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(resourceblockpermissionFormData("resourceBlockPermissionId") != "0") {
+				<h1>Edition of Resourceblockpermission #@resourceblockpermissionFormData("resourceBlockPermissionId").value</h1>
+				} else {
+				<h1>Creation of a Resourceblockpermission</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ResourceblockpermissionApplication.all()">Back to Resourceblockpermissions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="resourceBlockPermissionId" name="resourceBlockPermissionId" value='@resourceblockpermissionFormData("resourceBlockPermissionId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(resourceblockpermissionFormData("mvccVersion"))
-			<!-- ResourceBlockId -->
-			@helper.inputText(resourceblockpermissionFormData("resourceBlockId"))
-			<!-- RoleId -->
-			@helper.inputText(resourceblockpermissionFormData("roleId"))
-			<!-- ActionIds -->
-			@helper.inputText(resourceblockpermissionFormData("actionIds"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ResourceblockpermissionApplication.all()">Back to Resourceblockpermission List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(resourceblockpermissionFormData("mvccVersion"))
 				</div>
+				<!-- ResourceBlockId -->
+				<div class="form-group">
+				@helper.inputText(resourceblockpermissionFormData("resourceBlockId"))
+				</div>
+				<!-- RoleId -->
+				<div class="form-group">
+				@helper.inputText(resourceblockpermissionFormData("roleId"))
+				</div>
+				<!-- ActionIds -->
+				<div class="form-group">
+				@helper.inputText(resourceblockpermissionFormData("actionIds"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

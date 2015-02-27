@@ -4,81 +4,146 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Layout #@layoutFormData("plid").value</legend>
-
+	<div class="container">
 		@form(routes.LayoutApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(layoutFormData("plid"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(layoutFormData("plid") != "0") {
+				<h1>Edition of Layout #@layoutFormData("plid").value</h1>
+				} else {
+				<h1>Creation of a Layout</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.LayoutApplication.all()">Back to Layouts</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="plid" name="plid" value='@layoutFormData("plid").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(layoutFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(layoutFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(layoutFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(layoutFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(layoutFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(layoutFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(layoutFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(layoutFormData("modifiedDate"))
-			<!-- PrivateLayout -->
-			@helper.checkbox(layoutFormData("privateLayout"))
-			<!-- LayoutId -->
-			@helper.inputText(layoutFormData("layoutId"))
-			<!-- ParentLayoutId -->
-			@helper.inputText(layoutFormData("parentLayoutId"))
-			<!-- Name -->
-			@helper.inputText(layoutFormData("name"))
-			<!-- Title -->
-			@helper.inputText(layoutFormData("title"))
-			<!-- Description -->
-			@helper.inputText(layoutFormData("description"))
-			<!-- Keywords -->
-			@helper.inputText(layoutFormData("keywords"))
-			<!-- Robots -->
-			@helper.inputText(layoutFormData("robots"))
-			<!-- Customtype -->
-			@helper.inputText(layoutFormData("customtype"))
-			<!-- TypeSettings -->
-			@helper.inputText(layoutFormData("typeSettings"))
-			<!-- Hidden -->
-			@helper.checkbox(layoutFormData("hidden"))
-			<!-- FriendlyURL -->
-			@helper.inputText(layoutFormData("friendlyURL"))
-			<!-- IconImageId -->
-			@helper.inputText(layoutFormData("iconImageId"))
-			<!-- ThemeId -->
-			@helper.inputText(layoutFormData("themeId"))
-			<!-- ColorSchemeId -->
-			@helper.inputText(layoutFormData("colorSchemeId"))
-			<!-- WapThemeId -->
-			@helper.inputText(layoutFormData("wapThemeId"))
-			<!-- WapColorSchemeId -->
-			@helper.inputText(layoutFormData("wapColorSchemeId"))
-			<!-- Css -->
-			@helper.inputText(layoutFormData("css"))
-			<!-- Priority -->
-			@helper.inputText(layoutFormData("priority"))
-			<!-- LayoutPrototypeUuid -->
-			@helper.inputText(layoutFormData("layoutPrototypeUuid"))
-			<!-- LayoutPrototypeLinkEnabled -->
-			@helper.checkbox(layoutFormData("layoutPrototypeLinkEnabled"))
-			<!-- SourcePrototypeLayoutUuid -->
-			@helper.inputText(layoutFormData("sourcePrototypeLayoutUuid"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.LayoutApplication.all()">Back to Layout List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("uuid"))
+				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("modifiedDate"))
+				</div>
+				<!-- PrivateLayout -->
+				<div class="form-group">
+				@helper.checkbox(layoutFormData("privateLayout"))
+				</div>
+				<!-- LayoutId -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("layoutId"))
+				</div>
+				<!-- ParentLayoutId -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("parentLayoutId"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("name"))
+				</div>
+				<!-- Title -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("title"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("description"))
+				</div>
+				<!-- Keywords -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("keywords"))
+				</div>
+				<!-- Robots -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("robots"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("customtype"))
+				</div>
+				<!-- TypeSettings -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("typeSettings"))
+				</div>
+				<!-- Hidden -->
+				<div class="form-group">
+				@helper.checkbox(layoutFormData("hidden"))
+				</div>
+				<!-- FriendlyURL -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("friendlyURL"))
+				</div>
+				<!-- IconImageId -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("iconImageId"))
+				</div>
+				<!-- ThemeId -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("themeId"))
+				</div>
+				<!-- ColorSchemeId -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("colorSchemeId"))
+				</div>
+				<!-- WapThemeId -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("wapThemeId"))
+				</div>
+				<!-- WapColorSchemeId -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("wapColorSchemeId"))
+				</div>
+				<!-- Css -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("css"))
+				</div>
+				<!-- Priority -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("priority"))
+				</div>
+				<!-- LayoutPrototypeUuid -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("layoutPrototypeUuid"))
+				</div>
+				<!-- LayoutPrototypeLinkEnabled -->
+				<div class="form-group">
+				@helper.checkbox(layoutFormData("layoutPrototypeLinkEnabled"))
+				</div>
+				<!-- SourcePrototypeLayoutUuid -->
+				<div class="form-group">
+				@helper.inputText(layoutFormData("sourcePrototypeLayoutUuid"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

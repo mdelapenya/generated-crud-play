@@ -4,39 +4,62 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Release #@releaseFormData("releaseId").value</legend>
-
+	<div class="container">
 		@form(routes.ReleaseApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(releaseFormData("releaseId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(releaseFormData("releaseId") != "0") {
+				<h1>Edition of Release #@releaseFormData("releaseId").value</h1>
+				} else {
+				<h1>Creation of a Release</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ReleaseApplication.all()">Back to Releases</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="releaseId" name="releaseId" value='@releaseFormData("releaseId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(releaseFormData("mvccVersion"))
-			<!-- CreateDate -->
-			@helper.inputText(releaseFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(releaseFormData("modifiedDate"))
-			<!-- ServletContextName -->
-			@helper.inputText(releaseFormData("servletContextName"))
-			<!-- BuildNumber -->
-			@helper.inputText(releaseFormData("buildNumber"))
-			<!-- BuildDate -->
-			@helper.inputText(releaseFormData("buildDate"))
-			<!-- Verified -->
-			@helper.checkbox(releaseFormData("verified"))
-			<!-- State -->
-			@helper.inputText(releaseFormData("state"))
-			<!-- TestString -->
-			@helper.inputText(releaseFormData("testString"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ReleaseApplication.all()">Back to Release List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(releaseFormData("mvccVersion"))
 				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(releaseFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(releaseFormData("modifiedDate"))
+				</div>
+				<!-- ServletContextName -->
+				<div class="form-group">
+				@helper.inputText(releaseFormData("servletContextName"))
+				</div>
+				<!-- BuildNumber -->
+				<div class="form-group">
+				@helper.inputText(releaseFormData("buildNumber"))
+				</div>
+				<!-- BuildDate -->
+				<div class="form-group">
+				@helper.inputText(releaseFormData("buildDate"))
+				</div>
+				<!-- Verified -->
+				<div class="form-group">
+				@helper.checkbox(releaseFormData("verified"))
+				</div>
+				<!-- State -->
+				<div class="form-group">
+				@helper.inputText(releaseFormData("state"))
+				</div>
+				<!-- TestString -->
+				<div class="form-group">
+				@helper.inputText(releaseFormData("testString"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

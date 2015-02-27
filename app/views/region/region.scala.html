@@ -4,31 +4,46 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Region #@regionFormData("regionId").value</legend>
-
+	<div class="container">
 		@form(routes.RegionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(regionFormData("regionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(regionFormData("regionId") != "0") {
+				<h1>Edition of Region #@regionFormData("regionId").value</h1>
+				} else {
+				<h1>Creation of a Region</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.RegionApplication.all()">Back to Regions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="regionId" name="regionId" value='@regionFormData("regionId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(regionFormData("mvccVersion"))
-			<!-- CountryId -->
-			@helper.inputText(regionFormData("countryId"))
-			<!-- RegionCode -->
-			@helper.inputText(regionFormData("regionCode"))
-			<!-- Name -->
-			@helper.inputText(regionFormData("name"))
-			<!-- Active -->
-			@helper.checkbox(regionFormData("active"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.RegionApplication.all()">Back to Region List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(regionFormData("mvccVersion"))
 				</div>
+				<!-- CountryId -->
+				<div class="form-group">
+				@helper.inputText(regionFormData("countryId"))
+				</div>
+				<!-- RegionCode -->
+				<div class="form-group">
+				@helper.inputText(regionFormData("regionCode"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(regionFormData("name"))
+				</div>
+				<!-- Active -->
+				<div class="form-group">
+				@helper.checkbox(regionFormData("active"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

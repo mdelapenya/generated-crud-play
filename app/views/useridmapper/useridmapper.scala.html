@@ -4,31 +4,46 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Useridmapper #@useridmapperFormData("userIdMapperId").value</legend>
-
+	<div class="container">
 		@form(routes.UseridmapperApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(useridmapperFormData("userIdMapperId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(useridmapperFormData("userIdMapperId") != "0") {
+				<h1>Edition of Useridmapper #@useridmapperFormData("userIdMapperId").value</h1>
+				} else {
+				<h1>Creation of a Useridmapper</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.UseridmapperApplication.all()">Back to Useridmappers</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="userIdMapperId" name="userIdMapperId" value='@useridmapperFormData("userIdMapperId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(useridmapperFormData("mvccVersion"))
-			<!-- UserId -->
-			@helper.inputText(useridmapperFormData("userId"))
-			<!-- Customtype -->
-			@helper.inputText(useridmapperFormData("customtype"))
-			<!-- Description -->
-			@helper.inputText(useridmapperFormData("description"))
-			<!-- ExternalUserId -->
-			@helper.inputText(useridmapperFormData("externalUserId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.UseridmapperApplication.all()">Back to Useridmapper List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(useridmapperFormData("mvccVersion"))
 				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(useridmapperFormData("userId"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(useridmapperFormData("customtype"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(useridmapperFormData("description"))
+				</div>
+				<!-- ExternalUserId -->
+				<div class="form-group">
+				@helper.inputText(useridmapperFormData("externalUserId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

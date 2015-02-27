@@ -4,27 +4,38 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Assettagstats #@assettagstatsFormData("tagStatsId").value</legend>
-
+	<div class="container">
 		@form(routes.AssettagstatsApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(assettagstatsFormData("tagStatsId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(assettagstatsFormData("tagStatsId") != "0") {
+				<h1>Edition of Assettagstats #@assettagstatsFormData("tagStatsId").value</h1>
+				} else {
+				<h1>Creation of a Assettagstats</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.AssettagstatsApplication.all()">Back to Assettagstatss</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="tagStatsId" name="tagStatsId" value='@assettagstatsFormData("tagStatsId").value' />
 
-			<!-- TagId -->
-			@helper.inputText(assettagstatsFormData("tagId"))
-			<!-- ClassNameId -->
-			@helper.inputText(assettagstatsFormData("classNameId"))
-			<!-- AssetCount -->
-			@helper.inputText(assettagstatsFormData("assetCount"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.AssettagstatsApplication.all()">Back to Assettagstats List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- TagId -->
+				<div class="form-group">
+				@helper.inputText(assettagstatsFormData("tagId"))
 				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(assettagstatsFormData("classNameId"))
+				</div>
+				<!-- AssetCount -->
+				<div class="form-group">
+				@helper.inputText(assettagstatsFormData("assetCount"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

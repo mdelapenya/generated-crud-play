@@ -4,41 +4,66 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Workflowinstancelink #@workflowinstancelinkFormData("workflowInstanceLinkId").value</legend>
-
+	<div class="container">
 		@form(routes.WorkflowinstancelinkApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(workflowinstancelinkFormData("workflowInstanceLinkId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(workflowinstancelinkFormData("workflowInstanceLinkId") != "0") {
+				<h1>Edition of Workflowinstancelink #@workflowinstancelinkFormData("workflowInstanceLinkId").value</h1>
+				} else {
+				<h1>Creation of a Workflowinstancelink</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.WorkflowinstancelinkApplication.all()">Back to Workflowinstancelinks</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="workflowInstanceLinkId" name="workflowInstanceLinkId" value='@workflowinstancelinkFormData("workflowInstanceLinkId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(workflowinstancelinkFormData("mvccVersion"))
-			<!-- GroupId -->
-			@helper.inputText(workflowinstancelinkFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(workflowinstancelinkFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(workflowinstancelinkFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(workflowinstancelinkFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(workflowinstancelinkFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(workflowinstancelinkFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(workflowinstancelinkFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(workflowinstancelinkFormData("classPK"))
-			<!-- WorkflowInstanceId -->
-			@helper.inputText(workflowinstancelinkFormData("workflowInstanceId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.WorkflowinstancelinkApplication.all()">Back to Workflowinstancelink List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(workflowinstancelinkFormData("mvccVersion"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(workflowinstancelinkFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(workflowinstancelinkFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(workflowinstancelinkFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(workflowinstancelinkFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(workflowinstancelinkFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(workflowinstancelinkFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(workflowinstancelinkFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(workflowinstancelinkFormData("classPK"))
+				</div>
+				<!-- WorkflowInstanceId -->
+				<div class="form-group">
+				@helper.inputText(workflowinstancelinkFormData("workflowInstanceId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

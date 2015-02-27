@@ -4,45 +4,74 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Layoutfriendlyurl #@layoutfriendlyurlFormData("layoutFriendlyURLId").value</legend>
-
+	<div class="container">
 		@form(routes.LayoutfriendlyurlApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(layoutfriendlyurlFormData("layoutFriendlyURLId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(layoutfriendlyurlFormData("layoutFriendlyURLId") != "0") {
+				<h1>Edition of Layoutfriendlyurl #@layoutfriendlyurlFormData("layoutFriendlyURLId").value</h1>
+				} else {
+				<h1>Creation of a Layoutfriendlyurl</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.LayoutfriendlyurlApplication.all()">Back to Layoutfriendlyurls</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="layoutFriendlyURLId" name="layoutFriendlyURLId" value='@layoutfriendlyurlFormData("layoutFriendlyURLId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(layoutfriendlyurlFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(layoutfriendlyurlFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(layoutfriendlyurlFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(layoutfriendlyurlFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(layoutfriendlyurlFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(layoutfriendlyurlFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(layoutfriendlyurlFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(layoutfriendlyurlFormData("modifiedDate"))
-			<!-- Plid -->
-			@helper.inputText(layoutfriendlyurlFormData("plid"))
-			<!-- PrivateLayout -->
-			@helper.checkbox(layoutfriendlyurlFormData("privateLayout"))
-			<!-- FriendlyURL -->
-			@helper.inputText(layoutfriendlyurlFormData("friendlyURL"))
-			<!-- LanguageId -->
-			@helper.inputText(layoutfriendlyurlFormData("languageId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.LayoutfriendlyurlApplication.all()">Back to Layoutfriendlyurl List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(layoutfriendlyurlFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(layoutfriendlyurlFormData("uuid"))
+				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(layoutfriendlyurlFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(layoutfriendlyurlFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(layoutfriendlyurlFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(layoutfriendlyurlFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(layoutfriendlyurlFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(layoutfriendlyurlFormData("modifiedDate"))
+				</div>
+				<!-- Plid -->
+				<div class="form-group">
+				@helper.inputText(layoutfriendlyurlFormData("plid"))
+				</div>
+				<!-- PrivateLayout -->
+				<div class="form-group">
+				@helper.checkbox(layoutfriendlyurlFormData("privateLayout"))
+				</div>
+				<!-- FriendlyURL -->
+				<div class="form-group">
+				@helper.inputText(layoutfriendlyurlFormData("friendlyURL"))
+				</div>
+				<!-- LanguageId -->
+				<div class="form-group">
+				@helper.inputText(layoutfriendlyurlFormData("languageId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

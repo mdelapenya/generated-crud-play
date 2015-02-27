@@ -4,33 +4,50 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Pluginsetting #@pluginsettingFormData("pluginSettingId").value</legend>
-
+	<div class="container">
 		@form(routes.PluginsettingApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(pluginsettingFormData("pluginSettingId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(pluginsettingFormData("pluginSettingId") != "0") {
+				<h1>Edition of Pluginsetting #@pluginsettingFormData("pluginSettingId").value</h1>
+				} else {
+				<h1>Creation of a Pluginsetting</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.PluginsettingApplication.all()">Back to Pluginsettings</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="pluginSettingId" name="pluginSettingId" value='@pluginsettingFormData("pluginSettingId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(pluginsettingFormData("mvccVersion"))
-			<!-- CompanyId -->
-			@helper.inputText(pluginsettingFormData("companyId"))
-			<!-- PluginId -->
-			@helper.inputText(pluginsettingFormData("pluginId"))
-			<!-- PluginType -->
-			@helper.inputText(pluginsettingFormData("pluginType"))
-			<!-- Roles -->
-			@helper.inputText(pluginsettingFormData("roles"))
-			<!-- Active -->
-			@helper.checkbox(pluginsettingFormData("active"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.PluginsettingApplication.all()">Back to Pluginsetting List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(pluginsettingFormData("mvccVersion"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(pluginsettingFormData("companyId"))
+				</div>
+				<!-- PluginId -->
+				<div class="form-group">
+				@helper.inputText(pluginsettingFormData("pluginId"))
+				</div>
+				<!-- PluginType -->
+				<div class="form-group">
+				@helper.inputText(pluginsettingFormData("pluginType"))
+				</div>
+				<!-- Roles -->
+				<div class="form-group">
+				@helper.inputText(pluginsettingFormData("roles"))
+				</div>
+				<!-- Active -->
+				<div class="form-group">
+				@helper.checkbox(pluginsettingFormData("active"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

@@ -4,47 +4,78 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Ddlrecord #@ddlrecordFormData("recordId").value</legend>
-
+	<div class="container">
 		@form(routes.DdlrecordApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(ddlrecordFormData("recordId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(ddlrecordFormData("recordId") != "0") {
+				<h1>Edition of Ddlrecord #@ddlrecordFormData("recordId").value</h1>
+				} else {
+				<h1>Creation of a Ddlrecord</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DdlrecordApplication.all()">Back to Ddlrecords</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="recordId" name="recordId" value='@ddlrecordFormData("recordId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(ddlrecordFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(ddlrecordFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(ddlrecordFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(ddlrecordFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(ddlrecordFormData("userName"))
-			<!-- VersionUserId -->
-			@helper.inputText(ddlrecordFormData("versionUserId"))
-			<!-- VersionUserName -->
-			@helper.inputText(ddlrecordFormData("versionUserName"))
-			<!-- CreateDate -->
-			@helper.inputText(ddlrecordFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(ddlrecordFormData("modifiedDate"))
-			<!-- DDMStorageId -->
-			@helper.inputText(ddlrecordFormData("DDMStorageId"))
-			<!-- RecordSetId -->
-			@helper.inputText(ddlrecordFormData("recordSetId"))
-			<!-- Version -->
-			@helper.inputText(ddlrecordFormData("version"))
-			<!-- DisplayIndex -->
-			@helper.inputText(ddlrecordFormData("displayIndex"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DdlrecordApplication.all()">Back to Ddlrecord List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("userName"))
+				</div>
+				<!-- VersionUserId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("versionUserId"))
+				</div>
+				<!-- VersionUserName -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("versionUserName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("modifiedDate"))
+				</div>
+				<!-- DDMStorageId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("DDMStorageId"))
+				</div>
+				<!-- RecordSetId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("recordSetId"))
+				</div>
+				<!-- Version -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("version"))
+				</div>
+				<!-- DisplayIndex -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordFormData("displayIndex"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

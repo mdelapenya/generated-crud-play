@@ -4,41 +4,66 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Company #@companyFormData("companyId").value</legend>
-
+	<div class="container">
 		@form(routes.CompanyApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(companyFormData("companyId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(companyFormData("companyId") != "0") {
+				<h1>Edition of Company #@companyFormData("companyId").value</h1>
+				} else {
+				<h1>Creation of a Company</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.CompanyApplication.all()">Back to Companys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="companyId" name="companyId" value='@companyFormData("companyId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(companyFormData("mvccVersion"))
-			<!-- AccountId -->
-			@helper.inputText(companyFormData("accountId"))
-			<!-- WebId -->
-			@helper.inputText(companyFormData("webId"))
-			<!-- Key -->
-			@helper.inputText(companyFormData("key"))
-			<!-- Mx -->
-			@helper.inputText(companyFormData("mx"))
-			<!-- HomeURL -->
-			@helper.inputText(companyFormData("homeURL"))
-			<!-- LogoId -->
-			@helper.inputText(companyFormData("logoId"))
-			<!-- System -->
-			@helper.checkbox(companyFormData("system"))
-			<!-- MaxUsers -->
-			@helper.inputText(companyFormData("maxUsers"))
-			<!-- Active -->
-			@helper.checkbox(companyFormData("active"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.CompanyApplication.all()">Back to Company List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(companyFormData("mvccVersion"))
 				</div>
+				<!-- AccountId -->
+				<div class="form-group">
+				@helper.inputText(companyFormData("accountId"))
+				</div>
+				<!-- WebId -->
+				<div class="form-group">
+				@helper.inputText(companyFormData("webId"))
+				</div>
+				<!-- Key -->
+				<div class="form-group">
+				@helper.inputText(companyFormData("key"))
+				</div>
+				<!-- Mx -->
+				<div class="form-group">
+				@helper.inputText(companyFormData("mx"))
+				</div>
+				<!-- HomeURL -->
+				<div class="form-group">
+				@helper.inputText(companyFormData("homeURL"))
+				</div>
+				<!-- LogoId -->
+				<div class="form-group">
+				@helper.inputText(companyFormData("logoId"))
+				</div>
+				<!-- System -->
+				<div class="form-group">
+				@helper.checkbox(companyFormData("system"))
+				</div>
+				<!-- MaxUsers -->
+				<div class="form-group">
+				@helper.inputText(companyFormData("maxUsers"))
+				</div>
+				<!-- Active -->
+				<div class="form-group">
+				@helper.checkbox(companyFormData("active"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

@@ -4,37 +4,58 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Assetcategoryproperty #@assetcategorypropertyFormData("categoryPropertyId").value</legend>
-
+	<div class="container">
 		@form(routes.AssetcategorypropertyApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(assetcategorypropertyFormData("categoryPropertyId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(assetcategorypropertyFormData("categoryPropertyId") != "0") {
+				<h1>Edition of Assetcategoryproperty #@assetcategorypropertyFormData("categoryPropertyId").value</h1>
+				} else {
+				<h1>Creation of a Assetcategoryproperty</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.AssetcategorypropertyApplication.all()">Back to Assetcategorypropertys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="categoryPropertyId" name="categoryPropertyId" value='@assetcategorypropertyFormData("categoryPropertyId").value' />
 
-			<!-- CompanyId -->
-			@helper.inputText(assetcategorypropertyFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(assetcategorypropertyFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(assetcategorypropertyFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(assetcategorypropertyFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(assetcategorypropertyFormData("modifiedDate"))
-			<!-- CategoryId -->
-			@helper.inputText(assetcategorypropertyFormData("categoryId"))
-			<!-- Key -->
-			@helper.inputText(assetcategorypropertyFormData("key"))
-			<!-- Value -->
-			@helper.inputText(assetcategorypropertyFormData("value"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.AssetcategorypropertyApplication.all()">Back to Assetcategoryproperty List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(assetcategorypropertyFormData("companyId"))
 				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(assetcategorypropertyFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(assetcategorypropertyFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(assetcategorypropertyFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(assetcategorypropertyFormData("modifiedDate"))
+				</div>
+				<!-- CategoryId -->
+				<div class="form-group">
+				@helper.inputText(assetcategorypropertyFormData("categoryId"))
+				</div>
+				<!-- Key -->
+				<div class="form-group">
+				@helper.inputText(assetcategorypropertyFormData("key"))
+				</div>
+				<!-- Value -->
+				<div class="form-group">
+				@helper.inputText(assetcategorypropertyFormData("value"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

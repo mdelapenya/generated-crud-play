@@ -4,45 +4,74 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Workflowdefinitionlink #@workflowdefinitionlinkFormData("workflowDefinitionLinkId").value</legend>
-
+	<div class="container">
 		@form(routes.WorkflowdefinitionlinkApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(workflowdefinitionlinkFormData("workflowDefinitionLinkId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(workflowdefinitionlinkFormData("workflowDefinitionLinkId") != "0") {
+				<h1>Edition of Workflowdefinitionlink #@workflowdefinitionlinkFormData("workflowDefinitionLinkId").value</h1>
+				} else {
+				<h1>Creation of a Workflowdefinitionlink</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.WorkflowdefinitionlinkApplication.all()">Back to Workflowdefinitionlinks</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="workflowDefinitionLinkId" name="workflowDefinitionLinkId" value='@workflowdefinitionlinkFormData("workflowDefinitionLinkId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(workflowdefinitionlinkFormData("mvccVersion"))
-			<!-- GroupId -->
-			@helper.inputText(workflowdefinitionlinkFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(workflowdefinitionlinkFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(workflowdefinitionlinkFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(workflowdefinitionlinkFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(workflowdefinitionlinkFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(workflowdefinitionlinkFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(workflowdefinitionlinkFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(workflowdefinitionlinkFormData("classPK"))
-			<!-- TypePK -->
-			@helper.inputText(workflowdefinitionlinkFormData("typePK"))
-			<!-- WorkflowDefinitionName -->
-			@helper.inputText(workflowdefinitionlinkFormData("workflowDefinitionName"))
-			<!-- WorkflowDefinitionVersion -->
-			@helper.inputText(workflowdefinitionlinkFormData("workflowDefinitionVersion"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.WorkflowdefinitionlinkApplication.all()">Back to Workflowdefinitionlink List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(workflowdefinitionlinkFormData("mvccVersion"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(workflowdefinitionlinkFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(workflowdefinitionlinkFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(workflowdefinitionlinkFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(workflowdefinitionlinkFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(workflowdefinitionlinkFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(workflowdefinitionlinkFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(workflowdefinitionlinkFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(workflowdefinitionlinkFormData("classPK"))
+				</div>
+				<!-- TypePK -->
+				<div class="form-group">
+				@helper.inputText(workflowdefinitionlinkFormData("typePK"))
+				</div>
+				<!-- WorkflowDefinitionName -->
+				<div class="form-group">
+				@helper.inputText(workflowdefinitionlinkFormData("workflowDefinitionName"))
+				</div>
+				<!-- WorkflowDefinitionVersion -->
+				<div class="form-group">
+				@helper.inputText(workflowdefinitionlinkFormData("workflowDefinitionVersion"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

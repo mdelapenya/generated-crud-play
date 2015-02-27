@@ -4,41 +4,66 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Subscription #@subscriptionFormData("subscriptionId").value</legend>
-
+	<div class="container">
 		@form(routes.SubscriptionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(subscriptionFormData("subscriptionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(subscriptionFormData("subscriptionId") != "0") {
+				<h1>Edition of Subscription #@subscriptionFormData("subscriptionId").value</h1>
+				} else {
+				<h1>Creation of a Subscription</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.SubscriptionApplication.all()">Back to Subscriptions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="subscriptionId" name="subscriptionId" value='@subscriptionFormData("subscriptionId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(subscriptionFormData("mvccVersion"))
-			<!-- GroupId -->
-			@helper.inputText(subscriptionFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(subscriptionFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(subscriptionFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(subscriptionFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(subscriptionFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(subscriptionFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(subscriptionFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(subscriptionFormData("classPK"))
-			<!-- Frequency -->
-			@helper.inputText(subscriptionFormData("frequency"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.SubscriptionApplication.all()">Back to Subscription List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(subscriptionFormData("mvccVersion"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(subscriptionFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(subscriptionFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(subscriptionFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(subscriptionFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(subscriptionFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(subscriptionFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(subscriptionFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(subscriptionFormData("classPK"))
+				</div>
+				<!-- Frequency -->
+				<div class="form-group">
+				@helper.inputText(subscriptionFormData("frequency"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

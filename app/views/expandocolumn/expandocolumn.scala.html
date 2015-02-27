@@ -4,33 +4,50 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Expandocolumn #@expandocolumnFormData("columnId").value</legend>
-
+	<div class="container">
 		@form(routes.ExpandocolumnApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(expandocolumnFormData("columnId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(expandocolumnFormData("columnId") != "0") {
+				<h1>Edition of Expandocolumn #@expandocolumnFormData("columnId").value</h1>
+				} else {
+				<h1>Creation of a Expandocolumn</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ExpandocolumnApplication.all()">Back to Expandocolumns</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="columnId" name="columnId" value='@expandocolumnFormData("columnId").value' />
 
-			<!-- CompanyId -->
-			@helper.inputText(expandocolumnFormData("companyId"))
-			<!-- TableId -->
-			@helper.inputText(expandocolumnFormData("tableId"))
-			<!-- Name -->
-			@helper.inputText(expandocolumnFormData("name"))
-			<!-- Customtype -->
-			@helper.inputText(expandocolumnFormData("customtype"))
-			<!-- DefaultData -->
-			@helper.inputText(expandocolumnFormData("defaultData"))
-			<!-- TypeSettings -->
-			@helper.inputText(expandocolumnFormData("typeSettings"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ExpandocolumnApplication.all()">Back to Expandocolumn List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(expandocolumnFormData("companyId"))
 				</div>
+				<!-- TableId -->
+				<div class="form-group">
+				@helper.inputText(expandocolumnFormData("tableId"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(expandocolumnFormData("name"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(expandocolumnFormData("customtype"))
+				</div>
+				<!-- DefaultData -->
+				<div class="form-group">
+				@helper.inputText(expandocolumnFormData("defaultData"))
+				</div>
+				<!-- TypeSettings -->
+				<div class="form-group">
+				@helper.inputText(expandocolumnFormData("typeSettings"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

@@ -4,29 +4,42 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Shard #@shardFormData("shardId").value</legend>
-
+	<div class="container">
 		@form(routes.ShardApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(shardFormData("shardId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(shardFormData("shardId") != "0") {
+				<h1>Edition of Shard #@shardFormData("shardId").value</h1>
+				} else {
+				<h1>Creation of a Shard</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ShardApplication.all()">Back to Shards</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="shardId" name="shardId" value='@shardFormData("shardId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(shardFormData("mvccVersion"))
-			<!-- ClassNameId -->
-			@helper.inputText(shardFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(shardFormData("classPK"))
-			<!-- Name -->
-			@helper.inputText(shardFormData("name"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ShardApplication.all()">Back to Shard List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(shardFormData("mvccVersion"))
 				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(shardFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(shardFormData("classPK"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(shardFormData("name"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

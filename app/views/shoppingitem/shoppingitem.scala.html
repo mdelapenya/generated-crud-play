@@ -4,87 +4,158 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Shoppingitem #@shoppingitemFormData("itemId").value</legend>
-
+	<div class="container">
 		@form(routes.ShoppingitemApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(shoppingitemFormData("itemId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(shoppingitemFormData("itemId") != "0") {
+				<h1>Edition of Shoppingitem #@shoppingitemFormData("itemId").value</h1>
+				} else {
+				<h1>Creation of a Shoppingitem</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ShoppingitemApplication.all()">Back to Shoppingitems</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="itemId" name="itemId" value='@shoppingitemFormData("itemId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(shoppingitemFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(shoppingitemFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(shoppingitemFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(shoppingitemFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(shoppingitemFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(shoppingitemFormData("modifiedDate"))
-			<!-- CategoryId -->
-			@helper.inputText(shoppingitemFormData("categoryId"))
-			<!-- Sku -->
-			@helper.inputText(shoppingitemFormData("sku"))
-			<!-- Name -->
-			@helper.inputText(shoppingitemFormData("name"))
-			<!-- Description -->
-			@helper.inputText(shoppingitemFormData("description"))
-			<!-- Properties -->
-			@helper.inputText(shoppingitemFormData("properties"))
-			<!-- Fields -->
-			@helper.checkbox(shoppingitemFormData("fields"))
-			<!-- FieldsQuantities -->
-			@helper.inputText(shoppingitemFormData("fieldsQuantities"))
-			<!-- MinQuantity -->
-			@helper.inputText(shoppingitemFormData("minQuantity"))
-			<!-- MaxQuantity -->
-			@helper.inputText(shoppingitemFormData("maxQuantity"))
-			<!-- Price -->
-			@helper.inputText(shoppingitemFormData("price"))
-			<!-- Discount -->
-			@helper.inputText(shoppingitemFormData("discount"))
-			<!-- Taxable -->
-			@helper.checkbox(shoppingitemFormData("taxable"))
-			<!-- Shipping -->
-			@helper.inputText(shoppingitemFormData("shipping"))
-			<!-- UseShippingFormula -->
-			@helper.checkbox(shoppingitemFormData("useShippingFormula"))
-			<!-- RequiresShipping -->
-			@helper.checkbox(shoppingitemFormData("requiresShipping"))
-			<!-- StockQuantity -->
-			@helper.inputText(shoppingitemFormData("stockQuantity"))
-			<!-- Featured -->
-			@helper.checkbox(shoppingitemFormData("featured"))
-			<!-- Sale -->
-			@helper.checkbox(shoppingitemFormData("sale"))
-			<!-- SmallImage -->
-			@helper.checkbox(shoppingitemFormData("smallImage"))
-			<!-- SmallImageId -->
-			@helper.inputText(shoppingitemFormData("smallImageId"))
-			<!-- SmallImageURL -->
-			@helper.inputText(shoppingitemFormData("smallImageURL"))
-			<!-- MediumImage -->
-			@helper.checkbox(shoppingitemFormData("mediumImage"))
-			<!-- MediumImageId -->
-			@helper.inputText(shoppingitemFormData("mediumImageId"))
-			<!-- MediumImageURL -->
-			@helper.inputText(shoppingitemFormData("mediumImageURL"))
-			<!-- LargeImage -->
-			@helper.checkbox(shoppingitemFormData("largeImage"))
-			<!-- LargeImageId -->
-			@helper.inputText(shoppingitemFormData("largeImageId"))
-			<!-- LargeImageURL -->
-			@helper.inputText(shoppingitemFormData("largeImageURL"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ShoppingitemApplication.all()">Back to Shoppingitem List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("modifiedDate"))
+				</div>
+				<!-- CategoryId -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("categoryId"))
+				</div>
+				<!-- Sku -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("sku"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("description"))
+				</div>
+				<!-- Properties -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("properties"))
+				</div>
+				<!-- Fields -->
+				<div class="form-group">
+				@helper.checkbox(shoppingitemFormData("fields"))
+				</div>
+				<!-- FieldsQuantities -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("fieldsQuantities"))
+				</div>
+				<!-- MinQuantity -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("minQuantity"))
+				</div>
+				<!-- MaxQuantity -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("maxQuantity"))
+				</div>
+				<!-- Price -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("price"))
+				</div>
+				<!-- Discount -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("discount"))
+				</div>
+				<!-- Taxable -->
+				<div class="form-group">
+				@helper.checkbox(shoppingitemFormData("taxable"))
+				</div>
+				<!-- Shipping -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("shipping"))
+				</div>
+				<!-- UseShippingFormula -->
+				<div class="form-group">
+				@helper.checkbox(shoppingitemFormData("useShippingFormula"))
+				</div>
+				<!-- RequiresShipping -->
+				<div class="form-group">
+				@helper.checkbox(shoppingitemFormData("requiresShipping"))
+				</div>
+				<!-- StockQuantity -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("stockQuantity"))
+				</div>
+				<!-- Featured -->
+				<div class="form-group">
+				@helper.checkbox(shoppingitemFormData("featured"))
+				</div>
+				<!-- Sale -->
+				<div class="form-group">
+				@helper.checkbox(shoppingitemFormData("sale"))
+				</div>
+				<!-- SmallImage -->
+				<div class="form-group">
+				@helper.checkbox(shoppingitemFormData("smallImage"))
+				</div>
+				<!-- SmallImageId -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("smallImageId"))
+				</div>
+				<!-- SmallImageURL -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("smallImageURL"))
+				</div>
+				<!-- MediumImage -->
+				<div class="form-group">
+				@helper.checkbox(shoppingitemFormData("mediumImage"))
+				</div>
+				<!-- MediumImageId -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("mediumImageId"))
+				</div>
+				<!-- MediumImageURL -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("mediumImageURL"))
+				</div>
+				<!-- LargeImage -->
+				<div class="form-group">
+				@helper.checkbox(shoppingitemFormData("largeImage"))
+				</div>
+				<!-- LargeImageId -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("largeImageId"))
+				</div>
+				<!-- LargeImageURL -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemFormData("largeImageURL"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

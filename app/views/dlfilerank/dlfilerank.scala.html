@@ -4,33 +4,50 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Dlfilerank #@dlfilerankFormData("fileRankId").value</legend>
-
+	<div class="container">
 		@form(routes.DlfilerankApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(dlfilerankFormData("fileRankId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(dlfilerankFormData("fileRankId") != "0") {
+				<h1>Edition of Dlfilerank #@dlfilerankFormData("fileRankId").value</h1>
+				} else {
+				<h1>Creation of a Dlfilerank</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DlfilerankApplication.all()">Back to Dlfileranks</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="fileRankId" name="fileRankId" value='@dlfilerankFormData("fileRankId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(dlfilerankFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(dlfilerankFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(dlfilerankFormData("userId"))
-			<!-- CreateDate -->
-			@helper.inputText(dlfilerankFormData("createDate"))
-			<!-- FileEntryId -->
-			@helper.inputText(dlfilerankFormData("fileEntryId"))
-			<!-- Active -->
-			@helper.checkbox(dlfilerankFormData("active"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DlfilerankApplication.all()">Back to Dlfilerank List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(dlfilerankFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(dlfilerankFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(dlfilerankFormData("userId"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(dlfilerankFormData("createDate"))
+				</div>
+				<!-- FileEntryId -->
+				<div class="form-group">
+				@helper.inputText(dlfilerankFormData("fileEntryId"))
+				</div>
+				<!-- Active -->
+				<div class="form-group">
+				@helper.checkbox(dlfilerankFormData("active"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

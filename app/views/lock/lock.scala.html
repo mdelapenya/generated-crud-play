@@ -4,43 +4,70 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Lock #@lockFormData("lockId").value</legend>
-
+	<div class="container">
 		@form(routes.LockApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(lockFormData("lockId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(lockFormData("lockId") != "0") {
+				<h1>Edition of Lock #@lockFormData("lockId").value</h1>
+				} else {
+				<h1>Creation of a Lock</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.LockApplication.all()">Back to Locks</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="lockId" name="lockId" value='@lockFormData("lockId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(lockFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(lockFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(lockFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(lockFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(lockFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(lockFormData("createDate"))
-			<!-- ClassName -->
-			@helper.inputText(lockFormData("className"))
-			<!-- Key -->
-			@helper.inputText(lockFormData("key"))
-			<!-- Owner -->
-			@helper.inputText(lockFormData("owner"))
-			<!-- Inheritable -->
-			@helper.checkbox(lockFormData("inheritable"))
-			<!-- ExpirationDate -->
-			@helper.inputText(lockFormData("expirationDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.LockApplication.all()">Back to Lock List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(lockFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(lockFormData("uuid"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(lockFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(lockFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(lockFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(lockFormData("createDate"))
+				</div>
+				<!-- ClassName -->
+				<div class="form-group">
+				@helper.inputText(lockFormData("className"))
+				</div>
+				<!-- Key -->
+				<div class="form-group">
+				@helper.inputText(lockFormData("key"))
+				</div>
+				<!-- Owner -->
+				<div class="form-group">
+				@helper.inputText(lockFormData("owner"))
+				</div>
+				<!-- Inheritable -->
+				<div class="form-group">
+				@helper.checkbox(lockFormData("inheritable"))
+				</div>
+				<!-- ExpirationDate -->
+				<div class="form-group">
+				@helper.inputText(lockFormData("expirationDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

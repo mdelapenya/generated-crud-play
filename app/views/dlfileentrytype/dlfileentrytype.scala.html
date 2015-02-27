@@ -4,41 +4,66 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Dlfileentrytype #@dlfileentrytypeFormData("fileEntryTypeId").value</legend>
-
+	<div class="container">
 		@form(routes.DlfileentrytypeApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(dlfileentrytypeFormData("fileEntryTypeId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(dlfileentrytypeFormData("fileEntryTypeId") != "0") {
+				<h1>Edition of Dlfileentrytype #@dlfileentrytypeFormData("fileEntryTypeId").value</h1>
+				} else {
+				<h1>Creation of a Dlfileentrytype</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DlfileentrytypeApplication.all()">Back to Dlfileentrytypes</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="fileEntryTypeId" name="fileEntryTypeId" value='@dlfileentrytypeFormData("fileEntryTypeId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(dlfileentrytypeFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(dlfileentrytypeFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(dlfileentrytypeFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(dlfileentrytypeFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(dlfileentrytypeFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(dlfileentrytypeFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(dlfileentrytypeFormData("modifiedDate"))
-			<!-- FileEntryTypeKey -->
-			@helper.inputText(dlfileentrytypeFormData("fileEntryTypeKey"))
-			<!-- Name -->
-			@helper.inputText(dlfileentrytypeFormData("name"))
-			<!-- Description -->
-			@helper.inputText(dlfileentrytypeFormData("description"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DlfileentrytypeApplication.all()">Back to Dlfileentrytype List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrytypeFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrytypeFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrytypeFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrytypeFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrytypeFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrytypeFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrytypeFormData("modifiedDate"))
+				</div>
+				<!-- FileEntryTypeKey -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrytypeFormData("fileEntryTypeKey"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrytypeFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrytypeFormData("description"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

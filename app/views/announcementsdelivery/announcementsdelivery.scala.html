@@ -4,33 +4,50 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Announcementsdelivery #@announcementsdeliveryFormData("deliveryId").value</legend>
-
+	<div class="container">
 		@form(routes.AnnouncementsdeliveryApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(announcementsdeliveryFormData("deliveryId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(announcementsdeliveryFormData("deliveryId") != "0") {
+				<h1>Edition of Announcementsdelivery #@announcementsdeliveryFormData("deliveryId").value</h1>
+				} else {
+				<h1>Creation of a Announcementsdelivery</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.AnnouncementsdeliveryApplication.all()">Back to Announcementsdeliverys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="deliveryId" name="deliveryId" value='@announcementsdeliveryFormData("deliveryId").value' />
 
-			<!-- CompanyId -->
-			@helper.inputText(announcementsdeliveryFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(announcementsdeliveryFormData("userId"))
-			<!-- Customtype -->
-			@helper.inputText(announcementsdeliveryFormData("customtype"))
-			<!-- Email -->
-			@helper.checkbox(announcementsdeliveryFormData("email"))
-			<!-- Sms -->
-			@helper.checkbox(announcementsdeliveryFormData("sms"))
-			<!-- Website -->
-			@helper.checkbox(announcementsdeliveryFormData("website"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.AnnouncementsdeliveryApplication.all()">Back to Announcementsdelivery List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(announcementsdeliveryFormData("companyId"))
 				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(announcementsdeliveryFormData("userId"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(announcementsdeliveryFormData("customtype"))
+				</div>
+				<!-- Email -->
+				<div class="form-group">
+				@helper.checkbox(announcementsdeliveryFormData("email"))
+				</div>
+				<!-- Sms -->
+				<div class="form-group">
+				@helper.checkbox(announcementsdeliveryFormData("sms"))
+				</div>
+				<!-- Website -->
+				<div class="form-group">
+				@helper.checkbox(announcementsdeliveryFormData("website"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

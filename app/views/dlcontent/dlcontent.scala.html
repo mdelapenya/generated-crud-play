@@ -4,31 +4,46 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Dlcontent #@dlcontentFormData("contentId").value</legend>
-
+	<div class="container">
 		@form(routes.DlcontentApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(dlcontentFormData("contentId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(dlcontentFormData("contentId") != "0") {
+				<h1>Edition of Dlcontent #@dlcontentFormData("contentId").value</h1>
+				} else {
+				<h1>Creation of a Dlcontent</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DlcontentApplication.all()">Back to Dlcontents</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="contentId" name="contentId" value='@dlcontentFormData("contentId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(dlcontentFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(dlcontentFormData("companyId"))
-			<!-- RepositoryId -->
-			@helper.inputText(dlcontentFormData("repositoryId"))
-			<!-- Path -->
-			@helper.inputText(dlcontentFormData("path"))
-			<!-- Version -->
-			@helper.inputText(dlcontentFormData("version"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DlcontentApplication.all()">Back to Dlcontent List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(dlcontentFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(dlcontentFormData("companyId"))
+				</div>
+				<!-- RepositoryId -->
+				<div class="form-group">
+				@helper.inputText(dlcontentFormData("repositoryId"))
+				</div>
+				<!-- Path -->
+				<div class="form-group">
+				@helper.inputText(dlcontentFormData("path"))
+				</div>
+				<!-- Version -->
+				<div class="form-group">
+				@helper.inputText(dlcontentFormData("version"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

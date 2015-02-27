@@ -4,51 +4,86 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Scproductentry #@scproductentryFormData("productEntryId").value</legend>
-
+	<div class="container">
 		@form(routes.ScproductentryApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(scproductentryFormData("productEntryId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(scproductentryFormData("productEntryId") != "0") {
+				<h1>Edition of Scproductentry #@scproductentryFormData("productEntryId").value</h1>
+				} else {
+				<h1>Creation of a Scproductentry</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ScproductentryApplication.all()">Back to Scproductentrys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="productEntryId" name="productEntryId" value='@scproductentryFormData("productEntryId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(scproductentryFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(scproductentryFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(scproductentryFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(scproductentryFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(scproductentryFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(scproductentryFormData("modifiedDate"))
-			<!-- Name -->
-			@helper.inputText(scproductentryFormData("name"))
-			<!-- Customtype -->
-			@helper.inputText(scproductentryFormData("customtype"))
-			<!-- Tags -->
-			@helper.inputText(scproductentryFormData("tags"))
-			<!-- ShortDescription -->
-			@helper.inputText(scproductentryFormData("shortDescription"))
-			<!-- LongDescription -->
-			@helper.inputText(scproductentryFormData("longDescription"))
-			<!-- PageURL -->
-			@helper.inputText(scproductentryFormData("pageURL"))
-			<!-- Author -->
-			@helper.inputText(scproductentryFormData("author"))
-			<!-- RepoGroupId -->
-			@helper.inputText(scproductentryFormData("repoGroupId"))
-			<!-- RepoArtifactId -->
-			@helper.inputText(scproductentryFormData("repoArtifactId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ScproductentryApplication.all()">Back to Scproductentry List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("modifiedDate"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("name"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("customtype"))
+				</div>
+				<!-- Tags -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("tags"))
+				</div>
+				<!-- ShortDescription -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("shortDescription"))
+				</div>
+				<!-- LongDescription -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("longDescription"))
+				</div>
+				<!-- PageURL -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("pageURL"))
+				</div>
+				<!-- Author -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("author"))
+				</div>
+				<!-- RepoGroupId -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("repoGroupId"))
+				</div>
+				<!-- RepoArtifactId -->
+				<div class="form-group">
+				@helper.inputText(scproductentryFormData("repoArtifactId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

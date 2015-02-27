@@ -4,63 +4,110 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Customgroup #@customgroupFormData("groupId").value</legend>
-
+	<div class="container">
 		@form(routes.CustomgroupApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(customgroupFormData("groupId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(customgroupFormData("groupId") != "0") {
+				<h1>Edition of Customgroup #@customgroupFormData("groupId").value</h1>
+				} else {
+				<h1>Creation of a Customgroup</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.CustomgroupApplication.all()">Back to Customgroups</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="groupId" name="groupId" value='@customgroupFormData("groupId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(customgroupFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(customgroupFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(customgroupFormData("companyId"))
-			<!-- CreatorUserId -->
-			@helper.inputText(customgroupFormData("creatorUserId"))
-			<!-- ClassNameId -->
-			@helper.inputText(customgroupFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(customgroupFormData("classPK"))
-			<!-- ParentGroupId -->
-			@helper.inputText(customgroupFormData("parentGroupId"))
-			<!-- LiveGroupId -->
-			@helper.inputText(customgroupFormData("liveGroupId"))
-			<!-- TreePath -->
-			@helper.inputText(customgroupFormData("treePath"))
-			<!-- GroupKey -->
-			@helper.inputText(customgroupFormData("groupKey"))
-			<!-- Name -->
-			@helper.inputText(customgroupFormData("name"))
-			<!-- Description -->
-			@helper.inputText(customgroupFormData("description"))
-			<!-- Customtype -->
-			@helper.inputText(customgroupFormData("customtype"))
-			<!-- TypeSettings -->
-			@helper.inputText(customgroupFormData("typeSettings"))
-			<!-- ManualMembership -->
-			@helper.checkbox(customgroupFormData("manualMembership"))
-			<!-- MembershipRestriction -->
-			@helper.inputText(customgroupFormData("membershipRestriction"))
-			<!-- FriendlyURL -->
-			@helper.inputText(customgroupFormData("friendlyURL"))
-			<!-- Site -->
-			@helper.checkbox(customgroupFormData("site"))
-			<!-- RemoteStagingGroupCount -->
-			@helper.inputText(customgroupFormData("remoteStagingGroupCount"))
-			<!-- InheritContent -->
-			@helper.checkbox(customgroupFormData("inheritContent"))
-			<!-- Active -->
-			@helper.checkbox(customgroupFormData("active"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.CustomgroupApplication.all()">Back to Customgroup List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("uuid"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("companyId"))
+				</div>
+				<!-- CreatorUserId -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("creatorUserId"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("classPK"))
+				</div>
+				<!-- ParentGroupId -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("parentGroupId"))
+				</div>
+				<!-- LiveGroupId -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("liveGroupId"))
+				</div>
+				<!-- TreePath -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("treePath"))
+				</div>
+				<!-- GroupKey -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("groupKey"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("description"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("customtype"))
+				</div>
+				<!-- TypeSettings -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("typeSettings"))
+				</div>
+				<!-- ManualMembership -->
+				<div class="form-group">
+				@helper.checkbox(customgroupFormData("manualMembership"))
+				</div>
+				<!-- MembershipRestriction -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("membershipRestriction"))
+				</div>
+				<!-- FriendlyURL -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("friendlyURL"))
+				</div>
+				<!-- Site -->
+				<div class="form-group">
+				@helper.checkbox(customgroupFormData("site"))
+				</div>
+				<!-- RemoteStagingGroupCount -->
+				<div class="form-group">
+				@helper.inputText(customgroupFormData("remoteStagingGroupCount"))
+				</div>
+				<!-- InheritContent -->
+				<div class="form-group">
+				@helper.checkbox(customgroupFormData("inheritContent"))
+				</div>
+				<!-- Active -->
+				<div class="form-group">
+				@helper.checkbox(customgroupFormData("active"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

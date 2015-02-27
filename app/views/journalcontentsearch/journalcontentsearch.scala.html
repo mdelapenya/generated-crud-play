@@ -4,33 +4,50 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Journalcontentsearch #@journalcontentsearchFormData("contentSearchId").value</legend>
-
+	<div class="container">
 		@form(routes.JournalcontentsearchApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(journalcontentsearchFormData("contentSearchId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(journalcontentsearchFormData("contentSearchId") != "0") {
+				<h1>Edition of Journalcontentsearch #@journalcontentsearchFormData("contentSearchId").value</h1>
+				} else {
+				<h1>Creation of a Journalcontentsearch</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.JournalcontentsearchApplication.all()">Back to Journalcontentsearchs</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="contentSearchId" name="contentSearchId" value='@journalcontentsearchFormData("contentSearchId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(journalcontentsearchFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(journalcontentsearchFormData("companyId"))
-			<!-- PrivateLayout -->
-			@helper.checkbox(journalcontentsearchFormData("privateLayout"))
-			<!-- LayoutId -->
-			@helper.inputText(journalcontentsearchFormData("layoutId"))
-			<!-- PortletId -->
-			@helper.inputText(journalcontentsearchFormData("portletId"))
-			<!-- ArticleId -->
-			@helper.inputText(journalcontentsearchFormData("articleId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.JournalcontentsearchApplication.all()">Back to Journalcontentsearch List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(journalcontentsearchFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(journalcontentsearchFormData("companyId"))
+				</div>
+				<!-- PrivateLayout -->
+				<div class="form-group">
+				@helper.checkbox(journalcontentsearchFormData("privateLayout"))
+				</div>
+				<!-- LayoutId -->
+				<div class="form-group">
+				@helper.inputText(journalcontentsearchFormData("layoutId"))
+				</div>
+				<!-- PortletId -->
+				<div class="form-group">
+				@helper.inputText(journalcontentsearchFormData("portletId"))
+				</div>
+				<!-- ArticleId -->
+				<div class="form-group">
+				@helper.inputText(journalcontentsearchFormData("articleId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

@@ -4,45 +4,74 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Ddmstructureversion #@ddmstructureversionFormData("structureVersionId").value</legend>
-
+	<div class="container">
 		@form(routes.DdmstructureversionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(ddmstructureversionFormData("structureVersionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(ddmstructureversionFormData("structureVersionId") != "0") {
+				<h1>Edition of Ddmstructureversion #@ddmstructureversionFormData("structureVersionId").value</h1>
+				} else {
+				<h1>Creation of a Ddmstructureversion</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DdmstructureversionApplication.all()">Back to Ddmstructureversions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="structureVersionId" name="structureVersionId" value='@ddmstructureversionFormData("structureVersionId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(ddmstructureversionFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(ddmstructureversionFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(ddmstructureversionFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(ddmstructureversionFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(ddmstructureversionFormData("createDate"))
-			<!-- StructureId -->
-			@helper.inputText(ddmstructureversionFormData("structureId"))
-			<!-- Version -->
-			@helper.inputText(ddmstructureversionFormData("version"))
-			<!-- Name -->
-			@helper.inputText(ddmstructureversionFormData("name"))
-			<!-- Description -->
-			@helper.inputText(ddmstructureversionFormData("description"))
-			<!-- Definition -->
-			@helper.inputText(ddmstructureversionFormData("definition"))
-			<!-- StorageType -->
-			@helper.inputText(ddmstructureversionFormData("storageType"))
-			<!-- Customtype -->
-			@helper.inputText(ddmstructureversionFormData("customtype"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DdmstructureversionApplication.all()">Back to Ddmstructureversion List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(ddmstructureversionFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(ddmstructureversionFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(ddmstructureversionFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(ddmstructureversionFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(ddmstructureversionFormData("createDate"))
+				</div>
+				<!-- StructureId -->
+				<div class="form-group">
+				@helper.inputText(ddmstructureversionFormData("structureId"))
+				</div>
+				<!-- Version -->
+				<div class="form-group">
+				@helper.inputText(ddmstructureversionFormData("version"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(ddmstructureversionFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(ddmstructureversionFormData("description"))
+				</div>
+				<!-- Definition -->
+				<div class="form-group">
+				@helper.inputText(ddmstructureversionFormData("definition"))
+				</div>
+				<!-- StorageType -->
+				<div class="form-group">
+				@helper.inputText(ddmstructureversionFormData("storageType"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(ddmstructureversionFormData("customtype"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

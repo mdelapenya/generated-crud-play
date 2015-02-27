@@ -4,69 +4,122 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Mbmessage #@mbmessageFormData("messageId").value</legend>
-
+	<div class="container">
 		@form(routes.MbmessageApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(mbmessageFormData("messageId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(mbmessageFormData("messageId") != "0") {
+				<h1>Edition of Mbmessage #@mbmessageFormData("messageId").value</h1>
+				} else {
+				<h1>Creation of a Mbmessage</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.MbmessageApplication.all()">Back to Mbmessages</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="messageId" name="messageId" value='@mbmessageFormData("messageId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(mbmessageFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(mbmessageFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(mbmessageFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(mbmessageFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(mbmessageFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(mbmessageFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(mbmessageFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(mbmessageFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(mbmessageFormData("classPK"))
-			<!-- CategoryId -->
-			@helper.inputText(mbmessageFormData("categoryId"))
-			<!-- ThreadId -->
-			@helper.inputText(mbmessageFormData("threadId"))
-			<!-- RootMessageId -->
-			@helper.inputText(mbmessageFormData("rootMessageId"))
-			<!-- ParentMessageId -->
-			@helper.inputText(mbmessageFormData("parentMessageId"))
-			<!-- Subject -->
-			@helper.inputText(mbmessageFormData("subject"))
-			<!-- Body -->
-			@helper.inputText(mbmessageFormData("body"))
-			<!-- Format -->
-			@helper.inputText(mbmessageFormData("format"))
-			<!-- Anonymous -->
-			@helper.checkbox(mbmessageFormData("anonymous"))
-			<!-- Priority -->
-			@helper.inputText(mbmessageFormData("priority"))
-			<!-- AllowPingbacks -->
-			@helper.checkbox(mbmessageFormData("allowPingbacks"))
-			<!-- Answer -->
-			@helper.checkbox(mbmessageFormData("answer"))
-			<!-- Status -->
-			@helper.inputText(mbmessageFormData("status"))
-			<!-- StatusByUserId -->
-			@helper.inputText(mbmessageFormData("statusByUserId"))
-			<!-- StatusByUserName -->
-			@helper.inputText(mbmessageFormData("statusByUserName"))
-			<!-- StatusDate -->
-			@helper.inputText(mbmessageFormData("statusDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.MbmessageApplication.all()">Back to Mbmessage List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("classPK"))
+				</div>
+				<!-- CategoryId -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("categoryId"))
+				</div>
+				<!-- ThreadId -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("threadId"))
+				</div>
+				<!-- RootMessageId -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("rootMessageId"))
+				</div>
+				<!-- ParentMessageId -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("parentMessageId"))
+				</div>
+				<!-- Subject -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("subject"))
+				</div>
+				<!-- Body -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("body"))
+				</div>
+				<!-- Format -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("format"))
+				</div>
+				<!-- Anonymous -->
+				<div class="form-group">
+				@helper.checkbox(mbmessageFormData("anonymous"))
+				</div>
+				<!-- Priority -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("priority"))
+				</div>
+				<!-- AllowPingbacks -->
+				<div class="form-group">
+				@helper.checkbox(mbmessageFormData("allowPingbacks"))
+				</div>
+				<!-- Answer -->
+				<div class="form-group">
+				@helper.checkbox(mbmessageFormData("answer"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("status"))
+				</div>
+				<!-- StatusByUserId -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("statusByUserId"))
+				</div>
+				<!-- StatusByUserName -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("statusByUserName"))
+				</div>
+				<!-- StatusDate -->
+				<div class="form-group">
+				@helper.inputText(mbmessageFormData("statusDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

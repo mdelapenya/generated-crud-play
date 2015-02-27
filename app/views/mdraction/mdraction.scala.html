@@ -4,49 +4,82 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Mdraction #@mdractionFormData("actionId").value</legend>
-
+	<div class="container">
 		@form(routes.MdractionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(mdractionFormData("actionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(mdractionFormData("actionId") != "0") {
+				<h1>Edition of Mdraction #@mdractionFormData("actionId").value</h1>
+				} else {
+				<h1>Creation of a Mdraction</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.MdractionApplication.all()">Back to Mdractions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="actionId" name="actionId" value='@mdractionFormData("actionId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(mdractionFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(mdractionFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(mdractionFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(mdractionFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(mdractionFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(mdractionFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(mdractionFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(mdractionFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(mdractionFormData("classPK"))
-			<!-- RuleGroupInstanceId -->
-			@helper.inputText(mdractionFormData("ruleGroupInstanceId"))
-			<!-- Name -->
-			@helper.inputText(mdractionFormData("name"))
-			<!-- Description -->
-			@helper.inputText(mdractionFormData("description"))
-			<!-- Customtype -->
-			@helper.inputText(mdractionFormData("customtype"))
-			<!-- TypeSettings -->
-			@helper.inputText(mdractionFormData("typeSettings"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.MdractionApplication.all()">Back to Mdraction List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("classPK"))
+				</div>
+				<!-- RuleGroupInstanceId -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("ruleGroupInstanceId"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("description"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("customtype"))
+				</div>
+				<!-- TypeSettings -->
+				<div class="form-group">
+				@helper.inputText(mdractionFormData("typeSettings"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

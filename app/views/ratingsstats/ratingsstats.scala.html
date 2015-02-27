@@ -4,31 +4,46 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Ratingsstats #@ratingsstatsFormData("statsId").value</legend>
-
+	<div class="container">
 		@form(routes.RatingsstatsApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(ratingsstatsFormData("statsId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(ratingsstatsFormData("statsId") != "0") {
+				<h1>Edition of Ratingsstats #@ratingsstatsFormData("statsId").value</h1>
+				} else {
+				<h1>Creation of a Ratingsstats</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.RatingsstatsApplication.all()">Back to Ratingsstatss</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="statsId" name="statsId" value='@ratingsstatsFormData("statsId").value' />
 
-			<!-- ClassNameId -->
-			@helper.inputText(ratingsstatsFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(ratingsstatsFormData("classPK"))
-			<!-- TotalEntries -->
-			@helper.inputText(ratingsstatsFormData("totalEntries"))
-			<!-- TotalScore -->
-			@helper.inputText(ratingsstatsFormData("totalScore"))
-			<!-- AverageScore -->
-			@helper.inputText(ratingsstatsFormData("averageScore"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.RatingsstatsApplication.all()">Back to Ratingsstats List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(ratingsstatsFormData("classNameId"))
 				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(ratingsstatsFormData("classPK"))
+				</div>
+				<!-- TotalEntries -->
+				<div class="form-group">
+				@helper.inputText(ratingsstatsFormData("totalEntries"))
+				</div>
+				<!-- TotalScore -->
+				<div class="form-group">
+				@helper.inputText(ratingsstatsFormData("totalScore"))
+				</div>
+				<!-- AverageScore -->
+				<div class="form-group">
+				@helper.inputText(ratingsstatsFormData("averageScore"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

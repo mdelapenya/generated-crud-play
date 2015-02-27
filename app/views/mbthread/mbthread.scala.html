@@ -4,61 +4,106 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Mbthread #@mbthreadFormData("threadId").value</legend>
-
+	<div class="container">
 		@form(routes.MbthreadApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(mbthreadFormData("threadId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(mbthreadFormData("threadId") != "0") {
+				<h1>Edition of Mbthread #@mbthreadFormData("threadId").value</h1>
+				} else {
+				<h1>Creation of a Mbthread</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.MbthreadApplication.all()">Back to Mbthreads</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="threadId" name="threadId" value='@mbthreadFormData("threadId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(mbthreadFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(mbthreadFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(mbthreadFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(mbthreadFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(mbthreadFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(mbthreadFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(mbthreadFormData("modifiedDate"))
-			<!-- CategoryId -->
-			@helper.inputText(mbthreadFormData("categoryId"))
-			<!-- RootMessageId -->
-			@helper.inputText(mbthreadFormData("rootMessageId"))
-			<!-- RootMessageUserId -->
-			@helper.inputText(mbthreadFormData("rootMessageUserId"))
-			<!-- MessageCount -->
-			@helper.inputText(mbthreadFormData("messageCount"))
-			<!-- ViewCount -->
-			@helper.inputText(mbthreadFormData("viewCount"))
-			<!-- LastPostByUserId -->
-			@helper.inputText(mbthreadFormData("lastPostByUserId"))
-			<!-- LastPostDate -->
-			@helper.inputText(mbthreadFormData("lastPostDate"))
-			<!-- Priority -->
-			@helper.inputText(mbthreadFormData("priority"))
-			<!-- Question -->
-			@helper.checkbox(mbthreadFormData("question"))
-			<!-- Status -->
-			@helper.inputText(mbthreadFormData("status"))
-			<!-- StatusByUserId -->
-			@helper.inputText(mbthreadFormData("statusByUserId"))
-			<!-- StatusByUserName -->
-			@helper.inputText(mbthreadFormData("statusByUserName"))
-			<!-- StatusDate -->
-			@helper.inputText(mbthreadFormData("statusDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.MbthreadApplication.all()">Back to Mbthread List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("modifiedDate"))
+				</div>
+				<!-- CategoryId -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("categoryId"))
+				</div>
+				<!-- RootMessageId -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("rootMessageId"))
+				</div>
+				<!-- RootMessageUserId -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("rootMessageUserId"))
+				</div>
+				<!-- MessageCount -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("messageCount"))
+				</div>
+				<!-- ViewCount -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("viewCount"))
+				</div>
+				<!-- LastPostByUserId -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("lastPostByUserId"))
+				</div>
+				<!-- LastPostDate -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("lastPostDate"))
+				</div>
+				<!-- Priority -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("priority"))
+				</div>
+				<!-- Question -->
+				<div class="form-group">
+				@helper.checkbox(mbthreadFormData("question"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("status"))
+				</div>
+				<!-- StatusByUserId -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("statusByUserId"))
+				</div>
+				<!-- StatusByUserName -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("statusByUserName"))
+				</div>
+				<!-- StatusDate -->
+				<div class="form-group">
+				@helper.inputText(mbthreadFormData("statusDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

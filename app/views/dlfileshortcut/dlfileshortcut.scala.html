@@ -4,53 +4,90 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Dlfileshortcut #@dlfileshortcutFormData("fileShortcutId").value</legend>
-
+	<div class="container">
 		@form(routes.DlfileshortcutApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(dlfileshortcutFormData("fileShortcutId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(dlfileshortcutFormData("fileShortcutId") != "0") {
+				<h1>Edition of Dlfileshortcut #@dlfileshortcutFormData("fileShortcutId").value</h1>
+				} else {
+				<h1>Creation of a Dlfileshortcut</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DlfileshortcutApplication.all()">Back to Dlfileshortcuts</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="fileShortcutId" name="fileShortcutId" value='@dlfileshortcutFormData("fileShortcutId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(dlfileshortcutFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(dlfileshortcutFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(dlfileshortcutFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(dlfileshortcutFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(dlfileshortcutFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(dlfileshortcutFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(dlfileshortcutFormData("modifiedDate"))
-			<!-- RepositoryId -->
-			@helper.inputText(dlfileshortcutFormData("repositoryId"))
-			<!-- FolderId -->
-			@helper.inputText(dlfileshortcutFormData("folderId"))
-			<!-- ToFileEntryId -->
-			@helper.inputText(dlfileshortcutFormData("toFileEntryId"))
-			<!-- TreePath -->
-			@helper.inputText(dlfileshortcutFormData("treePath"))
-			<!-- Active -->
-			@helper.checkbox(dlfileshortcutFormData("active"))
-			<!-- Status -->
-			@helper.inputText(dlfileshortcutFormData("status"))
-			<!-- StatusByUserId -->
-			@helper.inputText(dlfileshortcutFormData("statusByUserId"))
-			<!-- StatusByUserName -->
-			@helper.inputText(dlfileshortcutFormData("statusByUserName"))
-			<!-- StatusDate -->
-			@helper.inputText(dlfileshortcutFormData("statusDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DlfileshortcutApplication.all()">Back to Dlfileshortcut List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("modifiedDate"))
+				</div>
+				<!-- RepositoryId -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("repositoryId"))
+				</div>
+				<!-- FolderId -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("folderId"))
+				</div>
+				<!-- ToFileEntryId -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("toFileEntryId"))
+				</div>
+				<!-- TreePath -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("treePath"))
+				</div>
+				<!-- Active -->
+				<div class="form-group">
+				@helper.checkbox(dlfileshortcutFormData("active"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("status"))
+				</div>
+				<!-- StatusByUserId -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("statusByUserId"))
+				</div>
+				<!-- StatusByUserName -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("statusByUserName"))
+				</div>
+				<!-- StatusDate -->
+				<div class="form-group">
+				@helper.inputText(dlfileshortcutFormData("statusDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

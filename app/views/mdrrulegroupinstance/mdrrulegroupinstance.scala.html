@@ -4,43 +4,70 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Mdrrulegroupinstance #@mdrrulegroupinstanceFormData("ruleGroupInstanceId").value</legend>
-
+	<div class="container">
 		@form(routes.MdrrulegroupinstanceApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(mdrrulegroupinstanceFormData("ruleGroupInstanceId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(mdrrulegroupinstanceFormData("ruleGroupInstanceId") != "0") {
+				<h1>Edition of Mdrrulegroupinstance #@mdrrulegroupinstanceFormData("ruleGroupInstanceId").value</h1>
+				} else {
+				<h1>Creation of a Mdrrulegroupinstance</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.MdrrulegroupinstanceApplication.all()">Back to Mdrrulegroupinstances</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="ruleGroupInstanceId" name="ruleGroupInstanceId" value='@mdrrulegroupinstanceFormData("ruleGroupInstanceId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(mdrrulegroupinstanceFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(mdrrulegroupinstanceFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(mdrrulegroupinstanceFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(mdrrulegroupinstanceFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(mdrrulegroupinstanceFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(mdrrulegroupinstanceFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(mdrrulegroupinstanceFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(mdrrulegroupinstanceFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(mdrrulegroupinstanceFormData("classPK"))
-			<!-- RuleGroupId -->
-			@helper.inputText(mdrrulegroupinstanceFormData("ruleGroupId"))
-			<!-- Priority -->
-			@helper.inputText(mdrrulegroupinstanceFormData("priority"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.MdrrulegroupinstanceApplication.all()">Back to Mdrrulegroupinstance List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(mdrrulegroupinstanceFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(mdrrulegroupinstanceFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(mdrrulegroupinstanceFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(mdrrulegroupinstanceFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(mdrrulegroupinstanceFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(mdrrulegroupinstanceFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(mdrrulegroupinstanceFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(mdrrulegroupinstanceFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(mdrrulegroupinstanceFormData("classPK"))
+				</div>
+				<!-- RuleGroupId -->
+				<div class="form-group">
+				@helper.inputText(mdrrulegroupinstanceFormData("ruleGroupId"))
+				</div>
+				<!-- Priority -->
+				<div class="form-group">
+				@helper.inputText(mdrrulegroupinstanceFormData("priority"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

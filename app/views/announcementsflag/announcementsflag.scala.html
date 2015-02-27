@@ -4,29 +4,42 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Announcementsflag #@announcementsflagFormData("flagId").value</legend>
-
+	<div class="container">
 		@form(routes.AnnouncementsflagApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(announcementsflagFormData("flagId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(announcementsflagFormData("flagId") != "0") {
+				<h1>Edition of Announcementsflag #@announcementsflagFormData("flagId").value</h1>
+				} else {
+				<h1>Creation of a Announcementsflag</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.AnnouncementsflagApplication.all()">Back to Announcementsflags</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="flagId" name="flagId" value='@announcementsflagFormData("flagId").value' />
 
-			<!-- UserId -->
-			@helper.inputText(announcementsflagFormData("userId"))
-			<!-- CreateDate -->
-			@helper.inputText(announcementsflagFormData("createDate"))
-			<!-- EntryId -->
-			@helper.inputText(announcementsflagFormData("entryId"))
-			<!-- Value -->
-			@helper.inputText(announcementsflagFormData("value"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.AnnouncementsflagApplication.all()">Back to Announcementsflag List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(announcementsflagFormData("userId"))
 				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(announcementsflagFormData("createDate"))
+				</div>
+				<!-- EntryId -->
+				<div class="form-group">
+				@helper.inputText(announcementsflagFormData("entryId"))
+				</div>
+				<!-- Value -->
+				<div class="form-group">
+				@helper.inputText(announcementsflagFormData("value"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

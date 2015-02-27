@@ -4,37 +4,58 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Usertracker #@usertrackerFormData("userTrackerId").value</legend>
-
+	<div class="container">
 		@form(routes.UsertrackerApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(usertrackerFormData("userTrackerId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(usertrackerFormData("userTrackerId") != "0") {
+				<h1>Edition of Usertracker #@usertrackerFormData("userTrackerId").value</h1>
+				} else {
+				<h1>Creation of a Usertracker</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.UsertrackerApplication.all()">Back to Usertrackers</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="userTrackerId" name="userTrackerId" value='@usertrackerFormData("userTrackerId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(usertrackerFormData("mvccVersion"))
-			<!-- CompanyId -->
-			@helper.inputText(usertrackerFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(usertrackerFormData("userId"))
-			<!-- ModifiedDate -->
-			@helper.inputText(usertrackerFormData("modifiedDate"))
-			<!-- SessionId -->
-			@helper.inputText(usertrackerFormData("sessionId"))
-			<!-- RemoteAddr -->
-			@helper.inputText(usertrackerFormData("remoteAddr"))
-			<!-- RemoteHost -->
-			@helper.inputText(usertrackerFormData("remoteHost"))
-			<!-- UserAgent -->
-			@helper.inputText(usertrackerFormData("userAgent"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.UsertrackerApplication.all()">Back to Usertracker List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(usertrackerFormData("mvccVersion"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(usertrackerFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(usertrackerFormData("userId"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(usertrackerFormData("modifiedDate"))
+				</div>
+				<!-- SessionId -->
+				<div class="form-group">
+				@helper.inputText(usertrackerFormData("sessionId"))
+				</div>
+				<!-- RemoteAddr -->
+				<div class="form-group">
+				@helper.inputText(usertrackerFormData("remoteAddr"))
+				</div>
+				<!-- RemoteHost -->
+				<div class="form-group">
+				@helper.inputText(usertrackerFormData("remoteHost"))
+				</div>
+				<!-- UserAgent -->
+				<div class="form-group">
+				@helper.inputText(usertrackerFormData("userAgent"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

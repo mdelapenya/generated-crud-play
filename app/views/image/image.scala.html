@@ -4,33 +4,50 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Image #@imageFormData("imageId").value</legend>
-
+	<div class="container">
 		@form(routes.ImageApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(imageFormData("imageId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(imageFormData("imageId") != "0") {
+				<h1>Edition of Image #@imageFormData("imageId").value</h1>
+				} else {
+				<h1>Creation of a Image</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ImageApplication.all()">Back to Images</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="imageId" name="imageId" value='@imageFormData("imageId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(imageFormData("mvccVersion"))
-			<!-- ModifiedDate -->
-			@helper.inputText(imageFormData("modifiedDate"))
-			<!-- Customtype -->
-			@helper.inputText(imageFormData("customtype"))
-			<!-- Height -->
-			@helper.inputText(imageFormData("height"))
-			<!-- Width -->
-			@helper.inputText(imageFormData("width"))
-			<!-- Size -->
-			@helper.inputText(imageFormData("size"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ImageApplication.all()">Back to Image List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(imageFormData("mvccVersion"))
 				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(imageFormData("modifiedDate"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(imageFormData("customtype"))
+				</div>
+				<!-- Height -->
+				<div class="form-group">
+				@helper.inputText(imageFormData("height"))
+				</div>
+				<!-- Width -->
+				<div class="form-group">
+				@helper.inputText(imageFormData("width"))
+				</div>
+				<!-- Size -->
+				<div class="form-group">
+				@helper.inputText(imageFormData("size"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

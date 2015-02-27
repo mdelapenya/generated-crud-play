@@ -4,41 +4,66 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Socialactivityset #@socialactivitysetFormData("activitySetId").value</legend>
-
+	<div class="container">
 		@form(routes.SocialactivitysetApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(socialactivitysetFormData("activitySetId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(socialactivitysetFormData("activitySetId") != "0") {
+				<h1>Edition of Socialactivityset #@socialactivitysetFormData("activitySetId").value</h1>
+				} else {
+				<h1>Creation of a Socialactivityset</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.SocialactivitysetApplication.all()">Back to Socialactivitysets</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="activitySetId" name="activitySetId" value='@socialactivitysetFormData("activitySetId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(socialactivitysetFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(socialactivitysetFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(socialactivitysetFormData("userId"))
-			<!-- CreateDate -->
-			@helper.inputText(socialactivitysetFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(socialactivitysetFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(socialactivitysetFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(socialactivitysetFormData("classPK"))
-			<!-- Customtype -->
-			@helper.inputText(socialactivitysetFormData("customtype"))
-			<!-- ExtraData -->
-			@helper.inputText(socialactivitysetFormData("extraData"))
-			<!-- ActivityCount -->
-			@helper.inputText(socialactivitysetFormData("activityCount"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.SocialactivitysetApplication.all()">Back to Socialactivityset List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysetFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysetFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysetFormData("userId"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysetFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysetFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysetFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysetFormData("classPK"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysetFormData("customtype"))
+				</div>
+				<!-- ExtraData -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysetFormData("extraData"))
+				</div>
+				<!-- ActivityCount -->
+				<div class="form-group">
+				@helper.inputText(socialactivitysetFormData("activityCount"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

@@ -4,121 +4,226 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Shoppingorder #@shoppingorderFormData("orderId").value</legend>
-
+	<div class="container">
 		@form(routes.ShoppingorderApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(shoppingorderFormData("orderId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(shoppingorderFormData("orderId") != "0") {
+				<h1>Edition of Shoppingorder #@shoppingorderFormData("orderId").value</h1>
+				} else {
+				<h1>Creation of a Shoppingorder</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ShoppingorderApplication.all()">Back to Shoppingorders</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="orderId" name="orderId" value='@shoppingorderFormData("orderId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(shoppingorderFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(shoppingorderFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(shoppingorderFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(shoppingorderFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(shoppingorderFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(shoppingorderFormData("modifiedDate"))
-			<!-- Number -->
-			@helper.inputText(shoppingorderFormData("number"))
-			<!-- Tax -->
-			@helper.inputText(shoppingorderFormData("tax"))
-			<!-- Shipping -->
-			@helper.inputText(shoppingorderFormData("shipping"))
-			<!-- AltShipping -->
-			@helper.inputText(shoppingorderFormData("altShipping"))
-			<!-- RequiresShipping -->
-			@helper.checkbox(shoppingorderFormData("requiresShipping"))
-			<!-- Insure -->
-			@helper.checkbox(shoppingorderFormData("insure"))
-			<!-- Insurance -->
-			@helper.inputText(shoppingorderFormData("insurance"))
-			<!-- CouponCodes -->
-			@helper.inputText(shoppingorderFormData("couponCodes"))
-			<!-- CouponDiscount -->
-			@helper.inputText(shoppingorderFormData("couponDiscount"))
-			<!-- BillingFirstName -->
-			@helper.inputText(shoppingorderFormData("billingFirstName"))
-			<!-- BillingLastName -->
-			@helper.inputText(shoppingorderFormData("billingLastName"))
-			<!-- BillingEmailAddress -->
-			@helper.inputText(shoppingorderFormData("billingEmailAddress"))
-			<!-- BillingCompany -->
-			@helper.inputText(shoppingorderFormData("billingCompany"))
-			<!-- BillingStreet -->
-			@helper.inputText(shoppingorderFormData("billingStreet"))
-			<!-- BillingCity -->
-			@helper.inputText(shoppingorderFormData("billingCity"))
-			<!-- BillingState -->
-			@helper.inputText(shoppingorderFormData("billingState"))
-			<!-- BillingZip -->
-			@helper.inputText(shoppingorderFormData("billingZip"))
-			<!-- BillingCountry -->
-			@helper.inputText(shoppingorderFormData("billingCountry"))
-			<!-- BillingPhone -->
-			@helper.inputText(shoppingorderFormData("billingPhone"))
-			<!-- ShipToBilling -->
-			@helper.checkbox(shoppingorderFormData("shipToBilling"))
-			<!-- ShippingFirstName -->
-			@helper.inputText(shoppingorderFormData("shippingFirstName"))
-			<!-- ShippingLastName -->
-			@helper.inputText(shoppingorderFormData("shippingLastName"))
-			<!-- ShippingEmailAddress -->
-			@helper.inputText(shoppingorderFormData("shippingEmailAddress"))
-			<!-- ShippingCompany -->
-			@helper.inputText(shoppingorderFormData("shippingCompany"))
-			<!-- ShippingStreet -->
-			@helper.inputText(shoppingorderFormData("shippingStreet"))
-			<!-- ShippingCity -->
-			@helper.inputText(shoppingorderFormData("shippingCity"))
-			<!-- ShippingState -->
-			@helper.inputText(shoppingorderFormData("shippingState"))
-			<!-- ShippingZip -->
-			@helper.inputText(shoppingorderFormData("shippingZip"))
-			<!-- ShippingCountry -->
-			@helper.inputText(shoppingorderFormData("shippingCountry"))
-			<!-- ShippingPhone -->
-			@helper.inputText(shoppingorderFormData("shippingPhone"))
-			<!-- CcName -->
-			@helper.inputText(shoppingorderFormData("ccName"))
-			<!-- CcType -->
-			@helper.inputText(shoppingorderFormData("ccType"))
-			<!-- CcNumber -->
-			@helper.inputText(shoppingorderFormData("ccNumber"))
-			<!-- CcExpMonth -->
-			@helper.inputText(shoppingorderFormData("ccExpMonth"))
-			<!-- CcExpYear -->
-			@helper.inputText(shoppingorderFormData("ccExpYear"))
-			<!-- CcVerNumber -->
-			@helper.inputText(shoppingorderFormData("ccVerNumber"))
-			<!-- Comments -->
-			@helper.inputText(shoppingorderFormData("comments"))
-			<!-- PpTxnId -->
-			@helper.inputText(shoppingorderFormData("ppTxnId"))
-			<!-- PpPaymentStatus -->
-			@helper.inputText(shoppingorderFormData("ppPaymentStatus"))
-			<!-- PpPaymentGross -->
-			@helper.inputText(shoppingorderFormData("ppPaymentGross"))
-			<!-- PpReceiverEmail -->
-			@helper.inputText(shoppingorderFormData("ppReceiverEmail"))
-			<!-- PpPayerEmail -->
-			@helper.inputText(shoppingorderFormData("ppPayerEmail"))
-			<!-- SendOrderEmail -->
-			@helper.checkbox(shoppingorderFormData("sendOrderEmail"))
-			<!-- SendShippingEmail -->
-			@helper.checkbox(shoppingorderFormData("sendShippingEmail"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ShoppingorderApplication.all()">Back to Shoppingorder List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("modifiedDate"))
+				</div>
+				<!-- Number -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("number"))
+				</div>
+				<!-- Tax -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("tax"))
+				</div>
+				<!-- Shipping -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("shipping"))
+				</div>
+				<!-- AltShipping -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("altShipping"))
+				</div>
+				<!-- RequiresShipping -->
+				<div class="form-group">
+				@helper.checkbox(shoppingorderFormData("requiresShipping"))
+				</div>
+				<!-- Insure -->
+				<div class="form-group">
+				@helper.checkbox(shoppingorderFormData("insure"))
+				</div>
+				<!-- Insurance -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("insurance"))
+				</div>
+				<!-- CouponCodes -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("couponCodes"))
+				</div>
+				<!-- CouponDiscount -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("couponDiscount"))
+				</div>
+				<!-- BillingFirstName -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("billingFirstName"))
+				</div>
+				<!-- BillingLastName -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("billingLastName"))
+				</div>
+				<!-- BillingEmailAddress -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("billingEmailAddress"))
+				</div>
+				<!-- BillingCompany -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("billingCompany"))
+				</div>
+				<!-- BillingStreet -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("billingStreet"))
+				</div>
+				<!-- BillingCity -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("billingCity"))
+				</div>
+				<!-- BillingState -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("billingState"))
+				</div>
+				<!-- BillingZip -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("billingZip"))
+				</div>
+				<!-- BillingCountry -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("billingCountry"))
+				</div>
+				<!-- BillingPhone -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("billingPhone"))
+				</div>
+				<!-- ShipToBilling -->
+				<div class="form-group">
+				@helper.checkbox(shoppingorderFormData("shipToBilling"))
+				</div>
+				<!-- ShippingFirstName -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("shippingFirstName"))
+				</div>
+				<!-- ShippingLastName -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("shippingLastName"))
+				</div>
+				<!-- ShippingEmailAddress -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("shippingEmailAddress"))
+				</div>
+				<!-- ShippingCompany -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("shippingCompany"))
+				</div>
+				<!-- ShippingStreet -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("shippingStreet"))
+				</div>
+				<!-- ShippingCity -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("shippingCity"))
+				</div>
+				<!-- ShippingState -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("shippingState"))
+				</div>
+				<!-- ShippingZip -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("shippingZip"))
+				</div>
+				<!-- ShippingCountry -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("shippingCountry"))
+				</div>
+				<!-- ShippingPhone -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("shippingPhone"))
+				</div>
+				<!-- CcName -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("ccName"))
+				</div>
+				<!-- CcType -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("ccType"))
+				</div>
+				<!-- CcNumber -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("ccNumber"))
+				</div>
+				<!-- CcExpMonth -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("ccExpMonth"))
+				</div>
+				<!-- CcExpYear -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("ccExpYear"))
+				</div>
+				<!-- CcVerNumber -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("ccVerNumber"))
+				</div>
+				<!-- Comments -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("comments"))
+				</div>
+				<!-- PpTxnId -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("ppTxnId"))
+				</div>
+				<!-- PpPaymentStatus -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("ppPaymentStatus"))
+				</div>
+				<!-- PpPaymentGross -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("ppPaymentGross"))
+				</div>
+				<!-- PpReceiverEmail -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("ppReceiverEmail"))
+				</div>
+				<!-- PpPayerEmail -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderFormData("ppPayerEmail"))
+				</div>
+				<!-- SendOrderEmail -->
+				<div class="form-group">
+				@helper.checkbox(shoppingorderFormData("sendOrderEmail"))
+				</div>
+				<!-- SendShippingEmail -->
+				<div class="form-group">
+				@helper.checkbox(shoppingorderFormData("sendShippingEmail"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

@@ -4,45 +4,74 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Emailaddress #@emailaddressFormData("emailAddressId").value</legend>
-
+	<div class="container">
 		@form(routes.EmailaddressApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(emailaddressFormData("emailAddressId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(emailaddressFormData("emailAddressId") != "0") {
+				<h1>Edition of Emailaddress #@emailaddressFormData("emailAddressId").value</h1>
+				} else {
+				<h1>Creation of a Emailaddress</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.EmailaddressApplication.all()">Back to Emailaddresss</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="emailAddressId" name="emailAddressId" value='@emailaddressFormData("emailAddressId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(emailaddressFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(emailaddressFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(emailaddressFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(emailaddressFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(emailaddressFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(emailaddressFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(emailaddressFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(emailaddressFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(emailaddressFormData("classPK"))
-			<!-- Address -->
-			@helper.inputText(emailaddressFormData("address"))
-			<!-- TypeId -->
-			@helper.inputText(emailaddressFormData("typeId"))
-			<!-- Customprimary -->
-			@helper.checkbox(emailaddressFormData("customprimary"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.EmailaddressApplication.all()">Back to Emailaddress List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(emailaddressFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(emailaddressFormData("uuid"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(emailaddressFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(emailaddressFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(emailaddressFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(emailaddressFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(emailaddressFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(emailaddressFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(emailaddressFormData("classPK"))
+				</div>
+				<!-- Address -->
+				<div class="form-group">
+				@helper.inputText(emailaddressFormData("address"))
+				</div>
+				<!-- TypeId -->
+				<div class="form-group">
+				@helper.inputText(emailaddressFormData("typeId"))
+				</div>
+				<!-- Customprimary -->
+				<div class="form-group">
+				@helper.checkbox(emailaddressFormData("customprimary"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

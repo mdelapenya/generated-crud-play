@@ -4,49 +4,82 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Assetcategory #@assetcategoryFormData("categoryId").value</legend>
-
+	<div class="container">
 		@form(routes.AssetcategoryApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(assetcategoryFormData("categoryId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(assetcategoryFormData("categoryId") != "0") {
+				<h1>Edition of Assetcategory #@assetcategoryFormData("categoryId").value</h1>
+				} else {
+				<h1>Creation of a Assetcategory</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.AssetcategoryApplication.all()">Back to Assetcategorys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="categoryId" name="categoryId" value='@assetcategoryFormData("categoryId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(assetcategoryFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(assetcategoryFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(assetcategoryFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(assetcategoryFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(assetcategoryFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(assetcategoryFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(assetcategoryFormData("modifiedDate"))
-			<!-- ParentCategoryId -->
-			@helper.inputText(assetcategoryFormData("parentCategoryId"))
-			<!-- LeftCategoryId -->
-			@helper.inputText(assetcategoryFormData("leftCategoryId"))
-			<!-- RightCategoryId -->
-			@helper.inputText(assetcategoryFormData("rightCategoryId"))
-			<!-- Name -->
-			@helper.inputText(assetcategoryFormData("name"))
-			<!-- Title -->
-			@helper.inputText(assetcategoryFormData("title"))
-			<!-- Description -->
-			@helper.inputText(assetcategoryFormData("description"))
-			<!-- VocabularyId -->
-			@helper.inputText(assetcategoryFormData("vocabularyId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.AssetcategoryApplication.all()">Back to Assetcategory List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("modifiedDate"))
+				</div>
+				<!-- ParentCategoryId -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("parentCategoryId"))
+				</div>
+				<!-- LeftCategoryId -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("leftCategoryId"))
+				</div>
+				<!-- RightCategoryId -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("rightCategoryId"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("name"))
+				</div>
+				<!-- Title -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("title"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("description"))
+				</div>
+				<!-- VocabularyId -->
+				<div class="form-group">
+				@helper.inputText(assetcategoryFormData("vocabularyId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

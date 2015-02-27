@@ -4,45 +4,74 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Website #@websiteFormData("websiteId").value</legend>
-
+	<div class="container">
 		@form(routes.WebsiteApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(websiteFormData("websiteId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(websiteFormData("websiteId") != "0") {
+				<h1>Edition of Website #@websiteFormData("websiteId").value</h1>
+				} else {
+				<h1>Creation of a Website</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.WebsiteApplication.all()">Back to Websites</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="websiteId" name="websiteId" value='@websiteFormData("websiteId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(websiteFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(websiteFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(websiteFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(websiteFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(websiteFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(websiteFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(websiteFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(websiteFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(websiteFormData("classPK"))
-			<!-- Url -->
-			@helper.inputText(websiteFormData("url"))
-			<!-- TypeId -->
-			@helper.inputText(websiteFormData("typeId"))
-			<!-- Customprimary -->
-			@helper.checkbox(websiteFormData("customprimary"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.WebsiteApplication.all()">Back to Website List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(websiteFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(websiteFormData("uuid"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(websiteFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(websiteFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(websiteFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(websiteFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(websiteFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(websiteFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(websiteFormData("classPK"))
+				</div>
+				<!-- Url -->
+				<div class="form-group">
+				@helper.inputText(websiteFormData("url"))
+				</div>
+				<!-- TypeId -->
+				<div class="form-group">
+				@helper.inputText(websiteFormData("typeId"))
+				</div>
+				<!-- Customprimary -->
+				<div class="form-group">
+				@helper.checkbox(websiteFormData("customprimary"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

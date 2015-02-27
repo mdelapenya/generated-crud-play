@@ -4,31 +4,46 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Sclicense #@sclicenseFormData("licenseId").value</legend>
-
+	<div class="container">
 		@form(routes.SclicenseApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(sclicenseFormData("licenseId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(sclicenseFormData("licenseId") != "0") {
+				<h1>Edition of Sclicense #@sclicenseFormData("licenseId").value</h1>
+				} else {
+				<h1>Creation of a Sclicense</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.SclicenseApplication.all()">Back to Sclicenses</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="licenseId" name="licenseId" value='@sclicenseFormData("licenseId").value' />
 
-			<!-- Name -->
-			@helper.inputText(sclicenseFormData("name"))
-			<!-- Url -->
-			@helper.inputText(sclicenseFormData("url"))
-			<!-- OpenSource -->
-			@helper.checkbox(sclicenseFormData("openSource"))
-			<!-- Active -->
-			@helper.checkbox(sclicenseFormData("active"))
-			<!-- Recommended -->
-			@helper.checkbox(sclicenseFormData("recommended"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.SclicenseApplication.all()">Back to Sclicense List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(sclicenseFormData("name"))
 				</div>
+				<!-- Url -->
+				<div class="form-group">
+				@helper.inputText(sclicenseFormData("url"))
+				</div>
+				<!-- OpenSource -->
+				<div class="form-group">
+				@helper.checkbox(sclicenseFormData("openSource"))
+				</div>
+				<!-- Active -->
+				<div class="form-group">
+				@helper.checkbox(sclicenseFormData("active"))
+				</div>
+				<!-- Recommended -->
+				<div class="form-group">
+				@helper.checkbox(sclicenseFormData("recommended"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

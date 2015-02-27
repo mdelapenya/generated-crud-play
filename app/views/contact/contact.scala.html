@@ -4,87 +4,158 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Contact #@contactFormData("contactId").value</legend>
-
+	<div class="container">
 		@form(routes.ContactApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(contactFormData("contactId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(contactFormData("contactId") != "0") {
+				<h1>Edition of Contact #@contactFormData("contactId").value</h1>
+				} else {
+				<h1>Creation of a Contact</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ContactApplication.all()">Back to Contacts</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="contactId" name="contactId" value='@contactFormData("contactId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(contactFormData("mvccVersion"))
-			<!-- CompanyId -->
-			@helper.inputText(contactFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(contactFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(contactFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(contactFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(contactFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(contactFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(contactFormData("classPK"))
-			<!-- AccountId -->
-			@helper.inputText(contactFormData("accountId"))
-			<!-- ParentContactId -->
-			@helper.inputText(contactFormData("parentContactId"))
-			<!-- EmailAddress -->
-			@helper.inputText(contactFormData("emailAddress"))
-			<!-- FirstName -->
-			@helper.inputText(contactFormData("firstName"))
-			<!-- MiddleName -->
-			@helper.inputText(contactFormData("middleName"))
-			<!-- LastName -->
-			@helper.inputText(contactFormData("lastName"))
-			<!-- PrefixId -->
-			@helper.inputText(contactFormData("prefixId"))
-			<!-- SuffixId -->
-			@helper.inputText(contactFormData("suffixId"))
-			<!-- Male -->
-			@helper.checkbox(contactFormData("male"))
-			<!-- Birthday -->
-			@helper.inputText(contactFormData("birthday"))
-			<!-- SmsSn -->
-			@helper.inputText(contactFormData("smsSn"))
-			<!-- AimSn -->
-			@helper.inputText(contactFormData("aimSn"))
-			<!-- FacebookSn -->
-			@helper.inputText(contactFormData("facebookSn"))
-			<!-- IcqSn -->
-			@helper.inputText(contactFormData("icqSn"))
-			<!-- JabberSn -->
-			@helper.inputText(contactFormData("jabberSn"))
-			<!-- MsnSn -->
-			@helper.inputText(contactFormData("msnSn"))
-			<!-- MySpaceSn -->
-			@helper.inputText(contactFormData("mySpaceSn"))
-			<!-- SkypeSn -->
-			@helper.inputText(contactFormData("skypeSn"))
-			<!-- TwitterSn -->
-			@helper.inputText(contactFormData("twitterSn"))
-			<!-- YmSn -->
-			@helper.inputText(contactFormData("ymSn"))
-			<!-- EmployeeStatusId -->
-			@helper.inputText(contactFormData("employeeStatusId"))
-			<!-- EmployeeNumber -->
-			@helper.inputText(contactFormData("employeeNumber"))
-			<!-- JobTitle -->
-			@helper.inputText(contactFormData("jobTitle"))
-			<!-- JobClass -->
-			@helper.inputText(contactFormData("jobClass"))
-			<!-- HoursOfOperation -->
-			@helper.inputText(contactFormData("hoursOfOperation"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ContactApplication.all()">Back to Contact List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("mvccVersion"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("classPK"))
+				</div>
+				<!-- AccountId -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("accountId"))
+				</div>
+				<!-- ParentContactId -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("parentContactId"))
+				</div>
+				<!-- EmailAddress -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("emailAddress"))
+				</div>
+				<!-- FirstName -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("firstName"))
+				</div>
+				<!-- MiddleName -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("middleName"))
+				</div>
+				<!-- LastName -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("lastName"))
+				</div>
+				<!-- PrefixId -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("prefixId"))
+				</div>
+				<!-- SuffixId -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("suffixId"))
+				</div>
+				<!-- Male -->
+				<div class="form-group">
+				@helper.checkbox(contactFormData("male"))
+				</div>
+				<!-- Birthday -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("birthday"))
+				</div>
+				<!-- SmsSn -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("smsSn"))
+				</div>
+				<!-- AimSn -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("aimSn"))
+				</div>
+				<!-- FacebookSn -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("facebookSn"))
+				</div>
+				<!-- IcqSn -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("icqSn"))
+				</div>
+				<!-- JabberSn -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("jabberSn"))
+				</div>
+				<!-- MsnSn -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("msnSn"))
+				</div>
+				<!-- MySpaceSn -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("mySpaceSn"))
+				</div>
+				<!-- SkypeSn -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("skypeSn"))
+				</div>
+				<!-- TwitterSn -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("twitterSn"))
+				</div>
+				<!-- YmSn -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("ymSn"))
+				</div>
+				<!-- EmployeeStatusId -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("employeeStatusId"))
+				</div>
+				<!-- EmployeeNumber -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("employeeNumber"))
+				</div>
+				<!-- JobTitle -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("jobTitle"))
+				</div>
+				<!-- JobClass -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("jobClass"))
+				</div>
+				<!-- HoursOfOperation -->
+				<div class="form-group">
+				@helper.inputText(contactFormData("hoursOfOperation"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

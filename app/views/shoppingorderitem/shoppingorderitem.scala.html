@@ -4,39 +4,62 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Shoppingorderitem #@shoppingorderitemFormData("orderItemId").value</legend>
-
+	<div class="container">
 		@form(routes.ShoppingorderitemApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(shoppingorderitemFormData("orderItemId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(shoppingorderitemFormData("orderItemId") != "0") {
+				<h1>Edition of Shoppingorderitem #@shoppingorderitemFormData("orderItemId").value</h1>
+				} else {
+				<h1>Creation of a Shoppingorderitem</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ShoppingorderitemApplication.all()">Back to Shoppingorderitems</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="orderItemId" name="orderItemId" value='@shoppingorderitemFormData("orderItemId").value' />
 
-			<!-- OrderId -->
-			@helper.inputText(shoppingorderitemFormData("orderId"))
-			<!-- ItemId -->
-			@helper.inputText(shoppingorderitemFormData("itemId"))
-			<!-- Sku -->
-			@helper.inputText(shoppingorderitemFormData("sku"))
-			<!-- Name -->
-			@helper.inputText(shoppingorderitemFormData("name"))
-			<!-- Description -->
-			@helper.inputText(shoppingorderitemFormData("description"))
-			<!-- Properties -->
-			@helper.inputText(shoppingorderitemFormData("properties"))
-			<!-- Price -->
-			@helper.inputText(shoppingorderitemFormData("price"))
-			<!-- Quantity -->
-			@helper.inputText(shoppingorderitemFormData("quantity"))
-			<!-- ShippedDate -->
-			@helper.inputText(shoppingorderitemFormData("shippedDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ShoppingorderitemApplication.all()">Back to Shoppingorderitem List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- OrderId -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderitemFormData("orderId"))
 				</div>
+				<!-- ItemId -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderitemFormData("itemId"))
+				</div>
+				<!-- Sku -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderitemFormData("sku"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderitemFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderitemFormData("description"))
+				</div>
+				<!-- Properties -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderitemFormData("properties"))
+				</div>
+				<!-- Price -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderitemFormData("price"))
+				</div>
+				<!-- Quantity -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderitemFormData("quantity"))
+				</div>
+				<!-- ShippedDate -->
+				<div class="form-group">
+				@helper.inputText(shoppingorderitemFormData("shippedDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

@@ -4,35 +4,54 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Webdavprops #@webdavpropsFormData("webDavPropsId").value</legend>
-
+	<div class="container">
 		@form(routes.WebdavpropsApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(webdavpropsFormData("webDavPropsId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(webdavpropsFormData("webDavPropsId") != "0") {
+				<h1>Edition of Webdavprops #@webdavpropsFormData("webDavPropsId").value</h1>
+				} else {
+				<h1>Creation of a Webdavprops</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.WebdavpropsApplication.all()">Back to Webdavpropss</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="webDavPropsId" name="webDavPropsId" value='@webdavpropsFormData("webDavPropsId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(webdavpropsFormData("mvccVersion"))
-			<!-- CompanyId -->
-			@helper.inputText(webdavpropsFormData("companyId"))
-			<!-- CreateDate -->
-			@helper.inputText(webdavpropsFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(webdavpropsFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(webdavpropsFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(webdavpropsFormData("classPK"))
-			<!-- Props -->
-			@helper.inputText(webdavpropsFormData("props"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.WebdavpropsApplication.all()">Back to Webdavprops List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(webdavpropsFormData("mvccVersion"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(webdavpropsFormData("companyId"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(webdavpropsFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(webdavpropsFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(webdavpropsFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(webdavpropsFormData("classPK"))
+				</div>
+				<!-- Props -->
+				<div class="form-group">
+				@helper.inputText(webdavpropsFormData("props"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

@@ -4,39 +4,62 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Shoppingcategory #@shoppingcategoryFormData("categoryId").value</legend>
-
+	<div class="container">
 		@form(routes.ShoppingcategoryApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(shoppingcategoryFormData("categoryId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(shoppingcategoryFormData("categoryId") != "0") {
+				<h1>Edition of Shoppingcategory #@shoppingcategoryFormData("categoryId").value</h1>
+				} else {
+				<h1>Creation of a Shoppingcategory</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ShoppingcategoryApplication.all()">Back to Shoppingcategorys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="categoryId" name="categoryId" value='@shoppingcategoryFormData("categoryId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(shoppingcategoryFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(shoppingcategoryFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(shoppingcategoryFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(shoppingcategoryFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(shoppingcategoryFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(shoppingcategoryFormData("modifiedDate"))
-			<!-- ParentCategoryId -->
-			@helper.inputText(shoppingcategoryFormData("parentCategoryId"))
-			<!-- Name -->
-			@helper.inputText(shoppingcategoryFormData("name"))
-			<!-- Description -->
-			@helper.inputText(shoppingcategoryFormData("description"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ShoppingcategoryApplication.all()">Back to Shoppingcategory List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(shoppingcategoryFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(shoppingcategoryFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(shoppingcategoryFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(shoppingcategoryFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(shoppingcategoryFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(shoppingcategoryFormData("modifiedDate"))
+				</div>
+				<!-- ParentCategoryId -->
+				<div class="form-group">
+				@helper.inputText(shoppingcategoryFormData("parentCategoryId"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(shoppingcategoryFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(shoppingcategoryFormData("description"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

@@ -4,31 +4,46 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Portlet #@portletFormData("id").value</legend>
-
+	<div class="container">
 		@form(routes.PortletApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(portletFormData("id"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(portletFormData("id") != "0") {
+				<h1>Edition of Portlet #@portletFormData("id").value</h1>
+				} else {
+				<h1>Creation of a Portlet</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.PortletApplication.all()">Back to Portlets</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="id" name="id" value='@portletFormData("id").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(portletFormData("mvccVersion"))
-			<!-- CompanyId -->
-			@helper.inputText(portletFormData("companyId"))
-			<!-- PortletId -->
-			@helper.inputText(portletFormData("portletId"))
-			<!-- Roles -->
-			@helper.inputText(portletFormData("roles"))
-			<!-- Active -->
-			@helper.checkbox(portletFormData("active"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.PortletApplication.all()">Back to Portlet List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(portletFormData("mvccVersion"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(portletFormData("companyId"))
+				</div>
+				<!-- PortletId -->
+				<div class="form-group">
+				@helper.inputText(portletFormData("portletId"))
+				</div>
+				<!-- Roles -->
+				<div class="form-group">
+				@helper.inputText(portletFormData("roles"))
+				</div>
+				<!-- Active -->
+				<div class="form-group">
+				@helper.checkbox(portletFormData("active"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

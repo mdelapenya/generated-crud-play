@@ -4,57 +4,98 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Mbcategory #@mbcategoryFormData("categoryId").value</legend>
-
+	<div class="container">
 		@form(routes.MbcategoryApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(mbcategoryFormData("categoryId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(mbcategoryFormData("categoryId") != "0") {
+				<h1>Edition of Mbcategory #@mbcategoryFormData("categoryId").value</h1>
+				} else {
+				<h1>Creation of a Mbcategory</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.MbcategoryApplication.all()">Back to Mbcategorys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="categoryId" name="categoryId" value='@mbcategoryFormData("categoryId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(mbcategoryFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(mbcategoryFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(mbcategoryFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(mbcategoryFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(mbcategoryFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(mbcategoryFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(mbcategoryFormData("modifiedDate"))
-			<!-- ParentCategoryId -->
-			@helper.inputText(mbcategoryFormData("parentCategoryId"))
-			<!-- Name -->
-			@helper.inputText(mbcategoryFormData("name"))
-			<!-- Description -->
-			@helper.inputText(mbcategoryFormData("description"))
-			<!-- DisplayStyle -->
-			@helper.inputText(mbcategoryFormData("displayStyle"))
-			<!-- ThreadCount -->
-			@helper.inputText(mbcategoryFormData("threadCount"))
-			<!-- MessageCount -->
-			@helper.inputText(mbcategoryFormData("messageCount"))
-			<!-- LastPostDate -->
-			@helper.inputText(mbcategoryFormData("lastPostDate"))
-			<!-- Status -->
-			@helper.inputText(mbcategoryFormData("status"))
-			<!-- StatusByUserId -->
-			@helper.inputText(mbcategoryFormData("statusByUserId"))
-			<!-- StatusByUserName -->
-			@helper.inputText(mbcategoryFormData("statusByUserName"))
-			<!-- StatusDate -->
-			@helper.inputText(mbcategoryFormData("statusDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.MbcategoryApplication.all()">Back to Mbcategory List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("modifiedDate"))
+				</div>
+				<!-- ParentCategoryId -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("parentCategoryId"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("description"))
+				</div>
+				<!-- DisplayStyle -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("displayStyle"))
+				</div>
+				<!-- ThreadCount -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("threadCount"))
+				</div>
+				<!-- MessageCount -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("messageCount"))
+				</div>
+				<!-- LastPostDate -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("lastPostDate"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("status"))
+				</div>
+				<!-- StatusByUserId -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("statusByUserId"))
+				</div>
+				<!-- StatusByUserName -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("statusByUserName"))
+				</div>
+				<!-- StatusDate -->
+				<div class="form-group">
+				@helper.inputText(mbcategoryFormData("statusDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

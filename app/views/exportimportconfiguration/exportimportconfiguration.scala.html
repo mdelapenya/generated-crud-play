@@ -4,51 +4,86 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Exportimportconfiguration #@exportimportconfigurationFormData("exportImportConfigurationId").value</legend>
-
+	<div class="container">
 		@form(routes.ExportimportconfigurationApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(exportimportconfigurationFormData("exportImportConfigurationId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(exportimportconfigurationFormData("exportImportConfigurationId") != "0") {
+				<h1>Edition of Exportimportconfiguration #@exportimportconfigurationFormData("exportImportConfigurationId").value</h1>
+				} else {
+				<h1>Creation of a Exportimportconfiguration</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ExportimportconfigurationApplication.all()">Back to Exportimportconfigurations</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="exportImportConfigurationId" name="exportImportConfigurationId" value='@exportimportconfigurationFormData("exportImportConfigurationId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(exportimportconfigurationFormData("mvccVersion"))
-			<!-- GroupId -->
-			@helper.inputText(exportimportconfigurationFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(exportimportconfigurationFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(exportimportconfigurationFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(exportimportconfigurationFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(exportimportconfigurationFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(exportimportconfigurationFormData("modifiedDate"))
-			<!-- Name -->
-			@helper.inputText(exportimportconfigurationFormData("name"))
-			<!-- Description -->
-			@helper.inputText(exportimportconfigurationFormData("description"))
-			<!-- Customtype -->
-			@helper.inputText(exportimportconfigurationFormData("customtype"))
-			<!-- Settings -->
-			@helper.inputText(exportimportconfigurationFormData("settings"))
-			<!-- Status -->
-			@helper.inputText(exportimportconfigurationFormData("status"))
-			<!-- StatusByUserId -->
-			@helper.inputText(exportimportconfigurationFormData("statusByUserId"))
-			<!-- StatusByUserName -->
-			@helper.inputText(exportimportconfigurationFormData("statusByUserName"))
-			<!-- StatusDate -->
-			@helper.inputText(exportimportconfigurationFormData("statusDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ExportimportconfigurationApplication.all()">Back to Exportimportconfiguration List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("mvccVersion"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("modifiedDate"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("description"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("customtype"))
+				</div>
+				<!-- Settings -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("settings"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("status"))
+				</div>
+				<!-- StatusByUserId -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("statusByUserId"))
+				</div>
+				<!-- StatusByUserName -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("statusByUserName"))
+				</div>
+				<!-- StatusDate -->
+				<div class="form-group">
+				@helper.inputText(exportimportconfigurationFormData("statusDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

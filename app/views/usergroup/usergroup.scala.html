@@ -4,43 +4,70 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Usergroup #@usergroupFormData("userGroupId").value</legend>
-
+	<div class="container">
 		@form(routes.UsergroupApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(usergroupFormData("userGroupId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(usergroupFormData("userGroupId") != "0") {
+				<h1>Edition of Usergroup #@usergroupFormData("userGroupId").value</h1>
+				} else {
+				<h1>Creation of a Usergroup</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.UsergroupApplication.all()">Back to Usergroups</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="userGroupId" name="userGroupId" value='@usergroupFormData("userGroupId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(usergroupFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(usergroupFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(usergroupFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(usergroupFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(usergroupFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(usergroupFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(usergroupFormData("modifiedDate"))
-			<!-- ParentUserGroupId -->
-			@helper.inputText(usergroupFormData("parentUserGroupId"))
-			<!-- Name -->
-			@helper.inputText(usergroupFormData("name"))
-			<!-- Description -->
-			@helper.inputText(usergroupFormData("description"))
-			<!-- AddedByLDAPImport -->
-			@helper.checkbox(usergroupFormData("addedByLDAPImport"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.UsergroupApplication.all()">Back to Usergroup List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(usergroupFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(usergroupFormData("uuid"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(usergroupFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(usergroupFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(usergroupFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(usergroupFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(usergroupFormData("modifiedDate"))
+				</div>
+				<!-- ParentUserGroupId -->
+				<div class="form-group">
+				@helper.inputText(usergroupFormData("parentUserGroupId"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(usergroupFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(usergroupFormData("description"))
+				</div>
+				<!-- AddedByLDAPImport -->
+				<div class="form-group">
+				@helper.checkbox(usergroupFormData("addedByLDAPImport"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

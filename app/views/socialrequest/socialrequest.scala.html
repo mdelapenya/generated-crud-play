@@ -4,45 +4,74 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Socialrequest #@socialrequestFormData("requestId").value</legend>
-
+	<div class="container">
 		@form(routes.SocialrequestApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(socialrequestFormData("requestId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(socialrequestFormData("requestId") != "0") {
+				<h1>Edition of Socialrequest #@socialrequestFormData("requestId").value</h1>
+				} else {
+				<h1>Creation of a Socialrequest</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.SocialrequestApplication.all()">Back to Socialrequests</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="requestId" name="requestId" value='@socialrequestFormData("requestId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(socialrequestFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(socialrequestFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(socialrequestFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(socialrequestFormData("userId"))
-			<!-- CreateDate -->
-			@helper.inputText(socialrequestFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(socialrequestFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(socialrequestFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(socialrequestFormData("classPK"))
-			<!-- Customtype -->
-			@helper.inputText(socialrequestFormData("customtype"))
-			<!-- ExtraData -->
-			@helper.inputText(socialrequestFormData("extraData"))
-			<!-- ReceiverUserId -->
-			@helper.inputText(socialrequestFormData("receiverUserId"))
-			<!-- Status -->
-			@helper.inputText(socialrequestFormData("status"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.SocialrequestApplication.all()">Back to Socialrequest List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(socialrequestFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(socialrequestFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(socialrequestFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(socialrequestFormData("userId"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(socialrequestFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(socialrequestFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(socialrequestFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(socialrequestFormData("classPK"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(socialrequestFormData("customtype"))
+				</div>
+				<!-- ExtraData -->
+				<div class="form-group">
+				@helper.inputText(socialrequestFormData("extraData"))
+				</div>
+				<!-- ReceiverUserId -->
+				<div class="form-group">
+				@helper.inputText(socialrequestFormData("receiverUserId"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(socialrequestFormData("status"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

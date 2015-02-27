@@ -4,33 +4,50 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Dlfileentrymetadata #@dlfileentrymetadataFormData("fileEntryMetadataId").value</legend>
-
+	<div class="container">
 		@form(routes.DlfileentrymetadataApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(dlfileentrymetadataFormData("fileEntryMetadataId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(dlfileentrymetadataFormData("fileEntryMetadataId") != "0") {
+				<h1>Edition of Dlfileentrymetadata #@dlfileentrymetadataFormData("fileEntryMetadataId").value</h1>
+				} else {
+				<h1>Creation of a Dlfileentrymetadata</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DlfileentrymetadataApplication.all()">Back to Dlfileentrymetadatas</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="fileEntryMetadataId" name="fileEntryMetadataId" value='@dlfileentrymetadataFormData("fileEntryMetadataId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(dlfileentrymetadataFormData("uuid"))
-			<!-- DDMStorageId -->
-			@helper.inputText(dlfileentrymetadataFormData("DDMStorageId"))
-			<!-- DDMStructureId -->
-			@helper.inputText(dlfileentrymetadataFormData("DDMStructureId"))
-			<!-- FileEntryTypeId -->
-			@helper.inputText(dlfileentrymetadataFormData("fileEntryTypeId"))
-			<!-- FileEntryId -->
-			@helper.inputText(dlfileentrymetadataFormData("fileEntryId"))
-			<!-- FileVersionId -->
-			@helper.inputText(dlfileentrymetadataFormData("fileVersionId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DlfileentrymetadataApplication.all()">Back to Dlfileentrymetadata List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrymetadataFormData("uuid"))
 				</div>
+				<!-- DDMStorageId -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrymetadataFormData("DDMStorageId"))
+				</div>
+				<!-- DDMStructureId -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrymetadataFormData("DDMStructureId"))
+				</div>
+				<!-- FileEntryTypeId -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrymetadataFormData("fileEntryTypeId"))
+				</div>
+				<!-- FileEntryId -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrymetadataFormData("fileEntryId"))
+				</div>
+				<!-- FileVersionId -->
+				<div class="form-group">
+				@helper.inputText(dlfileentrymetadataFormData("fileVersionId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

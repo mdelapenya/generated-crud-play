@@ -4,29 +4,42 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Expandorow #@expandorowFormData("rowId").value</legend>
-
+	<div class="container">
 		@form(routes.ExpandorowApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(expandorowFormData("rowId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(expandorowFormData("rowId") != "0") {
+				<h1>Edition of Expandorow #@expandorowFormData("rowId").value</h1>
+				} else {
+				<h1>Creation of a Expandorow</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ExpandorowApplication.all()">Back to Expandorows</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="rowId" name="rowId" value='@expandorowFormData("rowId").value' />
 
-			<!-- CompanyId -->
-			@helper.inputText(expandorowFormData("companyId"))
-			<!-- ModifiedDate -->
-			@helper.inputText(expandorowFormData("modifiedDate"))
-			<!-- TableId -->
-			@helper.inputText(expandorowFormData("tableId"))
-			<!-- ClassPK -->
-			@helper.inputText(expandorowFormData("classPK"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ExpandorowApplication.all()">Back to Expandorow List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(expandorowFormData("companyId"))
 				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(expandorowFormData("modifiedDate"))
+				</div>
+				<!-- TableId -->
+				<div class="form-group">
+				@helper.inputText(expandorowFormData("tableId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(expandorowFormData("classPK"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

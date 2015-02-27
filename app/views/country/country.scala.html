@@ -4,37 +4,58 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Country #@countryFormData("countryId").value</legend>
-
+	<div class="container">
 		@form(routes.CountryApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(countryFormData("countryId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(countryFormData("countryId") != "0") {
+				<h1>Edition of Country #@countryFormData("countryId").value</h1>
+				} else {
+				<h1>Creation of a Country</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.CountryApplication.all()">Back to Countrys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="countryId" name="countryId" value='@countryFormData("countryId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(countryFormData("mvccVersion"))
-			<!-- Name -->
-			@helper.inputText(countryFormData("name"))
-			<!-- A2 -->
-			@helper.inputText(countryFormData("a2"))
-			<!-- A3 -->
-			@helper.inputText(countryFormData("a3"))
-			<!-- Number -->
-			@helper.inputText(countryFormData("number"))
-			<!-- Idd -->
-			@helper.inputText(countryFormData("idd"))
-			<!-- ZipRequired -->
-			@helper.checkbox(countryFormData("zipRequired"))
-			<!-- Active -->
-			@helper.checkbox(countryFormData("active"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.CountryApplication.all()">Back to Country List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(countryFormData("mvccVersion"))
 				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(countryFormData("name"))
+				</div>
+				<!-- A2 -->
+				<div class="form-group">
+				@helper.inputText(countryFormData("a2"))
+				</div>
+				<!-- A3 -->
+				<div class="form-group">
+				@helper.inputText(countryFormData("a3"))
+				</div>
+				<!-- Number -->
+				<div class="form-group">
+				@helper.inputText(countryFormData("number"))
+				</div>
+				<!-- Idd -->
+				<div class="form-group">
+				@helper.inputText(countryFormData("idd"))
+				</div>
+				<!-- ZipRequired -->
+				<div class="form-group">
+				@helper.checkbox(countryFormData("zipRequired"))
+				</div>
+				<!-- Active -->
+				<div class="form-group">
+				@helper.checkbox(countryFormData("active"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

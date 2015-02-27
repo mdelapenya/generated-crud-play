@@ -4,37 +4,58 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Blogsstatsuser #@blogsstatsuserFormData("statsUserId").value</legend>
-
+	<div class="container">
 		@form(routes.BlogsstatsuserApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(blogsstatsuserFormData("statsUserId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(blogsstatsuserFormData("statsUserId") != "0") {
+				<h1>Edition of Blogsstatsuser #@blogsstatsuserFormData("statsUserId").value</h1>
+				} else {
+				<h1>Creation of a Blogsstatsuser</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.BlogsstatsuserApplication.all()">Back to Blogsstatsusers</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="statsUserId" name="statsUserId" value='@blogsstatsuserFormData("statsUserId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(blogsstatsuserFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(blogsstatsuserFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(blogsstatsuserFormData("userId"))
-			<!-- EntryCount -->
-			@helper.inputText(blogsstatsuserFormData("entryCount"))
-			<!-- LastPostDate -->
-			@helper.inputText(blogsstatsuserFormData("lastPostDate"))
-			<!-- RatingsTotalEntries -->
-			@helper.inputText(blogsstatsuserFormData("ratingsTotalEntries"))
-			<!-- RatingsTotalScore -->
-			@helper.inputText(blogsstatsuserFormData("ratingsTotalScore"))
-			<!-- RatingsAverageScore -->
-			@helper.inputText(blogsstatsuserFormData("ratingsAverageScore"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.BlogsstatsuserApplication.all()">Back to Blogsstatsuser List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(blogsstatsuserFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(blogsstatsuserFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(blogsstatsuserFormData("userId"))
+				</div>
+				<!-- EntryCount -->
+				<div class="form-group">
+				@helper.inputText(blogsstatsuserFormData("entryCount"))
+				</div>
+				<!-- LastPostDate -->
+				<div class="form-group">
+				@helper.inputText(blogsstatsuserFormData("lastPostDate"))
+				</div>
+				<!-- RatingsTotalEntries -->
+				<div class="form-group">
+				@helper.inputText(blogsstatsuserFormData("ratingsTotalEntries"))
+				</div>
+				<!-- RatingsTotalScore -->
+				<div class="form-group">
+				@helper.inputText(blogsstatsuserFormData("ratingsTotalScore"))
+				</div>
+				<!-- RatingsAverageScore -->
+				<div class="form-group">
+				@helper.inputText(blogsstatsuserFormData("ratingsAverageScore"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

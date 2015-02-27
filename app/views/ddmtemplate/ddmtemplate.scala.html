@@ -4,65 +4,114 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Ddmtemplate #@ddmtemplateFormData("templateId").value</legend>
-
+	<div class="container">
 		@form(routes.DdmtemplateApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(ddmtemplateFormData("templateId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(ddmtemplateFormData("templateId") != "0") {
+				<h1>Edition of Ddmtemplate #@ddmtemplateFormData("templateId").value</h1>
+				} else {
+				<h1>Creation of a Ddmtemplate</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DdmtemplateApplication.all()">Back to Ddmtemplates</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="templateId" name="templateId" value='@ddmtemplateFormData("templateId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(ddmtemplateFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(ddmtemplateFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(ddmtemplateFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(ddmtemplateFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(ddmtemplateFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(ddmtemplateFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(ddmtemplateFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(ddmtemplateFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(ddmtemplateFormData("classPK"))
-			<!-- SourceClassNameId -->
-			@helper.inputText(ddmtemplateFormData("sourceClassNameId"))
-			<!-- TemplateKey -->
-			@helper.inputText(ddmtemplateFormData("templateKey"))
-			<!-- Version -->
-			@helper.inputText(ddmtemplateFormData("version"))
-			<!-- Name -->
-			@helper.inputText(ddmtemplateFormData("name"))
-			<!-- Description -->
-			@helper.inputText(ddmtemplateFormData("description"))
-			<!-- Customtype -->
-			@helper.inputText(ddmtemplateFormData("customtype"))
-			<!-- Mode -->
-			@helper.inputText(ddmtemplateFormData("mode"))
-			<!-- Language -->
-			@helper.inputText(ddmtemplateFormData("language"))
-			<!-- Script -->
-			@helper.inputText(ddmtemplateFormData("script"))
-			<!-- Cacheable -->
-			@helper.checkbox(ddmtemplateFormData("cacheable"))
-			<!-- SmallImage -->
-			@helper.checkbox(ddmtemplateFormData("smallImage"))
-			<!-- SmallImageId -->
-			@helper.inputText(ddmtemplateFormData("smallImageId"))
-			<!-- SmallImageURL -->
-			@helper.inputText(ddmtemplateFormData("smallImageURL"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DdmtemplateApplication.all()">Back to Ddmtemplate List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("classPK"))
+				</div>
+				<!-- SourceClassNameId -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("sourceClassNameId"))
+				</div>
+				<!-- TemplateKey -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("templateKey"))
+				</div>
+				<!-- Version -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("version"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("description"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("customtype"))
+				</div>
+				<!-- Mode -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("mode"))
+				</div>
+				<!-- Language -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("language"))
+				</div>
+				<!-- Script -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("script"))
+				</div>
+				<!-- Cacheable -->
+				<div class="form-group">
+				@helper.checkbox(ddmtemplateFormData("cacheable"))
+				</div>
+				<!-- SmallImage -->
+				<div class="form-group">
+				@helper.checkbox(ddmtemplateFormData("smallImage"))
+				</div>
+				<!-- SmallImageId -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("smallImageId"))
+				</div>
+				<!-- SmallImageURL -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateFormData("smallImageURL"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

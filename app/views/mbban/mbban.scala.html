@@ -4,37 +4,58 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Mbban #@mbbanFormData("banId").value</legend>
-
+	<div class="container">
 		@form(routes.MbbanApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(mbbanFormData("banId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(mbbanFormData("banId") != "0") {
+				<h1>Edition of Mbban #@mbbanFormData("banId").value</h1>
+				} else {
+				<h1>Creation of a Mbban</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.MbbanApplication.all()">Back to Mbbans</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="banId" name="banId" value='@mbbanFormData("banId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(mbbanFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(mbbanFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(mbbanFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(mbbanFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(mbbanFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(mbbanFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(mbbanFormData("modifiedDate"))
-			<!-- BanUserId -->
-			@helper.inputText(mbbanFormData("banUserId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.MbbanApplication.all()">Back to Mbban List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(mbbanFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(mbbanFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(mbbanFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(mbbanFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(mbbanFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(mbbanFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(mbbanFormData("modifiedDate"))
+				</div>
+				<!-- BanUserId -->
+				<div class="form-group">
+				@helper.inputText(mbbanFormData("banUserId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

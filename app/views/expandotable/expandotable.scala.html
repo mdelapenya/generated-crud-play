@@ -4,27 +4,38 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Expandotable #@expandotableFormData("tableId").value</legend>
-
+	<div class="container">
 		@form(routes.ExpandotableApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(expandotableFormData("tableId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(expandotableFormData("tableId") != "0") {
+				<h1>Edition of Expandotable #@expandotableFormData("tableId").value</h1>
+				} else {
+				<h1>Creation of a Expandotable</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ExpandotableApplication.all()">Back to Expandotables</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="tableId" name="tableId" value='@expandotableFormData("tableId").value' />
 
-			<!-- CompanyId -->
-			@helper.inputText(expandotableFormData("companyId"))
-			<!-- ClassNameId -->
-			@helper.inputText(expandotableFormData("classNameId"))
-			<!-- Name -->
-			@helper.inputText(expandotableFormData("name"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ExpandotableApplication.all()">Back to Expandotable List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(expandotableFormData("companyId"))
 				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(expandotableFormData("classNameId"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(expandotableFormData("name"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

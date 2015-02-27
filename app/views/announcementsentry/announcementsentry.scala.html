@@ -4,53 +4,90 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Announcementsentry #@announcementsentryFormData("entryId").value</legend>
-
+	<div class="container">
 		@form(routes.AnnouncementsentryApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(announcementsentryFormData("entryId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(announcementsentryFormData("entryId") != "0") {
+				<h1>Edition of Announcementsentry #@announcementsentryFormData("entryId").value</h1>
+				} else {
+				<h1>Creation of a Announcementsentry</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.AnnouncementsentryApplication.all()">Back to Announcementsentrys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="entryId" name="entryId" value='@announcementsentryFormData("entryId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(announcementsentryFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(announcementsentryFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(announcementsentryFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(announcementsentryFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(announcementsentryFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(announcementsentryFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(announcementsentryFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(announcementsentryFormData("classPK"))
-			<!-- Title -->
-			@helper.inputText(announcementsentryFormData("title"))
-			<!-- Content -->
-			@helper.inputText(announcementsentryFormData("content"))
-			<!-- Url -->
-			@helper.inputText(announcementsentryFormData("url"))
-			<!-- Customtype -->
-			@helper.inputText(announcementsentryFormData("customtype"))
-			<!-- DisplayDate -->
-			@helper.inputText(announcementsentryFormData("displayDate"))
-			<!-- ExpirationDate -->
-			@helper.inputText(announcementsentryFormData("expirationDate"))
-			<!-- Priority -->
-			@helper.inputText(announcementsentryFormData("priority"))
-			<!-- Alert -->
-			@helper.checkbox(announcementsentryFormData("alert"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.AnnouncementsentryApplication.all()">Back to Announcementsentry List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("uuid"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("classPK"))
+				</div>
+				<!-- Title -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("title"))
+				</div>
+				<!-- Content -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("content"))
+				</div>
+				<!-- Url -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("url"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("customtype"))
+				</div>
+				<!-- DisplayDate -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("displayDate"))
+				</div>
+				<!-- ExpirationDate -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("expirationDate"))
+				</div>
+				<!-- Priority -->
+				<div class="form-group">
+				@helper.inputText(announcementsentryFormData("priority"))
+				</div>
+				<!-- Alert -->
+				<div class="form-group">
+				@helper.checkbox(announcementsentryFormData("alert"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

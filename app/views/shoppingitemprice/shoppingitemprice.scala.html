@@ -4,39 +4,62 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Shoppingitemprice #@shoppingitempriceFormData("itemPriceId").value</legend>
-
+	<div class="container">
 		@form(routes.ShoppingitempriceApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(shoppingitempriceFormData("itemPriceId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(shoppingitempriceFormData("itemPriceId") != "0") {
+				<h1>Edition of Shoppingitemprice #@shoppingitempriceFormData("itemPriceId").value</h1>
+				} else {
+				<h1>Creation of a Shoppingitemprice</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ShoppingitempriceApplication.all()">Back to Shoppingitemprices</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="itemPriceId" name="itemPriceId" value='@shoppingitempriceFormData("itemPriceId").value' />
 
-			<!-- ItemId -->
-			@helper.inputText(shoppingitempriceFormData("itemId"))
-			<!-- MinQuantity -->
-			@helper.inputText(shoppingitempriceFormData("minQuantity"))
-			<!-- MaxQuantity -->
-			@helper.inputText(shoppingitempriceFormData("maxQuantity"))
-			<!-- Price -->
-			@helper.inputText(shoppingitempriceFormData("price"))
-			<!-- Discount -->
-			@helper.inputText(shoppingitempriceFormData("discount"))
-			<!-- Taxable -->
-			@helper.checkbox(shoppingitempriceFormData("taxable"))
-			<!-- Shipping -->
-			@helper.inputText(shoppingitempriceFormData("shipping"))
-			<!-- UseShippingFormula -->
-			@helper.checkbox(shoppingitempriceFormData("useShippingFormula"))
-			<!-- Status -->
-			@helper.inputText(shoppingitempriceFormData("status"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ShoppingitempriceApplication.all()">Back to Shoppingitemprice List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- ItemId -->
+				<div class="form-group">
+				@helper.inputText(shoppingitempriceFormData("itemId"))
 				</div>
+				<!-- MinQuantity -->
+				<div class="form-group">
+				@helper.inputText(shoppingitempriceFormData("minQuantity"))
+				</div>
+				<!-- MaxQuantity -->
+				<div class="form-group">
+				@helper.inputText(shoppingitempriceFormData("maxQuantity"))
+				</div>
+				<!-- Price -->
+				<div class="form-group">
+				@helper.inputText(shoppingitempriceFormData("price"))
+				</div>
+				<!-- Discount -->
+				<div class="form-group">
+				@helper.inputText(shoppingitempriceFormData("discount"))
+				</div>
+				<!-- Taxable -->
+				<div class="form-group">
+				@helper.checkbox(shoppingitempriceFormData("taxable"))
+				</div>
+				<!-- Shipping -->
+				<div class="form-group">
+				@helper.inputText(shoppingitempriceFormData("shipping"))
+				</div>
+				<!-- UseShippingFormula -->
+				<div class="form-group">
+				@helper.checkbox(shoppingitempriceFormData("useShippingFormula"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(shoppingitempriceFormData("status"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

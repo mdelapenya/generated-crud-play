@@ -4,25 +4,34 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Classname #@classnameFormData("classNameId").value</legend>
-
+	<div class="container">
 		@form(routes.ClassnameApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(classnameFormData("classNameId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(classnameFormData("classNameId") != "0") {
+				<h1>Edition of Classname #@classnameFormData("classNameId").value</h1>
+				} else {
+				<h1>Creation of a Classname</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ClassnameApplication.all()">Back to Classnames</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="classNameId" name="classNameId" value='@classnameFormData("classNameId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(classnameFormData("mvccVersion"))
-			<!-- Value -->
-			@helper.inputText(classnameFormData("value"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ClassnameApplication.all()">Back to Classname List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(classnameFormData("mvccVersion"))
 				</div>
+				<!-- Value -->
+				<div class="form-group">
+				@helper.inputText(classnameFormData("value"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

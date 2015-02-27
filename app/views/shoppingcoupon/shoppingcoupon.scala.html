@@ -4,55 +4,94 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Shoppingcoupon #@shoppingcouponFormData("couponId").value</legend>
-
+	<div class="container">
 		@form(routes.ShoppingcouponApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(shoppingcouponFormData("couponId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(shoppingcouponFormData("couponId") != "0") {
+				<h1>Edition of Shoppingcoupon #@shoppingcouponFormData("couponId").value</h1>
+				} else {
+				<h1>Creation of a Shoppingcoupon</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ShoppingcouponApplication.all()">Back to Shoppingcoupons</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="couponId" name="couponId" value='@shoppingcouponFormData("couponId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(shoppingcouponFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(shoppingcouponFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(shoppingcouponFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(shoppingcouponFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(shoppingcouponFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(shoppingcouponFormData("modifiedDate"))
-			<!-- Code -->
-			@helper.inputText(shoppingcouponFormData("code"))
-			<!-- Name -->
-			@helper.inputText(shoppingcouponFormData("name"))
-			<!-- Description -->
-			@helper.inputText(shoppingcouponFormData("description"))
-			<!-- StartDate -->
-			@helper.inputText(shoppingcouponFormData("startDate"))
-			<!-- EndDate -->
-			@helper.inputText(shoppingcouponFormData("endDate"))
-			<!-- Active -->
-			@helper.checkbox(shoppingcouponFormData("active"))
-			<!-- LimitCategories -->
-			@helper.inputText(shoppingcouponFormData("limitCategories"))
-			<!-- LimitSkus -->
-			@helper.inputText(shoppingcouponFormData("limitSkus"))
-			<!-- MinOrder -->
-			@helper.inputText(shoppingcouponFormData("minOrder"))
-			<!-- Discount -->
-			@helper.inputText(shoppingcouponFormData("discount"))
-			<!-- DiscountType -->
-			@helper.inputText(shoppingcouponFormData("discountType"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ShoppingcouponApplication.all()">Back to Shoppingcoupon List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("modifiedDate"))
+				</div>
+				<!-- Code -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("code"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("description"))
+				</div>
+				<!-- StartDate -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("startDate"))
+				</div>
+				<!-- EndDate -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("endDate"))
+				</div>
+				<!-- Active -->
+				<div class="form-group">
+				@helper.checkbox(shoppingcouponFormData("active"))
+				</div>
+				<!-- LimitCategories -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("limitCategories"))
+				</div>
+				<!-- LimitSkus -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("limitSkus"))
+				</div>
+				<!-- MinOrder -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("minOrder"))
+				</div>
+				<!-- Discount -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("discount"))
+				</div>
+				<!-- DiscountType -->
+				<div class="form-group">
+				@helper.inputText(shoppingcouponFormData("discountType"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

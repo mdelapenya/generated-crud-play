@@ -4,43 +4,70 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Scproductversion #@scproductversionFormData("productVersionId").value</legend>
-
+	<div class="container">
 		@form(routes.ScproductversionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(scproductversionFormData("productVersionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(scproductversionFormData("productVersionId") != "0") {
+				<h1>Edition of Scproductversion #@scproductversionFormData("productVersionId").value</h1>
+				} else {
+				<h1>Creation of a Scproductversion</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ScproductversionApplication.all()">Back to Scproductversions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="productVersionId" name="productVersionId" value='@scproductversionFormData("productVersionId").value' />
 
-			<!-- CompanyId -->
-			@helper.inputText(scproductversionFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(scproductversionFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(scproductversionFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(scproductversionFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(scproductversionFormData("modifiedDate"))
-			<!-- ProductEntryId -->
-			@helper.inputText(scproductversionFormData("productEntryId"))
-			<!-- Version -->
-			@helper.inputText(scproductversionFormData("version"))
-			<!-- ChangeLog -->
-			@helper.inputText(scproductversionFormData("changeLog"))
-			<!-- DownloadPageURL -->
-			@helper.inputText(scproductversionFormData("downloadPageURL"))
-			<!-- DirectDownloadURL -->
-			@helper.inputText(scproductversionFormData("directDownloadURL"))
-			<!-- RepoStoreArtifact -->
-			@helper.checkbox(scproductversionFormData("repoStoreArtifact"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ScproductversionApplication.all()">Back to Scproductversion List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(scproductversionFormData("companyId"))
 				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(scproductversionFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(scproductversionFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(scproductversionFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(scproductversionFormData("modifiedDate"))
+				</div>
+				<!-- ProductEntryId -->
+				<div class="form-group">
+				@helper.inputText(scproductversionFormData("productEntryId"))
+				</div>
+				<!-- Version -->
+				<div class="form-group">
+				@helper.inputText(scproductversionFormData("version"))
+				</div>
+				<!-- ChangeLog -->
+				<div class="form-group">
+				@helper.inputText(scproductversionFormData("changeLog"))
+				</div>
+				<!-- DownloadPageURL -->
+				<div class="form-group">
+				@helper.inputText(scproductversionFormData("downloadPageURL"))
+				</div>
+				<!-- DirectDownloadURL -->
+				<div class="form-group">
+				@helper.inputText(scproductversionFormData("directDownloadURL"))
+				</div>
+				<!-- RepoStoreArtifact -->
+				<div class="form-group">
+				@helper.checkbox(scproductversionFormData("repoStoreArtifact"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

@@ -4,35 +4,54 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Journalarticleimage #@journalarticleimageFormData("articleImageId").value</legend>
-
+	<div class="container">
 		@form(routes.JournalarticleimageApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(journalarticleimageFormData("articleImageId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(journalarticleimageFormData("articleImageId") != "0") {
+				<h1>Edition of Journalarticleimage #@journalarticleimageFormData("articleImageId").value</h1>
+				} else {
+				<h1>Creation of a Journalarticleimage</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.JournalarticleimageApplication.all()">Back to Journalarticleimages</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="articleImageId" name="articleImageId" value='@journalarticleimageFormData("articleImageId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(journalarticleimageFormData("groupId"))
-			<!-- ArticleId -->
-			@helper.inputText(journalarticleimageFormData("articleId"))
-			<!-- Version -->
-			@helper.inputText(journalarticleimageFormData("version"))
-			<!-- ElInstanceId -->
-			@helper.inputText(journalarticleimageFormData("elInstanceId"))
-			<!-- ElName -->
-			@helper.inputText(journalarticleimageFormData("elName"))
-			<!-- LanguageId -->
-			@helper.inputText(journalarticleimageFormData("languageId"))
-			<!-- TempImage -->
-			@helper.checkbox(journalarticleimageFormData("tempImage"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.JournalarticleimageApplication.all()">Back to Journalarticleimage List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleimageFormData("groupId"))
 				</div>
+				<!-- ArticleId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleimageFormData("articleId"))
+				</div>
+				<!-- Version -->
+				<div class="form-group">
+				@helper.inputText(journalarticleimageFormData("version"))
+				</div>
+				<!-- ElInstanceId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleimageFormData("elInstanceId"))
+				</div>
+				<!-- ElName -->
+				<div class="form-group">
+				@helper.inputText(journalarticleimageFormData("elName"))
+				</div>
+				<!-- LanguageId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleimageFormData("languageId"))
+				</div>
+				<!-- TempImage -->
+				<div class="form-group">
+				@helper.checkbox(journalarticleimageFormData("tempImage"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

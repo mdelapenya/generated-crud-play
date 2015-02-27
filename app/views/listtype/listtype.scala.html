@@ -4,27 +4,38 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Listtype #@listtypeFormData("listTypeId").value</legend>
-
+	<div class="container">
 		@form(routes.ListtypeApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(listtypeFormData("listTypeId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(listtypeFormData("listTypeId") != "0") {
+				<h1>Edition of Listtype #@listtypeFormData("listTypeId").value</h1>
+				} else {
+				<h1>Creation of a Listtype</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ListtypeApplication.all()">Back to Listtypes</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="listTypeId" name="listTypeId" value='@listtypeFormData("listTypeId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(listtypeFormData("mvccVersion"))
-			<!-- Name -->
-			@helper.inputText(listtypeFormData("name"))
-			<!-- Customtype -->
-			@helper.inputText(listtypeFormData("customtype"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ListtypeApplication.all()">Back to Listtype List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(listtypeFormData("mvccVersion"))
 				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(listtypeFormData("name"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(listtypeFormData("customtype"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

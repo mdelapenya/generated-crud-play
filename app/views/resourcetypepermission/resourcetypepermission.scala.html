@@ -4,33 +4,50 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Resourcetypepermission #@resourcetypepermissionFormData("resourceTypePermissionId").value</legend>
-
+	<div class="container">
 		@form(routes.ResourcetypepermissionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(resourcetypepermissionFormData("resourceTypePermissionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(resourcetypepermissionFormData("resourceTypePermissionId") != "0") {
+				<h1>Edition of Resourcetypepermission #@resourcetypepermissionFormData("resourceTypePermissionId").value</h1>
+				} else {
+				<h1>Creation of a Resourcetypepermission</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ResourcetypepermissionApplication.all()">Back to Resourcetypepermissions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="resourceTypePermissionId" name="resourceTypePermissionId" value='@resourcetypepermissionFormData("resourceTypePermissionId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(resourcetypepermissionFormData("mvccVersion"))
-			<!-- CompanyId -->
-			@helper.inputText(resourcetypepermissionFormData("companyId"))
-			<!-- GroupId -->
-			@helper.inputText(resourcetypepermissionFormData("groupId"))
-			<!-- Name -->
-			@helper.inputText(resourcetypepermissionFormData("name"))
-			<!-- RoleId -->
-			@helper.inputText(resourcetypepermissionFormData("roleId"))
-			<!-- ActionIds -->
-			@helper.inputText(resourcetypepermissionFormData("actionIds"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ResourcetypepermissionApplication.all()">Back to Resourcetypepermission List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(resourcetypepermissionFormData("mvccVersion"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(resourcetypepermissionFormData("companyId"))
+				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(resourcetypepermissionFormData("groupId"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(resourcetypepermissionFormData("name"))
+				</div>
+				<!-- RoleId -->
+				<div class="form-group">
+				@helper.inputText(resourcetypepermissionFormData("roleId"))
+				</div>
+				<!-- ActionIds -->
+				<div class="form-group">
+				@helper.inputText(resourcetypepermissionFormData("actionIds"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

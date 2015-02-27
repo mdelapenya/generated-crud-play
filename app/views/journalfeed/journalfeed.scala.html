@@ -4,63 +4,110 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Journalfeed #@journalfeedFormData("id").value</legend>
-
+	<div class="container">
 		@form(routes.JournalfeedApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(journalfeedFormData("id"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(journalfeedFormData("id") != "0") {
+				<h1>Edition of Journalfeed #@journalfeedFormData("id").value</h1>
+				} else {
+				<h1>Creation of a Journalfeed</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.JournalfeedApplication.all()">Back to Journalfeeds</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="id" name="id" value='@journalfeedFormData("id").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(journalfeedFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(journalfeedFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(journalfeedFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(journalfeedFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(journalfeedFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(journalfeedFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(journalfeedFormData("modifiedDate"))
-			<!-- FeedId -->
-			@helper.inputText(journalfeedFormData("feedId"))
-			<!-- Name -->
-			@helper.inputText(journalfeedFormData("name"))
-			<!-- Description -->
-			@helper.inputText(journalfeedFormData("description"))
-			<!-- DDMStructureKey -->
-			@helper.inputText(journalfeedFormData("DDMStructureKey"))
-			<!-- DDMTemplateKey -->
-			@helper.inputText(journalfeedFormData("DDMTemplateKey"))
-			<!-- DDMRendererTemplateKey -->
-			@helper.inputText(journalfeedFormData("DDMRendererTemplateKey"))
-			<!-- Delta -->
-			@helper.inputText(journalfeedFormData("delta"))
-			<!-- OrderByCol -->
-			@helper.inputText(journalfeedFormData("orderByCol"))
-			<!-- OrderByType -->
-			@helper.inputText(journalfeedFormData("orderByType"))
-			<!-- TargetLayoutFriendlyUrl -->
-			@helper.inputText(journalfeedFormData("targetLayoutFriendlyUrl"))
-			<!-- TargetPortletId -->
-			@helper.inputText(journalfeedFormData("targetPortletId"))
-			<!-- ContentField -->
-			@helper.inputText(journalfeedFormData("contentField"))
-			<!-- FeedFormat -->
-			@helper.inputText(journalfeedFormData("feedFormat"))
-			<!-- FeedVersion -->
-			@helper.inputText(journalfeedFormData("feedVersion"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.JournalfeedApplication.all()">Back to Journalfeed List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("modifiedDate"))
+				</div>
+				<!-- FeedId -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("feedId"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("description"))
+				</div>
+				<!-- DDMStructureKey -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("DDMStructureKey"))
+				</div>
+				<!-- DDMTemplateKey -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("DDMTemplateKey"))
+				</div>
+				<!-- DDMRendererTemplateKey -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("DDMRendererTemplateKey"))
+				</div>
+				<!-- Delta -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("delta"))
+				</div>
+				<!-- OrderByCol -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("orderByCol"))
+				</div>
+				<!-- OrderByType -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("orderByType"))
+				</div>
+				<!-- TargetLayoutFriendlyUrl -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("targetLayoutFriendlyUrl"))
+				</div>
+				<!-- TargetPortletId -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("targetPortletId"))
+				</div>
+				<!-- ContentField -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("contentField"))
+				</div>
+				<!-- FeedFormat -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("feedFormat"))
+				</div>
+				<!-- FeedVersion -->
+				<div class="form-group">
+				@helper.inputText(journalfeedFormData("feedVersion"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

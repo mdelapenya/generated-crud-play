@@ -4,43 +4,70 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Assetvocabulary #@assetvocabularyFormData("vocabularyId").value</legend>
-
+	<div class="container">
 		@form(routes.AssetvocabularyApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(assetvocabularyFormData("vocabularyId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(assetvocabularyFormData("vocabularyId") != "0") {
+				<h1>Edition of Assetvocabulary #@assetvocabularyFormData("vocabularyId").value</h1>
+				} else {
+				<h1>Creation of a Assetvocabulary</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.AssetvocabularyApplication.all()">Back to Assetvocabularys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="vocabularyId" name="vocabularyId" value='@assetvocabularyFormData("vocabularyId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(assetvocabularyFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(assetvocabularyFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(assetvocabularyFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(assetvocabularyFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(assetvocabularyFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(assetvocabularyFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(assetvocabularyFormData("modifiedDate"))
-			<!-- Name -->
-			@helper.inputText(assetvocabularyFormData("name"))
-			<!-- Title -->
-			@helper.inputText(assetvocabularyFormData("title"))
-			<!-- Description -->
-			@helper.inputText(assetvocabularyFormData("description"))
-			<!-- Settings -->
-			@helper.inputText(assetvocabularyFormData("settings"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.AssetvocabularyApplication.all()">Back to Assetvocabulary List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(assetvocabularyFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(assetvocabularyFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(assetvocabularyFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(assetvocabularyFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(assetvocabularyFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(assetvocabularyFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(assetvocabularyFormData("modifiedDate"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(assetvocabularyFormData("name"))
+				</div>
+				<!-- Title -->
+				<div class="form-group">
+				@helper.inputText(assetvocabularyFormData("title"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(assetvocabularyFormData("description"))
+				</div>
+				<!-- Settings -->
+				<div class="form-group">
+				@helper.inputText(assetvocabularyFormData("settings"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

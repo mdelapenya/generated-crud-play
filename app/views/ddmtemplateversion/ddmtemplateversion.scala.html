@@ -4,43 +4,70 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Ddmtemplateversion #@ddmtemplateversionFormData("templateVersionId").value</legend>
-
+	<div class="container">
 		@form(routes.DdmtemplateversionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(ddmtemplateversionFormData("templateVersionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(ddmtemplateversionFormData("templateVersionId") != "0") {
+				<h1>Edition of Ddmtemplateversion #@ddmtemplateversionFormData("templateVersionId").value</h1>
+				} else {
+				<h1>Creation of a Ddmtemplateversion</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DdmtemplateversionApplication.all()">Back to Ddmtemplateversions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="templateVersionId" name="templateVersionId" value='@ddmtemplateversionFormData("templateVersionId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(ddmtemplateversionFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(ddmtemplateversionFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(ddmtemplateversionFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(ddmtemplateversionFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(ddmtemplateversionFormData("createDate"))
-			<!-- TemplateId -->
-			@helper.inputText(ddmtemplateversionFormData("templateId"))
-			<!-- Version -->
-			@helper.inputText(ddmtemplateversionFormData("version"))
-			<!-- Name -->
-			@helper.inputText(ddmtemplateversionFormData("name"))
-			<!-- Description -->
-			@helper.inputText(ddmtemplateversionFormData("description"))
-			<!-- Language -->
-			@helper.inputText(ddmtemplateversionFormData("language"))
-			<!-- Script -->
-			@helper.inputText(ddmtemplateversionFormData("script"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DdmtemplateversionApplication.all()">Back to Ddmtemplateversion List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateversionFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateversionFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateversionFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateversionFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateversionFormData("createDate"))
+				</div>
+				<!-- TemplateId -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateversionFormData("templateId"))
+				</div>
+				<!-- Version -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateversionFormData("version"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateversionFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateversionFormData("description"))
+				</div>
+				<!-- Language -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateversionFormData("language"))
+				</div>
+				<!-- Script -->
+				<div class="form-group">
+				@helper.inputText(ddmtemplateversionFormData("script"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

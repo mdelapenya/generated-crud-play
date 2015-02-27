@@ -4,59 +4,102 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Address #@addressFormData("addressId").value</legend>
-
+	<div class="container">
 		@form(routes.AddressApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(addressFormData("addressId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(addressFormData("addressId") != "0") {
+				<h1>Edition of Address #@addressFormData("addressId").value</h1>
+				} else {
+				<h1>Creation of a Address</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.AddressApplication.all()">Back to Addresss</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="addressId" name="addressId" value='@addressFormData("addressId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(addressFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(addressFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(addressFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(addressFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(addressFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(addressFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(addressFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(addressFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(addressFormData("classPK"))
-			<!-- Street1 -->
-			@helper.inputText(addressFormData("street1"))
-			<!-- Street2 -->
-			@helper.inputText(addressFormData("street2"))
-			<!-- Street3 -->
-			@helper.inputText(addressFormData("street3"))
-			<!-- City -->
-			@helper.inputText(addressFormData("city"))
-			<!-- Zip -->
-			@helper.inputText(addressFormData("zip"))
-			<!-- RegionId -->
-			@helper.inputText(addressFormData("regionId"))
-			<!-- CountryId -->
-			@helper.inputText(addressFormData("countryId"))
-			<!-- TypeId -->
-			@helper.inputText(addressFormData("typeId"))
-			<!-- Mailing -->
-			@helper.checkbox(addressFormData("mailing"))
-			<!-- Customprimary -->
-			@helper.checkbox(addressFormData("customprimary"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.AddressApplication.all()">Back to Address List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("uuid"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("classPK"))
+				</div>
+				<!-- Street1 -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("street1"))
+				</div>
+				<!-- Street2 -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("street2"))
+				</div>
+				<!-- Street3 -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("street3"))
+				</div>
+				<!-- City -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("city"))
+				</div>
+				<!-- Zip -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("zip"))
+				</div>
+				<!-- RegionId -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("regionId"))
+				</div>
+				<!-- CountryId -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("countryId"))
+				</div>
+				<!-- TypeId -->
+				<div class="form-group">
+				@helper.inputText(addressFormData("typeId"))
+				</div>
+				<!-- Mailing -->
+				<div class="form-group">
+				@helper.checkbox(addressFormData("mailing"))
+				</div>
+				<!-- Customprimary -->
+				<div class="form-group">
+				@helper.checkbox(addressFormData("customprimary"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

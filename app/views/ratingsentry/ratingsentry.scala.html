@@ -4,39 +4,62 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Ratingsentry #@ratingsentryFormData("entryId").value</legend>
-
+	<div class="container">
 		@form(routes.RatingsentryApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(ratingsentryFormData("entryId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(ratingsentryFormData("entryId") != "0") {
+				<h1>Edition of Ratingsentry #@ratingsentryFormData("entryId").value</h1>
+				} else {
+				<h1>Creation of a Ratingsentry</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.RatingsentryApplication.all()">Back to Ratingsentrys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="entryId" name="entryId" value='@ratingsentryFormData("entryId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(ratingsentryFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(ratingsentryFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(ratingsentryFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(ratingsentryFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(ratingsentryFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(ratingsentryFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(ratingsentryFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(ratingsentryFormData("classPK"))
-			<!-- Score -->
-			@helper.inputText(ratingsentryFormData("score"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.RatingsentryApplication.all()">Back to Ratingsentry List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(ratingsentryFormData("uuid"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(ratingsentryFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(ratingsentryFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(ratingsentryFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(ratingsentryFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(ratingsentryFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(ratingsentryFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(ratingsentryFormData("classPK"))
+				</div>
+				<!-- Score -->
+				<div class="form-group">
+				@helper.inputText(ratingsentryFormData("score"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

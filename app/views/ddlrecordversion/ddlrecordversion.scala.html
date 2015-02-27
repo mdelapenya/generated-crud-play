@@ -4,49 +4,82 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Ddlrecordversion #@ddlrecordversionFormData("recordVersionId").value</legend>
-
+	<div class="container">
 		@form(routes.DdlrecordversionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(ddlrecordversionFormData("recordVersionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(ddlrecordversionFormData("recordVersionId") != "0") {
+				<h1>Edition of Ddlrecordversion #@ddlrecordversionFormData("recordVersionId").value</h1>
+				} else {
+				<h1>Creation of a Ddlrecordversion</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DdlrecordversionApplication.all()">Back to Ddlrecordversions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="recordVersionId" name="recordVersionId" value='@ddlrecordversionFormData("recordVersionId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(ddlrecordversionFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(ddlrecordversionFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(ddlrecordversionFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(ddlrecordversionFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(ddlrecordversionFormData("createDate"))
-			<!-- DDMStorageId -->
-			@helper.inputText(ddlrecordversionFormData("DDMStorageId"))
-			<!-- RecordSetId -->
-			@helper.inputText(ddlrecordversionFormData("recordSetId"))
-			<!-- RecordId -->
-			@helper.inputText(ddlrecordversionFormData("recordId"))
-			<!-- Version -->
-			@helper.inputText(ddlrecordversionFormData("version"))
-			<!-- DisplayIndex -->
-			@helper.inputText(ddlrecordversionFormData("displayIndex"))
-			<!-- Status -->
-			@helper.inputText(ddlrecordversionFormData("status"))
-			<!-- StatusByUserId -->
-			@helper.inputText(ddlrecordversionFormData("statusByUserId"))
-			<!-- StatusByUserName -->
-			@helper.inputText(ddlrecordversionFormData("statusByUserName"))
-			<!-- StatusDate -->
-			@helper.inputText(ddlrecordversionFormData("statusDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DdlrecordversionApplication.all()">Back to Ddlrecordversion List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("createDate"))
+				</div>
+				<!-- DDMStorageId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("DDMStorageId"))
+				</div>
+				<!-- RecordSetId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("recordSetId"))
+				</div>
+				<!-- RecordId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("recordId"))
+				</div>
+				<!-- Version -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("version"))
+				</div>
+				<!-- DisplayIndex -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("displayIndex"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("status"))
+				</div>
+				<!-- StatusByUserId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("statusByUserId"))
+				</div>
+				<!-- StatusByUserName -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("statusByUserName"))
+				</div>
+				<!-- StatusDate -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordversionFormData("statusDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

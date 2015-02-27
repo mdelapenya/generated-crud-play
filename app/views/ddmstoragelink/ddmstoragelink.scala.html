@@ -4,29 +4,42 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Ddmstoragelink #@ddmstoragelinkFormData("storageLinkId").value</legend>
-
+	<div class="container">
 		@form(routes.DdmstoragelinkApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(ddmstoragelinkFormData("storageLinkId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(ddmstoragelinkFormData("storageLinkId") != "0") {
+				<h1>Edition of Ddmstoragelink #@ddmstoragelinkFormData("storageLinkId").value</h1>
+				} else {
+				<h1>Creation of a Ddmstoragelink</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DdmstoragelinkApplication.all()">Back to Ddmstoragelinks</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="storageLinkId" name="storageLinkId" value='@ddmstoragelinkFormData("storageLinkId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(ddmstoragelinkFormData("uuid"))
-			<!-- ClassNameId -->
-			@helper.inputText(ddmstoragelinkFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(ddmstoragelinkFormData("classPK"))
-			<!-- StructureId -->
-			@helper.inputText(ddmstoragelinkFormData("structureId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DdmstoragelinkApplication.all()">Back to Ddmstoragelink List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(ddmstoragelinkFormData("uuid"))
 				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(ddmstoragelinkFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(ddmstoragelinkFormData("classPK"))
+				</div>
+				<!-- StructureId -->
+				<div class="form-group">
+				@helper.inputText(ddmstoragelinkFormData("structureId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

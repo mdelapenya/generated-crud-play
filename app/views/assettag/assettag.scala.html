@@ -4,37 +4,58 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Assettag #@assettagFormData("tagId").value</legend>
-
+	<div class="container">
 		@form(routes.AssettagApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(assettagFormData("tagId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(assettagFormData("tagId") != "0") {
+				<h1>Edition of Assettag #@assettagFormData("tagId").value</h1>
+				} else {
+				<h1>Creation of a Assettag</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.AssettagApplication.all()">Back to Assettags</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="tagId" name="tagId" value='@assettagFormData("tagId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(assettagFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(assettagFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(assettagFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(assettagFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(assettagFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(assettagFormData("modifiedDate"))
-			<!-- Name -->
-			@helper.inputText(assettagFormData("name"))
-			<!-- AssetCount -->
-			@helper.inputText(assettagFormData("assetCount"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.AssettagApplication.all()">Back to Assettag List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(assettagFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(assettagFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(assettagFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(assettagFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(assettagFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(assettagFormData("modifiedDate"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(assettagFormData("name"))
+				</div>
+				<!-- AssetCount -->
+				<div class="form-group">
+				@helper.inputText(assettagFormData("assetCount"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

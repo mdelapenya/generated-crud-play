@@ -4,49 +4,82 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Systemevent #@systemeventFormData("systemEventId").value</legend>
-
+	<div class="container">
 		@form(routes.SystemeventApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(systemeventFormData("systemEventId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(systemeventFormData("systemEventId") != "0") {
+				<h1>Edition of Systemevent #@systemeventFormData("systemEventId").value</h1>
+				} else {
+				<h1>Creation of a Systemevent</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.SystemeventApplication.all()">Back to Systemevents</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="systemEventId" name="systemEventId" value='@systemeventFormData("systemEventId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(systemeventFormData("mvccVersion"))
-			<!-- GroupId -->
-			@helper.inputText(systemeventFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(systemeventFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(systemeventFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(systemeventFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(systemeventFormData("createDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(systemeventFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(systemeventFormData("classPK"))
-			<!-- ClassUuid -->
-			@helper.inputText(systemeventFormData("classUuid"))
-			<!-- ReferrerClassNameId -->
-			@helper.inputText(systemeventFormData("referrerClassNameId"))
-			<!-- ParentSystemEventId -->
-			@helper.inputText(systemeventFormData("parentSystemEventId"))
-			<!-- SystemEventSetKey -->
-			@helper.inputText(systemeventFormData("systemEventSetKey"))
-			<!-- Customtype -->
-			@helper.inputText(systemeventFormData("customtype"))
-			<!-- ExtraData -->
-			@helper.inputText(systemeventFormData("extraData"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.SystemeventApplication.all()">Back to Systemevent List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("mvccVersion"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("createDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("classPK"))
+				</div>
+				<!-- ClassUuid -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("classUuid"))
+				</div>
+				<!-- ReferrerClassNameId -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("referrerClassNameId"))
+				</div>
+				<!-- ParentSystemEventId -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("parentSystemEventId"))
+				</div>
+				<!-- SystemEventSetKey -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("systemEventSetKey"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("customtype"))
+				</div>
+				<!-- ExtraData -->
+				<div class="form-group">
+				@helper.inputText(systemeventFormData("extraData"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

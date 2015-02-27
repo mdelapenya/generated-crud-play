@@ -4,41 +4,66 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Scframeworkversion #@scframeworkversionFormData("frameworkVersionId").value</legend>
-
+	<div class="container">
 		@form(routes.ScframeworkversionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(scframeworkversionFormData("frameworkVersionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(scframeworkversionFormData("frameworkVersionId") != "0") {
+				<h1>Edition of Scframeworkversion #@scframeworkversionFormData("frameworkVersionId").value</h1>
+				} else {
+				<h1>Creation of a Scframeworkversion</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ScframeworkversionApplication.all()">Back to Scframeworkversions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="frameworkVersionId" name="frameworkVersionId" value='@scframeworkversionFormData("frameworkVersionId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(scframeworkversionFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(scframeworkversionFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(scframeworkversionFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(scframeworkversionFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(scframeworkversionFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(scframeworkversionFormData("modifiedDate"))
-			<!-- Name -->
-			@helper.inputText(scframeworkversionFormData("name"))
-			<!-- Url -->
-			@helper.inputText(scframeworkversionFormData("url"))
-			<!-- Active -->
-			@helper.checkbox(scframeworkversionFormData("active"))
-			<!-- Priority -->
-			@helper.inputText(scframeworkversionFormData("priority"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ScframeworkversionApplication.all()">Back to Scframeworkversion List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(scframeworkversionFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(scframeworkversionFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(scframeworkversionFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(scframeworkversionFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(scframeworkversionFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(scframeworkversionFormData("modifiedDate"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(scframeworkversionFormData("name"))
+				</div>
+				<!-- Url -->
+				<div class="form-group">
+				@helper.inputText(scframeworkversionFormData("url"))
+				</div>
+				<!-- Active -->
+				<div class="form-group">
+				@helper.checkbox(scframeworkversionFormData("active"))
+				</div>
+				<!-- Priority -->
+				<div class="form-group">
+				@helper.inputText(scframeworkversionFormData("priority"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

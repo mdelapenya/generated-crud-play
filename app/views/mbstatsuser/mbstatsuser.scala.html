@@ -4,29 +4,42 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Mbstatsuser #@mbstatsuserFormData("statsUserId").value</legend>
-
+	<div class="container">
 		@form(routes.MbstatsuserApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(mbstatsuserFormData("statsUserId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(mbstatsuserFormData("statsUserId") != "0") {
+				<h1>Edition of Mbstatsuser #@mbstatsuserFormData("statsUserId").value</h1>
+				} else {
+				<h1>Creation of a Mbstatsuser</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.MbstatsuserApplication.all()">Back to Mbstatsusers</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="statsUserId" name="statsUserId" value='@mbstatsuserFormData("statsUserId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(mbstatsuserFormData("groupId"))
-			<!-- UserId -->
-			@helper.inputText(mbstatsuserFormData("userId"))
-			<!-- MessageCount -->
-			@helper.inputText(mbstatsuserFormData("messageCount"))
-			<!-- LastPostDate -->
-			@helper.inputText(mbstatsuserFormData("lastPostDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.MbstatsuserApplication.all()">Back to Mbstatsuser List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(mbstatsuserFormData("groupId"))
 				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(mbstatsuserFormData("userId"))
+				</div>
+				<!-- MessageCount -->
+				<div class="form-group">
+				@helper.inputText(mbstatsuserFormData("messageCount"))
+				</div>
+				<!-- LastPostDate -->
+				<div class="form-group">
+				@helper.inputText(mbstatsuserFormData("lastPostDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

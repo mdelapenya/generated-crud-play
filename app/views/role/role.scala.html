@@ -4,49 +4,82 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Role #@roleFormData("roleId").value</legend>
-
+	<div class="container">
 		@form(routes.RoleApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(roleFormData("roleId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(roleFormData("roleId") != "0") {
+				<h1>Edition of Role #@roleFormData("roleId").value</h1>
+				} else {
+				<h1>Creation of a Role</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.RoleApplication.all()">Back to Roles</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="roleId" name="roleId" value='@roleFormData("roleId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(roleFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(roleFormData("uuid"))
-			<!-- CompanyId -->
-			@helper.inputText(roleFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(roleFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(roleFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(roleFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(roleFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(roleFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(roleFormData("classPK"))
-			<!-- Name -->
-			@helper.inputText(roleFormData("name"))
-			<!-- Title -->
-			@helper.inputText(roleFormData("title"))
-			<!-- Description -->
-			@helper.inputText(roleFormData("description"))
-			<!-- Customtype -->
-			@helper.inputText(roleFormData("customtype"))
-			<!-- Subtype -->
-			@helper.inputText(roleFormData("subtype"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.RoleApplication.all()">Back to Role List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("uuid"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("classPK"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("name"))
+				</div>
+				<!-- Title -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("title"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("description"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("customtype"))
+				</div>
+				<!-- Subtype -->
+				<div class="form-group">
+				@helper.inputText(roleFormData("subtype"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

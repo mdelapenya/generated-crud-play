@@ -4,55 +4,94 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Orglabor #@orglaborFormData("orgLaborId").value</legend>
-
+	<div class="container">
 		@form(routes.OrglaborApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(orglaborFormData("orgLaborId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(orglaborFormData("orgLaborId") != "0") {
+				<h1>Edition of Orglabor #@orglaborFormData("orgLaborId").value</h1>
+				} else {
+				<h1>Creation of a Orglabor</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.OrglaborApplication.all()">Back to Orglabors</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="orgLaborId" name="orgLaborId" value='@orglaborFormData("orgLaborId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(orglaborFormData("mvccVersion"))
-			<!-- OrganizationId -->
-			@helper.inputText(orglaborFormData("organizationId"))
-			<!-- TypeId -->
-			@helper.inputText(orglaborFormData("typeId"))
-			<!-- SunOpen -->
-			@helper.inputText(orglaborFormData("sunOpen"))
-			<!-- SunClose -->
-			@helper.inputText(orglaborFormData("sunClose"))
-			<!-- MonOpen -->
-			@helper.inputText(orglaborFormData("monOpen"))
-			<!-- MonClose -->
-			@helper.inputText(orglaborFormData("monClose"))
-			<!-- TueOpen -->
-			@helper.inputText(orglaborFormData("tueOpen"))
-			<!-- TueClose -->
-			@helper.inputText(orglaborFormData("tueClose"))
-			<!-- WedOpen -->
-			@helper.inputText(orglaborFormData("wedOpen"))
-			<!-- WedClose -->
-			@helper.inputText(orglaborFormData("wedClose"))
-			<!-- ThuOpen -->
-			@helper.inputText(orglaborFormData("thuOpen"))
-			<!-- ThuClose -->
-			@helper.inputText(orglaborFormData("thuClose"))
-			<!-- FriOpen -->
-			@helper.inputText(orglaborFormData("friOpen"))
-			<!-- FriClose -->
-			@helper.inputText(orglaborFormData("friClose"))
-			<!-- SatOpen -->
-			@helper.inputText(orglaborFormData("satOpen"))
-			<!-- SatClose -->
-			@helper.inputText(orglaborFormData("satClose"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.OrglaborApplication.all()">Back to Orglabor List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("mvccVersion"))
 				</div>
+				<!-- OrganizationId -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("organizationId"))
+				</div>
+				<!-- TypeId -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("typeId"))
+				</div>
+				<!-- SunOpen -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("sunOpen"))
+				</div>
+				<!-- SunClose -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("sunClose"))
+				</div>
+				<!-- MonOpen -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("monOpen"))
+				</div>
+				<!-- MonClose -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("monClose"))
+				</div>
+				<!-- TueOpen -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("tueOpen"))
+				</div>
+				<!-- TueClose -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("tueClose"))
+				</div>
+				<!-- WedOpen -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("wedOpen"))
+				</div>
+				<!-- WedClose -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("wedClose"))
+				</div>
+				<!-- ThuOpen -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("thuOpen"))
+				</div>
+				<!-- ThuClose -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("thuClose"))
+				</div>
+				<!-- FriOpen -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("friOpen"))
+				</div>
+				<!-- FriClose -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("friClose"))
+				</div>
+				<!-- SatOpen -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("satOpen"))
+				</div>
+				<!-- SatClose -->
+				<div class="form-group">
+				@helper.inputText(orglaborFormData("satClose"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

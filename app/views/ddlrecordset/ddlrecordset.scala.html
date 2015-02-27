@@ -4,47 +4,78 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Ddlrecordset #@ddlrecordsetFormData("recordSetId").value</legend>
-
+	<div class="container">
 		@form(routes.DdlrecordsetApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(ddlrecordsetFormData("recordSetId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(ddlrecordsetFormData("recordSetId") != "0") {
+				<h1>Edition of Ddlrecordset #@ddlrecordsetFormData("recordSetId").value</h1>
+				} else {
+				<h1>Creation of a Ddlrecordset</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DdlrecordsetApplication.all()">Back to Ddlrecordsets</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="recordSetId" name="recordSetId" value='@ddlrecordsetFormData("recordSetId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(ddlrecordsetFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(ddlrecordsetFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(ddlrecordsetFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(ddlrecordsetFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(ddlrecordsetFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(ddlrecordsetFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(ddlrecordsetFormData("modifiedDate"))
-			<!-- DDMStructureId -->
-			@helper.inputText(ddlrecordsetFormData("DDMStructureId"))
-			<!-- RecordSetKey -->
-			@helper.inputText(ddlrecordsetFormData("recordSetKey"))
-			<!-- Name -->
-			@helper.inputText(ddlrecordsetFormData("name"))
-			<!-- Description -->
-			@helper.inputText(ddlrecordsetFormData("description"))
-			<!-- MinDisplayRows -->
-			@helper.inputText(ddlrecordsetFormData("minDisplayRows"))
-			<!-- Scope -->
-			@helper.inputText(ddlrecordsetFormData("scope"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DdlrecordsetApplication.all()">Back to Ddlrecordset List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("modifiedDate"))
+				</div>
+				<!-- DDMStructureId -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("DDMStructureId"))
+				</div>
+				<!-- RecordSetKey -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("recordSetKey"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("description"))
+				</div>
+				<!-- MinDisplayRows -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("minDisplayRows"))
+				</div>
+				<!-- Scope -->
+				<div class="form-group">
+				@helper.inputText(ddlrecordsetFormData("scope"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

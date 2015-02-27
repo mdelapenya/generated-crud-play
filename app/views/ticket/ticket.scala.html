@@ -4,39 +4,62 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Ticket #@ticketFormData("ticketId").value</legend>
-
+	<div class="container">
 		@form(routes.TicketApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(ticketFormData("ticketId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(ticketFormData("ticketId") != "0") {
+				<h1>Edition of Ticket #@ticketFormData("ticketId").value</h1>
+				} else {
+				<h1>Creation of a Ticket</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.TicketApplication.all()">Back to Tickets</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="ticketId" name="ticketId" value='@ticketFormData("ticketId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(ticketFormData("mvccVersion"))
-			<!-- CompanyId -->
-			@helper.inputText(ticketFormData("companyId"))
-			<!-- CreateDate -->
-			@helper.inputText(ticketFormData("createDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(ticketFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(ticketFormData("classPK"))
-			<!-- Key -->
-			@helper.inputText(ticketFormData("key"))
-			<!-- Customtype -->
-			@helper.inputText(ticketFormData("customtype"))
-			<!-- ExtraInfo -->
-			@helper.inputText(ticketFormData("extraInfo"))
-			<!-- ExpirationDate -->
-			@helper.inputText(ticketFormData("expirationDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.TicketApplication.all()">Back to Ticket List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(ticketFormData("mvccVersion"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(ticketFormData("companyId"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(ticketFormData("createDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(ticketFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(ticketFormData("classPK"))
+				</div>
+				<!-- Key -->
+				<div class="form-group">
+				@helper.inputText(ticketFormData("key"))
+				</div>
+				<!-- Customtype -->
+				<div class="form-group">
+				@helper.inputText(ticketFormData("customtype"))
+				</div>
+				<!-- ExtraInfo -->
+				<div class="form-group">
+				@helper.inputText(ticketFormData("extraInfo"))
+				</div>
+				<!-- ExpirationDate -->
+				<div class="form-group">
+				@helper.inputText(ticketFormData("expirationDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

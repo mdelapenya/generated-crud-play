@@ -4,37 +4,58 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Mbthreadflag #@mbthreadflagFormData("threadFlagId").value</legend>
-
+	<div class="container">
 		@form(routes.MbthreadflagApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(mbthreadflagFormData("threadFlagId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(mbthreadflagFormData("threadFlagId") != "0") {
+				<h1>Edition of Mbthreadflag #@mbthreadflagFormData("threadFlagId").value</h1>
+				} else {
+				<h1>Creation of a Mbthreadflag</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.MbthreadflagApplication.all()">Back to Mbthreadflags</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="threadFlagId" name="threadFlagId" value='@mbthreadflagFormData("threadFlagId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(mbthreadflagFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(mbthreadflagFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(mbthreadflagFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(mbthreadflagFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(mbthreadflagFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(mbthreadflagFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(mbthreadflagFormData("modifiedDate"))
-			<!-- ThreadId -->
-			@helper.inputText(mbthreadflagFormData("threadId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.MbthreadflagApplication.all()">Back to Mbthreadflag List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(mbthreadflagFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(mbthreadflagFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(mbthreadflagFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(mbthreadflagFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(mbthreadflagFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(mbthreadflagFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(mbthreadflagFormData("modifiedDate"))
+				</div>
+				<!-- ThreadId -->
+				<div class="form-group">
+				@helper.inputText(mbthreadflagFormData("threadId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

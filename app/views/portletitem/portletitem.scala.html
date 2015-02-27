@@ -4,41 +4,66 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Portletitem #@portletitemFormData("portletItemId").value</legend>
-
+	<div class="container">
 		@form(routes.PortletitemApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(portletitemFormData("portletItemId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(portletitemFormData("portletItemId") != "0") {
+				<h1>Edition of Portletitem #@portletitemFormData("portletItemId").value</h1>
+				} else {
+				<h1>Creation of a Portletitem</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.PortletitemApplication.all()">Back to Portletitems</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="portletItemId" name="portletItemId" value='@portletitemFormData("portletItemId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(portletitemFormData("mvccVersion"))
-			<!-- GroupId -->
-			@helper.inputText(portletitemFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(portletitemFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(portletitemFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(portletitemFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(portletitemFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(portletitemFormData("modifiedDate"))
-			<!-- Name -->
-			@helper.inputText(portletitemFormData("name"))
-			<!-- PortletId -->
-			@helper.inputText(portletitemFormData("portletId"))
-			<!-- ClassNameId -->
-			@helper.inputText(portletitemFormData("classNameId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.PortletitemApplication.all()">Back to Portletitem List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(portletitemFormData("mvccVersion"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(portletitemFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(portletitemFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(portletitemFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(portletitemFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(portletitemFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(portletitemFormData("modifiedDate"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(portletitemFormData("name"))
+				</div>
+				<!-- PortletId -->
+				<div class="form-group">
+				@helper.inputText(portletitemFormData("portletId"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(portletitemFormData("classNameId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

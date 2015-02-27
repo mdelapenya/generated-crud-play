@@ -4,73 +4,130 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Dlfileversion #@dlfileversionFormData("fileVersionId").value</legend>
-
+	<div class="container">
 		@form(routes.DlfileversionApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(dlfileversionFormData("fileVersionId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(dlfileversionFormData("fileVersionId") != "0") {
+				<h1>Edition of Dlfileversion #@dlfileversionFormData("fileVersionId").value</h1>
+				} else {
+				<h1>Creation of a Dlfileversion</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DlfileversionApplication.all()">Back to Dlfileversions</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="fileVersionId" name="fileVersionId" value='@dlfileversionFormData("fileVersionId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(dlfileversionFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(dlfileversionFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(dlfileversionFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(dlfileversionFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(dlfileversionFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(dlfileversionFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(dlfileversionFormData("modifiedDate"))
-			<!-- RepositoryId -->
-			@helper.inputText(dlfileversionFormData("repositoryId"))
-			<!-- FolderId -->
-			@helper.inputText(dlfileversionFormData("folderId"))
-			<!-- FileEntryId -->
-			@helper.inputText(dlfileversionFormData("fileEntryId"))
-			<!-- TreePath -->
-			@helper.inputText(dlfileversionFormData("treePath"))
-			<!-- FileName -->
-			@helper.inputText(dlfileversionFormData("fileName"))
-			<!-- Extension -->
-			@helper.inputText(dlfileversionFormData("extension"))
-			<!-- MimeType -->
-			@helper.inputText(dlfileversionFormData("mimeType"))
-			<!-- Title -->
-			@helper.inputText(dlfileversionFormData("title"))
-			<!-- Description -->
-			@helper.inputText(dlfileversionFormData("description"))
-			<!-- ChangeLog -->
-			@helper.inputText(dlfileversionFormData("changeLog"))
-			<!-- ExtraSettings -->
-			@helper.inputText(dlfileversionFormData("extraSettings"))
-			<!-- FileEntryTypeId -->
-			@helper.inputText(dlfileversionFormData("fileEntryTypeId"))
-			<!-- Version -->
-			@helper.inputText(dlfileversionFormData("version"))
-			<!-- Size -->
-			@helper.inputText(dlfileversionFormData("size"))
-			<!-- Checksum -->
-			@helper.inputText(dlfileversionFormData("checksum"))
-			<!-- Status -->
-			@helper.inputText(dlfileversionFormData("status"))
-			<!-- StatusByUserId -->
-			@helper.inputText(dlfileversionFormData("statusByUserId"))
-			<!-- StatusByUserName -->
-			@helper.inputText(dlfileversionFormData("statusByUserName"))
-			<!-- StatusDate -->
-			@helper.inputText(dlfileversionFormData("statusDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DlfileversionApplication.all()">Back to Dlfileversion List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("modifiedDate"))
+				</div>
+				<!-- RepositoryId -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("repositoryId"))
+				</div>
+				<!-- FolderId -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("folderId"))
+				</div>
+				<!-- FileEntryId -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("fileEntryId"))
+				</div>
+				<!-- TreePath -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("treePath"))
+				</div>
+				<!-- FileName -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("fileName"))
+				</div>
+				<!-- Extension -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("extension"))
+				</div>
+				<!-- MimeType -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("mimeType"))
+				</div>
+				<!-- Title -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("title"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("description"))
+				</div>
+				<!-- ChangeLog -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("changeLog"))
+				</div>
+				<!-- ExtraSettings -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("extraSettings"))
+				</div>
+				<!-- FileEntryTypeId -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("fileEntryTypeId"))
+				</div>
+				<!-- Version -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("version"))
+				</div>
+				<!-- Size -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("size"))
+				</div>
+				<!-- Checksum -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("checksum"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("status"))
+				</div>
+				<!-- StatusByUserId -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("statusByUserId"))
+				</div>
+				<!-- StatusByUserName -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("statusByUserName"))
+				</div>
+				<!-- StatusDate -->
+				<div class="form-group">
+				@helper.inputText(dlfileversionFormData("statusDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

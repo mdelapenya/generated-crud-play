@@ -4,27 +4,38 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Journalarticleresource #@journalarticleresourceFormData("resourcePrimKey").value</legend>
-
+	<div class="container">
 		@form(routes.JournalarticleresourceApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(journalarticleresourceFormData("resourcePrimKey"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(journalarticleresourceFormData("resourcePrimKey") != "0") {
+				<h1>Edition of Journalarticleresource #@journalarticleresourceFormData("resourcePrimKey").value</h1>
+				} else {
+				<h1>Creation of a Journalarticleresource</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.JournalarticleresourceApplication.all()">Back to Journalarticleresources</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="resourcePrimKey" name="resourcePrimKey" value='@journalarticleresourceFormData("resourcePrimKey").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(journalarticleresourceFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(journalarticleresourceFormData("groupId"))
-			<!-- ArticleId -->
-			@helper.inputText(journalarticleresourceFormData("articleId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.JournalarticleresourceApplication.all()">Back to Journalarticleresource List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(journalarticleresourceFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleresourceFormData("groupId"))
+				</div>
+				<!-- ArticleId -->
+				<div class="form-group">
+				@helper.inputText(journalarticleresourceFormData("articleId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

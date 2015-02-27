@@ -4,33 +4,50 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Portletpreferences #@portletpreferencesFormData("portletPreferencesId").value</legend>
-
+	<div class="container">
 		@form(routes.PortletpreferencesApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(portletpreferencesFormData("portletPreferencesId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(portletpreferencesFormData("portletPreferencesId") != "0") {
+				<h1>Edition of Portletpreferences #@portletpreferencesFormData("portletPreferencesId").value</h1>
+				} else {
+				<h1>Creation of a Portletpreferences</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.PortletpreferencesApplication.all()">Back to Portletpreferencess</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="portletPreferencesId" name="portletPreferencesId" value='@portletpreferencesFormData("portletPreferencesId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(portletpreferencesFormData("mvccVersion"))
-			<!-- OwnerId -->
-			@helper.inputText(portletpreferencesFormData("ownerId"))
-			<!-- OwnerType -->
-			@helper.inputText(portletpreferencesFormData("ownerType"))
-			<!-- Plid -->
-			@helper.inputText(portletpreferencesFormData("plid"))
-			<!-- PortletId -->
-			@helper.inputText(portletpreferencesFormData("portletId"))
-			<!-- Preferences -->
-			@helper.inputText(portletpreferencesFormData("preferences"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.PortletpreferencesApplication.all()">Back to Portletpreferences List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(portletpreferencesFormData("mvccVersion"))
 				</div>
+				<!-- OwnerId -->
+				<div class="form-group">
+				@helper.inputText(portletpreferencesFormData("ownerId"))
+				</div>
+				<!-- OwnerType -->
+				<div class="form-group">
+				@helper.inputText(portletpreferencesFormData("ownerType"))
+				</div>
+				<!-- Plid -->
+				<div class="form-group">
+				@helper.inputText(portletpreferencesFormData("plid"))
+				</div>
+				<!-- PortletId -->
+				<div class="form-group">
+				@helper.inputText(portletpreferencesFormData("portletId"))
+				</div>
+				<!-- Preferences -->
+				<div class="form-group">
+				@helper.inputText(portletpreferencesFormData("preferences"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

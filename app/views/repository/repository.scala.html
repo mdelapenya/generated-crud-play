@@ -4,49 +4,82 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Repository #@repositoryFormData("repositoryId").value</legend>
-
+	<div class="container">
 		@form(routes.RepositoryApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(repositoryFormData("repositoryId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(repositoryFormData("repositoryId") != "0") {
+				<h1>Edition of Repository #@repositoryFormData("repositoryId").value</h1>
+				} else {
+				<h1>Creation of a Repository</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.RepositoryApplication.all()">Back to Repositorys</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="repositoryId" name="repositoryId" value='@repositoryFormData("repositoryId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(repositoryFormData("mvccVersion"))
-			<!-- Uuid -->
-			@helper.inputText(repositoryFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(repositoryFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(repositoryFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(repositoryFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(repositoryFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(repositoryFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(repositoryFormData("modifiedDate"))
-			<!-- ClassNameId -->
-			@helper.inputText(repositoryFormData("classNameId"))
-			<!-- Name -->
-			@helper.inputText(repositoryFormData("name"))
-			<!-- Description -->
-			@helper.inputText(repositoryFormData("description"))
-			<!-- PortletId -->
-			@helper.inputText(repositoryFormData("portletId"))
-			<!-- TypeSettings -->
-			@helper.inputText(repositoryFormData("typeSettings"))
-			<!-- DlFolderId -->
-			@helper.inputText(repositoryFormData("dlFolderId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.RepositoryApplication.all()">Back to Repository List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("mvccVersion"))
 				</div>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("uuid"))
+				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("modifiedDate"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("classNameId"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("description"))
+				</div>
+				<!-- PortletId -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("portletId"))
+				</div>
+				<!-- TypeSettings -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("typeSettings"))
+				</div>
+				<!-- DlFolderId -->
+				<div class="form-group">
+				@helper.inputText(repositoryFormData("dlFolderId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

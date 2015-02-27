@@ -4,53 +4,90 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Journalfolder #@journalfolderFormData("folderId").value</legend>
-
+	<div class="container">
 		@form(routes.JournalfolderApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(journalfolderFormData("folderId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(journalfolderFormData("folderId") != "0") {
+				<h1>Edition of Journalfolder #@journalfolderFormData("folderId").value</h1>
+				} else {
+				<h1>Creation of a Journalfolder</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.JournalfolderApplication.all()">Back to Journalfolders</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="folderId" name="folderId" value='@journalfolderFormData("folderId").value' />
 
-			<!-- Uuid -->
-			@helper.inputText(journalfolderFormData("uuid"))
-			<!-- GroupId -->
-			@helper.inputText(journalfolderFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(journalfolderFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(journalfolderFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(journalfolderFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(journalfolderFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(journalfolderFormData("modifiedDate"))
-			<!-- ParentFolderId -->
-			@helper.inputText(journalfolderFormData("parentFolderId"))
-			<!-- TreePath -->
-			@helper.inputText(journalfolderFormData("treePath"))
-			<!-- Name -->
-			@helper.inputText(journalfolderFormData("name"))
-			<!-- Description -->
-			@helper.inputText(journalfolderFormData("description"))
-			<!-- RestrictionType -->
-			@helper.inputText(journalfolderFormData("restrictionType"))
-			<!-- Status -->
-			@helper.inputText(journalfolderFormData("status"))
-			<!-- StatusByUserId -->
-			@helper.inputText(journalfolderFormData("statusByUserId"))
-			<!-- StatusByUserName -->
-			@helper.inputText(journalfolderFormData("statusByUserName"))
-			<!-- StatusDate -->
-			@helper.inputText(journalfolderFormData("statusDate"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.JournalfolderApplication.all()">Back to Journalfolder List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- Uuid -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("uuid"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("modifiedDate"))
+				</div>
+				<!-- ParentFolderId -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("parentFolderId"))
+				</div>
+				<!-- TreePath -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("treePath"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("description"))
+				</div>
+				<!-- RestrictionType -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("restrictionType"))
+				</div>
+				<!-- Status -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("status"))
+				</div>
+				<!-- StatusByUserId -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("statusByUserId"))
+				</div>
+				<!-- StatusByUserName -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("statusByUserName"))
+				</div>
+				<!-- StatusDate -->
+				<div class="form-group">
+				@helper.inputText(journalfolderFormData("statusDate"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

@@ -4,29 +4,42 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Shoppingitemfield #@shoppingitemfieldFormData("itemFieldId").value</legend>
-
+	<div class="container">
 		@form(routes.ShoppingitemfieldApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(shoppingitemfieldFormData("itemFieldId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(shoppingitemfieldFormData("itemFieldId") != "0") {
+				<h1>Edition of Shoppingitemfield #@shoppingitemfieldFormData("itemFieldId").value</h1>
+				} else {
+				<h1>Creation of a Shoppingitemfield</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.ShoppingitemfieldApplication.all()">Back to Shoppingitemfields</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="itemFieldId" name="itemFieldId" value='@shoppingitemfieldFormData("itemFieldId").value' />
 
-			<!-- ItemId -->
-			@helper.inputText(shoppingitemfieldFormData("itemId"))
-			<!-- Name -->
-			@helper.inputText(shoppingitemfieldFormData("name"))
-			<!-- Values -->
-			@helper.inputText(shoppingitemfieldFormData("values"))
-			<!-- Description -->
-			@helper.inputText(shoppingitemfieldFormData("description"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.ShoppingitemfieldApplication.all()">Back to Shoppingitemfield List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- ItemId -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemfieldFormData("itemId"))
 				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemfieldFormData("name"))
+				</div>
+				<!-- Values -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemfieldFormData("values"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(shoppingitemfieldFormData("description"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

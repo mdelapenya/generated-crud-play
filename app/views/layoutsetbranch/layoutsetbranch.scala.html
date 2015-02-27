@@ -4,61 +4,106 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Layoutsetbranch #@layoutsetbranchFormData("layoutSetBranchId").value</legend>
-
+	<div class="container">
 		@form(routes.LayoutsetbranchApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(layoutsetbranchFormData("layoutSetBranchId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(layoutsetbranchFormData("layoutSetBranchId") != "0") {
+				<h1>Edition of Layoutsetbranch #@layoutsetbranchFormData("layoutSetBranchId").value</h1>
+				} else {
+				<h1>Creation of a Layoutsetbranch</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.LayoutsetbranchApplication.all()">Back to Layoutsetbranchs</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="layoutSetBranchId" name="layoutSetBranchId" value='@layoutsetbranchFormData("layoutSetBranchId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(layoutsetbranchFormData("mvccVersion"))
-			<!-- GroupId -->
-			@helper.inputText(layoutsetbranchFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(layoutsetbranchFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(layoutsetbranchFormData("userId"))
-			<!-- UserName -->
-			@helper.inputText(layoutsetbranchFormData("userName"))
-			<!-- CreateDate -->
-			@helper.inputText(layoutsetbranchFormData("createDate"))
-			<!-- ModifiedDate -->
-			@helper.inputText(layoutsetbranchFormData("modifiedDate"))
-			<!-- PrivateLayout -->
-			@helper.checkbox(layoutsetbranchFormData("privateLayout"))
-			<!-- Name -->
-			@helper.inputText(layoutsetbranchFormData("name"))
-			<!-- Description -->
-			@helper.inputText(layoutsetbranchFormData("description"))
-			<!-- Master -->
-			@helper.checkbox(layoutsetbranchFormData("master"))
-			<!-- LogoId -->
-			@helper.inputText(layoutsetbranchFormData("logoId"))
-			<!-- ThemeId -->
-			@helper.inputText(layoutsetbranchFormData("themeId"))
-			<!-- ColorSchemeId -->
-			@helper.inputText(layoutsetbranchFormData("colorSchemeId"))
-			<!-- WapThemeId -->
-			@helper.inputText(layoutsetbranchFormData("wapThemeId"))
-			<!-- WapColorSchemeId -->
-			@helper.inputText(layoutsetbranchFormData("wapColorSchemeId"))
-			<!-- Css -->
-			@helper.inputText(layoutsetbranchFormData("css"))
-			<!-- Settings -->
-			@helper.inputText(layoutsetbranchFormData("settings"))
-			<!-- LayoutSetPrototypeUuid -->
-			@helper.inputText(layoutsetbranchFormData("layoutSetPrototypeUuid"))
-			<!-- LayoutSetPrototypeLinkEnabled -->
-			@helper.checkbox(layoutsetbranchFormData("layoutSetPrototypeLinkEnabled"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.LayoutsetbranchApplication.all()">Back to Layoutsetbranch List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("mvccVersion"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("userId"))
+				</div>
+				<!-- UserName -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("userName"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("createDate"))
+				</div>
+				<!-- ModifiedDate -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("modifiedDate"))
+				</div>
+				<!-- PrivateLayout -->
+				<div class="form-group">
+				@helper.checkbox(layoutsetbranchFormData("privateLayout"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("name"))
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("description"))
+				</div>
+				<!-- Master -->
+				<div class="form-group">
+				@helper.checkbox(layoutsetbranchFormData("master"))
+				</div>
+				<!-- LogoId -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("logoId"))
+				</div>
+				<!-- ThemeId -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("themeId"))
+				</div>
+				<!-- ColorSchemeId -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("colorSchemeId"))
+				</div>
+				<!-- WapThemeId -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("wapThemeId"))
+				</div>
+				<!-- WapColorSchemeId -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("wapColorSchemeId"))
+				</div>
+				<!-- Css -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("css"))
+				</div>
+				<!-- Settings -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("settings"))
+				</div>
+				<!-- LayoutSetPrototypeUuid -->
+				<div class="form-group">
+				@helper.inputText(layoutsetbranchFormData("layoutSetPrototypeUuid"))
+				</div>
+				<!-- LayoutSetPrototypeLinkEnabled -->
+				<div class="form-group">
+				@helper.checkbox(layoutsetbranchFormData("layoutSetPrototypeLinkEnabled"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

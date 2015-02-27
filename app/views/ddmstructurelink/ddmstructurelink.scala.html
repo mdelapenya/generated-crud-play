@@ -4,27 +4,38 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Ddmstructurelink #@ddmstructurelinkFormData("structureLinkId").value</legend>
-
+	<div class="container">
 		@form(routes.DdmstructurelinkApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(ddmstructurelinkFormData("structureLinkId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(ddmstructurelinkFormData("structureLinkId") != "0") {
+				<h1>Edition of Ddmstructurelink #@ddmstructurelinkFormData("structureLinkId").value</h1>
+				} else {
+				<h1>Creation of a Ddmstructurelink</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.DdmstructurelinkApplication.all()">Back to Ddmstructurelinks</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="structureLinkId" name="structureLinkId" value='@ddmstructurelinkFormData("structureLinkId").value' />
 
-			<!-- ClassNameId -->
-			@helper.inputText(ddmstructurelinkFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(ddmstructurelinkFormData("classPK"))
-			<!-- StructureId -->
-			@helper.inputText(ddmstructurelinkFormData("structureId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.DdmstructurelinkApplication.all()">Back to Ddmstructurelink List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(ddmstructurelinkFormData("classNameId"))
 				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(ddmstructurelinkFormData("classPK"))
+				</div>
+				<!-- StructureId -->
+				<div class="form-group">
+				@helper.inputText(ddmstructurelinkFormData("structureId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

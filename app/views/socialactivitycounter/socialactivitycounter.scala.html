@@ -4,45 +4,74 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Socialactivitycounter #@socialactivitycounterFormData("activityCounterId").value</legend>
-
+	<div class="container">
 		@form(routes.SocialactivitycounterApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(socialactivitycounterFormData("activityCounterId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(socialactivitycounterFormData("activityCounterId") != "0") {
+				<h1>Edition of Socialactivitycounter #@socialactivitycounterFormData("activityCounterId").value</h1>
+				} else {
+				<h1>Creation of a Socialactivitycounter</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.SocialactivitycounterApplication.all()">Back to Socialactivitycounters</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="activityCounterId" name="activityCounterId" value='@socialactivitycounterFormData("activityCounterId").value' />
 
-			<!-- GroupId -->
-			@helper.inputText(socialactivitycounterFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(socialactivitycounterFormData("companyId"))
-			<!-- ClassNameId -->
-			@helper.inputText(socialactivitycounterFormData("classNameId"))
-			<!-- ClassPK -->
-			@helper.inputText(socialactivitycounterFormData("classPK"))
-			<!-- Name -->
-			@helper.inputText(socialactivitycounterFormData("name"))
-			<!-- OwnerType -->
-			@helper.inputText(socialactivitycounterFormData("ownerType"))
-			<!-- CurrentValue -->
-			@helper.inputText(socialactivitycounterFormData("currentValue"))
-			<!-- TotalValue -->
-			@helper.inputText(socialactivitycounterFormData("totalValue"))
-			<!-- GraceValue -->
-			@helper.inputText(socialactivitycounterFormData("graceValue"))
-			<!-- StartPeriod -->
-			@helper.inputText(socialactivitycounterFormData("startPeriod"))
-			<!-- EndPeriod -->
-			@helper.inputText(socialactivitycounterFormData("endPeriod"))
-			<!-- Active -->
-			@helper.checkbox(socialactivitycounterFormData("active"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.SocialactivitycounterApplication.all()">Back to Socialactivitycounter List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(socialactivitycounterFormData("groupId"))
 				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(socialactivitycounterFormData("companyId"))
+				</div>
+				<!-- ClassNameId -->
+				<div class="form-group">
+				@helper.inputText(socialactivitycounterFormData("classNameId"))
+				</div>
+				<!-- ClassPK -->
+				<div class="form-group">
+				@helper.inputText(socialactivitycounterFormData("classPK"))
+				</div>
+				<!-- Name -->
+				<div class="form-group">
+				@helper.inputText(socialactivitycounterFormData("name"))
+				</div>
+				<!-- OwnerType -->
+				<div class="form-group">
+				@helper.inputText(socialactivitycounterFormData("ownerType"))
+				</div>
+				<!-- CurrentValue -->
+				<div class="form-group">
+				@helper.inputText(socialactivitycounterFormData("currentValue"))
+				</div>
+				<!-- TotalValue -->
+				<div class="form-group">
+				@helper.inputText(socialactivitycounterFormData("totalValue"))
+				</div>
+				<!-- GraceValue -->
+				<div class="form-group">
+				@helper.inputText(socialactivitycounterFormData("graceValue"))
+				</div>
+				<!-- StartPeriod -->
+				<div class="form-group">
+				@helper.inputText(socialactivitycounterFormData("startPeriod"))
+				</div>
+				<!-- EndPeriod -->
+				<div class="form-group">
+				@helper.inputText(socialactivitycounterFormData("endPeriod"))
+				</div>
+				<!-- Active -->
+				<div class="form-group">
+				@helper.checkbox(socialactivitycounterFormData("active"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }

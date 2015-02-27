@@ -4,41 +4,66 @@
 
 @main("Welcome to GeneratedCRUD application") {
 
-	<fieldset>
-		<legend>Edition of Membershiprequest #@membershiprequestFormData("membershipRequestId").value</legend>
-
+	<div class="container">
 		@form(routes.MembershiprequestApplication.submit(), 'class -> "form-horizontal") {
-			@helper.inputText(membershiprequestFormData("membershipRequestId"), 'readonly -> "readonly")
+			<div class="jumbotron">
+				@if(membershiprequestFormData("membershipRequestId") != "0") {
+				<h1>Edition of Membershiprequest #@membershiprequestFormData("membershipRequestId").value</h1>
+				} else {
+				<h1>Creation of a Membershiprequest</h1>
+				}
+				<p class="lead">
+					What do you want to do with them?
+					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					<a class="btn btn-warning" href="@routes.MembershiprequestApplication.all()">Back to Membershiprequests</a>
+				</p>
+			</div>
+			<div class="container">
+				<input type="hidden" id="membershipRequestId" name="membershipRequestId" value='@membershiprequestFormData("membershipRequestId").value' />
 
-			<!-- MvccVersion -->
-			@helper.inputText(membershiprequestFormData("mvccVersion"))
-			<!-- GroupId -->
-			@helper.inputText(membershiprequestFormData("groupId"))
-			<!-- CompanyId -->
-			@helper.inputText(membershiprequestFormData("companyId"))
-			<!-- UserId -->
-			@helper.inputText(membershiprequestFormData("userId"))
-			<!-- CreateDate -->
-			@helper.inputText(membershiprequestFormData("createDate"))
-			<!-- Comments -->
-			@helper.inputText(membershiprequestFormData("comments"))
-			<!-- ReplyComments -->
-			@helper.inputText(membershiprequestFormData("replyComments"))
-			<!-- ReplyDate -->
-			@helper.inputText(membershiprequestFormData("replyDate"))
-			<!-- ReplierUserId -->
-			@helper.inputText(membershiprequestFormData("replierUserId"))
-			<!-- StatusId -->
-			@helper.inputText(membershiprequestFormData("statusId"))
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<a href="@routes.MembershiprequestApplication.all()">Back to Membershiprequest List</a>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="edit">Submit</button>
-					<button id="submit" name="submit" type="submit" class="btn btn-primary" value="delete">Delete</button>
+				<!-- MvccVersion -->
+				<div class="form-group">
+				@helper.inputText(membershiprequestFormData("mvccVersion"))
 				</div>
+				<!-- GroupId -->
+				<div class="form-group">
+				@helper.inputText(membershiprequestFormData("groupId"))
+				</div>
+				<!-- CompanyId -->
+				<div class="form-group">
+				@helper.inputText(membershiprequestFormData("companyId"))
+				</div>
+				<!-- UserId -->
+				<div class="form-group">
+				@helper.inputText(membershiprequestFormData("userId"))
+				</div>
+				<!-- CreateDate -->
+				<div class="form-group">
+				@helper.inputText(membershiprequestFormData("createDate"))
+				</div>
+				<!-- Comments -->
+				<div class="form-group">
+				@helper.inputText(membershiprequestFormData("comments"))
+				</div>
+				<!-- ReplyComments -->
+				<div class="form-group">
+				@helper.inputText(membershiprequestFormData("replyComments"))
+				</div>
+				<!-- ReplyDate -->
+				<div class="form-group">
+				@helper.inputText(membershiprequestFormData("replyDate"))
+				</div>
+				<!-- ReplierUserId -->
+				<div class="form-group">
+				@helper.inputText(membershiprequestFormData("replierUserId"))
+				</div>
+				<!-- StatusId -->
+				<div class="form-group">
+				@helper.inputText(membershiprequestFormData("statusId"))
+				</div>
+
+				<button id="submit" name="submit" type="submit" class="btn btn-success" value="edit">Submit</button>
 			</div>
 		}
-	</fieldset>
-
+	</div>
 }
