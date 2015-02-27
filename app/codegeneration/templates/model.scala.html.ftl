@@ -21,11 +21,10 @@
 				<#list model.fields as field>
 				<#if primaryKey.name != field.name>
 				<!-- ${field.name?cap_first} -->
+				<div class="form-group">
 					<#if field.type == "boolean">
-				<div class="checkbox">
 				@helper.checkbox(${model.name}FormData("${field.name}"))
 					<#else>
-				<div class="form-group">
 				@helper.inputText(${model.name}FormData("${field.name}"))
 					</#if>
 				</div>
