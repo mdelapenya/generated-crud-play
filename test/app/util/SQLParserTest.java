@@ -93,7 +93,7 @@ public class SQLParserTest {
 		Model model1 = models.get(0);
 
 		assertThat(model1.name).isEqualTo("account");
-		assertThat(model1.primaryKey).isEqualTo("accountId");
+		assertThat(model1.primaryKey.name).isEqualTo("accountId");
 		assertThat(model1.fields).hasSize(17);
 
 		Field field3 = model1.fields.get(2);
