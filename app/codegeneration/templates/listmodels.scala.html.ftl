@@ -2,7 +2,7 @@
 
 	<a href="@routes.Application.index">Exit</a>
 
-	<table id="models">
+	<table class="table table-striped">
 		<thead>
 			<th>Model Name</th>
 			<th>Actions</th>
