@@ -80,7 +80,7 @@ public class SQLParserTest {
 
 	@Test
 	public void testParse() throws Exception {
-		URL url = getClass().getResource("/tables-hypersonic.sql");
+		URL url = getClass().getResource("/public/sql/tables-hypersonic.sql");
 
 		File tables = new File(url.getPath());
 
