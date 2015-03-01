@@ -15,7 +15,7 @@
 				<h1>Creation of a ${model.name?cap_first}</h1>
 				}
 				<p class="lead">
-					What do you want to do with them?
+					What do you want to do with it?
 					@if(${model.name}FormData("${primaryKey.name}").value != "0") {
 					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
 					}
