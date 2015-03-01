@@ -16,7 +16,9 @@
 				}
 				<p class="lead">
 					What do you want to do with them?
+					@if(${model.name}FormData("${primaryKey.name}").value != "0") {
 					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					}
 					<a class="btn btn-warning" href="@routes.${model.name?cap_first}Application.all()">Back to ${model.name?cap_first}s</a>
 				</p>
 			</div>
