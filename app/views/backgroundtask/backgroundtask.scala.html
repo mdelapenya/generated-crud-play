@@ -1,6 +1,7 @@
 @(backgroundtaskFormData: Form[controllers.backgroundtask.BackgroundtaskFormData])
 
 @import helper._
+@import helper.twitterBootstrap._
 
 @main("Welcome to GeneratedCRUD application") {
 
@@ -14,7 +15,9 @@
 				}
 				<p class="lead">
 					What do you want to do with them?
+					@if(backgroundtaskFormData("backgroundTaskId").value != "0") {
 					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					}
 					<a class="btn btn-warning" href="@routes.BackgroundtaskApplication.all()">Back to Backgroundtasks</a>
 				</p>
 			</div>

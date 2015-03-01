@@ -1,6 +1,7 @@
 @(customgroupFormData: Form[controllers.customgroup.CustomgroupFormData])
 
 @import helper._
+@import helper.twitterBootstrap._
 
 @main("Welcome to GeneratedCRUD application") {
 
@@ -14,7 +15,9 @@
 				}
 				<p class="lead">
 					What do you want to do with them?
+					@if(customgroupFormData("groupId").value != "0") {
 					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					}
 					<a class="btn btn-warning" href="@routes.CustomgroupApplication.all()">Back to Customgroups</a>
 				</p>
 			</div>

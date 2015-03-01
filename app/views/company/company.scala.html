@@ -1,6 +1,7 @@
 @(companyFormData: Form[controllers.company.CompanyFormData])
 
 @import helper._
+@import helper.twitterBootstrap._
 
 @main("Welcome to GeneratedCRUD application") {
 
@@ -14,7 +15,9 @@
 				}
 				<p class="lead">
 					What do you want to do with them?
+					@if(companyFormData("companyId").value != "0") {
 					<button id="submit" name="submit" type="submit" class="btn btn-danger" value="delete">Delete</button>
+					}
 					<a class="btn btn-warning" href="@routes.CompanyApplication.all()">Back to Companys</a>
 				</p>
 			</div>
