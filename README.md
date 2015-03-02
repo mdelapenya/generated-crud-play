@@ -1,7 +1,7 @@
 # Generación de código de mantenimiento de bases de datos
 
-Alumno: Manuel de la Peña Peña (53.430.012-T)
-Asignatura: Generación Automática de Código
+- Alumno: Manuel de la Peña Peña (53.430.012-T)
+- Asignatura: Generación Automática de Código
 
 ## Enunciado de la práctica
 
