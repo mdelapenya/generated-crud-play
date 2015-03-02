@@ -7,7 +7,7 @@
 
 "Construir un generador que dado un fichero con la definición estática de una base de datos cree una aplicación de manipulación: alta-baja-modificación automáticamente utilizando los recursos gráficos que se desee y utilizando código SQL embebido".
 
-## Arquitectura de la aplicación
+## Solución general propuesta
 
 Para satisfacer los requisitos de la práctica, se realizará una aplicación web que gestione las tareas CRUD (consultas, altas, bajas y modificaciones) de una base de datos (BB.DD.).
 
