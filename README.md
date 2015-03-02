@@ -35,6 +35,21 @@ La aplicación sigue el modelo MVC (Model-View-Controller), para el cual "Play! 
 - view -> capa de presentación de la aplicación, definidas mediante plantillas SCALA.
 - controller -> la representación del controlador se realiza mediante el enrutado de las peticiones HTTP a diferentes URL, que una vez solicitadas ejecutarán una clase en concreto. En particular, será necesario definir unas rutas (routes), que se enlazarán con unas clases Java que extiendan de Controller. Por convenio, estas clases se denominarán XYZApplication.
 
+### Estructura de la aplicación
+
+- app: Paquete raíz de la aplicación
+	- codegeneration: paquete con el motor de Freemarker para la generación del código.
+		- db: paquete con las clases que representan tablas y campos de la BB.DD.
+		- templates: paquete con las plantillas de Freemarker.
+	- controllers: paquete con las clases que representan la capa de Controlador del patrón MVC. Por cada Entidad del modelo, se generará un paquete.
+	- models: paquete con las clases que representan la capa de modelo del patrón MVC. Por cada Entidad del modelo, se generará un paquete.
+	- util: paquete con clases de utilidad
+	- views: paquete con las plantillas SCALA que representan la capa de vista del patrón MVC. Por cada Entidad del modelo, se generará un paquete, con dos plantillas por modelo.
+- conf: Ficheros de configuración de la aplicación
+- project:
+- public: assets estáticos de la aplicación (javascript, css, imágenes, etc.)
+- test: Casos de prueba del código
+
 ## Esquema de trabajo
 
 El primer paso ha consistido en desarrollar una aplicación CRUD muy básica, permitiendo altas, bajas, consultas y modificaciones de un modelo muy sencillo.
