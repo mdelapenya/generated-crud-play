@@ -50,6 +50,8 @@ La generación propiamente dicha vendrá definida en los siguientes pasos:
 * Utilización de un motor de plantillas para interpolar el conjunto de objetos anterior sobre las plantillas definidas previamente.
 * Generación de los ficheros.
 
+La clase responsable del parseo del fichero SQL es [app/util/SQLParser.java](../master/app/util/SQLParser.java), que leerá línea a línea el fichero de entrada e identificará si se trata de la creación de una tabla. Una vez encuentre una tabla, mediante la identificación mediante expresión regular de un 'CREATE TABLE', continuará leyendo hasta que encuentre el token de finalización de tabla, que para H2 es ');'. Por cada tabla que encuentre se creará un objeto de tipo [app/codegeneration/db/Model.java](../master/app/codegeneration/db/Model.java), y para cda campo que encuentre dentro de la tabla creará un objeto de tipo [app/codegeneration/db/Field.java](../master/app/codegeneration/db/Field.java).
+
 Como se menciona en la descripción del stack tecnológico, el motor de generación de plantillas escogido es Freemarker. Éste utiliza ficheros .ftl (Freemarker template) para definir cada plantilla, en la que se definirá la estructura de cada fichero a generar.
 
 Sobre este fichero se podrán crear "interpolaciones", o elementos de la plantilla que podrán ser sobrescritos dinámicamente dentro del motor de plantillas. Esta sobrescritura se realizará en base a una definición del modelo para generar un output, en este caso código fuente.
