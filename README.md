@@ -148,5 +148,12 @@ Ver Ficheros generados > models.scala.html. Para acceder a ella se utilizará la
 ### Entidad de un modelo
 Ver Ficheros generados > model.scala.html. Para acceder a ella se utilizará la URL: http://localhost:9000/NOMBRE_MODELO + s/:id (P.e. http://localhost:9000/customgroups/1)
 
+## Licencia
+
+This project, "Generated CRUD Play!", is free software ("Licensed Software"); you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; including but not limited to, the implied warranty of MERCHANTABILITY, NONINFRINGEMENT, or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
 
