@@ -11,6 +11,8 @@
 
 Para satisfacer los requisitos de la práctica, se realizará una aplicación web que gestione las tareas CRUD (consultas, altas, bajas y modificaciones) de una base de datos (BB.DD.).
 
+La aplicación presentada incluye el codigo autogenerado como parte de la aplicación. Ésto es así para poder presentar todo el interfaz gráfico de la aplicación.
+
 ## Stack tecnológico
 
 El primer paso ha sido generar una aplicación web que se ejecutara con un servidor de aplicaciones embebido, en lugar de tener que instalar un servidor de aplicaciones en el que desplegar la aplicación.
@@ -150,9 +152,11 @@ Del mismo modo, la aplicación no necesita de la instalación de un servidor de 
 Para construir el proyecto, se debe ejecutar el comando 'activator dist' desde el raíz del proyecto, que lo compilará generando el directorio **target**
 
 ### Ejecución
-La aplicación se encuentra empaquetada en el fichero ZIP generatedcrud-1.0-SNAPSHOT dentro del directorio **target/universal**.
+Aunque la aplicación se encuentra empaquetada en el fichero ZIP generatedcrud-1.0-SNAPSHOT dentro del directorio **target/universal**, es recomenable ejecutarla **en modo explotado**, directamente desde el código fuente. Esta limitación se produce por la necesidad de compilar las fuentes generadas e incluirlas dentro de la aplicación para que éstas sean tenidas en cuenta. Por tanto, si ejecutamos la aplicación desde el empaquetado proporcionado, deberíamos indicar dónde dejar las las fuentes generadas, compilarlas/empaquetarlas, y agregarlas a la aplicación. Por simplicidad, esta opción no ha sido considerada.
 
-Una vez extraída, en el directorio 'bin' existen dos scripts ejecutables: "generatedcrud.bat" y "generatedcrud", uno para cada plataforma: Windows o Unix (Linux/Mac). Ejecutando estos scripts se inicia la aplicación. Por defecto, correrá en el puerto 9000, por lo que apuntando un navegador (Chrome, Firefox, IExplorer, Opera...) a http://localhost:9000 aparecerá la pantalla inicial de la aplicación.
+Por el contrario, si ejecutamos directamente desde el código fuente, utilizando el comando **activator run**, el framework Play! compilará las nuevas fuentes detectadas en el proyecto (estaremos autogenerando directamente dentro del workspace) y las agregará directamente al classpath de ejecución de la aplicación.
+
+Por defecto, correrá en el puerto 9000, por lo que apuntando un navegador (Chrome, Firefox, IExplorer, Opera...) a http://localhost:9000 aparecerá la pantalla inicial de la aplicación.
 
 ## Descripción de las pantallas
 
