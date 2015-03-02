@@ -17,15 +17,15 @@ El primer paso ha sido generar una aplicación web que se ejecutara con un servi
 
 Este punto facilitará la ejecución de la aplicación por parte del personal docente, que no tendrá que instalar la aplicación en ningún servidor, sino simplemente ejecutarla y abrir un navegador apuntando al puerto del servidor embebido.
 
-Respecto al almacenamiento persistente se ha optado por utilizar una BB.DD. que no utilice un servidor de BB.DD, por la misma razón de facilidad de uso, accediendo por tanto a un simple fichero en el disco. En este caso utilizaremos H2 (http://www.h2database.com/), el cual será accedido mediante JDBC.
+Respecto al almacenamiento persistente se ha optado por utilizar una BB.DD. que no utilice un servidor de BB.DD, por la misma razón de facilidad de uso, accediendo por tanto a un simple fichero en el disco. En este caso utilizaremos **H2** (http://www.h2database.com/), el cual será accedido mediante JDBC.
 
-La capa de persistencia será realizada por "Ebeans ORM" (http://www.avaje.org/). Ebean es una herramienta Java ORM (Object Relational Mapping) open source con licencia LGPL. Utiliza anotaciones JPA (@entity, @OneToMany ...) para el mapeo de las entidades.
+La capa de persistencia será realizada por **"Ebeans ORM"** (http://www.avaje.org/). Ebean es una herramienta Java ORM (Object Relational Mapping) open source con licencia LGPL. Utiliza anotaciones JPA (@entity, @OneToMany ...) para el mapeo de las entidades.
 
-El framework de desarrollo "Play! Framework" posibilita todas estas características, pues es capaz de iniciar de manera automática un servidor web embebido (Netty), y por defecto proporciona las dependencias de la BB.DD. H2 y del ORM Ebeans.
+El framework de desarrollo **"Play! Framework"** posibilita todas estas características, pues es capaz de iniciar de manera automática un servidor web embebido (Netty), y por defecto proporciona las dependencias de la BB.DD. H2 y del ORM Ebeans.
 
-En cuanto a la generación propiamente dicha de código, se ha escogido Freemarker (http://freemarker.org) como motor de plantillas, debido a la potencia que ofrece, así como su fácil integración con proyectos basados en el lenguaje Java.
+En cuanto a la generación propiamente dicha de código, se ha escogido **Freemarker** (http://freemarker.org) como motor de plantillas, debido a la potencia que ofrece, así como su fácil integración con proyectos basados en el lenguaje Java.
 
-Para definir un look&feel consistente entre todas las pantallas, se ha elegido Twitter Bootstrap v.3.2.3 (http://getbootstrap.com/) como framework HTML, CSS. que requiere a su vez para la parte Javascript, de jQuery v1.11.2 (http://jquery.com).
+Para definir un look&feel consistente entre todas las pantallas, se ha elegido **Twitter Bootstrap** v.3.2.3 (http://getbootstrap.com/) como framework HTML, CSS. que requiere a su vez para la parte Javascript, de **jQuery** v1.11.2 (http://jquery.com).
 
 ## Arquitectura de la aplicación
 
