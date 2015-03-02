@@ -194,7 +194,7 @@ public class FreemarkerEngine {
 		// Specify the source where the template files come from. Here I set a
 		// plain directory for it, but non-file-system sources are possible too:
 
-		_cfg.setClassForTemplateLoading(this.getClass(), "/templates");
+		_cfg.setClassForTemplateLoading(this.getClass(), "/codegeneration/templates");
 
 		// Set the preferred charset template files are stored in. UTF-8 is
 		// a good choice in most applications:
@@ -238,6 +238,8 @@ public class FreemarkerEngine {
 		filePathPreffix += "/";
 
 		File file = new File(filePathPreffix + targetFileName);
+
+		System.out.println("Writing file to: " + file.getAbsolutePath());
 
 		file.getParentFile().mkdirs();
 		file.createNewFile();
