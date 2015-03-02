@@ -131,8 +131,11 @@ No es necesario instalar ningún gestor de base de datos, ya que en el diseño i
 #### Servidor web
 Del mismo modo, la aplicación no necesita de la instalación de un servidor de aplicaciones, puesto que la aplicación utiliza un servidor embebido.
 
+### Construcción
+Para construir el proyecto, se debe ejecutar el comando 'activator dist' desde el raíz del proyecto, que lo compilará generando el directorio **target**
+
 ### Ejecución
-La aplicación se encuentra empaquetada en el fichero ZIP generatedcrud-1.0-SNAPSHOT.
+La aplicación se encuentra empaquetada en el fichero ZIP generatedcrud-1.0-SNAPSHOT dentro del directorio **target/universal**.
 
 Una vez extraída, en el directorio 'bin' existen dos scripts ejecutables: "generatedcrud.bat" y "generatedcrud", uno para cada plataforma: Windows o Unix (Linux/Mac). Ejecutando estos scripts se inicia la aplicación. Por defecto, correrá en el puerto 9000, por lo que apuntando un navegador (Chrome, Firefox, IExplorer, Opera...) a http://localhost:9000 aparecerá la pantalla inicial de la aplicación.
 
