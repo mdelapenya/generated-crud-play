@@ -137,16 +137,16 @@ Una vez extraída, en el directorio 'bin' existen dos scripts ejecutables: "gene
 ## Descripción de las pantallas
 
 ### Inicio
-En esta pantalla se solicita al usuario que suba a la aplicación un fichero SQL para generar su modelo de datos. Para acceder a ella se utilizará la URL por defecto: http://localhost:9000
+En esta pantalla se solicita al usuario que suba a la aplicación un fichero SQL para generar su modelo de datos. Para acceder a ella se utilizará la URL por defecto: **http://localhost:9000**
 
 ### Listado de modelos
-Ver Ficheros generados > listmodels.scala.html. Para acceder a ella se utilizará la URL: http://localhost:9000/showModels
+Ver Ficheros generados > listmodels.scala.html. Para acceder a ella se utilizará la URL: **http://localhost:9000/showModels**
 
 ### Listado de entidades de un modelo
-Ver Ficheros generados > models.scala.html. Para acceder a ella se utilizará la URL: http://localhost:9000/NOMBRE_MODELO + s (P.e. http://localhost:9000/customgroups)
+Ver Ficheros generados > models.scala.html. Para acceder a ella se utilizará la URL: http://localhost:9000/NOMBRE_MODELO + s (P.e. **http://localhost:9000/customgroups**)
 
 ### Entidad de un modelo
-Ver Ficheros generados > model.scala.html. Para acceder a ella se utilizará la URL: http://localhost:9000/NOMBRE_MODELO + s/:id (P.e. http://localhost:9000/customgroups/1)
+Ver Ficheros generados > model.scala.html. Para acceder a ella se utilizará la URL: http://localhost:9000/NOMBRE_MODELO + s/:id (P.e. **http://localhost:9000/customgroups/1**)
 
 ## Licencia
 
