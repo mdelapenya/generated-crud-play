@@ -194,7 +194,15 @@ public class FreemarkerEngine {
 		// Specify the source where the template files come from. Here I set a
 		// plain directory for it, but non-file-system sources are possible too:
 
-		_cfg.setClassForTemplateLoading(this.getClass(), "/codegeneration/templates");
+		File templatesDirectory = new File("app/codegeneration/templates");
+
+		if (templatesDirectory.exists()) {
+			_cfg.setDirectoryForTemplateLoading(templatesDirectory);
+		}
+		else {
+			_cfg.setClassForTemplateLoading(
+				this.getClass(), "/codegeneration/templates");
+		}
 
 		// Set the preferred charset template files are stored in. UTF-8 is
 		// a good choice in most applications:
