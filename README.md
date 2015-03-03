@@ -11,7 +11,9 @@
 
 Para satisfacer los requisitos de la práctica, se realizará una aplicación web que gestione las tareas CRUD (consultas, altas, bajas y modificaciones) de una base de datos (BB.DD.).
 
-La aplicación presentada incluye el codigo autogenerado como parte de la aplicación. Ésto es así para poder presentar todo el interfaz gráfico de la aplicación.
+El generador de código ha sido incluído dentro de la aplicación, y se ejecuta en tiempo de ejecución, por lo que el código autogenerado es recompilado y añadido con la aplicación en uso. Por este motivo, se recomienda ejecutar la aplicación desde el código fuente, bien desde el IDE, bien desde el directorio raíz del proyecto.
+
+Por otra parte, la aplicación presentada incluye el codigo autogenerado como parte de la aplicación. Ésto es así para poder presentar todo el interfaz gráfico de la aplicación.
 
 ## Stack tecnológico
 
