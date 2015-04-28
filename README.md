@@ -153,6 +153,9 @@ Del mismo modo, la aplicación no necesita de la instalación de un servidor de 
 ### Construcción
 Para construir el proyecto, se debe ejecutar el comando 'activator dist' desde el raíz del proyecto, que lo compilará generando el directorio **target**
 
+### Tests
+Si queremos lanzar la suite de tests de la aplicación, podremos hacerlo utilizando el comando **activator test**. El framework Play! ejecutará los tests ubicados en el directorio 'test', generando los resultados de tests en el directorio 'target/test-reports', en formato XML de jUnit.
+
 ### Ejecución
 Aunque la aplicación se encuentra empaquetada en el fichero ZIP generatedcrud-1.0-SNAPSHOT dentro del directorio **target/universal**, es recomenable ejecutarla **en modo explotado**, directamente desde el código fuente. Esta limitación se produce por la necesidad de compilar las fuentes generadas e incluirlas dentro de la aplicación para que éstas sean tenidas en cuenta. Por tanto, si ejecutamos la aplicación desde el empaquetado proporcionado, deberíamos indicar dónde dejar las las fuentes generadas, compilarlas/empaquetarlas, y agregarlas a la aplicación. Por simplicidad, esta opción no ha sido considerada.
 
