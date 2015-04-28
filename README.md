@@ -83,7 +83,7 @@ Cada vez que se quiera modificar el comportamiento de la aplicación se realizar
 ### Ficheros generados
 
 #### routes
-Fichero que representa el mapping de las rutas de la aplicación, esto es, las URLs válidas que la aplicación acepta del navegador para cada modelo, para enrutarlas al controlador adecuado. Su plantilla será [codegenerator/templates/routes.ftl](../master/app/codegenerator/templates/routes.ftl)
+Fichero que representa el mapping de las rutas de la aplicación, esto es, las URLs válidas que la aplicación acepta del navegador para cada modelo, para enrutarlas al controlador adecuado. Su plantilla será [codegeneration/templates/routes.ftl](../master/app/codegeneration/templates/routes.ftl)
 
 Se generarán 4 routes por entidad del modelo:
 
