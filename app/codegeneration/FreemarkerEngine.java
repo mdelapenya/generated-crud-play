@@ -77,6 +77,8 @@ public class FreemarkerEngine {
 	private void _generateFormData(Model model)
 		throws IOException, TemplateException {
 
+		System.out.println("Generating form data for " + model.name);
+
 		String targetFileName = _capitalize(model.name) + "FormData.java";
 
 		File file = _initializeGeneratedFile(
@@ -88,6 +90,8 @@ public class FreemarkerEngine {
 
 	private void _generateModel(Model model)
 		throws IOException, TemplateException {
+
+		System.out.println("Generating model for " + model.name);
 
 		String targetFileName = _capitalize(model.name) + ".java";
 
@@ -110,6 +114,8 @@ public class FreemarkerEngine {
 	private void _generateModelsView(Model model)
 		throws IOException, TemplateException {
 
+		System.out.println("Generating models view for " + model.name);
+
 		String targetFileName = model.name + "s.scala.html";
 
 		File file = _initializeGeneratedFile(
@@ -121,6 +127,8 @@ public class FreemarkerEngine {
 
 	private void _generateModelView(Model model)
 		throws IOException, TemplateException {
+
+		System.out.println("Generating model view for " + model.name);
 
 		String targetFileName = model.name + ".scala.html";
 
@@ -142,6 +150,7 @@ public class FreemarkerEngine {
 			String templateName, List<Model> models, Writer out)
 		throws IOException, TemplateException {
 
+		System.out.println("Generating template " + templateName + " from models:" + models.size());
 		// Create data-model
 
 		Map<String, Object> root = new HashMap<>();
@@ -161,6 +170,7 @@ public class FreemarkerEngine {
 			String templateName, Model model, Writer out)
 		throws IOException, TemplateException {
 
+		System.out.println("Generating template " + templateName + " from model " + model.name);
 		// Create data-model
 
 		Map<String, Object> root = new HashMap<>();
@@ -268,8 +278,8 @@ public class FreemarkerEngine {
 
 		f1.maxLength = 0;
 		f1.minLength = 0;
-		f1.isPrimaryKey = true;
-		f1.isRequired = true;
+		f1.primaryKey = true;
+		f1.required = true;
 		f1.name = "id";
 		f1.type = "long";
 		f1.typeUppercase = "Long";
@@ -282,8 +292,8 @@ public class FreemarkerEngine {
 
 		f2.maxLength = 35;
 		f2.minLength = 0;
-		f2.isPrimaryKey = false;
-		f2.isRequired = true;
+		f2.primaryKey = false;
+		f2.required = true;
 		f2.name = "f2";
 		f2.type = "String";
 		f2.typeUppercase = "String";
@@ -306,8 +316,8 @@ public class FreemarkerEngine {
 
 		campo1.maxLength = 0;
 		campo1.minLength = 0;
-		campo1.isPrimaryKey = true;
-		campo1.isRequired = true;
+		campo1.primaryKey = true;
+		campo1.required = true;
 		campo1.name = "id";
 		campo1.type = "long";
 		campo1.typeUppercase = "Long";
@@ -320,8 +330,8 @@ public class FreemarkerEngine {
 
 		campo2.maxLength = 35;
 		campo2.minLength = 0;
-		campo2.isPrimaryKey = false;
-		campo2.isRequired = true;
+		campo2.primaryKey = false;
+		campo2.required = true;
 		campo2.name = "campo2";
 		campo2.type = "String";
 		campo2.typeUppercase = "String";
