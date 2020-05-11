@@ -151,15 +151,15 @@ No es necesario instalar ningún gestor de base de datos, ya que en el diseño i
 Del mismo modo, la aplicación no necesita de la instalación de un servidor de aplicaciones, puesto que la aplicación utiliza un servidor embebido.
 
 ### Construcción
-Para construir el proyecto, se debe ejecutar el comando 'activator dist' desde el raíz del proyecto, que lo compilará generando el directorio **target**
+Para construir el proyecto, se debe ejecutar el comando ['sbt'](https://www.scala-sbt.org/1.x/docs/es/Setup.html) desde el raíz del proyecto, que lo compilará generando el directorio **target**
 
 ### Tests
-Si queremos lanzar la suite de tests de la aplicación, podremos hacerlo utilizando el comando **activator test**. El framework Play! ejecutará los tests ubicados en el directorio 'test', generando los resultados de tests en el directorio 'target/test-reports', en formato XML de jUnit.
+Si queremos lanzar la suite de tests de la aplicación, podremos hacerlo utilizando el comando **sbt test**. El framework Play! ejecutará los tests ubicados en el directorio 'test', generando los resultados de tests en el directorio 'target/test-reports', en formato XML de jUnit.
 
 ### Ejecución
 Aunque la aplicación se encuentra empaquetada en el fichero ZIP generatedcrud-1.0-SNAPSHOT dentro del directorio **target/universal**, es recomenable ejecutarla **en modo explotado**, directamente desde el código fuente. Esta limitación se produce por la necesidad de compilar las fuentes generadas e incluirlas dentro de la aplicación para que éstas sean tenidas en cuenta. Por tanto, si ejecutamos la aplicación desde el empaquetado proporcionado, deberíamos indicar dónde dejar las las fuentes generadas, compilarlas/empaquetarlas, y agregarlas a la aplicación. Por simplicidad, esta opción no ha sido considerada.
 
-Por el contrario, si ejecutamos directamente desde el código fuente, utilizando el comando **activator run**, el framework Play! compilará las nuevas fuentes detectadas en el proyecto (estaremos autogenerando directamente dentro del workspace) y las agregará directamente al classpath de ejecución de la aplicación.
+Por el contrario, si ejecutamos directamente desde el código fuente, utilizando el comando **sbt run**, el framework Play! compilará las nuevas fuentes detectadas en el proyecto (estaremos autogenerando directamente dentro del workspace) y las agregará directamente al classpath de ejecución de la aplicación.
 
 Por defecto, correrá en el puerto 9000, por lo que apuntando un navegador (Chrome, Firefox, IExplorer, Opera...) a http://localhost:9000 aparecerá la pantalla inicial de la aplicación.
 
