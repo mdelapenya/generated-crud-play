@@ -26,11 +26,11 @@ public class ${model.name?cap_first} extends Model {
 	// model attributes
 
 	<#list model.fields as field>
-		<#if field.isPrimaryKey>
+		<#if field.primaryKey>
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
 		</#if>
-		<#if field.isRequired && !field.isPrimaryKey>
+		<#if field.required && !field.primaryKey>
 	@Constraints.Required
 		</#if>
 		<#if field.hasMaxLength()>

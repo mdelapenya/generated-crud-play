@@ -41,7 +41,7 @@ public class ${model.name?cap_first}FormData {
 		List<ValidationError> errors = new ArrayList<>();
 
 		<#list model.fields as field>
-			<#if field.isRequired>
+			<#if field.required>
 		if (${field.name} == null || ${field.name}.length() == 0) {
 			errors.add(new ValidationError("${field.name}", "No ${field.name} was given."));
 		}

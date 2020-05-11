@@ -11,4 +11,16 @@ public class Model {
 	public Field primaryKey;
 	public List<Field> fields;
 
+	public String getName() {
+		return this.name;
+	}
+
+	public Field getPrimaryKey() {
+		return this.primaryKey;
+	}
+
+	public List<Field> getFields() {
+		return this.fields;
+	}
+
 }

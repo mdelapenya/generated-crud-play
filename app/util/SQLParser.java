@@ -95,10 +95,10 @@ public class SQLParser {
 							field.type.substring(1);
 
 					field.minLength = 0;
-					field.isRequired = _regexp(".*(not\\snull).*", sql);
-					field.isPrimaryKey = _regexp(".*(primary\\skey).*", sql);
+					field.required = _regexp(".*(not\\snull).*", sql);
+					field.primaryKey = _regexp(".*(primary\\skey).*", sql);
 
-					if (field.isPrimaryKey) {
+					if (field.primaryKey) {
 						model.primaryKey = field;
 					}
 
